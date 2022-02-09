@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+html {
+  width: 100%;
+  height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.sky img,
+.logo img,
+.stars img,
+.balcony img,
+.moon img {
+  width: 100%;
+}
+
+.sky {
+  width: 100%;
+}
+
+.stars {
+  width: 100%;
+  z-index: 10;
+  position: absolute;
+  top: 0;
+}
+
+.balcony {
+  width: 100%;
+  z-index: 10;
+  position: absolute;
+  bottom: -4px;
+}
+
+.moon {
+  width: 80%;
+  z-index: 10;
+  position: absolute;
+  bottom: -35vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.balcony .glow {
+  width: 100%;
+  background: radial-gradient(
+    217.21% 217.2% at 50% 96.77%,
+    #ffffff 0%,
+    rgba(112, 36, 36, 0.41) 100%
+  );
+  mix-blend-mode: color-dodge;
+  opacity: 0.4;
+  filter: blur(20px);
+  transform: matrix(1, 0, 0, -1, 0, 0);
+  position: absolute;
+  top: 0;
+  z-index: 20;
+  height: 65%;
+}
+
+.balcony .horizon-glow {
+  width: 100%;
+  height: 10%;
+  position: absolute;
+  top: -10%;
+  background: radial-gradient(
+    103.57% 103.57% at 50% 50%,
+    #ffffff 0%,
+    #180000 100%
+  );
+  mix-blend-mode: color-dodge;
+  opacity: 0.3;
+  filter: blur(40px);
+  z-index: 20;
+}
