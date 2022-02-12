@@ -64,15 +64,17 @@ img {
   transform: matrix(1, 0, 0, -1, 0, 0);
   position: absolute;
   top: 0;
-  z-index: 20;
+  z-index: 40;
   height: 65%;
 }
 
 .balcony .horizon-glow {
   width: 100%;
-  height: 10%;
+  height: 30%;
   position: absolute;
-  top: -10%;
+  bottom: calc((100vw * 220) / 1538 - 30px);
+  left: 50%;
+  transform: translateX(-50%);
   background: radial-gradient(
     103.57% 103.57% at 50% 50%,
     #ffffff 0%,
@@ -81,13 +83,33 @@ img {
   mix-blend-mode: color-dodge;
   opacity: 0.3;
   filter: blur(40px);
-  z-index: 20;
+  z-index: 40;
+}
+
+.balcony .horizon-glow-buildings {
+  width: 70%;
+  height: 30%;
+  position: absolute;
+  bottom: calc((100vw * 220) / 1538 - 30px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #f6feff 0%,
+    #c3bfc5 41.46%,
+    #573c4b 100%
+  );
+  background: blue;
+  /* mix-blend-mode: color-dodge; */
+  opacity: 0.35;
+  filter: blur(60px);
+  z-index: 40;
 }
 
 .city {
   position: absolute;
-  width: 50%;
   bottom: calc((100vw * 220) / 1538);
+  width: 50%;
   left: 50%;
   transform: translateX(-50%);
   z-index: -5;
@@ -95,14 +117,14 @@ img {
 
 .city1 {
   width: 70%;
-  transform: translate(-48%, 70%);
+  transform: translate(-48%, 100%);
   z-index: -10;
   transition: transform 1.7s ease;
 }
 
 .city2 {
   width: 65%;
-  transform: translate(-48%, 70%);
+  transform: translate(-48%, 100%);
   z-index: -15;
   transition: transform 1.7s ease;
 }
@@ -133,4 +155,19 @@ img {
   transform: translate(-5%, 100%);
   z-index: -35;
   transition: transform 1.5s ease;
+}
+
+.socials{
+  position: absolute;
+  bottom: 0rem;
+  left: 1.5rem;
+}
+
+.socials div{
+  width: 35px;
+  height: 35px;
+  border-radius:  50%;
+  z-index: 40;
+  margin-bottom: 1.25rem;
+  cursor: pointer;
 }
