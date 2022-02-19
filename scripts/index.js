@@ -11,10 +11,10 @@ window.onload = function(){
   //   cities[i].style.transition = "1.5s"
   // }
 
-  cities[0].style.transform = "translate(-48%, 0)";
-  cities[1].style.transform = "translate(-48%, 0)";
-  cities[2].style.transform = "translate(-53%, 15%)";
-  cities[3].style.transform = "translate(-56%, 8%)";
-  cities[4].style.transform = "translate(-80%, 5%)";
-  cities[5].style.transform = "translate(-5%, -3%)";
+  cities[0].style.transform = "translate(-45%, 0)";
+  cities[1].style.transform = "translate(-45%, 0)";
+  cities[2].style.transform = "translate(-50%, 15%)";
+  cities[3].style.transform = "translate(-53%, 8%)";
+  cities[4].style.transform = "translate(-75%, 5%)";
+  cities[5].style.transform = "translate(-2%, -3%)";
 }
