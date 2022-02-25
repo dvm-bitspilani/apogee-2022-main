@@ -12,7 +12,15 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import './App.css'
+import Input from '@mui/material/Input';
+import TextField from '@mui/material/TextField';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+
+
+// import TextField from '@mui/material/TextField';
+import './Modal.css';
+import './App.css';
 // import '/landing.js'
 import { createTheme } from '@mui/material/styles';
 
@@ -38,13 +46,15 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 400,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
-  boxShadow: 24,
+  width: 1000,
+  bgcolor: 'rgba(255, 255, 255, 0.3)',
+  border: '1px solid rgba(209, 213, 219, 0.3);',
+  // boxShadow: 24,
   p: 4,
+  // filter:'blur(3px) saturate(180%)'
 };
 function App() {
+  const options=[{label:'Test 1'},{label:'Test 2'}]
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -66,11 +76,149 @@ function App() {
               aria-describedby="modal-modal-description"
             >
               <Box sx={style}>
-                <Typography id="modal-modal-title" variant="h6" component="h2">
-                  Text in a modal
+                <Typography id="modal-modal-title" variant="h6" component="h2" color="white">
+REGISTRATION
                 </Typography>
                 <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                  Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+
+<div className="wrapper"> 
+<div className="cell"> 
+
+
+<span>
+Name
+</span>
+<TextField type="text" label="Name"  sx={{ width: 300,border:'1px solid white', color:'white', borderRadius: '2px' }}
+/>
+</div>
+
+<div className="cell"> 
+
+<span>
+Year of Study
+</span>
+  <Select
+    labelId="demo-simple-select-label"
+    id="demo-simple-select"
+    label="Age"
+    sx={{ width: 300,border:'1px solid white', color:'white', borderRadius: '2px' }}
+  >
+    <MenuItem value={10}>Ten</MenuItem>
+    <MenuItem value={20}>Twenty</MenuItem>
+    <MenuItem value={30}>Thirty</MenuItem>
+  </Select>
+
+
+
+</div>
+<div className="cell"> 
+
+
+<span>
+College
+</span>
+
+  <Select
+    labelId="demo-simple-select-label"
+    id="demo-simple-select"
+    label="Age"
+    sx={{ width: 300,border:'1px solid white', color:'white', borderRadius: '2px' }}
+  >
+    <MenuItem value={10}>Ten</MenuItem>
+    <MenuItem value={20}>Twenty</MenuItem>
+    <MenuItem value={30}>Thirty</MenuItem>
+  </Select>
+
+</div>
+<div className="cell"> 
+
+
+<span>
+City
+</span>
+<TextField type="text" label="Type your City"   sx={{ width: 300,border:'1px solid white', color:'white' }}
+/>
+</div>
+
+<div className="cell"> 
+<span>
+E-mail
+</span>
+<TextField type="email" label="Type your email"   sx={{ width: 300,border:'1px solid white', color:'white' }}
+/>
+
+</div>
+<div className="cell"> 
+
+<span>
+Events
+</span>
+
+  <Select
+    labelId="demo-simple-select-label"
+    id="demo-simple-select"
+    label="Age"
+    sx={{ width: 300,border:'1px solid white', color:'white', borderRadius: '2px' }}
+  >
+    <MenuItem value={10}>Ten</MenuItem>
+    <MenuItem value={20}>Twenty</MenuItem>
+    <MenuItem value={30}>Thirty</MenuItem>
+  </Select>
+
+</div>
+<div className="cell"> 
+
+<span>
+Phone
+</span>
+<TextField type="text" label="Type your phone number"   sx={{ width: 300,border:'1px solid white', color:'white' }}
+/>
+
+</div>
+<div className="cell"> 
+
+
+
+<span>
+Workshop
+</span>
+ <Select
+    labelId="demo-simple-select-label"
+    id="demo-simple-select"
+    label="Age"
+    sx={{ width: 300,border:'1px solid white', color:'white', borderRadius: '2px' }}
+  >
+    <MenuItem value={10}>Ten</MenuItem>
+    <MenuItem value={20}>Twenty</MenuItem>
+    <MenuItem value={30}>Thirty</MenuItem>
+  </Select>
+</div>
+<div className="cell"> 
+
+
+<span>
+Gender
+</span>
+
+<input type="radio" name="gender" value="Male"/>
+ <label >Male</label>
+<input type="radio" name="gender" value="Female" />
+<label >Female</label>
+<input type="radio" name="gender" value="Other" />
+<label >Other</label>
+
+</div>
+<div className="cell"> 
+
+
+<span>
+Referral Code
+</span>
+<TextField type="text" label="Type your Referral Code" sx={{ width: 300,border:'1px solid white', color:'white', borderRadius: '2px' }}/>
+
+</div>
+
+</div>
                 </Typography>
               </Box>
             </Modal>
