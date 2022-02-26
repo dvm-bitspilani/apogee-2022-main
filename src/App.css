@@ -246,6 +246,17 @@ img {
   cursor: pointer;
 }
 
+.sign{
+  position: absolute;
+  width: 12rem;
+  bottom: 0;
+  left: 7rem;
+  z-index: 50;
+  /* bottom: calc((100vw * 220) / 1538 - 6px); */
+  bottom: 6rem;
+  mix-blend-mode: screen;
+}
+
 @media screen and (max-width: 768px) {
   .balcony-lp {
     display: none;
@@ -313,8 +324,16 @@ img {
   .balcony .glow{
     height: 35%;
   }
+
+  .sign{
+    left: 0;
+    bottom: 12rem;
+    width: 8rem;
+  }
 }
+
 /* NavBar CSS */
+
 nav {
   width: 100%;
   display: flex;
