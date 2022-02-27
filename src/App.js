@@ -37,7 +37,7 @@ const theme = createTheme({
       main: '#64748B',
       contrastText: '#fff',
     },
-    
+
   },
 });
 
@@ -54,10 +54,72 @@ const style = {
   // filter:'blur(3px) saturate(180%)'
 };
 function App() {
-  const options=[{label:'Test 1'},{label:'Test 2'}]
+  const options = [{ label: 'Test 1' }, { label: 'Test 2' }]
   const [open, setOpen] = React.useState(false);
+  const [data, setData] = React.useState({})
+  const [colleges, setColleges] = React.useState([]);
+  const [events, setEvents] = React.useState([]);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  React.useEffect(() => {
+    fetch("https://bits-apogee.org/registrations/get_college/", {
+      headers: { "content-type": "application/json" },
+      method: "GET",
+      mode: "cors"
+    })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (result) {
+        setColleges(result.data)
+      })
+
+    fetch("https://bits-apogee.org/registrations/events/", {
+      headers: { "content-type": "application/json" },
+      method: "GET",
+      mode: "cors"
+    })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (result) {
+        console.log(result)
+        console.log(result.data)
+        console.log(result.data[0])
+        setEvents(result.data[0])
+      })
+  }, [])
+
+  console.log(colleges)
+  console.log(events)
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    console.log(data)
+    console.log(JSON.stringify(data))
+    fetch("https://bits-apogee.org/registrations/Register/", {
+      headers: { "content-type": "application/json" },
+      method: "POST",
+      body: JSON.stringify(data),
+      mode: "cors"
+    })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (result) {
+        console.log(result)
+      })
+  }
+
+  const handleChange = e => {
+    const { name, value } = e.target
+    setData(prevState => ({
+      ...prevState,
+      [name]: value
+    }))
+  }
+
   return (
     <div className="App">
       <div id="wrapper">
@@ -77,152 +139,139 @@ function App() {
             >
               <Box sx={style}>
                 <Typography id="modal-modal-title" variant="h6" component="h2" color="white">
-REGISTRATION
+                  REGISTRATION
                 </Typography>
                 <Typography id="modal-modal-description" sx={{ mt: 2 }}>
 
-<div className="wrapper"> 
-<div className="cell"> 
+                  <form onSubmit={handleSubmit}>
+                    <div className="wrapper">
+                      <div className="cell">
+                        <span>
+                          Name
+                        </span>
+                        <TextField type="text" onChange={handleChange} name="name" label="Name" sx={{ width: 300, border: '1px solid white', color: 'white', borderRadius: '2px' }}
+                        />
+                      </div>
+                      <div className="cell">
+                        <span>
+                          Year of Study
+                        </span>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Age"
+                          name="year"
+                          onChange={handleChange}
+                          sx={{ width: 300, border: '1px solid white', color: 'white', borderRadius: '2px' }}
+                        >
+                          <MenuItem value={10}>Ten</MenuItem>
+                          <MenuItem value={20}>Twenty</MenuItem>
+                          <MenuItem value={30}>Thirty</MenuItem>
+                        </Select>
+                      </div>
+                      <div className="cell">
+                        <span>
+                          College
+                        </span>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Age"
+                          name="college_id"
+                          onChange={handleChange}
+                          sx={{ width: 300, border: '1px solid white', color: 'white', borderRadius: '2px' }}
+                        >
+                          <MenuItem value={1}>Ten</MenuItem>
+                          <MenuItem value={1}>Twenty</MenuItem>
+                          <MenuItem value={1}>Thirty</MenuItem>
+                          {/* {colleges.map(el => {
+                            <MenuItem value={el.id}>{el.name}</MenuItem>
+                          })} */}
+                        </Select>
+                      </div>
+                      <div className="cell">
+                        <span>
+                          City
+                        </span>
+                        <TextField type="text" onChange={handleChange} name="city" label="Type your City" sx={{ width: 300, border: '1px solid white', color: 'white' }}
+                        />
+                      </div>
+                      <div className="cell">
+                        <span>
+                          E-mail
+                        </span>
+                        <TextField type="email" onChange={handleChange} name="email_id" label="Type your email" sx={{ width: 300, border: '1px solid white', color: 'white' }}
+                        />
+                      </div>
+                      <div className="cell">
+                        <span>
+                          Events
+                        </span>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Age"
+                          name="events"
+                          onChange={handleChange}
+                          sx={{ width: 300, border: '1px solid white', color: 'white', borderRadius: '2px' }}
+                        >
+                          <MenuItem value={1}>Ten</MenuItem>
+                          <MenuItem value={1}>Twenty</MenuItem>
+                          <MenuItem value={1}>Thirty</MenuItem>
+                          {/* {events.events.forEach(el => <MenuItem value={el.id}>{el.name}</MenuItem>)} */}
+                        </Select>
+                      </div>
+                      <div className="cell">
+                        <span>
+                          Phone
+                        </span>
+                        <TextField type="text" onChange={handleChange} name="phone" label="Type your phone number" sx={{ width: 300, border: '1px solid white', color: 'white' }}
+                        />
+                      </div>
+                      {/* <div className="cell">
+                        <span>
+                          Workshop
+                        </span>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Age"
+                          name="workshop"
+                          onChange={handleChange}
+                          sx={{ width: 300, border: '1px solid white', color: 'white', borderRadius: '2px' }}
+                        >
+                          <MenuItem value={10}>Ten</MenuItem>
+                          <MenuItem value={20}>Twenty</MenuItem>
+                          <MenuItem value={30}>Thirty</MenuItem>
+                        </Select>
+                      </div> */}
+                      <div className="cell">
+                        <span>
+                          Gender
+                        </span>
+                        <input type="radio" onChange={handleChange} name="gender" value="Male" />
+                        <label >Male</label>
+                        <input type="radio" onChange={handleChange} name="gender" value="Female" />
+                        <label >Female</label>
+                        <input type="radio" onChange={handleChange} name="gender" value="Other" />
+                        <label >Other</label>
+                      </div>
+                      {/* <div className="cell">
+                        <span>
+                          Referral Code
+                        </span>
+                        <TextField type="text" onChange={handleChange} name="referral" label="Type your Referral Code" sx={{ width: 300, border: '1px solid white', color: 'white', borderRadius: '2px' }} />
+                      </div> */}
+                      <div className='cell'>
+                        <input type="submit" value="Submit" id="submit-form" data-bs-dismiss="modal" />
+                      </div>
 
-
-<span>
-Name
-</span>
-<TextField type="text" label="Name"  sx={{ width: 300,border:'1px solid white', color:'white', borderRadius: '2px' }}
-/>
-</div>
-
-<div className="cell"> 
-
-<span>
-Year of Study
-</span>
-  <Select
-    labelId="demo-simple-select-label"
-    id="demo-simple-select"
-    label="Age"
-    sx={{ width: 300,border:'1px solid white', color:'white', borderRadius: '2px' }}
-  >
-    <MenuItem value={10}>Ten</MenuItem>
-    <MenuItem value={20}>Twenty</MenuItem>
-    <MenuItem value={30}>Thirty</MenuItem>
-  </Select>
-
-
-
-</div>
-<div className="cell"> 
-
-
-<span>
-College
-</span>
-
-  <Select
-    labelId="demo-simple-select-label"
-    id="demo-simple-select"
-    label="Age"
-    sx={{ width: 300,border:'1px solid white', color:'white', borderRadius: '2px' }}
-  >
-    <MenuItem value={10}>Ten</MenuItem>
-    <MenuItem value={20}>Twenty</MenuItem>
-    <MenuItem value={30}>Thirty</MenuItem>
-  </Select>
-
-</div>
-<div className="cell"> 
-
-
-<span>
-City
-</span>
-<TextField type="text" label="Type your City"   sx={{ width: 300,border:'1px solid white', color:'white' }}
-/>
-</div>
-
-<div className="cell"> 
-<span>
-E-mail
-</span>
-<TextField type="email" label="Type your email"   sx={{ width: 300,border:'1px solid white', color:'white' }}
-/>
-
-</div>
-<div className="cell"> 
-
-<span>
-Events
-</span>
-
-  <Select
-    labelId="demo-simple-select-label"
-    id="demo-simple-select"
-    label="Age"
-    sx={{ width: 300,border:'1px solid white', color:'white', borderRadius: '2px' }}
-  >
-    <MenuItem value={10}>Ten</MenuItem>
-    <MenuItem value={20}>Twenty</MenuItem>
-    <MenuItem value={30}>Thirty</MenuItem>
-  </Select>
-
-</div>
-<div className="cell"> 
-
-<span>
-Phone
-</span>
-<TextField type="text" label="Type your phone number"   sx={{ width: 300,border:'1px solid white', color:'white' }}
-/>
-
-</div>
-<div className="cell"> 
-
-
-
-<span>
-Workshop
-</span>
- <Select
-    labelId="demo-simple-select-label"
-    id="demo-simple-select"
-    label="Age"
-    sx={{ width: 300,border:'1px solid white', color:'white', borderRadius: '2px' }}
-  >
-    <MenuItem value={10}>Ten</MenuItem>
-    <MenuItem value={20}>Twenty</MenuItem>
-    <MenuItem value={30}>Thirty</MenuItem>
-  </Select>
-</div>
-<div className="cell"> 
-
-
-<span>
-Gender
-</span>
-
-<input type="radio" name="gender" value="Male"/>
- <label >Male</label>
-<input type="radio" name="gender" value="Female" />
-<label >Female</label>
-<input type="radio" name="gender" value="Other" />
-<label >Other</label>
-
-</div>
-<div className="cell"> 
-
-
-<span>
-Referral Code
-</span>
-<TextField type="text" label="Type your Referral Code" sx={{ width: 300,border:'1px solid white', color:'white', borderRadius: '2px' }}/>
-
-</div>
-
-</div>
+                    </div>
+                  </form>
                 </Typography>
               </Box>
             </Modal>
-            </div>
+          </div>
         </nav>
         <div>
           {/* <!-- <div className="moon"><img src={require("./assets/laptop/Moon.svg")} alt=""/></div> --> */}
