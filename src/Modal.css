@@ -1,0 +1,21 @@
+.cell{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+}
+
+.wrapper{
+display:grid;
+grid-template-columns:auto auto;
+color:white;
+gap:30px;
+grid-column-gap:110px
+}
+
+.cell span{
+    padding:10px
+}
+.cell label{
+    color:white;
+}

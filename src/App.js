@@ -1,57 +1,127 @@
-import logo from './logo.svg';
-import * as React from 'react';
-import BalconyLaptop from './assets/laptop/Balcony.svg';
-import BalconyMobile from './assets/mobile/Balcony.svg';
-import CityLayer1 from './assets/laptop/City Layer 1.svg';
-import CityLayer2 from './assets/laptop/City Layer 2.svg';
-import CityLayer3 from './assets/laptop/City Layer 3.svg';
-import CityLayer4 from './assets/laptop/City Layer 4.svg';
-import CityLayer5 from './assets/laptop/City Layer 5.svg';
-import CityLayer6 from './assets/laptop/City Layer 6.svg';
-import Twitter from './assets/Twitter.svg';
-import Insta from './assets/Insta.svg';
-import Facebook from './assets/Facebook.svg';
-import Sign from './assets/laptop/Sign.svg'
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
-import './App.css'
+import logo from "./logo.svg";
+import * as React from "react";
+import BalconyLaptop from "./assets/laptop/Balcony.svg";
+import BalconyMobile from "./assets/mobile/Balcony.svg";
+import CityLayer1 from "./assets/laptop/City Layer 1.svg";
+import CityLayer2 from "./assets/laptop/City Layer 2.svg";
+import CityLayer3 from "./assets/laptop/City Layer 3.svg";
+import CityLayer4 from "./assets/laptop/City Layer 4.svg";
+import CityLayer5 from "./assets/laptop/City Layer 5.svg";
+import CityLayer6 from "./assets/laptop/City Layer 6.svg";
+import Twitter from "./assets/Twitter.svg";
+import Insta from "./assets/Insta.svg";
+import Facebook from "./assets/Facebook.svg";
+import Sign from "./assets/laptop/Sign.svg";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Modal from "@mui/material/Modal";
+import Input from "@mui/material/Input";
+import TextField from "@mui/material/TextField";
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
+
+// import TextField from '@mui/material/TextField';
+import "./Modal.css";
+import "./App.css";
 // import '/landing.js'
-import { createTheme } from '@mui/material/styles';
+import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
   status: {
-    danger: '#e53e3e',
+    danger: "#e53e3e",
   },
   palette: {
     primary: {
-      main: '#0971f1',
-      darker: '#053e85',
+      main: "#0971f1",
+      darker: "#053e85",
     },
     neutral: {
-      main: '#64748B',
-      contrastText: '#fff',
+      main: "#64748B",
+      contrastText: "#fff",
     },
-
   },
 });
 
 const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 400,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
-  boxShadow: 24,
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 1000,
+  bgcolor: "rgba(255, 255, 255, 0.3)",
+  border: "1px solid rgba(209, 213, 219, 0.3);",
+  // boxShadow: 24,
   p: 4,
+  // filter:'blur(3px) saturate(180%)'
 };
 function App() {
+  const options = [{ label: "Test 1" }, { label: "Test 2" }];
   const [open, setOpen] = React.useState(false);
+  const [data, setData] = React.useState({});
+  const [colleges, setColleges] = React.useState([]);
+  const [events, setEvents] = React.useState([]);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  React.useEffect(() => {
+    fetch("https://bits-apogee.org/registrations/get_college/", {
+      headers: { "content-type": "application/json" },
+      method: "GET",
+      mode: "cors",
+    })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (result) {
+        setColleges(result.data);
+      });
+
+    fetch("https://bits-apogee.org/registrations/events/", {
+      headers: { "content-type": "application/json" },
+      method: "GET",
+      mode: "cors",
+    })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (result) {
+        console.log(result);
+        console.log(result.data);
+        console.log(result.data[0]);
+        setEvents(result.data[0]);
+      });
+  }, []);
+
+  console.log(colleges);
+  console.log(events);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(data);
+    console.log(JSON.stringify(data));
+    fetch("https://bits-apogee.org/registrations/Register/", {
+      headers: { "content-type": "application/json" },
+      method: "POST",
+      body: JSON.stringify(data),
+      mode: "cors",
+    })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (result) {
+        console.log(result);
+      });
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
   return (
     <div className="App">
       <div id="wrapper">
@@ -61,8 +131,11 @@ function App() {
           <div className="logo">
             <img src={require("./assets/Apogee Logo.png")} alt="" />
           </div>
+
           <div className="ModalBox">
-            <Button variant="outlined" onClick={handleOpen}>Open modal</Button>
+            <Button variant="outlined" onClick={handleOpen}>
+              Open modal
+            </Button>
             <Modal
               open={open}
               onClose={handleClose}
@@ -70,12 +143,31 @@ function App() {
               aria-describedby="modal-modal-description"
             >
               <Box sx={style}>
-                <Typography id="modal-modal-title" variant="h6" component="h2">
-                  Text in a modal
+                <Typography
+                  id="modal-modal-title"
+                  variant="h6"
+                  component="h2"
+                  color="white"
+                >
+                  REGISTRATION
                 </Typography>
-                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                  Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-                </Typography>
+                <form onSubmit={handleSubmit}>
+                  <TextField
+                    id="outlined-basic"
+                    label="Outlined"
+                    variant="outlined"
+                  />
+                  <TextField
+                    id="filled-basic"
+                    label="Filled"
+                    variant="filled"
+                  />
+                  <TextField
+                    id="standard-basic"
+                    label="Standard"
+                    variant="standard"
+                  />
+                </form>
               </Box>
             </Modal>
           </div>
@@ -99,34 +191,49 @@ function App() {
               <path fill-rule="evenodd" clip-rule="evenodd" d="M42.9196 14.0942V31.9058C40.7306 36.7946 36.7946 40.7306 31.9058 42.9196H14.0942C9.20538 40.7306 5.26942 36.7946 3.08036 31.9058V14.0942C5.26942 9.20538 9.20538 5.26942 14.0942 3.08036H31.9058C36.7946 5.26942 40.7306 9.20538 42.9196 14.0942ZM34.83 34.8273C36.4938 33.1679 37.014 31.1484 37.1287 28.8692C37.2612 26.518 37.2612 19.482 37.1287 17.1415C37.0202 14.8623 36.4902 12.8419 34.83 11.1789C33.1697 9.516 31.151 8.99489 28.8719 8.88017C26.5233 8.74767 19.482 8.74767 17.1335 8.88017C14.8632 8.98867 12.8454 9.51333 11.1754 11.1727C9.50533 12.8321 8.99133 14.8516 8.87662 17.1308C8.74412 19.4776 8.74412 26.5197 8.87662 28.8692C8.98511 31.1439 9.50889 33.1644 11.1754 34.8273C12.8419 36.4902 14.8543 37.0113 17.1335 37.126C19.482 37.2586 26.5233 37.2586 28.8719 37.126C31.1484 37.0176 33.1661 36.4867 34.83 34.8273Z" fill="white" />
               <path fill-rule="evenodd" clip-rule="evenodd" d="M23 46C35.7026 46 46 35.7026 46 23C46 10.2975 35.7026 0 23 0C10.2975 0 0 10.2975 0 23C0 35.7026 10.2975 46 23 46ZM23 40.6607C32.7537 40.6607 40.6607 32.7537 40.6607 23C40.6607 13.2463 32.7537 5.33929 23 5.33929C13.2463 5.33929 5.33929 13.2463 5.33929 23C5.33929 32.7537 13.2463 40.6607 23 40.6607Z" fill="white" />
             </svg> */}
-            <img src={Insta} />
+              <img src={Insta} />
             </div>
             <div className="facebook">
               {/* <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="23" cy="23" r="23" fill="#00002C" />
               <path d="M46 23.0576C46 10.3298 35.696 0 23 0C10.304 0 0 10.3298 0 23.0576C0 34.2175 7.912 43.5098 18.4 45.6541V29.9749H13.8V23.0576H18.4V17.2932C18.4 12.8431 22.011 9.22306 26.45 9.22306H32.2V16.1404H27.6C26.335 16.1404 25.3 17.1779 25.3 18.4461V23.0576H32.2V29.9749H25.3V46C36.915 44.8471 46 35.0246 46 23.0576Z" fill="white" />
             </svg> */}
-            <img src={Facebook} />
+              <img src={Facebook} />
             </div>
           </div>
-          <div class="sign"><img src={Sign} alt="" /></div>
+          <div class="sign">
+            <img src={Sign} alt="" />
+          </div>
           <div className="balcony">
             {/* <!-- <div className="horizon-glow-buildings"></div> --> */}
             <div className="horizon-glow"></div>
             <div className="balcony-lp">
               <img src={BalconyLaptop} alt="" />
             </div>
-            <div className="balcony-mobile"><img src={BalconyMobile} alt="" /></div>
+            <div className="balcony-mobile">
+              <img src={BalconyMobile} alt="" />
+            </div>
             <div className="glow"></div>
           </div>
-          <div className="city city1"><img src={CityLayer1} alt="" /></div>
-          <div className="city city2"><img src={CityLayer2} alt="" /></div>
-          <div className="city city3"><img src={CityLayer3} alt="" /></div>
-          <div className="city city4"><img src={CityLayer4} alt="" /></div>
-          <div className="city city5"><img src={CityLayer5} alt="" /></div>
-          <div className="city city6"><img src={CityLayer6} alt="" /></div>
+          <div className="city city1">
+            <img src={CityLayer1} alt="" />
+          </div>
+          <div className="city city2">
+            <img src={CityLayer2} alt="" />
+          </div>
+          <div className="city city3">
+            <img src={CityLayer3} alt="" />
+          </div>
+          <div className="city city4">
+            <img src={CityLayer4} alt="" />
+          </div>
+          <div className="city city5">
+            <img src={CityLayer5} alt="" />
+          </div>
+          <div className="city city6">
+            <img src={CityLayer6} alt="" />
+          </div>
         </div>
-
       </div>
     </div>
   );
