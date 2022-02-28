@@ -37,8 +37,9 @@ const style = {
   border: '1px solid rgba(209, 213, 219, 0.3);',
   backdropFilter: 'blur(20px)',
   borderRadius: '20px',
+  padding: '50px 100px',
   // boxShadow: 24,
-  p: 5,
+  // p: 5,
   // filter:'blur(3px) saturate(180%)'
 };
 function App() {
@@ -239,12 +240,14 @@ function App() {
                         <span>
                           Gender
                         </span>
+                        <div className="genderContainerInput">
                         <input type="radio" onChange={handleChange} name="gender" value="Male" />
                         <label >Male</label>
                         <input type="radio" onChange={handleChange} name="gender" value="Female" />
                         <label >Female</label>
                         <input type="radio" onChange={handleChange} name="gender" value="Other" />
                         <label >Other</label>
+                        </div>
                       </div>
                       {/* <div className="cell">
                         <span>

@@ -20,8 +20,9 @@ code {
 }
 .modalHeading {
   font-family: 'BARTKEY';
-  font-size: 60px;
+  font-size: 50px;
   color: white;
+  margin-bottom: 40px;
 }
 #submitBtn {
 
@@ -37,7 +38,12 @@ input:focus {
   outline: none;
 }
 .genderContainer {
-
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
 }
 .registerBtn {
   color: black;
