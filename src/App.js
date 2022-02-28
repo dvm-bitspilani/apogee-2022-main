@@ -8,7 +8,6 @@ import CityLayer3 from './assets/laptop/City Layer 3.svg';
 import CityLayer4 from './assets/laptop/City Layer 4.svg';
 import CityLayer5 from './assets/laptop/City Layer 5.svg';
 import CityLayer6 from './assets/laptop/City Layer 6.svg';
-import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
@@ -16,6 +15,9 @@ import Input from '@mui/material/Input';
 import TextField from '@mui/material/TextField';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
+import { styled, Box } from '@mui/system';
+import ModalUnstyled from '@mui/base/ModalUnstyled';
+
 
 
 // import TextField from '@mui/material/TextField';
@@ -24,33 +26,19 @@ import './App.css';
 // import '/landing.js'
 import { createTheme } from '@mui/material/styles';
 
-const theme = createTheme({
-  status: {
-    danger: '#e53e3e',
-  },
-  palette: {
-    primary: {
-      main: '#0971f1',
-      darker: '#053e85',
-    },
-    neutral: {
-      main: '#64748B',
-      contrastText: '#fff',
-    },
-
-  },
-});
-
 const style = {
   position: 'absolute',
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 1000,
-  bgcolor: 'rgba(255, 255, 255, 0.3)',
+  width: '90vw',
+  height: '90vh',
+  bgcolor: 'rgba(7, 9, 73, 0.09)',
   border: '1px solid rgba(209, 213, 219, 0.3);',
+  backdropFilter: 'blur(20px)',
+  borderRadius: '20px',
   // boxShadow: 24,
-  p: 4,
+  p: 5,
   // filter:'blur(3px) saturate(180%)'
 };
 function App() {
@@ -130,7 +118,9 @@ function App() {
             <img src={require("./assets/Apogee Logo.png")} alt="" />
           </div>
           <div className="ModalBox">
-            <Button variant="outlined" onClick={handleOpen}>Open modal</Button>
+            <div className="registerBtnBorder">
+            <button className="registerBtn" onClick={handleOpen}>REGISTER</button>
+            </div>
             <Modal
               open={open}
               onClose={handleClose}
@@ -138,9 +128,9 @@ function App() {
               aria-describedby="modal-modal-description"
             >
               <Box sx={style}>
-                <Typography id="modal-modal-title" variant="h6" component="h2" color="white">
+                <div className="modalHeading">
                   REGISTRATION
-                </Typography>
+                </div>
                 <Typography id="modal-modal-description" sx={{ mt: 2 }}>
 
                   <form onSubmit={handleSubmit}>
@@ -245,7 +235,7 @@ function App() {
                           <MenuItem value={30}>Thirty</MenuItem>
                         </Select>
                       </div> */}
-                      <div className="cell">
+                      <div className="genderContainer">
                         <span>
                           Gender
                         </span>
@@ -262,7 +252,7 @@ function App() {
                         </span>
                         <TextField type="text" onChange={handleChange} name="referral" label="Type your Referral Code" sx={{ width: 300, border: '1px solid white', color: 'white', borderRadius: '2px' }} />
                       </div> */}
-                      <div className='cell'>
+                      <div className='cell' id="submitBtn">
                         <input type="submit" value="Submit" id="submit-form" data-bs-dismiss="modal" />
                       </div>
 
