@@ -85,14 +85,18 @@ img {
   position: absolute;
   top: 0;
   mix-blend-mode: screen; */
-  background: url(./assets/laptop/Stars.svg) no-repeat;
+  background: url(./assets/laptop/Stars.png) no-repeat;
   background-size: cover;
-  height: 100vh;
+  background-position: center center;
+  height: 200vh;
+  width: 200vw;
   z-index: 5;
   mix-blend-mode: screen;
   position: absolute;
-  top: 0;
+  top: -50vh;
+  bottom: 10vh;
   width: 100%;
+  animation: rotateMoon 150s ease-in-out reverse infinite;
 }
 
 .balcony {
@@ -112,12 +116,29 @@ img {
   z-index: 10;
   position: absolute;
   bottom: 10vh;
-  left: 45%;
+  left: 50%;
   transform: translateX(-50%);
   mix-blend-mode: screen;
-  background: url(./assets/laptop/Moon.svg) no-repeat;
-  background-size: 110%;
-  height: 100vh;
+  /* background: url(./assets/laptop/Moon.svg) no-repeat; */
+  background-size: 100%;
+  height: 110vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+#moon {
+  animation: rotateMoon 150s infinite;
+  position: relative;
+  top: 20%;
+  /* mix-blend-mode: screen; */
+}
+
+@keyframes rotateMoon {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
 }
 
 .balcony .glow {
@@ -273,19 +294,24 @@ img {
   }
 
   .stars {
-    background: url(./assets/mobile/Stars.svg) no-repeat;
+    background: url(./assets/mobile/Stars.png) no-repeat;
     background-size: 100% 100%;
     height: 100vh;
     top: -20vh;
+    animation: rotateMoon 150s ease-in-out reverse infinite;
   }
 
   .moon {
-    background: url(./assets/mobile/Moon.svg) no-repeat;
+    /* background: url(./assets/mobile/Moon.svg) no-repeat; */
     left: 50%;
     width: 100%;
     background-size: 100%;
     bottom: 1.75rem;
     mix-blend-mode: screen;
+  }
+  #moon {
+    /* display: none; */
+    width: 400vw;
   }
 
   .city {
@@ -421,5 +447,10 @@ nav {
 
   .line-menu{
     height: 3px;
+  }
+}
+@media screen and (max-width: 376px) {
+  #moon {
+    top:40%;
   }
 }

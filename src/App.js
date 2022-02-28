@@ -1,31 +1,44 @@
-import logo from "./logo.svg";
-import * as React from "react";
-import BalconyLaptop from "./assets/laptop/Balcony.svg";
-import BalconyMobile from "./assets/mobile/Balcony.svg";
-import CityLayer1 from "./assets/laptop/City Layer 1.svg";
-import CityLayer2 from "./assets/laptop/City Layer 2.svg";
-import CityLayer3 from "./assets/laptop/City Layer 3.svg";
-import CityLayer4 from "./assets/laptop/City Layer 4.svg";
-import CityLayer5 from "./assets/laptop/City Layer 5.svg";
-import CityLayer6 from "./assets/laptop/City Layer 6.svg";
-import Twitter from "./assets/Twitter.svg";
-import Insta from "./assets/Insta.svg";
-import Facebook from "./assets/Facebook.svg";
-import Sign from "./assets/laptop/Sign.svg";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import Modal from "@mui/material/Modal";
-import Input from "@mui/material/Input";
-import TextField from "@mui/material/TextField";
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
+import logo from './logo.svg';
+import * as React from 'react';
+import BalconyLaptop from './assets/laptop/Balcony.svg';
+import BalconyMobile from './assets/mobile/Balcony.svg';
+import CityLayer1 from './assets/laptop/City Layer 1.svg';
+import CityLayer2 from './assets/laptop/City Layer 2.svg';
+import CityLayer3 from './assets/laptop/City Layer 3.svg';
+import CityLayer4 from './assets/laptop/City Layer 4.svg';
+import CityLayer5 from './assets/laptop/City Layer 5.svg';
+import CityLayer6 from './assets/laptop/City Layer 6.svg';
+import Moon from './assets/Moon.svg';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+import Input from '@mui/material/Input';
+import TextField from '@mui/material/TextField';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+import { styled, Box } from '@mui/system';
+import ModalUnstyled from '@mui/base/ModalUnstyled';
+
 
 // import TextField from '@mui/material/TextField';
 import "./Modal.css";
 import "./App.css";
 // import '/landing.js'
 import { createTheme } from "@mui/material/styles";
+
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: '90vw',
+  height: '90vh',
+  bgcolor: 'rgba(7, 9, 73, 0.09)',
+  border: '1px solid rgba(209, 213, 219, 0.3);',
+  backdropFilter: 'blur(20px)',
+  borderRadius: '20px',
+  padding: '50px 100px',
 
 const theme = createTheme({
   status: {
@@ -43,16 +56,8 @@ const theme = createTheme({
   },
 });
 
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 1000,
-  bgcolor: "rgba(255, 255, 255, 0.3)",
-  border: "1px solid rgba(209, 213, 219, 0.3);",
   // boxShadow: 24,
-  p: 4,
+  // p: 5,
   // filter:'blur(3px) saturate(180%)'
 };
 function App() {
@@ -133,9 +138,11 @@ function App() {
           </div>
 
           <div className="ModalBox">
-            <Button variant="outlined" onClick={handleOpen}>
-              Open modal
-            </Button>
+
+            <div className="registerBtnBorder">
+            <button className="registerBtn" onClick={handleOpen}>REGISTER</button>
+            </div>
+
             <Modal
               open={open}
               onClose={handleClose}
@@ -143,38 +150,146 @@ function App() {
               aria-describedby="modal-modal-description"
             >
               <Box sx={style}>
-                <Typography
-                  id="modal-modal-title"
-                  variant="h6"
-                  component="h2"
-                  color="white"
-                >
+                <div className="modalHeading">
                   REGISTRATION
+                </div>
+                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+
+                  <form onSubmit={handleSubmit}>
+                    <div className="wrapper">
+                      <div className="cell">
+                        <span>
+                          Name
+                        </span>
+                        <TextField type="text" onChange={handleChange} name="name" label="Name" sx={{ width: 300, border: '1px solid white', color: 'white', borderRadius: '2px' }}
+                        />
+                      </div>
+                      <div className="cell">
+                        <span>
+                          Year of Study
+                        </span>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Age"
+                          name="year"
+                          onChange={handleChange}
+                          sx={{ width: 300, border: '1px solid white', color: 'white', borderRadius: '2px' }}
+                        >
+                          <MenuItem value={10}>Ten</MenuItem>
+                          <MenuItem value={20}>Twenty</MenuItem>
+                          <MenuItem value={30}>Thirty</MenuItem>
+                        </Select>
+                      </div>
+                      <div className="cell">
+                        <span>
+                          College
+                        </span>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Age"
+                          name="college_id"
+                          onChange={handleChange}
+                          sx={{ width: 300, border: '1px solid white', color: 'white', borderRadius: '2px' }}
+                        >
+                          <MenuItem value={1}>Ten</MenuItem>
+                          <MenuItem value={1}>Twenty</MenuItem>
+                          <MenuItem value={1}>Thirty</MenuItem>
+                          {/* {colleges.map(el => {
+                            <MenuItem value={el.id}>{el.name}</MenuItem>
+                          })} */}
+                        </Select>
+                      </div>
+                      <div className="cell">
+                        <span>
+                          City
+                        </span>
+                        <TextField type="text" onChange={handleChange} name="city" label="Type your City" sx={{ width: 300, border: '1px solid white', color: 'white' }}
+                        />
+                      </div>
+                      <div className="cell">
+                        <span>
+                          E-mail
+                        </span>
+                        <TextField type="email" onChange={handleChange} name="email_id" label="Type your email" sx={{ width: 300, border: '1px solid white', color: 'white' }}
+                        />
+                      </div>
+                      <div className="cell">
+                        <span>
+                          Events
+                        </span>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Age"
+                          name="events"
+                          onChange={handleChange}
+                          sx={{ width: 300, border: '1px solid white', color: 'white', borderRadius: '2px' }}
+                        >
+                          <MenuItem value={1}>Ten</MenuItem>
+                          <MenuItem value={1}>Twenty</MenuItem>
+                          <MenuItem value={1}>Thirty</MenuItem>
+                          {/* {events.events.forEach(el => <MenuItem value={el.id}>{el.name}</MenuItem>)} */}
+                        </Select>
+                      </div>
+                      <div className="cell">
+                        <span>
+                          Phone
+                        </span>
+                        <TextField type="text" onChange={handleChange} name="phone" label="Type your phone number" sx={{ width: 300, border: '1px solid white', color: 'white' }}
+                        />
+                      </div>
+                      {/* <div className="cell">
+                        <span>
+                          Workshop
+                        </span>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Age"
+                          name="workshop"
+                          onChange={handleChange}
+                          sx={{ width: 300, border: '1px solid white', color: 'white', borderRadius: '2px' }}
+                        >
+                          <MenuItem value={10}>Ten</MenuItem>
+                          <MenuItem value={20}>Twenty</MenuItem>
+                          <MenuItem value={30}>Thirty</MenuItem>
+                        </Select>
+                      </div> */}
+                      <div className="genderContainer">
+                        <span>
+                          Gender
+                        </span>
+                        <div className="genderContainerInput">
+                        <input type="radio" onChange={handleChange} name="gender" value="Male" />
+                        <label >Male</label>
+                        <input type="radio" onChange={handleChange} name="gender" value="Female" />
+                        <label >Female</label>
+                        <input type="radio" onChange={handleChange} name="gender" value="Other" />
+                        <label >Other</label>
+                        </div>
+                      </div>
+                      {/* <div className="cell">
+                        <span>
+                          Referral Code
+                        </span>
+                        <TextField type="text" onChange={handleChange} name="referral" label="Type your Referral Code" sx={{ width: 300, border: '1px solid white', color: 'white', borderRadius: '2px' }} />
+                      </div> */}
+                      <div className='cell' id="submitBtn">
+                        <input type="submit" value="Submit" id="submit-form" data-bs-dismiss="modal" />
+                      </div>
+
+                    </div>
+                  </form>
                 </Typography>
-                <form onSubmit={handleSubmit}>
-                  <TextField
-                    id="outlined-basic"
-                    label="Outlined"
-                    variant="outlined"
-                  />
-                  <TextField
-                    id="filled-basic"
-                    label="Filled"
-                    variant="filled"
-                  />
-                  <TextField
-                    id="standard-basic"
-                    label="Standard"
-                    variant="standard"
-                  />
-                </form>
               </Box>
             </Modal>
           </div>
         </nav>
         <div>
           {/* <!-- <div className="moon"><img src={require("./assets/laptop/Moon.svg")} alt=""/></div> --> */}
-          <div className="moon"></div>
+          <div className="moon"> <img id="moon" src={Moon}/> </div>
           <div className="socials">
             <div className="twitter">
               {/* <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
