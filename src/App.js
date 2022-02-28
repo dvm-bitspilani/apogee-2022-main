@@ -8,6 +8,7 @@ import CityLayer3 from './assets/laptop/City Layer 3.svg';
 import CityLayer4 from './assets/laptop/City Layer 4.svg';
 import CityLayer5 from './assets/laptop/City Layer 5.svg';
 import CityLayer6 from './assets/laptop/City Layer 6.svg';
+import Moon from './assets/Moon.svg';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
@@ -268,7 +269,7 @@ function App() {
         </nav>
         <div>
           {/* <!-- <div className="moon"><img src={require("./assets/laptop/Moon.svg")} alt=""/></div> --> */}
-          <div className="moon"></div>
+          <div className="moon"> <img id="moon" src={Moon}/> </div>
           <div className="socials">
             <div className="twitter">
               <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
