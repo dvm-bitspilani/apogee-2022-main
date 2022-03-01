@@ -101,7 +101,20 @@ input {
   align-content: center;
   justify-content: space-between;
   align-items: center;
+  width: 85%;
 }
+
+span{
+  padding: 10px;
+}
+
+.genderContainerInput{
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
 .registerBtn {
   color: black;
   font-size: 18px;
