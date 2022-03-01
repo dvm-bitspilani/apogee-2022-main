@@ -156,8 +156,9 @@ function App() {
                         <Select
                           labelId="demo-simple-select-label"
                           id="demo-simple-select"
-                          label="Year of Study"
+                          label=" "
                           name="year"
+                          placeholder='Year of Study'
                           onChange={handleChange}
                           sx={{ width: 300, border: '1px solid white', color: 'white', borderRadius: '2px' }}
                         >
