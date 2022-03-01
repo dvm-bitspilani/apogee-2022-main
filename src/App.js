@@ -161,9 +161,10 @@ function App() {
                           onChange={handleChange}
                           sx={{ width: 300, border: '1px solid white', color: 'white', borderRadius: '2px' }}
                         >
-                          <MenuItem value={10}>Ten</MenuItem>
-                          <MenuItem value={20}>Twenty</MenuItem>
-                          <MenuItem value={30}>Thirty</MenuItem>
+                          <MenuItem value={10}>1st</MenuItem>
+                          <MenuItem value={20}>2nd</MenuItem>
+                          <MenuItem value={30}>3rd</MenuItem>
+                          <MenuItem value={30}>4th</MenuItem>
                         </Select>
                       </div>
                       <div className="cell">
