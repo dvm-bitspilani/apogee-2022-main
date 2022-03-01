@@ -16,11 +16,10 @@ import Modal from '@mui/material/Modal';
 import Input from '@mui/material/Input';
 import TextField from '@mui/material/TextField';
 import Select from '@mui/material/Select';
+import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import { styled, Box } from '@mui/system';
 import ModalUnstyled from '@mui/base/ModalUnstyled';
-
-
 // import TextField from '@mui/material/TextField';
 import "./Modal.css";
 import "./App.css";
@@ -126,7 +125,7 @@ function App() {
           <div className="ModalBox">
 
             <div className="registerBtnBorder">
-            <button className="registerBtn" onClick={handleOpen}>REGISTER</button>
+              <button className="registerBtn" onClick={handleOpen}>REGISTER</button>
             </div>
 
             <Modal
@@ -157,7 +156,7 @@ function App() {
                         <Select
                           labelId="demo-simple-select-label"
                           id="demo-simple-select"
-                          label="Age"
+                          label="Year of Study"
                           name="year"
                           onChange={handleChange}
                           sx={{ width: 300, border: '1px solid white', color: 'white', borderRadius: '2px' }}
@@ -223,7 +222,7 @@ function App() {
                         <span>
                           Phone
                         </span>
-                        <TextField type="text" onChange={handleChange} name="phone" label="Type your phone number" sx={{ width: 300, border: '1px solid white', color: 'white' }}
+                        <TextField type="text" variant="outlined" onChange={handleChange} name="phone" label="Type your phone number" sx={{ width: 300, color: 'white', border: '1px solid white' }}
                         />
                       </div>
                       {/* <div className="cell">
@@ -248,12 +247,12 @@ function App() {
                           Gender
                         </span>
                         <div className="genderContainerInput">
-                        <input type="radio" onChange={handleChange} name="gender" value="Male" />
-                        <label >Male</label>
-                        <input type="radio" onChange={handleChange} name="gender" value="Female" />
-                        <label >Female</label>
-                        <input type="radio" onChange={handleChange} name="gender" value="Other" />
-                        <label >Other</label>
+                          <input type="radio" onChange={handleChange} name="gender" value="Male" />
+                          <label >Male</label>
+                          <input type="radio" onChange={handleChange} name="gender" value="Female" />
+                          <label >Female</label>
+                          <input type="radio" onChange={handleChange} name="gender" value="Other" />
+                          <label >Other</label>
                         </div>
                       </div>
                       {/* <div className="cell">
@@ -262,8 +261,10 @@ function App() {
                         </span>
                         <TextField type="text" onChange={handleChange} name="referral" label="Type your Referral Code" sx={{ width: 300, border: '1px solid white', color: 'white', borderRadius: '2px' }} />
                       </div> */}
-                      <div className='cell' id="submitBtn">
-                        <input type="submit" value="Submit" id="submit-form" data-bs-dismiss="modal" />
+                      <div id="submitBtn">
+                        <div className="registerBtnBorder">
+                        <input type="submit" value="REGISTER" id="submit-form" data-bs-dismiss="modal" />
+                        </div>
                       </div>
 
                     </div>
@@ -275,7 +276,7 @@ function App() {
         </nav>
         <div>
           {/* <!-- <div className="moon"><img src={require("./assets/laptop/Moon.svg")} alt=""/></div> --> */}
-          <div className="moon"> <img id="moon" src={Moon}/> </div>
+          <div className="moon"> <img id="moon" src={Moon} /> </div>
           <div className="socials">
             <div className="twitter">
               <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
