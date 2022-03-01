@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Montserrat:wght@500&family=Open+Sans:wght@600&display=swap");
+
+body {
+  margin: 0;
+  overflow: hidden;
+  overflow-anchor: none;
+}
+
+html {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+}
+
+.bg {
+  background: url(./assets/laptop/events_balcony.svg) no-repeat;
+  background-size: cover;
+  height: 100vh;
+  z-index: -10;
+}
+
+.container {
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.card-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  font-family: "Lato", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-family: "Open Sans", sans-serif;
+}
+
+.card {
+  width: 33%;
+  margin: 1rem;
+  background: rgba(7, 9, 73, 0.09);
+  box-shadow: inset 0px -106.879px 88.6312px -83.4176px rgba(104, 80, 148, 0.3),
+    inset 0px 5.2136px 23.4612px rgba(107, 100, 154, 0.3),
+    inset 0px 1.3034px 52.136px rgba(179, 171, 226, 0.2);
+  backdrop-filter: blur(130px);
+  border-radius: 20px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-img {
+  width: 40%;
+}
+
+.card-text {
+  width: 60%;
+  padding: 0 1rem;
+}
+
+.view-btn{
+    width: 80%;
+    cursor: pointer;
+}
+
+.arrow{
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    z-index: 10;
+    width: 2rem;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .card-container{
+    flex-direction: column;
+    overflow-y: scroll;
+  }
+
+  .card{
+    width: 100%;
+    margin: 1rem 0;
+  }
+
+  .arrow{
+    left: 1rem;
+  }
+}
