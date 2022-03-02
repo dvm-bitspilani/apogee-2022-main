@@ -33,19 +33,18 @@ code {
   color: white;
   margin-bottom: 40px;
 }
+
 #submitBtn {
     /* background: red; */
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    align-content: center;
 }
+
 #submit-form {
   color: black;
-  font-size: 18px;
+  font-size: 28px;
   /* background: white; */
   font-family: 'Montserrat';
   padding: 5px 30px;
