@@ -422,19 +422,21 @@ nav {
 
 @media screen and (max-width: 768px) {
   nav{
-    flex-direction: column;
+    flex-direction: column-reverse;
     padding: 1.5rem;
   }
 
   nav div:last-child{
     text-align: right;
-    align-self: flex-end;
+    margin: 10px;
+    position: relative;
+    left: 5px;
   }
 
   .logo{
     order: 2;
     width: 80%;
-    margin-top: 3rem;
+    margin-top: 1rem;
   }
 
   .hamburger{
