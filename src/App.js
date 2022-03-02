@@ -18,13 +18,51 @@ import TextField from '@mui/material/TextField';
 import Select from '@mui/material/Select';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
+import { useTheme } from '@mui/material/styles';
 import { styled, Box } from '@mui/system';
+import FormControl from '@mui/material/FormControl';
+import OutlinedInput from '@mui/material/OutlinedInput';
+
 import ModalUnstyled from '@mui/base/ModalUnstyled';
 // import TextField from '@mui/material/TextField';
 import "./Modal.css";
 import "./App.css";
 // import '/landing.js'
 import { createTheme } from "@mui/material/styles";
+import Chip from '@mui/material/Chip';
+
+const ITEM_HEIGHT = 48;
+const ITEM_PADDING_TOP = 8;
+const MenuProps = {
+  PaperProps: {
+    style: {
+      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+      width: 250,
+    },
+  },
+};
+
+const names = [
+  'Oliver Hansen',
+  'Van Henry',
+  'April Tucker',
+  'Ralph Hubbard',
+  'Omar Alexander',
+  'Carlos Abbott',
+  'Miriam Wagner',
+  'Bradley Wilkerson',
+  'Virginia Andrews',
+  'Kelly Snyder',
+];
+
+function getStyles(name, personName, theme) {
+  return {
+    fontWeight:
+      personName.indexOf(name) === -1
+        ? theme.typography.fontWeightRegular
+        : theme.typography.fontWeightMedium,
+  };
+}
 
 
 const style = {
@@ -53,7 +91,18 @@ function App() {
   const [events, setEvents] = React.useState([]);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const theme = useTheme();
+  const [personName, setPersonName] = React.useState([]);
 
+  const handleChange = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setPersonName(
+      // On autofill we get a stringified value.
+      typeof value === 'string' ? value.split(',') : value,
+    );
+  };
   React.useEffect(() => {
     fetch("https://bits-apogee.org/registrations/get_college/", {
       headers: { "content-type": "application/json" },
@@ -104,13 +153,13 @@ function App() {
       });
   };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setData((prevState) => ({
+  //     ...prevState,
+  //     [name]: value,
+  //   }));
+  // };
 
   return (
     <div className="App">
@@ -206,26 +255,83 @@ function App() {
                         <span>
                           Events
                         </span>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="Age"
-                          name="events"
-                          onChange={handleChange}
-                          sx={{ width: 300, border: '1px solid white', color: 'white', borderRadius: '2px' }}
-                        >
-                          <MenuItem value={1}>Ten</MenuItem>
-                          <MenuItem value={1}>Twenty</MenuItem>
-                          <MenuItem value={1}>Thirty</MenuItem>
-                          {/* {events.events.forEach(el => <MenuItem value={el.id}>{el.name}</MenuItem>)} */}
-                        </Select>
+                        <div>
+      <FormControl sx={{ m: 0, width: 300 }}>
+        <InputLabel id="demo-multiple-chip-label">Events</InputLabel>
+        <Select
+          labelId="demo-multiple-chip-label"
+          id="demo-multiple-chip"
+          multiple
+          value={personName}
+          onChange={handleChange}
+          input={<OutlinedInput id="select-multiple-chip" label="Events" />}
+          renderValue={(selected) => (
+            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+              {selected.map((value) => (
+                <Chip key={value} label={value} />
+              ))}
+            </Box>
+          )}
+          MenuProps={MenuProps}
+        >
+          {names.map((name) => (
+            <MenuItem
+              key={name}
+              value={name}
+              style={getStyles(name, personName, theme)}
+            >
+              {name}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+    </div>
                       </div>
+
+                      
                       <div className="cell">
                         <span>
                           Phone
                         </span>
                         <TextField type="text" variant="outlined" onChange={handleChange} name="phone" label="Type your phone number" sx={{ width: 300, color: 'white', border: '1px solid white' }}
                         />
+                      </div>
+
+                      <div className="cell">
+                        <span>
+                          Workshops
+                        </span>
+                        <div>
+      <FormControl sx={{ m: 0, width: 300 }}>
+        <InputLabel id="demo-multiple-chip-label">You can select more than one workshops</InputLabel>
+        <Select
+          labelId="demo-multiple-chip-label"
+          id="workshopsArr"
+          multiple
+          value={personName}
+          onChange={handleChange}
+          input={<OutlinedInput id="select-multiple-chip" label="You can select more than one workshops" />}
+          renderValue={(selected) => (
+            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+              {selected.map((value) => (
+                <Chip key={value} label={value} />
+              ))}
+            </Box>
+          )}
+          MenuProps={MenuProps}
+        >
+          {names.map((name) => (
+            <MenuItem
+              key={name}
+              value={name}
+              style={getStyles(name, personName, theme)}
+            >
+              {name}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+    </div>
                       </div>
                       {/* <div className="cell">
                         <span>
@@ -257,19 +363,20 @@ function App() {
                           <label >Other</label>
                         </div>
                       </div>
-                      {/* <div className="cell">
+                      <div className="cell">
                         <span>
                           Referral Code
                         </span>
                         <TextField type="text" onChange={handleChange} name="referral" label="Type your Referral Code" sx={{ width: 300, border: '1px solid white', color: 'white', borderRadius: '2px' }} />
-                      </div> */}
-                      <div id="submitBtn">
+                      </div>
+                    
+
+                    </div>
+                    <div id="submitBtn">
                         <div className="registerBtnBorder">
                         <input type="submit" value="REGISTER" id="submit-form" data-bs-dismiss="modal" />
                         </div>
                       </div>
-
-                    </div>
                   </form>
                 </Typography>
               </Box>
