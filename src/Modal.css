@@ -4,7 +4,9 @@
     justify-content:space-between;
     width: 85%;
 }
-
+.cell * {
+    font-family: 'gilroy' !important;
+}
 .wrapper{
 display:grid;
 grid-template-columns:auto auto;
@@ -35,3 +37,4 @@ color: white !important
 #submitBtn{
     margin: 40px 0 0 0;
 }
+

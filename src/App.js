@@ -92,13 +92,23 @@ function App() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const theme = useTheme();
-  const [personName, setPersonName] = React.useState([]);
-
-  const handleChange = (event) => {
+  const [eventName, setEventName] = React.useState([]);
+  const [workshopName, setWorkshopName] = React.useState([]);
+  const handleChangeEvents = (event) => {
     const {
       target: { value },
     } = event;
-    setPersonName(
+    setEventName(
+      // On autofill we get a stringified value.
+      typeof value === 'string' ? value.split(',') : value,
+    );
+  };
+
+  const handleChangeWorkshops = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setWorkshopName(
       // On autofill we get a stringified value.
       typeof value === 'string' ? value.split(',') : value,
     );
@@ -153,13 +163,13 @@ function App() {
       });
   };
 
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setData((prevState) => ({
-  //     ...prevState,
-  //     [name]: value,
-  //   }));
-  // };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
 
   return (
     <div className="App">
@@ -257,14 +267,14 @@ function App() {
                         </span>
                         <div>
       <FormControl sx={{ m: 0, width: 300 }}>
-        <InputLabel id="demo-multiple-chip-label">Events</InputLabel>
+        <InputLabel id="demo-multiple-chip-label">You can select more than one events</InputLabel>
         <Select
           labelId="demo-multiple-chip-label"
-          id="demo-multiple-chip"
+          id="eventsArr"
           multiple
-          value={personName}
-          onChange={handleChange}
-          input={<OutlinedInput id="select-multiple-chip" label="Events" />}
+          value={eventName}
+          onChange={handleChangeEvents}
+          input={<OutlinedInput id="select-multiple-events" label="You can select more than one events" />}
           renderValue={(selected) => (
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
               {selected.map((value) => (
@@ -278,7 +288,7 @@ function App() {
             <MenuItem
               key={name}
               value={name}
-              style={getStyles(name, personName, theme)}
+              style={getStyles(name, eventName, theme)}
             >
               {name}
             </MenuItem>
@@ -308,9 +318,9 @@ function App() {
           labelId="demo-multiple-chip-label"
           id="workshopsArr"
           multiple
-          value={personName}
-          onChange={handleChange}
-          input={<OutlinedInput id="select-multiple-chip" label="You can select more than one workshops" />}
+          value={workshopName}
+          onChange={handleChangeWorkshops}
+          input={<OutlinedInput id="select-multiple-workshops" label="You can select more than one workshops" />}
           renderValue={(selected) => (
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
               {selected.map((value) => (
@@ -324,7 +334,7 @@ function App() {
             <MenuItem
               key={name}
               value={name}
-              style={getStyles(name, personName, theme)}
+              style={getStyles(name, workshopName, theme)}
             >
               {name}
             </MenuItem>
