@@ -6,7 +6,7 @@ import "../events.css"
 
 function Events() {
     return (
-        <React.Fragment>
+        <div>
             <div className="bg"></div>
             <div className="arrow"><img src={Arrow} alt="" /></div>
             <div className="container">
@@ -17,7 +17,8 @@ function Events() {
                         <div className="card-text">
                             <h3>Heading</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            <div class="view-btn"><img src={ViewBtn} /></div>
+                            {/* <div className="view-btn"><img src={ViewBtn} /></div> */}
+                            <div className="view-btn">View Details</div>
                         </div>
                     </div>
                     <div className="card">
@@ -25,7 +26,8 @@ function Events() {
                         <div className="card-text">
                             <h3>Heading</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            <div class="view-btn"><img src={ViewBtn} /></div>
+                            {/* <div className="view-btn"><img src={ViewBtn} /></div> */}
+                            <div className="view-btn">View Details</div>
                         </div>
                     </div>
                     <div className="card">
@@ -33,7 +35,8 @@ function Events() {
                         <div className="card-text">
                             <h3>Heading</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            <div class="view-btn"><img src={ViewBtn} /></div>
+                            {/* <div className="view-btn"><img src={ViewBtn} /></div> */}
+                            <div className="view-btn">View Details</div>
                         </div>
                     </div>
                     <div className="card">
@@ -41,7 +44,8 @@ function Events() {
                         <div className="card-text">
                             <h3>Heading</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            <div class="view-btn"><img src={ViewBtn} /></div>
+                            {/* <div className="view-btn"><img src={ViewBtn} /></div> */}
+                            <div className="view-btn">View Details</div>
                         </div>
                     </div>
                     <div className="card">
@@ -49,7 +53,8 @@ function Events() {
                         <div className="card-text">
                             <h3>Heading</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            <div class="view-btn"><img src={ViewBtn} /></div>
+                            {/* <div className="view-btn"><img src={ViewBtn} /></div> */}
+                            <div className="view-btn">View Details</div>
                         </div>
                     </div>
                     <div className="card">
@@ -57,12 +62,13 @@ function Events() {
                         <div className="card-text">
                             <h3>Heading</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            <div class="view-btn"><img src={ViewBtn} /></div>
+                            {/* <div className="view-btn"><img src={ViewBtn} /></div> */}
+                            <div className="view-btn">View Details</div>
                         </div>
                     </div>
                 </div>
             </div>
-        </React.Fragment>
+        </div>
     )
 }
 
