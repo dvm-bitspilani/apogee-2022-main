@@ -42,18 +42,7 @@ const MenuProps = {
   },
 };
 
-const names = [
-  'Oliver Hansen',
-  'Van Henry',
-  'April Tucker',
-  'Ralph Hubbard',
-  'Omar Alexander',
-  'Carlos Abbott',
-  'Miriam Wagner',
-  'Bradley Wilkerson',
-  'Virginia Andrews',
-  'Kelly Snyder',
-];
+
 
 function getStyles(name, personName, theme) {
   return {
@@ -89,20 +78,26 @@ function App() {
   const [data, setData] = React.useState({});
   const [colleges, setColleges] = React.useState([]);
   const [events, setEvents] = React.useState([]);
+  const [finalNames, setNames] = React.useState([]);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const theme = useTheme();
   const [eventName, setEventName] = React.useState([]);
   const [workshopName, setWorkshopName] = React.useState([]);
+  var selectedEvents = [];
+  var selectedWorkshops = [];
+
   const handleChangeEvents = (event) => {
     const {
       target: { value },
     } = event;
     setEventName(
-      // On autofill we get a stringified value.
       typeof value === 'string' ? value.split(',') : value,
+      selectedEvents=value
+
     );
   };
+  const names = [];
 
   const handleChangeWorkshops = (event) => {
     const {
@@ -111,6 +106,7 @@ function App() {
     setWorkshopName(
       // On autofill we get a stringified value.
       typeof value === 'string' ? value.split(',') : value,
+      selectedEvents=value
     );
   };
   React.useEffect(() => {
@@ -139,7 +135,13 @@ function App() {
         console.log(result.data);
         console.log(result.data[0]);
         setEvents(result.data[0]);
+        console.log(result.data[0].events);
+        result.data[0].events.forEach((item) => {
+          names.push(item.name);
+        })
+        setNames(names);
       });
+    
   }, []);
 
   console.log(colleges);
@@ -169,7 +171,11 @@ function App() {
       ...prevState,
       [name]: value,
     }));
+    console.log(data);
   };
+
+  
+  // console.log(document.getElementById("nameVal").value);
 
   return (
     <div className="App">
@@ -205,7 +211,7 @@ function App() {
                         <span>
                           Name
                         </span>
-                        <TextField type="text" onChange={handleChange} name="name" label="Name" sx={{ width: 300, border: '1px solid white', color: 'white', borderRadius: '2px' }}
+                        <TextField type="text"  id="nameVal" onChange={handleChange} name="name" label="Name" sx={{ width: 300, border: '1px solid white', color: 'white', borderRadius: '2px' }}
                         />
                       </div>
                       <div className="cell">
@@ -239,12 +245,12 @@ function App() {
                           onChange={handleChange}
                           sx={{ width: 300, border: '1px solid white', color: 'white', borderRadius: '2px' }}
                         >
-                          <MenuItem value={1}>Ten</MenuItem>
+                          {/* <MenuItem value={1}>Ten</MenuItem>
                           <MenuItem value={1}>Twenty</MenuItem>
-                          <MenuItem value={1}>Thirty</MenuItem>
-                          {/* {colleges.map(el => {
+                          <MenuItem value={1}>Thirty</MenuItem> */}
+                          {colleges.map(el => (
                             <MenuItem value={el.id}>{el.name}</MenuItem>
-                          })} */}
+                          ))}
                         </Select>
                       </div>
                       <div className="cell">
@@ -282,9 +288,10 @@ function App() {
               ))}
             </Box>
           )}
-          MenuProps={MenuProps}
+                              MenuProps={MenuProps}
+          
         >
-          {names.map((name) => (
+          {finalNames.map((name) => (
             <MenuItem
               key={name}
               value={name}
@@ -379,7 +386,13 @@ function App() {
                         </span>
                         <TextField type="text" onChange={handleChange} name="referral" label="Type your Referral Code" sx={{ width: 300, border: '1px solid white', color: 'white', borderRadius: '2px' }} />
                       </div>
-                    
+                      <div className="cell">
+                        <span>
+                         Commitments
+                        </span>
+                        <TextField type="text" variant="outlined" onChange={handleChange} name="commitments" label="Type your Tech-teams/Clubs" sx={{ width: 300, color: 'white', border: '1px solid white' }}
+                        />
+                      </div>
 
                     </div>
                     <div id="submitBtn">
