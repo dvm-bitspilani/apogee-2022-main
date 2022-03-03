@@ -353,7 +353,7 @@ img {
   .sign{
     left: 0;
     bottom: 12rem;
-    width: 8rem;
+    /* width: 8rem; */
   }
 }
 

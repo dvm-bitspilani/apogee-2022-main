@@ -33,6 +33,14 @@ import Chip from '@mui/material/Chip';
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
+const CURRENT_DATE = new Date();
+const APOGEE_DATE = new Date(2022, 3 , 7);
+console.log(CURRENT_DATE,"CURRENT");
+console.log(APOGEE_DATE,"APOGEE");
+var Difference_In_Time = APOGEE_DATE.getTime() - CURRENT_DATE.getTime();
+var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+const DAYS_LEFT = Math.round(Difference_In_Days);
+
 const MenuProps = {
   PaperProps: {
     style: {
@@ -86,6 +94,10 @@ function App() {
   const [workshopName, setWorkshopName] = React.useState([]);
   var selectedEvents = [];
   var selectedWorkshops = [];
+  React.useEffect(() => {
+    // Update the document title using the browser API
+    document.getElementsByClassName('signDate')[0].innerHTML = `${DAYS_LEFT} DAYS <br/> TO GO`;
+  });
 
   const handleChangeEvents = (event) => {
     const {
@@ -432,6 +444,7 @@ function App() {
           </div>
           <div className="sign">
             <img src={Sign} alt="" />
+            <div className="signDate">27 DAYS<br/> TO GO </div>
           </div>
           <div className="balcony">
             {/* <!-- <div className="horizon-glow-buildings"></div> --> */}
@@ -467,5 +480,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
