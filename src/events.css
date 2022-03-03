@@ -9,7 +9,7 @@
 body {
   margin: 0;
   width: 100%;
-  height:100%;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -39,11 +39,15 @@ img {
 .container {
   width: 80%;
   position: absolute;
-  top: 4rem;
+  top: 1rem;
   left: 50%;
   transform: translateX(-50%);
   color: white;
   z-index: 0;
+  height: calc(100% - 4rem);
+  /* overflow-x: hidden;
+  overflow-y: scroll;
+  height: 90%; */
 }
 
 .heading {
@@ -52,7 +56,6 @@ img {
 }
 
 .card-container {
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -63,8 +66,8 @@ img {
 
 .card {
   width: 33%;
-  height: 225px;
-  margin: 1rem;
+  height: 215px;
+  margin: 0.3rem 1rem;
   background: rgba(7, 9, 73, 0.09);
   box-shadow: inset 0px -106.879px 88.6312px -83.4176px rgba(104, 80, 148, 0.3),
     inset 0px 5.2136px 23.4612px rgba(107, 100, 154, 0.3),
@@ -81,7 +84,7 @@ img {
   height: 100%;
 }
 
-.card-img img{
+.card-img img {
   width: unset;
   height: 100%;
 }
@@ -113,29 +116,42 @@ img {
   cursor: pointer;
 }
 
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+
 @media screen and (max-width: 768px) {
-  .card-container {
-    flex-direction: column;
-    overflow-y: scroll;
-    width: 100%;
+  .container{
+    top: 4rem;
   }
 
-  .card{
+  .card-container {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: unset;
+    overflow-y: scroll;
+    width: 100%;
+    height: 87%;
+    margin-top: 1rem;
+  }
+
+  .card {
     width: 100%;
     height: unset;
     margin: 1rem 0;
   }
 
-  .card h3{
+  .card h3 {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
   }
 
-  .card-img{
+  .card-img {
     width: 50%;
   }
 
-  .card-img img{
+  .card-img img {
     height: unset;
     width: 100%;
   }
@@ -144,25 +160,25 @@ img {
     left: 1rem;
   }
 
-  .view-btn{
+  .view-btn {
     width: 100%;
   }
 
-  .heading{
+  .heading {
     font-size: 3rem;
   }
 }
 
-@media screen and (min-width: 2560px){
-  .card{
+@media screen and (min-width: 2560px) {
+  .card {
     height: unset;
   }
 
-  .card-img{
+  .card-img {
     width: 40%;
   }
 
-  .card-img img{
+  .card-img img {
     height: unset;
     width: 100%;
   }

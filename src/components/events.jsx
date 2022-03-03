@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import Dummy from '../assets/dummy.svg';
 import ViewBtn from '../assets/Button.svg'
 import Arrow from '../assets/Arrox.svg'
@@ -8,7 +9,9 @@ function Events() {
     return (
         <div>
             <div className="bg"></div>
-            <div className="arrow"><img src={Arrow} alt="" /></div>
+            <Link to="/">
+                <div className="arrow"><img src={Arrow} alt="" /></div>
+            </Link>
             <div className="container">
                 <div className="heading">ALL EVENTS</div>
                 <div className="card-container">
