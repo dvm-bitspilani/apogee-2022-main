@@ -59,15 +59,16 @@ img {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  align-content: center;
   overflow-x: hidden;
   overflow-y: scroll;
-  height: 100%;
+  height: calc(100% - 1.75rem)
 }
 
 .card {
   width: 33%;
   height: 215px;
-  margin: 0.3rem 1rem;
+  margin: 1rem 1rem;
   background: rgba(7, 9, 73, 0.09);
   box-shadow: inset 0px -106.879px 88.6312px -83.4176px rgba(104, 80, 148, 0.3),
     inset 0px 5.2136px 23.4612px rgba(107, 100, 154, 0.3),
@@ -87,6 +88,9 @@ img {
 .card-img img {
   width: unset;
   height: 100%;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .card-text {
@@ -172,6 +176,8 @@ img {
 @media screen and (min-width: 2560px) {
   .card {
     height: unset;
+    width: 31%;
+    margin: 1rem 1.5rem;
   }
 
   .card-img {
@@ -181,5 +187,9 @@ img {
   .card-img img {
     height: unset;
     width: 100%;
+  }
+
+  .view-btn{
+    width: 50%;
   }
 }
