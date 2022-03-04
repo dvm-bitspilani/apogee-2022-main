@@ -1,0 +1,49 @@
+.card-description-container {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(0 0 0 / 79%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  top: 0;
+  color: white;
+}
+.card-description-box {
+  background: rgba(7, 9, 73, 0.09);
+  box-shadow: inset 0px -106.879px 88.6312px -83.4176px rgba(104, 80, 148, 0.3),
+    inset 0px 5.2136px 23.4612px rgba(107, 100, 154, 0.3),
+    inset 0px 1.3034px 52.136px rgba(179, 171, 226, 0.2);
+  backdrop-filter: blur(130px);
+  border-radius: 20px;
+  height: 60vh;
+  min-width: 60vw;
+  width: auto;
+  padding: 5vh 5vw;
+  font-family: "Montserrat", sans-serif;
+}
+.close-card-description {
+  font-size: 20px;
+  font-weight: 900;
+  text-align: right;
+  cursor: pointer;
+}
+.card-description-heading {
+  text-align: center;
+  margin-top: 3vh;
+  font-weight: 900;
+  font-size: 30px;
+}
+.card-description-details {
+  margin-top: 5vh;
+}
+
+@media all and (max-width: 500px) {
+  .card-description-box {
+    width: 80vw;
+  }
+  .card-description-heading {
+    font-size: 20px;
+  }
+}
