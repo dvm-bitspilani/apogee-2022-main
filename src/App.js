@@ -105,7 +105,7 @@ function App() {
     } = event;
     setEventName(
       typeof value === 'string' ? value.split(',') : value,
-      selectedEvents=value
+      selectedEvents = value
 
     );
   };
@@ -150,6 +150,14 @@ function App() {
         setNames(names);
       });
     
+    
+  let hamburger = document.querySelector('.hamburger');
+
+  hamburger.addEventListener('click', function () {
+    hamburger.classList.toggle('open');
+  })
+    
+  
   }, []);
 
 
@@ -194,7 +202,7 @@ function App() {
           <div className="logo">
             <img src={require("./assets/Apogee Logo.png")} alt="" />
           </div>
-
+       
           <div className="ModalBox">
 
             <div className="registerBtnBorder">
@@ -415,6 +423,11 @@ function App() {
               </Box>
             </Modal>
           </div>
+          <div className="hamburger">
+                <div class="line-menu half start"></div>
+                <div class="line-menu"></div>
+                <div class="line-menu half end"></div>
+            </div>
         </nav>
         <div>
           {/* <!-- <div className="moon"><img src={require("./assets/laptop/Moon.svg")} alt=""/></div> --> */}
