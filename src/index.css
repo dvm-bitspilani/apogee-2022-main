@@ -150,3 +150,35 @@ span{
   font-size: 1em;
     
 }
+
+
+#drawer{
+    height: 100%;
+    width: 25%;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    text-align: center;
+    padding-top: 100px;
+    background: rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateX(100%);
+  }
+#drawer div{
+  width: 60%;
+  padding: 20px;
+  color: white;
+  background: rgba(25, 25, 27, 0.09);
+mix-blend-mode: normal;
+box-shadow: 0px 5px 2px rgba(255, 255, 255, 0.02), inset 0px -106.879px 88.6312px -83.4176px rgba(16, 12, 24, 0.05), inset 0px 5.2136px 23.4612px rgba(94, 87, 147, 0.15), inset 0px 1.3034px 52.136px rgba(161, 155, 199, 0.05);
+/* filter: blur(100px); */
+/* Note: backdrop-filter has minimal browser support */
+border-radius: 10px;
+margin: 20px 0;
+
+}

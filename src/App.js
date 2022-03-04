@@ -149,15 +149,51 @@ function App() {
         })
         setNames(names);
       });
-    
-    
-  let hamburger = document.querySelector('.hamburger');
-
-  hamburger.addEventListener('click', function () {
-    hamburger.classList.toggle('open');
-  })
-    
   
+  let hamburger = document.querySelector('.hamburger');
+    let isMenuOpen = false;
+    hamburger.addEventListener("click", () => {
+      if (!isMenuOpen) {
+        hamburger.classList.add("open");
+        openNav();
+      } else {
+        hamburger.classList.remove("open");
+        closeNav();
+      }
+      isMenuOpen = !isMenuOpen;
+
+    })
+    
+
+    function openNav() {
+      document.getElementById("drawer").style.transform = "translateX(00px)";
+      if (window.screen.width < 768) document.getElementById("drawer").style.width = "300px";
+      else {
+  
+        // for (let index = 0; index < 6; index++) {
+        document.getElementsByClassName("city1")[0].style.transform = "translateX(-62%)";
+        document.getElementsByClassName("city2")[0].style.transform = "translateX(-62%)";
+        document.getElementsByClassName("city3")[0].style.transform = "translate(-67%,15%)";
+        document.getElementsByClassName("city4")[0].style.transform = "translate(-70%,8%)";
+        document.getElementsByClassName("city5")[0].style.transform = "translate(-96%,5%)";
+        document.getElementsByClassName("city6")[0].style.transform = "translate(-45%,-3%)";
+        document.getElementsByClassName("moon")[0].style.transform = "translateX(-57%)";
+      
+        // }
+      }
+    }
+    
+    function closeNav() {
+      document.getElementById("drawer").style.transform = "translateX(500px)";
+      document.getElementsByClassName("city1")[0].style.transform = "translateX(-45%)";    
+      document.getElementsByClassName("city2")[0].style.transform="translateX(-45%)";    
+      document.getElementsByClassName("city3")[0].style.transform="translate(-50%,15%)";    
+      document.getElementsByClassName("city4")[0].style.transform="translate(-53%,8%)";    
+      document.getElementsByClassName("city5")[0].style.transform = "translate(-75%,5%)";    
+      document.getElementsByClassName("city6")[0].style.transform="translate(-2%,-3%)";    
+      document.getElementsByClassName("moon")[0].style.transform="translateX(-50%)"; 
+      
+    }
   }, []);
 
 
@@ -427,7 +463,15 @@ function App() {
                 <div class="line-menu half start"></div>
                 <div class="line-menu"></div>
                 <div class="line-menu half end"></div>
-            </div>
+          </div>
+          
+          <div id='drawer'>
+            <div>Campus Ambassador</div>
+            <div>Events</div>
+            <div>Archives</div>
+            <div>Developers</div>
+
+  </div>
         </nav>
         <div>
           {/* <!-- <div className="moon"><img src={require("./assets/laptop/Moon.svg")} alt=""/></div> --> */}

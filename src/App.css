@@ -127,6 +127,7 @@ img {
   align-content: center;
   justify-content: center;
   align-items: center;
+  transition:all 1.5s ease 0s;
 }
 #moon {
   animation: rotateMoon 150s infinite;
@@ -378,6 +379,7 @@ nav {
   justify-content: space-between;
   cursor: pointer;
   transition: transform 300ms ease-out;
+  z-index: 200;
 }
 
 .hamburger.open {
