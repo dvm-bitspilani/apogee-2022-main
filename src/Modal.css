@@ -41,3 +41,34 @@ color: white !important
     margin: 40px 0 0 0;
 }
 
+@media screen and (max-width:768px) {
+    .cell span {
+        width: 100px;
+        font-weight: 800;
+        font-size: 0.85rem !important;
+    }
+    .cell *{
+        
+        font-size: 0.85rem !important;
+
+    }
+    .css-16vv6l7{
+        padding: 25px 10px !important;
+    }
+    .wrapper{
+        grid-template-columns: repeat(1,auto);
+        justify-content: unset !important;
+        font-size: 0.75rem !important;
+        width: 97.5vw;
+    }
+    .css-cquceo-MuiFormControl-root,.css-1sv5jkp-MuiFormControl-root-MuiTextField-root, .genderContainerInput{
+        width: 225px !important;
+    }
+    .css-w2nlmo-MuiFormControl-root-MuiTextField-root,.css-f9zftz-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root,.css-4vkg4y-MuiFormControl-root-MuiTextField-root{
+        width: 225px !important;
+    }
+    .modalHeading {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+}

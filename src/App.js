@@ -238,7 +238,7 @@ function App() {
           <div className="logo">
             <img src={require("./assets/Apogee Logo.png")} alt="" />
           </div>
-       
+    
           <div className="ModalBox">
 
             <div className="registerBtnBorder">
