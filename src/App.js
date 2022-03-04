@@ -26,6 +26,8 @@ import { Link } from 'react-router-dom'
 import Autocomplete from '@mui/material/Autocomplete'
 import CircularProgress from '@mui/material/CircularProgress';
 import ModalUnstyled from '@mui/base/ModalUnstyled';
+import CloseIcon from '@mui/icons-material/Close';
+import IconButton from '@mui/material/IconButton';
 // import TextField from '@mui/material/TextField';
 import "./Modal.css";
 import "./App.css";
@@ -54,7 +56,7 @@ const MenuProps = {
 };
 
 var collegeList = [
-  { name: 'BITS Pilani', order: "1" },
+  'BITS Pilani',
 ];
 
 function getStyles(name, personName, theme) {
@@ -115,8 +117,6 @@ function App() {
     if (!loading) {
       return undefined;
     };
-
-
     return () => {
       active = false;
     };
@@ -232,6 +232,7 @@ function App() {
     data = {
       ...data,
       events: eventName,
+      college_id: document.getElementById('asynchronous-demo').value
     }
     console.log(eventName);
     console.log(data);
@@ -247,7 +248,7 @@ function App() {
       })
       .then(function (result) {
         console.log(result);
-        if(result.message){
+        if (result.message) {
           alert(result.message.split(':')[0])
         }
       });
@@ -255,7 +256,7 @@ function App() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    console.log(name,value)
+    console.log(name, value)
     setData((prevState) => ({
       ...prevState,
       [name]: value,
@@ -274,11 +275,11 @@ function App() {
           </div>
 
           <div className="ModalBox">
-          <div className="registerBtnWrapper">
-            <div className="registerBtnBorder register-lp" id="registerTop">
-              <button className="registerBtn"  onClick={handleOpen}>REGISTER</button>
+            <div className="registerBtnWrapper">
+              <div className="registerBtnBorder register-lp" id="registerTop">
+                <button className="registerBtn" onClick={handleOpen}>REGISTER</button>
+              </div>
             </div>
-          </div>
 
             <Modal
               open={open}
@@ -289,6 +290,11 @@ function App() {
               <Box sx={style}>
                 <div className="modalHeading">
                   REGISTRATION
+                  <Box>
+                  <IconButton onClick={handleClose}>
+                          <CloseIcon color="action" fontSize="large"/>
+                    </IconButton>
+                  </Box>
                 </div>
                 <Typography id="modal-modal-description" sx={{ mt: 2 }}>
 
@@ -296,14 +302,14 @@ function App() {
                     <div className="wrapper">
                       <div className="cell">
                         <span>
-                          Name *
+                          Name*
                         </span>
                         <TextField type="text" id="nameVal" onChange={handleChange} name="name" label="Name" sx={{ width: 300, border: '1px solid white', color: 'white', borderRadius: '2px' }}
                         />
                       </div>
                       <div className="cell">
                         <span>
-                          Year of Study *
+                          Year of Study*
                         </span>
                         <Select
                           labelId="demo-simple-select-label"
@@ -322,7 +328,7 @@ function App() {
                       </div>
                       <div className="cell">
                         <span>
-                          College *
+                          College*
                         </span>
                         <Autocomplete
                           onChange={(event, value) => {
@@ -339,27 +345,29 @@ function App() {
                           onClose={() => {
                             setOpenField(false);
                           }}
-                          isOptionEqualToValue={(option, value) => option.name === value.name}
-                          getOptionLabel={(option) => option.name}
+                          isOptionEqualToValue={(option, value) => option === value}
+                          getOptionLabel={(option) => option}
                           options={optionsField}
                           loading={loading}
                           renderInput={(params) => (
                             <TextField
                               {...params}
                               label="Type your College"
-                              onChange={() => {
+                              onChange={async () => {
                                 console.log("on Change")
-                                setCollegeName(document.getElementById('asynchronous-demo').value);
-                                console.log("RUN", collegeName);
-                                if (collegeName.length >= 2) {
+                                // setCollegeName(document.getElementById('asynchronous-demo').value);
+                                if (document.getElementById('asynchronous-demo').value.length >= 3) {
                                   console.log("fetch");
-                                  fetch("https://bits-apogee.org/registrations/get_college_by_char/", {
+                                  // setCollegeName(document.getElementById('asynchronous-demo').value);
+                                  console.log("RUN", document.getElementById('asynchronous-demo').value);
+                                  const dataCollege = {
+                                    letters: document.getElementById('asynchronous-demo').value
+                                  }
+                                  await fetch("https://bits-apogee.org/registrations/get_college_by_char/", {
                                     headers: { "content-type": "application/json" },
                                     method: "POST",
                                     mode: "cors",
-                                    data: {
-                                      letters: collegeName
-                                    }
+                                    body: JSON.stringify(dataCollege)
                                   })
                                     .then(function (response) {
                                       return response.json();
@@ -367,12 +375,13 @@ function App() {
                                     .then(function (result) {
                                       // setColleges(result.data);
                                       collegeList = result.data;
+                                      console.log(collegeList)
                                     });
                                 }
 
-                            
-                                  setOptionsField([...collegeList]);
-                                
+
+                                setOptionsField([...collegeList]);
+
                               }}
                               InputProps={{
                                 ...params.InputProps,
@@ -389,21 +398,21 @@ function App() {
                       </div>
                       <div className="cell">
                         <span>
-                          City *
+                          City*
                         </span>
                         <TextField type="text" onChange={handleChange} name="city" label="Type your City" sx={{ width: 300, border: '1px solid white', color: 'white' }}
                         />
                       </div>
                       <div className="cell">
                         <span>
-                          E-mail *
+                          E-mail*
                         </span>
                         <TextField type="email" onChange={handleChange} name="email_id" label="Type your email" sx={{ width: 300, border: '1px solid white', color: 'white' }}
                         />
                       </div>
                       <div className="cell">
                         <span>
-                          Events *
+                          Events*
                         </span>
                         <div>
                           <FormControl sx={{ m: 0, width: 300 }}>
@@ -442,7 +451,7 @@ function App() {
 
                       <div className="cell">
                         <span>
-                          Phone *
+                          Phone*
                         </span>
                         <TextField type="text" variant="outlined" onChange={handleChange} name="phone" label="Type your phone number" sx={{ width: 300, color: 'white', border: '1px solid white' }}
                         />
@@ -503,7 +512,7 @@ function App() {
                       </div> */}
                       <div className="genderContainer">
                         <span>
-                          Gender *
+                          Gender*
                         </span>
                         <div className="genderContainerInput">
                           <input type="radio" onChange={handleChange} name="gender" value="Male" />
@@ -522,7 +531,7 @@ function App() {
                       </div>
                       <div className="cell">
                         <span>
-                          Commitments *
+                          Commitments*
                         </span>
                         <TextField type="text" variant="outlined" onChange={handleChange} name="commitments" label="Type your Tech-teams/Clubs" sx={{ width: 300, color: 'white', border: '1px solid white' }}
                         />
