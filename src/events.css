@@ -52,7 +52,7 @@ img {
 
 .heading {
   font-family: Bartkey;
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 .card-container {
@@ -62,7 +62,7 @@ img {
   align-content: flex-start;
   overflow-x: hidden;
   overflow-y: scroll;
-  height: calc(100% - 1.75rem)
+  height: calc(100% - 1.75rem);
 }
 
 .card {
@@ -83,21 +83,35 @@ img {
 
 .card-img {
   height: 100%;
+  width: 40%;
+  border-radius: 10px;
+  background-size: cover;
+  background-color: hsl(227deg 24% 47%);
 }
 
-.card-img img {
+/* .card-img img {
   width: unset;
   height: 100%;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-}
+} */
 
 .card-text {
   font-family: "Lato", sans-serif;
   font-family: "Montserrat", sans-serif;
   width: 60%;
-  padding: 0 1rem;  
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 90%;
+}
+.card-text > p {
+  font-size: 12px;
+}
+.card-text > h3 {
+  margin: 0;
 }
 
 .view-btn {
@@ -109,10 +123,12 @@ img {
   outline: 1px solid rgba(255, 255, 255, 0.9);
   text-align: center;
   outline-offset: 3px;
-  transition: all .7s;
+  transition: all 0.7s;
+  font-size: 12px;
+  font-weight: 600;
 }
 
-.view-btn:hover{
+.view-btn:hover {
   opacity: 0.6;
 }
 
@@ -131,7 +147,7 @@ img {
 }
 
 @media screen and (max-width: 768px) {
-  .container{
+  .container {
     top: 4rem;
   }
 
@@ -147,12 +163,15 @@ img {
 
   .card {
     width: 100%;
-    height: unset;
+    height: max-content;
     margin: 1rem 0;
+    padding: 3vh 3vw;
   }
-
+  .card-text {
+    height: max-content;
+  }
   .card h3 {
-    margin-top: 0.5rem;
+    /* margin-top: 0.5rem; */
     margin-bottom: 0.5rem;
   }
 
@@ -160,10 +179,10 @@ img {
     width: 50%;
   }
 
-  .card-img img {
+  /* .card-img img {
     height: unset;
     width: 100%;
-  }
+  } */
 
   .arrow {
     left: 1rem;
@@ -174,7 +193,8 @@ img {
   }
 
   .heading {
-    font-size: 3rem;
+    font-size: 2.5rem;
+    text-align: center;
   }
 }
 
@@ -189,12 +209,12 @@ img {
     width: 40%;
   }
 
-  .card-img img {
+  /* .card-img img {
     height: unset;
     width: 100%;
-  }
+  } */
 
-  .view-btn{
+  .view-btn {
     width: 50%;
   }
 }
