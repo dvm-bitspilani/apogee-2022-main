@@ -198,20 +198,17 @@ span {
 }
 
 @media screen and (max-width: 768px) {
-  .registerBtnBorder {
+  .registerBtnWrapper {
     position: absolute;
-    bottom: calc((100vw * 285) / 393 - 10rem);
-    right: 1rem;
-    z-index: 60;
-    /* display: none; */
+    left: 1.5rem;
   }
-
+/* 
   #registerTop{
     position: absolute;
     bottom: calc((100vw * 285) / 393 - 10rem);
     right: 1rem;
     z-index: 60;
-  }
+  } */
 
   .register-mobile{
     display: block;
