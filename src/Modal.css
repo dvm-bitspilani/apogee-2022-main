@@ -19,7 +19,8 @@ grid-column-gap:110px;
 }
 
 .cell span{
-    padding:10px
+    padding:10px;
+    white-space: nowrap;
 }
 .cell label{
     color:white;
@@ -46,6 +47,7 @@ color: white !important
         width: 100px;
         font-weight: 800;
         font-size: 0.85rem !important;
+        white-space: break-spaces;
     }
     .cell *{
         

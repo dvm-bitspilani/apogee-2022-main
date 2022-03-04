@@ -445,6 +445,9 @@ nav {
   .line-menu{
     height: 3px;
   }
+  .socials{
+    bottom:1rem;
+  }
 }
 @media screen and (max-width: 376px) {
   #moon {

@@ -23,7 +23,8 @@ import { styled, Box } from '@mui/system';
 import FormControl from '@mui/material/FormControl';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import { Link } from 'react-router-dom'
-
+import Autocomplete from '@mui/material/Autocomplete'
+import CircularProgress from '@mui/material/CircularProgress';
 import ModalUnstyled from '@mui/base/ModalUnstyled';
 // import TextField from '@mui/material/TextField';
 import "./Modal.css";
@@ -42,6 +43,7 @@ var Difference_In_Time = APOGEE_DATE.getTime() - CURRENT_DATE.getTime();
 var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
 const DAYS_LEFT = Math.round(Difference_In_Days);
 
+
 const MenuProps = {
   PaperProps: {
     style: {
@@ -51,7 +53,9 @@ const MenuProps = {
   },
 };
 
-
+var collegeList = [
+  { name: 'BITS Pilani', order: "1" },
+];
 
 function getStyles(name, personName, theme) {
   return {
@@ -95,10 +99,33 @@ function App() {
   const [workshopName, setWorkshopName] = React.useState([]);
   var selectedEvents = [];
   var selectedWorkshops = [];
+  const [openField, setOpenField] = React.useState(false);
+  const [optionsField, setOptionsField] = React.useState([]);
+  const [collegeName, setCollegeName] = React.useState([]);
+  // const [registerDisabled, setRegisterDisabled] = React.useState(true);
+
+  const loading = openField && optionsField.length === 0;
   React.useEffect(() => {
     // Update the document title using the browser API
     document.getElementsByClassName('signDate')[0].innerHTML = `${DAYS_LEFT} DAYS <br/> TO GO`;
   });
+  React.useEffect(() => {
+    let active = true;
+
+    if (!loading) {
+      return undefined;
+    };
+
+
+    return () => {
+      active = false;
+    };
+  }, [loading]);
+  React.useEffect(() => {
+    if (!openField) {
+      setOptionsField([]);
+    }
+  }, [openField]);
 
   const handleChangeEvents = (event) => {
     const {
@@ -123,18 +150,20 @@ function App() {
     );
   };
   React.useEffect(() => {
-    fetch("https://bits-apogee.org/registrations/get_college/", {
-      headers: { "content-type": "application/json" },
-      method: "GET",
-      mode: "cors",
-    })
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (result) {
-        setColleges(result.data);
-      });
-
+    // fetch("https://bits-apogee.org/registrations/get_college_by_char/", {
+    //   headers: { "content-type": "application/json" },
+    //   method: "POST",
+    //   mode: "cors",
+    //   data: { 
+    //     letters: variable
+    //   }
+    // })
+    //   .then(function (response) {
+    //     return response.json();
+    //   })
+    //   .then(function (result) {
+    //     setColleges(result.data);
+    //   });
     fetch("https://bits-apogee.org/registrations/events/", {
       headers: { "content-type": "application/json" },
       method: "GET",
@@ -218,11 +247,15 @@ function App() {
       })
       .then(function (result) {
         console.log(result);
+        if(result.message){
+          alert(result.message.split(':')[0])
+        }
       });
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    console.log(name,value)
     setData((prevState) => ({
       ...prevState,
       [name]: value,
@@ -242,8 +275,8 @@ function App() {
 
           <div className="ModalBox">
 
-            <div className="registerBtnBorder register-lp">
-              <button className="registerBtn" onClick={handleOpen}>REGISTER</button>
+            <div className="registerBtnBorder register-lp" id="registerTop">
+              <button className="registerBtn"  onClick={handleOpen}>REGISTER</button>
             </div>
 
             <Modal
@@ -262,14 +295,14 @@ function App() {
                     <div className="wrapper">
                       <div className="cell">
                         <span>
-                          Name
+                          Name *
                         </span>
                         <TextField type="text" id="nameVal" onChange={handleChange} name="name" label="Name" sx={{ width: 300, border: '1px solid white', color: 'white', borderRadius: '2px' }}
                         />
                       </div>
                       <div className="cell">
                         <span>
-                          Year of Study
+                          Year of Study *
                         </span>
                         <Select
                           labelId="demo-simple-select-label"
@@ -288,41 +321,88 @@ function App() {
                       </div>
                       <div className="cell">
                         <span>
-                          College
+                          College *
                         </span>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="Age"
-                          name="college_id"
-                          onChange={handleChange}
-                          sx={{ width: 300, border: '1px solid white', color: 'white', borderRadius: '2px' }}
-                        >
-                          {/* <MenuItem value={1}>Ten</MenuItem>
-                          <MenuItem value={1}>Twenty</MenuItem>
-                          <MenuItem value={1}>Thirty</MenuItem> */}
-                          {colleges.map(el => (
-                            <MenuItem value={el.id}>{el.name}</MenuItem>
-                          ))}
-                        </Select>
+                        <Autocomplete
+                          onChange={(event, value) => {
+                            console.log(value, "value", document.getElementById('asynchronous-demo').value);
+                            console.log(collegeName, "collegeName");
+                          }
+                          }
+                          id="asynchronous-demo"
+                          sx={{ width: 300 }}
+                          open={openField}
+                          onOpen={() => {
+                            setOpenField(true);
+                          }}
+                          onClose={() => {
+                            setOpenField(false);
+                          }}
+                          isOptionEqualToValue={(option, value) => option.name === value.name}
+                          getOptionLabel={(option) => option.name}
+                          options={optionsField}
+                          loading={loading}
+                          renderInput={(params) => (
+                            <TextField
+                              {...params}
+                              label="Type your College"
+                              onChange={() => {
+                                console.log("on Change")
+                                setCollegeName(document.getElementById('asynchronous-demo').value);
+                                console.log("RUN", collegeName);
+                                if (collegeName.length >= 2) {
+                                  console.log("fetch");
+                                  fetch("https://bits-apogee.org/registrations/get_college_by_char/", {
+                                    headers: { "content-type": "application/json" },
+                                    method: "POST",
+                                    mode: "cors",
+                                    data: {
+                                      letters: collegeName
+                                    }
+                                  })
+                                    .then(function (response) {
+                                      return response.json();
+                                    })
+                                    .then(function (result) {
+                                      // setColleges(result.data);
+                                      collegeList = result.data;
+                                    });
+                                }
+
+                            
+                                  setOptionsField([...collegeList]);
+                                
+                              }}
+                              InputProps={{
+                                ...params.InputProps,
+                                endAdornment: (
+                                  <React.Fragment>
+                                    {loading ? <CircularProgress color="inherit" size={20} /> : null}
+                                    {params.InputProps.endAdornment}
+                                  </React.Fragment>
+                                ),
+                              }}
+                            />
+                          )}
+                        />
                       </div>
                       <div className="cell">
                         <span>
-                          City
+                          City *
                         </span>
                         <TextField type="text" onChange={handleChange} name="city" label="Type your City" sx={{ width: 300, border: '1px solid white', color: 'white' }}
                         />
                       </div>
                       <div className="cell">
                         <span>
-                          E-mail
+                          E-mail *
                         </span>
                         <TextField type="email" onChange={handleChange} name="email_id" label="Type your email" sx={{ width: 300, border: '1px solid white', color: 'white' }}
                         />
                       </div>
                       <div className="cell">
                         <span>
-                          Events
+                          Events *
                         </span>
                         <div>
                           <FormControl sx={{ m: 0, width: 300 }}>
@@ -361,13 +441,13 @@ function App() {
 
                       <div className="cell">
                         <span>
-                          Phone
+                          Phone *
                         </span>
                         <TextField type="text" variant="outlined" onChange={handleChange} name="phone" label="Type your phone number" sx={{ width: 300, color: 'white', border: '1px solid white' }}
                         />
                       </div>
 
-                      <div className="cell">
+                      {/* <div className="cell">
                         <span>
                           Workshops
                         </span>
@@ -402,7 +482,7 @@ function App() {
                             </Select>
                           </FormControl>
                         </div>
-                      </div>
+                      </div> */}
                       {/* <div className="cell">
                         <span>
                           Workshop
@@ -422,7 +502,7 @@ function App() {
                       </div> */}
                       <div className="genderContainer">
                         <span>
-                          Gender
+                          Gender *
                         </span>
                         <div className="genderContainerInput">
                           <input type="radio" onChange={handleChange} name="gender" value="Male" />
@@ -441,7 +521,7 @@ function App() {
                       </div>
                       <div className="cell">
                         <span>
-                          Commitments
+                          Commitments *
                         </span>
                         <TextField type="text" variant="outlined" onChange={handleChange} name="commitments" label="Type your Tech-teams/Clubs" sx={{ width: 300, color: 'white', border: '1px solid white' }}
                         />
@@ -474,7 +554,7 @@ function App() {
               <div class="nav-links">APOGEE Innovation Challenge</div>
             </a> */}
             <Link to="/events">
-              <div class="nav-links">Events</div>
+              <div class="nav-links">Kernel Events</div>
             </Link>
             <a href="https://bits-apogee.org/campusambassador2022/" target="_blank">
               <div class="nav-links">Campus Ambassador</div>
@@ -483,14 +563,14 @@ function App() {
 
           </div>
         </nav>
-        <div className="registerBtnBorder register-lp">
+        {/* <div className="registerBtnBorder register-lp">
           <button className="registerBtn" onClick={handleOpen}>REGISTER</button>
-        </div>
+        </div> */}
         <div>
           {/* <!-- <div className="moon"><img src={require("./assets/laptop/Moon.svg")} alt=""/></div> --> */}
           <div className="moon"> <img id="moon" src={Moon} /> </div>
           <div className="socials">
-          <a href="https://twitter.com/bitsapogee?lang=en" target="_blank">
+            <a href="https://twitter.com/bitsapogee?lang=en" target="_blank">
               <div className="twitter">
                 <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="23" cy="23" r="23" fill="#00002C" />

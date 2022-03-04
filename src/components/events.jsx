@@ -58,7 +58,7 @@ function Events() {
                 <div className="arrow"><img src={Arrow} alt="" /></div>
             </Link>
             <div className="container">
-                <div className="heading">ALL EVENTS</div>
+                <div className="heading">KERNEL EVENTS</div>
                 <div className="card-container">
                     {events.map(el =>
                         <div className="card">
