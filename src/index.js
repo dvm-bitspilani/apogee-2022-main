@@ -1,13 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Route, BrowserRouter, Routes } from 'react-router-dom';
+import Events from './components/events'
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import './fonts/BARTKEY.ttf'
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<App />} />
+      <Route path="/events" element={<Events />} />
+      {/* <Route path="invoices" element={<Invoices />} /> */}
+    </Routes>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 

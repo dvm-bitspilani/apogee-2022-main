@@ -6,8 +6,147 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+* {
+  font-family: 'Gilroy'
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+@font-face {
+  font-family: 'BARTKEY';
+  src: local('BARTKEY'), url(./assets/BARTKEY.ttf) format('truetype');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: local('Gilroy'), url(./assets/Gilroy.otf) format('opentype');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+.modalHeading {
+  font-family: 'BARTKEY';
+  font-size: 50px;
+  color: white;
+  margin-bottom: 40px;
+}
+#submitBtn {
+    /* background: red; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-content: center;
+}
+#submit-form {
+  color: black;
+  font-size: 18px;
+  /* background: white; */
+  font-family: 'Montserrat';
+  padding: 5px 30px;
+  font-weight: bold;
+  transition: all 0.7s;
+}
+#submit-form:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.css-1sv5jkp-MuiFormControl-root-MuiTextField-root, .css-f9zftz-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root,.css-4vkg4y-MuiFormControl-root-MuiTextField-root{
+  border-radius: 10px !important;
+  
+}
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: white;
+}
+.MuiFormLabel-root.Mui-focused {
+  color: white !important;
+  border-color: white !important;
+}
+.MuiTextField-root {
+  border: none !important;
+  border-radius: 10px !important;
+}
+.MuiOutlinedInput-notchedOutline {
+  border-color: white !important;
+  border-radius: 10px !important;
+}
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: white !important;
+  border-radius:10px;
+}
+.MuiOutlinedInput-input {
+  border: 1px solid white;
+    border-radius: 10px;
+}
+input:focus {
+  background-color:none;
+  outline: none;
+}
+input {
+  /* color: white !important; */
+  font-size: 20px;
+
+}
+.genderContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%;
+}
+
+span{
+  padding: 10px;
+}
+
+.genderContainerInput{
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.registerBtn {
+  color: black;
+  font-size: 18px;
+  /* background: white; */
+  font-family: 'Montserrat';
+  padding: 5px 30px;
+  font-weight: bold;
+  transition: all 0.7s;
+}
+.registerBtn:hover{
+  cursor: pointer;
+  opacity: 0.6;
+}
+.registerBtnBorder {
+  border: 1px solid white;
+  padding: 3px;
+}
+.signDate {
+  z-index: 9999;
+  position: relative;
+  color: white;
+  top: -110px;
+  left: -10px;
+  font-weight: bold;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  font-family: Montserrat;
+  font-size: 1em;
+    
 }
