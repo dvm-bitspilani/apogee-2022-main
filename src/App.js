@@ -83,7 +83,7 @@ const style = {
 function App() {
   const options = [{ label: "Test 1" }, { label: "Test 2" }];
   const [open, setOpen] = React.useState(false);
-  const [data, setData] = React.useState({});
+  let [data, setData] = React.useState({});
   const [colleges, setColleges] = React.useState([]);
   const [events, setEvents] = React.useState([]);
   const [finalNames, setNames] = React.useState([]);
@@ -105,7 +105,7 @@ function App() {
     } = event;
     setEventName(
       typeof value === 'string' ? value.split(',') : value,
-      selectedEvents=value
+      selectedEvents = value
 
     );
   };
@@ -143,24 +143,31 @@ function App() {
         return response.json();
       })
       .then(function (result) {
-        console.log(result);
-        console.log(result.data);
-        console.log(result.data[0]);
         setEvents(result.data[0]);
-        console.log(result.data[0].events);
         result.data[0].events.forEach((item) => {
           names.push(item.name);
         })
         setNames(names);
       });
     
+    
+  let hamburger = document.querySelector('.hamburger');
+
+  hamburger.addEventListener('click', function () {
+    hamburger.classList.toggle('open');
+  })
+    
+  
   }, []);
 
-  console.log(colleges);
-  console.log(events);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    data = {
+      ...data,
+      events: eventName,
+    }
+    console.log(eventName);
     console.log(data);
     console.log(JSON.stringify(data));
     fetch("https://bits-apogee.org/registrations/Register/", {
@@ -186,9 +193,6 @@ function App() {
     console.log(data);
   };
 
-  
-  // console.log(document.getElementById("nameVal").value);
-
   return (
     <div className="App">
       <div id="wrapper">
@@ -198,7 +202,7 @@ function App() {
           <div className="logo">
             <img src={require("./assets/Apogee Logo.png")} alt="" />
           </div>
-
+       
           <div className="ModalBox">
 
             <div className="registerBtnBorder">
@@ -239,10 +243,10 @@ function App() {
                           onChange={handleChange}
                           sx={{ width: 300, border: '1px solid white', color: 'white', borderRadius: '2px' }}
                         >
-                          <MenuItem value={10}>1st</MenuItem>
-                          <MenuItem value={20}>2nd</MenuItem>
-                          <MenuItem value={30}>3rd</MenuItem>
-                          <MenuItem value={30}>4th</MenuItem>
+                          <MenuItem value={1}>1st</MenuItem>
+                          <MenuItem value={2}>2nd</MenuItem>
+                          <MenuItem value={3}>3rd</MenuItem>
+                          <MenuItem value={4}>4th</MenuItem>
                         </Select>
                       </div>
                       <div className="cell">
@@ -408,8 +412,10 @@ function App() {
 
                     </div>
                     <div id="submitBtn">
-                        <div className="registerBtnBorder">
-                        <input type="submit" value="REGISTER" id="submit-form" data-bs-dismiss="modal" />
+                      <div className="registerBtnBorder">
+                        <button type='submit'>
+                          <input type="submit" value="REGISTER" id="submit-form" data-bs-dismiss="modal" />
+                        </button>
                         </div>
                       </div>
                   </form>
@@ -417,6 +423,11 @@ function App() {
               </Box>
             </Modal>
           </div>
+          <div className="hamburger">
+                <div class="line-menu half start"></div>
+                <div class="line-menu"></div>
+                <div class="line-menu half end"></div>
+            </div>
         </nav>
         <div>
           {/* <!-- <div className="moon"><img src={require("./assets/laptop/Moon.svg")} alt=""/></div> --> */}

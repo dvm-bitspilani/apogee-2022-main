@@ -14,7 +14,9 @@ color:white;
 gap:30px;
 grid-column-gap:110px;
 }
-
+.ModalBox{
+    margin-right:-60%
+}
 .cell span{
     padding:10px
 }
