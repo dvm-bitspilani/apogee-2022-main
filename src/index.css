@@ -1,53 +1,53 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 * {
-  font-family: 'Gilroy'
+  font-family: "Gilroy";
 }
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap");
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 @font-face {
-  font-family: 'BARTKEY';
-  src: local('BARTKEY'), url(./assets/BARTKEY.ttf) format('truetype');
+  font-family: "BARTKEY";
+  src: local("BARTKEY"), url(./assets/BARTKEY.ttf) format("truetype");
   /* other formats include: 'woff2', 'truetype, 'opentype',
                             'embedded-opentype', and 'svg' */
 }
 @font-face {
-  font-family: 'Gilroy';
-  src: local('Gilroy'), url(./assets/Gilroy.otf) format('opentype');
+  font-family: "Gilroy";
+  src: local("Gilroy"), url(./assets/Gilroy.otf) format("opentype");
   /* other formats include: 'woff2', 'truetype, 'opentype',
                             'embedded-opentype', and 'svg' */
 }
 .modalHeading {
-  font-family: 'BARTKEY';
+  font-family: "BARTKEY";
   font-size: 50px;
   color: white;
   margin-bottom: 40px;
 }
 #submitBtn {
-    /* background: red; */
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    align-content: center;
+  /* background: red; */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-content: center;
 }
 #submit-form {
   color: black;
   font-size: 18px;
   /* background: white; */
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   border: none;
   padding: 5px 30px;
   font-weight: bold;
@@ -58,9 +58,10 @@ code {
   opacity: 0.6;
 }
 
-.css-1sv5jkp-MuiFormControl-root-MuiTextField-root, .css-f9zftz-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root,.css-4vkg4y-MuiFormControl-root-MuiTextField-root{
+.css-1sv5jkp-MuiFormControl-root-MuiTextField-root,
+.css-f9zftz-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root,
+.css-4vkg4y-MuiFormControl-root-MuiTextField-root {
   border-radius: 10px !important;
-  
 }
 .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
   border-color: white;
@@ -80,20 +81,19 @@ code {
 
 .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
   border-color: white !important;
-  border-radius:10px;
+  border-radius: 10px;
 }
 .MuiOutlinedInput-input {
   border: 1px solid white;
-    border-radius: 10px;
+  border-radius: 10px;
 }
 input:focus {
-  background-color:none;
+  background-color: none;
   outline: none;
 }
 input {
   /* color: white !important; */
   font-size: 20px;
-
 }
 .genderContainer {
   display: flex;
@@ -105,27 +105,26 @@ input {
   width: 85%;
 }
 
-span{
+span {
   padding: 10px;
 }
 
-.genderContainerInput{
+.genderContainerInput {
   width: 300px;
   display: flex;
   justify-content: space-between;
 }
 
-
 .registerBtn {
   color: black;
   font-size: 18px;
   /* background: white; */
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   padding: 5px 30px;
   font-weight: bold;
   transition: all 0.7s;
 }
-.registerBtn:hover{
+.registerBtn:hover {
   cursor: pointer;
   opacity: 0.6;
 }
@@ -133,6 +132,15 @@ span{
   border: 1px solid white;
   padding: 3px;
 }
+
+.register-lp{
+  display: block;
+}
+
+.register-mobile{
+  display: none;
+}
+
 .signDate {
   z-index: 9999;
   position: relative;
@@ -149,37 +157,55 @@ span{
   align-items: center;
   font-family: Montserrat;
   font-size: 1em;
-    
 }
 
-
-#drawer{
-    height: 100%;
-    width: 25%;
-    position: fixed;
-    z-index: 100;
-    top: 0;
-    right: 0;
-    overflow-x: hidden;
-    transition: 0.5s;
-    text-align: center;
-    padding-top: 100px;
-    background: rgba(0, 0, 0, 0.25);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transform: translateX(100%);
-  }
-#drawer div{
+#drawer {
+  height: 100%;
+  width: 25%;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+  text-align: center;
+  padding-top: 100px;
+  background: rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateX(100%);
+}
+#drawer a {
   width: 60%;
   padding: 20px;
   color: white;
   background: rgba(25, 25, 27, 0.09);
-mix-blend-mode: normal;
-box-shadow: 0px 5px 2px rgba(255, 255, 255, 0.02), inset 0px -106.879px 88.6312px -83.4176px rgba(16, 12, 24, 0.05), inset 0px 5.2136px 23.4612px rgba(94, 87, 147, 0.15), inset 0px 1.3034px 52.136px rgba(161, 155, 199, 0.05);
-/* filter: blur(100px); */
-/* Note: backdrop-filter has minimal browser support */
-border-radius: 10px;
-margin: 20px 0;
+  mix-blend-mode: normal;
+  box-shadow: 0px 5px 2px rgba(255, 255, 255, 0.02),
+    inset 0px -106.879px 88.6312px -83.4176px rgba(16, 12, 24, 0.05),
+    inset 0px 5.2136px 23.4612px rgba(94, 87, 147, 0.15),
+    inset 0px 1.3034px 52.136px rgba(161, 155, 199, 0.05);
+  /* filter: blur(100px); */
+  /* Note: backdrop-filter has minimal browser support */
+  border-radius: 10px;
+  margin: 20px 0;
+  text-decoration: none;
+}
 
+@media screen and (max-width: 768px) {
+  .registerBtnBorder {
+    position: absolute;
+    bottom: calc((100vw * 285) / 393 - 10rem);
+    right: 1rem;
+    z-index: 60;
+  }
+
+  .register-lp{
+    display: none;
+  }
+
+  .register-mobile{
+    display: block;
+  }
 }

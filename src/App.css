@@ -427,11 +427,6 @@ nav {
     padding: 1.5rem;
   }
 
-  nav div:last-child{
-    text-align: right;
-    align-self: flex-end;
-  }
-
   .logo{
     order: 2;
     width: 80%;
@@ -440,10 +435,9 @@ nav {
 
   .hamburger{
     order: 1;
-    justify-items: flex-end;
-    text-align: right;
     width: 30px;
     height: 25px;
+    align-self: flex-end;
   }
 
   .line-menu{

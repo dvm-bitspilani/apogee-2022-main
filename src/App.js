@@ -22,6 +22,7 @@ import { useTheme } from '@mui/material/styles';
 import { styled, Box } from '@mui/system';
 import FormControl from '@mui/material/FormControl';
 import OutlinedInput from '@mui/material/OutlinedInput';
+import { Link } from 'react-router-dom'
 
 import ModalUnstyled from '@mui/base/ModalUnstyled';
 // import TextField from '@mui/material/TextField';
@@ -34,9 +35,9 @@ import Chip from '@mui/material/Chip';
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
 const CURRENT_DATE = new Date();
-const APOGEE_DATE = new Date(2022, 3 , 7);
-console.log(CURRENT_DATE,"CURRENT");
-console.log(APOGEE_DATE,"APOGEE");
+const APOGEE_DATE = new Date(2022, 3, 7);
+console.log(CURRENT_DATE, "CURRENT");
+console.log(APOGEE_DATE, "APOGEE");
 var Difference_In_Time = APOGEE_DATE.getTime() - CURRENT_DATE.getTime();
 var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
 const DAYS_LEFT = Math.round(Difference_In_Days);
@@ -118,7 +119,7 @@ function App() {
     setWorkshopName(
       // On autofill we get a stringified value.
       typeof value === 'string' ? value.split(',') : value,
-      selectedEvents=value
+      selectedEvents = value
     );
   };
   React.useEffect(() => {
@@ -149,8 +150,8 @@ function App() {
         })
         setNames(names);
       });
-  
-  let hamburger = document.querySelector('.hamburger');
+
+    let hamburger = document.querySelector('.hamburger');
     let isMenuOpen = false;
     hamburger.addEventListener("click", () => {
       if (!isMenuOpen) {
@@ -163,13 +164,13 @@ function App() {
       isMenuOpen = !isMenuOpen;
 
     })
-    
+
 
     function openNav() {
       document.getElementById("drawer").style.transform = "translateX(00px)";
       if (window.screen.width < 768) document.getElementById("drawer").style.width = "300px";
       else {
-  
+
         // for (let index = 0; index < 6; index++) {
         document.getElementsByClassName("city1")[0].style.transform = "translateX(-62%)";
         document.getElementsByClassName("city2")[0].style.transform = "translateX(-62%)";
@@ -178,21 +179,21 @@ function App() {
         document.getElementsByClassName("city5")[0].style.transform = "translate(-96%,5%)";
         document.getElementsByClassName("city6")[0].style.transform = "translate(-45%,-3%)";
         document.getElementsByClassName("moon")[0].style.transform = "translateX(-57%)";
-      
+
         // }
       }
     }
-    
+
     function closeNav() {
       document.getElementById("drawer").style.transform = "translateX(500px)";
-      document.getElementsByClassName("city1")[0].style.transform = "translateX(-45%)";    
-      document.getElementsByClassName("city2")[0].style.transform="translateX(-45%)";    
-      document.getElementsByClassName("city3")[0].style.transform="translate(-50%,15%)";    
-      document.getElementsByClassName("city4")[0].style.transform="translate(-53%,8%)";    
-      document.getElementsByClassName("city5")[0].style.transform = "translate(-75%,5%)";    
-      document.getElementsByClassName("city6")[0].style.transform="translate(-2%,-3%)";    
-      document.getElementsByClassName("moon")[0].style.transform="translateX(-50%)"; 
-      
+      document.getElementsByClassName("city1")[0].style.transform = "translateX(-45%)";
+      document.getElementsByClassName("city2")[0].style.transform = "translateX(-45%)";
+      document.getElementsByClassName("city3")[0].style.transform = "translate(-50%,15%)";
+      document.getElementsByClassName("city4")[0].style.transform = "translate(-53%,8%)";
+      document.getElementsByClassName("city5")[0].style.transform = "translate(-75%,5%)";
+      document.getElementsByClassName("city6")[0].style.transform = "translate(-2%,-3%)";
+      document.getElementsByClassName("moon")[0].style.transform = "translateX(-50%)";
+
     }
   }, []);
 
@@ -238,10 +239,10 @@ function App() {
           <div className="logo">
             <img src={require("./assets/Apogee Logo.png")} alt="" />
           </div>
-    
+
           <div className="ModalBox">
 
-            <div className="registerBtnBorder">
+            <div className="registerBtnBorder register-lp">
               <button className="registerBtn" onClick={handleOpen}>REGISTER</button>
             </div>
 
@@ -263,7 +264,7 @@ function App() {
                         <span>
                           Name
                         </span>
-                        <TextField type="text"  id="nameVal" onChange={handleChange} name="name" label="Name" sx={{ width: 300, border: '1px solid white', color: 'white', borderRadius: '2px' }}
+                        <TextField type="text" id="nameVal" onChange={handleChange} name="name" label="Name" sx={{ width: 300, border: '1px solid white', color: 'white', borderRadius: '2px' }}
                         />
                       </div>
                       <div className="cell">
@@ -324,40 +325,40 @@ function App() {
                           Events
                         </span>
                         <div>
-      <FormControl sx={{ m: 0, width: 300 }}>
-        <InputLabel id="demo-multiple-chip-label">You can select more than one events</InputLabel>
-        <Select
-          labelId="demo-multiple-chip-label"
-          id="eventsArr"
-          multiple
-          value={eventName}
-          onChange={handleChangeEvents}
-          input={<OutlinedInput id="select-multiple-events" label="You can select more than one events" />}
-          renderValue={(selected) => (
-            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-              {selected.map((value) => (
-                <Chip key={value} label={value} />
-              ))}
-            </Box>
-          )}
+                          <FormControl sx={{ m: 0, width: 300 }}>
+                            <InputLabel id="demo-multiple-chip-label">You can select more than one events</InputLabel>
+                            <Select
+                              labelId="demo-multiple-chip-label"
+                              id="eventsArr"
+                              multiple
+                              value={eventName}
+                              onChange={handleChangeEvents}
+                              input={<OutlinedInput id="select-multiple-events" label="You can select more than one events" />}
+                              renderValue={(selected) => (
+                                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+                                  {selected.map((value) => (
+                                    <Chip key={value} label={value} />
+                                  ))}
+                                </Box>
+                              )}
                               MenuProps={MenuProps}
-          
-        >
-          {finalNames.map((name) => (
-            <MenuItem
-              key={name}
-              value={name}
-              style={getStyles(name, eventName, theme)}
-            >
-              {name}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-    </div>
+
+                            >
+                              {finalNames.map((name) => (
+                                <MenuItem
+                                  key={name}
+                                  value={name}
+                                  style={getStyles(name, eventName, theme)}
+                                >
+                                  {name}
+                                </MenuItem>
+                              ))}
+                            </Select>
+                          </FormControl>
+                        </div>
                       </div>
 
-                      
+
                       <div className="cell">
                         <span>
                           Phone
@@ -371,36 +372,36 @@ function App() {
                           Workshops
                         </span>
                         <div>
-      <FormControl sx={{ m: 0, width: 300 }}>
-        <InputLabel id="demo-multiple-chip-label">You can select more than one workshops</InputLabel>
-        <Select
-          labelId="demo-multiple-chip-label"
-          id="workshopsArr"
-          multiple
-          value={workshopName}
-          onChange={handleChangeWorkshops}
-          input={<OutlinedInput id="select-multiple-workshops" label="You can select more than one workshops" />}
-          renderValue={(selected) => (
-            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-              {selected.map((value) => (
-                <Chip key={value} label={value} />
-              ))}
-            </Box>
-          )}
-          MenuProps={MenuProps}
-        >
-          {names.map((name) => (
-            <MenuItem
-              key={name}
-              value={name}
-              style={getStyles(name, workshopName, theme)}
-            >
-              {name}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-    </div>
+                          <FormControl sx={{ m: 0, width: 300 }}>
+                            <InputLabel id="demo-multiple-chip-label">You can select more than one workshops</InputLabel>
+                            <Select
+                              labelId="demo-multiple-chip-label"
+                              id="workshopsArr"
+                              multiple
+                              value={workshopName}
+                              onChange={handleChangeWorkshops}
+                              input={<OutlinedInput id="select-multiple-workshops" label="You can select more than one workshops" />}
+                              renderValue={(selected) => (
+                                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+                                  {selected.map((value) => (
+                                    <Chip key={value} label={value} />
+                                  ))}
+                                </Box>
+                              )}
+                              MenuProps={MenuProps}
+                            >
+                              {names.map((name) => (
+                                <MenuItem
+                                  key={name}
+                                  value={name}
+                                  style={getStyles(name, workshopName, theme)}
+                                >
+                                  {name}
+                                </MenuItem>
+                              ))}
+                            </Select>
+                          </FormControl>
+                        </div>
                       </div>
                       {/* <div className="cell">
                         <span>
@@ -440,7 +441,7 @@ function App() {
                       </div>
                       <div className="cell">
                         <span>
-                         Commitments
+                          Commitments
                         </span>
                         <TextField type="text" variant="outlined" onChange={handleChange} name="commitments" label="Type your Tech-teams/Clubs" sx={{ width: 300, color: 'white', border: '1px solid white' }}
                         />
@@ -452,27 +453,39 @@ function App() {
                         <button type='submit'>
                           <input type="submit" value="REGISTER" id="submit-form" data-bs-dismiss="modal" />
                         </button>
-                        </div>
                       </div>
+                    </div>
                   </form>
                 </Typography>
               </Box>
             </Modal>
           </div>
           <div className="hamburger">
-                <div class="line-menu half start"></div>
-                <div class="line-menu"></div>
-                <div class="line-menu half end"></div>
+            <div class="line-menu half start"></div>
+            <div class="line-menu"></div>
+            <div class="line-menu half end"></div>
           </div>
-          
-          <div id='drawer'>
-            <div>Campus Ambassador</div>
-            <div>Events</div>
-            <div>Archives</div>
-            <div>Developers</div>
 
-  </div>
+          <div id='drawer'>
+            <a href="/">
+              <div class="nav-links">Login</div>
+            </a>
+            {/* <a href="/">
+              <div class="nav-links">APOGEE Innovation Challenge</div>
+            </a> */}
+            <Link to="/events">
+              <div class="nav-links">Events</div>
+            </Link>
+            {/* <a href="/">
+              <div class="nav-links">Archives</div>
+            </a> */}
+            {/* <div>Developers</div> */}
+
+          </div>
         </nav>
+        <div className="registerBtnBorder register-mobile">
+            <button className="registerBtn" onClick={handleOpen}>REGISTER</button>
+          </div>
         <div>
           {/* <!-- <div className="moon"><img src={require("./assets/laptop/Moon.svg")} alt=""/></div> --> */}
           <div className="moon"> <img id="moon" src={Moon} /> </div>
@@ -499,7 +512,7 @@ function App() {
           </div>
           <div className="sign">
             <img src={Sign} alt="" />
-            <div className="signDate">27 DAYS<br/> TO GO </div>
+            <div className="signDate">27 DAYS<br /> TO GO </div>
           </div>
           <div className="balcony">
             {/* <!-- <div className="horizon-glow-buildings"></div> --> */}
