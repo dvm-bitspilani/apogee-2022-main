@@ -40,8 +40,8 @@
 /* Landing CSS */
 body {
   margin: 0;
-  overflow: hidden;
-  /* overflow-y: scroll; */
+  overflow-x: hidden;
+  overflow-y: scroll;
   /* overflow-anchor: none; */
 }
 
@@ -100,22 +100,31 @@ img {
 
 .balcony {
   width: 100%;
+  /* height: 100%; */
   z-index: 40;
   position: absolute;
-  bottom: -5px;
-  /* top: 27vh; */
+  /* bottom: -5px; */
+  top: 70vh;
   max-width: 100%;
 }
 
 .balcony-mobile {
   display: none;
+  /* height: 80%; */
+  
 }
+
+/* .balcony-mobile img{
+  height: 100%;
+  width: unset;
+} */
 
 .moon {
   width: 110%;
   z-index: 10;
   position: absolute;
-  bottom: 10vh;
+  top: -20vh;
+  /* bottom: 10vh; */
   left: 50%;
   transform: translateX(-50%);
   mix-blend-mode: screen;
@@ -204,7 +213,7 @@ img {
 
 .city {
   position: absolute;
-  bottom: calc((100vw * 220) / 1538 - 6px);
+  bottom: calc((100vw * 1389) / 1440 - 27vh);
   width: 50%;
   left: 50%;
   z-index: 35;
@@ -259,7 +268,7 @@ img {
 
 .socials {
   position: absolute;
-  bottom: 3rem;
+  top: 76vh;
   left: 1.5rem;
   z-index: 50;
 }
@@ -275,11 +284,10 @@ img {
 .sign {
   position: absolute;
   width: 12rem;
-  bottom: 0;
   left: 7rem;
   z-index: 50;
   /* bottom: calc((100vw * 220) / 1538 - 6px); */
-  bottom: 6rem;
+  top: 60vh;
   mix-blend-mode: screen;
 }
 
@@ -320,7 +328,7 @@ img {
   }
 
   .city {
-    bottom: calc((100vw * 300) / 414 - 7px);
+    bottom: calc((100vw * 896) / 414 - 72vh);
   }
 
   .city1 {
@@ -338,12 +346,12 @@ img {
   .city4 {
     left: calc(50% - 1rem);
     width: 132%;
-    bottom: calc((100vw * 300) / 414 - 1rem);
+    bottom: calc((100vw * 896) / 414 - 72vh);
   }
 
   .city5 {
     width: 90%;
-    bottom: calc((100vw * 300) / 414 - 2rem);
+    bottom: calc((100vw * 896) / 414 - 72vh);
   }
 
   .city6 {
@@ -359,6 +367,10 @@ img {
     left: 0;
     bottom: 12rem;
     /* width: 8rem; */
+  }
+
+  .socials{
+    top: 87vh;
   }
 }
 

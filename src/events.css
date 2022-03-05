@@ -36,7 +36,7 @@ img {
   left: 0; */
 }
 
-.container {
+.container, .events-container {
   width: 80%;
   position: absolute;
   top: 1rem;
@@ -50,9 +50,20 @@ img {
   height: 90%; */
 }
 
+.events-container{
+  top: 0vh;
+  position: relative;
+  z-index: 50;
+}
+
 .heading {
   font-family: Bartkey;
   font-size: 3rem;
+}
+
+.events-container .heading{
+  font-size: 4rem;
+  text-align: left;
 }
 
 .card-container {
@@ -195,6 +206,10 @@ img {
   .heading {
     font-size: 2.5rem;
     text-align: center;
+  }
+
+  .events-container{
+    display: none;
   }
 }
 

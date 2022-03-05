@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import * as React from 'react';
-import BalconyLaptop from './assets/laptop/Balcony.svg';
-import BalconyMobile from './assets/mobile/Balcony.svg';
+import BalconyLaptop from './assets/laptop/balcony_grid_full.svg';
+// import BalconyMobile from './assets/mobile/Balcony_full.svg';
+import BalconyMobile from './assets/mobile/Balcony.svg'
 import CityLayer1 from './assets/laptop/City Layer 1.svg';
 import CityLayer2 from './assets/laptop/City Layer 2.svg';
 import CityLayer3 from './assets/laptop/City Layer 3.svg';
@@ -26,11 +27,12 @@ import { Link } from 'react-router-dom'
 import Autocomplete from '@mui/material/Autocomplete'
 import CircularProgress from '@mui/material/CircularProgress';
 import ModalUnstyled from '@mui/base/ModalUnstyled';
-import CloseIcon from '@mui/icons-material/Close';
+// import CloseIcon from '@mui/icons-material/Close';
 import IconButton from '@mui/material/IconButton';
 // import TextField from '@mui/material/TextField';
 import "./Modal.css";
 import "./App.css";
+import "./events.css"
 // import '/landing.js'
 import { createTheme } from "@mui/material/styles";
 import Chip from "@mui/material/Chip";
@@ -91,9 +93,9 @@ function App(props) {
   let [data, setData] = React.useState({});
   const [colleges, setColleges] = React.useState([]);
   const [events, setEvents] = React.useState([]);
+  const [kernelEvents, setKernelEvents] = React.useState([]);
   const [finalNames, setNames] = React.useState([]);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  // const handleClose = () => setOpen(false);
   const theme = useTheme();
   const [eventName, setEventName] = React.useState([]);
   const [workshopName, setWorkshopName] = React.useState([]);
@@ -182,6 +184,19 @@ function App(props) {
           names.push(item.name);
         });
         setNames(names);
+      });
+
+    fetch("https://bits-apogee.org/registrations/events_details/", {
+      headers: { "content-type": "application/json" },
+      method: "GET",
+      mode: "cors",
+    })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (result) {
+        console.log(result[0].events);
+        setKernelEvents(result[0].events);
       });
 
     let hamburger = document.querySelector(".hamburger");
@@ -278,6 +293,33 @@ function App(props) {
     console.log(data);
   };
 
+  const [eventDesc, setEventDesc] = React.useState("");
+  // const [eventName, setEventName] = React.useState("");
+  const [descriptionDetails, setDescriptionDetails] = React.useState("none");
+  const handleOpen = (name, desc) => {
+    setDescriptionDetails("flex");
+    setEventName(name);
+    setEventDesc(desc);
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setDescriptionDetails("none");
+    setOpen(false)
+  }
+  const changeDriveLink = (driveLink) => {
+    let firstHalf = driveLink.split(".com/")[0];
+    let secondHalf = driveLink.split("?")[1];
+    let finalLink = "url(" + firstHalf + ".com/uc?" + secondHalf + ")";
+    return finalLink;
+  };
+  const handleLargeDescription = (desc) => {
+    if (desc.split(" ").length > 20) {
+      let finalDesc = desc.split(" ").slice(0, 20).join(" ") + "...";
+      return finalDesc;
+    }
+    return desc;
+  };
+
   return (
     <div className="App">
       <div id="wrapper">
@@ -305,8 +347,8 @@ function App(props) {
                 <div className="modalHeading">
                   REGISTRATION
                   <Box>
-                  <IconButton onClick={handleClose}>
-                          <CloseIcon color="action" fontSize="large"/>
+                    <IconButton onClick={handleClose}>
+                      {/* <CloseIcon color="action" fontSize="large"/> */}
                     </IconButton>
                   </Box>
                 </div>
@@ -730,8 +772,7 @@ function App(props) {
               <br /> TO GO{" "}
             </div>
           </div>
-          <div className="balcony">
-            {/* <!-- <div className="horizon-glow-buildings"></div> --> */}
+          {/* <div className="balcony">
             <div className="horizon-glow"></div>
             <div className="balcony-lp">
               <img src={BalconyLaptop} alt="" />
@@ -740,7 +781,8 @@ function App(props) {
               <img src={BalconyMobile} alt="" />
             </div>
             <div className="glow"></div>
-          </div>
+          </div> */}
+          {/* <!-- <div className="horizon-glow-buildings"></div> --> */}
           <div className="city city1">
             <img src={CityLayer1} alt="" />
           </div>
@@ -758,6 +800,56 @@ function App(props) {
           </div>
           <div className="city city6">
             <img src={CityLayer6} alt="" />
+          </div>
+        </div>
+        <div className="balcony">
+          {/* <!-- <div className="horizon-glow-buildings"></div> --> */}
+          <div className="horizon-glow"></div>
+          <div className="balcony-lp">
+            <img src={BalconyLaptop} alt="" />
+          </div>
+          <div className="balcony-mobile">
+            <img src={BalconyMobile} alt="" />
+          </div>
+          <div className="glow"></div>
+        </div>
+        <div className="events-container">
+          <div className="heading">KERNEL EVENTS</div>
+          <div className="card-container">
+            {kernelEvents.map((el) => (
+              <div className="card">
+                <div
+                  className="card-img"
+                  style={{
+                    backgroundImage: changeDriveLink(el.img_url),
+                  }}
+                ></div>
+                <div className="card-text">
+                  <h3>{el.name}</h3>
+                  <p>{handleLargeDescription(el.about)}</p>
+                  <div
+                    className="view-btn"
+                    onClick={() => handleOpen(el.name, el.details)}
+                  >
+                    View Details
+                  </div>
+
+                  {/* <Modal
+                                        open={open}
+                                        onClose={handleClose}
+                                        aria-labelledby="modal-modal-title"
+                                        aria-describedby="modal-modal-description"
+                                    >
+                                        <Box sx={style}>
+                                            <div className="modalHeading">
+                                                {el.name}
+                                            </div>
+
+                                        </Box>
+                                    </Modal> */}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
