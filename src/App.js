@@ -27,7 +27,7 @@ import { Link } from 'react-router-dom'
 import Autocomplete from '@mui/material/Autocomplete'
 import CircularProgress from '@mui/material/CircularProgress';
 import ModalUnstyled from '@mui/base/ModalUnstyled';
-// import CloseIcon from '@mui/icons-material/Close';
+import CloseIcon from '@mui/icons-material/Close';
 import IconButton from '@mui/material/IconButton';
 // import TextField from '@mui/material/TextField';
 import "./Modal.css";
@@ -264,7 +264,8 @@ function App(props) {
     data = {
       ...data,
       events: eventName,
-      college_id: collegeName.id
+      college_id: collegeName.id,
+      workshops: [],
     }
     console.log(eventName);
     console.log(data);
@@ -347,7 +348,7 @@ function App(props) {
                   REGISTRATION
                   <Box>
                     <IconButton onClick={handleClose}>
-                      {/* <CloseIcon color="action" fontSize="large"/> */}
+                      <CloseIcon color="action" fontSize="large"/>
                     </IconButton>
                   </Box>
                 </div>
