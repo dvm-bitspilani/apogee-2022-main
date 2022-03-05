@@ -33,7 +33,7 @@ import IconButton from '@mui/material/IconButton';
 import "./Modal.css";
 import "./App.css";
 import "./events.css"
-import "./Components/Events/all-events.css"
+import "./components/Events/all-events.css"
 // import '/landing.js'
 import { createTheme } from "@mui/material/styles";
 import Chip from "@mui/material/Chip";
@@ -260,10 +260,11 @@ function App(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // console.log(collegeName);
     data = {
       ...data,
       events: eventName,
-      college_id: document.getElementById('asynchronous-demo').value
+      college_id: collegeName.id
     }
     console.log(eventName);
     console.log(data);
@@ -395,6 +396,7 @@ function App(props) {
                               "value",
                               document.getElementById("asynchronous-demo").value
                             );
+                            setCollegeName(value);
                             console.log(collegeName, "collegeName");
                           }}
                           id="asynchronous-demo"
@@ -406,8 +408,8 @@ function App(props) {
                           onClose={() => {
                             setOpenField(false);
                           }}
-                          isOptionEqualToValue={(option, value) => option === value}
-                          getOptionLabel={(option) => option}
+                          isOptionEqualToValue={(option, value) => option.name === value.name}
+                          getOptionLabel={(option) => option.name}
                           options={optionsField}
                           loading={loading}
                           renderInput={(params) => (
