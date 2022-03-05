@@ -33,6 +33,7 @@ import IconButton from '@mui/material/IconButton';
 import "./Modal.css";
 import "./App.css";
 import "./events.css"
+import "./Components/Events/all-events.css"
 // import '/landing.js'
 import { createTheme } from "@mui/material/styles";
 import Chip from "@mui/material/Chip";
@@ -95,7 +96,8 @@ function App(props) {
   const [events, setEvents] = React.useState([]);
   const [kernelEvents, setKernelEvents] = React.useState([]);
   const [finalNames, setNames] = React.useState([]);
-  // const handleClose = () => setOpen(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   const theme = useTheme();
   const [eventName, setEventName] = React.useState([]);
   const [workshopName, setWorkshopName] = React.useState([]);
@@ -294,18 +296,14 @@ function App(props) {
   };
 
   const [eventDesc, setEventDesc] = React.useState("");
-  // const [eventName, setEventName] = React.useState("");
+  const [kernelEventName, setKernelEventName] = React.useState("");
   const [descriptionDetails, setDescriptionDetails] = React.useState("none");
-  const handleOpen = (name, desc) => {
+  const handleOpenEvents = (name, desc) => {
     setDescriptionDetails("flex");
-    setEventName(name);
+    setKernelEventName(name);
     setEventDesc(desc);
-    setOpen(true);
   };
-  const handleClose = () => {
-    setDescriptionDetails("none");
-    setOpen(false)
-  }
+  const handleCloseEvents = () => setDescriptionDetails("none");
   const changeDriveLink = (driveLink) => {
     let firstHalf = driveLink.split(".com/")[0];
     let secondHalf = driveLink.split("?")[1];
@@ -829,7 +827,7 @@ function App(props) {
                   <p>{handleLargeDescription(el.about)}</p>
                   <div
                     className="view-btn"
-                    onClick={() => handleOpen(el.name, el.details)}
+                    onClick={() => handleOpenEvents(el.name, el.details)}
                   >
                     View Details
                   </div>
@@ -850,6 +848,18 @@ function App(props) {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+        <div
+          className="card-description-container kernel-events"
+          style={{ display: descriptionDetails }}
+        >
+          <div className="card-description-box">
+            <div className="close-card-description" onClick={handleCloseEvents}>
+              X
+            </div>
+            <div className="card-description-heading">{kernelEventName}</div>
+            <div className="card-description-details">{eventDesc}</div>
           </div>
         </div>
       </div>
