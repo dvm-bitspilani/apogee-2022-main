@@ -104,7 +104,7 @@ img {
   z-index: 40;
   position: absolute;
   /* bottom: -5px; */
-  top: 70vh;
+  bottom: -40vh;
   max-width: 100%;
 }
 
@@ -213,7 +213,7 @@ img {
 
 .city {
   position: absolute;
-  bottom: calc((100vw * 1389) / 1440 - 27vh);
+  bottom: calc((100vw * 1541) / 1598 - 40vh);
   width: 50%;
   left: 50%;
   z-index: 35;
@@ -268,7 +268,7 @@ img {
 
 .socials {
   position: absolute;
-  top: 76vh;
+  top: 78vh;
   left: 1.5rem;
   z-index: 50;
 }
@@ -287,11 +287,15 @@ img {
   left: 7rem;
   z-index: 50;
   /* bottom: calc((100vw * 220) / 1538 - 6px); */
-  top: 60vh;
+  top: 58vh;
   mix-blend-mode: screen;
 }
 
 @media screen and (max-width: 768px) {
+  .balcony{
+    bottom: -5px;
+  }
+
   .balcony-lp {
     display: none;
   }
@@ -328,7 +332,7 @@ img {
   }
 
   .city {
-    bottom: calc((100vw * 896) / 414 - 72vh);
+    bottom: calc((100vw * 283) / 390 - 7px);
   }
 
   .city1 {
@@ -346,12 +350,12 @@ img {
   .city4 {
     left: calc(50% - 1rem);
     width: 132%;
-    bottom: calc((100vw * 896) / 414 - 72vh);
+    bottom: calc((100vw * 283) / 390 - 1rem);
   }
 
   .city5 {
     width: 90%;
-    bottom: calc((100vw * 896) / 414 - 72vh);
+    bottom: calc((100vw * 283) / 390 - 2rem);
   }
 
   .city6 {
@@ -365,7 +369,7 @@ img {
 
   .sign {
     left: 0;
-    top: 55vh;
+    top: 53vh;
     /* width: 8rem; */
   }
 
