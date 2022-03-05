@@ -365,12 +365,12 @@ img {
 
   .sign {
     left: 0;
-    bottom: 12rem;
+    top: 55vh;
     /* width: 8rem; */
   }
 
   .socials{
-    top: 87vh;
+    top: 80vh;
   }
 }
 
@@ -458,9 +458,6 @@ nav {
 
   .line-menu {
     height: 3px;
-  }
-  .socials {
-    bottom: 1rem;
   }
 }
 @media screen and (max-width: 420px) {
