@@ -74,7 +74,7 @@ function Events() {
         </div>
       </Link>
       <div className="container">
-        <div className="heading">KERNEL EVENTS</div>
+        <div className="heading">ALL EVENTS</div>
         <div className="card-container">
           {events.map((el) => (
             <div className="card">
