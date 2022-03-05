@@ -31,7 +31,7 @@ code {
   font-family: "BARTKEY";
   font-size: 50px;
   color: white;
-  margin-bottom: 40px;    
+  margin-bottom: 40px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -110,7 +110,7 @@ input {
   align-content: center;
   justify-content: space-between;
   align-items: center;
-  width: 85%;
+  width: 95%;
 }
 
 span {
@@ -141,11 +141,11 @@ span {
   padding: 3px;
 }
 
-.register-lp{
+.register-lp {
   display: block;
 }
 
-.register-mobile{
+.register-mobile {
   display: none;
 }
 
@@ -208,7 +208,7 @@ span {
     position: absolute;
     left: 1.5rem;
   }
-/* 
+  /* 
   #registerTop{
     position: absolute;
     bottom: calc((100vw * 285) / 393 - 10rem);
@@ -225,7 +225,7 @@ span {
     font-size: 36px;
     margin-left: 20px;
   }
-  .register-mobile{
+  .register-mobile {
     display: block;
   }
 }
