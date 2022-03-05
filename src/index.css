@@ -31,7 +31,13 @@ code {
   font-family: "BARTKEY";
   font-size: 50px;
   color: white;
-  margin-bottom: 40px;
+  margin-bottom: 40px;    
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
 }
 #submitBtn {
   /* background: red; */
@@ -209,7 +215,16 @@ span {
     right: 1rem;
     z-index: 60;
   } */
-
+  .modalHeading {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 36px;
+    margin-left: 20px;
+  }
   .register-mobile{
     display: block;
   }
