@@ -37,7 +37,6 @@
   }
 }
 
-
 /* Landing CSS */
 body {
   margin: 0;
@@ -59,7 +58,7 @@ img {
   width: 100%;
 }
 
-#wrapper{
+#wrapper {
   position: relative;
   width: 100%;
   overflow: hidden;
@@ -129,7 +128,7 @@ img {
   align-content: center;
   justify-content: center;
   align-items: center;
-  transition:all 1.5s ease 0s;
+  transition: all 1.5s ease 0s;
 }
 #moon {
   animation: rotateMoon 150s infinite;
@@ -139,8 +138,12 @@ img {
 }
 
 @keyframes rotateMoon {
-  from {transform: rotate(0deg);}
-  to {transform: rotate(360deg);}
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .balcony .glow {
@@ -269,7 +272,7 @@ img {
   cursor: pointer;
 }
 
-.sign{
+.sign {
   position: absolute;
   width: 12rem;
   bottom: 0;
@@ -320,40 +323,39 @@ img {
     bottom: calc((100vw * 300) / 414 - 7px);
   }
 
-  .city1{
+  .city1 {
     width: 241%;
   }
 
-  .city2{
+  .city2 {
     width: 161%;
   }
 
-  .city3{
+  .city3 {
     width: 141%;
   }
-  
-  .city4{
+
+  .city4 {
     left: calc(50% - 1rem);
     width: 132%;
     bottom: calc((100vw * 300) / 414 - 1rem);
-
   }
 
-  .city5{
+  .city5 {
     width: 90%;
     bottom: calc((100vw * 300) / 414 - 2rem);
   }
 
-  .city6{
+  .city6 {
     width: 50%;
     left: calc(50% - 1rem);
   }
 
-  .balcony .glow{
+  .balcony .glow {
     height: 35%;
   }
 
-  .sign{
+  .sign {
     left: 0;
     bottom: 12rem;
     /* width: 8rem; */
@@ -424,33 +426,33 @@ nav {
 }
 
 @media screen and (max-width: 768px) {
-  nav{
+  nav {
     flex-direction: column;
     padding: 1.5rem;
   }
 
-  .logo{
+  .logo {
     order: 2;
     width: 80%;
     margin-top: 3rem;
   }
 
-  .hamburger{
+  .hamburger {
     order: 1;
     width: 30px;
     height: 25px;
     align-self: flex-end;
   }
 
-  .line-menu{
+  .line-menu {
     height: 3px;
   }
-  .socials{
-    bottom:1rem;
+  .socials {
+    bottom: 1rem;
   }
 }
 @media screen and (max-width: 376px) {
   #moon {
-    top:40%;
+    top: 40%;
   }
 }
