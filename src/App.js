@@ -669,7 +669,7 @@ function App(props) {
               <div class="nav-links">APOGEE Innovation Challenge</div>
             </a> */}
             <Link to="/events">
-              <div class="nav-links">Kernel Events</div>
+              <div class="nav-links">All Events</div>
             </Link>
             <a
               href="https://bits-apogee.org/campusambassador2022/"
