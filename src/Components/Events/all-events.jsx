@@ -30,6 +30,8 @@ import "./all-events.css";
 
 function Events() {
   const [events, setEvents] = React.useState([]);
+  const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+
   React.useEffect(() => {
     fetch("https://bits-apogee.org/registrations/events_details/", {
       headers: { "content-type": "application/json" },
@@ -76,7 +78,7 @@ function Events() {
         </div>
       </Link>
       <div className="container">
-        <div className="heading">ALL EVENTS</div>
+        <div className="heading">{vw > 768 ? "ALL EVENTS" : "KERNEL EVENTS"}</div>
         <div className="card-container">
           {events.map((el) => (
             <div className="card">
