@@ -5,6 +5,7 @@ import ViewBtn from "../../assets/Button.svg";
 import Arrow from "../../assets/Arrox.svg";
 import Modal from "@mui/material/Modal";
 import { styled, Box } from "@mui/system";
+import CloseIcon from '@mui/icons-material/Close';
 
 import "../../events.css";
 import "./all-events.css";
@@ -56,6 +57,7 @@ function Events() {
     let firstHalf = driveLink.split(".com/")[0];
     let secondHalf = driveLink.split("?")[1];
     let finalLink = "url(" + firstHalf + ".com/uc?" + secondHalf + ")";
+    console.log("Final Link", finalLink);
     return finalLink;
   };
   const handleLargeDescription = (desc) => {
@@ -89,7 +91,7 @@ function Events() {
                 <p>{handleLargeDescription(el.description)}</p>
                 <div
                   className="view-btn"
-                  onClick={() => handleOpen(el.name, el.details)}
+                  onClick={() => handleOpen(el.name, el.description)}
                 >
                   View Details
                 </div>
@@ -118,7 +120,7 @@ function Events() {
       >
         <div className="card-description-box">
           <div className="close-card-description" onClick={handleClose}>
-            X
+            <CloseIcon/>
           </div>
           <div className="card-description-heading">{eventName}</div>
           <div className="card-description-details">{eventDesc}</div>

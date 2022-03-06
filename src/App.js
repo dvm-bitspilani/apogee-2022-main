@@ -33,7 +33,7 @@ import IconButton from '@mui/material/IconButton';
 import "./Modal.css";
 import "./App.css";
 import "./events.css"
-import "./Components/Events/all-events.css"
+import "./components/Events/all-events.css"
 // import '/landing.js'
 import { createTheme } from "@mui/material/styles";
 import Chip from "@mui/material/Chip";
@@ -830,7 +830,7 @@ function App(props) {
                   <p>{handleLargeDescription(el.description)}</p>
                   <div
                     className="view-btn"
-                    onClick={() => handleOpenEvents(el.name, el.details)}
+                    onClick={() => handleOpenEvents(el.name, el.description)}
                   >
                     View Details
                   </div>
@@ -859,7 +859,7 @@ function App(props) {
         >
           <div className="card-description-box">
             <div className="close-card-description" onClick={handleCloseEvents}>
-              X
+              <CloseIcon/>
             </div>
             <div className="card-description-heading">{kernelEventName}</div>
             <div className="card-description-details">{eventDesc}</div>

@@ -78,7 +78,7 @@ img {
 
 .card {
   width: 33%;
-  height: 215px;
+  height: auto;
   margin: 1rem 1rem;
   background: rgba(7, 9, 73, 0.09);
   box-shadow: inset 0px -106.879px 88.6312px -83.4176px rgba(104, 80, 148, 0.3),
@@ -98,6 +98,7 @@ img {
   border-radius: 10px;
   background-size: cover;
   background-color: hsl(227deg 24% 47%);
+  background-position: center center;
 }
 
 /* .card-img img {
@@ -137,6 +138,7 @@ img {
   transition: all 0.7s;
   font-size: 12px;
   font-weight: 600;
+  margin: 10px;
 }
 
 .view-btn:hover {
