@@ -28,6 +28,11 @@
   padding: 5vh 5vw;
   font-family: "Montserrat", sans-serif;
 }
+
+.kernel-events .card-description-box{
+  max-width: 65vw;
+}
+
 .close-card-description {
   font-size: 20px;
   font-weight: 900;

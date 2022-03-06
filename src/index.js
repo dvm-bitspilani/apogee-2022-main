@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
-import Events from "./components/Events/all-events.jsx";
+import Events from "./Components/Events/all-events.jsx";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
@@ -16,19 +16,19 @@ function handleCities() {
   }
   cities[0].style.transform = "translate(-45%, 0)";
   setTimeout(() => {
-    cities[1].style.transform = "translate(-45%, 0)";
+    cities[1].style.transform = "translate(-46%, 0)";
   }, 200);
   setTimeout(() => {
     cities[2].style.transform = "translate(-50%, 15%)";
   }, 1000);
   setTimeout(() => {
-    cities[3].style.transform = "translate(-53%, 8%)";
+    cities[3].style.transform = "translate(-54%, 8%)";
   }, 1800);
   setTimeout(() => {
     cities[4].style.transform = "translate(-75%, 5%)";
   }, 2600);
   setTimeout(() => {
-    cities[5].style.transform = "translate(-2%, -3%)";
+    cities[5].style.transform = "translate(-7%, -3%)";
   }, 3200);
 
   // cities[2].style.transform = "translate(-50%, 15%)";

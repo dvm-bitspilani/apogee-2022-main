@@ -104,7 +104,8 @@ img {
   z-index: 40;
   position: absolute;
   /* bottom: -5px; */
-  bottom: -40vh;
+  top: 72vh;
+  /* bottom: -40vh; */
   max-width: 100%;
 }
 
@@ -213,7 +214,7 @@ img {
 
 .city {
   position: absolute;
-  bottom: calc((100vw * 1541) / 1598 - 40vh);
+  /* bottom: calc((100vw * 1541) / 1598 - 40vh); */
   width: 50%;
   left: 50%;
   z-index: 35;
@@ -224,14 +225,16 @@ img {
   transform: translate(-45%, 100%);
   z-index: 30;
   transition: transform 0.8s ease-out;
+  top: 68vh;
 }
 
 .city2 {
   width: 65%;
-  transform: translate(-45%, 100%);
+  transform: translate(-46%, 100%);
   z-index: 25;
   transition: transform 0.8s ease-out;
   transition-delay: 0.5s;
+  top: 60.5vh;
 }
 
 .city3 {
@@ -240,14 +243,16 @@ img {
   z-index: 20;
   transition: transform 1s ease-out;
   transition-delay: 1s;
+  top: 49vh;
 }
 
 .city4 {
   width: 46%;
-  transform: translate(-53%, 100%);
+  transform: translate(-54%, 100%);
   z-index: 17;
   transition: transform 1.2s ease-out;
   transition-delay: 1.7s;
+  top: 25vh;
 }
 
 .city5 {
@@ -256,14 +261,16 @@ img {
   z-index: 15;
   transition: transform 1.3s ease-out;
   transition-delay: 2.3s;
+  top: 20vh;
 }
 
 .city6 {
   width: 19%;
-  transform: translate(-2%, 100%);
+  transform: translate( -7%, 100%);
   z-index: 12;
   transition: transform 1.3s ease-out;
   transition-delay: 2.3s;
+  top: 47vh;
 }
 
 .socials {
@@ -331,36 +338,38 @@ img {
     width: 400vw;
   }
 
-  .city {
-    bottom: calc((100vw * 283) / 390 - 7px);
-  }
-
   .city1 {
     width: 241%;
+    top: 68.75vh;
   }
 
   .city2 {
     width: 161%;
+    top: 65.25vh;
   }
 
   .city3 {
     width: 141%;
+    top: 57vh;
   }
 
   .city4 {
-    left: calc(50% - 1rem);
+    /* left: calc(50% - 1rem); */
     width: 132%;
-    bottom: calc((100vw * 283) / 390 - 1rem);
+    top: 40vh;
+    /* bottom: calc((100vw * 283) / 390 - 1rem); */
   }
 
   .city5 {
     width: 90%;
-    bottom: calc((100vw * 283) / 390 - 2rem);
+    top: 35vh;
+    /* bottom: calc((100vw * 283) / 390 - 2rem); */
   }
 
   .city6 {
     width: 50%;
-    left: calc(50% - 1rem);
+    /* left: calc(50% - 1rem); */
+    top: 57vh;
   }
 
   .balcony .glow {
@@ -370,6 +379,7 @@ img {
   .sign {
     left: 0;
     top: 53vh;
+    display: none;
     /* width: 8rem; */
   }
 

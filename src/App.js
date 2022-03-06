@@ -33,7 +33,7 @@ import IconButton from '@mui/material/IconButton';
 import "./Modal.css";
 import "./App.css";
 import "./events.css"
-import "./components/Events/all-events.css"
+import "./Components/Events/all-events.css"
 // import '/landing.js'
 import { createTheme } from "@mui/material/styles";
 import Chip from "@mui/material/Chip";
@@ -223,15 +223,15 @@ function App(props) {
         document.getElementsByClassName("city1")[0].style.transform =
           "translateX(-62%)";
         document.getElementsByClassName("city2")[0].style.transform =
-          "translateX(-62%)";
+          "translateX(-63%)";
         document.getElementsByClassName("city3")[0].style.transform =
           "translate(-67%,15%)";
         document.getElementsByClassName("city4")[0].style.transform =
-          "translate(-70%,8%)";
+          "translate(-71%,8%)";
         document.getElementsByClassName("city5")[0].style.transform =
           "translate(-96%,5%)";
         document.getElementsByClassName("city6")[0].style.transform =
-          "translate(-45%,-3%)";
+          "translate(-50%,-3%)";
         document.getElementsByClassName("moon")[0].style.transform =
           "translateX(-57%)";
 
@@ -244,15 +244,15 @@ function App(props) {
       document.getElementsByClassName("city1")[0].style.transform =
         "translateX(-45%)";
       document.getElementsByClassName("city2")[0].style.transform =
-        "translateX(-45%)";
+        "translateX(-46%)";
       document.getElementsByClassName("city3")[0].style.transform =
         "translate(-50%,15%)";
       document.getElementsByClassName("city4")[0].style.transform =
-        "translate(-53%,8%)";
+        "translate(-54%,8%)";
       document.getElementsByClassName("city5")[0].style.transform =
         "translate(-75%,5%)";
       document.getElementsByClassName("city6")[0].style.transform =
-        "translate(-2%,-3%)";
+        "translate(-7%,-3%)";
       document.getElementsByClassName("moon")[0].style.transform =
         "translateX(-50%)";
     }
@@ -283,6 +283,10 @@ function App(props) {
         console.log(result);
         if (result.message) {
           alert(result.message.split(':')[0])
+        }
+        if(result.message == `A confirmation link has been sent to ${data.email_id}. Kindly click on it to verify your email address.`){
+          console.log("submitted")
+          document.getElementById("registerForm").reset();
         }
       });
   };
@@ -353,7 +357,7 @@ function App(props) {
                   </Box>
                 </div>
                 <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                  <form onSubmit={handleSubmit}>
+                  <form onSubmit={handleSubmit} id="registerForm">
                     <div className="wrapper">
                       <div className="cell">
                         <span>
