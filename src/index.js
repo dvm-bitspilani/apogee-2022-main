@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
-import Events from "./components/Events/all-events.jsx";
+import Events from "./Components/Events/all-events.jsx";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";

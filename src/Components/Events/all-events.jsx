@@ -86,7 +86,7 @@ function Events() {
               ></div>
               <div className="card-text">
                 <h3>{el.name}</h3>
-                <p>{handleLargeDescription(el.about)}</p>
+                <p>{handleLargeDescription(el.description)}</p>
                 <div
                   className="view-btn"
                   onClick={() => handleOpen(el.name, el.details)}
