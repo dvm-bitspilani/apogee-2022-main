@@ -107,6 +107,7 @@ function App(props) {
   const [optionsField, setOptionsField] = React.useState([]);
   const [collegeName, setCollegeName] = React.useState([]);
   // const [registerDisabled, setRegisterDisabled] = React.useState(true);
+  const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
 
   const loading = openField && optionsField.length === 0;
   React.useEffect(() => {
@@ -676,7 +677,7 @@ function App(props) {
               <div class="nav-links">APOGEE Innovation Challenge</div>
             </a> */}
             <Link to="/events">
-              <div class="nav-links">All Events</div>
+              <div class="nav-links nav-events">{vw > 768 ? "All Events" : "Kernel Events"}</div>
             </Link>
             <a
               href="https://bits-apogee.org/campusambassador2022/"
