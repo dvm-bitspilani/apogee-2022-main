@@ -377,9 +377,9 @@ img {
   }
 
   .sign {
-    left: 0;
-    top: 53vh;
-    display: none;
+    left: -14px;
+    top: 62vh;
+    width: 43vw;
     /* width: 8rem; */
   }
 
