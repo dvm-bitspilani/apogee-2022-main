@@ -669,7 +669,7 @@ function App(props) {
           </div>
 
           <div id="drawer">
-            <a href="/" target="_blank">
+            <a href="https://bits-apogee.org/registrations/login/" target="_blank">
               <div class="nav-links">Login</div>
             </a>
             {/* <a href="/">
