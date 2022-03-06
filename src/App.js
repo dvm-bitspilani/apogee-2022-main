@@ -474,7 +474,7 @@ function App(props) {
                       </div>
                       <div className="cell">
                         <span>
-                          E-mail*
+                          Email*
                         </span>
                         <TextField type="email" onChange={handleChange} name="email_id" label="Type your email" sx={{ width: 300, border: '1px solid white', color: 'white' }}
                         />
@@ -635,7 +635,7 @@ function App(props) {
                       </div>
                       <div className="cell">
                         <span>
-                          Commitments*
+                          Commitments
                         </span>
                         <TextField type="text" variant="outlined" onChange={handleChange} name="commitments" label="Type your Tech-teams/Clubs" sx={{ width: 300, color: 'white', border: '1px solid white' }}
                         />
@@ -643,7 +643,7 @@ function App(props) {
                     </div>
                     <div id="submitBtn">
                       <div className="registerBtnBorder">
-                        <button type="submit">
+                        <button id="submitButton" type="submit">
                           <input
                             type="submit"
                             value="REGISTER"

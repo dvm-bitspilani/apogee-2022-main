@@ -131,6 +131,9 @@ span {
   padding: 5px 30px;
   font-weight: bold;
   transition: all 0.7s;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 .registerBtn:hover {
   cursor: pointer;
@@ -238,4 +241,12 @@ span {
 }
 .MuiSvgIcon-root {
   color: white !important;
+}
+.submitButton{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.MuiInputBase-root {
+  border: none !important;
 }

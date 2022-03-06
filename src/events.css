@@ -118,6 +118,7 @@ img {
   flex-direction: column;
   justify-content: space-between;
   height: 90%;
+  align-items: center;
 }
 .card-text > p {
   font-size: 12px;
