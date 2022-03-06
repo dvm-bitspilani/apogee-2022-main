@@ -229,3 +229,13 @@ span {
     display: block;
   }
 }
+
+.MuiChip-label {
+  color: white !important;
+  border: 1px white solid !important;
+  border-radius: 10px !important;
+  padding: 0 12px !important;
+}
+.MuiSvgIcon-root {
+  color: white !important;
+}
