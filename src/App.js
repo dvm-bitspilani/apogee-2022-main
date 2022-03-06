@@ -313,8 +313,8 @@ function App(props) {
     return finalLink;
   };
   const handleLargeDescription = (desc) => {
-    if (desc.split(" ").length > 20) {
-      let finalDesc = desc.split(" ").slice(0, 20).join(" ") + "...";
+    if (desc.split(" ").length > 15) {
+      let finalDesc = desc.split(" ").slice(0, 15).join(" ") + "...";
       return finalDesc;
     }
     return desc;
