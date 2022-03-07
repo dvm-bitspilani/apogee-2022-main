@@ -58,7 +58,7 @@ img {
 }
 
 .heading {
-  font-family: Bartkey;
+  font-family: "Bartkey";
   font-size: 3rem;
 }
 
@@ -176,6 +176,11 @@ img {
     margin-top: 1rem;
   }
 
+  
+.bg{
+  background: linear-gradient(180deg, #000022 0%, #00003E 50.31%, #000025 100%);
+  transform: matrix(1, 0, 0, -1, 0, 0);
+}
   .card {
     width: 100%;
     height: max-content;
