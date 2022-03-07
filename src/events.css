@@ -27,7 +27,7 @@ img {
 }
 
 .bg {
-  background: url(./assets/laptop/events_balcony.svg) no-repeat;
+  background: url("https://bits-apogee.netlify.app/static/media/events_balcony.13f42bc994d2c597eddc.svg") no-repeat;
   background-size: cover;
   height: 100vh;
   z-index: -10;
