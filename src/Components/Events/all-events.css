@@ -1,12 +1,23 @@
+
+
 .card-description-container {
   position: absolute;
   width: 100vw;
   height: 100vh;
   background-color: rgb(0 0 0 / 79%);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   top: 0;
   color: white;
 }
@@ -17,10 +28,14 @@
 }
 .card-description-box {
   background: rgba(7, 9, 73, 0.09);
-  box-shadow: inset 0px -106.879px 88.6312px -83.4176px rgba(104, 80, 148, 0.3),
+  -webkit-box-shadow: inset 0px -106.879px 88.6312px -83.4176px rgba(104, 80, 148, 0.3),
     inset 0px 5.2136px 23.4612px rgba(107, 100, 154, 0.3),
     inset 0px 1.3034px 52.136px rgba(179, 171, 226, 0.2);
-  backdrop-filter: blur(130px);
+          box-shadow: inset 0px -106.879px 88.6312px -83.4176px rgba(104, 80, 148, 0.3),
+    inset 0px 5.2136px 23.4612px rgba(107, 100, 154, 0.3),
+    inset 0px 1.3034px 52.136px rgba(179, 171, 226, 0.2);
+  -webkit-backdrop-filter: blur(130px);
+          backdrop-filter: blur(130px);
   border-radius: 20px;
   height: 60vh;
   min-width: 60vw;

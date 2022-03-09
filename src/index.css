@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -6,49 +13,78 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 * {
   font-family: "Gilroy";
 }
+
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap");
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
 @font-face {
   font-family: "BARTKEY";
   src: local("BARTKEY"), url(./assets/BARTKEY.ttf) format("truetype");
   /* other formats include: 'woff2', 'truetype, 'opentype',
                             'embedded-opentype', and 'svg' */
 }
+
 @font-face {
   font-family: "Gilroy";
   src: local("Gilroy"), url(./assets/Gilroy.otf) format("opentype");
   /* other formats include: 'woff2', 'truetype, 'opentype',
                             'embedded-opentype', and 'svg' */
 }
+
 .modalHeading {
   font-family: "BARTKEY";
   font-size: 50px;
   color: white;
   margin-bottom: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
+  -ms-flex-line-pack: center;
   align-content: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
+
 #submitBtn {
   /* background: red; */
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -ms-flex-line-pack: center;
   align-content: center;
 }
+
 #submit-form {
   color: black;
   font-size: 18px;
@@ -57,8 +93,11 @@ code {
   border: none;
   padding: 5px 30px;
   font-weight: bold;
+  -webkit-transition: all 0.7s;
+  -o-transition: all 0.7s;
   transition: all 0.7s;
 }
+
 #submit-form:hover {
   cursor: pointer;
   opacity: 0.6;
@@ -69,46 +108,67 @@ code {
 .css-4vkg4y-MuiFormControl-root-MuiTextField-root {
   border-radius: 10px !important;
 }
+
 .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
   border-color: white;
 }
+
 .MuiFormLabel-root.Mui-focused {
   color: white !important;
   border-color: white !important;
 }
+
 .MuiTextField-root {
   border: none !important;
   border-radius: 10px !important;
 }
+
 .MuiOutlinedInput-notchedOutline {
   border-color: white !important;
   border-radius: 10px !important;
 }
+
 .MuiOutlinedInput-input {
   color: white !important;
 }
+
 .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
   border-color: white !important;
   border-radius: 10px;
 }
+
 .MuiOutlinedInput-input {
   border: 1px solid white;
   border-radius: 10px;
 }
+
 input:focus {
   background-color: none;
   outline: none;
 }
+
 input {
   /* color: white !important; */
   font-size: 20px;
 }
+
 .genderContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
+  -ms-flex-line-pack: center;
   align-content: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   width: 95%;
 }
@@ -119,7 +179,11 @@ span {
 
 .genderContainerInput {
   width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -130,15 +194,19 @@ span {
   font-family: "Montserrat";
   padding: 5px 30px;
   font-weight: bold;
+  -webkit-transition: all 0.7s;
+  -o-transition: all 0.7s;
   transition: all 0.7s;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
+
 .registerBtn:hover {
   cursor: pointer;
   opacity: 0.6;
 }
+
 .registerBtnBorder {
   border: 1px solid white;
   padding: 3px;
@@ -160,11 +228,22 @@ span {
   left: -10px;
   font-weight: bold;
   text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
+  -ms-flex-line-pack: center;
   align-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   font-family: Montserrat;
   font-size: 1em;
@@ -178,15 +257,27 @@ span {
   top: 0;
   right: 0;
   overflow-x: hidden;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
   transition: 0.5s;
   text-align: center;
   padding-top: 100px;
   background: rgba(0, 0, 0, 0.85);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
   transform: translateX(100%);
 }
+
 #drawer a {
   width: 60%;
   padding: 20px;
@@ -195,6 +286,10 @@ span {
   color: white;
   background: rgba(25, 25, 27, 0.09);
   mix-blend-mode: normal;
+  -webkit-box-shadow: 0px 5px 2px rgba(255, 255, 255, 0.02),
+    inset 0px -106.879px 88.6312px -83.4176px rgba(16, 12, 24, 0.05),
+    inset 0px 5.2136px 23.4612px rgba(94, 87, 147, 0.15),
+    inset 0px 1.3034px 52.136px rgba(161, 155, 199, 0.05);
   box-shadow: 0px 5px 2px rgba(255, 255, 255, 0.02),
     inset 0px -106.879px 88.6312px -83.4176px rgba(16, 12, 24, 0.05),
     inset 0px 5.2136px 23.4612px rgba(94, 87, 147, 0.15),
@@ -211,6 +306,7 @@ span {
     position: absolute;
     left: 1.5rem;
   }
+
   /* 
   #registerTop{
     position: absolute;
@@ -219,15 +315,27 @@ span {
     z-index: 60;
   } */
   .modalHeading {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
+    -ms-flex-line-pack: center;
     align-content: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     font-size: 36px;
     margin-left: 20px;
   }
+
   .register-mobile {
     display: block;
   }
@@ -239,14 +347,17 @@ span {
   border-radius: 10px !important;
   padding: 0 12px !important;
 }
+
 .MuiSvgIcon-root {
   color: white !important;
 }
-.submitButton{
+
+.submitButton {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
+
 .MuiInputBase-root {
   border: none !important;
 }

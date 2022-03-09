@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -9,17 +10,27 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    -webkit-animation: App-logo-spin infinite 20s linear;
+            animation: App-logo-spin infinite 20s linear;
   }
 }
 
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -28,12 +39,25 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
+@-webkit-keyframes App-logo-spin {
   from {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
@@ -51,7 +75,8 @@ html {
 }
 
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 img {
@@ -127,37 +152,72 @@ img {
   top: -20vh;
   /* bottom: 10vh; */
   left: 50%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
   mix-blend-mode: screen;
   /* background: url(./assets/laptop/Moon.svg) no-repeat; */
   background-size: 100%;
   height: 110vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 1.5s ease 0s;
+  -o-transition: all 1.5s ease 0s;
   transition: all 1.5s ease 0s;
 }
 #moon {
-  animation: rotateMoon 150s infinite;
+  -webkit-animation: rotateMoon 150s infinite;
+          animation: rotateMoon 150s infinite;
   position: relative;
   top: 20%;
   /* mix-blend-mode: screen; */
 }
 
-@keyframes rotateMoon {
+@-webkit-keyframes rotateMoon {
   from {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateMoon {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
 .balcony .glow {
   width: 100%;
+  background: -o-radial-gradient(
+    50% 96.77%,
+    217.21% 217.2%,
+    #ffffff 0%,
+    rgba(112, 36, 36, 0.41) 100%
+  );
   background: radial-gradient(
     217.21% 217.2% at 50% 96.77%,
     #ffffff 0%,
@@ -165,8 +225,11 @@ img {
   );
   mix-blend-mode: color-dodge;
   opacity: 0.4;
-  filter: blur(20px);
-  transform: matrix(1, 0, 0, -1, 0, 0);
+  -webkit-filter: blur(20px);
+          filter: blur(20px);
+  -webkit-transform: matrix(1, 0, 0, -1, 0, 0);
+      -ms-transform: matrix(1, 0, 0, -1, 0, 0);
+          transform: matrix(1, 0, 0, -1, 0, 0);
   position: absolute;
   top: 0;
   z-index: 40;
@@ -179,7 +242,16 @@ img {
   position: absolute;
   bottom: calc((100vw * 220) / 1538 - 30px);
   left: 50%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: -o-radial-gradient(
+    50% 50%,
+    50% 50%,
+    #f6feff 0%,
+    #c3bfc5 41.46%,
+    #573c4b 100%
+  );
   background: radial-gradient(
     50% 50% at 50% 50%,
     #f6feff 0%,
@@ -189,7 +261,8 @@ img {
   background: blue;
   mix-blend-mode: color-burn;
   opacity: 0.65;
-  filter: blur(60px);
+  -webkit-filter: blur(60px);
+          filter: blur(60px);
   z-index: 10;
 }
 
@@ -199,7 +272,15 @@ img {
   position: absolute;
   bottom: calc((100vw * 220) / 1538 - 30px);
   left: 50%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: -o-radial-gradient(
+    50% 50%,
+    103.57% 103.57%,
+    #ffffff 0%,
+    #180000 100%
+  );
   background: radial-gradient(
     103.57% 103.57% at 50% 50%,
     #ffffff 0%,
@@ -208,7 +289,8 @@ img {
   background: blue;
   mix-blend-mode: color-dodge;
   opacity: 0.3;
-  filter: blur(40px);
+  -webkit-filter: blur(40px);
+          filter: blur(40px);
   z-index: 40;
 }
 
@@ -222,54 +304,100 @@ img {
 
 .city1 {
   width: 70%;
-  transform: translate(-45%, 100%);
+  -webkit-transform: translate(-45%, 100%);
+      -ms-transform: translate(-45%, 100%);
+          transform: translate(-45%, 100%);
   z-index: 30;
+  -webkit-transition: -webkit-transform 0.8s ease-out;
+  transition: -webkit-transform 0.8s ease-out;
+  -o-transition: transform 0.8s ease-out;
   transition: transform 0.8s ease-out;
+  transition: transform 0.8s ease-out, -webkit-transform 0.8s ease-out;
   top: 68vh;
 }
 
 .city2 {
   width: 65%;
-  transform: translate(-46%, 100%);
+  -webkit-transform: translate(-46%, 100%);
+      -ms-transform: translate(-46%, 100%);
+          transform: translate(-46%, 100%);
   z-index: 25;
+  -webkit-transition: -webkit-transform 0.8s ease-out;
+  transition: -webkit-transform 0.8s ease-out;
+  -o-transition: transform 0.8s ease-out;
   transition: transform 0.8s ease-out;
-  transition-delay: 0.5s;
+  transition: transform 0.8s ease-out, -webkit-transform 0.8s ease-out;
+  -webkit-transition-delay: 0.5s;
+       -o-transition-delay: 0.5s;
+          transition-delay: 0.5s;
   top: 60.5vh;
 }
 
 .city3 {
   width: 50%;
-  transform: translate(-50%, 100%);
+  -webkit-transform: translate(-50%, 100%);
+      -ms-transform: translate(-50%, 100%);
+          transform: translate(-50%, 100%);
   z-index: 20;
+  -webkit-transition: -webkit-transform 1s ease-out;
+  transition: -webkit-transform 1s ease-out;
+  -o-transition: transform 1s ease-out;
   transition: transform 1s ease-out;
-  transition-delay: 1s;
+  transition: transform 1s ease-out, -webkit-transform 1s ease-out;
+  -webkit-transition-delay: 1s;
+       -o-transition-delay: 1s;
+          transition-delay: 1s;
   top: 49vh;
 }
 
 .city4 {
   width: 46%;
-  transform: translate(-54%, 100%);
+  -webkit-transform: translate(-54%, 100%);
+      -ms-transform: translate(-54%, 100%);
+          transform: translate(-54%, 100%);
   z-index: 17;
+  -webkit-transition: -webkit-transform 1.2s ease-out;
+  transition: -webkit-transform 1.2s ease-out;
+  -o-transition: transform 1.2s ease-out;
   transition: transform 1.2s ease-out;
-  transition-delay: 1.7s;
+  transition: transform 1.2s ease-out, -webkit-transform 1.2s ease-out;
+  -webkit-transition-delay: 1.7s;
+       -o-transition-delay: 1.7s;
+          transition-delay: 1.7s;
   top: 25vh;
 }
 
 .city5 {
   width: 30%;
-  transform: translate(-75%, 100%);
+  -webkit-transform: translate(-75%, 100%);
+      -ms-transform: translate(-75%, 100%);
+          transform: translate(-75%, 100%);
   z-index: 15;
+  -webkit-transition: -webkit-transform 1.3s ease-out;
+  transition: -webkit-transform 1.3s ease-out;
+  -o-transition: transform 1.3s ease-out;
   transition: transform 1.3s ease-out;
-  transition-delay: 2.3s;
+  transition: transform 1.3s ease-out, -webkit-transform 1.3s ease-out;
+  -webkit-transition-delay: 2.3s;
+       -o-transition-delay: 2.3s;
+          transition-delay: 2.3s;
   top: 20vh;
 }
 
 .city6 {
   width: 19%;
-  transform: translate( -7%, 100%);
+  -webkit-transform: translate( -7%, 100%);
+      -ms-transform: translate( -7%, 100%);
+          transform: translate( -7%, 100%);
   z-index: 12;
+  -webkit-transition: -webkit-transform 1.3s ease-out;
+  transition: -webkit-transform 1.3s ease-out;
+  -o-transition: transform 1.3s ease-out;
   transition: transform 1.3s ease-out;
-  transition-delay: 2.3s;
+  transition: transform 1.3s ease-out, -webkit-transform 1.3s ease-out;
+  -webkit-transition-delay: 2.3s;
+       -o-transition-delay: 2.3s;
+          transition-delay: 2.3s;
   top: 47vh;
 }
 
@@ -392,9 +520,15 @@ img {
 
 nav {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 2rem;
   position: absolute;
   top: 0;
@@ -404,16 +538,29 @@ nav {
 .hamburger {
   width: 35px;
   height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   cursor: pointer;
+  -webkit-transition: -webkit-transform 300ms ease-out;
+  transition: -webkit-transform 300ms ease-out;
+  -o-transition: transform 300ms ease-out;
   transition: transform 300ms ease-out;
+  transition: transform 300ms ease-out, -webkit-transform 300ms ease-out;
   z-index: 200;
 }
 
 .hamburger.open {
-  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 .line-menu {
@@ -428,22 +575,39 @@ nav {
 }
 
 .line-menu.start {
+  -webkit-transition: -webkit-transform 300ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+  transition: -webkit-transform 300ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+  -o-transition: transform 300ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
   transition: transform 300ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
-  transform-origin: right;
+  transition: transform 300ms cubic-bezier(0.54, -0.81, 0.57, 0.57), -webkit-transform 300ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+  -webkit-transform-origin: right;
+      -ms-transform-origin: right;
+          transform-origin: right;
 }
 
 .open .line-menu.start {
-  transform: rotate(-90deg) translateX(3px);
+  -webkit-transform: rotate(-90deg) translateX(3px);
+      -ms-transform: rotate(-90deg) translateX(3px);
+          transform: rotate(-90deg) translateX(3px);
 }
 
 .line-menu.end {
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  -webkit-transition: -webkit-transform 300ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+  transition: -webkit-transform 300ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+  -o-transition: transform 300ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
   transition: transform 300ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
-  transform-origin: left;
+  transition: transform 300ms cubic-bezier(0.54, -0.81, 0.57, 0.57), -webkit-transform 300ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+  -webkit-transform-origin: left;
+      -ms-transform-origin: left;
+          transform-origin: left;
 }
 
 .open .line-menu.end {
-  transform: rotate(-90deg) translateX(-3px);
+  -webkit-transform: rotate(-90deg) translateX(-3px);
+      -ms-transform: rotate(-90deg) translateX(-3px);
+          transform: rotate(-90deg) translateX(-3px);
 }
 
 .logo {
@@ -453,21 +617,29 @@ nav {
 
 @media screen and (max-width: 768px) {
   nav {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     padding: 1.5rem;
   }
 
   .logo {
-    order: 2;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
     width: 80%;
     margin-top: 3rem;
   }
 
   .hamburger {
-    order: 1;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
     width: 30px;
     height: 25px;
-    align-self: flex-end;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
   }
 
   .line-menu {
