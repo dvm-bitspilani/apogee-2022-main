@@ -27,7 +27,8 @@ img {
 }
 
 .bg {
-  background: url("./assets/laptop/events_balcony.svg") no-repeat;
+  /* background: url("./assets/laptop/events_balcony.svg") no-repeat; */
+  background-color: #000932;
   background-size: cover;
   height: 100vh;
   width: 100vw;
@@ -35,6 +36,10 @@ img {
   /* position: absolute;
   top: 0;
   left: 0; */
+}
+.bg-img {
+  object-fit: cover;
+    height: 100vh;
 }
 
 .container, .events-container {

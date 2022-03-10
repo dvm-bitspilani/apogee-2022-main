@@ -6,6 +6,7 @@ import Arrow from "../../assets/Arrox.svg";
 import Modal from "@mui/material/Modal";
 import { styled, Box } from "@mui/system";
 import CloseIcon from '@mui/icons-material/Close';
+import Background from '../../assets/laptop/events_balcony.svg';
 
 import "../../events.css";
 import "./all-events.css";
@@ -71,7 +72,9 @@ function Events() {
   };
   return (
     <div>
-      <div className="bg"></div>
+      <div className="bg">
+        <img className="bg-img" src={Background} alt="" />
+      </div>
       <Link to="/">
         <div className="arrow">
           <img src={Arrow} alt="" />
@@ -122,7 +125,7 @@ function Events() {
       >
         <div className="card-description-box">
           <div className="close-card-description" onClick={handleClose}>
-            <CloseIcon/>
+            <CloseIcon />
           </div>
           <div className="card-description-heading">{eventName}</div>
           <div className="card-description-details">{eventDesc}</div>
