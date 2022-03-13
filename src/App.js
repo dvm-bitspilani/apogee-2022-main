@@ -189,7 +189,7 @@ function App(props) {
         setNames(names);
       });
 
-    fetch("https://bits-apogee.org/registrations/events_details/", {
+    fetch("https://bits-apogee.org/registrations/kernel_events/", {
       headers: { "content-type": "application/json" },
       method: "GET",
       mode: "cors",
@@ -198,8 +198,8 @@ function App(props) {
         return response.json();
       })
       .then(function (result) {
-        console.log(result[0].events);
-        setKernelEvents(result[0].events);
+        console.log(result.data[0].events);
+        setKernelEvents(result.data[0].events);
       });
 
     let hamburger = document.querySelector(".hamburger");
@@ -308,14 +308,21 @@ function App(props) {
   const handleOpenEvents = (name, desc) => {
     setDescriptionDetails("flex");
     setKernelEventName(name);
-    setEventDesc(desc);
+    if(desc==""){
+      setEventDesc("No description yet");
+    }
+    else {
+      setEventDesc(desc);
+    }
   };
   const handleCloseEvents = () => setDescriptionDetails("none");
   const changeDriveLink = (driveLink) => {
-    let firstHalf = driveLink.split(".com/")[0];
-    let secondHalf = driveLink.split("?")[1];
-    let finalLink = "url(" + firstHalf + ".com/uc?" + secondHalf + ")";
-    return finalLink;
+    if(driveLink){
+      let firstHalf = driveLink.split(".com/")[0];
+      let secondHalf = driveLink.split("?")[1];
+      let finalLink = "url(" + firstHalf + ".com/uc?" + secondHalf + ")";
+      return finalLink;
+    }
   };
   const handleLargeDescription = (desc) => {
     if(desc){
@@ -323,6 +330,9 @@ function App(props) {
         let finalDesc = desc.split(" ").slice(0, 15).join(" ") + "...";
         return finalDesc;
       }
+    }
+    if(desc==""){
+      return "No description yet"
     }
     return desc;
   };
