@@ -60,13 +60,15 @@ function Events() {
     let firstHalf = driveLink.split(".com/")[0];
     let secondHalf = driveLink.split("?")[1];
     let finalLink = "url(" + firstHalf + ".com/uc?" + secondHalf + ")";
-    console.log("Final Link", finalLink);
+    // console.log("Final Link", finalLink);
     return finalLink;
   };
   const handleLargeDescription = (desc) => {
-    if (desc.split(" ").length > 20) {
-      let finalDesc = desc.split(" ").slice(0, 20).join(" ") + "...";
-      return finalDesc;
+    if(desc){
+      if (desc.split(" ").length > 20) {
+        let finalDesc = desc.split(" ").slice(0, 20).join(" ") + "...";
+        return finalDesc;
+      }
     }
     return desc;
   };

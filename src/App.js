@@ -10,7 +10,7 @@ import CityLayer4 from './assets/laptop/City Layer 4.svg';
 import CityLayer5 from './assets/laptop/City Layer 5.svg';
 import CityLayer6 from './assets/laptop/City Layer 6.svg';
 import Sign from './assets/laptop/Sign.svg';
-import Moon from './assets/Moon.svg';
+import Moon from './assets/Moon1.png';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
@@ -318,9 +318,11 @@ function App(props) {
     return finalLink;
   };
   const handleLargeDescription = (desc) => {
-    if (desc.split(" ").length > 15) {
-      let finalDesc = desc.split(" ").slice(0, 15).join(" ") + "...";
-      return finalDesc;
+    if(desc){
+      if (desc.split(" ").length > 15) {
+        let finalDesc = desc.split(" ").slice(0, 15).join(" ") + "...";
+        return finalDesc;
+      }
     }
     return desc;
   };
