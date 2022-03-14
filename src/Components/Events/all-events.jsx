@@ -5,8 +5,8 @@ import ViewBtn from "../../assets/Button.svg";
 import Arrow from "../../assets/Arrox.svg";
 import Modal from "@mui/material/Modal";
 import { styled, Box } from "@mui/system";
-import CloseIcon from '@mui/icons-material/Close';
-import Background from '../../assets/laptop/events_balcony.svg';
+import CloseIcon from "@mui/icons-material/Close";
+import Background from "../../assets/laptop/events_balcony.svg";
 
 import "../../events.css";
 import "./all-events.css";
@@ -31,7 +31,10 @@ import "./all-events.css";
 
 function Events() {
   const [events, setEvents] = React.useState([]);
-  const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+  const vw = Math.max(
+    document.documentElement.clientWidth || 0,
+    window.innerWidth || 0
+  );
 
   React.useEffect(() => {
     fetch("https://bits-apogee.org/registrations/events_details/", {
@@ -57,6 +60,9 @@ function Events() {
   };
   const handleClose = () => setDescriptionDetails("none");
   const changeDriveLink = (driveLink) => {
+    if (driveLink.includes("bits-apogee") || driveLink.includes("default")) {
+      return;
+    }
     let firstHalf = driveLink.split(".com/")[0];
     let secondHalf = driveLink.split("?")[1];
     let finalLink = "url(" + firstHalf + ".com/uc?" + secondHalf + ")";
@@ -64,11 +70,14 @@ function Events() {
     return finalLink;
   };
   const handleLargeDescription = (desc) => {
-    if(desc){
+    if (desc) {
       if (desc.split(" ").length > 20) {
         let finalDesc = desc.split(" ").slice(0, 20).join(" ") + "...";
         return finalDesc;
       }
+    }
+    if (desc === "" || desc == null) {
+      return "No description yet";
     }
     return desc;
   };
@@ -83,7 +92,10 @@ function Events() {
         </div>
       </Link>
       <div className="container">
-        <div className="heading">{vw > 768 ? "ALL EVENTS" : "KERNEL EVENTS"}</div>
+        <div className="heading">
+          {/* {vw > 768 ? "ALL EVENTS" : "KERNEL EVENTS"} */}
+          ALL EVENTS
+        </div>
         <div className="card-container">
           {events.map((el) => (
             <div className="card">

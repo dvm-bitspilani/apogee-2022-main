@@ -39,10 +39,11 @@ img {
 }
 .bg-img {
   object-fit: cover;
-    height: 100vh;
+  height: 100vh;
 }
 
-.container, .events-container {
+.container,
+.events-container {
   width: 80%;
   position: absolute;
   top: 1rem;
@@ -56,7 +57,7 @@ img {
   height: 90%; */
 }
 
-.events-container{
+.events-container {
   top: 0vh;
   position: relative;
   z-index: 50;
@@ -67,7 +68,7 @@ img {
   font-size: 3rem;
 }
 
-.events-container .heading{
+.events-container .heading {
   font-size: 4rem;
   text-align: left;
 }
@@ -104,6 +105,7 @@ img {
   border-radius: 10px;
   background-size: cover;
   background-color: hsl(227deg 24% 47%);
+  background-image: url("../public/favicon1.ico");
   background-position: center center;
 }
 
@@ -181,11 +183,15 @@ img {
     margin-top: 1rem;
   }
 
-  
-.bg{
-  background: linear-gradient(180deg, #000022 0%, #00003E 50.31%, #000025 100%);
-  transform: matrix(1, 0, 0, -1, 0, 0);
-}
+  .bg {
+    background: linear-gradient(
+      180deg,
+      #000022 0%,
+      #00003e 50.31%,
+      #000025 100%
+    );
+    transform: matrix(1, 0, 0, -1, 0, 0);
+  }
   .card {
     width: 100%;
     height: max-content;
@@ -222,7 +228,7 @@ img {
     text-align: center;
   }
 
-  .events-container{
+  .events-container {
     display: none;
   }
 }
