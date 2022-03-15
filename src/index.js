@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
-import Events from "./Components/Events/all-events.jsx";
+import Events from "./Pages/Events/all-events.jsx";
 import "./index.css";
-import App from "./App";
+import App from "./Pages/App";
 import reportWebVitals from "./reportWebVitals";
 
 import "./fonts/BARTKEY.ttf";
@@ -36,6 +36,7 @@ function handleCities() {
   // cities[4].style.transform = "translate(-75%, 5%)";
   // cities[5].style.transform = "translate(-2%, -3%)";
 }
+
 ReactDOM.render(
   <BrowserRouter>
     <Routes>
@@ -48,6 +49,7 @@ ReactDOM.render(
 );
 
 window.onload = handleCities();
+
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
