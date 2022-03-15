@@ -42,6 +42,7 @@ ReactDOM.render(
     <Routes>
       <Route path="/" element={<App handleCities={handleCities} />} />
       <Route path="/events" element={<Events />} />
+
       {/* <Route path="invoices" element={<Invoices />} /> */}
     </Routes>
   </BrowserRouter>,

@@ -1,39 +1,39 @@
-import logo from './logo.svg';
-import * as React from 'react';
-import BalconyLaptop from './assets/laptop/balcony_grid_full.svg';
+import logo from "./logo.svg";
+import * as React from "react";
+import BalconyLaptop from "./assets/laptop/balcony_grid_full.svg";
 // import BalconyMobile from './assets/mobile/Balcony_full.svg';
-import BalconyMobile from './assets/mobile/Balcony.svg'
-import CityLayer1 from './assets/laptop/City Layer 1.svg';
-import CityLayer2 from './assets/laptop/City Layer 2.svg';
-import CityLayer3 from './assets/laptop/City Layer 3.svg';
-import CityLayer4 from './assets/laptop/City Layer 4.svg';
-import CityLayer5 from './assets/laptop/City Layer 5.svg';
-import CityLayer6 from './assets/laptop/City Layer 6.svg';
-import Sign from './assets/laptop/Sign.svg';
-import Moon from './assets/Moon.svg';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
-import Input from '@mui/material/Input';
-import TextField from '@mui/material/TextField';
-import Select from '@mui/material/Select';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import { useTheme } from '@mui/material/styles';
-import { styled, Box } from '@mui/system';
-import FormControl from '@mui/material/FormControl';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import { Link } from 'react-router-dom'
-import Autocomplete from '@mui/material/Autocomplete'
-import CircularProgress from '@mui/material/CircularProgress';
-import ModalUnstyled from '@mui/base/ModalUnstyled';
-import CloseIcon from '@mui/icons-material/Close';
-import IconButton from '@mui/material/IconButton';
+import BalconyMobile from "./assets/mobile/Balcony.svg";
+import CityLayer1 from "./assets/laptop/City Layer 1.svg";
+import CityLayer2 from "./assets/laptop/City Layer 2.svg";
+import CityLayer3 from "./assets/laptop/City Layer 3.svg";
+import CityLayer4 from "./assets/laptop/City Layer 4.svg";
+import CityLayer5 from "./assets/laptop/City Layer 5.svg";
+import CityLayer6 from "./assets/laptop/City Layer 6.svg";
+import Sign from "./assets/laptop/Sign.svg";
+import Moon from "./assets/Moon1.png";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Modal from "@mui/material/Modal";
+import Input from "@mui/material/Input";
+import TextField from "@mui/material/TextField";
+import Select from "@mui/material/Select";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import { useTheme } from "@mui/material/styles";
+import { styled, Box } from "@mui/system";
+import FormControl from "@mui/material/FormControl";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import { Link } from "react-router-dom";
+import Autocomplete from "@mui/material/Autocomplete";
+import CircularProgress from "@mui/material/CircularProgress";
+import ModalUnstyled from "@mui/base/ModalUnstyled";
+import CloseIcon from "@mui/icons-material/Close";
+import IconButton from "@mui/material/IconButton";
 // import TextField from '@mui/material/TextField';
 import "./Modal.css";
 import "./App.css";
-import "./events.css"
-import "./Components/Events/all-events.css"
+import "./events.css";
+import "./Components/Events/all-events.css";
 // import '/landing.js'
 import { createTheme } from "@mui/material/styles";
 import Chip from "@mui/material/Chip";
@@ -57,9 +57,7 @@ const MenuProps = {
   },
 };
 
-var collegeList = [
-  'BITS Pilani',
-];
+var collegeList = ["BITS Pilani"];
 
 function getStyles(name, personName, theme) {
   return {
@@ -107,7 +105,10 @@ function App(props) {
   const [optionsField, setOptionsField] = React.useState([]);
   const [collegeName, setCollegeName] = React.useState([]);
   // const [registerDisabled, setRegisterDisabled] = React.useState(true);
-  const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+  const vw = Math.max(
+    document.documentElement.clientWidth || 0,
+    window.innerWidth || 0
+  );
 
   const loading = openField && optionsField.length === 0;
   React.useEffect(() => {
@@ -126,7 +127,7 @@ function App(props) {
 
     if (!loading) {
       return undefined;
-    };
+    }
     return () => {
       active = false;
     };
@@ -189,7 +190,7 @@ function App(props) {
         setNames(names);
       });
 
-    fetch("https://bits-apogee.org/registrations/events_details/", {
+    fetch("https://bits-apogee.org/registrations/kernel_events/", {
       headers: { "content-type": "application/json" },
       method: "GET",
       mode: "cors",
@@ -198,8 +199,8 @@ function App(props) {
         return response.json();
       })
       .then(function (result) {
-        console.log(result[0].events);
-        setKernelEvents(result[0].events);
+        console.log(result.data[0].events);
+        setKernelEvents(result.data[0].events);
       });
 
     let hamburger = document.querySelector(".hamburger");
@@ -267,7 +268,7 @@ function App(props) {
       events: eventName,
       college_id: collegeName.id,
       workshops: [],
-    }
+    };
     console.log(eventName);
     console.log(data);
     console.log(JSON.stringify(data));
@@ -283,10 +284,13 @@ function App(props) {
       .then(function (result) {
         console.log(result);
         if (result.message) {
-          alert(result.message.split(':')[0])
+          alert(result.message.split(":")[0]);
         }
-        if(result.message == `A confirmation link has been sent to ${data.email_id}. Kindly click on it to verify your email address.`){
-          console.log("submitted")
+        if (
+          result.message ==
+          `A confirmation link has been sent to ${data.email_id}. Kindly click on it to verify your email address.`
+        ) {
+          console.log("submitted");
           document.getElementById("registerForm").reset();
         }
       });
@@ -294,7 +298,7 @@ function App(props) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    console.log(name, value)
+    console.log(name, value);
     setData((prevState) => ({
       ...prevState,
       [name]: value,
@@ -308,19 +312,36 @@ function App(props) {
   const handleOpenEvents = (name, desc) => {
     setDescriptionDetails("flex");
     setKernelEventName(name);
-    setEventDesc(desc);
+    if (desc == "") {
+      setEventDesc("No description yet");
+    } else {
+      setEventDesc(desc);
+    }
   };
   const handleCloseEvents = () => setDescriptionDetails("none");
   const changeDriveLink = (driveLink) => {
-    let firstHalf = driveLink.split(".com/")[0];
-    let secondHalf = driveLink.split("?")[1];
-    let finalLink = "url(" + firstHalf + ".com/uc?" + secondHalf + ")";
-    return finalLink;
+    if (driveLink.includes("bits-apogee") || driveLink.includes("default")) {
+      return;
+    }
+    if (driveLink) {
+      let firstHalf = driveLink.split(".com/")[0];
+      let secondHalf = driveLink.split("?")[1];
+      let finalLink = "url(" + firstHalf + ".com/uc?" + secondHalf + ")";
+      return finalLink;
+    } else {
+      return "../assets/default_events_image.jpg";
+    }
   };
   const handleLargeDescription = (desc) => {
-    if (desc.split(" ").length > 15) {
-      let finalDesc = desc.split(" ").slice(0, 15).join(" ") + "...";
-      return finalDesc;
+    if (desc) {
+      if (desc.split(" ").length > 15) {
+        let finalDesc = desc.split(" ").slice(0, 15).join(" ") + "...";
+        return finalDesc;
+      }
+    }
+
+    if (desc === "") {
+      return "No description yet";
     }
     return desc;
   };
@@ -338,7 +359,9 @@ function App(props) {
           <div className="ModalBox">
             <div className="registerBtnWrapper">
               <div className="registerBtnBorder register-lp" id="registerTop">
-                <button className="registerBtn" onClick={handleOpen}>REGISTER</button>
+                <button className="registerBtn" onClick={handleOpen}>
+                  REGISTER
+                </button>
               </div>
             </div>
 
@@ -353,7 +376,7 @@ function App(props) {
                   REGISTRATION
                   <Box>
                     <IconButton onClick={handleClose}>
-                      <CloseIcon color="action" fontSize="large"/>
+                      <CloseIcon color="action" fontSize="large" />
                     </IconButton>
                   </Box>
                 </div>
@@ -361,16 +384,23 @@ function App(props) {
                   <form onSubmit={handleSubmit} id="registerForm">
                     <div className="wrapper">
                       <div className="cell">
-                        <span>
-                          Name*
-                        </span>
-                        <TextField type="text" id="nameVal" onChange={handleChange} name="name" label="Name" sx={{ width: 300, border: '1px solid white', color: 'white', borderRadius: '2px' }}
+                        <span>Name*</span>
+                        <TextField
+                          type="text"
+                          id="nameVal"
+                          onChange={handleChange}
+                          name="name"
+                          label="Name"
+                          sx={{
+                            width: 300,
+                            border: "1px solid white",
+                            color: "white",
+                            borderRadius: "2px",
+                          }}
                         />
                       </div>
                       <div className="cell">
-                        <span>
-                          Year of Study*
-                        </span>
+                        <span>Year of Study*</span>
                         <Select
                           labelId="demo-simple-select-label"
                           id="demo-simple-select"
@@ -392,9 +422,7 @@ function App(props) {
                         </Select>
                       </div>
                       <div className="cell">
-                        <span>
-                          College*
-                        </span>
+                        <span>College*</span>
                         <Autocomplete
                           onChange={(event, value) => {
                             console.log(
@@ -414,7 +442,9 @@ function App(props) {
                           onClose={() => {
                             setOpenField(false);
                           }}
-                          isOptionEqualToValue={(option, value) => option.name === value.name}
+                          isOptionEqualToValue={(option, value) =>
+                            option.name === value.name
+                          }
                           getOptionLabel={(option) => option.name}
                           options={optionsField}
                           loading={loading}
@@ -423,34 +453,47 @@ function App(props) {
                               {...params}
                               label="Type your College"
                               onChange={async () => {
-                                console.log("on Change")
+                                console.log("on Change");
                                 // setCollegeName(document.getElementById('asynchronous-demo').value);
-                                if (document.getElementById('asynchronous-demo').value.length >= 3) {
+                                if (
+                                  document.getElementById("asynchronous-demo")
+                                    .value.length >= 3
+                                ) {
                                   console.log("fetch");
                                   // setCollegeName(document.getElementById('asynchronous-demo').value);
-                                  console.log("RUN", document.getElementById('asynchronous-demo').value);
+                                  console.log(
+                                    "RUN",
+                                    document.getElementById("asynchronous-demo")
+                                      .value
+                                  );
                                   const dataCollege = {
-                                    letters: document.getElementById('asynchronous-demo').value
-                                  }
-                                  await fetch("https://bits-apogee.org/registrations/get_college_by_char/", {
-                                    headers: { "content-type": "application/json" },
-                                    method: "POST",
-                                    mode: "cors",
-                                    body: JSON.stringify(dataCollege)
-                                  })
+                                    letters:
+                                      document.getElementById(
+                                        "asynchronous-demo"
+                                      ).value,
+                                  };
+                                  await fetch(
+                                    "https://bits-apogee.org/registrations/get_college_by_char/",
+                                    {
+                                      headers: {
+                                        "content-type": "application/json",
+                                      },
+                                      method: "POST",
+                                      mode: "cors",
+                                      body: JSON.stringify(dataCollege),
+                                    }
+                                  )
                                     .then(function (response) {
                                       return response.json();
                                     })
                                     .then(function (result) {
                                       // setColleges(result.data);
                                       collegeList = result.data;
-                                      console.log(collegeList)
+                                      console.log(collegeList);
                                     });
                                 }
 
-
                                 setOptionsField([...collegeList]);
-
                               }}
                               InputProps={{
                                 ...params.InputProps,
@@ -471,23 +514,35 @@ function App(props) {
                         />
                       </div>
                       <div className="cell">
-                        <span>
-                          City*
-                        </span>
-                        <TextField type="text" onChange={handleChange} name="city" label="Type your City" sx={{ width: 300, border: '1px solid white', color: 'white' }}
+                        <span>City*</span>
+                        <TextField
+                          type="text"
+                          onChange={handleChange}
+                          name="city"
+                          label="Type your City"
+                          sx={{
+                            width: 300,
+                            border: "1px solid white",
+                            color: "white",
+                          }}
                         />
                       </div>
                       <div className="cell">
-                        <span>
-                          Email*
-                        </span>
-                        <TextField type="email" onChange={handleChange} name="email_id" label="Type your email" sx={{ width: 300, border: '1px solid white', color: 'white' }}
+                        <span>Email*</span>
+                        <TextField
+                          type="email"
+                          onChange={handleChange}
+                          name="email_id"
+                          label="Type your email"
+                          sx={{
+                            width: 300,
+                            border: "1px solid white",
+                            color: "white",
+                          }}
                         />
                       </div>
                       <div className="cell">
-                        <span>
-                          Events*
-                        </span>
+                        <span>Events*</span>
                         <div>
                           <FormControl sx={{ m: 0, width: 300 }}>
                             <InputLabel id="demo-multiple-chip-label">
@@ -535,10 +590,18 @@ function App(props) {
                       </div>
 
                       <div className="cell">
-                        <span>
-                          Phone*
-                        </span>
-                        <TextField type="text" variant="outlined" onChange={handleChange} name="phone" label="Type your phone number" sx={{ width: 300, color: 'white', border: '1px solid white' }}
+                        <span>Phone*</span>
+                        <TextField
+                          type="text"
+                          variant="outlined"
+                          onChange={handleChange}
+                          name="phone"
+                          label="Type your phone number"
+                          sx={{
+                            width: 300,
+                            color: "white",
+                            border: "1px solid white",
+                          }}
                         />
                       </div>
 
@@ -596,9 +659,7 @@ function App(props) {
                         </Select>
                       </div> */}
                       <div className="genderContainer">
-                        <span>
-                          Gender*
-                        </span>
+                        <span>Gender*</span>
                         <div className="genderContainerInput">
                           <input
                             type="radio"
@@ -639,10 +700,18 @@ function App(props) {
                         />
                       </div>
                       <div className="cell">
-                        <span>
-                          Commitments
-                        </span>
-                        <TextField type="text" variant="outlined" onChange={handleChange} name="commitments" label="Type your Tech-teams/Clubs" sx={{ width: 300, color: 'white', border: '1px solid white' }}
+                        <span>Commitments</span>
+                        <TextField
+                          type="text"
+                          variant="outlined"
+                          onChange={handleChange}
+                          name="commitments"
+                          label="Type your Tech-teams/Clubs"
+                          sx={{
+                            width: 300,
+                            color: "white",
+                            border: "1px solid white",
+                          }}
                         />
                       </div>
                     </div>
@@ -670,15 +739,28 @@ function App(props) {
           </div>
 
           <div id="drawer">
-            <a href="https://bits-apogee.org/registrations/login/" target="_blank">
+            <a
+              href="https://bits-apogee.org/registrations/login/"
+              target="_blank"
+            >
               <div class="nav-links">Login</div>
             </a>
             {/* <a href="/">
               <div class="nav-links">APOGEE Innovation Challenge</div>
             </a> */}
             <Link to="/events">
-              <div class="nav-links nav-events">{vw > 768 ? "All Events" : "Kernel Events"}</div>
+              <div class="nav-links nav-events">
+                {/* {vw > 768 ? "All Events" : "Kernel Events"} */}
+                All Events
+              </div>
             </Link>
+            {/* {vw < 768 && (
+              <Link to="/kernel-events">
+                <div class="nav-links nav-events">
+                  Kernel Events
+                </div>
+              </Link>
+            )} */}
             <a
               href="https://bits-apogee.org/campusambassador2022/"
               target="_blank"
@@ -827,7 +909,7 @@ function App(props) {
                 <div
                   className="card-img"
                   style={{
-                    backgroundImage: changeDriveLink(el.img_url),
+                    backgroundImage: changeDriveLink(el.image_url),
                   }}
                 ></div>
                 <div className="card-text">
@@ -864,7 +946,7 @@ function App(props) {
         >
           <div className="card-description-box">
             <div className="close-card-description" onClick={handleCloseEvents}>
-              <CloseIcon/>
+              <CloseIcon />
             </div>
             <div className="card-description-heading">{kernelEventName}</div>
             <div className="card-description-details">{eventDesc}</div>
