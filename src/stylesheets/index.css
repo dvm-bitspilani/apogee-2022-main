@@ -27,14 +27,14 @@ code {
 
 @font-face {
   font-family: "BARTKEY";
-  src: local("BARTKEY"), url(./assets/BARTKEY.ttf) format("truetype");
+  src: local("BARTKEY"), url(../fonts/BARTKEY.ttf) format("truetype");
   /* other formats include: 'woff2', 'truetype, 'opentype',
                             'embedded-opentype', and 'svg' */
 }
 
 @font-face {
   font-family: "Gilroy";
-  src: local("Gilroy"), url(./assets/Gilroy.otf) format("opentype");
+  src: local("Gilroy"), url(../fonts/Gilroy.otf) format("opentype");
   /* other formats include: 'woff2', 'truetype, 'opentype',
                             'embedded-opentype', and 'svg' */
 }

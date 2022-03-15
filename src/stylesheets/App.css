@@ -98,7 +98,7 @@ img {
 } */
 
 .sky {
-  background: url(./assets/laptop/Sky.svg) no-repeat;
+  background: url(../assets/laptop/Sky.svg) no-repeat;
   background-size: cover;
   height: 100vh;
 }
@@ -109,7 +109,7 @@ img {
   position: absolute;
   top: 0;
   mix-blend-mode: screen; */
-  background: url(./assets/laptop/Stars.png) no-repeat;
+  background: url(../assets/laptop/Stars.png) no-repeat;
   background-size: cover;
   background-position: center center;
   height: 200vh;
@@ -440,13 +440,13 @@ img {
   }
 
   .sky {
-    background: url(./assets/mobile/Sky.svg) no-repeat;
+    background: url(../assets/mobile/Sky.svg) no-repeat;
     background-size: 100% 100%;
     height: 100vh;
   }
 
   .stars {
-    background: url(./assets/mobile/Stars.png) no-repeat;
+    background: url(../assets/mobile/Stars.png) no-repeat;
     background-size: 100% 100%;
     height: 100vh;
     top: -20vh;

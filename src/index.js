@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
-import Events from "./Pages/Events/all-events.jsx";
-import "./index.css";
+import Events from "./Pages/all-events.jsx";
+import "./stylesheets/index.css";
 import App from "./Pages/App";
 import reportWebVitals from "./reportWebVitals";
 

@@ -1,16 +1,16 @@
-import logo from "./logo.svg";
+import logo from "../assets/logo.svg";
 import * as React from "react";
-import BalconyLaptop from "./assets/laptop/balcony_grid_full.svg";
+import BalconyLaptop from "../assets/laptop/balcony_grid_full.svg";
 // import BalconyMobile from './assets/mobile/Balcony_full.svg';
-import BalconyMobile from "./assets/mobile/Balcony.svg";
-import CityLayer1 from "./assets/laptop/City Layer 1.svg";
-import CityLayer2 from "./assets/laptop/City Layer 2.svg";
-import CityLayer3 from "./assets/laptop/City Layer 3.svg";
-import CityLayer4 from "./assets/laptop/City Layer 4.svg";
-import CityLayer5 from "./assets/laptop/City Layer 5.svg";
-import CityLayer6 from "./assets/laptop/City Layer 6.svg";
-import Sign from "./assets/laptop/Sign.svg";
-import Moon from "./assets/Moon1.png";
+import BalconyMobile from "../assets/mobile/Balcony.svg";
+import CityLayer1 from "../assets/laptop/City Layer 1.svg";
+import CityLayer2 from "../assets/laptop/City Layer 2.svg";
+import CityLayer3 from "../assets/laptop/City Layer 3.svg";
+import CityLayer4 from "../assets/laptop/City Layer 4.svg";
+import CityLayer5 from "../assets/laptop/City Layer 5.svg";
+import CityLayer6 from "../assets/laptop/City Layer 6.svg";
+import Sign from "../assets/laptop/Sign.svg";
+import Moon from "../assets/Moon1.png";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
@@ -30,10 +30,10 @@ import ModalUnstyled from "@mui/base/ModalUnstyled";
 import CloseIcon from "@mui/icons-material/Close";
 import IconButton from "@mui/material/IconButton";
 // import TextField from '@mui/material/TextField';
-import "./Modal.css";
-import "./App.css";
-import "./events.css";
-import "./Components/Events/all-events.css";
+import "../stylesheets/Modal.css";
+import "../stylesheets/App.css";
+import "../stylesheets/events.css";
+import "../stylesheets/all-events.css";
 // import '/landing.js'
 import { createTheme } from "@mui/material/styles";
 import Chip from "@mui/material/Chip";
@@ -353,7 +353,7 @@ function App(props) {
         <div className="stars"></div>
         <nav>
           <div className="logo">
-            <img src={require("./assets/Apogee Logo.png")} alt="" />
+            <img src={require("../assets/Apogee Logo.png")} alt="" />
           </div>
 
           <div className="ModalBox">
