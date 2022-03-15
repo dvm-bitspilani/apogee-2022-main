@@ -7,6 +7,7 @@ import Modal from "@mui/material/Modal";
 import { styled, Box } from "@mui/system";
 import CloseIcon from "@mui/icons-material/Close";
 import Background from "../assets/laptop/events_balcony.svg";
+import EventContainer from "../Components/EventContainer/EventContainer"
 
 import "../stylesheets/events.css";
 import "../stylesheets/all-events.css";
@@ -30,57 +31,6 @@ import "../stylesheets/all-events.css";
 // };
 
 function Events() {
-  const [events, setEvents] = React.useState([]);
-  const vw = Math.max(
-    document.documentElement.clientWidth || 0,
-    window.innerWidth || 0
-  );
-
-  React.useEffect(() => {
-    fetch("https://bits-apogee.org/registrations/events_details/", {
-      headers: { "content-type": "application/json" },
-      method: "GET",
-      mode: "cors",
-    })
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (result) {
-        console.log(result[0].events);
-        setEvents(result[0].events);
-      });
-  }, []);
-  const [eventDesc, setEventDesc] = React.useState("");
-  const [eventName, setEventName] = React.useState("");
-  const [descriptionDetails, setDescriptionDetails] = React.useState("none");
-  const handleOpen = (name, desc) => {
-    setDescriptionDetails("flex");
-    setEventName(name);
-    setEventDesc(desc);
-  };
-  const handleClose = () => setDescriptionDetails("none");
-  const changeDriveLink = (driveLink) => {
-    if (driveLink.includes("bits-apogee") || driveLink.includes("default")) {
-      return;
-    }
-    let firstHalf = driveLink.split(".com/")[0];
-    let secondHalf = driveLink.split("?")[1];
-    let finalLink = "url(" + firstHalf + ".com/uc?" + secondHalf + ")";
-    // console.log("Final Link", finalLink);
-    return finalLink;
-  };
-  const handleLargeDescription = (desc) => {
-    if (desc) {
-      if (desc.split(" ").length > 20) {
-        let finalDesc = desc.split(" ").slice(0, 20).join(" ") + "...";
-        return finalDesc;
-      }
-    }
-    if (desc === "" || desc == null) {
-      return "No description yet";
-    }
-    return desc;
-  };
   return (
     <div>
       <div className="bg">
@@ -91,60 +41,7 @@ function Events() {
           <img src={Arrow} alt="" />
         </div>
       </Link>
-      <div className="container">
-        <div className="heading">
-          {/* {vw > 768 ? "ALL EVENTS" : "KERNEL EVENTS"} */}
-          ALL EVENTS
-        </div>
-        <div className="card-container">
-          {events.map((el) => (
-            <div className="card">
-              <div
-                className="card-img"
-                style={{
-                  backgroundImage: changeDriveLink(el.img_url),
-                }}
-              ></div>
-              <div className="card-text">
-                <h3>{el.name}</h3>
-                <p>{handleLargeDescription(el.description)}</p>
-                <div
-                  className="view-btn"
-                  onClick={() => handleOpen(el.name, el.description)}
-                >
-                  View Details
-                </div>
-
-                {/* <Modal
-                                        open={open}
-                                        onClose={handleClose}
-                                        aria-labelledby="modal-modal-title"
-                                        aria-describedby="modal-modal-description"
-                                    >
-                                        <Box sx={style}>
-                                            <div className="modalHeading">
-                                                {el.name}
-                                            </div>
-
-                                        </Box>
-                                    </Modal> */}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div
-        className="card-description-container"
-        style={{ display: descriptionDetails }}
-      >
-        <div className="card-description-box">
-          <div className="close-card-description" onClick={handleClose}>
-            <CloseIcon />
-          </div>
-          <div className="card-description-heading">{eventName}</div>
-          <div className="card-description-details">{eventDesc}</div>
-        </div>
-      </div>
+      <EventContainer heading={"ALL EVENTS"} api="https://bits-apogee.org/registrations/events_details/" />
     </div>
   );
 }
