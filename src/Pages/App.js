@@ -1,6 +1,13 @@
+<<<<<<< HEAD
 import * as React from "react";
 import BalconyLaptop from "../assets/laptop/balcony_grid_full.svg";
 // import BalconyMobile from '../assets/mobile/Balcony_full.svg';
+=======
+import logo from "../assets/logo.svg";
+import * as React from "react";
+import BalconyLaptop from "../assets/laptop/balcony_grid_full.svg";
+// import BalconyMobile from './assets/mobile/Balcony_full.svg';
+>>>>>>> 0de9e8d1b3a4fd8010b744540e7ac99d8cdb4a4a
 import BalconyMobile from "../assets/mobile/Balcony.svg";
 import CityLayer1 from "../assets/laptop/City Layer 1.svg";
 import CityLayer2 from "../assets/laptop/City Layer 2.svg";
@@ -28,7 +35,12 @@ import CircularProgress from "@mui/material/CircularProgress";
 import ModalUnstyled from "@mui/base/ModalUnstyled";
 import CloseIcon from "@mui/icons-material/Close";
 import IconButton from "@mui/material/IconButton";
+import EventContainer from "../Components/EventContainer/EventContainer";
 // import TextField from '@mui/material/TextField';
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0de9e8d1b3a4fd8010b744540e7ac99d8cdb4a4a
 import "../stylesheets/Modal.css";
 import "../stylesheets/App.css";
 import "../stylesheets/events.css";
@@ -91,7 +103,6 @@ function App(props) {
   let [data, setData] = React.useState({});
   const [colleges, setColleges] = React.useState([]);
   const [events, setEvents] = React.useState([]);
-  const [kernelEvents, setKernelEvents] = React.useState([]);
   const [finalNames, setNames] = React.useState([]);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -104,10 +115,6 @@ function App(props) {
   const [optionsField, setOptionsField] = React.useState([]);
   const [collegeName, setCollegeName] = React.useState([]);
   // const [registerDisabled, setRegisterDisabled] = React.useState(true);
-  const vw = Math.max(
-    document.documentElement.clientWidth || 0,
-    window.innerWidth || 0
-  );
 
   const loading = openField && optionsField.length === 0;
   React.useEffect(() => {
@@ -199,7 +206,6 @@ function App(props) {
       })
       .then(function (result) {
         console.log(result.data[0].events);
-        setKernelEvents(result.data[0].events);
       });
 
     let hamburger = document.querySelector(".hamburger");
@@ -305,6 +311,7 @@ function App(props) {
     console.log(data);
   };
 
+<<<<<<< HEAD
   const [eventDesc, setEventDesc] = React.useState("");
   const [kernelEventName, setKernelEventName] = React.useState("");
   const [descriptionDetails, setDescriptionDetails] = React.useState("none");
@@ -345,6 +352,8 @@ function App(props) {
     return desc;
   };
 
+=======
+>>>>>>> 0de9e8d1b3a4fd8010b744540e7ac99d8cdb4a4a
   return (
     <div className="App">
       <div id="wrapper">
@@ -375,17 +384,9 @@ function App(props) {
             </a> */}
             <Link to="/events">
               <div class="nav-links nav-events">
-                {/* {vw > 768 ? "All Events" : "Kernel Events"} */}
                 All Events
               </div>
             </Link>
-            {/* {vw < 768 && (
-              <Link to="/kernel-events">
-                <div class="nav-links nav-events">
-                  Kernel Events
-                </div>
-              </Link>
-            )} */}
             <a
               href="https://bits-apogee.org/campusambassador2022/"
               target="_blank"
@@ -516,7 +517,6 @@ function App(props) {
           </div>
         </div>
         <div className="balcony">
-          {/* <!-- <div className="horizon-glow-buildings"></div> --> */}
           <div className="horizon-glow"></div>
           <div className="balcony-lp">
             <img src={BalconyLaptop} alt="" />
@@ -526,57 +526,7 @@ function App(props) {
           </div>
           <div className="glow"></div>
         </div>
-        <div className="events-container">
-          <div className="heading">KERNEL EVENTS</div>
-          <div className="card-container">
-            {kernelEvents.map((el) => (
-              <div className="card">
-                <div
-                  className="card-img"
-                  style={{
-                    backgroundImage: changeDriveLink(el.image_url),
-                  }}
-                ></div>
-                <div className="card-text">
-                  <h3>{el.name}</h3>
-                  <p>{handleLargeDescription(el.description)}</p>
-                  <div
-                    className="view-btn"
-                    onClick={() => handleOpenEvents(el.name, el.description)}
-                  >
-                    View Details
-                  </div>
-
-                  {/* <Modal
-                                        open={open}
-                                        onClose={handleClose}
-                                        aria-labelledby="modal-modal-title"
-                                        aria-describedby="modal-modal-description"
-                                    >
-                                        <Box sx={style}>
-                                            <div className="modalHeading">
-                                                {el.name}
-                                            </div>
-
-                                        </Box>
-                                    </Modal> */}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div
-          className="card-description-container kernel-events"
-          style={{ display: descriptionDetails }}
-        >
-          <div className="card-description-box">
-            <div className="close-card-description" onClick={handleCloseEvents}>
-              <CloseIcon />
-            </div>
-            <div className="card-description-heading">{kernelEventName}</div>
-            <div className="card-description-details">{eventDesc}</div>
-          </div>
-        </div>
+        <EventContainer heading="KERNEL EVENTS" type="kernel" api="https://bits-apogee.org/registrations/kernel_events/" />
       </div>
     </div>
   );
