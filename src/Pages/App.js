@@ -1,13 +1,5 @@
-<<<<<<< HEAD
 import * as React from "react";
 import BalconyLaptop from "../assets/laptop/balcony_grid_full.svg";
-// import BalconyMobile from '../assets/mobile/Balcony_full.svg';
-=======
-import logo from "../assets/logo.svg";
-import * as React from "react";
-import BalconyLaptop from "../assets/laptop/balcony_grid_full.svg";
-// import BalconyMobile from './assets/mobile/Balcony_full.svg';
->>>>>>> 0de9e8d1b3a4fd8010b744540e7ac99d8cdb4a4a
 import BalconyMobile from "../assets/mobile/Balcony.svg";
 import CityLayer1 from "../assets/laptop/City Layer 1.svg";
 import CityLayer2 from "../assets/laptop/City Layer 2.svg";
@@ -37,10 +29,6 @@ import CloseIcon from "@mui/icons-material/Close";
 import IconButton from "@mui/material/IconButton";
 import EventContainer from "../Components/EventContainer/EventContainer";
 // import TextField from '@mui/material/TextField';
-<<<<<<< HEAD
-=======
-
->>>>>>> 0de9e8d1b3a4fd8010b744540e7ac99d8cdb4a4a
 import "../stylesheets/Modal.css";
 import "../stylesheets/App.css";
 import "../stylesheets/events.css";
@@ -311,49 +299,6 @@ function App(props) {
     console.log(data);
   };
 
-<<<<<<< HEAD
-  const [eventDesc, setEventDesc] = React.useState("");
-  const [kernelEventName, setKernelEventName] = React.useState("");
-  const [descriptionDetails, setDescriptionDetails] = React.useState("none");
-  const handleOpenEvents = (name, desc) => {
-    setDescriptionDetails("flex");
-    setKernelEventName(name);
-    if (desc == "") {
-      setEventDesc("No description yet");
-    } else {
-      setEventDesc(desc);
-    }
-  };
-  const handleCloseEvents = () => setDescriptionDetails("none");
-  const changeDriveLink = (driveLink) => {
-    if (driveLink.includes("bits-apogee") || driveLink.includes("default")) {
-      return;
-    }
-    if (driveLink) {
-      let firstHalf = driveLink.split(".com/")[0];
-      let secondHalf = driveLink.split("?")[1];
-      let finalLink = "url(" + firstHalf + ".com/uc?" + secondHalf + ")";
-      return finalLink;
-    } else {
-      return ".../assets/default_events_image.jpg";
-    }
-  };
-  const handleLargeDescription = (desc) => {
-    if (desc) {
-      if (desc.split(" ").length > 15) {
-        let finalDesc = desc.split(" ").slice(0, 15).join(" ") + "...";
-        return finalDesc;
-      }
-    }
-
-    if (desc === "") {
-      return "No description yet";
-    }
-    return desc;
-  };
-
-=======
->>>>>>> 0de9e8d1b3a4fd8010b744540e7ac99d8cdb4a4a
   return (
     <div className="App">
       <div id="wrapper">
