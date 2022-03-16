@@ -10,8 +10,8 @@ nav {
 }
 
 .hamburger {
-  width: 35px;
-  height: 30px;
+  width: 25px;
+  height: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

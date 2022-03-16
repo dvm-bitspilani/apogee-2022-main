@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: "Bartkey";
-  src: local("Bartket"), url("./fonts/BARTKEY.ttf") format("truetype");
+  src: local("Bartket"), url("../fonts/BARTKEY.ttf") format("truetype");
   font-weight: normal;
 }
 
@@ -126,7 +126,7 @@ img {
   border-radius: 10px;
   background-size: cover;
   background-color: hsl(227deg 24% 47%);
-  background-image: url("../public/favicon1.ico");
+  background-image: url("../../public/favicon1.ico");
   background-position: center center;
 }
 
