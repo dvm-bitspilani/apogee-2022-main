@@ -1,0 +1,167 @@
+
+
+.city {
+    position: absolute;
+    /* bottom: calc((100vw * 1541) / 1598 - 40vh); */
+    width: 50%;
+    left: 50%;
+    z-index: 35;
+  }
+  
+  .city1 {
+    width: 70%;
+    transform: translate(-45%, 100%);
+    z-index: 30;
+    transition: transform 0.8s ease-out;
+    top: 68vh;
+  }
+  
+  .city2 {
+    width: 65%;
+    transform: translate(-46%, 100%);
+    z-index: 25;
+    transition: transform 0.8s ease-out;
+    transition-delay: 0.5s;
+    top: 60.5vh;
+  }
+  
+  .city3 {
+    width: 50%;
+    transform: translate(-50%, 100%);
+    z-index: 20;
+    transition: transform 1s ease-out;
+    transition-delay: 1s;
+    top: 49vh;
+  }
+  
+  .city4 {
+    width: 46%;
+    transform: translate(-54%, 100%);
+    z-index: 17;
+    transition: transform 1.2s ease-out;
+    transition-delay: 1.7s;
+    top: 25vh;
+  }
+  
+  .city5 {
+    width: 30%;
+    transform: translate(-75%, 100%);
+    z-index: 15;
+    transition: transform 1.3s ease-out;
+    transition-delay: 2.3s;
+    top: 20vh;
+  }
+  
+  .city6 {
+    width: 19%;
+    transform: translate(-7%, 100%);
+    z-index: 12;
+    transition: transform 1.3s ease-out;
+    transition-delay: 2.3s;
+    top: 47vh;
+  }
+  .wrapperMainHero {
+      overflow: hidden;
+      height: 200vh;
+      width: 100vw;
+  }
+  .layers {
+      position: absolute;
+      bottom: 20vh;
+      /* width: fit-content */
+      transform-origin: bottom center;
+  }
+  #cityLayer1 {
+      z-index: 6;
+      transform: translateY(1000px);
+      transition: transform 1.5s ease-in-out;
+      width: 50vw;
+      opacity: 1;
+    
+      
+  }
+  #cityLayer2 {
+      z-index: 5;
+      transform: translateY(1000px);
+      transition: transform 1.5s ease-in-out;
+      width: 50vw;
+      opacity: 1;
+    
+      
+  }
+  #cityLayer3 {
+      z-index: 4;
+      transform: translateY(1000px);
+      transition: transform 1.5s ease-in-out;
+      width: 40vw;
+      opacity: 1;
+    
+      
+  }
+  #cityLayer4 {
+      z-index: 3;
+      transform: translateY(1000px);
+      transition: transform 1.5s ease-in-out;
+      opacity: 1;
+      width: 45vw;
+  }
+  #cityLayer5 {
+      z-index: 2;
+      transform: translateY(1000px);
+      transition: transform 1.5s ease-in-out;
+      opacity: 1;
+      width: 35vw;
+  }
+  #cityLayer6 {
+      z-index: 1;
+      transform: translateY(1000px);
+      transition: transform 1.5s ease-in-out;
+      opacity: 1;
+      width: 20vw;
+  }
+  .buildings {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+  .floor {
+      position: absolute;
+      bottom: 0;
+      height: 20vh;
+      background: linear-gradient(0deg, #000022, #000022);
+      z-index:999;
+  }
+  .floorGlow{
+    height: 100%;
+}
+@keyframes cityEntry {
+    0% {
+        /* transform: translateY(100px); */
+        opacity: 0;
+    }
+    100% {
+        /* transform: translateY(0); */
+        opacity: 0; 
+    }
+}
+@media screen and (max-width: 768px) {
+    #cityLayer1,#cityLayer2{
+        width: 100vw;
+    }
+    #cityLayer3 {
+        width: 100vw;
+    }
+    #cityLayer4 {
+        width: 90vw;
+    }
+    #cityLayer5 {
+        width: 90vw;
+    }
+    #cityLayer6 {
+        width: 60vw;
+    }
+}
+  

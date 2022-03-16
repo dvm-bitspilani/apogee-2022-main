@@ -56,6 +56,7 @@ html {
 
 img {
   width: 100%;
+  display: block;
 }
 
 #wrapper {
@@ -89,7 +90,7 @@ img {
   background-position: center center;
   height: 200vh;
   width: 200vw;
-  z-index: 5;
+  z-index: 0;
   mix-blend-mode: screen;
   position: absolute;
   top: -50vh;
@@ -121,7 +122,7 @@ img {
 
 .moon {
   width: 110%;
-  z-index: 10;
+  z-index: 1;
   position: absolute;
   top: -20vh;
   /* bottom: 10vh; */
