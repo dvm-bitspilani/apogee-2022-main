@@ -9,24 +9,9 @@ import CityLayer5 from "../assets/laptop/City Layer 5.svg";
 import CityLayer6 from "../assets/laptop/City Layer 6.svg";
 
 import Moon from "../assets/Moon1.png";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import Modal from "@mui/material/Modal";
-import Input from "@mui/material/Input";
-import TextField from "@mui/material/TextField";
-import Select from "@mui/material/Select";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
+
 import { useTheme } from "@mui/material/styles";
-import { styled, Box } from "@mui/system";
-import FormControl from "@mui/material/FormControl";
-import OutlinedInput from "@mui/material/OutlinedInput";
 import { Link } from "react-router-dom";
-import Autocomplete from "@mui/material/Autocomplete";
-import CircularProgress from "@mui/material/CircularProgress";
-import ModalUnstyled from "@mui/base/ModalUnstyled";
-import CloseIcon from "@mui/icons-material/Close";
-import IconButton from "@mui/material/IconButton";
 import EventContainer from "../Components/EventContainer/EventContainer";
 // import TextField from '@mui/material/TextField';
 import "../stylesheets/Modal.css";
@@ -34,7 +19,6 @@ import "../stylesheets/App.css";
 import "../stylesheets/events.css";
 import "../stylesheets/all-events.css";
 // import '/landing.js'
-import Chip from "@mui/material/Chip";
 import RegModalButton from "../Components/RegModalButton/RegModalButton";
 
 const ITEM_HEIGHT = 48;
@@ -380,7 +364,6 @@ function App(props) {
           </div>
           <div className="glow"></div>
         </div>
-        <EventContainer heading="KERNEL EVENTS" type="kernel" api="https://bits-apogee.org/registrations/kernel_events/" />
       </div>
     </div>
   );
