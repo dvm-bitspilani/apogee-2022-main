@@ -1,3 +1,9 @@
 .testWrapper{
-    background: black;
+    background: linear-gradient(0deg, #000022, #000022);
+}
+.gridVertical {
+    background: url("../Components/MainHero/MainHeroAssets/verticalGrid.svg");
+    background-position: center;
+    background-size: contain;
+    background-position-y: inherit;
 }

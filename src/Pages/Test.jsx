@@ -6,19 +6,23 @@ import EventContainer from "../Components/EventContainer/EventContainer.jsx";
 import '../stylesheets/test.css';
 
 function Test() {
-  return (
-    <div className="testWrapper">
-      <NavBar />
-      <MainHero />
-      <SocialsHero />
-      <CountdownSlate />
-      <EventContainer
-        className ="kernelEvents"
-        heading="KERNEL EVENTS"
-        type="kernel"
-        api="https://bits-apogee.org/registrations/kernel_events/"
-      />
-    </div>
-  );
+    return (
+        <div className="testWrapper">
+            <NavBar />
+            <MainHero />
+            <SocialsHero />
+            <CountdownSlate />
+            <div className="background">
+                <div className="gridVertical">
+                    <EventContainer
+                        className="kernelEvents"
+                        heading="KERNEL EVENTS"
+                        type="kernel"
+                        api="https://bits-apogee.org/registrations/kernel_events/"
+                    />
+                </div>
+            </div>
+        </div>
+    );
 }
 export default Test;
