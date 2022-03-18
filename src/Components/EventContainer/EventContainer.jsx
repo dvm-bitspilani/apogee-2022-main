@@ -96,7 +96,7 @@ function EventContainer(props) {
                     <div className="card-description-details">{eventDesc}</div>
                 </div>
             </div>
-        </div >
+        </div>
     )
 }
 

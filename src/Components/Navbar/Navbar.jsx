@@ -44,6 +44,7 @@ function NavBar() {
             </a>
             {/* <div>Developers</div> */}
           </div>
+          
         </nav>
         </div>
     )

@@ -416,15 +416,7 @@ img {
   cursor: pointer;
 }
 
-.sign {
-  position: absolute;
-  width: 12rem;
-  left: 7rem;
-  z-index: 50;
-  /* bottom: calc((100vw * 220) / 1538 - 6px); */
-  top: 58vh;
-  mix-blend-mode: screen;
-}
+
 
 @media screen and (max-width: 768px) {
   .balcony{
@@ -504,12 +496,7 @@ img {
     height: 35%;
   }
 
-  .sign {
-    left: -14px;
-    top: 62vh;
-    width: 43vw;
-    /* width: 8rem; */
-  }
+ 
 
   .socials{
     top: 80vh;

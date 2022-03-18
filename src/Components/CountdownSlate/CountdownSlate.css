@@ -1,0 +1,56 @@
+.signDate {
+    z-index: 999;
+    position: relative;
+    color: white;
+    top: -110px;
+    left: -10px;
+    font-weight: bold;
+    text-align: left;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-family: Montserrat;
+    font-size: 1em;
+}
+
+
+.sign {
+    position: absolute;
+    width: 12rem;
+    left: 7rem;
+    z-index: 50;
+    /* bottom: calc((100vw * 220) / 1538 - 6px); */
+    top: 68vh;
+    mix-blend-mode: screen;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .sign {
+        left: 25vh;
+        top: 77.5vh;
+        width: 40vw;
+        /* width: 8rem; */
+    }
+    .signDate{
+        font-size: 0.75rem;
+        top: -90px;
+        left: -8px;
+    }
+}
