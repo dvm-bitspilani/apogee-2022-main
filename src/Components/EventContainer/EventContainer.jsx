@@ -29,6 +29,9 @@ function EventContainer(props) {
         setDescriptionDetails("flex");
         setEventName(name);
         setEventDesc(desc);
+        React.useEffect(() => {
+            document.querySelector("body").style.overflow ="hidden !important"
+})
     };
     const handleClose = () => setDescriptionDetails("none");
     const changeDriveLink = (driveLink) => {
