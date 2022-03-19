@@ -267,8 +267,9 @@ img {
   }
 
   .heading {
-    font-size: 2.5rem;
+    font-size: 2.5rem !important;
     text-align: center;
+    padding: 3rem 0 2rem 0;
   }
 
 }

@@ -446,6 +446,7 @@ img {
   }
 
   .moon {
+    overflow-x: hidden;
     /* background: url(../assets/mobile/Moon.svg) no-repeat; */
     left: 50%;
     width: 100%;
