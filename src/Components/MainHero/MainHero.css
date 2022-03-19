@@ -133,6 +133,7 @@
       height: 20vh;
       background: linear-gradient(0deg, #000022, #000022);
       z-index:20;
+      width: 100vw;
   }
   .floorGlow{
     height: 100%;
