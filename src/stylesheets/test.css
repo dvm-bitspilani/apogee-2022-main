@@ -4,6 +4,13 @@
 .gridVertical {
     background: url("../Components/MainHero/MainHeroAssets/verticalGrid.svg");
     background-position: center;
-    background-size: contain;
+    background-size: 99vw;
     background-position-y: inherit;
+}
+.background{
+    position: relative;
+    margin-top: -5px;
+    background: linear-gradient(0deg, #000022, #000022);
+    z-index: 2;
+
 }

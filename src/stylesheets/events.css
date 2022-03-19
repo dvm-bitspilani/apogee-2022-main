@@ -71,6 +71,7 @@ img {
 .heading {
   font-family: "Bartkey";
   font-size: 3rem;
+  padding: 5rem 0 4rem 0;
 }
 
 .events-container .heading {
