@@ -405,7 +405,7 @@ img {
   position: absolute;
   top: 78vh;
   left: 1.5rem;
-  z-index: 50;
+  z-index: 1;
 }
 
 .socials div {
@@ -446,7 +446,7 @@ img {
   }
 
   .moon {
-    overflow-x: hidden;
+    overflow: hidden !important;
     /* background: url(../assets/mobile/Moon.svg) no-repeat; */
     left: 50%;
     width: 100%;

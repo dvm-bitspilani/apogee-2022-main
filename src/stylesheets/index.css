@@ -311,6 +311,9 @@ span {
   color: #9D9D9D !important;
   padding: 0 1rem;
   transition: all 0.7s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .aic-container{
