@@ -113,7 +113,10 @@ function NavBar() {
                 <a className="links" href="#">
                   <div>Home</div>
                 </a>
-                <a className="links" href="#">
+                <a href="https://bits-apogee.org/campusambassador2022/" className="links">
+                  <div>Campus Ambassador</div>
+                </a>
+                {/* <a className="links" href="#">
                   <div>About Us</div>
                 </a>
                 <a className="links" href="#">
@@ -121,7 +124,7 @@ function NavBar() {
                 </a>
                 <a className="links" href="#">
                   <div>Sponsors</div>
-                </a>
+                </a> */}
                 <a id="aic" href="#" onMouseOver={mouseOverAIC} onMouseLeave={mouseLeaveAIC}>
                   <div>AIC</div>
                   {((isShown || isAicShown) && window.screen.width < 768) && (<div className="aic-container" onMouseEnter={() => setIsAicShown(true)} onMouseLeave={() => setIsAicShown(false)}>
@@ -141,12 +144,12 @@ function NavBar() {
                 <a className="links" href="#">
                   <div>All Events</div>
                 </a>
-                <a className="links" href="#">
+                {/* <a className="links" href="#">
                   <div>Workshops</div>
                 </a>
                 <a className="links" href="#">
                   <div>Kind Store</div>
-                </a>
+                </a> */}
               </div>
               {((isShown || isAicShown) && window.screen.width > 768) && (<div className="aic-container" onMouseEnter={() => setIsAicShown(true)} onMouseLeave={() => setIsAicShown(false)}>
                 <div className="sub-menu">

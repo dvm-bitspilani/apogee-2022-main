@@ -37,9 +37,9 @@ function handleCities() {
 ReactDOM.render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<App handleCities={handleCities} />} />
+      <Route path="/" element={<Test />} />
       <Route path="/events" element={<Events />} />
-      <Route path="/Test" element={<Test />} />
+      {/* <Route path="/Test" element={<Test />} /> */}
 
       {/* <Route path="invoices" element={<Invoices />} /> */}
     </Routes>
