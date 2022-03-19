@@ -251,6 +251,7 @@ img {
 
   .card-img {
     width: 50%;
+    min-height: 24vh;
   }
 
   /* .card-img img {
