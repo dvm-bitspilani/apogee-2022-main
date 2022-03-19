@@ -17,6 +17,7 @@ nav {
   justify-content: space-between;
   cursor: pointer;
   transition: transform 300ms ease-out;
+  position: fixed;
 }
 
 .hamburger.open {
