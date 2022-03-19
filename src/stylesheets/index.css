@@ -328,6 +328,16 @@ span {
   transition: all 0.7s ease;
 }
 
+#aic:before{
+  content: '';
+  width: 20vw;
+  height: 100px;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  z-index: 10;
+}
+
 .links:hover div, #aic:hover div{
   color: white;
 }
@@ -392,12 +402,11 @@ span {
     justify-content: flex-start;
     width: 100%;
     text-align: center;
+    justify-content: center ;
   }
 
   .links-container1{
-    font-size: 1rem;
-    width: 100%;
-    height: unset;
+    display: none;
   }
 
   .links-container2{
@@ -414,10 +423,6 @@ span {
     width: 100%;
     font-size: 1.5rem;
     transform: translateX(0);
-  }
-
-  .sub-menu div:first-child{
-    display: none;
   }
 }
 

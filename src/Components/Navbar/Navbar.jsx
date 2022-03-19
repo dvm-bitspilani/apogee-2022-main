@@ -57,10 +57,10 @@ function NavBar() {
   }
 
   const mouseLeaveAIC = () =>{
-    setIsShown(false)
     allLinks.current.style.transform = "translateX(0px)"
   }
 
+  const linkStyles = {color: "unset", textDecoration: "none"}
 
   return (
     <div className="navbarWrapper">
@@ -98,18 +98,18 @@ function NavBar() {
           <div className="drawer-container">
             <div className="links-container1">
               <div className="links">Follow</div>
-              <a className="links" href="#">
+              <a className="links" href="https://www.facebook.com/bitsapogee/">
                 <div>Facebook</div>
               </a>
-              <a className="links" href="#">
+              <a className="links" href="https://twitter.com/bitsapogee?lang=en">
                 <div>Instagram</div>
               </a>
-              <a className="links" href="#">
+              <a className="links" href="https://twitter.com/bitsapogee?lang=en">
                 <div>Twitter</div>
               </a>
             </div>
             <div className="links-container2">
-              <div className="all-links" ref={allLinks}>
+              <div className="all-links" ref={allLinks} onMouseLeave={() => setIsShown(false)}>
                 <a className="links" href="#">
                   <div>Home</div>
                 </a>
@@ -122,22 +122,21 @@ function NavBar() {
                 <a className="links" href="#">
                   <div>Contact Us</div>
                 </a>
-                <a className="links" href="#">
+                <a className="links" href="#">  
                   <div>Sponsors</div>
                 </a> */}
-                <a id="aic" href="#" onMouseOver={mouseOverAIC} onMouseLeave={mouseLeaveAIC}>
+                <div id="aic" onMouseOver={mouseOverAIC} onMouseLeave={mouseLeaveAIC}>
                   <div>AIC</div>
                   {((isShown || isAicShown) && window.screen.width < 768) && (<div className="aic-container" onMouseEnter={() => setIsAicShown(true)} onMouseLeave={() => setIsAicShown(false)}>
                 <div className="sub-menu">
-                  <div>AIC</div>
-                  <div>Company Name</div>
-                  <div>Company Name</div>
-                  <div>Company Name</div>
-                  <div>Company Name</div>
-                  <div>Company Name</div>
+                  <div><a style={linkStyles} target="_blank" href="https://bit.ly/AIC_Turtlemint">Turtlemint</a></div>
+                  <div><a style={linkStyles} target="_blank" href="https://bit.ly/AIC_Ge_Healthcare">GE Healthcare</a></div>
+                  <div><a style={linkStyles} target="_blank" href="https://bit.ly/AIC_Bharat_Serums">Bharat Serums and Vaccines</a></div>
+                  <div><a style={linkStyles} target="_blank" href="https://bit.ly/AIC_RR_Kabel">RR Kabel</a></div>
+                  <div><a style={linkStyles} target="_blank" href="https://bit.ly/AIC_Kamdhenu">Kamdhenu</a></div>
                 </div>
               </div>)}
-                </a>
+                </div>
                 <a className="links" href="#">
                   <div>Kernel Events</div>
                 </a>
@@ -151,14 +150,16 @@ function NavBar() {
                   <div>Kind Store</div>
                 </a> */}
               </div>
-              {((isShown || isAicShown) && window.screen.width > 768) && (<div className="aic-container" onMouseEnter={() => setIsAicShown(true)} onMouseLeave={() => setIsAicShown(false)}>
+              {((isShown || isAicShown) && window.screen.width > 768) && (<div className="aic-container" onMouseEnter={mouseOverAIC} onMouseLeave={mouseLeaveAIC}>
                 <div className="sub-menu">
-                  <div>AIC</div>
+                  <div><a style={linkStyles} target="_blank" href="https://bit.ly/AIC_Turtlemint">Turtlemint</a></div>
+                  <div><a style={linkStyles} target="_blank" href="https://bit.ly/AIC_Ge_Healthcare">GE Healthcare</a></div>
+                  <div><a style={linkStyles} target="_blank" href="https://bit.ly/AIC_Bharat_Serums">Bharat Serums and Vaccines</a></div>
+                  <div><a style={linkStyles} target="_blank" href="https://bit.ly/AIC_RR_Kabel">RR Kabel</a></div>
+                  <div><a style={linkStyles} target="_blank" href="https://bit.ly/AIC_Kamdhenu">Kamdhenu</a></div>
+                  {/* <div>Company Name</div>
                   <div>Company Name</div>
-                  <div>Company Name</div>
-                  <div>Company Name</div>
-                  <div>Company Name</div>
-                  <div>Company Name</div>
+                  <div>Company Name</div> */}
                 </div>
               </div>)}
             </div>
