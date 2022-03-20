@@ -41,7 +41,8 @@ function NavBar() {
 
   const mouseOverAIC = () =>{
     setIsShown(true)
-    if(isAicShown || window.screen.width > 768) allLinks.current.style.transform = "translateX(-100px)"
+    if (window.screen.width > 768) allLinks.current.style.transform = "translateX(-100px)"
+    if(isAicShown && window.screen.width > 768) allLinks.current.style.transform = "translateX(-100px)"
   }
 
   const mouseOverAICMenu = () =>{
