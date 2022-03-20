@@ -5,7 +5,8 @@
     background: url("../Components/MainHero/MainHeroAssets/verticalGrid.svg");
     background-position: center;
     background-size: 99vw;
-    background-position-y: -10%;
+    background-position-y: inherit;
+    padding-bottom: 1rem;
 }
 .background{
     position: relative;
@@ -19,5 +20,9 @@
     .background{
         position: absolute;
         top: calc(100vh - 5rem);
+    }
+
+    .gridVertical{
+        background-position-y: -10% ;
     }
 }
