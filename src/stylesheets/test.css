@@ -12,5 +12,10 @@
     margin-top: -5px;
     background: linear-gradient(0deg, #000022, #000022);
     z-index: 2;
-    top: -25px;
+}
+
+@media screen and (max-width: 768px){
+    .background{
+        top: -25px;
+    }
 }

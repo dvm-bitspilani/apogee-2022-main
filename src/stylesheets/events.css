@@ -63,7 +63,7 @@ img {
 }
 
 .events-container {
-  top: 0vh;
+  top: 2vh;
   position: relative;
   z-index: 50;
 }
