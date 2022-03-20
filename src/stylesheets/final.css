@@ -8,14 +8,16 @@
     background-position-y: inherit;
 }
 .background{
-    position: absolute;
-    margin-top: -10%;
+    position: relative;
+    margin-top: -5px;
     background: linear-gradient(0deg, #000022, #000022);
     z-index: 9;
+    /* top: 100vh; */
 }
 
 @media screen and (max-width: 768px){
-    /* .background{
-        top: calc(100vh - 5rem);
-    } */
+    .background{
+        position: absolute;
+        top: calc(100vh - 1.5rem);
+    }
 }
