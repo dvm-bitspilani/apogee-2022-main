@@ -27,12 +27,15 @@ function NavBar() {
   }
 
   function openNav() {
+    document.body.style.overflow = "hidden";
     document.getElementById("drawer").style.transform = "translateX(00px)";
     if (window.screen.width < 768)
       document.getElementById("drawer").style.width = "100vw";
   }
 
   function closeNav() {
+    document.body.style.overflowY = "scroll";
+    document.body.style.overflowX = "hidden";
     document.getElementById("drawer").style.transform = "translateX(100vw)";
   }
 
@@ -54,6 +57,11 @@ function NavBar() {
   const mouseLeaveAICMenu = () =>{
     setIsAicShown(false)
     mouseLeaveAIC()
+  }
+
+  const handleLinkClick = () =>{
+    closeNav();
+    hamburger.current.classList.remove("open")
   }
 
   const linkStyles = {color: "unset", textDecoration: "none"}
@@ -94,19 +102,19 @@ function NavBar() {
           <div className="drawer-container">
             <div className="links-container1">
               <div className="links">Follow</div>
-              <a className="links" href="https://www.facebook.com/bitsapogee/">
+              <a className="links" target="_blank" href="https://www.facebook.com/bitsapogee/">
                 <div>Facebook</div>
               </a>
-              <a className="links" href="https://twitter.com/bitsapogee?lang=en">
+              <a className="links" target="_blank" href="https://twitter.com/bitsapogee?lang=en">
                 <div>Instagram</div>
               </a>
-              <a className="links" href="https://twitter.com/bitsapogee?lang=en">
+              <a className="links" target="_blank" href="https://twitter.com/bitsapogee?lang=en">
                 <div>Twitter</div>
               </a>
             </div>
             <div className="links-container2">
               <div className="all-links" ref={allLinks} onMouseLeave={() => setIsShown(false)}>
-                <a className="links" href="#">
+                <a className="links" onClick={handleLinkClick} href="#">
                   <div>Home</div>
                 </a>
                 <a href="https://bits-apogee.org/campusambassador2022/" className="links">
@@ -133,7 +141,7 @@ function NavBar() {
                 </div>
               </div>)}
                 </div>
-                <a className="links" href="#kernel-events">
+                <a className="links" onClick={handleLinkClick} href="#kernel-events">
                   <div>Kernel Events</div>
                 </a>
                 <Link className="links" to="/events">
