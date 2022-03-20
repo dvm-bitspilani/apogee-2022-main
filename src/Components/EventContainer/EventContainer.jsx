@@ -29,9 +29,9 @@ function EventContainer(props) {
         setDescriptionDetails("flex");
         setEventName(name);
         setEventDesc(desc);
-//         React.useEffect(() => {
-//             document.querySelector("body").style.overflow ="hidden !important"
-// })
+        //         React.useEffect(() => {
+        //             document.querySelector("body").style.overflow ="hidden !important"
+        // })
     };
     const handleClose = () => setDescriptionDetails("none");
     const changeDriveLink = (driveLink) => {
@@ -59,7 +59,7 @@ function EventContainer(props) {
 
     return (
         <div>
-            <div className={props.type == "kernel" ? "events-container" : "container"}>
+            <div className={props.type == "kernel" ? "events-container" : "container"} id={props.type == "kernel" ? "kernel-events" : ""}>
                 <div className="heading">
                     {props.heading}
                 </div>

@@ -8,18 +8,6 @@ import { width } from '@mui/system';
 
 
 function NavBar() {
-  // let hamburger = document.querySelector(".hamburger");
-  // hamburger.addEventListener("click", () => {
-  //   if (!isMenuOpen) {
-  //     hamburger.classList.add("open");
-  //     openNav();
-  //   } else {
-  //     hamburger.classList.remove("open");
-  //     closeNav();
-  //   }
-  //   isMenuOpen = !isMenuOpen;
-  // });
-
   let hamburger = useRef();
   let isMenuOpen = false;
   const [isShown, setIsShown] = useState(false);
@@ -48,16 +36,24 @@ function NavBar() {
     document.getElementById("drawer").style.transform = "translateX(100vw)";
   }
 
-  if(isShown && window.screen.width > 768) allLinks.current.style.transform = "translateX(-100px)"
-
   const mouseOverAIC = () =>{
-    console.log("hovered")
     setIsShown(true)
-    if(window.screen.width > 768) allLinks.current.style.transform = "translateX(-100px)"
+    if(isAicShown || window.screen.width > 768) allLinks.current.style.transform = "translateX(-100px)"
+  }
+
+  const mouseOverAICMenu = () =>{
+    setIsAicShown(true)
+    mouseOverAIC()
   }
 
   const mouseLeaveAIC = () =>{
+    setIsShown(false)
     allLinks.current.style.transform = "translateX(0px)"
+  }
+
+  const mouseLeaveAICMenu = () =>{
+    setIsAicShown(false)
+    mouseLeaveAIC()
   }
 
   const linkStyles = {color: "unset", textDecoration: "none"}
@@ -137,12 +133,12 @@ function NavBar() {
                 </div>
               </div>)}
                 </div>
-                <a className="links" href="#">
+                <a className="links" href="#kernel-events">
                   <div>Kernel Events</div>
                 </a>
-                <a className="links" href="#">
+                <Link className="links" to="/events">
                   <div>All Events</div>
-                </a>
+                </Link>
                 {/* <a className="links" href="#">
                   <div>Workshops</div>
                 </a>
@@ -150,7 +146,7 @@ function NavBar() {
                   <div>Kind Store</div>
                 </a> */}
               </div>
-              {((isShown || isAicShown) && window.screen.width > 768) && (<div className="aic-container" onMouseEnter={mouseOverAIC} onMouseLeave={mouseLeaveAIC}>
+              {((isShown || isAicShown) && window.screen.width > 768) && (<div className="aic-container" onMouseEnter={mouseOverAICMenu} onMouseLeave={mouseLeaveAICMenu}>
                 <div className="sub-menu">
                   <div><a style={linkStyles} target="_blank" href="https://bit.ly/AIC_Turtlemint">Turtlemint</a></div>
                   <div><a style={linkStyles} target="_blank" href="https://bit.ly/AIC_Ge_Healthcare">GE Healthcare</a></div>
