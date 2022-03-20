@@ -63,7 +63,7 @@ img {
 }
 
 .events-container {
-  top: 0vh;
+  top: 2vh;
   position: relative;
   z-index: 50;
 }
@@ -71,7 +71,7 @@ img {
 .heading {
   font-family: "Bartkey";
   font-size: 3rem;
-  padding: 5rem 0 4rem 0;
+  padding: 1rem 0;
 }
 
 .events-container .heading {
@@ -92,7 +92,7 @@ img {
       align-content: flex-start;
   overflow-x: hidden;
   overflow-y: scroll;
-  height: calc(100% - 1.75rem);
+  height: calc(100% - 4rem);
 }
 
 .card {
@@ -218,7 +218,7 @@ img {
             justify-content: unset;
     overflow-y: scroll;
     width: 100%;
-    height: 87%;
+    height: 83%;
     margin-top: 1rem;
   }
 
@@ -270,7 +270,8 @@ img {
   .heading {
     font-size: 2.5rem !important;
     text-align: center;
-    padding: 3rem 0 2rem 0;
+    margin: 2rem 0 1rem;
+    padding: 0;
   }
 
 }
