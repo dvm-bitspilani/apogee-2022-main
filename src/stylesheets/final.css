@@ -9,14 +9,14 @@
 }
 .background{
     position: absolute;
-    margin-top: -5px;
+    margin-top: -10%;
     background: linear-gradient(0deg, #000022, #000022);
     z-index: 9;
     top: 100vh;
 }
 
 @media screen and (max-width: 768px){
-    .background{
+    /* .background{
         top: calc(100vh - 5rem);
-    }
+    } */
 }
