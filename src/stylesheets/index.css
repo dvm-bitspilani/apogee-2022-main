@@ -229,9 +229,9 @@ span {
   top: 0;
   right: 0;
   overflow-x: hidden;
-  -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
   padding: 1rem;
   text-align: left;
   background: rgba(2, 4, 18, 0.85);
@@ -331,11 +331,11 @@ span {
 #aic:before{
   content: '';
   width: 20vw;
-  height: 100px;
+  height: 200px;
   top: 50%;
   transform: translateY(-50%);
   position: absolute;
-  z-index: 10;
+  z-index: -10;
 }
 
 .links:hover div, #aic:hover div{
@@ -352,6 +352,15 @@ span {
 
 .sub-menu div{
   padding: 0.5rem;
+}
+
+.down-icon{
+  font-size: 1.5rem;
+  transition: 0.5s ease all;
+}
+
+.rotate-arrow .down-icon{
+  transform: rotate(180deg);
 }
 
 @media screen and (max-width: 768px) {
