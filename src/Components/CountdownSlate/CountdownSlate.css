@@ -43,14 +43,14 @@
 
 @media screen and (max-width: 768px) {
     .sign {
-        left: 25vh;
-        top: 68vh;
+        left: 60vw;
+        top: 79vh;
         width: 38vw;
         /* width: 8rem; */
     }
     .signDate{
         font-size: 0.75rem;
-        top: -90px;
+        top: -87.5px;
         left: -8px;
     }
 }

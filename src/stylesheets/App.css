@@ -500,13 +500,14 @@ img {
  
 
   .socials{
-    top: 74vh;
+    top: 82vh;
   }
+  
   .socials svg{
-    width: 20px;
+    width: 30px;
   }
   .socials div{
-    margin-bottom: .25rem;
+    margin-bottom: .5rem;
   }
 }
 

@@ -17,12 +17,20 @@
 }
 
 @media screen and (max-width: 768px){
+    .events-container{
+        top: 4vh;
+    }
+    .events-container .heading{
+        text-align: center !important;
+        margin-bottom: 0;
+    }
     .background{
         position: absolute;
-        top: calc(100vh - 5rem);
+        top: calc(100vh - 2rem);
+        margin-top: 0;
     }
 
     .gridVertical{
-        background-position-y: -10% ;
+        background-position-y: 0% ;
     }
 }
