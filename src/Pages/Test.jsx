@@ -3,7 +3,7 @@ import MainHero from "../Components/MainHero/MainHero.jsx";
 import NavBar from "../Components/Navbar/Navbar.jsx";
 import SocialsHero from "../Components/SocialsHero/SocialsHero.js";
 import EventContainer from "../Components/EventContainer/EventContainer.jsx";
-import '../stylesheets/test.css';
+import '../stylesheets/final.css';
 
 function Test() {
     return (
