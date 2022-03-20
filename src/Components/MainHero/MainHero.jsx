@@ -29,7 +29,7 @@ function MainHero() {
         console.log(Layer1.current, screenWidth, screenHeight);
         setTimeout(() => {
             document.getElementById("cityLayer1").style.transform = "translateY(0px)"
-        }, 150);
+        }, 50);
         setTimeout(() => {
             document.getElementById("cityLayer2").style.transform = "translateY(0px)"
         }, 600);
