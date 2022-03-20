@@ -114,7 +114,7 @@ img {
   background-position: center center;
   height: 200vh;
   width: 200vw;
-  z-index: 1;
+  /* z-index: -3; */
   mix-blend-mode: screen;
   position: absolute;
   top: -50vh;
@@ -146,8 +146,8 @@ img {
 } */
 
 .moon {
-  width: 110%;
-  z-index: 1;
+  width: 125%;
+  /* z-index: -3; */
   position: absolute;
   top: -20vh;
   /* bottom: 10vh; */
@@ -405,7 +405,7 @@ img {
   position: absolute;
   top: 78vh;
   left: 1.5rem;
-  z-index: 1;
+  z-index: 12;
 }
 
 .socials div {

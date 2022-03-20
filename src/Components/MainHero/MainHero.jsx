@@ -29,22 +29,22 @@ function MainHero() {
         console.log(Layer1.current, screenWidth, screenHeight);
         setTimeout(() => {
             document.getElementById("cityLayer1").style.transform = "translateY(0px)"
-        }, 100);
+        }, 150);
         setTimeout(() => {
             document.getElementById("cityLayer2").style.transform = "translateY(0px)"
-        }, 200);
+        }, 600);
         setTimeout(() => {
-            document.getElementById("cityLayer3").style.transform = "translateY(0px)"
-        }, 500);
-        setTimeout(() => {
-            document.getElementById("cityLayer4").style.transform = "translateY(0px)"
-        }, 700);
-        setTimeout(() => {
-            document.getElementById("cityLayer5").style.transform = "translateY(0px)"
+            document.getElementById("cityLayer3").style.transform = "  translate(-4%,000px)"
         }, 900);
         setTimeout(() => {
-            document.getElementById("cityLayer6").style.transform = "translateY(0px)"
+            document.getElementById("cityLayer4").style.transform = "translate(-9%,000px) "
         }, 1200);
+        setTimeout(() => {
+            document.getElementById("cityLayer5").style.transform = "translate(-18%,000px)"
+        }, 1500);
+        setTimeout(() => {
+            document.getElementById("cityLayer6").style.transform = "translateY(0px)"
+        }, 1800);
 
     });
 

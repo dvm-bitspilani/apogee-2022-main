@@ -31,8 +31,8 @@
 .sign {
     position: absolute;
     width: 12rem;
-    left: 7rem;
-    z-index: 1;
+    left: 6%;
+    z-index: 11;
     /* bottom: calc((100vw * 220) / 1538 - 6px); */
     top: 68vh;
     mix-blend-mode: screen;
