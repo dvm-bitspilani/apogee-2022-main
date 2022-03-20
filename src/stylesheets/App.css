@@ -120,7 +120,7 @@ img {
   top: -50vh;
   bottom: 10vh;
   width: 100%;
-  animation: rotateMoon 150s ease-in-out reverse infinite;
+  animation: rotateMoon 100s linear reverse infinite;
 }
 
 .balcony {
@@ -181,8 +181,8 @@ img {
   transition: all 1.5s ease 0s;
 }
 #moon {
-  -webkit-animation: rotateMoon 150s infinite;
-          animation: rotateMoon 150s infinite;
+  -webkit-animation: rotateMoon 100s infinite linear;
+          animation: rotateMoon 100s infinite linear;
   position: relative;
   top: 33%;
   /* mix-blend-mode: screen; */

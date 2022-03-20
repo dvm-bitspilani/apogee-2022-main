@@ -52,14 +52,14 @@
       transform: translate(-18%,1000px);
       transition: transform 2s ease-in-out;
       opacity: 1;
-      width: 38vw;
+      width: 32vw;
   }
   #cityLayer6 {
-      z-index: 1;
+      z-index: 5;
       transform: translateY(1000px);
       transition: transform 2s ease-in-out;
       opacity: 1;
-      width: 20vw;
+      width: 21vw;
   }
   .buildings {
     display: flex;
