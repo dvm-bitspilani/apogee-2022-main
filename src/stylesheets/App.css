@@ -502,6 +502,12 @@ img {
   .socials{
     top: 80vh;
   }
+  .socials svg{
+    width: 20px;
+  }
+  .socials div{
+    margin-bottom: .25rem;
+  }
 }
 
 /* NavBar CSS */
