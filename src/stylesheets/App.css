@@ -184,7 +184,7 @@ img {
   -webkit-animation: rotateMoon 150s infinite;
           animation: rotateMoon 150s infinite;
   position: relative;
-  top: 20%;
+  top: 33%;
   /* mix-blend-mode: screen; */
 }
 
