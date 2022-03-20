@@ -65,8 +65,8 @@
 }
 
 @media all and (max-width: 500px) {
-  .card-description-box {
-    width: 80vw;
+  .card-description-box, .kernel-events .card-description-box {
+    max-width: 80vw;
   }
   .card-description-heading {
     font-size: 20px;
