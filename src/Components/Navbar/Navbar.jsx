@@ -109,8 +109,12 @@ function NavBar() {
             </div>
             <div className="links-container2">
               <div className="all-links" ref={allLinks} onMouseLeave={() => setIsShown(false)}>
+
                 <a className="links" onClick={handleLinkClick} href="#">
                   <div>Home</div>
+                </a>
+              <a className="links" onClick={handleLinkClick} href="https://bits-apogee.org/registrations/login/">
+                  <div>Login</div>
                 </a>
                 <a href="https://bits-apogee.org/campusambassador2022/" className="links">
                   <div>Campus Ambassador</div>
