@@ -1,116 +1,191 @@
 /* .buildings *{
     z-index: -2;
 } */
-  .wrapperMainHero {
-      overflow: hidden;
-      height: 100vh;
-      width: 100vw;
-  }
-  .layers {
-      position: absolute;
-      bottom: 20vh;
-      /* width: fit-content */
-      transform-origin: bottom center;
-  }
-  #cityLayer1 {
-      z-index: 6;
-      transform: translate(5%,1000px);
-      transition: transform 2s ease-in-out;
-      width: 62vw;
-      opacity: 1;
-      /* transform: translate(-45%, 100%) !important; */
-    
-      
-  }
-  #cityLayer2 {
-      z-index: 5;
-      transform: translate(1%,1000px);
-      transition: transform 2s ease-in-out;
-      width: 61vw;
-      opacity: 1;
-    
-      
-  }
-  #cityLayer3 {
-      z-index: 4;
-      transform: translate(-2%,1000px);
-      transition: transform 2s ease-in-out;
-      width: 51.5vw;
-      opacity: 1;
-    
-      
-  }
-  #cityLayer4 {
-      z-index: 3;
-      transform: translate(-6%,1000px);
-      transition: transform 2s ease-in-out;
-      opacity: 1;
-      width: 45vw;
-  }
-  #cityLayer5 {
-      z-index: 2;
-      transform: translate(-21.5%,1000px);
-      transition: transform 2s ease-in-out;
-      opacity: 1;
-      width: 32vw;
-  }
-  #cityLayer6 {
-      z-index: 5;
-      transform: translate(30%, 1000px);
-      transition: transform 2s ease-in-out;
-      opacity: 1;
-      width: 21vw;
-  }
-  .buildings {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
-  }
-  .floor {
-      position: absolute;
-      bottom: 0;
-      height: 20vh;
-      background: linear-gradient(0deg, #000022, #000022);
-      z-index:10;
-      width: 100vw;
-  }
-  .floorGlow{
-    height: 100%;
+.wrapperMainHero {
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
 }
+.layers {
+  position: absolute;
+  bottom: 20vh;
+  /* width: fit-content */
+  transform-origin: bottom center;
+}
+#cityLayer1 {
+  z-index: 6;
+  transform: translate(5%, 1000px);
+  transition: transform 2s ease-in-out;
+  width: 62vw;
+  opacity: 1;
+  /* transform: translate(-45%, 100%) !important; */
+}
+#cityLayer2 {
+  z-index: 5;
+  transform: translate(1%, 1000px);
+  transition: transform 2s ease-in-out;
+  width: 61vw;
+  opacity: 1;
+}
+#cityLayer3 {
+  z-index: 4;
+  transform: translate(-2%, 1000px);
+  transition: transform 2s ease-in-out;
+  width: 51.5vw;
+  opacity: 1;
+}
+#cityLayer4 {
+  z-index: 3;
+  transform: translate(-6%, 1000px);
+  transition: transform 2s ease-in-out;
+  opacity: 1;
+  width: 45vw;
+}
+#cityLayer5 {
+  z-index: 2;
+  transform: translate(-21.5%, 1000px);
+  transition: transform 2s ease-in-out;
+  opacity: 1;
+  width: 32vw;
+}
+#cityLayer6 {
+  z-index: 5;
+  transform: translate(30%, 1000px);
+  transition: transform 2s ease-in-out;
+  opacity: 1;
+  width: 21vw;
+}
+.buildings {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.floor {
+  position: absolute;
+  bottom: 0;
+  height: 20vh;
+  background: linear-gradient(0deg, #000022, #000022);
+  z-index: 10;
+  width: 100vw;
+}
+.floorGlow {
+  height: 100%;
+}
+.glow {
+    width: 100%;
+    background: -o-radial-gradient(
+      50% 96.77%,
+      217.21% 217.2%,
+      #ffffff 0%,
+      rgba(112, 36, 36, 0.41) 100%
+    );
+    background: radial-gradient(
+      217.21% 217.2% at 50% 96.77%,
+      #ffffff 0%,
+      rgba(112, 36, 36, 0.41) 100%
+    );
+    mix-blend-mode: color-dodge;
+    opacity: 0.4;
+    -webkit-filter: blur(20px);
+    filter: blur(20px);
+    -webkit-transform: matrix(1, 0, 0, -1, 0, 0);
+    -ms-transform: matrix(1, 0, 0, -1, 0, 0);
+    transform: matrix(1, 0, 0, -1, 0, 0);
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    height: 85%;
+  }
+  .horizon-glow {
+    width: 90%;
+    height: 30%;
+    position: absolute;
+    bottom: calc((100vw * 151) / 1224 - 30px);
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background: -o-radial-gradient(
+      50% 50%,
+      50% 50%,
+      #f6feff 0%,
+      #c3bfc5 41.46%,
+      #573c4b 100%
+    );
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      #f6feff 0%,
+      #c3bfc5 41.46%,
+      #573c4b 100%
+    );
+    background: blue;
+    mix-blend-mode: color-burn;
+    opacity: 0.65;
+    -webkit-filter: blur(60px);
+    filter: blur(60px);
+    z-index: 1;
+  }
+  .horizon-glow-buildings {
+    width: 70%;
+    height: 30%;
+    position: absolute;
+    bottom: calc((100vw * 151) / 1224 - 30px);
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background: -o-radial-gradient(
+      50% 50%,
+      103.57% 103.57%,
+      #ffffff 0%,
+      #180000 100%
+    );
+    background: radial-gradient(
+      103.57% 103.57% at 50% 50%,
+      #ffffff 0%,
+      #180000 100%
+    );
+    background: blue;
+    mix-blend-mode: color-dodge;
+    opacity: 0.3;
+    -webkit-filter: blur(40px);
+    filter: blur(40px);
+    z-index: 40;
+  }
 @keyframes cityEntry {
-    0% {
-        /* transform: translateY(100px); */
-        opacity: 0;
-    }
-    100% {
-        /* transform: translateY(0); */
-        opacity: 0; 
-    }
+  0% {
+    /* transform: translateY(100px); */
+    opacity: 0;
+  }
+  100% {
+    /* transform: translateY(0); */
+    opacity: 0;
+  }
 }
 @media screen and (max-width: 768px) {
-    .buildings{
-        width: 100vw;
-        overflow: hidden;
-    }
-    #cityLayer1,#cityLayer2{
-        width: 90vw;
-    }
-    #cityLayer3 {
-        width: 100vw;
-    }
-    #cityLayer4 {
-        width: 90vw;
-        transform: translate(-10%, 0px);
-    }
-    #cityLayer5 {
-        width: 90vw;
-        transform: translate(-15.5%, 0px);
-    }
-    #cityLayer6 {
-        width: 60vw;
-    }
+  .buildings {
+    width: 100vw;
+    overflow: hidden;
+  }
+  #cityLayer1,
+  #cityLayer2 {
+    width: 90vw;
+  }
+  #cityLayer3 {
+    width: 100vw;
+  }
+  #cityLayer4 {
+    width: 90vw;
+    transform: translate(-10%, 0px);
+  }
+  #cityLayer5 {
+    width: 90vw;
+    transform: translate(-15.5%, 0px);
+  }
+  #cityLayer6 {
+    width: 60vw;
+  }
 }
-  
