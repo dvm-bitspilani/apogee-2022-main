@@ -274,6 +274,10 @@ img {
     padding: 0;
   }
 
+  .events-container{
+    top: 8vh !important;
+  }
+
 }
 
 @media screen and (min-width: 2560px) {
