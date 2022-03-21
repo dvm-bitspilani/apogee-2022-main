@@ -32,5 +32,6 @@
 
     .gridVertical{
         background-position-y: 0% ;
+        padding-bottom: 3rem;
     }
 }
