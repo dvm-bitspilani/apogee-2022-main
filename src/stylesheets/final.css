@@ -26,12 +26,12 @@
     }
     .background{
         position: absolute;
-        top: calc(100vh - 60px);
+        top: calc(100vh - 5rem);
         margin-top: 0;
     }
 
     .gridVertical{
-        background-position-y: -20% ;
+        background-position-y: -30% ;
         padding-bottom: 3rem;
     }
 }
