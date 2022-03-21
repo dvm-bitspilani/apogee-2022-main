@@ -14,7 +14,7 @@
   }
   #cityLayer1 {
       z-index: 6;
-      transform: translateY(1000px);
+      transform: translate(5%,1000px);
       transition: transform 2s ease-in-out;
       width: 62vw;
       opacity: 1;
@@ -24,7 +24,7 @@
   }
   #cityLayer2 {
       z-index: 5;
-      transform: translateY(1000px);
+      transform: translate(1%,1000px);
       transition: transform 2s ease-in-out;
       width: 61vw;
       opacity: 1;
@@ -33,30 +33,30 @@
   }
   #cityLayer3 {
       z-index: 4;
-      transform: translate(-4%,1000px);
+      transform: translate(-2%,1000px);
       transition: transform 2s ease-in-out;
-      width: 49vw;
+      width: 51.5vw;
       opacity: 1;
     
       
   }
   #cityLayer4 {
       z-index: 3;
-      transform: translate(-9%,1000px);
+      transform: translate(-6%,1000px);
       transition: transform 2s ease-in-out;
       opacity: 1;
       width: 45vw;
   }
   #cityLayer5 {
       z-index: 2;
-      transform: translate(-18%,1000px);
+      transform: translate(-21.5%,1000px);
       transition: transform 2s ease-in-out;
       opacity: 1;
       width: 32vw;
   }
   #cityLayer6 {
       z-index: 5;
-      transform: translateY(1000px);
+      transform: translate(30%, 1000px);
       transition: transform 2s ease-in-out;
       opacity: 1;
       width: 21vw;

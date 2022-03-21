@@ -41,7 +41,7 @@ function MainHero() {
             document.getElementById("cityLayer4").style.transform = "translate(-6%,000px) "
         }, 1200);
         setTimeout(() => {
-            document.getElementById("cityLayer5").style.transform = "translate(-23.5%,000px)"
+            document.getElementById("cityLayer5").style.transform = "translate(-21.5%,000px)"
         }, 1500);
         setTimeout(() => {
             document.getElementById("cityLayer6").style.transform = "translate(30%,000px)"
