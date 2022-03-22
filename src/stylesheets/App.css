@@ -401,7 +401,7 @@ img {
 
 .socials {
   position: absolute;
-  top: 78vh;
+  top: 78%;
   left: 1.5rem;
   z-index: 12;
 }

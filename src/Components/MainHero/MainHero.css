@@ -3,7 +3,7 @@
 } */
 .wrapperMainHero {
   overflow: hidden;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   z-index: 0;
 }
@@ -76,86 +76,86 @@
   height: 100%;
 }
 .glow {
-    width: 100%;
-    background: -o-radial-gradient(
-      50% 96.77%,
-      217.21% 217.2%,
-      #ffffff 0%,
-      rgba(112, 36, 36, 0.41) 100%
-    );
-    background: radial-gradient(
-      217.21% 217.2% at 50% 96.77%,
-      #ffffff 0%,
-      rgba(112, 36, 36, 0.41) 100%
-    );
-    mix-blend-mode: color-dodge;
-    opacity: 0.4;
-    -webkit-filter: blur(20px);
-    filter: blur(20px);
-    -webkit-transform: matrix(1, 0, 0, -1, 0, 0);
-    -ms-transform: matrix(1, 0, 0, -1, 0, 0);
-    transform: matrix(1, 0, 0, -1, 0, 0);
-    position: absolute;
-    top: 0;
-    z-index: 1;
-    height: 85%;
-  }
-  .horizon-glow {
-    width: 90%;
-    height: 30%;
-    position: absolute;
-    bottom: calc((100vw * 151) / 1224 - 30px);
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
-    background: -o-radial-gradient(
-      50% 50%,
-      50% 50%,
-      #f6feff 0%,
-      #c3bfc5 41.46%,
-      #573c4b 100%
-    );
-    background: radial-gradient(
-      50% 50% at 50% 50%,
-      #f6feff 0%,
-      #c3bfc5 41.46%,
-      #573c4b 100%
-    );
-    background: blue;
-    mix-blend-mode: color-burn;
-    opacity: 0.65;
-    -webkit-filter: blur(60px);
-    filter: blur(60px);
-    z-index: 1;
-  }
-  .horizon-glow-buildings {
-    width: 70%;
-    height: 30%;
-    position: absolute;
-    bottom: calc((100vw * 151) / 1224 - 30px);
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
-    background: -o-radial-gradient(
-      50% 50%,
-      103.57% 103.57%,
-      #ffffff 0%,
-      #180000 100%
-    );
-    background: radial-gradient(
-      103.57% 103.57% at 50% 50%,
-      #ffffff 0%,
-      #180000 100%
-    );
-    background: blue;
-    mix-blend-mode: color-dodge;
-    opacity: 0.3;
-    -webkit-filter: blur(40px);
-    filter: blur(40px);
-    z-index: 40;
-  }
+  width: 100%;
+  background: -o-radial-gradient(
+    50% 96.77%,
+    217.21% 217.2%,
+    #ffffff 0%,
+    rgba(112, 36, 36, 0.41) 100%
+  );
+  background: radial-gradient(
+    217.21% 217.2% at 50% 96.77%,
+    #ffffff 0%,
+    rgba(112, 36, 36, 0.41) 100%
+  );
+  mix-blend-mode: color-dodge;
+  opacity: 0.4;
+  -webkit-filter: blur(20px);
+  filter: blur(20px);
+  -webkit-transform: matrix(1, 0, 0, -1, 0, 0);
+  -ms-transform: matrix(1, 0, 0, -1, 0, 0);
+  transform: matrix(1, 0, 0, -1, 0, 0);
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  height: 85%;
+}
+.horizon-glow {
+  width: 90%;
+  height: 30%;
+  position: absolute;
+  bottom: calc((100vw * 151) / 1224 - 30px);
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background: -o-radial-gradient(
+    50% 50%,
+    50% 50%,
+    #f6feff 0%,
+    #c3bfc5 41.46%,
+    #573c4b 100%
+  );
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #f6feff 0%,
+    #c3bfc5 41.46%,
+    #573c4b 100%
+  );
+  background: blue;
+  mix-blend-mode: color-burn;
+  opacity: 0.65;
+  -webkit-filter: blur(60px);
+  filter: blur(60px);
+  z-index: 1;
+}
+.horizon-glow-buildings {
+  width: 70%;
+  height: 30%;
+  position: absolute;
+  bottom: calc((100vw * 151) / 1224 - 30px);
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background: -o-radial-gradient(
+    50% 50%,
+    103.57% 103.57%,
+    #ffffff 0%,
+    #180000 100%
+  );
+  background: radial-gradient(
+    103.57% 103.57% at 50% 50%,
+    #ffffff 0%,
+    #180000 100%
+  );
+  background: blue;
+  mix-blend-mode: color-dodge;
+  opacity: 0.3;
+  -webkit-filter: blur(40px);
+  filter: blur(40px);
+  z-index: 40;
+}
 @keyframes cityEntry {
   0% {
     /* transform: translateY(100px); */
