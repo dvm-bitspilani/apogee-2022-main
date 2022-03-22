@@ -21,7 +21,7 @@ function Test() {
             className="kernelEvents"
             heading="KERNEL-EVENTS"
             type="kernel"
-            api="https://bits-apogee.org/registrations/kernel_events/"
+            api="https://bits-apogee.org/registrations/kernel_event/"
           />
         </div>
       </div>

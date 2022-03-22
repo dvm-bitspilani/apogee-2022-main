@@ -19,6 +19,29 @@ function EventContainer(props) {
       .then(function (result) {
         if (props.type == "kernel") setEvents(result.data[0].events);
         else setEvents(result[0].events);
+        console.log(result);
+      })
+      .catch((error) => {
+        console.log("ERROR", error);
+        const errorEvent = [{
+          about: "<p>NA</p>",
+          categories: ['NonWorkshop'],
+          contact: "",
+          date_time: "TBA",
+          description: "Server is Busy",
+          details: "<p>NA</p>",
+          duration: 0,
+          end_time: "TBA",
+          id: 1,
+          image_url: "",
+          name: "SERVER IS BUSY",
+          rules: "<p>NA</p>",
+          time: "All day",
+          timings: "TBA",
+          venue: "TBA",
+        }];
+        setEvents(errorEvent);
+        
       });
   }, []);
 

@@ -507,9 +507,9 @@ img {
   }
 
   .socials {
-    top: 85vh;
-    display: flex;
-    justify-content: space-between;
+    top: 73vh;
+    /* display: flex;
+    justify-content: space-between; */
     width: 35vw;
   }
 
