@@ -6,6 +6,10 @@
   height: 100%;
   width: 100vw;
   z-index: 0;
+  height: 100%;
+  height: -moz-available;          /* WebKit-based browsers will ignore this. */
+  height: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+  height: fill-available;
 }
 .layers {
   position: absolute;
