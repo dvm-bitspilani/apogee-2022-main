@@ -19,7 +19,7 @@ function Test() {
                 </div> */}
           <EventContainer
             className="kernelEvents"
-            heading="KERNEL events"
+            heading="KERNEL-EVENTS"
             type="kernel"
             api="https://bits-apogee.org/registrations/kernel_events/"
           />
