@@ -167,26 +167,30 @@
   }
 }
 @media screen and (max-width: 768px) {
-  .buildings {
+  .buildings, .testWrapper {
     width: 100vw;
     overflow: hidden;
   }
   #cityLayer1,
   #cityLayer2 {
-    width: 90vw;
+    width: 91vw;
   }
   #cityLayer3 {
-    width: 100vw;
+    width: 94vw;
+    left: 8vw;
   }
   #cityLayer4 {
     width: 90vw;
-    transform: translate(-10%, 0px);
+    top: 59vh;
+    left: 5vw;
   }
   #cityLayer5 {
-    width: 90vw;
-    transform: translate(-15.5%, 0px);
+    width: 93vw;
+    top: 49vh;
   }
   #cityLayer6 {
     width: 60vw;
+    top: 61vh;
+    left: 22vw
   }
 }
