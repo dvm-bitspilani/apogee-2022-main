@@ -7,7 +7,7 @@ import Modal from "@mui/material/Modal";
 import { styled, Box } from "@mui/system";
 import CloseIcon from "@mui/icons-material/Close";
 import Background from "../assets/laptop/events_balcony.svg";
-import EventContainer from "../Components/EventContainer/EventContainer"
+import EventContainer from "../Components/EventContainer/EventContainer";
 
 import "../stylesheets/events.css";
 import "../stylesheets/all-events.css";
@@ -32,16 +32,16 @@ import "../stylesheets/all-events.css";
 
 function Events() {
   return (
-    <div>
-      <div className="bg">
-        <img className="bg-img" src={Background} alt="" />
-      </div>
+    <div className='all-events-wrapper'>
       <Link to="/">
         <div className="arrow">
           <img src={Arrow} alt="" />
         </div>
       </Link>
-      <EventContainer heading={"ALL EVENTS"} api="https://bits-apogee.org/registrations/events_details/" />
+      <EventContainer
+        heading={"ALL EVENTS"}
+        api="https://bits-apogee.org/registrations/events_details/"
+      />
     </div>
   );
 }

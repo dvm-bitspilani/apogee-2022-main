@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Route, BrowserRouter, Routes } from "react-router-dom";
+import { Route, BrowserRouter, Routes, HashRouter } from "react-router-dom";
 import Events from "./Pages/all-events.jsx";
 import Test from "./Pages/Test.jsx";
 import "./stylesheets/index.css";
@@ -33,9 +33,8 @@ function handleCities() {
   }, 3200);
 }
 
-
 ReactDOM.render(
-  <BrowserRouter>
+  <HashRouter>
     <Routes>
       <Route path="/" element={<Test />} />
       <Route path="/events" element={<Events />} />
@@ -43,7 +42,6 @@ ReactDOM.render(
 
       {/* <Route path="invoices" element={<Invoices />} /> */}
     </Routes>
-  </BrowserRouter>,
+  </HashRouter>,
   document.getElementById("root")
 );
-

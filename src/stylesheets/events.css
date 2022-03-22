@@ -1,5 +1,3 @@
-
-
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Montserrat:wght@500&display=swap");
 
 @font-face {
@@ -16,56 +14,59 @@ body {
 }
 
 html {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
 }
 
 * {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 img {
   width: 100%;
 }
 
-.bg {
-  /* background: url("./assets/laptop/events_balcony.svg") no-repeat; */
+/* .bg {
   background-color: #000932;
+  background-image: url(../assets/laptop/events_balcony.svg);
   background-size: cover;
-  height: 100vh;
   width: 100vw;
-  z-index: -10;
-  /* position: absolute;
+  position: absolute;
   top: 0;
-  left: 0; */
+  z-index: -10;
+  
 }
 .bg-img {
   object-fit: cover;
-  height: 100vh;
-}
+} */
 
-.container,
-.events-container {
-  width: 80%;
+.all-events-wrapper {
+  background-color: #000932;
+  background-image: url(../assets/laptop/events_balcony.svg);
+  background-size: 100vw;
+}
+.all-events-container,
+.kernel-events-container {
+  /* width: 80%;
   position: absolute;
   top: 1rem;
   left: 50%;
   -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%); */
   color: white;
   z-index: 0;
-  height: calc(100% - 4rem);
+  /* height: calc(100% - 4rem); */
   /* overflow-x: hidden;
   overflow-y: scroll;
   height: 90%; */
-}
 
-.events-container {
-  top: 2vh;
-  position: relative;
-  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10vh;
+  height: max-content;
+  align-items: center;
 }
 
 .heading {
@@ -74,9 +75,12 @@ img {
   padding: 1rem 0;
 }
 
-.events-container .heading {
+.kernel-events-container .heading {
   font-size: 4rem;
   text-align: left;
+  padding-left: 10vw;
+  margin-top: 5vh;
+  width: 100%;
 }
 
 .card-container {
@@ -84,15 +88,16 @@ img {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
   -ms-flex-line-pack: start;
-      align-content: flex-start;
+  align-content: flex-start;
   overflow-x: hidden;
   overflow-y: scroll;
   height: calc(100% - 4rem);
+  width: 100vw;
 }
 
 .card {
@@ -100,25 +105,26 @@ img {
   height: auto;
   margin: 1rem 1rem;
   background: rgba(7, 9, 73, 0.09);
-  -webkit-box-shadow: inset 0px -106.879px 88.6312px -83.4176px rgba(104, 80, 148, 0.3),
+  -webkit-box-shadow: inset 0px -106.879px 88.6312px -83.4176px
+      rgba(104, 80, 148, 0.3),
     inset 0px 5.2136px 23.4612px rgba(107, 100, 154, 0.3),
     inset 0px 1.3034px 52.136px rgba(179, 171, 226, 0.2);
-          box-shadow: inset 0px -106.879px 88.6312px -83.4176px rgba(104, 80, 148, 0.3),
+  box-shadow: inset 0px -106.879px 88.6312px -83.4176px rgba(104, 80, 148, 0.3),
     inset 0px 5.2136px 23.4612px rgba(107, 100, 154, 0.3),
     inset 0px 1.3034px 52.136px rgba(179, 171, 226, 0.2);
   -webkit-backdrop-filter: blur(130px);
-          backdrop-filter: blur(130px);
+  backdrop-filter: blur(130px);
   border-radius: 20px;
   padding: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .card-img {
@@ -149,15 +155,15 @@ img {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   height: 90%;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 .card-text > p {
   font-size: 12px;
@@ -191,7 +197,6 @@ img {
   position: absolute;
   top: 2rem;
   left: 2rem;
-  z-index: 10;
   width: 2rem;
   cursor: pointer;
 }
@@ -202,35 +207,51 @@ img {
 }
 
 @media screen and (max-width: 768px) {
-  .container {
+  .all-events-container {
     top: 4rem;
   }
 
   .card-container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
+    flex-wrap: nowrap;
     -webkit-box-pack: unset;
-        -ms-flex-pack: unset;
-            justify-content: unset;
+    -ms-flex-pack: unset;
+    justify-content: unset;
     overflow-y: scroll;
-    width: 100%;
+    width: 90%;
     height: 83%;
     margin-top: 1rem;
   }
 
-  
-.bg{
-  background: -webkit-gradient(linear, left top, left bottom, from(#000022), color-stop(50.31%, #00003E), to(#000025));
-  background: -o-linear-gradient(top, #000022 0%, #00003E 50.31%, #000025 100%);
-  background: linear-gradient(180deg, #000022 0%, #00003E 50.31%, #000025 100%);
-  -webkit-transform: matrix(1, 0, 0, -1, 0, 0);
-      -ms-transform: matrix(1, 0, 0, -1, 0, 0);
-          transform: matrix(1, 0, 0, -1, 0, 0);
-}
+  .bg {
+    background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(#000022),
+      color-stop(50.31%, #00003e),
+      to(#000025)
+    );
+    background: -o-linear-gradient(
+      top,
+      #000022 0%,
+      #00003e 50.31%,
+      #000025 100%
+    );
+    background: linear-gradient(
+      180deg,
+      #000022 0%,
+      #00003e 50.31%,
+      #000025 100%
+    );
+    -webkit-transform: matrix(1, 0, 0, -1, 0, 0);
+    -ms-transform: matrix(1, 0, 0, -1, 0, 0);
+    transform: matrix(1, 0, 0, -1, 0, 0);
+  }
   .card {
     width: 100%;
     height: -webkit-max-content;
@@ -266,7 +287,10 @@ img {
   .view-btn {
     width: 100%;
   }
-
+  .kernel-events-container .heading {
+    padding-left: 0;
+    text-align: center;
+  }
   .heading {
     font-size: 2.5rem !important;
     text-align: center;
@@ -274,10 +298,9 @@ img {
     padding: 0;
   }
 
-  .events-container{
+  .events-container {
     top: 8vh !important;
   }
-
 }
 
 @media screen and (min-width: 2560px) {
@@ -300,4 +323,3 @@ img {
     width: 50%;
   }
 }
-

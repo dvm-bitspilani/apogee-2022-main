@@ -220,12 +220,11 @@ span {
   display: none;
 }
 
-
 #drawer {
   height: 100%;
   width: 100%;
   position: fixed;
-  z-index: 150;
+  z-index: 13;
   top: 0;
   right: 0;
   overflow-x: hidden;
@@ -271,44 +270,46 @@ span {
   text-decoration: none;
 } */
 
-#drawer .links, #aic{
+#drawer .links,
+#aic {
   text-decoration: none;
   color: unset;
   font-family: "Montserrat";
   padding: 1rem;
 }
 
-.drawer-container{
+.drawer-container {
   display: flex;
   justify-content: center;
   width: 80%;
   height: 100%;
 }
 
-.links-container1, .links-container2{
+.links-container1,
+.links-container2 {
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.links-container1{
+.links-container1 {
   width: 60%;
   font-weight: 500;
-  color: #E4E4E4 !important;
+  color: #e4e4e4 !important;
   font-size: 1.5rem;
 }
 
-.links-container2{
+.links-container2 {
   width: 40%;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.all-links{
+.all-links {
   font-weight: 700;
   font-size: 2.5rem;
-  color: #9D9D9D !important;
+  color: #9d9d9d !important;
   padding: 0 1rem;
   transition: all 0.7s ease;
   display: flex;
@@ -316,9 +317,9 @@ span {
   justify-content: center;
 }
 
-.aic-container{
+.aic-container {
   font-weight: 500;
-  color: #E4E4E4 !important;
+  color: #e4e4e4 !important;
   font-size: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -328,8 +329,8 @@ span {
   transition: all 0.7s ease;
 }
 
-#aic:before{
-  content: '';
+#aic:before {
+  content: "";
   width: 20vw;
   height: 200px;
   top: 50%;
@@ -338,28 +339,29 @@ span {
   z-index: -10;
 }
 
-.links:hover div, #aic:hover div{
+.links:hover div,
+#aic:hover div {
   color: white;
 }
 
-.links div{
+.links div {
   transition: all 0.5s ease;
 }
 
-.links:hover div{
+.links:hover div {
   transform: translate(5px, -5px);
 }
 
-.sub-menu div{
+.sub-menu div {
   padding: 0.5rem;
 }
 
-.down-icon{
+.down-icon {
   font-size: 1.5rem;
   transition: 0.5s ease all;
 }
 
-.rotate-arrow .down-icon{
+.rotate-arrow .down-icon {
   transform: rotate(180deg);
 }
 
@@ -367,6 +369,7 @@ span {
   .registerBtnWrapper {
     position: absolute;
     left: 1.5rem;
+    z-index: 12;
   }
 
   /* 
@@ -402,34 +405,34 @@ span {
     display: block;
   }
 
-  #drawer{
+  #drawer {
     width: 100vw;
   }
 
-  .drawer-container{
+  .drawer-container {
     flex-direction: column;
     justify-content: flex-start;
     width: 100%;
     text-align: center;
-    justify-content: center ;
+    justify-content: center;
   }
 
-  .links-container1{
+  .links-container1 {
     display: none;
   }
 
-  .links-container2{
+  .links-container2 {
     font-size: 1.5rem;
     width: 100%;
     height: unset;
   }
 
-  .all-links{
+  .all-links {
     width: 100%;
     font-size: 1.75rem;
   }
 
-  .aic-container{
+  .aic-container {
     width: 100%;
     font-size: 1rem;
     transform: translateX(0);

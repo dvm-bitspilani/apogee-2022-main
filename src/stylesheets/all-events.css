@@ -1,7 +1,5 @@
-
-
 .card-description-container {
-  position: absolute;
+  position: fixed;
   width: 100vw;
   height: 100vh;
   background-color: rgb(0 0 0 / 79%);
@@ -9,41 +7,41 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   top: 0;
   color: white;
 }
 
-.kernel-events.card-description-container{
+.kernel-events.card-description-container {
   position: fixed;
-  z-index: 50;
 }
 .card-description-box {
   background: rgba(7, 9, 73, 0.09);
-  -webkit-box-shadow: inset 0px -106.879px 88.6312px -83.4176px rgba(104, 80, 148, 0.3),
+  -webkit-box-shadow: inset 0px -106.879px 88.6312px -83.4176px
+      rgba(104, 80, 148, 0.3),
     inset 0px 5.2136px 23.4612px rgba(107, 100, 154, 0.3),
     inset 0px 1.3034px 52.136px rgba(179, 171, 226, 0.2);
-          box-shadow: inset 0px -106.879px 88.6312px -83.4176px rgba(104, 80, 148, 0.3),
+  box-shadow: inset 0px -106.879px 88.6312px -83.4176px rgba(104, 80, 148, 0.3),
     inset 0px 5.2136px 23.4612px rgba(107, 100, 154, 0.3),
     inset 0px 1.3034px 52.136px rgba(179, 171, 226, 0.2);
   -webkit-backdrop-filter: blur(130px);
-          backdrop-filter: blur(130px);
+  backdrop-filter: blur(130px);
   border-radius: 20px;
   min-width: 60vw;
   width: auto;
-  padding: 5vh 5vw;
+  padding: 3vh 5vw 5vh;
   font-family: "Montserrat", sans-serif;
 }
 
-.kernel-events .card-description-box{
+.kernel-events .card-description-box {
   max-width: 65vw;
 }
 
@@ -55,7 +53,7 @@
 }
 .card-description-heading {
   text-align: center;
-  margin-top: 3vh;
+  margin-top: 2vh;
   font-weight: 900;
   font-size: 30px;
 }
@@ -65,7 +63,8 @@
 }
 
 @media all and (max-width: 500px) {
-  .card-description-box, .kernel-events .card-description-box {
+  .card-description-box,
+  .kernel-events .card-description-box {
     max-width: 80vw;
   }
   .card-description-heading {

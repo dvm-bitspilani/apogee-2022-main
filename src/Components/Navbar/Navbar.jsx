@@ -1,13 +1,12 @@
 // imports
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from "react";
 import RegModalButton from "../RegModalButton/RegModalButton";
 import { Link } from "react-router-dom";
-import { spacing, width } from '@mui/system';
-import fontawesome from '@fortawesome/fontawesome'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
-
-
+import { spacing, width } from "@mui/system";
+import fontawesome from "@fortawesome/fontawesome";
+import "./Navbar.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
 function NavBar() {
   let hamburger = useRef();
@@ -22,13 +21,12 @@ function NavBar() {
     if (!isMenuOpen) {
       hamburger.current.classList.add("open");
       openNav();
-    }
-    else {
+    } else {
       hamburger.current.classList.remove("open");
       closeNav();
     }
     isMenuOpen = !isMenuOpen;
-  }
+  };
 
   function openNav() {
     document.body.style.overflow = "hidden";
@@ -44,39 +42,41 @@ function NavBar() {
   }
 
   const mouseOverAIC = () => {
-    setIsShown(true)
-    if (window.screen.width > 768) allLinks.current.style.transform = "translateX(-100px)"
-    if (isAicShown && window.screen.width > 768) allLinks.current.style.transform = "translateX(-100px)"
-  }
+    setIsShown(true);
+    if (window.screen.width > 768)
+      allLinks.current.style.transform = "translateX(-100px)";
+    if (isAicShown && window.screen.width > 768)
+      allLinks.current.style.transform = "translateX(-100px)";
+  };
 
   const mouseOverAICMenu = () => {
-    setIsAicShown(true)
-    mouseOverAIC()
-  }
+    setIsAicShown(true);
+    mouseOverAIC();
+  };
 
   const mouseLeaveAIC = () => {
-    setIsShown(false)
-    allLinks.current.style.transform = "translateX(0px)"
-  }
+    setIsShown(false);
+    allLinks.current.style.transform = "translateX(0px)";
+  };
 
   const mouseLeaveAICMenu = () => {
-    setIsAicShown(false)
-    mouseLeaveAIC()
-  }
+    setIsAicShown(false);
+    mouseLeaveAIC();
+  };
 
   const handleLinkClick = () => {
     closeNav();
-    hamburger.current.classList.remove("open")
-  }
+    hamburger.current.classList.remove("open");
+  };
 
   const handleAICClick = () => {
-    setIsSubMenuOpen(!isSubMenuOpen)
+    setIsSubMenuOpen(!isSubMenuOpen);
     if (!isSubMenuOpen) downArrow.current.classList.add("rotate-arrow");
     else downArrow.current.classList.remove("rotate-arrow");
-  }
+  };
 
   fontawesome.library.add(faAngleDown);
-  const linkStyles = { color: "unset", textDecoration: "none" }
+  const linkStyles = { color: "unset", textDecoration: "none" };
 
   return (
     <div className="navbarWrapper">
@@ -97,62 +97,195 @@ function NavBar() {
           <div className="drawer-container">
             <div className="links-container1">
               <div className="links">Follow</div>
-              <a className="links" target="_blank" href="https://www.facebook.com/bitsapogee/">
+              <a
+                className="links"
+                target="_blank"
+                href="https://www.facebook.com/bitsapogee/"
+              >
                 <div>Facebook</div>
               </a>
-              <a className="links" target="_blank" href="https://twitter.com/bitsapogee?lang=en">
+              <a
+                className="links"
+                target="_blank"
+                href="https://twitter.com/bitsapogee?lang=en"
+              >
                 <div>Instagram</div>
               </a>
-              <a className="links" target="_blank" href="https://twitter.com/bitsapogee?lang=en">
+              <a
+                className="links"
+                target="_blank"
+                href="https://twitter.com/bitsapogee?lang=en"
+              >
                 <div>Twitter</div>
               </a>
             </div>
             <div className="links-container2">
-              <div className="all-links" ref={allLinks} onMouseLeave={() => setIsShown(false)}>
-
+              <div
+                className="all-links"
+                ref={allLinks}
+                onMouseLeave={() => setIsShown(false)}
+              >
                 <a className="links" onClick={handleLinkClick} href="#">
                   <div>Home</div>
                 </a>
-              <a className="links" onClick={handleLinkClick} href="https://bits-apogee.org/registrations/login/">
+                <a
+                  className="links"
+                  onClick={handleLinkClick}
+                  href="https://bits-apogee.org/registrations/login/"
+                >
                   <div>Login</div>
                 </a>
-                <a href="https://bits-apogee.org/campusambassador2022/" className="links">
+                <a
+                  href="https://bits-apogee.org/campusambassador2022/"
+                  className="links"
+                >
                   <div>Campus Ambassador</div>
                 </a>
-                <div id="aic" onMouseOver={mouseOverAIC} onMouseLeave={mouseLeaveAIC}>
-                  <div onClick={handleAICClick}>AIC {window.screen.width < 768 ? (<span ref={downArrow}><FontAwesomeIcon icon="angle-down" className="down-icon" /></span>) : ""}</div>
-                  {(isSubMenuOpen && window.screen.width < 768) && (<div className="aic-container" onMouseEnter={() => setIsAicShown(true)} onMouseLeave={() => setIsAicShown(false)}>
-                    <div className="sub-menu">
-                      <div><a style={linkStyles} target="_blank" href="https://bit.ly/AIC_Turtlemint">Turtlemint</a></div>
-                      <div><a style={linkStyles} target="_blank" href="https://bit.ly/AIC_Ge_Healthcare">GE Healthcare</a></div>
-                      <div><a style={linkStyles} target="_blank" href="https://bit.ly/AIC_Bharat_Serums">Bharat Serums and Vaccines</a></div>
-                      <div><a style={linkStyles} target="_blank" href="https://bit.ly/AIC_RR_Kabel">RR Kabel</a></div>
-                      <div><a style={linkStyles} target="_blank" href="https://bit.ly/AIC_Kamdhenu">Kamdhenu</a></div>
+                <div
+                  id="aic"
+                  onMouseOver={mouseOverAIC}
+                  onMouseLeave={mouseLeaveAIC}
+                >
+                  <div onClick={handleAICClick}>
+                    AIC{" "}
+                    {window.screen.width < 768 ? (
+                      <span ref={downArrow}>
+                        <FontAwesomeIcon
+                          icon="angle-down"
+                          className="down-icon"
+                        />
+                      </span>
+                    ) : (
+                      ""
+                    )}
+                  </div>
+                  {isSubMenuOpen && window.screen.width < 768 && (
+                    <div
+                      className="aic-container"
+                      onMouseEnter={() => setIsAicShown(true)}
+                      onMouseLeave={() => setIsAicShown(false)}
+                    >
+                      <div className="sub-menu">
+                        <div>
+                          <a
+                            style={linkStyles}
+                            target="_blank"
+                            href="https://bit.ly/AIC_Turtlemint"
+                          >
+                            Turtlemint
+                          </a>
+                        </div>
+                        <div>
+                          <a
+                            style={linkStyles}
+                            target="_blank"
+                            href="https://bit.ly/AIC_Ge_Healthcare"
+                          >
+                            GE Healthcare
+                          </a>
+                        </div>
+                        <div>
+                          <a
+                            style={linkStyles}
+                            target="_blank"
+                            href="https://bit.ly/AIC_Bharat_Serums"
+                          >
+                            Bharat Serums and Vaccines
+                          </a>
+                        </div>
+                        <div>
+                          <a
+                            style={linkStyles}
+                            target="_blank"
+                            href="https://bit.ly/AIC_RR_Kabel"
+                          >
+                            RR Kabel
+                          </a>
+                        </div>
+                        <div>
+                          <a
+                            style={linkStyles}
+                            target="_blank"
+                            href="https://bit.ly/AIC_Kamdhenu"
+                          >
+                            Kamdhenu
+                          </a>
+                        </div>
+                      </div>
                     </div>
-                  </div>)}
+                  )}
                 </div>
-                <a className="links" onClick={handleLinkClick} href="#kernel-events">
+                {/* <a
+                  className="links"
+                  onClick={handleLinkClick}
+                  href="#kernel-events"
+                >
                   <div>Kernel Events</div>
-                </a>
+                </a> */}
                 <Link className="links" to="/events">
                   <div>All Events</div>
                 </Link>
               </div>
-              {((isShown || isAicShown) && window.screen.width > 768) && (<div className="aic-container" onMouseEnter={mouseOverAICMenu} onMouseLeave={mouseLeaveAICMenu}>
-                <div className="sub-menu">
-                  <div><a style={linkStyles} target="_blank" href="https://bit.ly/AIC_Turtlemint">Turtlemint</a></div>
-                  <div><a style={linkStyles} target="_blank" href="https://bit.ly/AIC_Ge_Healthcare">GE Healthcare</a></div>
-                  <div><a style={linkStyles} target="_blank" href="https://bit.ly/AIC_Bharat_Serums">Bharat Serums and Vaccines</a></div>
-                  <div><a style={linkStyles} target="_blank" href="https://bit.ly/AIC_RR_Kabel">RR Kabel</a></div>
-                  <div><a style={linkStyles} target="_blank" href="https://bit.ly/AIC_Kamdhenu">Kamdhenu</a></div>
+              {(isShown || isAicShown) && window.screen.width > 768 && (
+                <div
+                  className="aic-container"
+                  onMouseEnter={mouseOverAICMenu}
+                  onMouseLeave={mouseLeaveAICMenu}
+                >
+                  <div className="sub-menu">
+                    <div>
+                      <a
+                        style={linkStyles}
+                        target="_blank"
+                        href="https://bit.ly/AIC_Turtlemint"
+                      >
+                        Turtlemint
+                      </a>
+                    </div>
+                    <div>
+                      <a
+                        style={linkStyles}
+                        target="_blank"
+                        href="https://bit.ly/AIC_Ge_Healthcare"
+                      >
+                        GE Healthcare
+                      </a>
+                    </div>
+                    <div>
+                      <a
+                        style={linkStyles}
+                        target="_blank"
+                        href="https://bit.ly/AIC_Bharat_Serums"
+                      >
+                        Bharat Serums and Vaccines
+                      </a>
+                    </div>
+                    <div>
+                      <a
+                        style={linkStyles}
+                        target="_blank"
+                        href="https://bit.ly/AIC_RR_Kabel"
+                      >
+                        RR Kabel
+                      </a>
+                    </div>
+                    <div>
+                      <a
+                        style={linkStyles}
+                        target="_blank"
+                        href="https://bit.ly/AIC_Kamdhenu"
+                      >
+                        Kamdhenu
+                      </a>
+                    </div>
+                  </div>
                 </div>
-              </div>)}
+              )}
             </div>
           </div>
         </div>
-
       </nav>
     </div>
-  )
+  );
 }
 export default NavBar;
