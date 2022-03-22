@@ -1,3 +1,16 @@
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+html {
+  overflow: hidden;
+  width: 100%;
+  }
+  body {
+  height: 100%;
+  position: fixed;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  }
 .App {
   text-align: center;
 }
@@ -494,11 +507,14 @@ img {
   }
 
   .socials {
-    top: 73vh;
+    top: 90vh;
+    display: flex;
+    justify-content: space-between;
+    width: 35vw;
   }
 
   .socials svg {
-    width: 30px;
+    width: 35px;
   }
   .socials div {
     margin-bottom: 0.5rem;
