@@ -25,6 +25,16 @@ function MainHero() {
         console.log("hello");
         const screenWidth = window.innerWidth;
         const screenHeight = window.innerHeight;
+        // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+        let vh = window.innerHeight * 0.01;
+        // Then we set the value in the --vh custom property to the root of the document
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+        // We listen to the resize event
+        window.addEventListener('resize', () => {
+            // We execute the same script as before
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        });
 
         Layer1.current.style.transform = "bottom: 0";
         console.log(Layer1.current, screenWidth, screenHeight);
@@ -52,13 +62,13 @@ function MainHero() {
     return (
         <div className="wrapperMainHero">
             <div className="upperHero">
-            <div className="skyWrapper">
-            <div class="sky"></div>
-            <div className="stars"></div>
-            </div>
-            <div className="moon">
-            <img id="moon" src={Moon} />{" "}
-          </div>
+                <div className="skyWrapper">
+                    <div class="sky"></div>
+                    <div className="stars"></div>
+                </div>
+                <div className="moon">
+                    <img id="moon" src={Moon} />{" "}
+                </div>
             </div>
             <div className="buildings">
                 {/* <div className="city city1">
