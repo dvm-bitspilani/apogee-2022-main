@@ -50,7 +50,7 @@
   width: 32vw;
 }
 #cityLayer6 {
-  z-index: 5;
+  z-index: 1;
   transform: translate(30%, 1000px);
   transition: transform 2s ease-in-out;
   opacity: 1;
@@ -173,24 +173,26 @@
   }
   #cityLayer1,
   #cityLayer2 {
-    width: 91vw;
+    width: 92vw;
   }
   #cityLayer3 {
-    width: 94vw;
+    width: 95vw;
     left: 8vw;
   }
   #cityLayer4 {
-    width: 90vw;
-    top: 59vh;
-    left: 5vw;
+    width: 96vw;
+    top: 58vh;
+    left: 4vw;
   }
   #cityLayer5 {
-    width: 93vw;
+    width: 96vw;
     top: 49vh;
+    left:3vw
   }
   #cityLayer6 {
-    width: 60vw;
-    top: 61vh;
-    left: 22vw
+    width: 44vw;
+    top: 68vh;
+    left: 37vw;
+
   }
 }
