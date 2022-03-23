@@ -43,6 +43,7 @@ function EventContainer(props) {
         setEvents(errorEvent);
         
       });
+      document.body.style.overflowY = "scroll"
   }, []);
 
   const [eventDesc, setEventDesc] = React.useState("");
@@ -52,9 +53,6 @@ function EventContainer(props) {
     setDescriptionDetails("flex");
     setEventName(name);
     setEventDesc(desc);
-    //         React.useEffect(() => {
-    //             document.querySelector("body").style.overflow ="hidden !important"
-    // })
   };
   const handleClose = () => setDescriptionDetails("none");
   const changeDriveLink = (driveLink) => {
