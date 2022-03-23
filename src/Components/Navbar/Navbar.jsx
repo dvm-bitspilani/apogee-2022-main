@@ -44,9 +44,9 @@ function NavBar() {
   const mouseOverAIC = () => {
     setIsShown(true);
     if (window.screen.width > 768)
-      allLinks.current.style.transform = "translateX(-100px)";
+      allLinks.current.style.transform = "translateX(0px)";
     if (isAicShown && window.screen.width > 768)
-      allLinks.current.style.transform = "translateX(-100px)";
+      allLinks.current.style.transform = "translateX(0px)";
   };
 
   const mouseOverAICMenu = () => {
@@ -56,7 +56,7 @@ function NavBar() {
 
   const mouseLeaveAIC = () => {
     setIsShown(false);
-    allLinks.current.style.transform = "translateX(0px)";
+    allLinks.current.style.transform = "translateX(100px)";
   };
 
   const mouseLeaveAICMenu = () => {
