@@ -1,0 +1,121 @@
+.mainGrid{
+    width: 100.5vw;
+    margin-top: -5px;
+}
+
+.scrollMain{
+    background-color:  #000022;
+    z-index: 1;
+}
+
+.meteor{
+    position: absolute;
+    width:13vw;
+    mix-blend-mode: color-dodge;
+}
+
+#meteor1{
+top: 115%;
+left: 57%;
+}
+#meteor2{
+    top: 135%;
+    left: 17%; 
+}
+#meteor3{
+    top: 170%;
+    left: 85%; 
+}
+#meteor4{
+    top: 177%;
+    left: 35%;  
+}
+
+#meteor5{
+    top: 220%;
+left: 55%;
+}
+#meteor6{
+    top: 232%;
+    left: 17%; 
+}
+#meteor7{
+    top: 280%;
+    left: 65%; 
+}
+#meteor8{
+    top: 300%;
+    left: 20%; 
+}
+#meteor9{
+    top: 360%;
+    left: 55%; 
+    width: 23vw;
+}
+#meteor10{
+    top: 380%;
+    left: 0%; 
+    width: 17vw; 
+}
+
+#meteor11{
+    top: 440%;
+    left: 85%; 
+
+}
+
+@media (max-width:768px) {
+    
+.meteor{
+    width:16vw;
+}
+
+#meteor1{
+top: 101%;
+
+}
+#meteor2{
+    top: 105%;
+  
+}
+#meteor3{
+    top: 113%;
+    left: 80%;
+
+}
+#meteor4{
+    top: 120%;
+
+}
+
+#meteor5{
+    top: 133%;
+
+}
+#meteor6{
+    top: 145%;
+
+}
+#meteor7{
+    top: 153%;
+ 
+}
+#meteor8{
+    top: 163%;
+
+}
+#meteor9{
+    top: 173%;
+    width: 23vw;
+}
+#meteor10{
+    top: 178%;
+    width: 17vw; 
+}
+
+#meteor11{
+    top: 182%;
+    left: 82%;
+
+}
+}

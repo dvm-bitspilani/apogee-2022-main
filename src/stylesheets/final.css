@@ -17,7 +17,7 @@
   margin-top: -5px;
   /* background: linear-gradient(0deg, #000022, #000022); */
   background: #000022;
-  background-image: url("../Components/MainHero/MainHeroAssets/verticalGrid.svg");
+  background-image: url("../Components/MainHero/MainHeroAssets/Vector.svg");
   z-index: 15;
   background-size: 100vw;
   /* top: 100vh; */
@@ -42,3 +42,4 @@
     padding-bottom: 3rem;
   }
 }
+
