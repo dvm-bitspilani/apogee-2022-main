@@ -33,7 +33,7 @@
   z-index: 11;
   /* bottom: calc((100vw * 220) / 1538 - 6px); */
   top: 68vh;
-  mix-blend-mode: screen;
+  mix-blend-mode: lighten;
 }
 
 @media screen and (max-width: 768px) {

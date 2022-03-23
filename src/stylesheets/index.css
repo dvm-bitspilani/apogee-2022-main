@@ -327,6 +327,7 @@ span {
   padding: 1rem;
   transform: translateX(-100px);
   transition: all 0.7s ease;
+  min-width: 50%;
 }
 
 #aic:before {
@@ -436,6 +437,7 @@ span {
     width: 100%;
     font-size: 1rem;
     transform: translateX(0);
+    min-width: unset;
   }
 }
 
