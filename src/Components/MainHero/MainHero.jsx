@@ -8,7 +8,7 @@ import CityLayer4 from "./MainHeroAssets/city/City Layer 4.svg";
 import CityLayer5 from "./MainHeroAssets/city/City Layer 5.svg";
 import CityLayer6 from "./MainHeroAssets/city/City Layer 6.svg";
 import Moon from "../../assets/Moon1.png";
-
+import Div100vh from 'react-div-100vh';
 import ScrollScreen from "../ScrollScreen/ScrollScreen.jsx";
 import floor from "./MainHeroAssets/floorGrid.png";
 import bigFloor from "./MainHeroAssets/makeGrid.png";
@@ -75,6 +75,7 @@ function MainHero() {
     });
 
     return (
+        <Div100vh>
         <div className="wrapperMainHero">
             <div className="upperHero">
                 <div className="skyWrapper">
@@ -133,7 +134,8 @@ function MainHero() {
                 </div>
             </div> */}
             </div>
-        </div>
+            </div>
+            </Div100vh>
     )
 }
 
