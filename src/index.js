@@ -6,6 +6,7 @@ import Test from "./Pages/Test.jsx";
 import "./stylesheets/index.css";
 import App from "./Pages/App";
 import reportWebVitals from "./reportWebVitals";
+import LoaderPage from "./Pages/loaderPage.jsx";
 
 import "./fonts/BARTKEY.ttf";
 
@@ -38,6 +39,7 @@ ReactDOM.render(
     <Routes>
       <Route path="/" element={<Test />} />
       <Route path="/events" element={<Events />} />
+      <Route path="/loader" element={<LoaderPage />} />
       {/* <Route path="/Test" element={<Test />} /> */}
 
       {/* <Route path="invoices" element={<Invoices />} /> */}
