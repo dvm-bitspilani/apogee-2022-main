@@ -167,7 +167,8 @@
   }
 }
 @media screen and (max-width: 768px) {
-  .buildings, .testWrapper {
+  .buildings,
+  .testWrapper {
     width: 100vw;
     overflow: hidden;
   }
@@ -177,22 +178,21 @@
   }
   #cityLayer3 {
     width: 95vw;
-    left: 8vw;
+    left: 7vw;
   }
   #cityLayer4 {
-    width: 96vw;
-    top: 58vh;
-    left: 4vw;
+    width: 101vw;
+    top: 56.5vh;
+    left: 1vw;
   }
   #cityLayer5 {
-    width: 96vw;
-    top: 49vh;
-    left:3vw
+    width: 98vw;
+    top: 47vh;
+    left: 4vw;
   }
   #cityLayer6 {
     width: 44vw;
     top: 68vh;
-    left: 37vw;
-
+    left: 35vw;
   }
 }

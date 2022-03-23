@@ -28,14 +28,12 @@ function NavBar() {
     isMenuOpen = !isMenuOpen;
   };
 
-  function openNav() {
+  const openNav = () => {
     document.body.style.overflow = "hidden";
     document.getElementById("drawer").style.transform = "translateX(00px)";
-    if (window.screen.width < 768)
-      document.getElementById("drawer").style.width = "100vw";
   }
 
-  function closeNav() {
+  const closeNav = () => {
     document.body.style.overflowY = "scroll";
     document.body.style.overflowX = "hidden";
     document.getElementById("drawer").style.transform = "translateX(100vw)";
@@ -44,9 +42,9 @@ function NavBar() {
   const mouseOverAIC = () => {
     setIsShown(true);
     if (window.screen.width > 768)
-      allLinks.current.style.transform = "translateX(-100px)";
+      allLinks.current.style.transform = "translateX(0px)";
     if (isAicShown && window.screen.width > 768)
-      allLinks.current.style.transform = "translateX(-100px)";
+      allLinks.current.style.transform = "translateX(0px)";
   };
 
   const mouseOverAICMenu = () => {
@@ -56,7 +54,7 @@ function NavBar() {
 
   const mouseLeaveAIC = () => {
     setIsShown(false);
-    allLinks.current.style.transform = "translateX(0px)";
+    allLinks.current.style.transform = "translateX(100px)";
   };
 
   const mouseLeaveAICMenu = () => {
@@ -190,7 +188,7 @@ function NavBar() {
                             target="_blank"
                             href="https://bit.ly/AIC_Bharat_Serums"
                           >
-                            Bharat Serums and Vaccines
+                            Bharat Serums & Vaccines
                           </a>
                         </div>
                         <div>
@@ -257,7 +255,7 @@ function NavBar() {
                         target="_blank"
                         href="https://bit.ly/AIC_Bharat_Serums"
                       >
-                        Bharat Serums and Vaccines
+                        Bharat Serums & Vaccines
                       </a>
                     </div>
                     <div>

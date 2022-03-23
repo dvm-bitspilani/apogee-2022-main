@@ -270,7 +270,7 @@ span {
   text-decoration: none;
 } */
 
-#drawer .links,
+.links,
 #aic {
   text-decoration: none;
   color: unset;
@@ -294,14 +294,18 @@ span {
 }
 
 .links-container1 {
-  width: 60%;
+  width: 50%;
   font-weight: 500;
   color: #e4e4e4 !important;
   font-size: 1.5rem;
 }
 
+.links-container1 .links{
+  padding: 0.5rem 0;
+}
+
 .links-container2 {
-  width: 40%;
+  width: 50%;
   flex-direction: row;
   justify-content: space-between;
 }
@@ -315,6 +319,7 @@ span {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  transform: translateX(100px);
 }
 
 .aic-container {
@@ -325,7 +330,7 @@ span {
   flex-direction: column;
   justify-content: center;
   padding: 1rem;
-  transform: translateX(-100px);
+  transform: translateX(0px);
   transition: all 0.7s ease;
   min-width: 50%;
 }
@@ -431,6 +436,7 @@ span {
   .all-links {
     width: 100%;
     font-size: 1.75rem;
+    transform: translateX(0);
   }
 
   .aic-container {
