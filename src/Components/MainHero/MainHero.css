@@ -68,7 +68,8 @@
   position: absolute;
   bottom: 0;
   height: 20vh;
-  background: linear-gradient(0deg, #000022, #000022);
+  background-image: url("./MainHeroAssets/mainFloor.svg");
+  /* background: linear-gradient(0deg, #000022, #000022); */
   z-index: 10;
   width: 100vw;
 }
@@ -167,6 +168,9 @@
   }
 }
 @media screen and (max-width: 768px) {
+
+
+
   .buildings,
   .testWrapper {
     width: 100vw;
