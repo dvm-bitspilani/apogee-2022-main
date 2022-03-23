@@ -436,6 +436,7 @@ span {
   .all-links {
     width: 100%;
     font-size: 1.75rem;
+    transform: translateX(0);
   }
 
   .aic-container {
