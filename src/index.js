@@ -34,7 +34,7 @@ function handleCities() {
 }
 
 ReactDOM.render(
-  <HashRouter>
+  <BrowserRouter>
     <Routes>
       <Route path="/" element={<Test />} />
       <Route path="/events" element={<Events />} />
@@ -42,6 +42,6 @@ ReactDOM.render(
 
       {/* <Route path="invoices" element={<Invoices />} /> */}
     </Routes>
-  </HashRouter>,
+  </BrowserRouter>,
   document.getElementById("root")
 );

@@ -71,7 +71,7 @@ function MainHero() {
     });
 
     return (
-        <div className="wrapperMainHero">
+        <div className="wrapperMainHero landing-section">
             <div className="upperHero">
                 <div className="skyWrapper">
                     <div class="sky"></div>

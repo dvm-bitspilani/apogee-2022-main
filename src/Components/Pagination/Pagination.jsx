@@ -1,17 +1,22 @@
 import { useState, useEffect, useRef } from "react";
+import { Link } from 'react-router-dom'
 
 import "./Pagination.css";
 
-function Pagination(){
-    return(
+function Pagination() {
+    // console.log(props.sectionArr)
+    const [landingSections, setLandingSections] = useState([])
+    useEffect(() => {
+        let sectionArr = document.querySelectorAll(".landing-section")
+        let arr = Array.from(sectionArr)
+        setLandingSections(arr)
+        console.log(sectionArr)
+    }, [])
+    return (
         <div id="pagination">
             <div id="line">
-            <div className="dots active"></div>
-            <div className="dots"></div>
-            <div className="dots"></div>
-            <div className="dots"></div>
-            <div className="dots"></div>
-            <div className="dots"></div>
+                {/* ~ */}
+                {landingSections.map(el => <div className="dots"></div> )}
             </div>
         </div>
     )
