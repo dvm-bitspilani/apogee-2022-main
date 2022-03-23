@@ -123,7 +123,7 @@ function MainHero() {
                 <img alt="" src={bigFloor}/>
                 {/* <img className="floorGlow" src={floorGlow} alt="" /> */}
 
-                <div className="upperHero">
+                {/* <div className="upperHero">
                 <div className="skyWrapper">
                     <div class="sky"></div>
                     <div className="stars"></div>
@@ -131,7 +131,7 @@ function MainHero() {
                 <div className="moon">
                     <img id="moon" src={Moon} />{" "}
                 </div>
-            </div>
+            </div> */}
             </div>
         </div>
     )
