@@ -1,6 +1,7 @@
 import CountdownSlate from "../Components/CountdownSlate/CountdownSlate.js";
 import MainHero from "../Components/MainHero/MainHero.jsx";
 import NavBar from "../Components/Navbar/Navbar.jsx";
+import Pagination from './../Components/Pagination/Pagination';
 import SocialsHero from "../Components/SocialsHero/SocialsHero.js";
 import EventContainer from "../Components/EventContainer/EventContainer.jsx";
 import "../stylesheets/final.css";
@@ -9,10 +10,11 @@ function Test() {
   return (
     <div className="testWrapper">
       <NavBar />
+      <Pagination />
       <MainHero />
       <SocialsHero />
       <CountdownSlate />
-      <div style={{ background: "white", zIndex: "15" }}>
+      <div style={{ background: "white", zIndex: "1" }}>
         <div className="background">
           {/* <div className="gridVertical">
                     

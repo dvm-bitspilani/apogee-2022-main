@@ -1,0 +1,39 @@
+#pagination{
+    position: fixed;
+    right: 2.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    height: 75vh;
+}
+
+#line{
+    width: 3px;
+    height: 100%;
+    background: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.dots{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: white;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dots.active{
+    outline: 3px solid white;
+    outline-offset: 3px;
+}
+
+@media screen and (max-width: 768px) {
+    #pagination{
+        display: none
+    }
+}
