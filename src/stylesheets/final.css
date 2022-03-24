@@ -14,7 +14,7 @@
   top: 0;
 } */
 .background {
-  margin-top: -5px;
+  /* margin-top: -5px; */
   /* background: linear-gradient(0deg, #000022, #000022); */
   background: #000022;
   background-image: url("../Components/MainHero/MainHeroAssets/Vector.svg");
