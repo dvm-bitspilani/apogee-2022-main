@@ -161,7 +161,7 @@ function MainHero() {
 
 
                 <div id="clickAndScroll">
-                    <div>Click here to enter Encrypted Dimension</div>
+                    <div>Click to enter the Encrypted Dimension</div>
                     <div className="clickAndScroll" onClick={() => scrollTo(2600)}>
                         <img src={Arrow} alt="" />
                     </div>
