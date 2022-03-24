@@ -8,7 +8,11 @@ import CityLayer4 from "./MainHeroAssets/city/City Layer 4.svg";
 import CityLayer5 from "./MainHeroAssets/city/City Layer 5.svg";
 import CityLayer6 from "./MainHeroAssets/city/City Layer 6.svg";
 import Moon from "../../assets/Moon1.png";
+import Div100vh from 'react-div-100vh';
+import ScrollScreen from "../ScrollScreen/ScrollScreen.jsx";
 import floor from "./MainHeroAssets/floorGrid.png";
+import bigFloor from "./MainHeroAssets/makeGrid.png";
+
 import floorGlow from "./MainHeroAssets/GroupFloorGlow.svg";
 // Styles
 import "./MainHero.css"
@@ -71,6 +75,7 @@ function MainHero() {
     });
 
     return (
+        <Div100vh>
         <div className="wrapperMainHero landing-section">
             <div className="upperHero">
                 <div className="skyWrapper">
@@ -112,13 +117,25 @@ function MainHero() {
 
 
             <div className="floor">
-                <div className="horizon-glow-buildings"></div>
+                {/* <div className="horizon-glow-buildings"></div>
                 <div className="horizon-glow"></div>
                 <div className="glow"></div>
-                <img className="floorGlow" src={floor} alt="" />
+                <img className="floorGlow" src={floor} alt="" /> */}
+                <img alt="" src={bigFloor}/>
                 {/* <img className="floorGlow" src={floorGlow} alt="" /> */}
+
+                {/* <div className="upperHero">
+                <div className="skyWrapper">
+                    <div class="sky"></div>
+                    <div className="stars"></div>
+                </div>
+                <div className="moon">
+                    <img id="moon" src={Moon} />{" "}
+                </div>
+            </div> */}
             </div>
-        </div>
+            </div>
+            </Div100vh>
     )
 }
 
