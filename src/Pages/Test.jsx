@@ -19,7 +19,7 @@ function Test() {
 
   useEffect(() => {
     window.addEventListener("wheel", () => {
-      console.log(window.pageYOffset + "this");
+      // console.log(window.pageYOffset + "this");
     })
   })
   const [ref, inView] = useInView({
@@ -41,8 +41,21 @@ function Test() {
       <MainHero />
       <SocialsHero />
       <CountdownSlate />
-      <AboutUs />
-      <Videos />
+      <div className="mainWrapper">
+          <div className="section" id="aboutus">
+          <AboutUs />
+          <Videos />
+          </div>
+          <div className="section" id="kernelEvents">
+          <EventContainer
+            className="kernelEvents"
+            heading="KERNEL-EVENTS"
+            type="kernel"
+            api="https://bits-apogee.org/registrations/kernel_events/"
+          />
+          </div>
+      </div>
+      {/* <AboutUs /> */}
       {/* <div style={{ background: "white", zIndex: "15" }}>
         <div className="background">
           <div className="gridVertical">

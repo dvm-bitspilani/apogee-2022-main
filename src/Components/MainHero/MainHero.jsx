@@ -46,10 +46,10 @@ function MainHero() {
     useEffect(() => {
      
         window.addEventListener("scroll", () => {
-            console.log(window.pageYOffset);
+            // console.log(window.pageYOffset);
             if (window.pageYOffset > 0 && window.pageYOffset < 15) {
                 scrollTo(2600);
-                console.log("scrolled");
+                // console.log("scrolled");
             }
             })
          
