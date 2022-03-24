@@ -11,6 +11,7 @@ import AboutUs from "../Components/AboutUs/AboutUs.jsx"
 
 import EventContainer from "../Components/EventContainer/EventContainer.jsx";
 import "../stylesheets/final.css";
+import Videos from "../Components/Videos/Videos.jsx";
 
 function Test() {
 
@@ -40,7 +41,8 @@ function Test() {
       <MainHero />
       <SocialsHero />
       <CountdownSlate />
-      {/* <AboutUs /> */}
+      <AboutUs />
+      <Videos />
       {/* <div style={{ background: "white", zIndex: "15" }}>
         <div className="background">
           <div className="gridVertical">

@@ -41,6 +41,10 @@
     margin: 0 150px;
     color: white;
 }
+.video1{
+    /* background-image: url("./Group\ 48095414.svg"); */
+}
+
 @media screen and (max-width: 768px){
     .aboutUsHeading {
         font-size: 36px;
