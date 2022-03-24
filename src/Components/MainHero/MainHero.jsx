@@ -45,7 +45,7 @@ function MainHero() {
      
         window.addEventListener("scroll", () => {
             console.log(window.pageYOffset);
-            if (window.pageYOffset > 0 && window.pageYOffset < 10) {
+            if (window.pageYOffset > 0 && window.pageYOffset < 15) {
                 scrollTo(2600);
                 console.log("scrolled");
             }
