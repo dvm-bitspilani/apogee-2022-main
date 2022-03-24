@@ -20,7 +20,9 @@ function EventContainer(props) {
         if (props.type == "kernel") setEvents(result.data[0].events);
         else setEvents(result[0].events);
         console.log(result);
-        document.getElementsByClassName("loaderDivEvents")[0].style.display = "none";
+        if(document.getElementsByClassName("loaderDivEvents")[0]){
+          document.getElementsByClassName("loaderDivEvents")[0].style.display = "none";
+        }
       })
       .catch((error) => {
         console.log("ERROR", error);
