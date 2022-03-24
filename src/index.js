@@ -38,7 +38,8 @@ ReactDOM.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<Test />} />
-      <Route path="/events" element={<Events />} />
+      <Route path="/events" element={<Events heading="All Events" link="https://bits-apogee.org/registrations/events_details/" type="   "/>} />
+      <Route path="/kernel-events" element={<Events heading="Kernel Events" link="https://bits-apogee.org/registrations/kernel_events/" type="kernel"/>}  />
       <Route path="/loader" element={<LoaderPage />} />
       {/* <Route path="/Test" element={<Test />} /> */}
 

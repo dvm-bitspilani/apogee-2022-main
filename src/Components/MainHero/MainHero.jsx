@@ -1,5 +1,9 @@
 // Libraries
+import React from "react"
 import { useEffect, useRef } from "react"
+// import * as Scroll from 'react-scroll';
+import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import Arrow from "./MainHeroAssets/down-arrow.svg"
 // Assets
 import CityLayer1 from "./MainHeroAssets/city/City Layer 1.svg";
 import CityLayer2 from "./MainHeroAssets/city/City Layer 2.svg";
@@ -21,38 +25,63 @@ import "./MainHero.css"
 
 
 
+// var scroll = Scroll.animateScroll;   
+
 function MainHero() {
     const Layer1 = useRef();
-
-
-    useEffect(() => {
-        console.log("hello");
-        // window.onwheel = e => {
-        //     if (e.deltaY >= 0) {
-        //         // Scrolling Down with mouse
-        //         console.log('Scroll Down');
-                
-        //     } else {
-        //         // Scrolling Up with mouse
-        //         console.log('Scroll Up');
-        //     }
-        // }
-        // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
-        let vh = window.innerHeight * 0.01;
-        // Then we set the value in the --vh custom property to the root of the document
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-        // We listen to the resize event
-        window.addEventListener('resize', () => {
-            // We execute the same script as before
-            let vh = window.innerHeight * 0.01;
-            document.documentElement.style.setProperty('--vh', `${vh}px`);
+   
+    function scrollTo(offset) {
+        scroller.scrollTo("scroll-to-element", {
+          duration: 800,
+          delay: 0,
+          smooth: "easeInOutQuart",
+          offset: offset
         });
-        const screenWidth = window.innerWidth;
-        const screenHeight = window.innerHeight;
+      }
+    useEffect(() => {
+
+              Events.scrollEvent.register("begin", function() {
+              console.log("begin", arguments);
+            });
+        
+            Events.scrollEvent.register("end", function() {
+              console.log("end", arguments);
+            });
+          
+        
+    
+
+        //   componentWillUnmount() {
+        //     Events.scrollEvent.remove("begin");
+        //     Events.scrollEvent.remove("end");
+        //   }
+        // console.log("hello");
+        // // window.onwheel = e => {
+        // //     if (e.deltaY >= 0) {
+        // //         // Scrolling Down with mouse
+        // //         console.log('Scroll Down');
+                
+        // //     } else {
+        // //         // Scrolling Up with mouse
+        // //         console.log('Scroll Up');
+        // //     }
+        // // }
+        // // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+        // let vh = window.innerHeight * 0.01;
+        // // Then we set the value in the --vh custom property to the root of the document
+        // // document.documentElement.style.setProperty('--vh', `${vh}px`);
+        // // We listen to the resize event
+        // window.addEventListener('resize', () => {
+        //     // We execute the same script as before
+        //     let vh = window.innerHeight * 0.01;
+        //     document.documentElement.style.setProperty('--vh', `${vh}px`);
+        // });
+        // const screenWidth = window.innerWidth;
+        // const screenHeight = window.innerHeight;
 
 
-        Layer1.current.style.transform = "bottom: 0";
-        console.log(Layer1.current, screenWidth, screenHeight);
+        // Layer1.current.style.transform = "bottom: 0";
+        // console.log(Layer1.current, screenWidth, screenHeight);
         setTimeout(() => {
             document.getElementById("cityLayer1").style.transform = "translate(5%, 0px)"
         }, 50);
@@ -133,7 +162,12 @@ function MainHero() {
                     <img id="moon" src={Moon} />{" "}
                 </div>
             </div> */}
-            </div>
+                </div>
+                
+
+                <div className="clickAndScroll" onClick={scrollTo(1000)}>
+<img src={Arrow} alt="" />
+                </div>
             </div>
             </Div100vh>
     )
