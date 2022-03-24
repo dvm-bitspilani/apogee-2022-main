@@ -12,6 +12,7 @@ import Div100vh from 'react-div-100vh';
 import ScrollScreen from "../ScrollScreen/ScrollScreen.jsx";
 import floor from "./MainHeroAssets/floorGrid.png";
 import bigFloor from "./MainHeroAssets/makeGrid.png";
+import bigFloorMobile from "./MainHeroAssets/bigFloorMobile.png";
 
 import floorGlow from "./MainHeroAssets/GroupFloorGlow.svg";
 // Styles
@@ -121,7 +122,8 @@ function MainHero() {
                 <div className="horizon-glow"></div>
                 <div className="glow"></div>
                 <img className="floorGlow" src={floor} alt="" /> */}
-                <img alt="" src={bigFloor}/>
+                <img alt="" id="bigFloorLaptop" src={bigFloor}/>
+                <img id="bigFloorMobile" src={bigFloorMobile}/>
                 {/* <img className="floorGlow" src={floorGlow} alt="" /> */}
 
                 {/* <div className="upperHero">

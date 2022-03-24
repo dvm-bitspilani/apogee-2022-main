@@ -157,6 +157,9 @@
   filter: blur(40px);
   z-index: 40;
 }
+#bigFloorMobile {
+  display: none;
+}
 @keyframes cityEntry {
   0% {
     /* transform: translateY(100px); */
@@ -198,5 +201,11 @@
     width: 44vw;
     top: 68vh;
     left: 35vw;
+  }
+  #bigFloorMobile {
+    display: flex;
+  }
+  #bigFloorLaptop {
+    display: none;
   }
 }
