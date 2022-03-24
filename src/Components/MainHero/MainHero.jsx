@@ -21,38 +21,34 @@ import floorGlow from "./MainHeroAssets/GroupFloorGlow.svg";
 // Styles
 import "./MainHero.css"
 
-
-
-function scrollTo(offset) {
-    scroller.scrollTo("scroll-to-element", {
-      duration: 800,
-      delay: 0,
-      smooth: "easeInOutQuart",
-      offset: offset
-    });
-} 
-function scrollToBottom() {
-    scroll.scrollToBottom({
-        duration: 500,
-        delay: 0,
-        smooth: "easeInOutQuart",
-    });
-}
-// var scroll = Scroll.animateScroll;   
-
 function MainHero() {
+
+
+    function scrollTo(offset) {
+        scroller.scrollTo("random", {
+            duration: 1600,
+            delay: 0,
+            smooth: "easeOutCubic",
+            offset: offset
+          })
+    }
+
+   
+    
+
+
     const Layer1 = useRef();
    
 
     useEffect(() => {
 
-              Events.scrollEvent.register("begin", function() {
-              console.log("begin", arguments);
-            });
+            //   Events.scrollEvent.register("begin", function() {
+            //   console.log("begin", arguments);
+            // });
         
-            Events.scrollEvent.register("end", function() {
-              console.log("end", arguments);
-            });
+            // Events.scrollEvent.register("end", function() {
+            //   console.log("end", arguments);
+            // });
           
         
     
@@ -171,9 +167,10 @@ function MainHero() {
                 </div>
                 
 
-                <div className="clickAndScroll" onClick={scrollToBottom}>
+                <div className="clickAndScroll" onClick={()=>scrollTo(2600)}>
 <img src={Arrow} alt="" />
                 </div>
+                <div id="random"></div>
             </div>
             </Div100vh>
     )
