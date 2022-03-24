@@ -1,0 +1,53 @@
+@font-face {
+    font-family: "Pirulen";
+    src: local("Pirulen"), url("../../fonts/Pirulen.otf") format("opentype");
+    font-weight: normal;
+  }
+@font-face {
+    font-family: "Forgotten Futurist";
+    src: local("Forgotten Futurist"), url("../../fonts/Forgotten Futurist.ttf") format("truetype");
+    font-weight: normal;
+  }
+
+
+.AboutUsWrapper {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    background: black;
+
+}
+.aboutUsHeading {
+    font-size: 64px;
+    line-height: 76.8px;
+    font-family: 'Pirulen';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 77px;
+    margin: 100px 50px;
+    color: white;
+}
+.aboutUsDetails {
+    font-family: 'Forgotten Futurist';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 46px;
+    letter-spacing: 0.12em;
+    margin: 0 150px;
+    color: white;
+}
+@media screen and (max-width: 768px){
+    .aboutUsHeading {
+        font-size: 36px;
+        text-align: center;
+        margin: 50px 0;
+    }
+    .aboutUsDetails {
+        margin: 0 30px;
+    text-align: center;
+    } 
+}

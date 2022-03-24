@@ -8,6 +8,7 @@ import { styled, Box } from "@mui/system";
 import CloseIcon from "@mui/icons-material/Close";
 import Background from "../assets/laptop/events_balcony.svg";
 import EventContainer from "../Components/EventContainer/EventContainer";
+import Loader from "./loaderPage.jsx"
 
 import "../stylesheets/events.css";
 import "../stylesheets/all-events.css";
@@ -33,6 +34,9 @@ import "../stylesheets/all-events.css";
 function Events() {
   return (
     <div className='all-events-wrapper'>
+      <div className="loaderDivEvents">
+        <Loader />
+      </div>
       <Link to="/">
         <div className="arrow">
           <img src={Arrow} alt="" />
