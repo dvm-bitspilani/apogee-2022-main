@@ -1,0 +1,132 @@
+.loaderWrapper {
+    height: 100vh;
+    width: 100vw;
+    background: #000022;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.apogee_loader_logo {
+    background: url("../assets/loader/apogee_loader_logo.png");
+    height: 60%;
+    width: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.apogee_loader_logo_mobile {
+    background: url("../assets/loader/apogee_loader_logo.png");
+    height: 60%;
+    width: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: none;
+}
+
+.loaderBorder {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.BorderWhite {
+    border: 1px solid white;
+    width: 95%;
+    height: 95%;
+    mix-blend-mode: normal;
+border: 2.52764px solid #FFFFFF;
+/* filter: blur(0.042546px); */
+}
+.BorderBlue{
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: normal;
+    border: 2.52764px solid #00D1FF;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+#border-9 {
+    animation: border 4s ease-in-out infinite;
+}
+#border-8 {
+    height: 100%;
+    width: 95%;
+    animation: border 4s ease-in-out infinite;
+}
+#border-7 {
+    height: 100%;
+    width: 90%;
+    animation: border 4s ease-in-out infinite;
+}
+#border-6 {
+    height: 100%;
+    width: 80%;
+    animation: border 4s ease-in-out infinite;
+}
+#border-6 {
+    height: 100%;
+    width: 90%;
+    animation: border 4s ease-in-out infinite;
+}
+#border-5 {
+    height: 100%;
+    width: 80%;
+    animation: border 4s ease-in-out infinite;
+}
+#border-4 {
+    height: 100%;
+    width: 80%;
+    animation: border 4s ease-in-out infinite;
+}
+#border-3 {
+    height: 100%;
+    width: 80%;
+    animation: border 4s ease-in-out infinite;
+}
+#border-2 {
+    height: 100%;
+    width: 95%;
+    animation: border 4s ease-in-out infinite;
+}
+#border-1 {
+    height: 100%;
+    width: 90%;
+    animation: border 4s ease-in-out infinite;
+}
+
+@keyframes border {
+    0% {
+        filter: grayscale(1);
+        opacity: 1;
+    }
+    50% {
+        filter: grayscale(0);
+        opacity: 0;
+    }
+    0% {
+        filter: grayscale(1);
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 768px){
+    #border-1,#border-2,#border-3,#border-4,#border-5 {
+        display: none;
+    }
+    .apogee_loader_logo_mobile {
+        display: flex;
+    }
+}

@@ -82,11 +82,11 @@ function EventContainer(props) {
     <div>
       <div
         className={
-          props.type == "kernel"
+          (props.type == "kernel"
             ? "kernel-events-container"
-            : "all-events-container"
+            : "all-events-container") + " landing-section"
         }
-        id={props.type == "kernel" ? "kernel-events" : ""}
+        id={props.type == "kernel" ? "kernel-events" : "all-events"}
       >
         <div className="heading">{props.heading}</div>
         <div className="card-container">

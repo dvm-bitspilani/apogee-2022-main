@@ -76,7 +76,7 @@ function MainHero() {
 
     return (
         <Div100vh>
-        <div className="wrapperMainHero">
+        <div className="wrapperMainHero landing-section">
             <div className="upperHero">
                 <div className="skyWrapper">
                     <div class="sky"></div>

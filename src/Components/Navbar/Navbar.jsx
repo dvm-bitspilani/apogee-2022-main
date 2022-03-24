@@ -8,6 +8,8 @@ import "./Navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
+import "animate.css"
+
 function NavBar() {
   let hamburger = useRef();
   let isMenuOpen = false;
@@ -54,7 +56,7 @@ function NavBar() {
 
   const mouseLeaveAIC = () => {
     setIsShown(false);
-    allLinks.current.style.transform = "translateX(100px)";
+    if(window.screen.width > 768) allLinks.current.style.transform = "translateX(100px)";
   };
 
   const mouseLeaveAICMenu = () => {
@@ -167,6 +169,7 @@ function NavBar() {
                         <div>
                           <a
                             style={linkStyles}
+                            className="animate__animated animate__fadeInUp"
                             target="_blank"
                             href="https://bit.ly/AIC_Turtlemint"
                           >
@@ -176,6 +179,7 @@ function NavBar() {
                         <div>
                           <a
                             style={linkStyles}
+                            className="animate__animated animate__fadeInUp"
                             target="_blank"
                             href="https://bit.ly/AIC_Ge_Healthcare"
                           >
@@ -185,6 +189,7 @@ function NavBar() {
                         <div>
                           <a
                             style={linkStyles}
+                            className="animate__animated animate__fadeInUp animate_faster"
                             target="_blank"
                             href="https://bit.ly/AIC_Bharat_Serums"
                           >
@@ -194,6 +199,7 @@ function NavBar() {
                         <div>
                           <a
                             style={linkStyles}
+                            className="animate__animated animate__fadeInUp"
                             target="_blank"
                             href="https://bit.ly/AIC_RR_Kabel"
                           >
@@ -203,6 +209,7 @@ function NavBar() {
                         <div>
                           <a
                             style={linkStyles}
+                            className="animate__animated animate__fadeInUp"
                             target="_blank"
                             href="https://bit.ly/AIC_Kamdhenu"
                           >
@@ -231,7 +238,7 @@ function NavBar() {
                   onMouseLeave={mouseLeaveAICMenu}
                 >
                   <div className="sub-menu">
-                    <div>
+                    <div className="animate__animated animate__fadeInUp">
                       <a
                         style={linkStyles}
                         target="_blank"
@@ -240,7 +247,7 @@ function NavBar() {
                         Turtlemint
                       </a>
                     </div>
-                    <div>
+                    <div className="animate__animated animate__fadeInUp">
                       <a
                         style={linkStyles}
                         target="_blank"
@@ -249,7 +256,10 @@ function NavBar() {
                         GE Healthcare
                       </a>
                     </div>
-                    <div>
+                    <div className="animate__animated animate__fadeInUp">
+                      <a style={linkStyles} target="_blank" href="https://bit.ly/AIC_yamaha">Yamaha</a>
+                    </div>
+                    <div className="animate__animated animate__fadeInUp animate_faster">
                       <a
                         style={linkStyles}
                         target="_blank"
@@ -258,7 +268,7 @@ function NavBar() {
                         Bharat Serums & Vaccines
                       </a>
                     </div>
-                    <div>
+                    <div className="animate__animated animate__fadeInUp">
                       <a
                         style={linkStyles}
                         target="_blank"
@@ -267,7 +277,7 @@ function NavBar() {
                         RR Kabel
                       </a>
                     </div>
-                    <div>
+                    <div className="animate__animated animate__fadeInUp">
                       <a
                         style={linkStyles}
                         target="_blank"
