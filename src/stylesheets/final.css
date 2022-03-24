@@ -22,6 +22,16 @@
   background-size: 100vw;
   /* top: 100vh; */
 }
+.loaderDiv {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index:30; 
+  overflow: hidden;
+}
 
 @media screen and (max-width: 768px) {
   .events-container {

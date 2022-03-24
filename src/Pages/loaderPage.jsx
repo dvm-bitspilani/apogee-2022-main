@@ -10,6 +10,8 @@ function LoaderPage() {
 
     return (
         <div className="loaderWrapper">
+            <div className="apogee_loader_logo"></div>
+            <div className="apogee_loader_logo_mobile"></div>
             <div className="loaderBorder" id="border-9">
                 <div className="BorderWhite">
                     <div className="BorderBlue">
@@ -22,7 +24,7 @@ function LoaderPage() {
                                                 <div className="loaderBorder" id="border-6">
                                                     <div className="BorderWhite">
                                                         <div className="BorderBlue">
-                                                            <div className="apogee_loader_logo_mobile"></div>
+                                                            
                                                             <div className="loaderBorder" id="border-5">
                                                                 <div className="BorderWhite">
                                                                     <div className="BorderBlue">
@@ -38,7 +40,7 @@ function LoaderPage() {
                                                                                                             <div className="loaderBorder" id="border-1">
                                                                                                                 <div className="BorderWhite">
                                                                                                                     <div className="BorderBlue">
-                                                                                                                        <div className="apogee_loader_logo"></div>
+                                                                                                                        
                                                                                                                         
 
                                                                                                                     </div>

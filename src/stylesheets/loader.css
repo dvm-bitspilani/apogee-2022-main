@@ -8,23 +8,27 @@
     align-content: center;
     justify-content: center;
     align-items: center;
+    /* position: absolute;
+    z-index: 999; */
 }
 
 .apogee_loader_logo {
-    background: url("../assets/loader/apogee_loader_logo.png");
-    height: 60%;
-    width: 60%;
+    background: url("../assets/loader/apogee_loader_logo.svg");
+    height: 30%;
+    width: 30%;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    position: absolute;
 }
 .apogee_loader_logo_mobile {
-    background: url("../assets/loader/apogee_loader_logo.png");
-    height: 60%;
-    width: 60%;
+    background: url("../assets/loader/apogee_loader_logo.svg");
+    height: 45%;
+    width: 45%;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    position: absolute;
     display: none;
 }
 
@@ -37,6 +41,7 @@
     align-content: center;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
 }
 .BorderWhite {
     border: 1px solid white;
@@ -44,6 +49,7 @@
     height: 95%;
     mix-blend-mode: normal;
 border: 2.52764px solid #FFFFFF;
+border-radius: 10px;
 /* filter: blur(0.042546px); */
 }
 .BorderBlue{
@@ -57,6 +63,7 @@ border: 2.52764px solid #FFFFFF;
     align-content: center;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
 }
 #border-9 {
     animation: border 4s ease-in-out infinite;
@@ -128,5 +135,8 @@ border: 2.52764px solid #FFFFFF;
     }
     .apogee_loader_logo_mobile {
         display: flex;
+    }
+    .apogee_loader_logo {
+        display:none;
     }
 }

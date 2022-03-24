@@ -5,6 +5,9 @@ import NavBar from "../Components/Navbar/Navbar.jsx";
 import Pagination from './../Components/Pagination/Pagination';
 import SocialsHero from "../Components/SocialsHero/SocialsHero.js";
 import { useInView } from 'react-intersection-observer'
+import ScrollScreen from "../Components/ScrollScreen/ScrollScreen.jsx";
+import Loader from "./loaderPage.jsx"
+import AboutUs from "../Components/AboutUs/AboutUs.jsx"
 
 import EventContainer from "../Components/EventContainer/EventContainer.jsx";
 import "../stylesheets/final.css";
@@ -28,12 +31,16 @@ function Test() {
   //   console.log(sectionArr)
   // }, [])
   return (
-    <div className="testWrapper" inView={inView}>
-      <NavBar ref={ref}/>
+    <div className="testWrapper">
+      <div className="loaderDiv">
+        <Loader />
+      </div>
+      <NavBar />
       <Pagination />
       <MainHero />
       <SocialsHero />
       <CountdownSlate />
+      {/* <AboutUs /> */}
       {/* <div style={{ background: "white", zIndex: "15" }}>
         <div className="background">
           <div className="gridVertical">

@@ -20,6 +20,7 @@ function EventContainer(props) {
         if (props.type == "kernel") setEvents(result.data[0].events);
         else setEvents(result[0].events);
         console.log(result);
+        document.getElementsByClassName("loaderDivEvents")[0].style.display = "none";
       })
       .catch((error) => {
         console.log("ERROR", error);
@@ -41,9 +42,9 @@ function EventContainer(props) {
           venue: "TBA",
         }];
         setEvents(errorEvent);
-        
+
       });
-      document.body.style.overflowY = "scroll"
+    document.body.style.overflowY = "scroll"
   }, []);
 
   const [eventDesc, setEventDesc] = React.useState("");
@@ -56,6 +57,9 @@ function EventContainer(props) {
   };
   const handleClose = () => setDescriptionDetails("none");
   const changeDriveLink = (driveLink) => {
+    if (!driveLink.includes("google")) {
+      return
+    }
     if (driveLink.includes("bits-apogee") || driveLink.includes("default")) {
       return;
     }

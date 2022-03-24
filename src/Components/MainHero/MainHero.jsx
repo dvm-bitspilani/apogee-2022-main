@@ -16,6 +16,7 @@ import Div100vh from 'react-div-100vh';
 import ScrollScreen from "../ScrollScreen/ScrollScreen.jsx";
 import floor from "./MainHeroAssets/floorGrid.png";
 import bigFloor from "./MainHeroAssets/makeGrid.png";
+import bigFloorMobile from "./MainHeroAssets/bigFloorMobile.png";
 
 import floorGlow from "./MainHeroAssets/GroupFloorGlow.svg";
 // Styles
@@ -73,46 +74,26 @@ function MainHero() {
         // //         // Scrolling Down with mouse
         // //         console.log('Scroll Down');
 
-        // //     } else {
-        // //         // Scrolling Up with mouse
-        // //         console.log('Scroll Up');
-        // //     }
-        // // }
-        // // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
-        // let vh = window.innerHeight * 0.01;
-        // // Then we set the value in the --vh custom property to the root of the document
-        // // document.documentElement.style.setProperty('--vh', `${vh}px`);
-        // // We listen to the resize event
-        // window.addEventListener('resize', () => {
-        //     // We execute the same script as before
-        //     let vh = window.innerHeight * 0.01;
-        //     document.documentElement.style.setProperty('--vh', `${vh}px`);
-        // });
-        // const screenWidth = window.innerWidth;
-        // const screenHeight = window.innerHeight;
-
-      
-   
-        // Layer1.current.style.transform = "bottom: 0";
+        Layer1.current.style.transform = "bottom: 0";
         // console.log(Layer1.current, screenWidth, screenHeight);
-        setTimeout(() => {
-            document.getElementById("cityLayer1").style.transform = "translate(5%, 0px)"
-        }, 50);
-        setTimeout(() => {
-            document.getElementById("cityLayer2").style.transform = "translate(1%,0px)"
-        }, 600);
-        setTimeout(() => {
-            document.getElementById("cityLayer3").style.transform = "  translate(-2%,000px)"
-        }, 900);
-        setTimeout(() => {
-            document.getElementById("cityLayer4").style.transform = "translate(-6%,000px) "
-        }, 1200);
-        setTimeout(() => {
-            document.getElementById("cityLayer5").style.transform = "translate(-21.5%,000px)"
-        }, 1500);
-        setTimeout(() => {
-            document.getElementById("cityLayer6").style.transform = "translate(30%,000px)"
-        }, 1800);
+        // setTimeout(() => {
+        //     document.getElementById("cityLayer1").style.transform = "translate(5%, 0px)"
+        // }, 50);
+        // setTimeout(() => {
+        //     document.getElementById("cityLayer2").style.transform = "translate(1%,0px)"
+        // }, 600);
+        // setTimeout(() => {
+        //     document.getElementById("cityLayer3").style.transform = "  translate(-2%,000px)"
+        // }, 900);
+        // setTimeout(() => {
+        //     document.getElementById("cityLayer4").style.transform = "translate(-6%,000px) "
+        // }, 1200);
+        // setTimeout(() => {
+        //     document.getElementById("cityLayer5").style.transform = "translate(-21.5%,000px)"
+        // }, 1500);
+        // setTimeout(() => {
+        //     document.getElementById("cityLayer6").style.transform = "translate(30%,000px)"
+        // }, 1800);
 
     });
 
@@ -163,8 +144,9 @@ function MainHero() {
                 <div className="horizon-glow"></div>
                 <div className="glow"></div>
                 <img className="floorGlow" src={floor} alt="" /> */}
-                    <img alt="" src={bigFloor} />
-                    {/* <img className="floorGlow" src={floorGlow} alt="" /> */}
+                <img alt="" id="bigFloorLaptop" src={bigFloor}/>
+                <img id="bigFloorMobile" src={bigFloorMobile}/>
+                {/* <img className="floorGlow" src={floorGlow} alt="" /> */}
 
                     {/* <div className="upperHero">
                 <div className="skyWrapper">
