@@ -23,21 +23,27 @@ import "./MainHero.css"
 
 
 
-
-
+function scrollTo(offset) {
+    scroller.scrollTo("scroll-to-element", {
+      duration: 800,
+      delay: 0,
+      smooth: "easeInOutQuart",
+      offset: offset
+    });
+} 
+function scrollToBottom() {
+    scroll.scrollToBottom({
+        duration: 500,
+        delay: 0,
+        smooth: "easeInOutQuart",
+    });
+}
 // var scroll = Scroll.animateScroll;   
 
 function MainHero() {
     const Layer1 = useRef();
    
-    function scrollTo(offset) {
-        scroller.scrollTo("scroll-to-element", {
-          duration: 800,
-          delay: 0,
-          smooth: "easeInOutQuart",
-          offset: offset
-        });
-      }
+
     useEffect(() => {
 
               Events.scrollEvent.register("begin", function() {
@@ -165,7 +171,7 @@ function MainHero() {
                 </div>
                 
 
-                <div className="clickAndScroll" onClick={scrollTo(1000)}>
+                <div className="clickAndScroll" onClick={scrollToBottom}>
 <img src={Arrow} alt="" />
                 </div>
             </div>
