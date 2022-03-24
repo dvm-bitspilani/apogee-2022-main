@@ -1,5 +1,9 @@
 // Libraries
+import React from "react"
 import { useEffect, useRef } from "react"
+// import * as Scroll from 'react-scroll';
+import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import Arrow from "./MainHeroAssets/down-arrow.svg"
 // Assets
 import CityLayer1 from "./MainHeroAssets/city/City Layer 1.svg";
 import CityLayer2 from "./MainHeroAssets/city/City Layer 2.svg";
@@ -18,42 +22,60 @@ import floorGlow from "./MainHeroAssets/GroupFloorGlow.svg";
 // Styles
 import "./MainHero.css"
 
-
-
-
-
 function MainHero() {
+
+
+    function scrollTo(offset) {
+        scroller.scrollTo("random", {
+            duration: 1600,
+            delay: 0,
+            smooth: "easeOutCubic",
+            offset: offset
+        })
+       
+    }
+
+
+
+
+
     const Layer1 = useRef();
 
 
     useEffect(() => {
-        console.log("hello");
-        // window.onwheel = e => {
-        //     if (e.deltaY >= 0) {
-        //         // Scrolling Down with mouse
-        //         console.log('Scroll Down');
-                
-        //     } else {
-        //         // Scrolling Up with mouse
-        //         console.log('Scroll Up');
-        //     }
-        // }
-        // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
-        let vh = window.innerHeight * 0.01;
-        // Then we set the value in the --vh custom property to the root of the document
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-        // We listen to the resize event
-        window.addEventListener('resize', () => {
-            // We execute the same script as before
-            let vh = window.innerHeight * 0.01;
-            document.documentElement.style.setProperty('--vh', `${vh}px`);
-        });
-        const screenWidth = window.innerWidth;
-        const screenHeight = window.innerHeight;
+     
+        window.addEventListener("scroll", () => {
+            console.log(window.pageYOffset);
+            if (window.pageYOffset > 0 && window.pageYOffset < 15) {
+                scrollTo(2600);
+                console.log("scrolled");
+            }
+            })
+         
+    
+              Events.scrollEvent.register("begin", function () {
+              console.log("begin", arguments);
+            });
+        
+            Events.scrollEvent.register("end", function() {
+              console.log("end", arguments);
+            });
+          
+        
+    
 
+        //   componentWillUnmount() {
+        //     Events.scrollEvent.remove("begin");
+        //     Events.scrollEvent.remove("end");
+        //   }
+        // console.log("hello");
+        // // window.onwheel = e => {
+        // //     if (e.deltaY >= 0) {
+        // //         // Scrolling Down with mouse
+        // //         console.log('Scroll Down');
 
         Layer1.current.style.transform = "bottom: 0";
-        console.log(Layer1.current, screenWidth, screenHeight);
+        // console.log(Layer1.current, screenWidth, screenHeight);
         // setTimeout(() => {
         //     document.getElementById("cityLayer1").style.transform = "translate(5%, 0px)"
         // }, 50);
@@ -77,18 +99,18 @@ function MainHero() {
 
     return (
         <Div100vh>
-        <div className="wrapperMainHero landing-section">
-            <div className="upperHero">
-                <div className="skyWrapper">
-                    <div class="sky"></div>
-                    <div className="stars"></div>
+            <div className="wrapperMainHero landing-section">
+                <div className="upperHero">
+                    <div className="skyWrapper">
+                        <div class="sky"></div>
+                        <div className="stars"></div>
+                    </div>
+                    <div className="moon">
+                        <img id="moon" src={Moon} />{" "}
+                    </div>
                 </div>
-                <div className="moon">
-                    <img id="moon" src={Moon} />{" "}
-                </div>
-            </div>
-            <div className="buildings">
-                {/* <div className="city city1">
+                <div className="buildings">
+                    {/* <div className="city city1">
                     <img src={CityLayer1} alt="" />
                 </div>
                 <div className="city city2">
@@ -106,19 +128,19 @@ function MainHero() {
                 <div className="city city6">
                     <img src={CityLayer6} alt="" />
                 </div> */}
-                <div className="buildings">
-                    <img class="cityBuildings layers" id="cityLayer1" ref={Layer1} src={CityLayer1} alt="" />
-                    <img class="cityBuildings layers" id="cityLayer2" src={CityLayer2} alt="" />
-                    <img class="cityBuildings layers" id="cityLayer3" src={CityLayer3} alt="" />
-                    <img class="cityBuildings layers" id="cityLayer4" src={CityLayer4} alt="" />
-                    <img class="cityBuildings layers" id="cityLayer5" src={CityLayer5} alt="" />
-                    <img class="cityBuildings layers" id="cityLayer6" src={CityLayer6} alt="" />
+                    <div className="buildings">
+                        <img class="cityBuildings layers" id="cityLayer1" ref={Layer1} src={CityLayer1} alt="" />
+                        <img class="cityBuildings layers" id="cityLayer2" src={CityLayer2} alt="" />
+                        <img class="cityBuildings layers" id="cityLayer3" src={CityLayer3} alt="" />
+                        <img class="cityBuildings layers" id="cityLayer4" src={CityLayer4} alt="" />
+                        <img class="cityBuildings layers" id="cityLayer5" src={CityLayer5} alt="" />
+                        <img class="cityBuildings layers" id="cityLayer6" src={CityLayer6} alt="" />
+                    </div>
                 </div>
-            </div>
 
 
-            <div className="floor">
-                {/* <div className="horizon-glow-buildings"></div>
+                <div className="floor">
+                    {/* <div className="horizon-glow-buildings"></div>
                 <div className="horizon-glow"></div>
                 <div className="glow"></div>
                 <img className="floorGlow" src={floor} alt="" /> */}
@@ -126,7 +148,7 @@ function MainHero() {
                 <img id="bigFloorMobile" src={bigFloorMobile}/>
                 {/* <img className="floorGlow" src={floorGlow} alt="" /> */}
 
-                {/* <div className="upperHero">
+                    {/* <div className="upperHero">
                 <div className="skyWrapper">
                     <div class="sky"></div>
                     <div className="stars"></div>
@@ -135,9 +157,18 @@ function MainHero() {
                     <img id="moon" src={Moon} />{" "}
                 </div>
             </div> */}
+                </div>
+
+
+                <div id="clickAndScroll">
+                    <div>Click here to enter Encrypted Dimension</div>
+                    <div className="clickAndScroll" onClick={() => scrollTo(2600)}>
+                        <img src={Arrow} alt="" />
+                    </div>
+                </div>
+                <div id="random"></div>
             </div>
-            </div>
-            </Div100vh>
+        </Div100vh>
     )
 }
 

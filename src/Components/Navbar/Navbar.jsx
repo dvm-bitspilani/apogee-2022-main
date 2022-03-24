@@ -227,6 +227,9 @@ function NavBar() {
                 >
                   <div>Kernel Events</div>
                 </a> */}
+                 <Link className="links" to="/kernel-events">
+                  <div>Kernel Events</div>
+                </Link>
                 <Link className="links" to="/events">
                   <div>All Events</div>
                 </Link>

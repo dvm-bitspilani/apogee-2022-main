@@ -31,7 +31,7 @@ import "../stylesheets/all-events.css";
 //   // filter:'blur(3px) saturate(180%)'
 // };
 
-function Events() {
+function Events(props) {
   return (
     <div className='all-events-wrapper'>
       <div className="loaderDivEvents">
@@ -43,8 +43,9 @@ function Events() {
         </div>
       </Link>
       <EventContainer
-        heading={"ALL EVENTS"}
-        api="https://bits-apogee.org/registrations/events_details/"
+        heading={props.heading}
+        api={props.link}
+        type={props.type}
       />
     </div>
   );
