@@ -42,9 +42,9 @@ function EventContainer(props) {
           venue: "TBA",
         }];
         setEvents(errorEvent);
-        
+
       });
-      document.body.style.overflowY = "scroll"
+    document.body.style.overflowY = "scroll"
   }, []);
 
   const [eventDesc, setEventDesc] = React.useState("");
@@ -57,6 +57,9 @@ function EventContainer(props) {
   };
   const handleClose = () => setDescriptionDetails("none");
   const changeDriveLink = (driveLink) => {
+    if (!driveLink.includes("google")) {
+      return
+    }
     if (driveLink.includes("bits-apogee") || driveLink.includes("default")) {
       return;
     }
