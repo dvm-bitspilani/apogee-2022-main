@@ -4,12 +4,23 @@ import MainHero from "../Components/MainHero/MainHero.jsx";
 import NavBar from "../Components/Navbar/Navbar.jsx";
 import Pagination from './../Components/Pagination/Pagination';
 import SocialsHero from "../Components/SocialsHero/SocialsHero.js";
-import ScrollScreen from "../Components/ScrollScreen/ScrollScreen.jsx";
+import { useInView } from 'react-intersection-observer'
 
 import EventContainer from "../Components/EventContainer/EventContainer.jsx";
 import "../stylesheets/final.css";
 
 function Test() {
+
+
+
+  useEffect(() => {
+    window.addEventListener("wheel", () => {
+      console.log(window.pageYOffset + "this");
+    })
+  })
+  const [ref, inView] = useInView({
+    threshold: 0,
+  })
   // const [landingSections, setLandingSections] = useState([])
   // useEffect(() => {
   //   let sectionArr = document.querySelectorAll(".landing-section")
@@ -17,8 +28,8 @@ function Test() {
   //   console.log(sectionArr)
   // }, [])
   return (
-    <div className="testWrapper">
-      <NavBar />
+    <div className="testWrapper" inView={inView}>
+      <NavBar ref={ref}/>
       <Pagination />
       <MainHero />
       <SocialsHero />

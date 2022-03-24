@@ -30,7 +30,8 @@ function MainHero() {
             delay: 0,
             smooth: "easeOutCubic",
             offset: offset
-          })
+        })
+       
     }
 
    
@@ -38,17 +39,26 @@ function MainHero() {
 
 
     const Layer1 = useRef();
-   
+
 
     useEffect(() => {
-
-            //   Events.scrollEvent.register("begin", function() {
-            //   console.log("begin", arguments);
-            // });
+     
+        window.addEventListener("scroll", () => {
+            console.log(window.pageYOffset);
+            if (window.pageYOffset > 0 && window.pageYOffset < 10) {
+                scrollTo(2600);
+                console.log("scrolled");
+            }
+            })
+         
+    
+              Events.scrollEvent.register("begin", function () {
+              console.log("begin", arguments);
+            });
         
-            // Events.scrollEvent.register("end", function() {
-            //   console.log("end", arguments);
-            // });
+            Events.scrollEvent.register("end", function() {
+              console.log("end", arguments);
+            });
           
         
     
@@ -81,7 +91,8 @@ function MainHero() {
         // const screenWidth = window.innerWidth;
         // const screenHeight = window.innerHeight;
 
-
+      
+   
         // Layer1.current.style.transform = "bottom: 0";
         // console.log(Layer1.current, screenWidth, screenHeight);
         setTimeout(() => {
@@ -106,9 +117,9 @@ function MainHero() {
     });
 
     return (
-        <Div100vh>
-        <div className="wrapperMainHero landing-section">
-            <div className="upperHero">
+        <Div100vh onScroll={scrollTo(2600)}>
+            <div className="wrapperMainHero landing-section">
+            <div className="upperHero" >
                 <div className="skyWrapper">
                     <div class="sky"></div>
                     <div className="stars"></div>
