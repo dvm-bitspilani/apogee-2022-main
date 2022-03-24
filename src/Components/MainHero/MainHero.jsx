@@ -53,24 +53,24 @@ function MainHero() {
 
         Layer1.current.style.transform = "bottom: 0";
         console.log(Layer1.current, screenWidth, screenHeight);
-        setTimeout(() => {
-            document.getElementById("cityLayer1").style.transform = "translate(5%, 0px)"
-        }, 50);
-        setTimeout(() => {
-            document.getElementById("cityLayer2").style.transform = "translate(1%,0px)"
-        }, 600);
-        setTimeout(() => {
-            document.getElementById("cityLayer3").style.transform = "  translate(-2%,000px)"
-        }, 900);
-        setTimeout(() => {
-            document.getElementById("cityLayer4").style.transform = "translate(-6%,000px) "
-        }, 1200);
-        setTimeout(() => {
-            document.getElementById("cityLayer5").style.transform = "translate(-21.5%,000px)"
-        }, 1500);
-        setTimeout(() => {
-            document.getElementById("cityLayer6").style.transform = "translate(30%,000px)"
-        }, 1800);
+        // setTimeout(() => {
+        //     document.getElementById("cityLayer1").style.transform = "translate(5%, 0px)"
+        // }, 50);
+        // setTimeout(() => {
+        //     document.getElementById("cityLayer2").style.transform = "translate(1%,0px)"
+        // }, 600);
+        // setTimeout(() => {
+        //     document.getElementById("cityLayer3").style.transform = "  translate(-2%,000px)"
+        // }, 900);
+        // setTimeout(() => {
+        //     document.getElementById("cityLayer4").style.transform = "translate(-6%,000px) "
+        // }, 1200);
+        // setTimeout(() => {
+        //     document.getElementById("cityLayer5").style.transform = "translate(-21.5%,000px)"
+        // }, 1500);
+        // setTimeout(() => {
+        //     document.getElementById("cityLayer6").style.transform = "translate(30%,000px)"
+        // }, 1800);
 
     });
 

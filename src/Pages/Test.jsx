@@ -5,6 +5,7 @@ import NavBar from "../Components/Navbar/Navbar.jsx";
 import Pagination from './../Components/Pagination/Pagination';
 import SocialsHero from "../Components/SocialsHero/SocialsHero.js";
 import ScrollScreen from "../Components/ScrollScreen/ScrollScreen.jsx";
+import Loader from "./loaderPage.jsx"
 
 import EventContainer from "../Components/EventContainer/EventContainer.jsx";
 import "../stylesheets/final.css";
@@ -18,6 +19,9 @@ function Test() {
   // }, [])
   return (
     <div className="testWrapper">
+      <div className="loaderDiv">
+        <Loader />
+      </div>
       <NavBar />
       <Pagination />
       <MainHero />
