@@ -6,6 +6,7 @@ import Pagination from './../Components/Pagination/Pagination';
 import SocialsHero from "../Components/SocialsHero/SocialsHero.js";
 import ScrollScreen from "../Components/ScrollScreen/ScrollScreen.jsx";
 import Loader from "./loaderPage.jsx"
+import AboutUs from "../Components/AboutUs/AboutUs.jsx"
 
 import EventContainer from "../Components/EventContainer/EventContainer.jsx";
 import "../stylesheets/final.css";
@@ -27,6 +28,7 @@ function Test() {
       <MainHero />
       <SocialsHero />
       <CountdownSlate />
+      {/* <AboutUs /> */}
       {/* <div style={{ background: "white", zIndex: "15" }}>
         <div className="background">
           <div className="gridVertical">
