@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Route, BrowserRouter, Routes, HashRouter } from "react-router-dom";
 import Events from "./Pages/all-events.jsx";
+import Staging from "./Pages/staging.js";
 import Test from "./Pages/Test.jsx";
 import "./stylesheets/index.css";
 import App from "./Pages/App";
@@ -42,6 +43,7 @@ ReactDOM.render(
       <Route path="/events" element={<Events />} />
       <Route path="/loader" element={<LoaderPage />} />
       <Route path="/aboutus" element={<AboutUs />} />
+      <Route path="/staging" element={<Staging />} />
       {/* <Route path="/Test" element={<Test />} /> */}
 
       {/* <Route path="invoices" element={<Invoices />} /> */}
