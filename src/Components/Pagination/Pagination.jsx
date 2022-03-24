@@ -10,13 +10,13 @@ function Pagination() {
         let sectionArr = document.querySelectorAll(".landing-section")
         let arr = Array.from(sectionArr)
         setLandingSections(arr)
-        console.log(sectionArr)
+        console.log(arr)
     }, [])
     return (
         <div id="pagination">
             <div id="line">
                 {/* ~ */}
-                {landingSections.map(el => <div className="dots"></div> )}
+                {landingSections.map(el => <div className="dots" key={el.className}></div> )}
             </div>
         </div>
     )
