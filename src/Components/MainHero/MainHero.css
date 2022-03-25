@@ -1,6 +1,10 @@
 /* .buildings *{
     z-index: -2;
 } */
+html{
+  width: 100vw;
+  overflow-x: hidden;
+}
 .wrapperMainHero {
   overflow: hidden;
   height: 100%;
@@ -218,31 +222,36 @@
   #cityLayer1,
   #cityLayer2 {
     width: 90vw;
+    /* display: none; */
   }
   #cityLayer3 {
     width: 100vw;
     left: -6vw;
+    /* display: none; */
   }
   #cityLayer4 {
     width: 113vw;
     top: 53.5vh;
+    /* display: none; */
     /* left: -8vw; */
   }
   #cityLayer5 {
     width: 103vw;
     top: 45.5vh;
     left: 0vw;
+    /* display: none; */
   }
   #cityLayer6 {
     width: 43vw;
     top: 65vh;
     left: 35vw;
+    /* display: none; */
   }
   #bigFloorMobile {
     display: flex;
   }
   #bigFloorLaptop {
-    display: none;
+    /* display: none; */
   }
   #clickAndScroll {
     font-size: 1rem;
