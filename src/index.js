@@ -9,9 +9,11 @@ import App from "./Pages/App";
 import reportWebVitals from "./reportWebVitals";
 import LoaderPage from "./Pages/loaderPage.jsx";
 import AboutUs from "./Components/AboutUs/AboutUs.jsx";
-
+import { createBrowserHistory } from "history";
 import "./fonts/BARTKEY.ttf";
 import { Sponsors } from "./Components/Sponsors/Sponsors.js";
+const history = createBrowserHistory();
+
 
 function handleCities() {
   let cities = document.querySelectorAll(".city");
@@ -38,8 +40,8 @@ function handleCities() {
 }
 
 ReactDOM.render(
-  <BrowserRouter>
-    <Routes>
+  <BrowserRouter basename='/' history={history}>
+    < Routes >
       <Route path="/" element={<Test />} />
       <Route
         path="/events"
@@ -68,7 +70,7 @@ ReactDOM.render(
       {/* <Route path="/Test" element={<Test />} /> */}
 
       {/* <Route path="invoices" element={<Invoices />} /> */}
-    </Routes>
+    </ Routes>
   </BrowserRouter>,
   document.getElementById("root")
 );
