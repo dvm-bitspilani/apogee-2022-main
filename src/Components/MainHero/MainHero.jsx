@@ -15,8 +15,8 @@ import Moon from "../../assets/Moon1.png";
 import Div100vh from 'react-div-100vh';
 import ScrollScreen from "../ScrollScreen/ScrollScreen.jsx";
 import floor from "./MainHeroAssets/floorGrid.png";
-import bigFloor from "./MainHeroAssets/finalGrid.png";
-import bigFloorMobile from "./MainHeroAssets/bigFloorMobile.png";
+import bigFloor from "./MainHeroAssets/finalGrid.svg";
+import bigFloorMobile from "./MainHeroAssets/bigFloorMobile.svg";
 
 import floorGlow from "./MainHeroAssets/GroupFloorGlow.svg";
 // Styles
@@ -32,7 +32,7 @@ function MainHero() {
             delay: 0,
             smooth: "easeOutCubic",
             offset: offset,
-            ignoreCancelEvents:true
+            ignoreCancelEvents: true
         })
 
     }
@@ -66,7 +66,7 @@ function MainHero() {
                     scroll.scrollToTop({ignoreCancelEvents:true,smooth: "linear",duration:400});
                     } 
             }
-      
+
             this.oldScroll = this.scrollY;
           }
      
@@ -117,34 +117,16 @@ function MainHero() {
                         <img id="moon" src={Moon} />{" "}
                     </div>
                 </div>
+                {/* <div className="buildings"> */}
                 <div className="buildings">
-                    {/* <div className="city city1">
-                    <img src={CityLayer1} alt="" />
+                    <img class="cityBuildings layers" id="cityLayer1" ref={Layer1} src={CityLayer1} alt="" />
+                    <img class="cityBuildings layers" id="cityLayer2" src={CityLayer2} alt="" />
+                    <img class="cityBuildings layers" id="cityLayer3" src={CityLayer3} alt="" />
+                    <img class="cityBuildings layers" id="cityLayer4" src={CityLayer4} alt="" />
+                    <img class="cityBuildings layers" id="cityLayer5" src={CityLayer5} alt="" />
+                    <img class="cityBuildings layers" id="cityLayer6" src={CityLayer6} alt="" />
                 </div>
-                <div className="city city2">
-                    <img src={CityLayer2} alt="" />
-                </div>
-                <div className="city city3">
-                    <img src={CityLayer3} alt="" />
-                </div>
-                <div className="city city4">
-                    <img src={CityLayer4} alt="" />
-                </div>
-                <div className="city city5">
-                    <img src={CityLayer5} alt="" />
-                </div>
-                <div className="city city6">
-                    <img src={CityLayer6} alt="" />
-                </div> */}
-                    <div className="buildings">
-                        <img class="cityBuildings layers" id="cityLayer1" ref={Layer1} src={CityLayer1} alt="" />
-                        <img class="cityBuildings layers" id="cityLayer2" src={CityLayer2} alt="" />
-                        <img class="cityBuildings layers" id="cityLayer3" src={CityLayer3} alt="" />
-                        <img class="cityBuildings layers" id="cityLayer4" src={CityLayer4} alt="" />
-                        <img class="cityBuildings layers" id="cityLayer5" src={CityLayer5} alt="" />
-                        <img class="cityBuildings layers" id="cityLayer6" src={CityLayer6} alt="" />
-                    </div>
-                </div>
+                {/* </div> */}
 
 
                 <div className="floor">

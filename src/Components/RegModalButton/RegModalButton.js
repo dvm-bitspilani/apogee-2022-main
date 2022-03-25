@@ -179,6 +179,8 @@ export default function RegModalButton(props) {
       mode: "cors",
     })
       .then(function (response) {
+        console.log(response.status)
+        if (response.status != 200 || response.status != 500) alert("Please contact DVM.")
         return response.json();
       })
       .then(function (result) {
