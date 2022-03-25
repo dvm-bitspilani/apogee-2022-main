@@ -83,8 +83,6 @@ body {
   width: 100%;
 }
 
-
-
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -511,7 +509,7 @@ img {
     /* display: flex;
     justify-content: space-between; */
     width: 35vw;
-    bottom: 0;
+    bottom: 2vh;
   }
 
   .socials svg {

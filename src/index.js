@@ -8,9 +8,10 @@ import "./stylesheets/index.css";
 import App from "./Pages/App";
 import reportWebVitals from "./reportWebVitals";
 import LoaderPage from "./Pages/loaderPage.jsx";
-import AboutUs from "./Components/AboutUs/AboutUs.jsx"
+import AboutUs from "./Components/AboutUs/AboutUs.jsx";
 
 import "./fonts/BARTKEY.ttf";
+import { Sponsors } from "./Components/Sponsors/Sponsors.js";
 
 function handleCities() {
   let cities = document.querySelectorAll(".city");
@@ -40,11 +41,30 @@ ReactDOM.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<Test />} />
-      <Route path="/events" element={<Events heading="All Events" link="https://bits-apogee.org/registrations/events_details/" type="   "/>} />
-      <Route path="/kernel-events" element={<Events heading="Kernel Events" link="https://bits-apogee.org/registrations/kernel_events/" type="kernel"/>}  />
+      <Route
+        path="/events"
+        element={
+          <Events
+            heading="All Events"
+            link="https://bits-apogee.org/registrations/events_details/"
+            type="   "
+          />
+        }
+      />
+      <Route
+        path="/kernel-events"
+        element={
+          <Events
+            heading="Kernel Events"
+            link="https://bits-apogee.org/registrations/kernel_events/"
+            type="kernel"
+          />
+        }
+      />
       <Route path="/loader" element={<LoaderPage />} />
       <Route path="/aboutus" element={<AboutUs />} />
       <Route path="/staging" element={<Staging />} />
+      <Route path="/sponsors" element={<Sponsors />} />
       {/* <Route path="/Test" element={<Test />} /> */}
 
       {/* <Route path="invoices" element={<Invoices />} /> */}
