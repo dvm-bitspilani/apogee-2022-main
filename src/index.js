@@ -14,7 +14,6 @@ import "./fonts/BARTKEY.ttf";
 import { Sponsors } from "./Components/Sponsors/Sponsors.js";
 const history = createBrowserHistory();
 
-
 function handleCities() {
   let cities = document.querySelectorAll(".city");
 
@@ -40,8 +39,9 @@ function handleCities() {
 }
 
 ReactDOM.render(
-  <BrowserRouter basename='/' history={history}>
-    < Routes >
+  // <BrowserRouter basename='/' history={history}>
+  <HashRouter>
+    <Routes>
       <Route path="/" element={<Test />} />
       <Route
         path="/events"
@@ -70,7 +70,8 @@ ReactDOM.render(
       {/* <Route path="/Test" element={<Test />} /> */}
 
       {/* <Route path="invoices" element={<Invoices />} /> */}
-    </ Routes>
-  </BrowserRouter>,
+    </Routes>
+  </HashRouter>,
+  // </BrowserRouter>,
   document.getElementById("root")
 );
