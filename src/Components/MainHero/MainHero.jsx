@@ -34,7 +34,7 @@ function MainHero() {
             offset: offset,
             ignoreCancelEvents:true
         })
-       
+
     }
 
 
@@ -66,18 +66,18 @@ function MainHero() {
      
         document.getElementsByClassName("clickAndScroll")[0].addEventListener("click", () => {
             document.body.style.overflowY = "hidden !important"
-         })
-    
-              Events.scrollEvent.register("begin", function () {
-              console.log("begin", arguments);
-            });
-        
-            Events.scrollEvent.register("end", function() {
-              console.log("end", arguments);
-            });
-          
-        
-    
+        })
+
+        Events.scrollEvent.register("begin", function () {
+            console.log("begin", arguments);
+        });
+
+        Events.scrollEvent.register("end", function () {
+            console.log("end", arguments);
+        });
+
+
+
 
         //   componentWillUnmount() {
         //     Events.scrollEvent.remove("begin");
@@ -89,7 +89,7 @@ function MainHero() {
         // //         // Scrolling Down with mouse
         // //         console.log('Scroll Down');
 
-        Layer1.current.style.transform = "bottom: 0";
+        Layer1.current.style.transform = "bottom: 0"; 
         // console.log(Layer1.current, screenWidth, screenHeight);
         // setTimeout(() => {
         //     document.getElementById("cityLayer1").style.transform = "translate(5%, 0px)"
@@ -159,9 +159,9 @@ function MainHero() {
                 <div className="horizon-glow"></div>
                 <div className="glow"></div>
                 <img className="floorGlow" src={floor} alt="" /> */}
-                <img alt="" id="bigFloorLaptop" src={bigFloor}/>
-                <img id="bigFloorMobile" src={bigFloorMobile}/>
-                {/* <img className="floorGlow" src={floorGlow} alt="" /> */}
+                    <img alt="" id="bigFloorLaptop" src={bigFloor} />
+                    <img id="bigFloorMobile" src={bigFloorMobile} />
+                    {/* <img className="floorGlow" src={floorGlow} alt="" /> */}
 
                     {/* <div className="upperHero">
                 <div className="skyWrapper">
@@ -176,13 +176,13 @@ function MainHero() {
 
 
                 <div id="clickAndScroll">
-                    <div>Click to enter the Encrypted Dimension</div>
+                    <div className="dimension">Click to enter the Encrypted Dimension</div>
                     <div className="clickAndScroll" onClick={() => scrollTo(2800)}>
                         <img src={Arrow} alt="" />
                     </div>
                 </div>
                 <div id="random"></div>
-              
+
             </div>
         </Div100vh>
     )

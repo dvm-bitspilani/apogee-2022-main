@@ -9,7 +9,7 @@ import ScrollScreen from "../Components/ScrollScreen/ScrollScreen.jsx";
 import Loader from "./loaderPage.jsx"
 import AboutUs from "../Components/AboutUs/AboutUs.jsx"
 import ContactUs from "../Components/ContactProfileCard/ContactUs.jsx"
-
+import Footer from "../Components/ContactProfileCard/Footer/Footer.jsx"
 import EventContainer from "../Components/EventContainer/EventContainer.jsx";
 import "../stylesheets/final.css";
 import Videos from "../Components/Videos/Videos.jsx";
@@ -59,6 +59,9 @@ function Test() {
           </div>
           <div className="section landing-section" id="ContactUs">
             <ContactUs/>
+          </div>
+          <div className="section" id="Footer">
+            <Footer/>
           </div>
       </div>
       {/* <AboutUs /> */}
