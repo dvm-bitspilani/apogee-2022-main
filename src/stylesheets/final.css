@@ -37,6 +37,14 @@
   width: 100vw;
   background: red;
 }
+#ContactUs {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
 @media screen and (max-width: 768px) {
   .events-container {
     top: 4vh;
