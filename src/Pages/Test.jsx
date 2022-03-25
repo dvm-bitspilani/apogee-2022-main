@@ -45,7 +45,9 @@ function Test() {
       <div className="mainWrapper">
           <div className="section" id="aboutus">
           <AboutUs />
-          <Videos />
+          </div>
+          <div className="section" id="Videos">
+            <Videos/>
           </div>
           <div className="section" id="kernelEvents">
           <EventContainer
