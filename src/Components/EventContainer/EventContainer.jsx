@@ -21,8 +21,7 @@ function EventContainer(props) {
         else setEvents(result[0].events);
         console.log(result);
         if (document.getElementsByClassName("loaderDivEvents")[0]) {
-          document.getElementsByClassName("loaderDivEvents")[0].style.display =
-            "none";
+          document.getElementsByClassName("loaderDivEvents")[0].style.display = "none";
         }
       })
       .catch((error) => {
@@ -101,7 +100,7 @@ function EventContainer(props) {
         }
         id={props.type == "kernel" ? "kernel-events" : "all-events"}
       >
-        <div className="heading">{props.heading}</div>
+        <div className="SectionHeading heading">{props.heading}</div>
         <div className="card-container">
           {events.map((el) => (
             <div className="card">
