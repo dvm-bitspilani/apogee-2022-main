@@ -90,7 +90,7 @@ function EventContainer(props) {
         className={
           (props.type == "kernel"
             ? "kernel-events-container"
-            : "all-events-container") + " landing-section"
+            : "all-events-container") + " landing-sec"
         }
         id={props.type == "kernel" ? "kernel-events" : "all-events"}
       >

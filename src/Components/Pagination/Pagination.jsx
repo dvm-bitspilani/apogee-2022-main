@@ -15,8 +15,12 @@ function Pagination() {
     return (
         <div id="pagination">
             <div id="line">
-                {/* ~ */}
-                {landingSections.map(el => <div className="dots" key={el.className}></div> )}
+                <a className="dots" href="#heroSection"></a> 
+                <a className="dots" href="#aboutus"></a> 
+                <a className="dots" href="#videos"></a> 
+                <a className="dots" href="#kernelEvents"></a> 
+                <a className="dots" href="#ContactUs"></a> 
+
             </div>
         </div>
     )
