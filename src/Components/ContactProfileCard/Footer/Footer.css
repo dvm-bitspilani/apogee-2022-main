@@ -20,6 +20,9 @@
     justify-content: center;
     align-items: stretch;
 }
+.FooterWrapper a{
+    color: white;
+}
 @keyframes beat {
     100% {
         transform: scale(1.2);

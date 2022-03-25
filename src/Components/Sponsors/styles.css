@@ -15,11 +15,6 @@
   box-sizing: border-box;
 }
 
-body {
-  background: url("Assets/meteor\ background.png") black;
-  background-size: 100vw;
-  background-repeat: repeat;
-}
 .arrowSponsors {
   width: 40px;
   position: absolute;
@@ -28,6 +23,9 @@ body {
   cursor: pointer;
 }
 .wrapperSponsors {
+  background: url("Assets/meteor\ background.png") black;
+  background-size: 100vw;
+  background-repeat: repeat;
   font-family: "Pirulen";
 
   display: flex;
@@ -50,9 +48,10 @@ body {
 }
 .intro {
   font-size: 3em;
-  color: white;
-  margin-top: 5vh;
-  text-align: center; /* s */
+    color: white;
+    padding-top: 5vh;
+    text-align: center;
+    background: black;
 }
 .flex {
   display: flex;

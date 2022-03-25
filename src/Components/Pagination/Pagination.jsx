@@ -4,6 +4,22 @@ import { HashLink as Link } from "react-router-hash-link";
 import "./Pagination.css";
 
 function Pagination() {
+
+
+    useEffect(() => {
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+        
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+    }, [])
+    
     // console.log(props.sectionArr)
     const [landingSections, setLandingSections] = useState([])
     useEffect(() => {
