@@ -28,12 +28,13 @@ function MainHero() {
 
     function scrollTo(offset) {
         scroller.scrollTo("random", {
-            duration: 1600,
+            duration: 1000,
             delay: 0,
             smooth: "easeOutCubic",
-            offset: offset
+            offset: offset,
+            ignoreCancelEvents:true
         })
-       
+
     }
 
 
@@ -44,26 +45,39 @@ function MainHero() {
 
 
     useEffect(() => {
-     
-        window.addEventListener("scroll", () => {
-            // console.log(window.pageYOffset);
-            if (window.pageYOffset > 0 && window.pageYOffset < 15) {
-                scrollTo(2600);
-                // console.log("scrolled");
+        
+        window.onscroll = function (e) {
+            if (this.oldScroll <= this.scrollY) {
+                if (window.pageYOffset > 0 && window.pageYOffset < 40) {
+                    scrollTo(2800);
+
+                }
             }
-            })
-         
-    
-              Events.scrollEvent.register("begin", function () {
-              console.log("begin", arguments);
-            });
+            else {
+                if (window.pageYOffset > 3300 && window.pageYOffset < 3650) {
         
-            Events.scrollEvent.register("end", function() {
-              console.log("end", arguments);
-            });
-          
-        
-    
+                    scroll.scrollToTop({ignoreCancelEvents:true,smooth: "linear",duration:400});
+                  
+                    } 
+            }
+      
+            this.oldScroll = this.scrollY;
+          }
+     
+        document.getElementsByClassName("clickAndScroll")[0].addEventListener("click", () => {
+            document.body.style.overflowY = "hidden !important"
+        })
+
+        Events.scrollEvent.register("begin", function () {
+            console.log("begin", arguments);
+        });
+
+        Events.scrollEvent.register("end", function () {
+            console.log("end", arguments);
+        });
+
+
+
 
         //   componentWillUnmount() {
         //     Events.scrollEvent.remove("begin");
@@ -75,7 +89,7 @@ function MainHero() {
         // //         // Scrolling Down with mouse
         // //         console.log('Scroll Down');
 
-        Layer1.current.style.transform = "bottom: 0";
+        Layer1.current.style.transform = "bottom: 0"; 
         // console.log(Layer1.current, screenWidth, screenHeight);
         // setTimeout(() => {
         //     document.getElementById("cityLayer1").style.transform = "translate(5%, 0px)"
@@ -100,7 +114,7 @@ function MainHero() {
 
     return (
         <Div100vh>
-            <div className="wrapperMainHero landing-section">
+            <div className="wrapperMainHero landing-section" id="heroSection">
                 <div className="upperHero">
                     <div className="skyWrapper">
                         <div class="sky"></div>
@@ -145,9 +159,9 @@ function MainHero() {
                 <div className="horizon-glow"></div>
                 <div className="glow"></div>
                 <img className="floorGlow" src={floor} alt="" /> */}
-                <img alt="" id="bigFloorLaptop" src={bigFloor}/>
-                <img id="bigFloorMobile" src={bigFloorMobile}/>
-                {/* <img className="floorGlow" src={floorGlow} alt="" /> */}
+                    <img alt="" id="bigFloorLaptop" src={bigFloor} />
+                    <img id="bigFloorMobile" src={bigFloorMobile} />
+                    {/* <img className="floorGlow" src={floorGlow} alt="" /> */}
 
                     {/* <div className="upperHero">
                 <div className="skyWrapper">
@@ -162,13 +176,13 @@ function MainHero() {
 
 
                 <div id="clickAndScroll">
-                    <div>Click to enter the Encrypted Dimension</div>
-                    <div className="clickAndScroll" onClick={() => scrollTo(2600)}>
+                    <div className="dimension">Click to enter the Encrypted Dimension</div>
+                    <div className="clickAndScroll" onClick={() => scrollTo(2800)}>
                         <img src={Arrow} alt="" />
                     </div>
                 </div>
                 <div id="random"></div>
-              
+
             </div>
         </Div100vh>
     )

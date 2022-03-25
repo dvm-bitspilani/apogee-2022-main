@@ -9,7 +9,7 @@ import ScrollScreen from "../Components/ScrollScreen/ScrollScreen.jsx";
 import Loader from "./loaderPage.jsx"
 import AboutUs from "../Components/AboutUs/AboutUs.jsx"
 import ContactUs from "../Components/ContactProfileCard/ContactUs.jsx"
-
+import Footer from "../Components/ContactProfileCard/Footer/Footer.jsx"
 import EventContainer from "../Components/EventContainer/EventContainer.jsx";
 import "../stylesheets/final.css";
 import Videos from "../Components/Videos/Videos.jsx";
@@ -39,15 +39,17 @@ function Test() {
       </div>
       <NavBar />
       <Pagination />
-      <MainHero />
+      <MainHero className="landing-section" />
       <SocialsHero />
       <CountdownSlate />
       <div className="mainWrapper">
-          <div className="section" id="aboutus">
+          <div className="section landing-section" id="aboutus">
           <AboutUs />
-          <Videos />
           </div>
-          <div className="section" id="kernelEvents">
+          <div className="section landing-section" id="videos">
+            <Videos/>
+          </div>
+          <div className="section landing-section" id="kernelEvents">
           <EventContainer
             className="kernelEvents"
             heading="KERNEL-EVENTS"
@@ -55,8 +57,11 @@ function Test() {
             api="https://bits-apogee.org/registrations/kernel_events/"
           />
           </div>
-          <div className="section" id="ContactUs">
+          <div className="section landing-section" id="ContactUs">
             <ContactUs/>
+          </div>
+          <div className="section" id="Footer">
+            <Footer/>
           </div>
       </div>
       {/* <AboutUs /> */}

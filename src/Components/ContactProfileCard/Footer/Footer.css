@@ -1,0 +1,43 @@
+#footer-wrapper {    height: max-content;
+    color: white;
+    /* font: normal normal medium 24px/29px Gilroy; */
+    text-align: center;
+    /* font-family: "Poppins"; */
+    padding: 24px;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0d0d0d 0% 0% no-repeat padding-box;
+    font-weight: 900 
+    
+}
+.FooterWrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: stretch;
+}
+@keyframes beat {
+    100% {
+        transform: scale(1.2);
+    }
+}
+.heart{
+    animation: beat 0.35s infinite alternate;
+    transform-origin: center;
+    margin: 0 10px;
+}
+.socialsFooter {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.twitterFooter ,.instaFooter,.facebookFooter {
+    padding: 50px 15px;
+}

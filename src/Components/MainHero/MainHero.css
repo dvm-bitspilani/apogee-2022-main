@@ -217,16 +217,16 @@
   }
   #cityLayer1,
   #cityLayer2 {
-    width: 140vw;
+    width: 90vw;
   }
   #cityLayer3 {
-    width: 140vw;
+    width: 100vw;
     left: -6vw;
   }
   #cityLayer4 {
-    width: 120vw;
-    top: 50.5vh;
-    left: -8vw;
+    width: 113vw;
+    top: 53.5vh;
+    /* left: -8vw; */
   }
   #cityLayer5 {
     width: 103vw;
@@ -251,4 +251,10 @@
     width: 2.5rem;
     aspect-ratio: 1;
   }
+  .dimension {
+    font-size: 16px;
+  }
+}
+.dimension {
+  text-align: center;
 }
