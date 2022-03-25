@@ -8,6 +8,7 @@ import { useInView } from 'react-intersection-observer'
 import ScrollScreen from "../Components/ScrollScreen/ScrollScreen.jsx";
 import Loader from "./loaderPage.jsx"
 import AboutUs from "../Components/AboutUs/AboutUs.jsx"
+import ContactUs from "../Components/ContactProfileCard/ContactUs.jsx"
 
 import EventContainer from "../Components/EventContainer/EventContainer.jsx";
 import "../stylesheets/final.css";
@@ -53,6 +54,9 @@ function Test() {
             type="kernel"
             api="https://bits-apogee.org/registrations/kernel_events/"
           />
+          </div>
+          <div className="section" id="ContactUs">
+            <ContactUs/>
           </div>
       </div>
       {/* <AboutUs /> */}

@@ -1,0 +1,26 @@
+.contactUsWrapper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    /* justify-content: center; */
+    align-items: center;
+    background: red;
+    width: 80vw;
+}
+.cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.headingContactUs {
+    text-align:left;
+    /* padding-left: 10vw; */
+    margin-bottom: 50px;
+    font-size: 56px;
+    font-family: "Pirulen";
+    color: white
+}

@@ -1,5 +1,5 @@
 .contactUsTitle {
-    font-size: 64px;
+    font-size: 24px;
     line-height: 76.8px;
     font-family: 'Pirulen';
     font-style: normal;
@@ -19,27 +19,30 @@
     padding-bottom: 10px;
     text-align: center;
     color: white;
-    width: 25vw;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 120px 10px 10px 10px;
+    padding: 0px 30px 20px;
 }
 
 .profileImage{
-    width: 200px;
-    height: 200px;
+    height: 150px;
+    aspect-ratio: 1;
     background-image: url("https://user-images.githubusercontent.com/69129797/160004780-1b581322-d7cf-4f5f-bce2-bbea4e129e67.png");
     background-size: cover;
     border-radius: 1000px;
+    margin-top: -75px;
     /* background: linear-gradient(143.78deg, #084691 18.71%, #97080C 100%); */
 }
 
 .profileContent h1 {
     font-weight: 900 !important;
+    font-size: 20px;
 }
 
 .profileContent p {
     color: #FFFFFF;
-
+    font-size: 14px;
     opacity: 0.8;
 }

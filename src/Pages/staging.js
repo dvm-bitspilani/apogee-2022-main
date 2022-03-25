@@ -10,11 +10,12 @@ import Background from "../assets/laptop/events_balcony.svg";
 import EventContainer from "../Components/EventContainer/EventContainer";
 import Loader from "./loaderPage.jsx"
 import ContactProfileCard from "../Components/ContactProfileCard/ContactProfileCard";
+import ContactUs from "../Components/ContactProfileCard/ContactUs.jsx"
 
 function Staging() {
   return (
-    <div className='all-events-wrapper'>
-      <ContactProfileCard />
+    <div className="Stage">
+        <ContactUs />
     </div>
   );
 }
