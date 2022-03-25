@@ -6,7 +6,7 @@ import { spacing, width } from "@mui/system";
 import fontawesome from "@fortawesome/fontawesome";
 import "./Navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { faAngleDown, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 import "animate.css";
 
@@ -16,8 +16,10 @@ function NavBar() {
   const [isShown, setIsShown] = useState(false);
   const [isAicShown, setIsAicShown] = useState(false);
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
+  const [isAicClicked, setIsAicClicked] = useState(false)
   let allLinks = useRef();
   let downArrow = useRef();
+  let rightArrow = useRef();
 
   let handleClick = () => {
     if (!isMenuOpen) {
@@ -41,42 +43,31 @@ function NavBar() {
     document.getElementById("drawer").style.transform = "translateX(100vw)";
   };
 
-  const mouseOverAIC = () => {
-    setIsShown(true);
-    if (window.screen.width > 768)
-      allLinks.current.style.transform = "translateX(0px)";
-    if (isAicShown && window.screen.width > 768)
-      allLinks.current.style.transform = "translateX(0px)";
-  };
-
-  const mouseOverAICMenu = () => {
-    setIsAicShown(true);
-    mouseOverAIC();
-  };
-
-  const mouseLeaveAIC = () => {
-    setIsShown(false);
-    if (window.screen.width > 768)
-      allLinks.current.style.transform = "translateX(100px)";
-  };
-
-  const mouseLeaveAICMenu = () => {
-    setIsAicShown(false);
-    mouseLeaveAIC();
-  };
-
   const handleLinkClick = () => {
     closeNav();
     hamburger.current.classList.remove("open");
   };
 
   const handleAICClick = () => {
+    setIsAicClicked(!isAicClicked);
+    if(!isAicClicked && window.screen.width > 768) rightArrow.current.classList.add("rotate-arrow")
+    else rightArrow.current.classList.remove("rotate-arrow")
+    if(!isAicClicked && window.screen.width > 768) allLinks.current.style.transform = "translateX(0)"
+    else if (isAicClicked && window.screen.width > 768) allLinks.current.style.transform = "translateX(100px)"
+  };
+
+  const handleAICClickMobile = () => {
     setIsSubMenuOpen(!isSubMenuOpen);
-    if (!isSubMenuOpen) downArrow.current.classList.add("rotate-arrow");
+    if (!isSubMenuOpen && window.screen.width < 768) downArrow.current.classList.add("rotate-arrow");
     else downArrow.current.classList.remove("rotate-arrow");
   };
 
-  fontawesome.library.add(faAngleDown);
+  // if(isAicClicked && window.screen.width > 768) rightArrow.current.classList.add("rotate-arrow")
+  //   else rightArrow.current.classList.add("rotate-arrow")
+  //   if (isAicClicked && window.screen.width > 768) allLinks.current.style.transform = "translateX(0px)"
+  //   else if (!isAicClicked && window.screen.width > 768) allLinks.current.style.transform = "translateX(100px)"
+
+  fontawesome.library.add(faAngleDown, faAngleRight);
   const linkStyles = { color: "unset", textDecoration: "none" };
 
   return (
@@ -124,7 +115,6 @@ function NavBar() {
               <div
                 className="all-links"
                 ref={allLinks}
-                onMouseLeave={() => setIsShown(false)}
               >
                 <a className="links" onClick={handleLinkClick} href="#">
                   <div>Home</div>
@@ -143,9 +133,7 @@ function NavBar() {
                   <div>Campus Ambassador</div>
                 </a>
                 <div
-                  id="aic"
-                  onMouseOver={mouseOverAIC}
-                  onMouseLeave={mouseLeaveAIC}
+                  id="aic" onClick={window.screen.width < 768 ? handleAICClickMobile : handleAICClick}
                 >
                   <div onClick={handleAICClick}>
                     AIC{" "}
@@ -153,18 +141,21 @@ function NavBar() {
                       <span ref={downArrow}>
                         <FontAwesomeIcon
                           icon="angle-down"
-                          className="down-icon"
+                          className="aic-arrow"
                         />
                       </span>
                     ) : (
-                      ""
+                      <span ref={rightArrow}>
+                        <FontAwesomeIcon
+                          icon="angle-right"
+                          className="aic-arrow right-arrow"
+                        />
+                      </span>
                     )}
                   </div>
                   {isSubMenuOpen && window.screen.width < 768 && (
                     <div
                       className="aic-container"
-                      onMouseEnter={() => setIsAicShown(true)}
-                      onMouseLeave={() => setIsAicShown(false)}
                     >
                       <div className="sub-menu">
                         <div>
@@ -185,6 +176,15 @@ function NavBar() {
                             href="https://bit.ly/AIC_Ge_Healthcare"
                           >
                             GE Healthcare
+                          </a>
+                        </div>
+                        <div>
+                          <a
+                            style={linkStyles}
+                            target="_blank"
+                            href="https://bit.ly/AIC_yamaha"
+                          >
+                            Yamaha
                           </a>
                         </div>
                         <div>
@@ -235,11 +235,9 @@ function NavBar() {
                   <div>All Events</div>
                 </a>
               </div>
-              {(isShown || isAicShown) && window.screen.width > 768 && (
+              {isAicClicked && window.screen.width > 768 && (
                 <div
                   className="aic-container"
-                  onMouseEnter={mouseOverAICMenu}
-                  onMouseLeave={mouseLeaveAICMenu}
                 >
                   <div className="sub-menu">
                     <div className="animate__animated animate__fadeInUp">

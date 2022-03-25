@@ -276,6 +276,7 @@ span {
   color: unset;
   font-family: "Montserrat";
   padding: 1rem;
+  cursor: pointer;
 }
 
 .drawer-container {
@@ -363,12 +364,16 @@ span {
   padding: 0.5rem;
 }
 
-.down-icon {
+.aic-arrow {
   font-size: 1.5rem;
+  transition: 0.3s ease all;
+}
+
+.aic-arrow.right-arrow{
   transition: 0.5s ease all;
 }
 
-.rotate-arrow .down-icon {
+.rotate-arrow .aic-arrow {
   transform: rotate(180deg);
 }
 
