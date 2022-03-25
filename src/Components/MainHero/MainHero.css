@@ -251,7 +251,7 @@ html{
     display: flex;
   }
   #bigFloorLaptop {
-    /* display: none; */
+    display: none;
   }
   #clickAndScroll {
     font-size: 1rem;
