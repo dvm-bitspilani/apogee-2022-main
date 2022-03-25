@@ -42,7 +42,7 @@ function Pagination() {
             
               <a className="dots anchorHome"  href="#heroSection"></a> 
                <a className="dots anchorAbout" href="#aboutus"></a> 
-              <a className="dots anchorVideos" href="#videos"></a> 
+              <a className="dots anchorVideos" href="#Videos"></a> 
               <a className="dots anchorKernel" href="#kernelEvents"></a> 
               <a className="dots anchorContact" href="#ContactUs"></a>  
             
