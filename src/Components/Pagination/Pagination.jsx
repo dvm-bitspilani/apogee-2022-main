@@ -28,7 +28,6 @@ function Pagination() {
     <div id="pagination">
       <div id="line">
         <a className="dots" href="#heroSection"></a>
-
         <a className="dots" href="#aboutus"></a>
         <a className="dots" href="#Videos"></a>
         <a className="dots" href="#kernelEvents"></a>

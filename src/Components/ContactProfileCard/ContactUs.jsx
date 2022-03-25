@@ -28,7 +28,7 @@ const
         },
         {
             profileImage: "rhythm",
-            Name: "Rhytm Saxena",
+            Name: "Rhythm Saxena",
             Designation: "Publicity and Online Partnerships",
             Mobile: "+91 95823 19968",
             Email: ["collaborations@bits-apogee.org"]
