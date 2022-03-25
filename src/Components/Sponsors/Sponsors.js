@@ -10,11 +10,11 @@ export const Sponsors = (props) => {
       {/* <div className="loaderDivEvents">
         <LoaderPage />
       </div> */}
-      <Link to="/">
+      <a href="/">
         <div className="arrowSponsors">
           <img src={Arrow} alt="" />
         </div>
-      </Link>
+      </a>
       <div className="intro">SPONSORS</div>
       <div className="wrapperSponsors">
         <div className="sponsorHeading">Title Sponsor</div>

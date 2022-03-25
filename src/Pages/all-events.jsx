@@ -37,11 +37,11 @@ function Events(props) {
       <div className="loaderDivEvents">
         <Loader />
       </div>
-      <Link to="/">
+      <a href="/">
         <div className="arrow">
           <img src={Arrow} alt="" />
         </div>
-      </Link>
+      </a>
       <EventContainer
         heading={props.heading}
         api={props.link}

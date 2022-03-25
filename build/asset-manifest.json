@@ -1,20 +1,11 @@
 {
   "files": {
-<<<<<<< HEAD
-    "main.css": "/static/css/main.def70850.css",
-    "main.js": "/static/js/main.8c1887d2.js",
-    "static/media/finalGrid.png": "/static/media/finalGrid.d1197ba5d5bd4e8a9fbb.png",
-    "static/media/floorGrid.png": "/static/media/floorGrid.f9f36442802123db5805.png",
-    "static/media/Moon1.png": "/static/media/Moon1.a21be2b0084d5dfd197c.png",
-    "static/media/bigFloorMobile.png": "/static/media/bigFloorMobile.70b5498d64c9d917487a.png",
-=======
     "main.css": "/static/css/main.9caee2d1.css",
-    "main.js": "/static/js/main.b33fd364.js",
+    "main.js": "/static/js/main.bffec05c.js",
     "static/media/finalGrid.png": "/static/media/finalGrid.c682c45c161711b6f9eb.png",
     "static/media/floorGrid.png": "/static/media/floorGrid.f9f36442802123db5805.png",
     "static/media/Moon1.png": "/static/media/Moon1.a21be2b0084d5dfd197c.png",
     "static/media/bigFloorMobile.png": "/static/media/bigFloorMobile.89a67f5b8a67b793400e.png",
->>>>>>> 1faa9f14d7c339c6ef4bf03292d2e7e856e8c0f9
     "static/media/Sign.svg": "/static/media/Sign.47d81a0bf1455dd28b7e074cb7d6deea.svg",
     "static/media/longStars.png": "/static/media/longStars.a38c3cfde6f7d771fcdc.png",
     "static/media/Vector.svg": "/static/media/Vector.095e205ed9af2158d698deed3eaef086.svg",
@@ -33,12 +24,9 @@
     "static/media/navya.png": "/static/media/navya.24edadfd58971f11bbda.png",
     "static/media/shreya.png": "/static/media/shreya.2b91cf5c57d89ede5f10.png",
     "static/media/Gilroy.otf": "/static/media/Gilroy.cc7ab55d27205bd64001.otf",
-<<<<<<< HEAD
-=======
     "static/media/divyam.png": "/static/media/divyam.997eff44f230ca7668b4.png",
     "static/media/rhythm.png": "/static/media/rhythm.3e5c4f0b1b3a533fbbd3.png",
     "static/media/shukla.png": "/static/media/shukla.9090e728b3d0ea41fc96.png",
->>>>>>> 1faa9f14d7c339c6ef4bf03292d2e7e856e8c0f9
     "static/media/Pirulen.otf": "/static/media/Pirulen.8cd956b0478c0e3dc882.otf",
     "static/media/pirulen rg.otf": "/static/media/pirulen rg.8cd956b0478c0e3dc882.otf",
     "static/media/balcony_grid_full.svg": "/static/media/balcony_grid_full.b5e15292f51fa01e5ddc8fe54d31c83e.svg",
@@ -65,20 +53,11 @@
     "static/media/down-arrow.svg": "/static/media/down-arrow.ee19d975d72483aa8605fe4ebe5450f9.svg",
     "static/media/Sky.svg": "/static/media/Sky.d5d27986d37c474eeda4.svg",
     "static/media/Arrox.svg": "/static/media/Arrox.97b633c6fff07eb6a4665f665abaad15.svg",
-<<<<<<< HEAD
-    "main.def70850.css.map": "/static/css/main.def70850.css.map",
-    "main.8c1887d2.js.map": "/static/js/main.8c1887d2.js.map"
-  },
-  "entrypoints": [
-    "static/css/main.def70850.css",
-    "static/js/main.8c1887d2.js"
-=======
     "main.9caee2d1.css.map": "/static/css/main.9caee2d1.css.map",
-    "main.b33fd364.js.map": "/static/js/main.b33fd364.js.map"
+    "main.bffec05c.js.map": "/static/js/main.bffec05c.js.map"
   },
   "entrypoints": [
     "static/css/main.9caee2d1.css",
-    "static/js/main.b33fd364.js"
->>>>>>> 1faa9f14d7c339c6ef4bf03292d2e7e856e8c0f9
+    "static/js/main.bffec05c.js"
   ]
 }
