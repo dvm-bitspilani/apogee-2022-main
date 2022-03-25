@@ -8,7 +8,7 @@ import "./Navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
-import "animate.css"
+import "animate.css";
 
 function NavBar() {
   let hamburger = useRef();
@@ -33,13 +33,13 @@ function NavBar() {
   const openNav = () => {
     document.body.style.overflow = "hidden";
     document.getElementById("drawer").style.transform = "translateX(00px)";
-  }
+  };
 
   const closeNav = () => {
     document.body.style.overflowY = "scroll";
     document.body.style.overflowX = "hidden";
     document.getElementById("drawer").style.transform = "translateX(100vw)";
-  }
+  };
 
   const mouseOverAIC = () => {
     setIsShown(true);
@@ -56,7 +56,8 @@ function NavBar() {
 
   const mouseLeaveAIC = () => {
     setIsShown(false);
-    if(window.screen.width > 768) allLinks.current.style.transform = "translateX(100px)";
+    if (window.screen.width > 768)
+      allLinks.current.style.transform = "translateX(100px)";
   };
 
   const mouseLeaveAICMenu = () => {
@@ -227,8 +228,8 @@ function NavBar() {
                 >
                   <div>Kernel Events</div>
                 </a> */}
-                 <Link className="links" to="/kernel-events">
-                  <div>Kernel Events</div>
+                <Link className="links" to="/sponsors">
+                  <div>Sponsors</div>
                 </Link>
                 <Link className="links" to="/events">
                   <div>All Events</div>
@@ -260,7 +261,13 @@ function NavBar() {
                       </a>
                     </div>
                     <div className="animate__animated animate__fadeInUp">
-                      <a style={linkStyles} target="_blank" href="https://bit.ly/AIC_yamaha">Yamaha</a>
+                      <a
+                        style={linkStyles}
+                        target="_blank"
+                        href="https://bit.ly/AIC_yamaha"
+                      >
+                        Yamaha
+                      </a>
                     </div>
                     <div className="animate__animated animate__fadeInUp animate_faster">
                       <a

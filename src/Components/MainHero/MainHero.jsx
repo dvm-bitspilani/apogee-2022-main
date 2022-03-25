@@ -28,10 +28,11 @@ function MainHero() {
 
     function scrollTo(offset) {
         scroller.scrollTo("random", {
-            duration: 1600,
+            duration: 1000,
             delay: 0,
             smooth: "easeOutCubic",
-            offset: offset
+            offset: offset,
+            ignoreCancelEvents:true
         })
 
     }
@@ -44,29 +45,25 @@ function MainHero() {
 
 
     useEffect(() => {
-
+        
         window.onscroll = function (e) {
-            // print "false" if direction is down and "true" if up
             if (this.oldScroll <= this.scrollY) {
-                if (window.pageYOffset > 0 && window.pageYOffset < 100) {
+                if (window.pageYOffset > 0 && window.pageYOffset < 40) {
                     scrollTo(2800);
 
                 }
             }
-            console.log(this.oldScroll <= this.scrollY);
+            else {
+                if (window.pageYOffset > 3300 && window.pageYOffset < 3650) {
+        
+                    scroll.scrollToTop({ignoreCancelEvents:true,smooth: "linear",duration:400});
+                  
+                    } 
+            }
+      
             this.oldScroll = this.scrollY;
-        }
-        // window.addEventListener("scroll", () => {
-        //     // console.log(window.pageYOffset);
-        //     if (window.pageYOffset > 0 && window.pageYOffset < 15) {
-        //         scrollTo(2600);
-        //         // console.log("scrolled");
-        //     }
-        //     // if ( window.pageYOffset >400) {
-        //     //     scroll.scrollToTop();
-        //     //     // console.log("scrolled");
-        //     // }
-        //     })
+          }
+     
         document.getElementsByClassName("clickAndScroll")[0].addEventListener("click", () => {
             document.body.style.overflowY = "hidden !important"
         })
@@ -92,7 +89,7 @@ function MainHero() {
         // //         // Scrolling Down with mouse
         // //         console.log('Scroll Down');
 
-        Layer1.current.style.transform = "bottom: 0";
+        Layer1.current.style.transform = "bottom: 0"; 
         // console.log(Layer1.current, screenWidth, screenHeight);
         // setTimeout(() => {
         //     document.getElementById("cityLayer1").style.transform = "translate(5%, 0px)"
@@ -117,7 +114,7 @@ function MainHero() {
 
     return (
         <Div100vh>
-            <div className="wrapperMainHero landing-section">
+            <div className="wrapperMainHero landing-section" id="heroSection">
                 <div className="upperHero">
                     <div className="skyWrapper">
                         <div class="sky"></div>

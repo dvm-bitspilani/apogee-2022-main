@@ -39,7 +39,7 @@ function Test() {
       </div>
       <NavBar />
       <Pagination />
-      <MainHero />
+      <MainHero className="landing-section" />
       <SocialsHero />
       <CountdownSlate />
       <div className="mainWrapper">

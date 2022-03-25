@@ -171,10 +171,11 @@
   }
 }
 
-#clickAndScroll{
-  z-index: 14;
+#clickAndScroll {
+  z-index: 12;
   position: absolute;
-  top: 86%;
+  bottom: 3vh;
+  text-align: center;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -185,9 +186,12 @@
   font-size: 1.25rem;
 }
 
-.clickAndScroll{
-  width: 3.5rem;
-  height: 3.5rem;
+.clickAndScroll {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  aspect-ratio: 1;
   border-radius: 50%;
   display: flex;
   padding: 10px;
@@ -195,10 +199,10 @@
   border: 2px solid rgba(209, 213, 219, 0.3);
   text-align: center;
   margin-top: 0.75rem;
+  cursor: pointer;
 }
 .clickAndScroll img {
-  width: 100%;
-
+  width: 80%;
 }
 
 @media screen and (max-width: 768px) {
@@ -206,10 +210,10 @@
     width: 100vw;
     overflow: hidden;
   }
-  .testWrapper{
+  .testWrapper {
     /* position: relative; */
     width: 100vw;
-    overflow-x: hidden ;
+    overflow-x: hidden;
   }
   #cityLayer1,
   #cityLayer2 {
@@ -239,6 +243,13 @@
   }
   #bigFloorLaptop {
     display: none;
+  }
+  #clickAndScroll {
+    font-size: 1rem;
+  }
+  .clickAndScroll {
+    width: 2.5rem;
+    aspect-ratio: 1;
   }
   .dimension {
     font-size: 16px;
