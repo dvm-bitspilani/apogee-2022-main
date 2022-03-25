@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Link } from 'react-router-dom'
+import { HashLink as Link } from "react-router-hash-link";
 
 import "./Pagination.css";
 
@@ -13,17 +13,30 @@ function Pagination() {
         console.log(arr)
     }, [])
     return (
-        <div id="pagination">
-            <div id="line">
-                <a className="dots" href="#heroSection"></a> 
-                <a className="dots" href="#aboutus"></a> 
-                <a className="dots" href="#videos"></a> 
-                <a className="dots" href="#kernelEvents"></a> 
-                <a className="dots" href="#ContactUs"></a> 
-
-            </div>
+      <div id="pagination">
+        <div id="line">
+          <Link to="#heroSection">
+            <a className="dots"></a>
+          </Link>
+          <Link to="#aboutus">
+            <a className="dots"></a>
+          </Link>{" "}
+          <Link to="#videos">
+            <a className="dots"></a>
+          </Link>{" "}
+          <Link to="#kernelEvents">
+            <a className="dots"></a>
+          </Link>{" "}
+          <Link to="#ContactUs">
+            <a className="dots"></a>
+          </Link>
+          <a className="dots" href="#aboutus"></a>
+          <a className="dots" href="#videos"></a>
+          <a className="dots" href="#kernelEvents"></a>
+          <a className="dots" href="#ContactUs"></a>
         </div>
-    )
+      </div>
+    );
 }
 
 export default Pagination;
