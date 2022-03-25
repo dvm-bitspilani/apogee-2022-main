@@ -78,7 +78,7 @@ function Footer() {
                 </div>
             <div className="credits">
             <div id="footer-wrapper">
-        Made with <div class="heart" ondblclick="random_function()"> ❤️ </div>&nbsp;by DVM
+        Made with <div class="heart" ondblclick="random_function()"> ❤️ </div>&nbsp;by &nbsp; <a href="https://bits-dvm.org" target="_blank"> DVM</a>
     </div>
             </div>
         </div>
