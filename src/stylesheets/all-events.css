@@ -17,6 +17,7 @@
   -ms-flex-direction: column;
   flex-direction: column;
   top: 0;
+  z-index: 15;
   color: white;
 }
 

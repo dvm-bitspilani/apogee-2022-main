@@ -16,9 +16,7 @@
 }
 
 body {
-  background: url("Assets/meteor\ background.png") black;
-  background-size: 100vw;
-  background-repeat: repeat;
+  
 }
 .arrowSponsors {
   width: 40px;
@@ -28,6 +26,9 @@ body {
   cursor: pointer;
 }
 .wrapperSponsors {
+  background: url("Assets/meteor\ background.png") black;
+  background-size: 100vw;
+  background-repeat: repeat;
   font-family: "Pirulen";
 
   display: flex;
