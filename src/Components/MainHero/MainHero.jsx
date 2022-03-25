@@ -15,8 +15,8 @@ import Moon from "../../assets/Moon1.png";
 import Div100vh from 'react-div-100vh';
 import ScrollScreen from "../ScrollScreen/ScrollScreen.jsx";
 import floor from "./MainHeroAssets/floorGrid.png";
-import bigFloor from "./MainHeroAssets/finalGrid.png";
-import bigFloorMobile from "./MainHeroAssets/bigFloorMobile.png";
+import bigFloor from "./MainHeroAssets/finalGrid.svg";
+import bigFloorMobile from "./MainHeroAssets/bigFloorMobile.svg";
 
 import floorGlow from "./MainHeroAssets/GroupFloorGlow.svg";
 // Styles
