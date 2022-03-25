@@ -51,9 +51,10 @@ body {
 }
 .intro {
   font-size: 3em;
-  color: white;
-  margin-top: 5vh;
-  text-align: center; /* s */
+    color: white;
+    padding-top: 5vh;
+    text-align: center;
+    background: black;
 }
 .flex {
   display: flex;
