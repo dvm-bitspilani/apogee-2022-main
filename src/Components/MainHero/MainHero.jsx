@@ -47,10 +47,6 @@ function MainHero() {
 
     
     useEffect(() => {
-        document.getElementsByClassName("clickAndScroll")[0].addEventListener("click", () => {
-           document.querySelector("body").style.overflowY = "scroll !important"
-            console.log("clicked");
-        })
         window.onscroll = function (e) {
             if (this.oldScroll <= this.scrollY) {
                 // if (window.pageYOffset > 0 && window.pageYOffset < 40) {
