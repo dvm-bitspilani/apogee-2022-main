@@ -60,7 +60,7 @@
       height = document.getElementById("bigFloorLaptop").offsetHeight; 
     }
     console.log("height",height)
-    document.getElementsByClassName("mainWrapper")[0].style.marginTop = height + "px";
+    document.getElementsByClassName("mainWrapper")[0].style.marginTop = height-200 + "px";
     document.getElementsByClassName("loaderDiv")[0].style.display = "none";
     document.getElementsByTagName("BODY")[0].style.overflowY = "scroll";
     document.getElementById("cityLayer1").style.transform = "translate(5%, 0px)";

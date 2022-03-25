@@ -35,7 +35,7 @@
 .mainWrapper {
   /* height: 100vh; */
   width: 100vw;
-  background: red;
+  background-image: url("../Components/MainHero/MainHeroAssets/longStars.png");
 }
 #ContactUs {
   display: flex;

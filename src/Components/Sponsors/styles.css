@@ -1,0 +1,82 @@
+@font-face {
+    font-family: 'Pirulen';
+    src: url(Assets/pirulen\ rg.otf);
+}
+@font-face {
+    font-family: 'Forgotten Futurist';
+    src: url(Assets/forgotten\ futurist\ rg.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Pirulen';
+}
+
+body{
+    background: url('Assets/Stars.png') black;
+}
+.sponsorHeading {
+    width: 100%;
+    font-size: 1.5em;
+    height: 2vw;
+    text-align: center;
+    color: white;
+    margin-top: 6.5vh;
+    margin-inline: 0.5em;
+}
+.details{
+    display: flex;
+    justify-content: space-evenly;
+    margin-inline: 2.5em;
+    /* overflow: hidden; */
+    flex-wrap: wrap;
+}
+.intro{
+    font-size: 3em;
+    color: white;
+    margin-top: 1.4em;
+    margin-left: 2em;
+    /* s */
+}
+.flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.3s;
+    cursor: pointer;
+    flex-wrap: wrap;
+    margin: 2em;
+}
+.flex:hover{
+    transform: scale(1.1);
+}
+.name{
+    text-align: center;
+    color: white;
+    font-size: 1.5em;
+    margin-top: 2.5vw;
+    font-family: 'Forgotten Futurist';
+}
+.logo{
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: center;
+    margin-top: 4vw;
+}
+.logo img{
+    width: 15em;
+}
+@media (max-width:960px) {
+    .details{
+        flex-direction: column;
+    }
+    .sponsorHeading{
+        font-size: 1.2em;
+    }
+    .intro{
+        font-size: 2em;
+    }
+}
