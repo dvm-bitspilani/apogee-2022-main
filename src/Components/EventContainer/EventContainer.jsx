@@ -20,47 +20,54 @@ function EventContainer(props) {
         if (props.type == "kernel") setEvents(result.data[0].events);
         else setEvents(result[0].events);
         console.log(result);
-        if(document.getElementsByClassName("loaderDivEvents")[0]){
-          document.getElementsByClassName("loaderDivEvents")[0].style.display = "none";
+        if (document.getElementsByClassName("loaderDivEvents")[0]) {
+          document.getElementsByClassName("loaderDivEvents")[0].style.display =
+            "none";
         }
       })
       .catch((error) => {
         console.log("ERROR", error);
-        const errorEvent = [{
-          about: "<p>NA</p>",
-          categories: ['NonWorkshop'],
-          contact: "",
-          date_time: "TBA",
-          description: "Server is Busy",
-          details: "<p>NA</p>",
-          duration: 0,
-          end_time: "TBA",
-          id: 1,
-          image_url: "",
-          name: "SERVER IS BUSY",
-          rules: "<p>NA</p>",
-          time: "All day",
-          timings: "TBA",
-          venue: "TBA",
-        }];
+        const errorEvent = [
+          {
+            about: "<p>NA</p>",
+            categories: ["NonWorkshop"],
+            contact: "",
+            date_time: "TBA",
+            description: "Server is Busy",
+            details: "<p>NA</p>",
+            duration: 0,
+            end_time: "TBA",
+            id: 1,
+            image_url: "",
+            name: "SERVER IS BUSY",
+            rules: "<p>NA</p>",
+            time: "All day",
+            timings: "TBA",
+            venue: "TBA",
+          },
+        ];
         setEvents(errorEvent);
-
       });
-    document.body.style.overflowY = "scroll"
+    document.body.style.overflowY = "scroll";
   }, []);
 
   const [eventDesc, setEventDesc] = React.useState("");
   const [eventName, setEventName] = React.useState("");
+  const [isDiabled, setIsDisabled] = React.useState(false);
   const [descriptionDetails, setDescriptionDetails] = React.useState("none");
   const handleOpen = (name, desc) => {
+    if (desc === null) {
+      return;
+    }
     setDescriptionDetails("flex");
+
     setEventName(name);
     setEventDesc(desc);
   };
   const handleClose = () => setDescriptionDetails("none");
   const changeDriveLink = (driveLink) => {
     if (!driveLink.includes("google")) {
-      return
+      return;
     }
     if (driveLink.includes("bits-apogee") || driveLink.includes("default")) {
       return;
