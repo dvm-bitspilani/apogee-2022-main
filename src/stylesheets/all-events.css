@@ -35,14 +35,14 @@
   -webkit-backdrop-filter: blur(130px);
   backdrop-filter: blur(130px);
   border-radius: 20px;
-  min-width: 60vw;
   width: auto;
   padding: 3vh 5vw 5vh;
   font-family: "Montserrat", sans-serif;
+  max-width: 50vw;
 }
 
 .kernel-events .card-description-box {
-  max-width: 65vw;
+  max-width: 50vw;
 }
 
 .close-card-description {
@@ -79,6 +79,6 @@
   left: 0;
   right: 0;
   margin: auto;
-  z-index:30; 
+  z-index: 30;
   overflow: hidden;
 }

@@ -43,26 +43,26 @@ function Test() {
       <SocialsHero />
       <CountdownSlate />
       <div className="mainWrapper">
-          <div className="section landing-section" id="aboutus">
+        <div className="section" id="aboutus">
           <AboutUs />
-          </div>
-          <div className="section landing-section" id="videos">
-            <Videos/>
-          </div>
-          <div className="section landing-section" id="kernelEvents">
+        </div>
+        <div className="section" id="Videos">
+          <Videos />
+        </div>
+        <div className="section" id="kernelEvents">
           <EventContainer
             className="kernelEvents"
-            heading="KERNEL-EVENTS"
+            heading="KERNEL EVENTS"
             type="kernel"
             api="https://bits-apogee.org/registrations/kernel_events/"
           />
-          </div>
-          <div className="section landing-section" id="ContactUs">
-            <ContactUs/>
-          </div>
-          <div className="section" id="Footer">
-            <Footer/>
-          </div>
+        </div>
+        <div className="section" id="ContactUs">
+          <ContactUs />
+        </div>
+        <div className="section" id="Footer">
+          <Footer />
+        </div>
       </div>
       {/* <AboutUs /> */}
       {/* <div style={{ background: "white", zIndex: "15" }}>

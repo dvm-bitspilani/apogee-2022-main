@@ -7,17 +7,17 @@ function ContactUs() {
 
     return (
         <div className="contactUsWrapper">
-            <div className=" heading headingContactUs ">CONTACT US</div>
+            <div className="SectionHeading aboutUsHeading ">CONTACT US</div>
             <div className="cards">
-            <ContactProfileCard />
-            <ContactProfileCard />
-            <ContactProfileCard />
-            <ContactProfileCard />
-            <ContactProfileCard />
-            <ContactProfileCard />
-            <ContactProfileCard />
-            <ContactProfileCard />
-            <ContactProfileCard />
+                <ContactProfileCard />
+                <ContactProfileCard />
+                <ContactProfileCard />
+                <ContactProfileCard />
+                <ContactProfileCard />
+                <ContactProfileCard />
+                <ContactProfileCard />
+                <ContactProfileCard />
+                <ContactProfileCard />
             </div>
 
         </div>
