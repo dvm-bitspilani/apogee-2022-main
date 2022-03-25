@@ -21,6 +21,7 @@ import bigFloorMobile from "./MainHeroAssets/bigFloorMobile.png";
 import floorGlow from "./MainHeroAssets/GroupFloorGlow.svg";
 // Styles
 import "./MainHero.css"
+import AboutUs from "../AboutUs/AboutUs";
 
 function MainHero() {
 
@@ -161,12 +162,13 @@ function MainHero() {
 
 
                 <div id="clickAndScroll">
-                    <div>Click here to enter Encrypted Dimension</div>
+                    <div>Click to enter the Encrypted Dimension</div>
                     <div className="clickAndScroll" onClick={() => scrollTo(2600)}>
                         <img src={Arrow} alt="" />
                     </div>
                 </div>
                 <div id="random"></div>
+              
             </div>
         </Div100vh>
     )

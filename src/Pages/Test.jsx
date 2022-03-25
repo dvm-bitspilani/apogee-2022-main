@@ -12,6 +12,7 @@ import ContactUs from "../Components/ContactProfileCard/ContactUs.jsx"
 
 import EventContainer from "../Components/EventContainer/EventContainer.jsx";
 import "../stylesheets/final.css";
+import Videos from "../Components/Videos/Videos.jsx";
 
 function Test() {
 
@@ -43,7 +44,8 @@ function Test() {
       <CountdownSlate />
       <div className="mainWrapper">
           <div className="section" id="aboutus">
-            <AboutUs/>
+          <AboutUs />
+          <Videos />
           </div>
           <div className="section" id="kernelEvents">
           <EventContainer

@@ -1,0 +1,103 @@
+@font-face {
+    font-family: "Pirulen";
+    src: local("Pirulen"), url("../../fonts/Pirulen.otf") format("opentype");
+    font-weight: normal;
+  }
+@font-face {
+    font-family: "Forgotten Futurist";
+    src: local("Forgotten Futurist"), url("../../fonts/Forgotten Futurist.ttf") format("truetype");
+    font-weight: normal;
+  }
+
+
+.mainVideoWrapper {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    background: black;
+    margin-bottom: 100px;
+    /* position: relative;
+    top: 500vh; */
+}
+.aboutUsHeading {
+    font-size: 64px;
+    line-height: 76.8px;
+    font-family: 'Pirulen';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 77px;
+    margin: 50px 50px;
+    color: white;
+}
+.aboutUsDetails {
+    font-family: 'Forgotten Futurist';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 46px;
+    letter-spacing: 0.12em;
+    margin: 0 150px;
+    color: white;
+}
+.video1{
+    display: flex;
+flex-direction: column;
+justify-content: flex-start;
+}
+.video1 div, .video2 div{
+    
+    border: 26px solid transparent;
+    border-image: url("./background1.png") 5% round;
+}
+
+.video1 span, .video2 span{
+
+color: white;
+font-size: 1.75rem;
+margin-left: 30px;
+font-family: 'Forgotten Futurist';
+
+}
+.video2{
+    display: flex;
+flex-direction: column;
+justify-content: flex-end;
+
+}
+
+.videoWrapper{
+    margin: 0px 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 100%;
+    margin-bottom: 60px;
+}
+
+@media screen and (max-width: 768px){
+    .aboutUsHeading {
+        font-size: 36px;
+        text-align: center;
+        margin: 50px 0;
+    }
+    .aboutUsDetails {
+        margin: 0 30px;
+    text-align: center;
+    } 
+    .videoWrapper{
+        flex-direction: column;
+        margin-bottom: 10%;
+    }
+    .videoWrapper iframe{
+        width: 220px;
+        height: 160px;
+    }
+    .video1 span, .video2 span{
+        font-size: 1.2rem;
+        margin-left: 0;
+        text-align: center;
+    }
+}
