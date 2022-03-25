@@ -24,12 +24,13 @@
     align-items: center;
     margin: 120px 10px 10px 10px;
     padding: 0px 30px 20px;
+    max-width:20vw
 }
 
-.profileImage{
+.profileImage > img{
     height: 150px;
     aspect-ratio: 1;
-    background-image: url("https://user-images.githubusercontent.com/69129797/160004780-1b581322-d7cf-4f5f-bce2-bbea4e129e67.png");
+    /* background-image: url("https://user-images.githubusercontent.com/69129797/160004780-1b581322-d7cf-4f5f-bce2-bbea4e129e67.png"); */
     background-size: cover;
     border-radius: 1000px;
     margin-top: -75px;
@@ -48,5 +49,12 @@
     font-size: 14px;
     opacity: 0.8;
     padding: 5px 5px;
+    white-space: break-spaces;
 
+}
+
+@media all and (max-width: 768px) {
+    .cardWrapper{
+        max-width:80vw
+    }
 }
