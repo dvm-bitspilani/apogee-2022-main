@@ -11,34 +11,19 @@ const
             Mobile: "+91 81077 28892",
             Email: ["webmaster@bits-apogee.org"]
         },
-
+        {
+            profileImage: "vidhushi",
+            Name: "Vidushi Sahay",
+            Designation: "Registrations and Correspondence",
+            Mobile: "+91 98719 41631",
+            Email: ["pcr@bits-apogee.org"]
+        },
         {
             profileImage: "shashwath",
             Name: "Shashwath M S",
             Designation: "Reception and Accomodation",
             Mobile: "+91 99729 59249",
             Email: ["recnacc@bits-apogee.org"]
-        },
-        {
-            profileImage: "shukla",
-            Name: "Harsh Shukla",
-            Designation: "President, Student Union",
-            Mobile: "+91 73909 67807",
-            Email: ["president@pilani.bits-pilani.ac.in"]
-        },
-        {
-            profileImage: "rhythm",
-            Name: "Rhytm Saxena",
-            Designation: "Publicity and Online Partnerships",
-            Mobile: "+91 95823 19968",
-            Email: ["collaborations@bits-apogee.org"]
-        },
-        {
-            profileImage: "lamba",
-            Name: "Harsh Lamba",
-            Designation: "General Secretary, Student Union",
-            Mobile: "+91 70827 69694",
-            Email: ["gensec@pilani.bits-pilani.ac.in"]
         },
         {
             profileImage: "shreya",
@@ -48,18 +33,32 @@ const
             Email: ["sponsorship@bits-apogee.org"]
         },
         {
+            profileImage: "rhythm",
+            Name: "Rhytm Saxena",
+            Designation: "Publicity and Online Partnerships",
+            Mobile: "+91 95823 19968",
+            Email: ["collaborations@bits-apogee.org"]
+        },
+        {
             profileImage: "navya",
             Name: "Navya Bhatnagar",
-            Designation: "Registration, Events and Projects",
+            Designation: "Events, Projects and Logistics",
             Mobile: "+91 70227 34110",
             Email: ["controls@bits-apogee.org"]
         },
         {
-            profileImage: "vidhushi",
-            Name: "Vidushi Sahay",
-            Designation: "Registrations and Correspondence",
-            Mobile: "+91 98719 41631",
-            Email: ["pcr@bits-apogee.org"]
+            profileImage: "shukla",
+            Name: "Harsh Shukla",
+            Designation: "President, Student Union",
+            Mobile: "+91 73909 67807",
+            Email: ["president@pilani.bits-pilani.ac.in"]
+        },
+        {
+            profileImage: "lamba",
+            Name: "Harsh Lamba",
+            Designation: "General Secretary, Student Union",
+            Mobile: "+91 70827 69694",
+            Email: ["gensec@pilani.bits-pilani.ac.in"]
         },
         {
             profileImage: "divyam",
