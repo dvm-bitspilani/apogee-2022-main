@@ -44,15 +44,31 @@ function MainHero() {
 
 
     useEffect(() => {
-     
-        window.addEventListener("scroll", () => {
-            // console.log(window.pageYOffset);
-            if (window.pageYOffset > 0 && window.pageYOffset < 15) {
-                scrollTo(2600);
-                // console.log("scrolled");
-            }
-            })
-         
+
+        window.onscroll = function(e) {
+            // print "false" if direction is down and "true" if up
+            if (this.oldScroll <= this.scrollY) {
+                if (window.pageYOffset > 0 && window.pageYOffset < 100) {
+                scrollTo(2800);
+            
+            }}
+            console.log(this.oldScroll <= this.scrollY);
+            this.oldScroll = this.scrollY;
+          }
+        // window.addEventListener("scroll", () => {
+        //     // console.log(window.pageYOffset);
+        //     if (window.pageYOffset > 0 && window.pageYOffset < 15) {
+        //         scrollTo(2600);
+        //         // console.log("scrolled");
+        //     }
+        //     // if ( window.pageYOffset >400) {
+        //     //     scroll.scrollToTop();
+        //     //     // console.log("scrolled");
+        //     // }
+        //     })
+        document.getElementsByClassName("clickAndScroll")[0].addEventListener("click", () => {
+            document.body.style.overflowY = "hidden !important"
+         })
     
               Events.scrollEvent.register("begin", function () {
               console.log("begin", arguments);
@@ -163,7 +179,7 @@ function MainHero() {
 
                 <div id="clickAndScroll">
                     <div>Click to enter the Encrypted Dimension</div>
-                    <div className="clickAndScroll" onClick={() => scrollTo(2600)}>
+                    <div className="clickAndScroll" onClick={() => scrollTo(2800)}>
                         <img src={Arrow} alt="" />
                     </div>
                 </div>
