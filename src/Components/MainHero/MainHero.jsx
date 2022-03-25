@@ -39,7 +39,10 @@ function MainHero() {
 
 
     const handleScrollClick = () => {
-        scrollTo(3000);
+        if (window.screen.width<768) {
+            scrollTo(2000);
+        }
+        else scrollTo(3000);
         document.body.style.overflowY = "scroll";
     }
 
