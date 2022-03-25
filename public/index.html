@@ -57,7 +57,20 @@
 </body>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>
+   window.addEventListener("wheel", ()=> {
+  $(document.getElementById("clickAndScrollBtn")).addClass('arrowAnimation');
+  $(document.getElementById("clickAndScrollBtn")).one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(event) {
+    $(document.getElementById("clickAndScrollBtn")).removeClass('arrowAnimation')
+}); 
+          })
+
+
+$("#clickAndScrollBtn").click(function(){
+  $("body").css("overflowY", "scroll !important");
+})
+
   function allImagesLoaded() {
+
     console.log("ALL IMAGES LOADED");
     var height = 0;
     if (document.body.clientWidth <= 768) {
@@ -67,9 +80,10 @@
       height = document.getElementById("bigFloorLaptop").offsetHeight;
     }
     console.log("height", height)
+
     document.getElementsByClassName("mainWrapper")[0].style.marginTop = height - 200 + "px";
     document.getElementsByClassName("loaderDiv")[0].style.display = "none";
-    document.getElementsByTagName("BODY")[0].style.overflowY = "scroll";
+    // document.getElementsByTagName("BODY")[0].style.overflowY = "scroll";
     document.getElementById("cityLayer1").style.transform = "translate(5%, 0px)";
     setTimeout(() => {
       document.getElementById("cityLayer1").style.transform = "translate(5%, 0px)"

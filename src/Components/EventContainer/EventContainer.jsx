@@ -47,7 +47,7 @@ function EventContainer(props) {
         ];
         setEvents(errorEvent);
       });
-    document.body.style.overflowY = "scroll";
+
   }, []);
 
   const [eventDesc, setEventDesc] = React.useState("");

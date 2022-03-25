@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./styles.css";
 import Arrow from "../../assets/Arrox.svg";
 import LoaderPage from "../../Pages/loaderPage";
-
+import Image1 from "./Assets/fis.png"
 export const Sponsors = (props) => {
   return (
     <>
@@ -29,7 +29,7 @@ export const Sponsors = (props) => {
             }
           >
             <div className="logoSponsors">
-              <img src="./Assets/Logos/FIS_logoSponsors_c_rgb.png" alt="" />
+              <img src={Image1} alt="" />
             </div>
             <div className="name">FIS</div>
           </div>
