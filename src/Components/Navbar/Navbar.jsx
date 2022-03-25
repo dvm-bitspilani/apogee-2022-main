@@ -228,12 +228,12 @@ function NavBar() {
                 >
                   <div>Kernel Events</div>
                 </a> */}
-                <Link className="links" to="/sponsors">
+                <a className="links" href="/#/sponsors">
                   <div>Sponsors</div>
-                </Link>
-                <Link className="links" to="/events">
+                </a>
+                <a className="links" href="/#/events">
                   <div>All Events</div>
-                </Link>
+                </a>
               </div>
               {(isShown || isAicShown) && window.screen.width > 768 && (
                 <div
