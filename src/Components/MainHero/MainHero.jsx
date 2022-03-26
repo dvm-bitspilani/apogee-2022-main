@@ -40,7 +40,7 @@ function MainHero() {
 
     const handleScrollClick = () => {
         if (window.screen.width<768) {
-            scrollTo(2000);
+            scrollTo(1800);
         }
         else scrollTo(3000);
         document.body.style.overflowY = "scroll";
@@ -66,7 +66,7 @@ function MainHero() {
             else {
                 if (window.pageYOffset > 3300 && window.pageYOffset < 3650) {
                     document.body.style.overflowY = "hidden"
-                    scroll.scrollToTop({ignoreCancelEvents:true,smooth: "linear",duration:400});
+                    scroll.scrollToTop({ignoreCancelEvents:true,smooth: "linear",duration:1000});
                     } 
             }
       
