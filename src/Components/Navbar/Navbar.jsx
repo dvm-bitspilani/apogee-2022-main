@@ -50,9 +50,9 @@ function NavBar() {
 
   const handleAICClick = () => {
     setIsAicClicked(!isAicClicked);
-    if(!isAicClicked && window.screen.width > 768) rightArrow.current.classList.add("rotate-arrow")
+    if (!isAicClicked && window.screen.width > 768) rightArrow.current.classList.add("rotate-arrow")
     else rightArrow.current.classList.remove("rotate-arrow")
-    if(!isAicClicked && window.screen.width > 768) allLinks.current.style.transform = "translateX(0)"
+    if (!isAicClicked && window.screen.width > 768) allLinks.current.style.transform = "translateX(0)"
     else if (isAicClicked && window.screen.width > 768) allLinks.current.style.transform = "translateX(100px)"
   };
 
@@ -228,10 +228,10 @@ function NavBar() {
                 >
                   <div>Kernel Events</div>
                 </a> */}
-                <a className="links" href="/#/sponsors">
+                <a className="links" href="/sponsors">
                   <div>Sponsors</div>
                 </a>
-                <a className="links" href="/#/events">
+                <a className="links" href="/events">
                   <div>All Events</div>
                 </a>
               </div>

@@ -39,8 +39,8 @@ function handleCities() {
 }
 
 ReactDOM.render(
-  // <BrowserRouter basename='/' history={history}>
-  <HashRouter>
+  <BrowserRouter basename='/' history={history}>
+    {/* <HashRouter> */}
     <Routes>
       <Route path="/" element={<Test />} />
       <Route
@@ -71,7 +71,7 @@ ReactDOM.render(
 
       {/* <Route path="invoices" element={<Invoices />} /> */}
     </Routes>
-  </HashRouter>,
-  // </BrowserRouter>,
+    {/* </HashRouter>, */}
+  </BrowserRouter>,
   document.getElementById("root")
 );
