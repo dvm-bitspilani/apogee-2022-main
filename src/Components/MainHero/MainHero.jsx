@@ -28,7 +28,7 @@ function MainHero() {
 
     function scrollTo(offset) {
         scroller.scrollTo("random", {
-            duration: 1000,
+            duration: 2000,
             delay: 0,
             smooth: "easeOutCubic",
             offset: offset,
@@ -38,35 +38,42 @@ function MainHero() {
     }
 
 
-
-
+    const handleScrollClick = () => {
+        if (window.screen.width < 768) {
+            scrollTo(1800);
+        }
+        else scrollTo(3000);
+        document.body.style.overflowY = "scroll";
+    }
 
     const Layer1 = useRef();
 
 
     useEffect(() => {
-
+        document.getElementsByClassName("clickAndScroll")[0].addEventListener("click", () => {
+            document.querySelector("body").style.overflowY = "scroll !important"
+            console.log("clicked");
+        })
         window.onscroll = function (e) {
             if (this.oldScroll <= this.scrollY) {
-                if (window.pageYOffset > 0 && window.pageYOffset < 40) {
-                    scrollTo(2800);
+                // if (window.pageYOffset > 0 && window.pageYOffset < 40) {
+                //     scrollTo(2800);
 
-                }
+                // }
+                document.getElementsByClassName("clickAndScroll")[0].classList.add("arrowAnimation");
+                setTimeout(document.getElementsByClassName("clickAndScroll")[0].classList.remove("arrowAnimation"), 2200)
             }
             else {
                 if (window.pageYOffset > 3300 && window.pageYOffset < 3650) {
-
-                    scroll.scrollToTop({ ignoreCancelEvents: true, smooth: "linear", duration: 400 });
-
+                    document.body.style.overflowY = "hidden"
+                    scroll.scrollToTop({ ignoreCancelEvents: true, smooth: "linear", duration: 1000 });
                 }
             }
 
             this.oldScroll = this.scrollY;
         }
 
-        document.getElementsByClassName("clickAndScroll")[0].addEventListener("click", () => {
-            document.body.style.overflowY = "hidden !important"
-        })
+
 
         Events.scrollEvent.register("begin", function () {
             console.log("begin", arguments);
@@ -77,17 +84,6 @@ function MainHero() {
         });
 
 
-
-
-        //   componentWillUnmount() {
-        //     Events.scrollEvent.remove("begin");
-        //     Events.scrollEvent.remove("end");
-        //   }
-        // console.log("hello");
-        // // window.onwheel = e => {
-        // //     if (e.deltaY >= 0) {
-        // //         // Scrolling Down with mouse
-        // //         console.log('Scroll Down');
 
         Layer1.current.style.transform = "bottom: 0";
         // console.log(Layer1.current, screenWidth, screenHeight);
@@ -159,7 +155,7 @@ function MainHero() {
 
                 <div id="clickAndScroll">
                     <div className="dimension">Click to enter the Encrypted Dimension</div>
-                    <div className="clickAndScroll" onClick={() => scrollTo(2800)}>
+                    <div id="clickAndScrollBtn" className="clickAndScroll" onClick={handleScrollClick}>
                         <img src={Arrow} alt="" />
                     </div>
                 </div>

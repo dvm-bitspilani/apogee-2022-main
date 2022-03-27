@@ -19,9 +19,7 @@ function Test() {
 
 
   useEffect(() => {
-    window.addEventListener("wheel", () => {
-      // console.log(window.pageYOffset + "this");
-    })
+  
   })
   const [ref, inView] = useInView({
     threshold: 0,

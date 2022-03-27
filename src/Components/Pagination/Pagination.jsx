@@ -14,11 +14,26 @@ function Pagination() {
         });
       });
     });
+      
+      
+    document.getElementById("hero-link").addEventListener("click", () => {
+        document.querySelector("body").style.overflowY = "hidden"
+    })
+
+    for (let i= 1; i< 5; i++) {
+        document.getElementsByClassName("dots")[i].addEventListener("click", () => {
+            document.querySelector("body").style.overflowY = "scroll"
+        })
+    }  
+      
+      
   }, []);
 
   // console.log(props.sectionArr)
   const [landingSections, setLandingSections] = useState([]);
-  useEffect(() => {
+    useEffect(() => {
+    
+
     let sectionArr = document.querySelectorAll(".landing-section");
     let arr = Array.from(sectionArr);
     setLandingSections(arr);
@@ -27,7 +42,7 @@ function Pagination() {
   return (
     <div id="pagination">
       <div id="line">
-        <a className="dots" href="#heroSection"></a>
+        <a className="dots" href="#heroSection" id="hero-link"></a>
         <a className="dots" href="#aboutus"></a>
         <a className="dots" href="#Videos"></a>
         <a className="dots" href="#kernelEvents"></a>
