@@ -41,7 +41,7 @@ function MainHero() {
             scrollTo(1800);
         }
         else scrollTo(3000);
-        document.body.style.overflowY = "scroll";
+        document.html.style.overflowY = "scroll";
     }
 
     const Layer1 = useRef();
@@ -51,7 +51,6 @@ function MainHero() {
         // document.documentElement.style.overflowY = "hidden"
         document.getElementsByClassName("clickAndScroll")[0].addEventListener("click", () => {
             document.querySelector("body").style.overflowY = "scroll !important"
-            document.documentElement.style.overflowY = "scroll"
             console.log("clicked");
         })
         window.onscroll = function (e) {
@@ -61,24 +60,28 @@ function MainHero() {
                 //     scrollTo(2800);
 
                 // }
-                document.getElementsByClassName("clickAndScroll")[0].classList.add("arrowAnimation");
-                setTimeout(document.getElementsByClassName("clickAndScroll")[0].classList.remove("arrowAnimation"), 2200)
+                // document.getElementsByClassName("clickAndScroll")[0].classList.add("arrowAnimation");
+                // setTimeout(document.getElementsByClassName("clickAndScroll")[0].classList.remove("arrowAnimation"), 2200)
             }
             else {
                 if ((window.pageYOffset > 3300 && window.pageYOffset < 3650) && window.screen.width > 768) {
                     document.body.style.overflowY = "hidden"
+                    document.querySelector("html").style.overflowY = "hidden"
+
                     // document.documentElement.overflowY = "hidden"
                     scroll.scrollToTop({ ignoreCancelEvents: true, smooth: "linear", duration: 1000 });
                 }
                 if ((window.pageYOffset > 2200 && window.pageYOffset < 2550) && window.screen.width < 768) {
-                    document.body.style.overflowY = "hidden"
+                    document.body.style.overflowY = "hidden !important"
+              document.querySelector("html").style.overflowY = "hidden !important"
+
                     // document.documentElement.overflowY = "hidden"
                     scroll.scrollToTop({ ignoreCancelEvents: true, smooth: "linear", duration: 1000 });
                 }
 
                 if (window.pageYOffset >= 0 && window.pageYOffset < 10) {
-                    document.body.style.overflowY = "hidden"
-                    // document.documentElement.style.overflowY = "hidden"
+                    document.body.style.overflowY = "hidden !important"
+                  document.querySelector("html").style.overflowY = "hidden !important"
                 }
             }
 

@@ -10,7 +10,7 @@ const speakers = [{
     id:1,
     name: "Dr. Soumya Swaminathan",
     bio: "Chief Scientist, World Health Organisation",
-    details: "Lorem ipsum dolor sit amet, cotetur adipiscing elit. Consequat, ut egestas vel venes hac euismod. In magna lorem imperdiet amet commodo. Suspendisse purus vitae mi sit sollicitudin ultrices. Eros t Suspendisse purus vitae mi sit sollicitudin ultrices Suspendisse purus viltrices",
+    details: "Lorem ipsum dolor r adipiscing elit. Consequat, ut egestas vel venes hac euismod. In magna lorem imperdiet amet commodo. Suspendisse purus vitae mi sit sollicitudin ultrices. Eros t Suspendisse purus vitae mi sit sollicitudin ultrices Suspendisse purus viltrices",
     profileImage: "soumya"
 
 },
@@ -18,7 +18,7 @@ const speakers = [{
     id:2,
     name: "Zainab Nagin Cox",
     bio: "US Spacecraft and Operations Engineer",
-    details: "Lorem ipsum dolor sit amet, cotetur adipiscing elit. Consequat, ut egestas vel venes hac euismod. In magna lorem imperdiet amet commodo. Suspendisse purus vitae mi sit sollicitudin ultrices. Eros t Suspendisse purus vitae mi sit sollicitudin ultrices Suspendisse purus viltrices",
+    details: "Lorem ipsum dolor sit amet, cotetur adipisgestas vel venes hac euismod. In magna lorem imperdiet amet commodo. Suspendisse purus vitae mi sit sollicitudin ultrices. Eros t Suspendisse purus vitae mi sit sollicitudin ultrices Suspendisse purus viltrices",
     profileImage: "zainab"
 
     },
@@ -26,14 +26,14 @@ const speakers = [{
         id:3,
     name: "Jeffrey Archer",
     bio: "Bestselling author",
-    details: "Lorem ipsum dolor sit amet, cotetur adipiscing elit. Consequat, ut egestas vel venes hac euismod. In magna lorem imperdiet amet commodo. Suspendisse purus vitae mi sit sollicitudin ultrices. Eros t Suspendisse purus vitae mi sit sollicitudin ultrices Suspendisse purus viltrices",
+    details: "Lorem ipsum dolor sit amet, cotetur adipiscing elit. stas vel venes hac euismod. In magna lorem imperdiet amet commodo. Suspendisse purus vitae mi sit sollicitudin ultrices. Eros t Suspendisse purus vitae mi sit sollicitudin ultrices Suspendisse purus viltrices",
     profileImage: "jeffrey"
 
     }, {
         id:4,
     name: "Dr. Henry Throop",
     bio: "American Astronomer-Consultant to NASA",
-    details: "Lorem ipsum dolor sit amet, cotetur adipiscing elit. Consequat, ut egestas vel venes hac euismod. In magna lorem imperdiet amet commodo. Suspendisse purus vitae mi sit sollicitudin ultrices. Eros t Suspendisse purus vitae mi sit sollicitudin ultrices Suspendisse purus viltrices",
+    details: "Lorem ipsum dolor sit amet, cotetur adipiscing elit. Consequat, ut egestas vel venes hac euisommodo. Suspendisse purus vitae mi sit sollicitudin ultrices. Eros t Suspendisse purus vitae mi sit sollicitudin ultrices Suspendisse purus viltrices",
     profileImage: "henry"
 
     }]
