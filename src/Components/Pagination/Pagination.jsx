@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import { HashLink as Link } from "react-router-hash-link";
 
 import "./Pagination.css";
 
