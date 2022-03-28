@@ -4,116 +4,100 @@
     }
     #one img{
         position: absolute;
-    left: 4.14%;
-    right: 86.82%;
-    top: 44.26%;
-    bottom: 73.24%;
-    transform: scale(0.6);
+    left: 44.14%;
+    top: 600.26%;
+    transform: scale(0.12);
     }
-    #four img{
-        position: absolute;
-    left: 74.14%;
-    right: 6.82%;
-    top: 124.26%;
-    bottom: 73.24%;
-    transform: scale(0.4) rotate(228deg)
-    }
+    
     #two img{
         position: absolute;
-        transform: rotate(138.24deg);
-        left: 82.34%;
-    right: -2.07%;
-    top: 14.62%;
-    bottom: 72.18%;
+        left: 8.34%;
+    top: 580.62%;
+    transform: scale(0.1) rotate(138.24deg);
     }
     #three img{
         position: absolute;
-        left: 26.17%;
-        right: 88.2%;
-        top: 84.52%;    
-        bottom: 39.41%;
-        transform: scale(0.7) rotate(228deg)
+        left: 30.17%;
+        top: 650.52%;    
+        transform: scale(0.2) rotate(228deg)
+    }
+    #four img{
+        position: absolute;
+    right: 16.82%;
+    top: 700.26%;
+    transform: scale(0.15) rotate(228deg)
     }
     #five img{
         position: absolute;
-        left: 82.17%;
-        top: 184.52%;    
-        bottom: 39.41%;
-        transform: scale(0.7) rotate(22deg)
+        right: 42.17%;
+        top: 720.52%;    
+        transform: scale(0.05) rotate(22deg)
     }
     #six img{
         position: absolute;
-        left: 46.17%;
-        top: 190.52%;    
-        bottom: 39.41%;
-        transform: scale(0.3) rotate(28deg)
+        left: 35.17%;
+        top: 740.52%;    
+        transform: scale(0.11) rotate(28deg)
     }
     #seven img{
         position: absolute;
-        left: 16.17%;
-        top: 200.52%;    
-        bottom: 39.41%;
-        transform: scale(0.3) rotate(128deg)
+        right: 43.17%;
+        top: 770.52%;    
+        transform: scale(0.13) rotate(128deg)
     }
     #eight img{
         position: absolute;
-        left: -4    .17%;
-        top: 183.52%;    
-        bottom: 39.41%;
-        transform: scale(0.3) rotate(178deg)
+        left: -4.17%;
+        top: 800.52%;    
+        transform: scale(0.07) rotate(178deg)
     }
     #nine img{
         position: absolute;
-        left: 52.17%;
-        top: 220.52%;    
-        bottom: 39.41%;
-        transform: scale(0.5) rotate(8deg)
+        left: 35.17%;
+        top: 820.52%;    
+        transform: scale(0.14) rotate(8deg)
     }
     #ten img{
         position: absolute;
-        left: -6.17%;
-        top: 283.52%;    
-        bottom: 39.41%;
-        transform: scale(0.4) rotate(80deg)
+        left: -5.17%;
+        top: 860.52%;    
+        transform: scale(0.1) rotate(80deg)
     }
     #eleven img{
         position: absolute;
-        right: 2.17%;
-        top: 280.52%;    
-        bottom: 39.41%;
-        transform: scale(1.1) rotate(278deg)
+        right: 28.17%;
+        top: 900.52%;    
+        transform: scale(0.08) rotate(278deg)
     }
     #twelve img{
         position: absolute;
-        right: 26.17%;
-        top: 315.52%;    
-        bottom: 39.41%;
-        transform: scale(0.7) rotate(28deg)
+        left: 26.17%;
+        top: 950.52%;    
+        transform: scale(0.06) rotate(28deg)
     }
     #thirteen img{
         position: absolute;
         /* left: 26.17%; */
-        left: 8.2%;
-        top: 355.52%;    
-        bottom: 39.41%;
-        transform: scale(0.4) rotate(108deg)
+        left: 35.2%;
+        top: 1060.52%;    
+        transform: scale(0.1) rotate(108deg)
     }
     #fourteen img{
         position: absolute;
-        right: 6.17%;
+        right: 36.17%;
         /* right: 88.2%; */
-        top: 385.52%;    
-        transform: scale(1) rotate(0deg)
+        top: 1070.52%;    
+        transform: scale(0.12) rotate(0deg)
     }
     #fifteen img{
         position: absolute;
         left: 8.2%;
-        top: 430.52%;    
-        transform: scale(0.8) rotate(228deg)
+        top: 995.52%;    
+        transform: scale(0.1) rotate(228deg)
     }
     #sixteen img{
         position: absolute;
-        left: 80.07%;
-        top: 470.52%;    
-        transform: scale(0.6) rotate(28deg)
+        right: 28.07%;
+        top: 975.52%;    
+        transform: scale(0.12) rotate(28deg)
     }
