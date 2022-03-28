@@ -56,9 +56,9 @@ function Test() {
             api="https://bits-apogee.org/registrations/kernel_events/"
           />
         </div>
-        <div className="section" id="Speakers">
+        {/* <div className="section" id="Speakers">
           <SpeakerSection />
-        </div>
+        </div> */}
         <div className="section" id="ContactUs">
           <ContactUs />
         </div>
