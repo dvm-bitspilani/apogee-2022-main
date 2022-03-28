@@ -60,7 +60,9 @@ display: flex !important;
     transform: translateX(-50%);
     /* margin-left: 20px; */
 }
-
+#line span{
+    position: absolute;
+}
 .dots.active{
     outline: 3px solid white;
     outline-offset: 3px;
