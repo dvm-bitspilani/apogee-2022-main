@@ -14,7 +14,7 @@ const
         {
             profileImage: "vidhushi",
             Name: "Vidushi Sahay",
-            Designation: "Registrations and Correspondence",
+            Designation: "Registrations & Correspondence",
             Mobile: "+91 98719 41631",
             Email: ["pcr@bits-apogee.org"]
         },

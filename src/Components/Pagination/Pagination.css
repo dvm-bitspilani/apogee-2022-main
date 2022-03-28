@@ -63,7 +63,7 @@ display: flex !important;
 #line span{
     position: absolute;
 }
-.dots.active{
+.active{
     outline: 3px solid white;
     outline-offset: 3px;
 }
