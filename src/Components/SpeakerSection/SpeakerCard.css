@@ -8,7 +8,9 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    /* align-items: stretch; */
     align-items: center;
+    padding: 20px;
 }
 .speakerInfo{
     display: flex;
@@ -46,6 +48,9 @@
     background: rgba(7, 9, 73, 0.09);
 box-shadow: inset 0px 1px 23.4612px rgba(107, 100, 154, 0.3), inset 0px 1px 52.136px rgba(179, 171, 226, 0.2);
 }
+.speakerDetails p {
+    padding: 1.5vh;
+}
 
 .awssld__controls button:hover .awssld__controls__arrow-left,
 .awssld__controls button:hover .awssld__controls__arrow-right {
@@ -72,6 +77,9 @@ box-shadow: inset 0px 1px 23.4612px rgba(107, 100, 154, 0.3), inset 0px 1px 52.1
 }
 
 @media (max-width:768px) {
+.speakerHeading, .subHeading {
+    text-align: center;
+}
     
 .awssld__wrapper{
     height: 600px !important;
