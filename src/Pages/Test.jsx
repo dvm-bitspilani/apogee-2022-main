@@ -14,6 +14,8 @@ import EventContainer from "../Components/EventContainer/EventContainer.jsx";
 import "../stylesheets/final.css";
 import Videos from "../Components/Videos/Videos.jsx";
 import SpeakerSection from "../Components/SpeakerSection/SpeakerSection.jsx";
+import rocks from "../Components/MainHero/MainHeroAssets/meteor.png";
+import "../stylesheets/meteors.css";
 
 function Test() {
 
@@ -47,6 +49,56 @@ function Test() {
         </div>
         <div className="section" id="Videos">
           <Videos />
+        </div>
+        <div className="meteors">
+            <div className="rock" id='one' >
+                <img src= {rocks} alt=""/>
+            </div>
+            <div className="rock" id="two">
+                <img src= {rocks} alt=""/>
+            </div>
+            <div className="rock" id="three">
+                <img src= {rocks} alt=""/>
+            </div>
+            <div className="rock" id="four">
+                <img src= {rocks} alt=""/>
+            </div>
+            <div className="rock" id='five' >
+                <img src= {rocks} alt=""/>
+            </div>
+            <div className="rock" id="six">
+                <img src= {rocks} alt=""/>
+            </div>
+            <div className="rock" id="seven">
+                <img src= {rocks} alt=""/>
+            </div>
+            <div className="rock" id="eight">
+                <img src= {rocks} alt=""/>
+            </div>
+            <div className="rock" id='nine' >
+                <img src= {rocks} alt=""/>
+            </div>
+            <div className="rock" id="ten">
+                <img src= {rocks} alt=""/>
+            </div>
+            <div className="rock" id="eleven">
+                <img src= {rocks} alt=""/>
+            </div>
+            <div className="rock" id="twelve">
+                <img src= {rocks} alt=""/>
+            </div>
+            <div className="rock" id='thirteen' >
+                <img src= {rocks} alt=""/>
+            </div>
+            <div className="rock" id="fourteen">
+                <img src= {rocks} alt=""/>
+            </div>
+            <div className="rock" id="fifteen">
+                <img src= {rocks} alt=""/>
+            </div>
+            <div className="rock" id="sixteen">
+                <img src= {rocks} alt=""/>
+            </div>
         </div>
         <div className="section" id="kernelEvents">
           <EventContainer
