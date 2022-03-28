@@ -68,20 +68,23 @@ function EventContainer(props) {
     setEventImg(img)
     setEventRules(rules)
   };
-  const handleClose = () => setDescriptionDetails("none");
+  const handleClose = () => {
+    setDescriptionDetails("none");
+    setIsEventDetails(true)
+  }
   const changeDriveLink = (driveLink) => {
     console.log(driveLink)
-    console.log(eventImg)
     if (!driveLink.includes("google")) {
       return;
-    }
+    };
     if (driveLink.includes("bits-apogee") || driveLink.includes("default")) {
       return;
-    }
+    };
     let firstHalf = driveLink.split(".com/")[0];
     let secondHalf = driveLink.split("?")[1];
     let finalLink = "url(" + firstHalf + ".com/uc?" + secondHalf + ")";
     // console.log("Final Link", finalLink);
+    // setEventImg(finalLink)
     return finalLink;
   };
   const handleLargeDescription = (desc) => {
@@ -100,7 +103,6 @@ function EventContainer(props) {
   const handleEDClick = () =>{
     setIsEventDetails(true)
   }
-
   const handleGuidelineClick = () =>{
     setIsEventDetails(false)
   }

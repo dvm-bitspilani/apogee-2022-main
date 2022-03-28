@@ -42,6 +42,7 @@
   max-width: 50vw;
   display: flex;
   color: #FBF1F1;
+  min-width: 40vw;
   max-height: 80vh; 
 }
 
@@ -70,6 +71,7 @@
 .card-description-tabs span{
   padding: 0 1rem 6px 0;
   transition: 0.3s all ease;
+  cursor: pointer;
 }
 
 .card-tab-active{
