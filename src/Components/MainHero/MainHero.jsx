@@ -52,9 +52,11 @@ function MainHero() {
     useEffect(() => {
         document.getElementsByClassName("clickAndScroll")[0].addEventListener("click", () => {
             document.querySelector("body").style.overflowY = "scroll !important"
+            document.documentElement.style.overflowY = "scroll"
             console.log("clicked");
         })
         window.onscroll = function (e) {
+            console.log(window.scrollY)
             if (this.oldScroll <= this.scrollY) {
                 // if (window.pageYOffset > 0 && window.pageYOffset < 40) {
                 //     scrollTo(2800);
@@ -66,7 +68,13 @@ function MainHero() {
             else {
                 if (window.pageYOffset > 3300 && window.pageYOffset < 3650) {
                     document.body.style.overflowY = "hidden"
+                    // document.documentElement.overflowY = "hidden"
                     scroll.scrollToTop({ ignoreCancelEvents: true, smooth: "linear", duration: 1000 });
+                }
+
+                if (window.pageYOffset >= 0 && window.pageYOffset < 40) {
+                    document.body.style.overflowY = "hidden"
+                    document.documentElement.style.overflowY = "hidden"
                 }
             }
 
