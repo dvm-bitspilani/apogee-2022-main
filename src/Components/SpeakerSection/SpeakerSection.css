@@ -16,3 +16,13 @@
     margin: 50px 50px 0px 50px;
     color: white;
 }
+.speakerCarousel{
+    width: 80vw;
+    margin: auto;
+}
+@media (max-width:768px) {
+    .speakerCarousel{
+        width: initial;
+        margin: initial;
+    }
+}
