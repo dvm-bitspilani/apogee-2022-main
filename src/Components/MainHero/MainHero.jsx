@@ -24,8 +24,6 @@ import "./MainHero.css"
 import AboutUs from "../AboutUs/AboutUs";
 
 function MainHero() {
-
-
     function scrollTo(offset) {
         scroller.scrollTo("random", {
             duration: 2000,
@@ -50,6 +48,7 @@ function MainHero() {
 
 
     useEffect(() => {
+        document.documentElement.style.overflowY = "hidden"
         document.getElementsByClassName("clickAndScroll")[0].addEventListener("click", () => {
             document.querySelector("body").style.overflowY = "scroll !important"
             document.documentElement.style.overflowY = "scroll"
