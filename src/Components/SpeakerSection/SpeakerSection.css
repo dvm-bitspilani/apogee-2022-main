@@ -20,9 +20,38 @@
     width: 80vw;
     margin: auto;
 }
+.carousel__dot-group{
+display: flex;
+justify-content: center;
+}
+
+.carousel__dot-group button{
+margin: 0px 10px;
+height: 12px;
+width: 12px;
+border-radius: 50%;
+border: none;
+padding: 5px;
+}
+.carousel__dot--selected{
+    position: relative;
+    background-color: white;
+}
+.carousel__dot--selected:after {
+  border-radius: 50%;
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: white 2px solid;
+}
 @media (max-width:768px) {
     .speakerCarousel{
         width: initial;
         margin: initial;
     }
+
+
 }

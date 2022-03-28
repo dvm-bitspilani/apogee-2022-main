@@ -199,12 +199,13 @@ html{
   border-radius: 50%;
   display: flex;
   padding: 10px;
-  background-color: rgba(7, 9, 73, 0.09);
-  border: 2px solid rgba(209, 213, 219, 0.3);
+  background-color: black;
+  border: 1px solid rgba(209, 213, 219, 0.3);
   text-align: center;
   margin-top: 0.75rem;
   cursor: pointer;
 }
+
 .clickAndScroll img {
   width: 80%;
 }
@@ -263,6 +264,9 @@ html{
   .dimension {
     font-size: 16px;
   }
+  /* #cityLayer1,#cityLayer2,#cityLayer3,#cityLayer4,#cityLayer5,#cityLayer6 {
+    display: none;
+  } */
 }
 .dimension {
   text-align: center;

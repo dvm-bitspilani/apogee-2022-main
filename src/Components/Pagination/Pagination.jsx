@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import { HashLink as Link } from "react-router-hash-link";
 
 import "./Pagination.css";
 
@@ -8,10 +7,16 @@ function Pagination() {
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       anchor.addEventListener("click", function (e) {
         e.preventDefault();
-
+        
         document.querySelector(this.getAttribute("href")).scrollIntoView({
           behavior: "smooth",
         });
+        for (let i= 0; i< (document.getElementsByClassName("dots").length); i++) {
+          document.getElementsByClassName("dots")[i].classList.remove("active");
+      }  
+        console.log(this.classList);
+        this.classList.add("active");
+        console.log(this.classList);
       });
     });
       
