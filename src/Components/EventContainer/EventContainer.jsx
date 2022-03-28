@@ -153,9 +153,9 @@ function EventContainer(props) {
         <div className="card-description-box">
           <div
             className="card-description-img"
-          style={{
-            backgroundImage: changeDriveLink(eventImg),
-          }}
+          // style={{
+          //   backgroundImage: changeDriveLink(eventImg),
+          // }}
           ></div>
           <div className="card-description-text">
             <div className="card-description-heading">{eventName}</div>
