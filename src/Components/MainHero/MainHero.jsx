@@ -47,7 +47,9 @@ function MainHero() {
             scrollTo(1800);
         }
         else scrollTo(3000);
-        document.html.style.overflowY = "scroll";
+        document.body.style.overflowY = "scroll";
+        document.querySelector("html").style.overflowY = "scroll"
+
     }
 
     const Layer1 = useRef();
@@ -78,16 +80,16 @@ function MainHero() {
                     scroll.scrollToTop({ ignoreCancelEvents: true, smooth: "linear", duration: 1000 });
                 }
                 if ((window.pageYOffset > 2200 && window.pageYOffset < 2550) && window.screen.width < 768) {
-                    document.body.style.overflowY = "hidden !important"
-              document.querySelector("html").style.overflowY = "hidden !important"
+                    document.body.style.overflowY = "hidden"
+              document.querySelector("html").style.overflowY = "hidden"
 
                     // document.documentElement.overflowY = "hidden"
                     scroll.scrollToTop({ ignoreCancelEvents: true, smooth: "linear", duration: 1000 });
                 }
 
                 if (window.pageYOffset >= 0 && window.pageYOffset < 10) {
-                    document.body.style.overflowY = "hidden !important"
-                  document.querySelector("html").style.overflowY = "hidden !important"
+                    document.body.style.overflowY = "hidden"
+                  document.querySelector("html").style.overflowY = "hidden"
                 }
             }
 
