@@ -52,9 +52,12 @@ function EventContainer(props) {
 
   const [eventDesc, setEventDesc] = React.useState("");
   const [eventName, setEventName] = React.useState("");
+  const [eventImg, setEventImg] = React.useState()
+  const [eventRules, setEventRules] = React.useState("")
+  const [isEventDetails, setIsEventDetails] = React.useState(true)
   const [isDiabled, setIsDisabled] = React.useState(false);
   const [descriptionDetails, setDescriptionDetails] = React.useState("none");
-  const handleOpen = (name, desc) => {
+  const handleOpen = (name, desc, img, rules) => {
     if (desc === null) {
       return;
     }
@@ -62,19 +65,26 @@ function EventContainer(props) {
 
     setEventName(name);
     setEventDesc(desc);
+    setEventImg(img)
+    setEventRules(rules)
   };
-  const handleClose = () => setDescriptionDetails("none");
+  const handleClose = () => {
+    setDescriptionDetails("none");
+    setIsEventDetails(true)
+  }
   const changeDriveLink = (driveLink) => {
+    console.log(driveLink)
     if (!driveLink.includes("google")) {
       return;
-    }
+    };
     if (driveLink.includes("bits-apogee") || driveLink.includes("default")) {
       return;
-    }
+    };
     let firstHalf = driveLink.split(".com/")[0];
     let secondHalf = driveLink.split("?")[1];
     let finalLink = "url(" + firstHalf + ".com/uc?" + secondHalf + ")";
     // console.log("Final Link", finalLink);
+    // setEventImg(finalLink)
     return finalLink;
   };
   const handleLargeDescription = (desc) => {
@@ -89,6 +99,13 @@ function EventContainer(props) {
     }
     return desc;
   };
+
+  const handleEDClick = () =>{
+    setIsEventDetails(true)
+  }
+  const handleGuidelineClick = () =>{
+    setIsEventDetails(false)
+  }
 
   return (
     <div>
@@ -117,7 +134,7 @@ function EventContainer(props) {
                 <p>{handleLargeDescription(el.description)}</p>
                 <div
                   className="view-btn"
-                  onClick={() => handleOpen(el.name, el.description)}
+                  onClick={() => handleOpen(el.name, el.description, el.image_url, el.rules)}
                 >
                   View Details
                 </div>
@@ -127,7 +144,6 @@ function EventContainer(props) {
         </div>
       </div>
       <div
-        // className={props.type == "kernel" ? "card-description-container kernel-events" : " card-description-container"}
         className={
           "card-description-container" +
           (props.type == "kernel" ? " kernel-events" : "")
@@ -135,11 +151,23 @@ function EventContainer(props) {
         style={{ display: descriptionDetails }}
       >
         <div className="card-description-box">
+          <div
+            className="card-description-img"
+          // style={{
+          //   backgroundImage: changeDriveLink(eventImg),
+          // }}
+          ></div>
+          <div className="card-description-text">
+            <div className="card-description-heading">{eventName}</div>
+            <div className="card-description-tabs">
+              <span onClick={handleEDClick} className={isEventDetails ? "card-tab-active" : ""}>Event Details</span>
+              <span onClick={handleGuidelineClick} className={!isEventDetails ? "card-tab-active" : ""}>Guidelines</span>
+            </div>
+            <div className="card-description-details">{isEventDetails ? eventDesc : eventRules}</div>
+          </div>
           <div className="close-card-description" onClick={handleClose}>
             <CloseIcon />
           </div>
-          <div className="card-description-heading">{eventName}</div>
-          <div className="card-description-details">{eventDesc}</div>
         </div>
       </div>
     </div>

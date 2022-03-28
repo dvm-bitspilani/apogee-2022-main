@@ -37,9 +37,13 @@
   backdrop-filter: blur(130px);
   border-radius: 20px;
   width: auto;
-  padding: 3vh 5vw 5vh;
+  padding: 2rem;
   font-family: "Montserrat", sans-serif;
   max-width: 50vw;
+  display: flex;
+  color: #FBF1F1;
+  min-width: 40vw;
+  max-height: 80vh; 
 }
 
 .kernel-events .card-description-box {
@@ -53,21 +57,66 @@
   cursor: pointer;
 }
 .card-description-heading {
-  text-align: center;
-  margin-top: 2vh;
-  font-weight: 900;
+  /* margin-top: 2vh; */
+  font-weight: 700;
   font-size: 30px;
 }
-.card-description-details {
-  margin-top: 5vh;
-  text-align: center;
+
+.card-description-tabs{
+  margin: 2vh 0 3vh;
+  border-bottom: 1px solid #FBF1F1;
+  padding-bottom: 0.5rem;
+}
+
+.card-description-tabs span{
+  padding: 0 1rem 6px 0;
+  transition: 0.3s all ease;
+  cursor: pointer;
+}
+
+.card-tab-active{
+  border-bottom: 2px solid #FBF1F1;
+  transition: 0.3s all ease;
+}
+
+.card-description-text{
+  width: 60%;
+  padding: 1rem 0 0 2rem;
+  transition: 0.3s all ease;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.card-description-details{
+  transition: 0.3s all ease;
+
+}
+
+.card-description-img {
+  height: 100%;
+  width: 40%;
+  border-radius: 10px;
+  background-size: cover;
+  background-color: hsl(227deg 24% 47%);
+  background-image: url("../assets/favicon1.ico");
+  background-position: center center;
 }
 
 @media all and (max-width: 500px) {
   .card-description-box,
   .kernel-events .card-description-box {
-    max-width: 80vw;
+    max-width: 85vw;
   }
+
+  .card-description-img{
+    display: none;
+  }
+
+  .card-description-text{
+    padding: 0;
+    width: 100%;
+  }
+
   .card-description-heading {
     font-size: 20px;
   }
