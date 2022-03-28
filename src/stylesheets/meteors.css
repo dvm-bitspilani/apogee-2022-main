@@ -54,7 +54,7 @@
     #nine img{
         position: absolute;
         left: 35.17%;
-        top: 820.52%;    
+        top: 750.52%;    
         transform: scale(0.14) rotate(8deg)
     }
     #ten img{
@@ -72,32 +72,32 @@
     #twelve img{
         position: absolute;
         left: 26.17%;
-        top: 950.52%;    
+        top: 505.52%;    
         transform: scale(0.06) rotate(28deg)
     }
     #thirteen img{
         position: absolute;
         /* left: 26.17%; */
         left: 35.2%;
-        top: 1060.52%;    
+        top: 820.52%;    
         transform: scale(0.1) rotate(108deg)
     }
     #fourteen img{
         position: absolute;
         right: 36.17%;
         /* right: 88.2%; */
-        top: 1070.52%;    
+        top: 600.52%;    
         transform: scale(0.12) rotate(0deg)
     }
     #fifteen img{
         position: absolute;
         left: 8.2%;
-        top: 995.52%;    
+        top: 670.52%;    
         transform: scale(0.1) rotate(228deg)
     }
     #sixteen img{
         position: absolute;
         right: 28.07%;
-        top: 975.52%;    
+        top: 900.52%;    
         transform: scale(0.12) rotate(28deg)
     }
