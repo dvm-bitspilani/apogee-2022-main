@@ -39,12 +39,12 @@ function handleCities() {
 }
 
 ReactDOM.render(
-  // <BrowserRouter basename='/' history={history}>
-  <HashRouter>
+  <BrowserRouter basename='/' history={history}>
+    {/* <HashRouter> */}
     <Routes>
       <Route path="/" element={<Test />} />
       <Route
-        path="/events"
+        path="/events/"
         element={
           <Events
             heading="All Events"
@@ -66,12 +66,12 @@ ReactDOM.render(
       <Route path="/loader" element={<LoaderPage />} />
       <Route path="/aboutus" element={<AboutUs />} />
       <Route path="/staging" element={<Staging />} />
-      <Route path="/sponsors" element={<Sponsors />} />
+      <Route path="/sponsors/" element={<Sponsors />} />
       {/* <Route path="/Test" element={<Test />} /> */}
 
       {/* <Route path="invoices" element={<Invoices />} /> */}
     </Routes>
-  </HashRouter>,
-  // </BrowserRouter>,
+    {/* </HashRouter>, */}
+  </BrowserRouter>,
   document.getElementById("root")
 );

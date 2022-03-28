@@ -32,14 +32,14 @@ function MainHero() {
             delay: 0,
             smooth: "easeOutCubic",
             offset: offset,
-            ignoreCancelEvents:true
+            ignoreCancelEvents: true
         })
 
     }
 
 
     const handleScrollClick = () => {
-        if (window.screen.width<768) {
+        if (window.screen.width < 768) {
             scrollTo(1800);
         }
         else scrollTo(3000);
@@ -48,10 +48,10 @@ function MainHero() {
 
     const Layer1 = useRef();
 
-    
+
     useEffect(() => {
         document.getElementsByClassName("clickAndScroll")[0].addEventListener("click", () => {
-           document.querySelector("body").style.overflowY = "scroll !important"
+            document.querySelector("body").style.overflowY = "scroll !important"
             console.log("clicked");
         })
         window.onscroll = function (e) {
@@ -66,14 +66,14 @@ function MainHero() {
             else {
                 if (window.pageYOffset > 3300 && window.pageYOffset < 3650) {
                     document.body.style.overflowY = "hidden"
-                    scroll.scrollToTop({ignoreCancelEvents:true,smooth: "linear",duration:1000});
-                    } 
+                    scroll.scrollToTop({ ignoreCancelEvents: true, smooth: "linear", duration: 1000 });
+                }
             }
-      
+
             this.oldScroll = this.scrollY;
-          }
-     
-    
+        }
+
+
 
         Events.scrollEvent.register("begin", function () {
             console.log("begin", arguments);
@@ -85,7 +85,7 @@ function MainHero() {
 
 
 
-        Layer1.current.style.transform = "bottom: 0"; 
+        Layer1.current.style.transform = "bottom: 0";
         // console.log(Layer1.current, screenWidth, screenHeight);
         // setTimeout(() => {
         //     document.getElementById("cityLayer1").style.transform = "translate(5%, 0px)"
@@ -120,34 +120,16 @@ function MainHero() {
                         <img id="moon" src={Moon} />{" "}
                     </div>
                 </div>
+                {/* <div className="buildings"> */}
                 <div className="buildings">
-                    {/* <div className="city city1">
-                    <img src={CityLayer1} alt="" />
+                    <img class="cityBuildings layers" id="cityLayer1" ref={Layer1} src={CityLayer1} alt="" />
+                    <img class="cityBuildings layers" id="cityLayer2" src={CityLayer2} alt="" />
+                    <img class="cityBuildings layers" id="cityLayer3" src={CityLayer3} alt="" />
+                    <img class="cityBuildings layers" id="cityLayer4" src={CityLayer4} alt="" />
+                    <img class="cityBuildings layers" id="cityLayer5" src={CityLayer5} alt="" />
+                    <img class="cityBuildings layers" id="cityLayer6" src={CityLayer6} alt="" />
                 </div>
-                <div className="city city2">
-                    <img src={CityLayer2} alt="" />
-                </div>
-                <div className="city city3">
-                    <img src={CityLayer3} alt="" />
-                </div>
-                <div className="city city4">
-                    <img src={CityLayer4} alt="" />
-                </div>
-                <div className="city city5">
-                    <img src={CityLayer5} alt="" />
-                </div>
-                <div className="city city6">
-                    <img src={CityLayer6} alt="" />
-                </div> */}
-                    <div className="buildings">
-                        <img class="cityBuildings layers" id="cityLayer1" ref={Layer1} src={CityLayer1} alt="" />
-                        <img class="cityBuildings layers" id="cityLayer2" src={CityLayer2} alt="" />
-                        <img class="cityBuildings layers" id="cityLayer3" src={CityLayer3} alt="" />
-                        <img class="cityBuildings layers" id="cityLayer4" src={CityLayer4} alt="" />
-                        <img class="cityBuildings layers" id="cityLayer5" src={CityLayer5} alt="" />
-                        <img class="cityBuildings layers" id="cityLayer6" src={CityLayer6} alt="" />
-                    </div>
-                </div>
+                {/* </div> */}
 
 
                 <div className="floor">
@@ -173,7 +155,7 @@ function MainHero() {
 
                 <div id="clickAndScroll">
                     <div className="dimension">Click to enter the Encrypted Dimension</div>
-                    <div id="clickAndScrollBtn" className="clickAndScroll"onClick={handleScrollClick}>
+                    <div id="clickAndScrollBtn" className="clickAndScroll" onClick={handleScrollClick}>
                         <img src={Arrow} alt="" />
                     </div>
                 </div>

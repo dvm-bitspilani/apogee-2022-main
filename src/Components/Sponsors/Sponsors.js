@@ -3,7 +3,24 @@ import { Link } from "react-router-dom";
 import "./styles.css";
 import Arrow from "../../assets/Arrox.svg";
 import LoaderPage from "../../Pages/loaderPage";
-import Image1 from "./Assets/fis.png"
+import FIS from "./Assets/fis.png"
+import Autodesk from "./Assets/Logos/AUTODESK logo.png"
+import Bolt from "./Assets/Logos/Bolt-WhiteBG.jpg"
+import Knots from "./Assets/Logos/KnotsbyAMP - PNG for Website.png"
+// import Talentspire from ""
+import Walmart from "./Assets/Logos/Walmart.png"
+// import BombayShavingCompany from ""
+import Degrees from "./Assets/Logos/6degreesindia.png"
+import Axplorar from "./Assets/Logos/Axplorar.png"
+import LWT from "./Assets/Logos/LWT academy .png"
+import CollegePond from "./Assets/Logos/Collegepond logo1.png"
+import ForestFuse from "./Assets/Logos/forest fuse.png"
+import SwitchFix from "./Assets/Logos/Switch Primary Logo (1).png"
+import PepsiCo from "./Assets/Logos/pepsico.jpeg"
+import Gustora from "./Assets/Logos/GustoraLOGO.png"
+
+
+
 export const Sponsors = (props) => {
   return (
     <>
@@ -29,7 +46,7 @@ export const Sponsors = (props) => {
             }
           >
             <div className="logoSponsors">
-              <img src={Image1} alt="" />
+              <img src={FIS} alt="" />
             </div>
             <div className="name">FIS</div>
           </div>
@@ -43,7 +60,7 @@ export const Sponsors = (props) => {
             }
           >
             <div className="logoSponsors">
-              <img src="./Assets/Logos/AUTODESK logoSponsors.web" alt="" />
+              <img alt="" />
             </div>
             <div className="name">Cisco</div>
           </div>
@@ -55,7 +72,7 @@ export const Sponsors = (props) => {
             onClick={() => window.open("https://bolt.earth", "_blank")}
           >
             <div className="logoSponsors">
-              <img src="./Assets/Logos/AUTODESK logoSponsors.web" alt="" />
+              <img src={Bolt} alt="" />
             </div>
             <div className="name">Bolt</div>
           </div>
@@ -74,9 +91,28 @@ export const Sponsors = (props) => {
             }
           >
             <div className="logoSponsors">
-              <img src="./Assets/Logos/AUTODESK logoSponsors.web" alt="" />
+              <img src={Autodesk} alt="" />
             </div>
             <div className="name">AUTODESK</div>
+          </div>
+        </div>
+        <div className="sponsorHeading">
+          Official Refreshment Partner
+        </div>
+        <div className="details">
+          <div
+            className="flex"
+            onClick={() =>
+              window.open(
+                "http://www.pepsicoindia.co.in",
+                "_blank"
+              )
+            }
+          >
+            <div className="logoSponsors">
+              <img src={PepsiCo} alt="" />
+            </div>
+            <div className="name">PepsiCo</div>
           </div>
         </div>
         <div className="sponsorHeading">Official Photography Partner</div>
@@ -87,7 +123,7 @@ export const Sponsors = (props) => {
           >
             <div className="logoSponsors">
               <img
-                src="./Assets/Logos/KnotsbyAMP - PNG for Website.png"
+                src={Knots}
                 alt=""
               />
             </div>
@@ -102,7 +138,6 @@ export const Sponsors = (props) => {
           >
             <div className="logoSponsors">
               <img
-                src="./Assets/Logos/KnotsbyAMP - PNG for Website.png"
                 alt=""
               />
             </div>
@@ -116,7 +151,7 @@ export const Sponsors = (props) => {
             onClick={() => window.open("https://www.walmart.com", "_blank")}
           >
             <div className="logoSponsors">
-              <img src="./Assets/Logos/BOLT_transparent.png" alt="" />
+              <img src={Walmart} alt="" />
             </div>
             <div className="name">WALMART</div>
           </div>
@@ -130,7 +165,7 @@ export const Sponsors = (props) => {
             }
           >
             <div className="logoSponsors">
-              <img src="./Assets/Logos/Banner 6x3ft_B copy.jpg" alt="" />
+              <img alt="" />
             </div>
             <div className="name">BOMBAY SHAVING COMPANY</div>
           </div>
@@ -144,7 +179,7 @@ export const Sponsors = (props) => {
             }
           >
             <div className="logoSponsors">
-              <img src="./Assets/Logos/6degreesindia.png" alt="" />
+              <img src={Degrees} alt="" />
             </div>
             <div className="name">6 DEGREES COFFEE</div>
           </div>
@@ -156,7 +191,7 @@ export const Sponsors = (props) => {
             onClick={() => window.open("https://easylearn.net.in", "_blank")}
           >
             <div className="logoSponsors">
-              <img src="./Assets/Logos/6degreesindia.png" alt="" />
+              <img alt="" />
             </div>
             <div className="name">EASY LEARN</div>
           </div>
@@ -168,9 +203,21 @@ export const Sponsors = (props) => {
             onClick={() => window.open("http://www.axplorar.com", "_blank")}
           >
             <div className="logoSponsors">
-              <img src="./Assets/Logos/Axplorar.png" alt="" />
+              <img src={Axplorar} alt="" />
             </div>
             <div className="name">AXPLORAR</div>
+          </div>
+        </div>
+        <div className="sponsorHeading">Official Pasta Partner</div>
+        <div className="details">
+          <div
+            className="flex"
+            onClick={() => window.open("https://www.gustorafoods.com/", "_blank")}
+          >
+            <div className="logoSponsors">
+              <img src={Gustora} alt="" />
+            </div>
+            <div className="name">Gustora Foods</div>
           </div>
         </div>
         <div className="sponsorHeading">
@@ -182,7 +229,7 @@ export const Sponsors = (props) => {
             onClick={() => window.open("https://www.juspay.in", "_blank")}
           >
             <div className="logoSponsors">
-              <img src="./Assets/Logos/Axplorar.png" alt="" />
+              <img alt="" />
             </div>
             <div className="name">JUSPAY</div>
           </div>
@@ -196,7 +243,7 @@ export const Sponsors = (props) => {
             }
           >
             <div className="logoSponsors">
-              <img src="./Assets/Logos/LWT academy .png" alt="" />
+              <img src={LWT} alt="" />
             </div>
             <div className="name">LWT Academy</div>
           </div>
@@ -205,7 +252,7 @@ export const Sponsors = (props) => {
             onClick={() => window.open("https://collegepond.com", "_blank")}
           >
             <div className="logoSponsors">
-              <img src="./Assets/Logos/Collegepond logoSponsors-1.png" alt="" />
+              <img src={CollegePond} alt="" />
             </div>
             <div className="name">College Pond</div>
           </div>
@@ -214,7 +261,7 @@ export const Sponsors = (props) => {
             onClick={() => window.open("https://www.forestfuse.com", "_blank")}
           >
             <div className="logoSponsors">
-              <img src="./Assets/Logos/Logo file.png" alt="" />
+              <img src={ForestFuse} alt="" />
             </div>
             <div className="name">Forestfuse</div>
           </div>
@@ -223,7 +270,7 @@ export const Sponsors = (props) => {
             onClick={() => window.open("https://theswitchfix.co/", "_blank")}
           >
             <div className="logoSponsors">
-              <img src="./Assets/Logos/Switch Primary Logo (1).png" alt="" />
+              <img src={SwitchFix} alt="" />
             </div>
             <div className="name">The Switch Fix</div>
           </div>
@@ -234,7 +281,7 @@ export const Sponsors = (props) => {
             }
           >
             <div className="logoSponsors">
-              <img src="./Assets/Logos/Switch Primary Logo (1).png" alt="" />
+              <img alt="" />
             </div>
             <div className="name">Briffly News</div>
           </div>
@@ -245,7 +292,7 @@ export const Sponsors = (props) => {
             }
           >
             <div className="logoSponsors">
-              <img src="./Assets/Logos/Switch Primary Logo (1).png" alt="" />
+              <img alt="" />
             </div>
             <div className="name">Clientell</div>
           </div>
@@ -254,7 +301,7 @@ export const Sponsors = (props) => {
             onClick={() => window.open("https://www.minduhealth.com", "_blank")}
           >
             <div className="logoSponsors">
-              <img src="./Assets/Logos/Switch Primary Logo (1).png" alt="" />
+              <img alt="" />
             </div>
             <div className="name">Mind U Health</div>
           </div>
@@ -265,7 +312,7 @@ export const Sponsors = (props) => {
             }
           >
             <div className="logoSponsors">
-              <img src="./Assets/Logos/Switch Primary Logo (1).png" alt="" />
+              <img alt="" />
             </div>
             <div className="name">Soundideaz</div>
           </div>
@@ -274,7 +321,7 @@ export const Sponsors = (props) => {
             onClick={() => window.open("https://www.cuvette.tech/", "_blank")}
           >
             <div className="logoSponsors">
-              <img src="./Assets/Logos/Switch Primary Logo (1).png" alt="" />
+              <img alt="" />
             </div>
             <div className="name">Cuvette Tech</div>
           </div>

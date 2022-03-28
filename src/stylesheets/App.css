@@ -169,7 +169,8 @@ img {
 } */
 
 .moon {
-  width: 125%;
+  width: 100vw;
+  overflow: hidden;
   /* z-index: -3; */
   position: absolute;
   top: -20vh;
@@ -204,10 +205,11 @@ img {
   transition: all 1.5s ease 0s;
 }
 #moon {
-  /* -webkit-animation: rotateMoon 100s infinite linear;
-  animation: rotateMoon 100s infinite linear; */
+  -webkit-animation: rotateMoon 100s infinite linear;
+  animation: rotateMoon 100s infinite linear;
   position: relative;
   top: 33%;
+  width: 125%;
   /* mix-blend-mode: screen; */
 }
 
