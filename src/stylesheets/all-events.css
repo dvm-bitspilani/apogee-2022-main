@@ -39,11 +39,11 @@
   width: auto;
   padding: 2rem;
   font-family: "Montserrat", sans-serif;
-  max-width: 50vw;
+  width: 50vw;
   display: flex;
   color: #FBF1F1;
-  min-width: 40vw;
   max-height: 80vh; 
+  height: 60vh;
 }
 
 .kernel-events .card-description-box {
@@ -70,26 +70,18 @@
 
 .card-description-tabs span{
   padding: 0 1rem 6px 0;
-  transition: 0.3s all ease;
   cursor: pointer;
 }
 
 .card-tab-active{
-  border-bottom: 2px solid #FBF1F1;
-  transition: 0.3s all ease;
+  border-bottom: 3px solid #FBF1F1;
 }
 
 .card-description-text{
   width: 60%;
   padding: 1rem 0 0 2rem;
-  transition: 0.3s all ease;
   height: 100%;
   overflow-y: scroll;
-}
-
-.card-description-details{
-  transition: 0.3s all ease;
-
 }
 
 .card-description-img {
@@ -105,7 +97,9 @@
 @media all and (max-width: 500px) {
   .card-description-box,
   .kernel-events .card-description-box {
-    max-width: 85vw;
+    width: 85vw;
+    max-width: unset;
+    height: 70vh;
   }
 
   .card-description-img{

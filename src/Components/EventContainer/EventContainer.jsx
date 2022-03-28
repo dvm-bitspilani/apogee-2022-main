@@ -6,7 +6,7 @@ import "../../stylesheets/all-events.css";
 
 function EventContainer(props) {
   const [events, setEvents] = React.useState([]);
-
+  let isMounted = true
   React.useEffect(async () => {
     const response = await fetch(props.api, {
       headers: { "content-type": "application/json" },
@@ -47,30 +47,33 @@ function EventContainer(props) {
         ];
         setEvents(errorEvent);
       });
-
+    return () => { isMounted = false };
   }, []);
 
   const [eventDesc, setEventDesc] = React.useState("");
   const [eventName, setEventName] = React.useState("");
-  const [eventImg, setEventImg] = React.useState()
   const [eventRules, setEventRules] = React.useState("")
-  const [isEventDetails, setIsEventDetails] = React.useState(true)
+  const [eventContact, setEventContact] = React.useState("")
+  const modalImg = React.useRef()
+  const [tab, setTab] = React.useState({eventDetail: true, guideline: false, contact: false})
   const [isDiabled, setIsDisabled] = React.useState(false);
   const [descriptionDetails, setDescriptionDetails] = React.useState("none");
-  const handleOpen = (name, desc, img, rules) => {
-    if (desc === null) {
+
+  const handleOpen = (el) => {
+    if (el.description === null) {
       return;
     }
+    let img = props.type == "kernel" ? el.image_url : el.img_url
+    modalImg.current.style.backgroundImage = changeDriveLink(img)
     setDescriptionDetails("flex");
-
-    setEventName(name);
-    setEventDesc(desc);
-    setEventImg(img)
-    setEventRules(rules)
+    setEventName(el.name);
+    setEventDesc(el.description);
+    setEventRules(el.rules)
+    setEventContact(el.contact)
   };
   const handleClose = () => {
     setDescriptionDetails("none");
-    setIsEventDetails(true)
+    setTab({eventDetail: true, guideline: false, contact: false})
   }
   const changeDriveLink = (driveLink) => {
     console.log(driveLink)
@@ -84,7 +87,6 @@ function EventContainer(props) {
     let secondHalf = driveLink.split("?")[1];
     let finalLink = "url(" + firstHalf + ".com/uc?" + secondHalf + ")";
     // console.log("Final Link", finalLink);
-    // setEventImg(finalLink)
     return finalLink;
   };
   const handleLargeDescription = (desc) => {
@@ -100,11 +102,20 @@ function EventContainer(props) {
     return desc;
   };
 
-  const handleEDClick = () =>{
-    setIsEventDetails(true)
+  const handleEDClick = () => {
+    setTab({eventDetail: true, guideline: false, contact: false})
   }
-  const handleGuidelineClick = () =>{
-    setIsEventDetails(false)
+  const handleGuidelineClick = () => {
+    setTab({eventDetail: false, guideline: true, contact: false})
+  }
+  const handleContactClick = () =>{
+    setTab({eventDetail: false, guideline: false, contact: true})
+  }
+
+  const tabSelection = ()  =>{
+    if(tab.eventDetail) return eventDesc
+    else if (tab.guideline) return eventRules
+    else if (tab.contact) return eventContact
   }
 
   return (
@@ -134,7 +145,7 @@ function EventContainer(props) {
                 <p>{handleLargeDescription(el.description)}</p>
                 <div
                   className="view-btn"
-                  onClick={() => handleOpen(el.name, el.description, el.image_url, el.rules)}
+                  onClick={() => handleOpen(el)}
                 >
                   View Details
                 </div>
@@ -152,18 +163,17 @@ function EventContainer(props) {
       >
         <div className="card-description-box">
           <div
+            ref={modalImg}
             className="card-description-img"
-          // style={{
-          //   backgroundImage: changeDriveLink(eventImg),
-          // }}
           ></div>
           <div className="card-description-text">
             <div className="card-description-heading">{eventName}</div>
             <div className="card-description-tabs">
-              <span onClick={handleEDClick} className={isEventDetails ? "card-tab-active" : ""}>Event Details</span>
-              <span onClick={handleGuidelineClick} className={!isEventDetails ? "card-tab-active" : ""}>Guidelines</span>
+              <span onClick={handleEDClick} className={tab.eventDetail ? "card-tab-active" : ""}>Details</span>
+              <span onClick={handleGuidelineClick} className={tab.guideline ? "card-tab-active" : ""}>Guidelines</span>
+              <span onClick={handleContactClick} className={tab.contact ? "card-tab-active" : ""}>Contact</span>
             </div>
-            <div className="card-description-details" dangerouslySetInnerHTML={{__html: isEventDetails ? eventDesc : eventRules}} ></div>
+            <div className="card-description-details" dangerouslySetInnerHTML={{ __html: tabSelection()}} ></div>
           </div>
           <div className="close-card-description" onClick={handleClose}>
             <CloseIcon />
