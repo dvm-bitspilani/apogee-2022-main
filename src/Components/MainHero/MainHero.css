@@ -263,6 +263,9 @@ html{
   .dimension {
     font-size: 16px;
   }
+  /* #cityLayer1,#cityLayer2,#cityLayer3,#cityLayer4,#cityLayer5,#cityLayer6 {
+    display: none;
+  } */
 }
 .dimension {
   text-align: center;

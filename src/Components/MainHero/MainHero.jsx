@@ -5,12 +5,18 @@ import { useEffect, useRef } from "react"
 import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 import Arrow from "./MainHeroAssets/down-arrow.svg"
 // Assets
-import CityLayer1 from "./MainHeroAssets/city/City Layer 1.svg";
-import CityLayer2 from "./MainHeroAssets/city/City Layer 2.svg";
-import CityLayer3 from "./MainHeroAssets/city/City Layer 3.svg";
-import CityLayer4 from "./MainHeroAssets/city/City Layer 4.svg";
-import CityLayer5 from "./MainHeroAssets/city/City Layer 5.svg";
-import CityLayer6 from "./MainHeroAssets/city/City Layer 6.svg";
+import CityLayer1Laptop from "./MainHeroAssets/city/City Layer 1.svg";
+import CityLayer2Laptop from "./MainHeroAssets/city/City Layer 2.svg";
+import CityLayer3Laptop from "./MainHeroAssets/city/City Layer 3.svg";
+import CityLayer4Laptop from "./MainHeroAssets/city/City Layer 4.svg";
+import CityLayer5Laptop from "./MainHeroAssets/city/City Layer 5.svg";
+import CityLayer6Laptop from "./MainHeroAssets/city/City Layer 6.svg";
+import CityLayer1Mobile from  "./MainHeroAssets/MobileBuildings/City 1.svg";
+import CityLayer2Mobile from  "./MainHeroAssets/MobileBuildings/City 2.svg";
+import CityLayer3Mobile from  "./MainHeroAssets/MobileBuildings/City 3.svg";
+import CityLayer4Mobile from  "./MainHeroAssets/MobileBuildings/City 4.svg";
+import CityLayer5Mobile from  "./MainHeroAssets/MobileBuildings/City 5.svg";
+import CityLayer6Mobile from  "./MainHeroAssets/MobileBuildings/City 6.svg";
 import Moon from "../../assets/Moon1.png";
 import Div100vh from 'react-div-100vh';
 import ScrollScreen from "../ScrollScreen/ScrollScreen.jsx";
@@ -134,12 +140,19 @@ function MainHero() {
                 </div>
                 {/* <div className="buildings"> */}
                 <div className="buildings">
-                    <img class="cityBuildings layers" id="cityLayer1" ref={Layer1} src={CityLayer1} alt="" />
-                    <img class="cityBuildings layers" id="cityLayer2" src={CityLayer2} alt="" />
-                    <img class="cityBuildings layers" id="cityLayer3" src={CityLayer3} alt="" />
-                    <img class="cityBuildings layers" id="cityLayer4" src={CityLayer4} alt="" />
-                    <img class="cityBuildings layers" id="cityLayer5" src={CityLayer5} alt="" />
-                    <img class="cityBuildings layers" id="cityLayer6" src={CityLayer6} alt="" />
+                    {/* <img class="cityBuildings layers" id="cityLayer1" ref={Layer1} src={window.screen.width < 768 ? CityLayer1Mobile : CityLayer1Laptop} alt="" />
+                    <img class="cityBuildings layers" id="cityLayer2" src={window.screen.width < 768 ? CityLayer2Mobile : CityLayer2Laptop} alt="" />
+                    <img class="cityBuildings layers" id="cityLayer3" src={window.screen.width < 768 ? CityLayer3Mobile : CityLayer3Laptop} alt="" />
+                    <img class="cityBuildings layers" id="cityLayer4" src={window.screen.width < 768 ? CityLayer4Mobile : CityLayer4Laptop} alt="" />
+                    <img class="cityBuildings layers" id="cityLayer5" src={window.screen.width < 768 ? CityLayer5Mobile : CityLayer5Laptop} alt="" />
+                    <img class="cityBuildings layers" id="cityLayer6" src={window.screen.width < 768 ? CityLayer6Mobile : CityLayer6Laptop} alt="" /> */}
+                    <img class="cityBuildings layers" id="cityLayer1" ref={Layer1} src={CityLayer1Laptop} alt="" />
+                    <img class="cityBuildings layers" id="cityLayer2" src={CityLayer2Laptop} alt="" />
+                    <img class="cityBuildings layers" id="cityLayer3" src={CityLayer3Laptop} alt="" />
+                    <img class="cityBuildings layers" id="cityLayer4" src={CityLayer4Laptop} alt="" />
+                    <img class="cityBuildings layers" id="cityLayer5" src={CityLayer5Laptop} alt="" />
+                    <img class="cityBuildings layers" id="cityLayer6" src={CityLayer6Laptop} alt="" />
+            
                 </div>
                 {/* </div> */}
 
