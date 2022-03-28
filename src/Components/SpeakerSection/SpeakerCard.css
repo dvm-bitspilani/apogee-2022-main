@@ -23,7 +23,8 @@
 }
 .speakerPersonal {
     color: white;
-    /* text-align: center; */
+    text-align: center;
+    margin-top: 20px;
 }
 .speakerPersonal h2{
     font-family: "Forgotten Futurist";

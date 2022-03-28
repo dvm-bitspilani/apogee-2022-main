@@ -10,7 +10,7 @@ const speakers = [{
     id:1,
     name: "Dr. Soumya Swaminathan",
     bio: "Chief Scientist, World Health Organisation",
-    details: "Lorem ipsum dolor r adipiscing elit. Consequat, ut egestas vel venes hac euismod. In magna lorem imperdiet amet commodo. Suspendisse purus vitae mi sit sollicitudin ultrices. Eros t Suspendisse purus vitae mi sit sollicitudin ultrices Suspendisse purus viltrices",
+    details: "Chief Scientist at world health organization, She was the formal Deputy Director-General at WHO. She is now the Coordinator of the UNICEF/UNDP/WORLD BANK / WHO Special Programme and known for her Research on Tuberculosis and HIV.",
     profileImage: "soumya"
 
 },
@@ -18,7 +18,7 @@ const speakers = [{
     id:2,
     name: "Zainab Nagin Cox",
     bio: "US Spacecraft and Operations Engineer",
-    details: "Lorem ipsum dolor sit amet, cotetur adipisgestas vel venes hac euismod. In magna lorem imperdiet amet commodo. Suspendisse purus vitae mi sit sollicitudin ultrices. Eros t Suspendisse purus vitae mi sit sollicitudin ultrices Suspendisse purus viltrices",
+    details: "She is a US Spacecraft and Operations Engineer. She is also the tactical Mission Lead on Mars Missions Curiosity & Perseverance Rover. Asteroid 14061 has been-+ named 14061 Nagincox in her honour as its discoverer",
     profileImage: "zainab"
 
     },
@@ -26,14 +26,14 @@ const speakers = [{
         id:3,
     name: "Jeffrey Archer",
     bio: "Bestselling author",
-    details: "Lorem ipsum dolor sit amet, cotetur adipiscing elit. stas vel venes hac euismod. In magna lorem imperdiet amet commodo. Suspendisse purus vitae mi sit sollicitudin ultrices. Eros t Suspendisse purus vitae mi sit sollicitudin ultrices Suspendisse purus viltrices",
+    details: "He is one of the  Bestselling authors and wrote books like 'Kane and Abel', 'Not a Penny More, Not a penny less '. He was the former Deputy Chairman of the Conservative Party and Former Member of Parliament, UK.",
     profileImage: "jeffrey"
 
     }, {
         id:4,
     name: "Dr. Henry Throop",
     bio: "American Astronomer-Consultant to NASA",
-    details: "Lorem ipsum dolor sit amet, cotetur adipiscing elit. Consequat, ut egestas vel venes hac euisommodo. Suspendisse purus vitae mi sit sollicitudin ultrices. Eros t Suspendisse purus vitae mi sit sollicitudin ultrices Suspendisse purus viltrices",
+    details: "He is an American Astronomer and a Consultant to NASA. He was a Member of the first Pluto Mission Team, New Horizons. He is the Discoverer of Pluto's smallest moon, Styx, in 2012.Asteroid 193736 named Henrythroop in his honour.",
     profileImage: "henry"
 
     }]
@@ -48,7 +48,7 @@ function handleClick() {
 
 
 function SpeakerSection() {
-        const carouselHeight=(window.screen.width<768)?150:40
+        const carouselHeight=(window.screen.width<768)?140:40
 
     return (
         <div className="SpeakerWrapper">
