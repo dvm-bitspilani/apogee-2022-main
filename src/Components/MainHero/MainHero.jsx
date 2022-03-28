@@ -24,8 +24,6 @@ import "./MainHero.css"
 import AboutUs from "../AboutUs/AboutUs";
 
 function MainHero() {
-
-
     function scrollTo(offset) {
         scroller.scrollTo("random", {
             duration: 2000,
@@ -50,6 +48,7 @@ function MainHero() {
 
 
     useEffect(() => {
+        document.documentElement.style.overflowY = "hidden"
         document.getElementsByClassName("clickAndScroll")[0].addEventListener("click", () => {
             document.querySelector("body").style.overflowY = "scroll !important"
             document.documentElement.style.overflowY = "scroll"
@@ -66,7 +65,12 @@ function MainHero() {
                 setTimeout(document.getElementsByClassName("clickAndScroll")[0].classList.remove("arrowAnimation"), 2200)
             }
             else {
-                if (window.pageYOffset > 3300 && window.pageYOffset < 3650) {
+                if ((window.pageYOffset > 3300 && window.pageYOffset < 3650) && window.screen.width > 768) {
+                    document.body.style.overflowY = "hidden"
+                    // document.documentElement.overflowY = "hidden"
+                    scroll.scrollToTop({ ignoreCancelEvents: true, smooth: "linear", duration: 1000 });
+                }
+                if ((window.pageYOffset > 2200 && window.pageYOffset < 2550) && window.screen.width < 768) {
                     document.body.style.overflowY = "hidden"
                     // document.documentElement.overflowY = "hidden"
                     scroll.scrollToTop({ ignoreCancelEvents: true, smooth: "linear", duration: 1000 });
