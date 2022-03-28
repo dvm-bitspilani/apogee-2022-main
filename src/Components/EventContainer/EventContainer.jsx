@@ -19,7 +19,7 @@ function EventContainer(props) {
       .then(function (result) {
         if (props.type == "kernel") setEvents(result.data[0].events);
         else setEvents(result[0].events);
-        console.log(result);
+        // console.log(result);
         if (document.getElementsByClassName("loaderDivEvents")[0]) {
           document.getElementsByClassName("loaderDivEvents")[0].style.display = "none";
         }
@@ -153,9 +153,9 @@ function EventContainer(props) {
         <div className="card-description-box">
           <div
             className="card-description-img"
-          // style={{
-          //   backgroundImage: changeDriveLink(eventImg),
-          // }}
+          style={{
+            backgroundImage: changeDriveLink(eventImg),
+          }}
           ></div>
           <div className="card-description-text">
             <div className="card-description-heading">{eventName}</div>
@@ -163,7 +163,7 @@ function EventContainer(props) {
               <span onClick={handleEDClick} className={isEventDetails ? "card-tab-active" : ""}>Event Details</span>
               <span onClick={handleGuidelineClick} className={!isEventDetails ? "card-tab-active" : ""}>Guidelines</span>
             </div>
-            <div className="card-description-details">{isEventDetails ? eventDesc : eventRules}</div>
+            <div className="card-description-details" dangerouslySetInnerHTML={{__html: isEventDetails ? eventDesc : eventRules}} ></div>
           </div>
           <div className="close-card-description" onClick={handleClose}>
             <CloseIcon />
