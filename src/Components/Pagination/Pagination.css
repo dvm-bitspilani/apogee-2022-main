@@ -58,13 +58,15 @@ display: flex !important;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+    /* transition: all 0.3s; */
     /* margin-left: 20px; */
 }
 #line span{
     position: absolute;
 }
-.dots.active{
+.active{
     outline: 3px solid white;
+    transition: all 0.1s;
     outline-offset: 3px;
 }
 

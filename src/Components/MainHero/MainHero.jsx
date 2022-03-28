@@ -55,7 +55,7 @@ function MainHero() {
             console.log("clicked");
         })
         window.onscroll = function (e) {
-            console.log(window.scrollY)
+            // console.log(window.scrollY)
             if (this.oldScroll <= this.scrollY) {
                 // if (window.pageYOffset > 0 && window.pageYOffset < 40) {
                 //     scrollTo(2800);
