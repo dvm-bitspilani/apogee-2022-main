@@ -72,7 +72,7 @@ function MainHero() {
                     scroll.scrollToTop({ ignoreCancelEvents: true, smooth: "linear", duration: 1000 });
                 }
 
-                if (window.pageYOffset >= 0 && window.pageYOffset < 40) {
+                if (window.pageYOffset >= 0 && window.pageYOffset < 10) {
                     document.body.style.overflowY = "hidden"
                     document.documentElement.style.overflowY = "hidden"
                 }
