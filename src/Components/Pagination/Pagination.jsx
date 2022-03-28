@@ -18,11 +18,13 @@ function Pagination() {
       
     document.getElementById("hero-link").addEventListener("click", () => {
         document.querySelector("body").style.overflowY = "hidden"
+        document.documentElement.style.overflowY = "scroll"
     })
 
     for (let i= 1; i< 5; i++) {
         document.getElementsByClassName("dots")[i].addEventListener("click", () => {
             document.querySelector("body").style.overflowY = "scroll"
+            document.documentElement.style.overflowY = "scroll"
         })
     }  
       
