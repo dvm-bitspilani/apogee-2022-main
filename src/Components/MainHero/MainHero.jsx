@@ -48,7 +48,7 @@ function MainHero() {
 
 
     useEffect(() => {
-        document.documentElement.style.overflowY = "hidden"
+        // document.documentElement.style.overflowY = "hidden"
         document.getElementsByClassName("clickAndScroll")[0].addEventListener("click", () => {
             document.querySelector("body").style.overflowY = "scroll !important"
             document.documentElement.style.overflowY = "scroll"
@@ -78,7 +78,7 @@ function MainHero() {
 
                 if (window.pageYOffset >= 0 && window.pageYOffset < 10) {
                     document.body.style.overflowY = "hidden"
-                    document.documentElement.style.overflowY = "hidden"
+                    // document.documentElement.style.overflowY = "hidden"
                 }
             }
 
