@@ -13,6 +13,7 @@ import Footer from "../Components/ContactProfileCard/Footer/Footer.jsx"
 import EventContainer from "../Components/EventContainer/EventContainer.jsx";
 import "../stylesheets/final.css";
 import Videos from "../Components/Videos/Videos.jsx";
+import SpeakerSection from "../Components/SpeakerSection/SpeakerSection.jsx";
 
 function Test() {
 
@@ -54,6 +55,9 @@ function Test() {
             type="kernel"
             api="https://bits-apogee.org/registrations/kernel_events/"
           />
+        </div>
+        <div className="section" id="Speakers">
+          <SpeakerSection />
         </div>
         <div className="section" id="ContactUs">
           <ContactUs />

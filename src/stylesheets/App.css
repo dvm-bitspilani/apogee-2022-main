@@ -11,7 +11,9 @@
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   } */
- 
+ /* html{
+   height: 100%;
+ } */
 .App {
   text-align: center;
 }

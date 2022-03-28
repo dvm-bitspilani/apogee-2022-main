@@ -42,7 +42,7 @@ function Pagination() {
   return (
     <div id="pagination">
       <div id="line">
-       <div><a className="dots" href="#heroSection" id="hero-link"></a> <span>Hnaji</span></div> 
+       <a className="dots" href="#heroSection" id="hero-link"></a> 
         <a className="dots" href="#aboutus"></a>
         <a className="dots" href="#Videos"></a>
         <a className="dots" href="#kernelEvents"></a>

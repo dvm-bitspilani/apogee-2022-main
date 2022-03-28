@@ -1,0 +1,18 @@
+.subHeading{
+    color: white;
+    margin: 10px 50px;
+    font-size: 1.75rem;
+    font-family: "Forgotten Futurist";
+    letter-spacing: 2px;
+
+}
+.speakerHeading{
+    line-height: 76.8px;
+    font-family: 'Pirulen';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.5rem;
+    line-height: 77px;
+    margin: 50px 50px 0px 50px;
+    color: white;
+}
