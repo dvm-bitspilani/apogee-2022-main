@@ -6,7 +6,7 @@ import Pagination from './../Components/Pagination/Pagination';
 import SocialsHero from "../Components/SocialsHero/SocialsHero.js";
 import { useInView } from 'react-intersection-observer'
 import ScrollScreen from "../Components/ScrollScreen/ScrollScreen.jsx";
-import Loader from "./loaderPage.jsx"
+import Loader from "../Components/Loader/loader.jsx"
 import AboutUs from "../Components/AboutUs/AboutUs.jsx"
 import ContactUs from "../Components/ContactProfileCard/ContactUs.jsx"
 import Footer from "../Components/ContactProfileCard/Footer/Footer.jsx"

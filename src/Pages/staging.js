@@ -8,13 +8,13 @@ import { styled, Box } from "@mui/system";
 import CloseIcon from "@mui/icons-material/Close";
 import Background from "../assets/laptop/events_balcony.svg";
 import EventContainer from "../Components/EventContainer/EventContainer";
-import Loader from "./loaderPage.jsx"
+import Loader from "../Components/Loader/loader.jsx"
 import ContactProfileCard from "../Components/ContactProfileCard/ContactProfileCard";
 import Footer from "../Components/ContactProfileCard/Footer/Footer.jsx"
 function Staging() {
   return (
     <div className="Stage">
-      <Footer />
+      <Loader />
     </div>
   );
 }

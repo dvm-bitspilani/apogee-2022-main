@@ -1,0 +1,11 @@
+#loaderAnimation {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    background: black;
+}

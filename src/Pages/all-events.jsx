@@ -8,7 +8,7 @@ import { styled, Box } from "@mui/system";
 import CloseIcon from "@mui/icons-material/Close";
 import Background from "../assets/laptop/events_balcony.svg";
 import EventContainer from "../Components/EventContainer/EventContainer";
-import Loader from "./loaderPage.jsx"
+import Loader from "../Components/Loader/loader.jsx"
 
 import "../stylesheets/events.css";
 import "../stylesheets/all-events.css";
