@@ -228,10 +228,10 @@ function NavBar() {
                 >
                   <div>Kernel Events</div>
                 </a> */}
-                <a className="links" href="/sponsors">
+                <a className="links" href="/sponsors/">
                   <div>Sponsors</div>
                 </a>
-                <a className="links" href="/events">
+                <a className="links" href="/events/">
                   <div>All Events</div>
                 </a>
               </div>

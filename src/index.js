@@ -44,7 +44,7 @@ ReactDOM.render(
     <Routes>
       <Route path="/" element={<Test />} />
       <Route
-        path="/events"
+        path="/events/"
         element={
           <Events
             heading="All Events"
@@ -66,7 +66,7 @@ ReactDOM.render(
       <Route path="/loader" element={<LoaderPage />} />
       <Route path="/aboutus" element={<AboutUs />} />
       <Route path="/staging" element={<Staging />} />
-      <Route path="/sponsors" element={<Sponsors />} />
+      <Route path="/sponsors/" element={<Sponsors />} />
       {/* <Route path="/Test" element={<Test />} /> */}
 
       {/* <Route path="invoices" element={<Invoices />} /> */}
