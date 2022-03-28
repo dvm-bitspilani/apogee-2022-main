@@ -39,7 +39,7 @@
 .speakerDetails{
     color: white;
     width: 320px;
-    height: 250px;
+    /* height: 250px; */
     overflow-y: scroll;
     border-radius: 20px;
     padding: 20px;
@@ -47,8 +47,28 @@
 box-shadow: inset 0px 1px 23.4612px rgba(107, 100, 154, 0.3), inset 0px 1px 52.136px rgba(179, 171, 226, 0.2);
 }
 
+.awssld__controls button:hover .awssld__controls__arrow-left,
+.awssld__controls button:hover .awssld__controls__arrow-right {
+  opacity: 1 !important}
+
 .awssld__content{
     background-color: transparent !important;
+}
+/* .awssld__controls button:hover .awssld__controls__arrow-left:before{
+    transform: rotate(45deg) !important;
+}
+.awssld__controls button:hover .awssld__controls__arrow-left:after{
+    transform: rotate(-45deg) !important;
+}
+.awssld__controls button:hover .awssld__controls__arrow-right:before{
+    transform: rotate(-45deg) !important;
+}
+.awssld__controls button:hover .awssld__controls__arrow-right:after{
+    transform: rotate(45deg) !important;
+} */
+.awssld__controls button .awssld__controls__arrow-left, .awssld__controls button .awssld__controls__arrow-right{
+    opacity: 0.8!important;
+    /* transition: none !important; */
 }
 
 @media (max-width:768px) {

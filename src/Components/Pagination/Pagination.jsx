@@ -46,6 +46,7 @@ function Pagination() {
         <a className="dots" href="#aboutus"></a>
         <a className="dots" href="#Videos"></a>
         <a className="dots" href="#kernelEvents"></a>
+        <a className="dots" href="#Speakers"></a>
         <a className="dots" href="#ContactUs"></a>
       </div>
     </div>
