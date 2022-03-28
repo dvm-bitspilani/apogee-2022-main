@@ -66,7 +66,12 @@ function MainHero() {
                 setTimeout(document.getElementsByClassName("clickAndScroll")[0].classList.remove("arrowAnimation"), 2200)
             }
             else {
-                if (window.pageYOffset > 3300 && window.pageYOffset < 3650) {
+                if ((window.pageYOffset > 3300 && window.pageYOffset < 3650) && window.screen.width > 768) {
+                    document.body.style.overflowY = "hidden"
+                    // document.documentElement.overflowY = "hidden"
+                    scroll.scrollToTop({ ignoreCancelEvents: true, smooth: "linear", duration: 1000 });
+                }
+                if ((window.pageYOffset > 2200 && window.pageYOffset < 2550) && window.screen.width < 768) {
                     document.body.style.overflowY = "hidden"
                     // document.documentElement.overflowY = "hidden"
                     scroll.scrollToTop({ ignoreCancelEvents: true, smooth: "linear", duration: 1000 });
