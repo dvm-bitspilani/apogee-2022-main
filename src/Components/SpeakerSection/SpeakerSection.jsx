@@ -38,13 +38,6 @@ const speakers = [{
 
     }]
 
-function handleClick() {
-   var org_html = document.getElementsByClassName("carousel__dot")[0].innerHTML;
-   var new_html = "<div id='selectedDot'>" + org_html + "</div>";
-    org_html = new_html;
-
-}
-
 
 
 function SpeakerSection() {
