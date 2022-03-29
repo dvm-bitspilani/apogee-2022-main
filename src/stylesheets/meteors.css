@@ -67,7 +67,7 @@
     #eleven img{
         position: absolute;
         right: 28.17%;
-        top: 900.52%;    
+        top: 850.52%;    
         transform: scale(0.08) rotate(278deg)
     }
     #twelve img{
@@ -99,6 +99,6 @@
     #sixteen img{
         position: absolute;
         right: 28.07%;
-        top: 900.52%;    
+        top: 800.52%;    
         transform: scale(0.12) rotate(28deg)
     }
