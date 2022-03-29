@@ -111,6 +111,8 @@ export default function RegModalButton(props) {
       typeof value === "string" ? value.split(",") : value,
       (selectedEvents = value)
     );
+    // if (selectedEvents.includes("ARMAGEDDON")) document.getElementsByClassName("extraMenu")[0].style.display = "flex"
+    // else document.getElementsByClassName("extraMenu")[0].style.display = "none"
   };
   const names = [];
 
@@ -201,6 +203,7 @@ export default function RegModalButton(props) {
   const handleChange = (e) => {
     const { name, value } = e.target;
     console.log(name, value);
+   
     setData((prevState) => ({
       ...prevState,
       [name]: value,
@@ -434,9 +437,22 @@ export default function RegModalButton(props) {
                               {name}
                             </MenuItem>
                           ))}
-                        </Select>
-                      </FormControl>
-                    </div>
+            
+                      </Select>
+                   
+                    </FormControl>
+                    <div className="extraMenu">
+                    <div>Valorant</div>
+                    <div>BGMI</div>
+                    <div>CS-GO</div>
+                    <div>Clash Royal</div> 
+                  <b><span>BITSian only events</span></b> 
+                    <div>Tekken</div>
+                    <div>FIFA</div>
+                    <div>Rocket League</div> 
+                  </div>
+                  </div>
+             
                   </div>
 
                   <div className="cell">

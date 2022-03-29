@@ -33,7 +33,21 @@ grid-column-gap:110px;
 .ModalBox{
     margin-right:-60%
 }
-
+.extraMenu{
+    display: none;
+    position: absolute;
+    background-color: white;
+    color: black;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+    font-weight: 400;
+    left: 51%;
+    top:66%;
+}
+.extraMenu div{
+    cursor: pointer;
+}
 .cell span{
     padding:10px;
     white-space: nowrap;
