@@ -99,7 +99,7 @@ function NavBar() {
               <a
                 className="links"
                 target="_blank"
-                href="https://twitter.com/bitsapogee?lang=en"
+                href="https://www.instagram.com/bitsapogee/?hl=en"
               >
                 <div>Instagram</div>
               </a>
