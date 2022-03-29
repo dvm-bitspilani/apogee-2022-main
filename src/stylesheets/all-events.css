@@ -63,7 +63,7 @@
 }
 .card-description-details{
   overflow-y:scroll;
-  height: 39%;
+  height: 75%
 }
 .card-description-tabs{
   margin: 2vh 0 3vh;

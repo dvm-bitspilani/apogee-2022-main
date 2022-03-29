@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.69b7bebd.css",
-    "main.js": "/static/js/main.7169ea21.js",
+    "main.css": "/static/css/main.00db59b8.css",
+    "main.js": "/static/js/main.43e00022.js",
     "static/media/6degreesindia.png": "/static/media/6degreesindia.a8f20f39531b74133482.png",
     "static/media/pepsico.jpeg": "/static/media/pepsico.b52907682772b1d16a91.jpeg",
     "static/media/finalGrid.svg": "/static/media/finalGrid.6edba974b03820d496cefa8da7b8a107.svg",
@@ -80,11 +80,11 @@
     "static/media/down-arrow.svg": "/static/media/down-arrow.128a7967045cf7a17057ef0eebe089aa.svg",
     "static/media/Sky.svg": "/static/media/Sky.28104c1183800dbf6251.svg",
     "static/media/Arrox.svg": "/static/media/Arrox.70a44802d149617ada3a003a94a24525.svg",
-    "main.69b7bebd.css.map": "/static/css/main.69b7bebd.css.map",
-    "main.7169ea21.js.map": "/static/js/main.7169ea21.js.map"
+    "main.00db59b8.css.map": "/static/css/main.00db59b8.css.map",
+    "main.43e00022.js.map": "/static/js/main.43e00022.js.map"
   },
   "entrypoints": [
-    "static/css/main.69b7bebd.css",
-    "static/js/main.7169ea21.js"
+    "static/css/main.00db59b8.css",
+    "static/js/main.43e00022.js"
   ]
 }
