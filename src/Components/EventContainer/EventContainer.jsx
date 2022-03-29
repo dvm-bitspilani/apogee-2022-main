@@ -167,12 +167,12 @@ function EventContainer(props) {
             className="card-description-img"
           ></div>
           <div className="card-description-text">
-            <div className="card-description-heading">{eventName}</div>
+          <div>  <div className="card-description-heading">{eventName}</div>
             <div className="card-description-tabs">
               <span onClick={handleEDClick} className={tab.eventDetail ? "card-tab-active" : ""}>Details</span>
               <span onClick={handleGuidelineClick} className={tab.guideline ? "card-tab-active" : ""}>Guidelines</span>
               <span onClick={handleContactClick} className={tab.contact ? "card-tab-active" : ""}>Contact</span>
-            </div>
+            </div></div>
             <div className="card-description-details" dangerouslySetInnerHTML={{ __html: tabSelection()}} ></div>
           </div>
           <div className="close-card-description" onClick={handleClose}>

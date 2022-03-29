@@ -61,7 +61,10 @@
   font-weight: 700;
   font-size: 30px;
 }
-
+.card-description-details{
+  overflow-y:scroll;
+  height: 39%;
+}
 .card-description-tabs{
   margin: 2vh 0 3vh;
   border-bottom: 1px solid #FBF1F1;
@@ -81,7 +84,7 @@
   width: 60%;
   padding: 1rem 0 0 2rem;
   height: 100%;
-  overflow-y: scroll;
+
 }
 
 .card-description-img {
@@ -104,6 +107,10 @@
 
   .card-description-img{
     display: none;
+  }
+  .card-description-details{
+    overflow-y:scroll;
+    height: initial;
   }
 
   .card-description-text{

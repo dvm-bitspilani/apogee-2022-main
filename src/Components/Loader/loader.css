@@ -9,7 +9,14 @@
     width: 100vw;
     background: black;
 }
-/* #loaderAnimation img{
-    width: 50%;
-    height: 50%;
-} */
+
+
+.loaderImg{
+    height: 30vh;
+    width: 30vw;
+    background-image: url("./latestloader.gif");
+    box-shadow: 50px 50px 113px #000 inset, -50px -50px 110px #000 inset;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
