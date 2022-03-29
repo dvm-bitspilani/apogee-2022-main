@@ -62,7 +62,7 @@ function SpeakerSection() {
                         })}
 
                     </Slider>
-                    <DotGroup onClick={handleClick} />
+                    <DotGroup />
 
                 </CarouselProvider>
 
