@@ -2,7 +2,7 @@
 import React from "react"
 import { useEffect, useRef } from "react"
 // import * as Scroll from 'react-scroll';
-import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import {  Events, animateScroll as scroll, scroller } from 'react-scroll'
 import Arrow from "./MainHeroAssets/down-arrow.svg"
 // Assets
 import CityLayer1Laptop from "./MainHeroAssets/city/City Layer 1.svg";
