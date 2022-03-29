@@ -18,9 +18,6 @@ import rocks from "../Components/MainHero/MainHeroAssets/meteor.png";
 import "../stylesheets/meteors.css";
 
 function Test() {
-
-
-
   useEffect(() => {
   
   })
