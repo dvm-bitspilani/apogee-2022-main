@@ -11,12 +11,12 @@ import CityLayer3Laptop from "./MainHeroAssets/city/City Layer 3.svg";
 import CityLayer4Laptop from "./MainHeroAssets/city/City Layer 4.svg";
 import CityLayer5Laptop from "./MainHeroAssets/city/City Layer 5.svg";
 import CityLayer6Laptop from "./MainHeroAssets/city/City Layer 6.svg";
-import CityLayer1Mobile from  "./MainHeroAssets/MobileBuildings/City 1.svg";
-import CityLayer2Mobile from  "./MainHeroAssets/MobileBuildings/City 2.svg";
-import CityLayer3Mobile from  "./MainHeroAssets/MobileBuildings/City 3.svg";
-import CityLayer4Mobile from  "./MainHeroAssets/MobileBuildings/City 4.svg";
-import CityLayer5Mobile from  "./MainHeroAssets/MobileBuildings/City 5.svg";
-import CityLayer6Mobile from  "./MainHeroAssets/MobileBuildings/City 6.svg";
+import CityLayer1Mobile from "./MainHeroAssets/MobileBuildings/City 1.svg";
+import CityLayer2Mobile from "./MainHeroAssets/MobileBuildings/City 2.svg";
+import CityLayer3Mobile from "./MainHeroAssets/MobileBuildings/City 3.svg";
+import CityLayer4Mobile from "./MainHeroAssets/MobileBuildings/City 4.svg";
+import CityLayer5Mobile from "./MainHeroAssets/MobileBuildings/City 5.svg";
+import CityLayer6Mobile from "./MainHeroAssets/MobileBuildings/City 6.svg";
 import Moon from "../../assets/Moon1.png";
 import Div100vh from 'react-div-100vh';
 import ScrollScreen from "../ScrollScreen/ScrollScreen.jsx";
@@ -41,7 +41,6 @@ function MainHero() {
 
     }
 
-
     const handleScrollClick = () => {
         if (window.screen.width < 768) {
             scrollTo(1800);
@@ -54,12 +53,13 @@ function MainHero() {
 
     const Layer1 = useRef();
 
-
     useEffect(() => {
+        document.querySelector("#hero-link").classList.add("active")
         // document.documentElement.style.overflowY = "hidden"
         document.getElementsByClassName("clickAndScroll")[0].addEventListener("click", () => {
             document.querySelector("body").style.overflowY = "scroll !important"
             console.log("clicked");
+            document.querySelector("#hero-link").classList.remove("active")
         })
         window.onscroll = function (e) {
             // console.log(window.scrollY)
@@ -81,7 +81,7 @@ function MainHero() {
                 }
                 if ((window.pageYOffset > 2200 && window.pageYOffset < 2550) && window.screen.width < 768) {
                     document.body.style.overflowY = "hidden"
-              document.querySelector("html").style.overflowY = "hidden"
+                    document.querySelector("html").style.overflowY = "hidden"
 
                     // document.documentElement.overflowY = "hidden"
                     scroll.scrollToTop({ ignoreCancelEvents: true, smooth: "linear", duration: 1000 });
@@ -89,24 +89,19 @@ function MainHero() {
 
                 if (window.pageYOffset >= 0 && window.pageYOffset < 10) {
                     document.body.style.overflowY = "hidden"
-                  document.querySelector("html").style.overflowY = "hidden"
+                    document.querySelector("html").style.overflowY = "hidden"
                 }
             }
 
             this.oldScroll = this.scrollY;
         }
 
-
-
         Events.scrollEvent.register("begin", function () {
             console.log("begin", arguments);
         });
-
         Events.scrollEvent.register("end", function () {
             console.log("end", arguments);
         });
-
-
 
         Layer1.current.style.transform = "bottom: 0";
         // console.log(Layer1.current, screenWidth, screenHeight);
@@ -157,7 +152,7 @@ function MainHero() {
                     <img class="cityBuildings layers" id="cityLayer4" src={CityLayer4Laptop} alt="" />
                     <img class="cityBuildings layers" id="cityLayer5" src={CityLayer5Laptop} alt="" />
                     <img class="cityBuildings layers" id="cityLayer6" src={CityLayer6Laptop} alt="" />
-            
+
                 </div>
                 {/* </div> */}
 

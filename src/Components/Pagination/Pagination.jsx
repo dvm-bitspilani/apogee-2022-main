@@ -3,11 +3,25 @@ import { useState, useEffect, useRef } from "react";
 import "./Pagination.css";
 
 function Pagination() {
-  // const [about, setAbout] =  useState()
-  // const [videos, setVideos] =  useState()
-  // const [kernelEvents, setKernelEvents] =  useState()
-  // const [speakers, setSpeakers] =  useState()
-  // const [contact, setContact] =  useState()
+  const isInViewport = (el) => {
+    var top = el.offsetTop;
+    var left = el.offsetLeft;
+    var width = el.offsetWidth;
+    var height = el.offsetHeight;
+
+    while (el.offsetParent) {
+      el = el.offsetParent;
+      top += el.offsetTop;
+      left += el.offsetLeft;
+    }
+
+    return (
+      top < (window.pageYOffset + window.innerHeight) &&
+      left < (window.pageXOffset + window.innerWidth) &&
+      (top + height) > window.pageYOffset &&
+      (left + width) > window.pageXOffset
+    );
+  }
 
   const landing = useRef()
   const about = useRef()
@@ -60,35 +74,7 @@ function Pagination() {
       if (isInViewport(document.querySelector("#ContactUs .SectionHeading"))) contact.current.classList.add("active")
       else contact.current.classList.remove("active")
     }
-    // setAbout(isInViewport(document.querySelector("#aboutus")))
-    // setVideos(isInViewport(document.querySelector("#Videos")))
-    // setKernelEvents(isInViewport(document.querySelector("#kernelEvents")))
-    // setSpeakers(isInViewport(document.querySelector("#Speakers")))
-    // setContact(isInViewport(document.querySelector("#ContactUs")))
   }, []);
-
-    const isInViewport = (el) => {
-    var top = el.offsetTop;
-    var left = el.offsetLeft;
-    var width = el.offsetWidth;
-    var height = el.offsetHeight;
-  
-    while(el.offsetParent) {
-      el = el.offsetParent;
-      top += el.offsetTop;
-      left += el.offsetLeft;
-    }
-  
-    return (
-      top < (window.pageYOffset + window.innerHeight) &&
-      left < (window.pageXOffset + window.innerWidth) &&
-      (top + height) > window.pageYOffset &&
-      (left + width) > window.pageXOffset
-    );
-  }
-
-  console.log(about)
-  // console.log(isInViewport(bruh))
 
   return (
     <div id="pagination">
