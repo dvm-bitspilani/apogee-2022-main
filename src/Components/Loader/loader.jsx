@@ -29,7 +29,8 @@ function Loader() {
   return (
     <div className="LoaderWrapper" id="loaderAnimation">
       {/* <video src={LoaderVideo} autoPlay loop></video> */}
-      <img src={LoaderGif} alt="" srcset="" />
+      <div className="loaderImg"></div>
+
     </div>
   )
 }

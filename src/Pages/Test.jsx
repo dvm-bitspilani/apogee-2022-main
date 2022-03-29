@@ -95,7 +95,8 @@ function Test() {
             </div>
             <div className="rock" id="sixteen">
                 <img src= {rocks} alt=""/>
-            </div>
+          </div>
+      
         </div>
         <div className="section" id="kernelEvents">
           <EventContainer

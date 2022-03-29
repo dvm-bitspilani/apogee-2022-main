@@ -48,7 +48,7 @@ function SpeakerSection() {
             <div className="SectionHeading speakerHeading">
                 SPEAKERS
             </div>
-            <div className="subHeading">Think Again Live</div>
+            <div className="subHeading">Think Again Conclave</div>
             <div className="speakerCarousel">
                 <CarouselProvider
                     naturalSlideWidth={100}
