@@ -1,119 +1,119 @@
 @font-face {
-    font-family: "Pirulen";
-    src: local("Pirulen"), url("../../fonts/Pirulen.otf") format("opentype");
-    font-weight: normal;
-  }
+  font-family: "Pirulen";
+  src: local("Pirulen"), url("../../fonts/Pirulen.otf") format("opentype");
+  font-weight: normal;
+}
 @font-face {
-    font-family: "Forgotten Futurist";
-    src: local("Forgotten Futurist"), url("../../fonts/Forgotten Futurist.ttf") format("truetype");
-    font-weight: normal;
-  }
-
+  font-family: "Forgotten Futurist";
+  src: local("Forgotten Futurist"),
+    url("../../fonts/Forgotten Futurist.ttf") format("truetype");
+  font-weight: normal;
+}
 
 .mainVideoWrapper {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    /* background: black; */
-    margin-bottom: 100px;
-    /* position: relative;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  /* background: black; */
+  margin-bottom: 100px;
+  /* position: relative;
     top: 500vh; */
 }
 .aboutUsHeading {
-    line-height: 76.8px;
-    font-family: 'Pirulen';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 2.5rem;
-    line-height: 77px;
-    margin: 50px 50px;
-    color: white;
-    z-index: 2;
+  line-height: 76.8px;
+  font-family: "Pirulen";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.5rem;
+  line-height: 77px;
+  margin: 50px 50px;
+  color: white;
+  z-index: 2;
 }
 .aboutUsDetails {
-    font-family: 'Forgotten Futurist';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 46px;
-    letter-spacing: 0.12em;
-    margin: 0 150px;
-    color: white;
-    z-index: 2;
+  font-family: "Forgotten Futurist";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 46px;
+  letter-spacing: 0.12em;
+  margin: 0 150px;
+  color: white;
+  z-index: 2;
 }
-.video1{
-    display: flex;
-flex-direction: column;
-justify-content: flex-start;
+.video1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
-.video1 div, .video2 div{
-    
-    border: 26px solid transparent;
-    border-image: url("./background1.png") 5% round;
-    z-index: 2;
-}
-
-.video1 span, .video2 span{
-
-color: white;
-font-size: 1.75rem;
-margin-left: 30px;
-font-family: 'Forgotten Futurist';
-
-}
-.video2{
-    display: flex;
-flex-direction: column;
-justify-content: flex-end;
-
+.video1 div,
+.video2 div {
+  border: 26px solid transparent;
+  border-image: url("./background1.png") 5% round;
+  z-index: 2;
 }
 
-.videoWrapper{
-    margin: 0px 50px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    height: 100%;
-    margin-bottom: 60px;
+.video1 span,
+.video2 span {
+  color: white;
+  font-size: 1.75rem;
+  margin-left: 30px;
+  font-family: "Forgotten Futurist";
+}
+.video2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
-@media screen and (max-width: 768px){
+.videoWrapper {
+  margin: 0px 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 100%;
+  margin-bottom: 60px;
+}
 
-    .mainVideoWrapper {
+@media screen and (max-width: 768px) {
+  .mainVideoWrapper {
+    margin-bottom: 0px;
+  }
 
-     margin-bottom: 0px;
-    }
-
-    .aboutUsHeading {
-        font-size: 36px;
-        text-align: center;
-        margin: 50px  0;
-    }
-    .aboutUsDetails {
-        margin: 0 30px;
+  .aboutUsHeading {
+    font-size: 36px;
     text-align: center;
-    } 
-    .videoWrapper{
-        flex-direction: column;
-        margin-bottom: 10%;
-    }
-    .videoWrapper iframe{
-        width: 100%;
-        height: 160px;
-    }
-    .video1 span, .video2 span{
-        font-size: 1.2rem;
-        margin-left: 0;
-        text-align: center;
-    }
+    margin: 50px 0;
+  }
+  .aboutUsDetails {
+    margin: 0 30px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 150%;
+  }
+  .videoWrapper {
+    flex-direction: column;
+    margin-bottom: 10%;
+  }
+  .videoWrapper iframe {
+    width: 100%;
+    height: 160px;
+  }
+  .video1 span,
+  .video2 span {
+    font-size: 1.2rem;
+    margin-left: 0;
+    text-align: center;
+  }
 
-    .video1 div, .video2 div{
-        border: 12px solid transparent;
-        border-image: url("./background1.png") 5% round;
-    }
-    .videoHeading{
-        margin: 50px 0 0;
-    }
+  .video1 div,
+  .video2 div {
+    border: 12px solid transparent;
+    border-image: url("./background1.png") 5% round;
+  }
+  .videoHeading {
+    margin: 50px 0 0;
+  }
 }

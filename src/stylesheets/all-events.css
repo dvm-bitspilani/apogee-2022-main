@@ -110,7 +110,7 @@
   }
   .card-description-details{
     overflow-y:scroll;
-    height: initial;
+    /* height: initial; */
   }
 
   .card-description-text{

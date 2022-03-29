@@ -62,7 +62,10 @@ function MainHero() {
             console.log("clicked");
             document.querySelector("#hero-link").classList.remove("active")
         })
+        
+        
         window.onscroll = function (e) {
+            document.getElementById('pagination').style.visibility = 'visible';
             // console.log(window.scrollY)
             if (this.oldScroll <= this.scrollY) {
                 // if (window.pageYOffset > 0 && window.pageYOffset < 40) {

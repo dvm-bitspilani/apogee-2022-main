@@ -1,13 +1,14 @@
-#pagination{
-    position: fixed;
-    right: 2.5rem;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 12;
-    height: 75vh;
+#pagination {
+  position: fixed;
+  visibility: hidden;
+  right: 2.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 12;
+  height: 75vh;
 }
 .pageLink {
-    display: none !important;
+  display: none !important;
 }
 /* #line div{
     display: flex;
@@ -17,94 +18,88 @@
     text-align: center;
 } */
 
-.anchorHome:hover + .homeLink{
-display: flex !important;
+.anchorHome:hover + .homeLink {
+  display: flex !important;
 }
-.anchorAbout:hover + .aboutLink{
-    display: flex !important;
-    }
-
-    .anchorVideos:hover + .videosLink{
-        display: flex !important;
-        }
-
-        .anchorKernel:hover + .kernelLink{
-            display: flex !important;
-            }
-
-            .anchorContact:hover + .contactLink{
-                display: flex !important;
-                }
-                
-
-
-
-
-#line{
-    width: 3px;
-    height: 100%;
-    background: white;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.anchorAbout:hover + .aboutLink {
+  display: flex !important;
 }
 
-.dots{
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: white;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    /* transition: all 0.3s; */
-    /* margin-left: 20px; */
+.anchorVideos:hover + .videosLink {
+  display: flex !important;
+}
+
+.anchorKernel:hover + .kernelLink {
+  display: flex !important;
+}
+
+.anchorContact:hover + .contactLink {
+  display: flex !important;
+}
+
+#line {
+  width: 3px;
+  height: 100%;
+  background: white;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dots {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: white;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  /* transition: all 0.3s; */
+  /* margin-left: 20px; */
 }
 /* #line span{
     position: absolute;
 } */
-.active{
-    outline: 3px solid white;
-    transition: all 0.1s;
-    outline-offset: 3px;
+.active {
+  outline: 3px solid white;
+  transition: all 0.1s;
+  outline-offset: 3px;
 }
-.PageHeader{
-
-    background: rgba(4, 4, 4, 0.3);
-    color: white;
-    font-family: 'Forgotten Futurist';
-    transform: translate(-75px, -15px);
-    font-size: 16px;
-    position: relative;
-    top: -5px;
-    white-space: nowrap;
-    /* display: none; */
-
+.PageHeader {
+  background: rgba(4, 4, 4, 0.3);
+  color: white;
+  font-family: "Forgotten Futurist";
+  transform: translate(-75px, -15px);
+  font-size: 16px;
+  position: relative;
+  top: -5px;
+  white-space: nowrap;
+  /* display: none; */
 }
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 #PageHeader1 {
-    left: -70px;
+  left: -70px;
 }
 #PageHeader2 {
-    left: -90px;
+  left: -90px;
 }
 #PageHeader3 {
-    left: -70px;
+  left: -70px;
 }
 #PageHeader4 {
-    left: -120px;
+  left: -120px;
 }
 #PageHeader5 {
-    left: -90px;
+  left: -90px;
 }
 #PageHeader6 {
-    left: -95px;
+  left: -95px;
 }
 @media screen and (max-width: 768px) {
-    #pagination{
-        display: none
-    }
+  #pagination {
+    display: none;
+  }
 }
