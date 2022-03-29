@@ -44,7 +44,7 @@ img {
   -ms-transform: translateX(-50%);
   transform: translateX(-50%); */
   color: white;
-  z-index: 0;
+  z-index: 2;
   /* height: calc(100% - 4rem); */
   /* overflow-x: hidden;
   overflow-y: scroll;
@@ -61,6 +61,7 @@ img {
   font-family: "Pirulen";
   font-size: 36px;
   padding: 1rem 0;
+  z-index: 2;
 }
 
 .kernel-events-container .heading {
@@ -90,6 +91,7 @@ img {
 }
 
 .card {
+  z-index: 2;
   width: 33%;
   height: auto;
   margin: 1rem 1rem;

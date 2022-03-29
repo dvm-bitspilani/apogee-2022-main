@@ -30,6 +30,7 @@
     line-height: 77px;
     margin: 50px 50px;
     color: white;
+    z-index: 2;
 }
 .aboutUsDetails {
     font-family: 'Forgotten Futurist';
@@ -40,6 +41,7 @@
     letter-spacing: 0.12em;
     margin: 0 150px;
     color: white;
+    z-index: 2;
 }
 .video1{
     display: flex;
@@ -50,6 +52,7 @@ justify-content: flex-start;
     
     border: 26px solid transparent;
     border-image: url("./background1.png") 5% round;
+    z-index: 2;
 }
 
 .video1 span, .video2 span{

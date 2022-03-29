@@ -1,6 +1,7 @@
 .rock img{
     overflow: hidden;
     opacity: 0.8;
+    z-index: 1;
     }
     #one img{
         position: absolute;
