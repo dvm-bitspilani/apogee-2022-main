@@ -93,7 +93,7 @@ img {
 .card {
   z-index: 2;
   width: 33%;
-  height: auto;
+  height: 230px;
   margin: 1rem 1rem;
   background: rgba(7, 9, 73, 0.09);
   -webkit-box-shadow: inset 0px -106.879px 88.6312px -83.4176px
@@ -154,17 +154,17 @@ img {
   height: 90%;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center;
+
 }
 .card-text > p {
   font-size: 12px;
-  margin-bottom: 2vh;
-  text-align: leftsd;
+  margin-bottom: 20px;
+  text-align: left;
 }
 .card-text > h3 {
   margin: 0;
-  margin-bottom: 1vh;
-  text-align: center;
+  margin-bottom: 16px;
+  text-align: left;
 }
 
 .view-btn {
@@ -181,7 +181,7 @@ img {
   transition: all 0.3s;
   font-size: 12px;
   font-weight: 600;
-  margin: 10px;
+  margin: 5px;
 }
 .view-btn:disabled {
   background-color: rgb(255 255 255 / 51%);
