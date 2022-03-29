@@ -24,7 +24,8 @@
     align-items: center;
     margin: 120px 10px 10px 10px;
     padding: 0px 30px 20px;
-    max-width:20vw
+    max-width:20vw;
+    z-index: 2;
 }
 
 .profileImage > img{
