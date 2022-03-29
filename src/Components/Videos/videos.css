@@ -82,14 +82,14 @@ justify-content: flex-end;
 @media screen and (max-width: 768px){
 
     .mainVideoWrapper {
-     margin-top: 550px;
+
      margin-bottom: 0px;
     }
 
     .aboutUsHeading {
         font-size: 36px;
         text-align: center;
-        margin: 50px 0;
+        margin: 50px  0;
     }
     .aboutUsDetails {
         margin: 0 30px;
@@ -112,5 +112,8 @@ justify-content: flex-end;
     .video1 div, .video2 div{
         border: 12px solid transparent;
         border-image: url("./background1.png") 5% round;
+    }
+    .videoHeading{
+        margin: 50px 0 0;
     }
 }

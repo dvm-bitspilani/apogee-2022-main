@@ -5,7 +5,7 @@ import "./videos.css"
 function Videos() {
     return (
         <div className="mainVideoWrapper">
-            <div className="SectionHeading aboutUsHeading">
+            <div className="SectionHeading aboutUsHeading videoHeading">
                 Videos
             </div>
             <div className="videoWrapper">

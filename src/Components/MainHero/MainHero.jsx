@@ -54,7 +54,7 @@ function MainHero() {
     const Layer1 = useRef();
 
     useEffect(() => {
-        document.querySelector("html").style.overflowY = "hidden"
+       if(window.pageYOffset===0) document.querySelector("html").style.overflowY = "hidden"
         document.querySelector("#hero-link").classList.add("active")
         // document.documentElement.style.overflowY = "hidden"
         document.getElementsByClassName("clickAndScroll")[0].addEventListener("click", () => {
