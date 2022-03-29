@@ -82,7 +82,8 @@ justify-content: flex-end;
 @media screen and (max-width: 768px){
 
     .mainVideoWrapper {
-     margin-top: 500px;
+     margin-top: 550px;
+     margin-bottom: 0px;
     }
 
     .aboutUsHeading {
