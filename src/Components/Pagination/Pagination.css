@@ -9,13 +9,13 @@
 .pageLink {
     display: none !important;
 }
-#line div{
+/* #line div{
     display: flex;
     flex-direction: row-reverse;
     color: white;
     font-size: 1rem;
     text-align: center;
-}
+} */
 
 .anchorHome:hover + .homeLink{
 display: flex !important;
@@ -61,15 +61,48 @@ display: flex !important;
     /* transition: all 0.3s; */
     /* margin-left: 20px; */
 }
-#line span{
+/* #line span{
     position: absolute;
-}
+} */
 .active{
     outline: 3px solid white;
     transition: all 0.1s;
     outline-offset: 3px;
 }
+.PageHeader{
 
+    background: rgba(4, 4, 4, 0.3);
+    color: white;
+    font-family: 'Forgotten Futurist';
+    transform: translate(-75px, -15px);
+    font-size: 16px;
+    position: relative;
+    top: -5px;
+    white-space: nowrap;
+    /* display: none; */
+
+}
+a {
+    text-decoration: none;
+}
+#PageHeader1 {
+    left: -70px;
+}
+#PageHeader2 {
+    left: -90px;
+}
+#PageHeader3 {
+    left: -70px;
+}
+#PageHeader4 {
+    left: -120px;
+}
+#PageHeader5 {
+    left: -90px;
+}
+#PageHeader6 {
+    left: -95px;
+}
 @media screen and (max-width: 768px) {
     #pagination{
         display: none

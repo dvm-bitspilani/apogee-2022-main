@@ -182,7 +182,7 @@ export default function RegModalButton(props) {
     })
       .then(function (response) {
         console.log(response.status)
-        if (response.status != 200 || response.status != 500) alert("Please contact DVM.")
+        if (response.status === 500 || response.status === 403) alert("Please contact DVM.")
         return response.json();
       })
       .then(function (result) {
