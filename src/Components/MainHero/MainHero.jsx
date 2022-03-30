@@ -2,7 +2,7 @@
 import React from "react"
 import { useEffect, useRef } from "react"
 // import * as Scroll from 'react-scroll';
-import {  Events, animateScroll as scroll, scroller } from 'react-scroll'
+import {animateScroll as scroll, scroller } from 'react-scroll'
 import Arrow from "./MainHeroAssets/down-arrow.svg"
 // Assets
 import CityLayer1Laptop from "./MainHeroAssets/city/City Layer 1.svg";
@@ -100,12 +100,12 @@ function MainHero() {
             this.oldScroll = this.scrollY;
         }
 
-        Events.scrollEvent.register("begin", function () {
-            console.log("begin", arguments);
-        });
-        Events.scrollEvent.register("end", function () {
-            console.log("end", arguments);
-        });
+        // Events.scrollEvent.register("begin", function () {
+        //     console.log("begin", arguments);
+        // });
+        // Events.scrollEvent.register("end", function () {
+        //     console.log("end", arguments);
+        // });
 
         Layer1.current.style.transform = "bottom: 0";
         // console.log(Layer1.current, screenWidth, screenHeight);
