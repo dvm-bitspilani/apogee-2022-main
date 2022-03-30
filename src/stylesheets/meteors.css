@@ -116,14 +116,14 @@
     }
     #nineteen img{
         position: absolute;
-        right: 12.07%;
+        left: 28.07%;
         top: 630em;    
         transform: scale(0.04) rotate(0deg)
     }
     #twenty img{
         position: absolute;
-        left: 8.07%;
-        top: 630em;    
+        right: 28.07%;
+        top: 600em;    
         transform: scale(0.13) rotate(128deg)
     }
     #twentyone img{
@@ -140,7 +140,7 @@
     }
     #twentythree img{
         position: absolute;
-        right: 14.07%;
+        right: 22.07%;
         top: 615em;    
         transform: scale(0.04) rotate(218deg)
     }

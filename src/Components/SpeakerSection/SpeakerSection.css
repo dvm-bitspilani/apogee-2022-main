@@ -4,7 +4,7 @@
     font-size: 1.75rem;
     font-family: "Forgotten Futurist";
     letter-spacing: 2px;
-
+    z-index: 2;
 }
 .speakerHeading{
     line-height: 76.8px;
@@ -15,10 +15,12 @@
     line-height: 77px;
     margin: 50px 50px 0px 50px;
     color: white;
+    z-index: 2;
 }
 .speakerCarousel{
     width: 80vw;
     margin: auto;
+    z-index: 2;
 }
 .carousel__dot-group{
 display: flex;
