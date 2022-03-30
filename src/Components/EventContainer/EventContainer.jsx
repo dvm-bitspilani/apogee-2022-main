@@ -19,7 +19,13 @@ function EventContainer(props) {
       .then(function (result) {
         if (props.type == "kernel") setEvents(result.data[0].events);
         else setEvents(result[0].events);
-        // console.log(result);
+        console.log(result.data[0].events);
+        for (let i = 0; i < result.data[0].events.length; i++) {
+          if (result.data[0].events[i].contact === "") {
+            result.data[0].events[i].contact = "NA"
+          }  
+        }
+  
         if (document.getElementsByClassName("loaderDivEvents")[0]) {
           document.getElementsByClassName("loaderDivEvents")[0].style.display = "none";
         }
@@ -76,7 +82,7 @@ function EventContainer(props) {
     setTab({eventDetail: true, guideline: false, contact: false})
   }
   const changeDriveLink = (driveLink) => {
-    console.log(driveLink)
+    // console.log(driveLink)
     if (!driveLink.includes("google")) {
       return;
     };
