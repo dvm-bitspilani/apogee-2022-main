@@ -5,100 +5,163 @@
     }
     #one img{
         position: absolute;
-    left: 44.14%;
-    top: 600.26%;
+    right: 34.14%;
+    top:360em;
     transform: scale(0.12);
     }
     
     #two img{
         position: absolute;
         left: 8.34%;
-    top: 580.62%;
+    top: 380em;
     transform: scale(0.1) rotate(138.24deg);
     }
     #three img{
         position: absolute;
         left: 30.17%;
-        top: 650.52%;    
+        top: 350em;    
         transform: scale(0.2) rotate(228deg)
     }
     #four img{
         position: absolute;
     right: 16.82%;
-    top: 700.26%;
+    top: 440em;
     transform: scale(0.15) rotate(228deg)
     }
     #five img{
         position: absolute;
-        right: 42.17%;
-        top: 720.52%;    
+        left: 19.17%;
+        top: 460em;    
         transform: scale(0.05) rotate(22deg)
     }
     #six img{
         position: absolute;
         left: 35.17%;
-        top: 740.52%;    
+        top: 480em;    
         transform: scale(0.11) rotate(28deg)
     }
     #seven img{
         position: absolute;
-        right: 43.17%;
-        top: 770.52%;    
+        right: 39.17%;
+        top: 500em;    
         transform: scale(0.13) rotate(128deg)
     }
     #eight img{
         position: absolute;
         left: -4.17%;
-        top: 800.52%;    
+        top: 520em;    
         transform: scale(0.07) rotate(178deg)
     }
     #nine img{
         position: absolute;
         left: 35.17%;
-        top: 750.52%;    
+        top: 540em;    
         transform: scale(0.14) rotate(8deg)
     }
     #ten img{
         position: absolute;
         left: -5.17%;
-        top: 860.52%;    
+        top: 560em;    
         transform: scale(0.1) rotate(80deg)
     }
     #eleven img{
         position: absolute;
         right: 28.17%;
-        top: 850.52%;    
+        top: 580em;    
         transform: scale(0.08) rotate(278deg)
     }
     #twelve img{
         position: absolute;
         left: 26.17%;
-        top: 505.52%;    
+        top: 600em;    
         transform: scale(0.06) rotate(28deg)
     }
     #thirteen img{
         position: absolute;
         /* left: 26.17%; */
         left: 35.2%;
-        top: 820.52%;    
+        top: 620em;    
         transform: scale(0.1) rotate(108deg)
     }
     #fourteen img{
         position: absolute;
         right: 36.17%;
         /* right: 88.2%; */
-        top: 600.52%;    
+        top: 635em;    
         transform: scale(0.12) rotate(0deg)
     }
     #fifteen img{
         position: absolute;
         left: 8.2%;
-        top: 670.52%;    
+        top: 410em;    
         transform: scale(0.1) rotate(228deg)
     }
     #sixteen img{
         position: absolute;
         right: 28.07%;
-        top: 800.52%;    
+        top: 430em;    
         transform: scale(0.12) rotate(28deg)
     }
+    #seventeen img{
+        position: absolute;
+        right: 18.07%;
+        top: 472em;    
+        transform: scale(0.06) rotate(28deg)
+    }
+    #eighteen img{
+        position: absolute;
+        left: 30.07%;
+        top: 510em;    
+        transform: scale(0.1) rotate(228deg)
+    }
+    #nineteen img{
+        position: absolute;
+        right: 12.07%;
+        top: 630em;    
+        transform: scale(0.04) rotate(0deg)
+    }
+    #twenty img{
+        position: absolute;
+        left: 8.07%;
+        top: 630em;    
+        transform: scale(0.13) rotate(128deg)
+    }
+    #twentyone img{
+        position: absolute;
+        left: 30.07%;
+        top: 645em;    
+        transform: scale(0.16) rotate(268deg)
+    }
+    #twentytwo img{
+        position: absolute;
+        left: 36.07%;
+        top: 590em;    
+        transform: scale(0.11) rotate(328deg)
+    }
+    #twentythree img{
+        position: absolute;
+        right: 14.07%;
+        top: 615em;    
+        transform: scale(0.04) rotate(218deg)
+    }
+    #twentyfour img{
+        position: absolute;
+        left: 34.07%;
+        top: 621em;    
+        transform: scale(0.09) rotate(0deg)
+    }
+    #twentyfive img{
+        position: absolute;
+        left: 4.07%;
+        top: 545em;    
+        transform: scale(0.06) rotate(100deg)
+    }
+    #twentysix img{
+        position: absolute;
+        right: 34.07%;
+        top: 486em;    
+        transform: scale(0.04) rotate(200deg)
+    }
+    /* @media (max-width:) {
+        
+    } */

@@ -88,6 +88,36 @@ function Test() {
           <div className="rock" id="sixteen">
             <img src={rocks} alt="" />
           </div>
+          <div className="rock" id="seventeen">
+            <img src={rocks} alt="" />
+          </div>
+          <div className="rock" id="eighteen">
+            <img src={rocks} alt="" />
+          </div>
+          <div className="rock" id="nineteen">
+            <img src={rocks} alt="" />
+          </div>
+          <div className="rock" id="twenty">
+            <img src={rocks} alt="" />
+          </div>
+          <div className="rock" id="twentyone">
+            <img src={rocks} alt="" />
+          </div>
+          <div className="rock" id="twentytwo">
+            <img src={rocks} alt="" />
+          </div>
+          <div className="rock" id="twentythree">
+            <img src={rocks} alt="" />
+          </div>
+          <div className="rock" id="twentyfour">
+            <img src={rocks} alt="" />
+          </div>
+          <div className="rock" id="twentyfive">
+            <img src={rocks} alt="" />
+          </div>
+          <div className="rock" id="twentysix">
+            <img src={rocks} alt="" />
+          </div>
 
         </div>
         <div className="section" id="kernelEvents">
@@ -108,6 +138,7 @@ function Test() {
           <Footer />
         </div>
       </div>
+      
       {/* <AboutUs /> */}
       {/* <div style={{ background: "white", zIndex: "15" }}>
         <div className="background">
