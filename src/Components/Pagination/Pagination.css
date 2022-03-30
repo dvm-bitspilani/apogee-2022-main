@@ -98,6 +98,25 @@ a {
 #PageHeader6 {
   left: -95px;
 }
+
+.dots span{
+  display: none;
+}
+
+.dots:nth-child(1):hover span{
+  display: initial;
+}
+.dots:nth-child(2):hover span{
+  display: initial;
+}.dots:nth-child(3):hover span{
+  display: initial;
+}.dots:nth-child(4):hover span{
+  display: initial;
+}.dots:nth-child(5):hover span{
+  display: initial;
+}.dots:nth-child(6):hover span{
+  display: initial;
+}
 @media screen and (max-width: 768px) {
   #pagination {
     display: none;
