@@ -21,6 +21,8 @@ import ModalUnstyled from "@mui/base/ModalUnstyled";
 import CloseIcon from "@mui/icons-material/Close";
 import IconButton from "@mui/material/IconButton";
 
+import './RegModalButton.css'
+
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
 const MenuProps = {
@@ -61,8 +63,18 @@ const style = {
   // filter:'blur(3px) saturate(180%)'
 };
 
+const gameStyle = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  background: "#ffffff",
+  boxShadow: 24,
+  borderRadius: "10px",
+  p: 4,
+};
+
 export default function RegModalButton(props) {
-  const options = [{ label: "Test 1" }, { label: "Test 2" }];
   const [open, setOpen] = React.useState(false);
   let [data, setData] = React.useState({});
   const [colleges, setColleges] = React.useState([]);
@@ -73,17 +85,11 @@ export default function RegModalButton(props) {
   const handleClose = () => setOpen(false);
   const theme = useTheme();
   const [eventName, setEventName] = React.useState([]);
-  const [workshopName, setWorkshopName] = React.useState([]);
   var selectedEvents = [];
-  var selectedWorkshops = [];
   const [openField, setOpenField] = React.useState(false);
   const [optionsField, setOptionsField] = React.useState([]);
   const [collegeName, setCollegeName] = React.useState([]);
   // const [registerDisabled, setRegisterDisabled] = React.useState(true);
-  const vw = Math.max(
-    document.documentElement.clientWidth || 0,
-    window.innerWidth || 0
-  );
 
   const loading = openField && optionsField.length === 0;
 
@@ -116,22 +122,8 @@ export default function RegModalButton(props) {
   };
   const names = [];
 
-  React.useEffect(() => {
-    // fetch("https://bits-apogee.org/registrations/get_college_by_char/", {
-    //   headers: { "content-type": "application/json" },
-    //   method: "POST",
-    //   mode: "cors",
-    //   data: {
-    //     letters: variable
-    //   }
-    // })
-    //   .then(function (response) {
-    //     return response.json();
-    //   })
-    //   .then(function (result) {
-    //     setColleges(result.data);
-    //   });
-    fetch("https://bits-apogee.org/registrations/events/", {
+  React.useEffect(async () => {
+    await fetch("https://bits-apogee.org/registrations/events/", {
       headers: { "content-type": "application/json" },
       method: "GET",
       mode: "cors",
@@ -147,7 +139,7 @@ export default function RegModalButton(props) {
         setNames(names);
       });
 
-    fetch("https://bits-apogee.org/registrations/kernel_events/", {
+    await fetch("https://bits-apogee.org/registrations/kernel_events/", {
       headers: { "content-type": "application/json" },
       method: "GET",
       mode: "cors",
@@ -203,7 +195,7 @@ export default function RegModalButton(props) {
   const handleChange = (e) => {
     const { name, value } = e.target;
     console.log(name, value);
-   
+
     setData((prevState) => ({
       ...prevState,
       [name]: value,
@@ -211,72 +203,505 @@ export default function RegModalButton(props) {
     console.log(data);
   };
 
-  
-  return (
-      <div className="ModalBox">
-        <div className="registerBtnWrapper">
-          <div className="registerBtnBorder register-lp" id="registerTop">
-            <button className="registerBtn" onClick={handleOpen}>
-              REGISTER
-            </button>
-          </div>
-        </div>
+  const [gameOpen, setGameOpen] = React.useState(false);
+  const handleGameOpen = () => setGameOpen(true);
+  const handleGameClose = () => {
+    setGameOpen(false)
+    setArmaStep(1)
+  };
 
-        <Modal
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-        >
-          <Box sx={style}>
-            <div className="modalHeading">
-              REGISTRATION
-              <Box>
-                <IconButton onClick={handleClose}>
-                  <CloseIcon color="action" fontSize="large" />
-                </IconButton>
-              </Box>
-            </div>
-            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-              <form onSubmit={handleSubmit} id="registerForm">
-                <div className="wrapper">
+  const [armaStep, setArmaStep] = React.useState(1);
+  const [gameName, setGameName] = React.useState("");
+
+  const handleArmaClick = (name) =>{
+    setArmaStep(armaStep + 1)
+    setGameName(name);
+  }
+
+  return (
+    <div className="ModalBox">
+      <div className="registerBtnWrapper">
+        <div className="registerBtnBorder register-lp" id="registerTop">
+          <button className="registerBtn" onClick={handleOpen}>
+            REGISTER
+          </button>
+        </div>
+      </div>
+
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <div className="modalHeading">
+            REGISTRATION
+            <Box>
+              <IconButton onClick={handleClose}>
+                <CloseIcon color="action" fontSize="large" />
+              </IconButton>
+            </Box>
+          </div>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            <form onSubmit={handleSubmit} id="registerForm">
+              <div className="wrapper">
+                <div className="cell">
+                  <span>Name*</span>
+                  <TextField
+                    type="text"
+                    id="nameVal"
+                    onChange={handleChange}
+                    name="name"
+                    label="Name"
+                    sx={{
+                      width: 300,
+                      border: "1px solid white",
+                      color: "white",
+                      borderRadius: "2px",
+                    }}
+                  />
+                </div>
+                <div className="cell">
+                  <span>Year of Study*</span>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    label=" "
+                    name="year"
+                    placeholder="Year of Study"
+                    onChange={handleChange}
+                    sx={{
+                      width: 300,
+                      border: "1px solid white",
+                      color: "white",
+                      borderRadius: "2px",
+                    }}
+                  >
+                    <MenuItem value={1}>1st</MenuItem>
+                    <MenuItem value={2}>2nd</MenuItem>
+                    <MenuItem value={3}>3rd</MenuItem>
+                    <MenuItem value={4}>4th</MenuItem>
+                  </Select>
+                </div>
+                <div className="cell">
+                  <span>College*</span>
+                  <Autocomplete
+                    onChange={(event, value) => {
+                      console.log(
+                        value,
+                        "value",
+                        document.getElementById("asynchronous-demo").value
+                      );
+                      setCollegeName(value);
+                      console.log(collegeName, "collegeName");
+                    }}
+                    id="asynchronous-demo"
+                    sx={{ width: 300 }}
+                    open={openField}
+                    onOpen={() => {
+                      setOpenField(true);
+                    }}
+                    onClose={() => {
+                      setOpenField(false);
+                    }}
+                    isOptionEqualToValue={(option, value) =>
+                      option.name === value.name
+                    }
+                    getOptionLabel={(option) => option.name}
+                    options={optionsField}
+                    loading={loading}
+                    renderInput={(params) => (
+                      <TextField
+                        {...params}
+                        label="Type your College"
+                        onChange={async () => {
+                          console.log("on Change");
+                          // setCollegeName(document.getElementById('asynchronous-demo').value);
+                          if (
+                            document.getElementById("asynchronous-demo").value
+                              .length >= 3
+                          ) {
+                            console.log("fetch");
+                            // setCollegeName(document.getElementById('asynchronous-demo').value);
+                            console.log(
+                              "RUN",
+                              document.getElementById("asynchronous-demo")
+                                .value
+                            );
+                            const dataCollege = {
+                              letters:
+                                document.getElementById("asynchronous-demo")
+                                  .value,
+                            };
+                            await fetch(
+                              "https://bits-apogee.org/registrations/get_college_by_char/",
+                              {
+                                headers: {
+                                  "content-type": "application/json",
+                                },
+                                method: "POST",
+                                mode: "cors",
+                                body: JSON.stringify(dataCollege),
+                              }
+                            )
+                              .then(function (response) {
+                                return response.json();
+                              })
+                              .then(function (result) {
+                                // setColleges(result.data);
+                                collegeList = result.data;
+                                console.log(collegeList);
+                              });
+                          }
+
+                          setOptionsField([...collegeList]);
+                        }}
+                        InputProps={{
+                          ...params.InputProps,
+                          endAdornment: (
+                            <React.Fragment>
+                              {loading ? (
+                                <CircularProgress color="inherit" size={20} />
+                              ) : null}
+                              {params.InputProps.endAdornment}
+                            </React.Fragment>
+                          ),
+                        }}
+                      />
+                    )}
+                  />
+                </div>
+                <div className="cell">
+                  <span>City*</span>
+                  <TextField
+                    type="text"
+                    onChange={handleChange}
+                    name="city"
+                    label="Type your City"
+                    sx={{
+                      width: 300,
+                      border: "1px solid white",
+                      color: "white",
+                    }}
+                  />
+                </div>
+                <div className="cell">
+                  <span>Email*</span>
+                  <TextField
+                    type="email"
+                    onChange={handleChange}
+                    name="email_id"
+                    label="Type your email"
+                    sx={{
+                      width: 300,
+                      border: "1px solid white",
+                      color: "white",
+                    }}
+                  />
+                </div>
+                <div className="cell">
+                  <span>Events*</span>
+                  <div>
+                    <FormControl sx={{ m: 0, width: 300 }}>
+                      <InputLabel id="demo-multiple-chip-label">
+                        You can select more than one events
+                      </InputLabel>
+                      <Select
+                        labelId="demo-multiple-chip-label"
+                        id="eventsArr"
+                        multiple
+                        value={eventName}
+                        onChange={handleChangeEvents}
+                        input={
+                          <OutlinedInput
+                            id="select-multiple-events"
+                            label="You can select more than one events"
+                          />
+                        }
+                        renderValue={(selected) => (
+                          <Box
+                            sx={{
+                              display: "flex",
+                              flexWrap: "wrap",
+                              gap: 0.5,
+                            }}
+                          >
+                            {selected.map((value) => (
+                              <Chip key={value} label={value} />
+                            ))}
+                          </Box>
+                        )}
+                        MenuProps={MenuProps}
+                      >
+                        {finalNames.map((name) => (
+                          <MenuItem
+                            key={name}
+                            value={name}
+                            style={getStyles(name, eventName, theme)}
+                            onClick={name == "Armageddon" ? handleGameOpen : ""}
+                          >
+                            {name}
+                          </MenuItem>
+                        ))}
+
+                      </Select>
+
+                    </FormControl>
+                    {/* <div className="extraMenu">
+                      <div>Valorant</div>
+                      <div>BGMI</div>
+                      <div>CS-GO</div>
+                      <div>Clash Royal</div>
+                      <b><span>BITSian only events</span></b>
+                      <div>Tekken</div>
+                      <div>FIFA</div>
+                      <div>Rocket League</div>
+                    </div> */}
+                  </div>
+
+                </div>
+
+                <div className="cell">
+                  <span>Phone*</span>
+                  <TextField
+                    type="text"
+                    variant="outlined"
+                    onChange={handleChange}
+                    name="phone"
+                    label="Type your phone number"
+                    sx={{
+                      width: 300,
+                      color: "white",
+                      border: "1px solid white",
+                    }}
+                  />
+                </div>
+
+                <div className="genderContainer">
+                  <span>Gender*</span>
+                  <div className="genderContainerInput">
+                    <input
+                      type="radio"
+                      onChange={handleChange}
+                      name="gender"
+                      value="Male"
+                    />
+                    <label>Male</label>
+                    <input
+                      type="radio"
+                      onChange={handleChange}
+                      name="gender"
+                      value="Female"
+                    />
+                    <label>Female</label>
+                    <input
+                      type="radio"
+                      onChange={handleChange}
+                      name="gender"
+                      value="Other"
+                    />
+                    <label>Other</label>
+                  </div>
+                </div>
+                <div className="cell">
+                  <span>Referral Code</span>
+                  <TextField
+                    type="text"
+                    onChange={handleChange}
+                    name="referral"
+                    label="Type your Referral Code"
+                    sx={{
+                      width: 300,
+                      border: "1px solid white",
+                      color: "white",
+                      borderRadius: "2px",
+                    }}
+                  />
+                </div>
+                <div className="cell">
+                  <span>Commitments</span>
+                  <TextField
+                    type="text"
+                    variant="outlined"
+                    onChange={handleChange}
+                    name="commitments"
+                    label="Type your Tech-teams/Clubs"
+                    sx={{
+                      width: 300,
+                      color: "white",
+                      border: "1px solid white",
+                    }}
+                  />
+                </div>
+              </div>
+              <div id="submitBtn">
+                <div className="registerBtnBorder">
+                  <button id="submitButton" type="submit">
+                    <input
+                      type="submit"
+                      value="REGISTER"
+                      id="submit-form"
+                      data-bs-dismiss="modal"
+                    />
+                  </button>
+                </div>
+              </div>
+            </form>
+          </Typography>
+        </Box>
+      </Modal>
+      <Modal
+        open={gameOpen}
+        onClose={handleGameClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={gameStyle}>
+          {armaStep == 1 ?
+            (<div className="extra-menu">
+              <div onClick={() => handleArmaClick("Valorant")}>Valorant</div>
+              <div onClick={() => handleArmaClick("BGMI")}>BGMI</div>
+              <div onClick={() => handleArmaClick("CS-GO")}>CS-GO</div>
+              <div onClick={() => handleArmaClick("Clash Royal")}>Clash Royal</div>
+              <b><span>BITSian only events</span></b>
+              <div onClick={() => handleArmaClick("Tekken")}>Tekken</div>
+              <div onClick={() => handleArmaClick("FIFA")}>FIFA</div>
+              <div onClick={() => handleArmaClick("Rocket League")}>Rocket League</div>
+            </div>) :
+            (<div>
+              <div className="game-details-heading">
+                <h2>{gameName}</h2>
+                <div className="price">Price: 250 per team</div>
+              </div>
+              <div className="game-details-input">
+                <div className="game-details-col1">
                   <div className="cell">
                     <span>Name*</span>
                     <TextField
                       type="text"
-                      id="nameVal"
+                      id="nameVal1"
                       onChange={handleChange}
-                      name="name"
+                      name="name1"
                       label="Name"
                       sx={{
                         width: 300,
-                        border: "1px solid white",
-                        color: "white",
+                        border: "1px solid black",
+                        color: "black",
                         borderRadius: "2px",
                       }}
                     />
                   </div>
                   <div className="cell">
-                    <span>Year of Study*</span>
-                    <Select
-                      labelId="demo-simple-select-label"
-                      id="demo-simple-select"
-                      label=" "
-                      name="year"
-                      placeholder="Year of Study"
+                    <span>Name*</span>
+                    <TextField
+                      type="text"
+                      id="nameVal2"
                       onChange={handleChange}
+                      name="name2"
+                      label="Name"
                       sx={{
                         width: 300,
-                        border: "1px solid white",
-                        color: "white",
+                        border: "1px solid black",
+                        color: "black",
                         borderRadius: "2px",
                       }}
-                    >
-                      <MenuItem value={1}>1st</MenuItem>
-                      <MenuItem value={2}>2nd</MenuItem>
-                      <MenuItem value={3}>3rd</MenuItem>
-                      <MenuItem value={4}>4th</MenuItem>
-                    </Select>
+                    />
+                  </div>
+                  <div className="cell">
+                    <span>Name*</span>
+                    <TextField
+                      type="text"
+                      id="nameVal3"
+                      onChange={handleChange}
+                      name="name3"
+                      label="Name"
+                      sx={{
+                        width: 300,
+                        border: "1px solid black",
+                        color: "black",
+                        borderRadius: "2px",
+                      }}
+                    />
+                  </div>
+                  <div className="cell">
+                    <span>Name*</span>
+                    <TextField
+                      type="text"
+                      id="nameVal4"
+                      onChange={handleChange}
+                      name="name4"
+                      label="Name"
+                      sx={{
+                        width: 300,
+                        border: "1px solid black",
+                        color: "black",
+                        borderRadius: "2px",
+                      }}
+                    />
+                  </div>
+                  <div className="cell">
+                    <span>Name*</span>
+                    <TextField
+                      type="text"
+                      id="nameVal5"
+                      onChange={handleChange}
+                      name="name5"
+                      label="Name"
+                      sx={{
+                        width: 300,
+                        border: "1px solid black",
+                        color: "black",
+                        borderRadius: "2px",
+                      }}
+                    />
+                  </div>
+                  <div className="cell">
+                    <span>Name*</span>
+                    <TextField
+                      type="text"
+                      id="nameVal6"
+                      onChange={handleChange}
+                      name="name6"
+                      label="Name"
+                      sx={{
+                        width: 300,
+                        border: "1px solid black",
+                        color: "black",
+                        borderRadius: "2px",
+                      }}
+                    />
+                  </div>
+                </div>
+                <div className="game-details-col2">
+                  <div className="cell">
+                    <span>Email*</span>
+                    <TextField
+                      type="email"
+                      onChange={handleChange}
+                      name="player_email_id"
+                      label="Type your email"
+                      sx={{
+                        width: 300,
+                        border: "1px solid black",
+                        color: "black",
+                      }}
+                    />
+                  </div>
+                  <div className="cell">
+                    <span>Phone*</span>
+                    <TextField
+                      type="text"
+                      variant="outlined"
+                      onChange={handleChange}
+                      name="player_phone"
+                      label="Type your phone number"
+                      sx={{
+                        width: 300,
+                        color: "black",
+                        border: "1px solid black",
+                      }}
+                    />
                   </div>
                   <div className="cell">
                     <span>College*</span>
@@ -366,184 +791,11 @@ export default function RegModalButton(props) {
                       )}
                     />
                   </div>
-                  <div className="cell">
-                    <span>City*</span>
-                    <TextField
-                      type="text"
-                      onChange={handleChange}
-                      name="city"
-                      label="Type your City"
-                      sx={{
-                        width: 300,
-                        border: "1px solid white",
-                        color: "white",
-                      }}
-                    />
-                  </div>
-                  <div className="cell">
-                    <span>Email*</span>
-                    <TextField
-                      type="email"
-                      onChange={handleChange}
-                      name="email_id"
-                      label="Type your email"
-                      sx={{
-                        width: 300,
-                        border: "1px solid white",
-                        color: "white",
-                      }}
-                    />
-                  </div>
-                  <div className="cell">
-                    <span>Events*</span>
-                    <div>
-                      <FormControl sx={{ m: 0, width: 300 }}>
-                        <InputLabel id="demo-multiple-chip-label">
-                          You can select more than one events
-                        </InputLabel>
-                        <Select
-                          labelId="demo-multiple-chip-label"
-                          id="eventsArr"
-                          multiple
-                          value={eventName}
-                          onChange={handleChangeEvents}
-                          input={
-                            <OutlinedInput
-                              id="select-multiple-events"
-                              label="You can select more than one events"
-                            />
-                          }
-                          renderValue={(selected) => (
-                            <Box
-                              sx={{
-                                display: "flex",
-                                flexWrap: "wrap",
-                                gap: 0.5,
-                              }}
-                            >
-                              {selected.map((value) => (
-                                <Chip key={value} label={value} />
-                              ))}
-                            </Box>
-                          )}
-                          MenuProps={MenuProps}
-                        >
-                          {finalNames.map((name) => (
-                            <MenuItem
-                              key={name}
-                              value={name}
-                              style={getStyles(name, eventName, theme)}
-                            >
-                              {name}
-                            </MenuItem>
-                          ))}
-            
-                      </Select>
-                   
-                    </FormControl>
-                    <div className="extraMenu">
-                    <div>Valorant</div>
-                    <div>BGMI</div>
-                    <div>CS-GO</div>
-                    <div>Clash Royal</div> 
-                  <b><span>BITSian only events</span></b> 
-                    <div>Tekken</div>
-                    <div>FIFA</div>
-                    <div>Rocket League</div> 
-                  </div>
-                  </div>
-             
-                  </div>
-
-                  <div className="cell">
-                    <span>Phone*</span>
-                    <TextField
-                      type="text"
-                      variant="outlined"
-                      onChange={handleChange}
-                      name="phone"
-                      label="Type your phone number"
-                      sx={{
-                        width: 300,
-                        color: "white",
-                        border: "1px solid white",
-                      }}
-                    />
-                  </div>
-
-                  <div className="genderContainer">
-                    <span>Gender*</span>
-                    <div className="genderContainerInput">
-                      <input
-                        type="radio"
-                        onChange={handleChange}
-                        name="gender"
-                        value="Male"
-                      />
-                      <label>Male</label>
-                      <input
-                        type="radio"
-                        onChange={handleChange}
-                        name="gender"
-                        value="Female"
-                      />
-                      <label>Female</label>
-                      <input
-                        type="radio"
-                        onChange={handleChange}
-                        name="gender"
-                        value="Other"
-                      />
-                      <label>Other</label>
-                    </div>
-                  </div>
-                  <div className="cell">
-                    <span>Referral Code</span>
-                    <TextField
-                      type="text"
-                      onChange={handleChange}
-                      name="referral"
-                      label="Type your Referral Code"
-                      sx={{
-                        width: 300,
-                        border: "1px solid white",
-                        color: "white",
-                        borderRadius: "2px",
-                      }}
-                    />
-                  </div>
-                  <div className="cell">
-                    <span>Commitments</span>
-                    <TextField
-                      type="text"
-                      variant="outlined"
-                      onChange={handleChange}
-                      name="commitments"
-                      label="Type your Tech-teams/Clubs"
-                      sx={{
-                        width: 300,
-                        color: "white",
-                        border: "1px solid white",
-                      }}
-                    />
-                  </div>
                 </div>
-                <div id="submitBtn">
-                  <div className="registerBtnBorder">
-                    <button id="submitButton" type="submit">
-                      <input
-                        type="submit"
-                        value="REGISTER"
-                        id="submit-form"
-                        data-bs-dismiss="modal"
-                      />
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </Typography>
-          </Box>
-        </Modal>
-      </div>
+              </div>
+            </div>)}
+        </Box>
+      </Modal>
+    </div>
   );
 }
