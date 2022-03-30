@@ -14,7 +14,7 @@
 .loaderImg{
     height: 30vh;
     width: 30vw;
-    background-image: url("./latestloader.gif");
+    background-image: url("./loader.gif");
     box-shadow: 50px 50px 113px #000 inset, -50px -50px 110px #000 inset;
     background-position: center;
     background-repeat: no-repeat;

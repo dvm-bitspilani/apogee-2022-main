@@ -6,6 +6,7 @@ import Animation from './newlottie.json';
 import LoaderGif from "./latestloader.gif"
 import "./loader.css"
 
+
 function Loader() {
   // React.useEffect(() => {
   //   lottie.loadAnimation({

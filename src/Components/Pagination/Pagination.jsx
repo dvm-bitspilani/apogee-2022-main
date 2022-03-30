@@ -34,12 +34,12 @@ function Pagination() {
         document.querySelector(this.getAttribute("href")).scrollIntoView({
           behavior: "smooth",
         });
-        // for (let i = 0; i < (document.getElementsByClassName("dots").length); i++) {
-        //   document.getElementsByClassName("dots")[i].classList.remove("active");
-        // }
-        // console.log(this.classList);
-        // this.classList.add("active");
-        // console.log(this.classList);
+        for (let i = 0; i < (document.getElementsByClassName("dots").length); i++) {
+          document.getElementsByClassName("dots")[i].classList.remove("active");
+        }
+        console.log(this.classList);
+        this.classList.add("active");
+        console.log(this.classList);
       });
     });
 

@@ -74,7 +74,7 @@ function ContactUs() {
 
     return (
         <div className="contactUsWrapper">
-            <div className="SectionHeading aboutUsHeading ">CONTACT US</div>
+            <div className="SectionHeading aboutUsHeading contactHeading ">CONTACT US</div>
             <div className="cards">
                 {contacts.map((e) => {
 

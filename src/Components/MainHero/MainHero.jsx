@@ -23,13 +23,13 @@ import ScrollScreen from "../ScrollScreen/ScrollScreen.jsx";
 import floor from "./MainHeroAssets/floorGrid.png";
 import bigFloor from "./MainHeroAssets/finalGrid.svg";
 import bigFloorMobile from "./MainHeroAssets/bigFloorMobile.svg";
-
 import floorGlow from "./MainHeroAssets/GroupFloorGlow.svg";
 // Styles
 import "./MainHero.css"
 import AboutUs from "../AboutUs/AboutUs";
-
+import $ from "jquery"
 function MainHero() {
+
     function scrollTo(offset) {
         scroller.scrollTo("random", {
             duration: 2000,
@@ -77,6 +77,7 @@ function MainHero() {
             }
             else {
                 if ((window.pageYOffset > 3300 && window.pageYOffset < 3650) && window.screen.width > 768) {
+                document.getElementsByClassName("dots")[0].classList.add("active");
                     document.body.style.overflowY = "hidden"
                     document.querySelector("html").style.overflowY = "hidden"
 
@@ -98,14 +99,19 @@ function MainHero() {
             }
 
             this.oldScroll = this.scrollY;
-        }
 
-        // Events.scrollEvent.register("begin", function () {
-        //     console.log("begin", arguments);
-        // });
-        // Events.scrollEvent.register("end", function () {
-        //     console.log("end", arguments);
-        // });
+            // function isScrolledIntoView(elem)
+            // {
+            //     var docViewTop = $(window).scrollTop();
+            //     var docViewBottom = docViewTop + $(window).height();
+            
+            //     var elemTop = $(elem).offset().top;
+            //     var elemBottom = elemTop + $(elem).height();
+            
+            //     return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+            // }
+           
+        }
 
         Layer1.current.style.transform = "bottom: 0";
         // console.log(Layer1.current, screenWidth, screenHeight);

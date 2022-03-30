@@ -134,7 +134,7 @@ function EventContainer(props) {
         }
         id={props.type == "kernel" ? "kernel-events" : "all-events"}
       >
-        <div className="SectionHeading heading">{props.heading}</div>
+        <div className="SectionHeading heading kernelHeading">{props.heading}</div>
         <div className="card-container">
           {events.map((el) => (
             <div className="card">
@@ -159,6 +159,7 @@ function EventContainer(props) {
             </div>
           ))}
         </div>
+        <div className="toCheck"></div>
       </div>
       <div
         className={

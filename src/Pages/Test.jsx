@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import CountdownSlate from "../Components/CountdownSlate/CountdownSlate.js";
 import MainHero from "../Components/MainHero/MainHero.jsx";
 import NavBar from "../Components/Navbar/Navbar.jsx";
@@ -16,11 +16,13 @@ import Videos from "../Components/Videos/Videos.jsx";
 import SpeakerSection from "../Components/SpeakerSection/SpeakerSection.jsx";
 import rocks from "../Components/MainHero/MainHeroAssets/meteor.png";
 import "../stylesheets/meteors.css";
-
+import $ from "jquery"
 function Test() {
+  
   window.onbeforeunload = () => {
     window.scrollTo(0, 0)
   }
+
 
   return (
     <div className="testWrapper">
@@ -34,7 +36,7 @@ function Test() {
       <CountdownSlate />
       <div className="mainWrapper">
         <div className="section" id="aboutus">
-          <AboutUs />
+          <AboutUs/>
         </div>
         <div className="section" id="Videos">
           <Videos />
