@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.11575604.css",
-    "main.js": "/static/js/main.abf34845.js",
+    "main.css": "/static/css/main.31e305fe.css",
+    "main.js": "/static/js/main.faf97e42.js",
     "static/media/6degreesindia.png": "/static/media/6degreesindia.a8f20f39531b74133482.png",
     "static/media/pepsico.jpeg": "/static/media/pepsico.b52907682772b1d16a91.jpeg",
     "static/media/finalGrid.svg": "/static/media/finalGrid.762841b7f60ab9b96c746ab40d1fce90.svg",
@@ -9,6 +9,7 @@
     "static/media/bigFloorMobile.svg": "/static/media/bigFloorMobile.bc83b3e29a89301558bcee692d18109f.svg",
     "static/media/Moon1.png": "/static/media/Moon1.a21be2b0084d5dfd197c.png",
     "static/media/loader.mp4": "/static/media/loader.18b3485c8c769895efe1.mp4",
+    "static/media/loader.gif": "/static/media/loader.a3608d1e5e2ad9cdc670.gif",
     "static/media/Sign.svg": "/static/media/Sign.47d81a0bf1455dd28b7e074cb7d6deea.svg",
     "static/media/longStars.png": "/static/media/longStars.a38c3cfde6f7d771fcdc.png",
     "static/media/latestloader.gif": "/static/media/latestloader.a0fbb23667db0b670291.gif",
@@ -69,22 +70,22 @@
     "static/media/Button.svg": "/static/media/Button.54534bf6806c168cf6e0549792c23525.svg",
     "static/media/events_balcony.svg": "/static/media/events_balcony.13f42bc994d2c597eddcfd5402fa2113.svg",
     "static/media/Balcony.svg": "/static/media/Balcony.e4b18960b1487c3ef0eb94021be7aa4e.svg",
+    "index.html": "/index.html",
     "static/media/City 1.svg": "/static/media/City 1.3788e162aac6b81e1244c34ecb47455f.svg",
     "static/media/City Layer 1.svg": "/static/media/City Layer 1.a6e9262117b5332a6db6501cc7c47b38.svg",
     "static/media/GroupFloorGlow.svg": "/static/media/GroupFloorGlow.4d4bde8a0ed09a1ff88bdcaffa40f040.svg",
     "static/media/City 2.svg": "/static/media/City 2.0b8aee27a1eb7df1edfd0b69ddb402d6.svg",
     "static/media/City Layer 2.svg": "/static/media/City Layer 2.496e116440b9b7e166afe0e66a15ec3c.svg",
-    "index.html": "/index.html",
     "static/media/favicon1.ico": "/static/media/favicon1.ac1e640f4ca49a3f59fa.ico",
     "static/media/mainFloor.svg": "/static/media/mainFloor.9242ceaf928432ba8b59.svg",
     "static/media/down-arrow.svg": "/static/media/down-arrow.ee19d975d72483aa8605fe4ebe5450f9.svg",
     "static/media/Sky.svg": "/static/media/Sky.d5d27986d37c474eeda4.svg",
     "static/media/Arrox.svg": "/static/media/Arrox.97b633c6fff07eb6a4665f665abaad15.svg",
-    "main.11575604.css.map": "/static/css/main.11575604.css.map",
-    "main.abf34845.js.map": "/static/js/main.abf34845.js.map"
+    "main.31e305fe.css.map": "/static/css/main.31e305fe.css.map",
+    "main.faf97e42.js.map": "/static/js/main.faf97e42.js.map"
   },
   "entrypoints": [
-    "static/css/main.11575604.css",
-    "static/js/main.abf34845.js"
+    "static/css/main.31e305fe.css",
+    "static/js/main.faf97e42.js"
   ]
 }
