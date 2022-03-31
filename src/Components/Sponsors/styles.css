@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: "Pirulen";
-  src: url(Assets/pirulen\ rg.otf);
+  src: url("Assets/pirulen\ rg.otf");
 }
 @font-face {
   font-family: "Forgotten Futurist";
-  src: url(Assets/forgotten\ futurist\ rg.ttf);
+  src: url("Assets/forgotten\ futurist\ rg.ttf");
 }
 
 * {
@@ -27,7 +27,6 @@
   background-size: 100vw;
   background-repeat: repeat;
   font-family: "Pirulen";
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,6 +37,7 @@
   text-align: center;
   color: white;
   margin-top: 6.5vh;
+  font-family: "Pirulen";
 }
 .details {
   display: flex;
@@ -52,6 +52,7 @@
     padding-top: 5vh;
     text-align: center;
     background: black;
+    font-family: "Pirulen";
 }
 .flex {
   display: flex;
@@ -71,6 +72,7 @@
   font-size: 1.5em;
   margin-top: 2.5vw;
   font-family: "Forgotten Futurist";
+  letter-spacing: 3px;
 }
 .logoSponsors {
   display: flex;

@@ -18,7 +18,7 @@ import ForestFuse from "./Assets/Logos/forest fuse.png"
 import SwitchFix from "./Assets/Logos/Switch Primary Logo (1).png"
 import PepsiCo from "./Assets/Logos/pepsico.jpeg"
 import Gustora from "./Assets/Logos/GustoraLOGO.png"
-
+import iSchool from "./Assets/Logos/isclogo_color_cmyk_H.png"
 
 
 export const Sponsors = (props) => {
@@ -154,6 +154,18 @@ export const Sponsors = (props) => {
               <img src={Walmart} alt="" />
             </div>
             <div className="name">WALMART</div>
+          </div>
+        </div>
+        <div className="sponsorHeading">Official Overseas Education Partner</div>
+        <div className="details">
+          <div
+            className="flex"
+            onClick={() => window.open("https://ischoolconnect.com/en/", "_blank")}
+          >
+            <div className="logoSponsors">
+              <img src={iSchool} alt="" />
+            </div>
+            <div className="name">iSchoolConnect</div>
           </div>
         </div>
         <div className="sponsorHeading">Grooming Partner</div>
