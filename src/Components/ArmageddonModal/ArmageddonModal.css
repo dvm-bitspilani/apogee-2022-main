@@ -134,10 +134,18 @@ h2 {
   border: 0;
   font-weight: 700;
   position: relative;
-  left: 50%;
-  transform: translateX(-50%);
   cursor: pointer;
-  margin-top: 1rem;
+  margin: 1rem 1.5rem;
+}
+
+.arma-back{
+  background: white;
+  color: black;
+}
+
+.arma-cta-container{
+  display: flex;
+  justify-content: center;
 }
 
 .arma-container .MuiFormLabel-root.Mui-focused {

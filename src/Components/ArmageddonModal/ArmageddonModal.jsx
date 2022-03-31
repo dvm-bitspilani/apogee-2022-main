@@ -379,7 +379,11 @@ export const ArmageddonModal = (props) => {
                         {renderPlayers}
                     </div>
                     {armaGame.min_players > 1 ? <div className="add-player" onClick={() => armaGame.min_players = armaGame.min_players + 1}>+ Add Player</div> : ""}
+                    <div className="arma-cta-container">
+                    <button className="save-players arma-back" onClick={()=>{setArmaStep(1)}}>Back</button>
                     <button className="save-players">Save</button>
+                    </div>
+                    
                 </div>)}
         </div>
     );
