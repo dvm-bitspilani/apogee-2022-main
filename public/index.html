@@ -57,87 +57,94 @@
 </body>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>
-   window.addEventListener("wheel", ()=> {
-  $(document.getElementById("clickAndScrollBtn")).addClass('arrowAnimation');
-  $(document.getElementById("clickAndScrollBtn")).one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(event) {
-    $(document.getElementById("clickAndScrollBtn")).removeClass('arrowAnimation')
-});  
+  window.addEventListener("wheel", () => {
+    $(document.getElementById("clickAndScrollBtn")).addClass('arrowAnimation');
+    $(document.getElementById("clickAndScrollBtn")).one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function (event) {
+      $(document.getElementById("clickAndScrollBtn")).removeClass('arrowAnimation')
+    });
 
 
 
-function isScrolledIntoView(el) {
-     var rect = el.getBoundingClientRect();
+    function isScrolledIntoView(el) {
+      console.log(el)
+      if (el.getBoundingClientRect()) {
+        var rect = el.getBoundingClientRect();
+        return (
+          rect.top >= 0 &&
+          rect.left >= 0 &&
+          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && /* or $(window).height() */
+          rect.right <= (window.innerWidth || document.documentElement.clientWidth) /* or $(window).width() */
+        );
+      }
+    }
 
-     return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && /* or $(window).height() */
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth) /* or $(window).width() */
-    );
-   }
 
-       
-            var isHeroInView = isScrolledIntoView(document.getElementById("heroSection"));
-            var isAboutInView = isScrolledIntoView(document.getElementsByClassName("aboutUsDetails")[0]);
-            var isVideosInView = isScrolledIntoView(document.getElementsByClassName("video1")[0])||isScrolledIntoView(document.getElementsByClassName("videoHeading")[0]);
-            var isKernelInView = isScrolledIntoView(document.getElementsByClassName("kernelHeading")[0]) || isScrolledIntoView(document.getElementsByClassName("card")[3])||isScrolledIntoView(document.getElementsByClassName("card")[7])||isScrolledIntoView(document.getElementsByClassName("card")[2])
-            var isSpeakerInView = isScrolledIntoView(document.getElementsByClassName("speakerCarousel")[0]) || isScrolledIntoView(document.getElementsByClassName("speakerHeading")[0]);
-            var isContactInView = isScrolledIntoView(document.getElementsByClassName("cardWrapper")[0])|| isScrolledIntoView(document.getElementsByClassName("cardWrapper")[6]);
-         
-            if (isHeroInView) {
-                document.getElementsByClassName("dots")[0].classList.add("active");
-                console.log("hero");
-            }
-            else    document.getElementsByClassName("dots")[0].classList.remove("active");
+    var isHeroInView = isScrolledIntoView(document.getElementById("heroSection"));
+    var isAboutInView = isScrolledIntoView(document.getElementsByClassName("aboutUsDetails")[0]);
+    var isVideosInView = isScrolledIntoView(document.getElementsByClassName("video1")[0]) || isScrolledIntoView(document.getElementsByClassName("videoHeading")[0]);
+    var isKernelInView = isScrolledIntoView(document.getElementsByClassName("kernelHeading")[0]) || isScrolledIntoView(document.getElementsByClassName("card")[3]) || isScrolledIntoView(document.getElementsByClassName("card")[7]) || isScrolledIntoView(document.getElementsByClassName("card")[2])
+    var isSpeakerInView = isScrolledIntoView(document.getElementsByClassName("speakerCarousel")[0]) || isScrolledIntoView(document.getElementsByClassName("speakerHeading")[0]);
+    var isContactInView = isScrolledIntoView(document.getElementsByClassName("cardWrapper")[0]) || isScrolledIntoView(document.getElementsByClassName("cardWrapper")[6]);
 
-            if (isAboutInView) {
-                document.getElementsByClassName("dots")[1].classList.add("active");
-                console.log("about");
+    if (isHeroInView) {
+      document.getElementsByClassName("dots")[0].classList.add("active");
+      console.log("hero");
+    }
+    else document.getElementsByClassName("dots")[0].classList.remove("active");
 
-            }
-            else {
-                document.getElementsByClassName("dots")[1].classList.remove("active");
-                console.log("no  about");
-            }
-            if (isVideosInView) {
-                document.getElementsByClassName("dots")[2].classList.add("active");
-            }
-            else    document.getElementsByClassName("dots")[2].classList.remove("active");
-            if (isKernelInView) {
-                document.getElementsByClassName("dots")[3].classList.add("active");
-            } 
-            else    document.getElementsByClassName("dots")[3].classList.remove("active");
-            if (isSpeakerInView) {
-                document.getElementsByClassName("dots")[4].classList.add("active");
-            }   else    document.getElementsByClassName("dots")[4].classList.remove("active");
-            if (isContactInView) {
-                document.getElementsByClassName("dots")[5].classList.add("active");
-            }
-            else    document.getElementsByClassName("dots")[5].classList.remove("active");
-          })
+    if (isAboutInView) {
+      document.getElementsByClassName("dots")[1].classList.add("active");
+      console.log("about");
 
-window.onscroll=()=>{
-  console.log("scrolllledddddd");
+    }
+    else {
+      document.getElementsByClassName("dots")[1].classList.remove("active");
+      console.log("no  about");
+    }
+    if (isVideosInView) {
+      document.getElementsByClassName("dots")[2].classList.add("active");
+    }
+    else document.getElementsByClassName("dots")[2].classList.remove("active");
+    if (isKernelInView) {
+      document.getElementsByClassName("dots")[3].classList.add("active");
+    }
+    else document.getElementsByClassName("dots")[3].classList.remove("active");
+    if (isSpeakerInView) {
+      document.getElementsByClassName("dots")[4].classList.add("active");
+    } else document.getElementsByClassName("dots")[4].classList.remove("active");
+    if (isContactInView) {
+      document.getElementsByClassName("dots")[5].classList.add("active");
+    }
+    else document.getElementsByClassName("dots")[5].classList.remove("active");
+  })
 
- 
-}
-$("#clickAndScrollBtn").click(function(){
-  $("body").css("overflowY", "scroll !important");
-})
+  // window.onscroll = () => {
+  //   console.log("scrolllledddddd");
+
+
+  // }
+  $("#clickAndScrollBtn").click(function () {
+    $("body").css("overflowY", "scroll !important");
+  })
 
   function allImagesLoaded() {
 
     console.log("ALL IMAGES LOADED");
     var height = 0;
     if (document.body.clientWidth <= 768) {
-      height = document.getElementById("bigFloorMobile").offsetHeight;
+      if (document.getElementById("bigFloorMobile")) {
+        height = document.getElementById("bigFloorMobile").offsetHeight;
+      }
     }
     else {
-      height = document.getElementById("bigFloorLaptop").offsetHeight;
+      if (document.getElementById("bigFloorLaptop")) {
+        height = document.getElementById("bigFloorLaptop").offsetHeight;
+      }
     }
     console.log("height", height)
-
-    document.getElementsByClassName("mainWrapper")[0].style.marginTop = height - 200 + "px";
+    if (document.getElementsByClassName("mainWrapper")) {
+      document.getElementsByClassName("mainWrapper")[0].style.marginTop = height - 200 + "px";
+    }
     document.getElementsByClassName("loaderDiv")[0].style.display = "none";
     // document.getElementsByTagName("BODY")[0].style.overflowY = "scroll";
     document.getElementById("cityLayer1").style.transform = "translate(5%, 0px)";
