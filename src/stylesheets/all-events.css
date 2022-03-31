@@ -65,6 +65,9 @@
   overflow-y:scroll;
   height: 75%
 }
+.card-description-details *{
+  color: white !important;
+}
 .card-description-tabs{
   margin: 2vh 0 3vh;
   border-bottom: 1px solid #FBF1F1;
