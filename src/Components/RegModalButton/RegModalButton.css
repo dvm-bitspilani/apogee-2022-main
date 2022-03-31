@@ -1,45 +1,51 @@
-.game-details-heading {
-  text-align: center;
-  font-weight: 700;
+.extra-menu {
+  background: #f4f4f4;
+  border-radius: 15px;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  position: relative;
+  margin: 2rem auto 0;
+  align-items: center;
 }
 
-.game-details-heading h2 {
-  font-family: "Forgotten Futurist";
-  font-weight: 700;
-  font-size: 2rem;
+.extra-menu img{
+  width: 100%;
 }
 
-.game-details-heading .price {
-  color: #fa2020;
-  font-family: "Forgotten Futurist";
-  font-size: 1.5rem;
-  margin: 0.5rem 0;
+.extra-menu div:first-child{
+  width: 70%;
 }
 
-.game-details-col1 .cell{
-    margin-right: 1rem;
+.extra-menu div:last-child{
+  width: 30%;
 }
 
-.game-details-input {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 20px
-}
-
-.game-details-input .cell {
-  margin: 1rem 0;
+.extra-menu .games div {
+  font-family: "Gilroy";
+  font-weight: 600;
+  margin: 1.5rem 0;
+  cursor: pointer;
+  font-size: 1.25rem;
+  letter-spacing: 0.05em;
 }
 
 @media screen and (max-width: 768px) {
-    .game-details-input{
-        display: flex;
-        flex-direction: column;
-    }
+  .extra-menu{
+    width: 100%;
+    padding: 1rem;
+  }
 
-    .css-1dzr2zz{
-        max-width: 86vw;
-        max-height: 80vh;
-        overflow-y: scroll;
-        padding: 1rem !important;
-    }
+  .extra-menu .games div{
+    margin: 1rem 0;
+  }
+
+  .extra-menu div:last-child{
+    display: none;
+  }
+
+  .extra-menu div:first-child{
+    width: 100%;
+  }
 }

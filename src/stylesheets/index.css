@@ -118,11 +118,6 @@ code {
   border-color: white !important;
 }
 
-.game-details-input .MuiFormLabel-root.Mui-focused {
-  color: black !important;
-  border-color: black !important;
-}
-
 .MuiTextField-root {
   border: none !important;
   border-radius: 10px !important;
@@ -133,17 +128,8 @@ code {
   border-radius: 10px !important;
 }
 
-.game-details-input .MuiOutlinedInput-notchedOutline {
-  border-color: black !important;
-  border-radius: 10px !important;
-}
-
 .MuiOutlinedInput-input {
   color: white !important;
-}
-
-.game-details-input .MuiOutlinedInput-input {
-  color: black !important;
 }
 
 .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
@@ -151,18 +137,8 @@ code {
   border-radius: 10px;
 }
 
-.game-details-input .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
-  border: 1px solid black;
-  border-radius: 10px;
-}
-
 .MuiOutlinedInput-input {
   border: 1px solid white;
-  border-radius: 10px;
-}
-
-.game-details-input .MuiOutlinedInput-input {
-  border: 1px solid black;
   border-radius: 10px;
 }
 

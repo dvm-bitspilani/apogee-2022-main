@@ -33,10 +33,6 @@ grid-column-gap:110px;
 .ModalBox{
     margin-right:-60%
 }
-.extra-menu div{
-    margin: 1rem 0;
-    cursor: pointer;
-}
 .cell span{
     padding:10px;
     white-space: nowrap;

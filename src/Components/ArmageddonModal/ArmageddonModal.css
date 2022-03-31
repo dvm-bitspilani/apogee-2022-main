@@ -1,0 +1,201 @@
+.arma-container {
+  width: 80vw;
+  height: 80vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+h2 {
+  text-align: center;
+  font-family: "Forgotten Futurist";
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.game-details-header {
+  margin: 0.5rem 0;
+}
+
+.game-details-header div,
+.add-player {
+  font-family: "Forgotten Futurist";
+  margin: 0.5rem 0;
+  letter-spacing: 2px;
+  color: #2084fa;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.add-player {
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.game-details-input {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 20px;
+}
+
+.game-player-details {
+  margin-top: 1rem;
+}
+
+.player-details-title {
+  font-family: "Gilroy";
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.arma-container .cell > span {
+  font-weight: 700;
+}
+
+.arma-container input{
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 0.75rem;
+    color: black;
+    width: 50%;
+}
+
+.extra-menu {
+  background: #f4f4f4;
+  border-radius: 15px;
+  padding: 2rem;
+  width: 80%;
+  position: relative;
+  margin: 2rem auto 0;
+  height: 84%;
+}
+
+.extra-menu img {
+  height: 100%;
+}
+
+.extra-menu .games div {
+  font-family: "Gilroy";
+  font-weight: 600;
+  margin: 1.5rem 0;
+  cursor: pointer;
+  font-size: 1.25rem;
+  letter-spacing: 0.05em;
+}
+
+.game-tabs{
+  border-bottom: 1px solid #000000;
+  padding-bottom: 0.5rem;
+  width: 70%;
+}
+
+.game-tabs span{
+  padding: 0 1rem 6px 1rem;
+  cursor: pointer;
+  font-family: 'Montserrat';
+}
+
+.game-tab-active{
+  border-bottom: 3px solid #000000;
+}
+
+.all-games, .bits-games{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.players{
+  height: 36%;
+  overflow-y: scroll;
+  background: #f4f4f4;
+  border-radius: 15px;
+  padding: 0 1rem 1rem;
+  margin-top: 1rem;
+}
+
+.save-players {
+  font-family: "Gilroy";
+  padding: 0.5rem 2rem;
+  background-color: #000000;
+  outline: 1px solid #000000;
+  outline-offset: 3px;
+  color: #ffffff;
+  font-size: 1rem;
+  border: 0;
+  font-weight: 700;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.arma-container .MuiFormLabel-root.Mui-focused {
+  color: black !important;
+  border-color: black !important;
+}
+
+.arma-container .MuiOutlinedInput-notchedOutline {
+  border-color: black !important;
+  border-radius: 10px !important;
+}
+
+.arma-container .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.arma-container .MuiOutlinedInput-input {
+  border: 1px solid black;
+  border-radius: 10px;
+  color: black !important;
+}
+
+.arma-container .MuiInputBase-input-MuiOutlinedInput-input {
+  border: 1px solid black;
+}
+
+@media screen and (max-width: 768px) {
+  .game-details-input {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .css-1dzr2zz {
+    max-width: 86vw;
+    max-height: 80vh;
+    overflow-y: scroll;
+    padding: 1rem !important;
+  }
+
+  .extra-menu{
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .extra-menu .games div{
+    margin: 1rem 0;
+  }
+
+  .extra-menu div:last-child{
+    display: none;
+  }
+
+  .extra-menu div:first-child{
+    width: 100%;
+  }
+
+  .game-tabs span{
+    padding: 0.5rem 0.5rem 6px;
+  }
+}

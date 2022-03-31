@@ -21,8 +21,6 @@ import ModalUnstyled from "@mui/base/ModalUnstyled";
 import CloseIcon from "@mui/icons-material/Close";
 import IconButton from "@mui/material/IconButton";
 
-import './RegModalButton.css'
-
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
 const MenuProps = {
@@ -72,6 +70,7 @@ const gameStyle = {
   boxShadow: 24,
   borderRadius: "10px",
   p: 4,
+  width: '60vw'
 };
 
 export default function RegModalButton(props) {
@@ -202,21 +201,6 @@ export default function RegModalButton(props) {
     }));
     console.log(data);
   };
-
-  const [gameOpen, setGameOpen] = React.useState(false);
-  const handleGameOpen = () => setGameOpen(true);
-  const handleGameClose = () => {
-    setGameOpen(false)
-    setArmaStep(1)
-  };
-
-  const [armaStep, setArmaStep] = React.useState(1);
-  const [gameName, setGameName] = React.useState("");
-
-  const handleArmaClick = (name) =>{
-    setArmaStep(armaStep + 1)
-    setGameName(name);
-  }
 
   return (
     <div className="ModalBox">
@@ -439,9 +423,8 @@ export default function RegModalButton(props) {
                             key={name}
                             value={name}
                             style={getStyles(name, eventName, theme)}
-                            onClick={name == "Armageddon" ? handleGameOpen : ""}
                           >
-                            {name}
+                            {name == ("Armageddon" || "ARMAGEDDON") ? <Link to="/armageddon">{name}</Link> : name}
                           </MenuItem>
                         ))}
 
@@ -549,251 +532,6 @@ export default function RegModalButton(props) {
               </div>
             </form>
           </Typography>
-        </Box>
-      </Modal>
-      <Modal
-        open={gameOpen}
-        onClose={handleGameClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={gameStyle}>
-          {armaStep == 1 ?
-            (<div className="extra-menu">
-              <div onClick={() => handleArmaClick("Valorant")}>Valorant</div>
-              <div onClick={() => handleArmaClick("BGMI")}>BGMI</div>
-              <div onClick={() => handleArmaClick("CS-GO")}>CS-GO</div>
-              <div onClick={() => handleArmaClick("Clash Royal")}>Clash Royal</div>
-              <b><span>BITSian only events</span></b>
-              <div onClick={() => handleArmaClick("Tekken")}>Tekken</div>
-              <div onClick={() => handleArmaClick("FIFA")}>FIFA</div>
-              <div onClick={() => handleArmaClick("Rocket League")}>Rocket League</div>
-            </div>) :
-            (<div>
-              <div className="game-details-heading">
-                <h2>{gameName}</h2>
-                <div className="price">Price: 250 per team</div>
-              </div>
-              <div className="game-details-input">
-                <div className="game-details-col1">
-                  <div className="cell">
-                    <span>Name*</span>
-                    <TextField
-                      type="text"
-                      id="nameVal1"
-                      onChange={handleChange}
-                      name="name1"
-                      label="Name"
-                      sx={{
-                        width: 300,
-                        border: "1px solid black",
-                        color: "black",
-                        borderRadius: "2px",
-                      }}
-                    />
-                  </div>
-                  <div className="cell">
-                    <span>Name*</span>
-                    <TextField
-                      type="text"
-                      id="nameVal2"
-                      onChange={handleChange}
-                      name="name2"
-                      label="Name"
-                      sx={{
-                        width: 300,
-                        border: "1px solid black",
-                        color: "black",
-                        borderRadius: "2px",
-                      }}
-                    />
-                  </div>
-                  <div className="cell">
-                    <span>Name*</span>
-                    <TextField
-                      type="text"
-                      id="nameVal3"
-                      onChange={handleChange}
-                      name="name3"
-                      label="Name"
-                      sx={{
-                        width: 300,
-                        border: "1px solid black",
-                        color: "black",
-                        borderRadius: "2px",
-                      }}
-                    />
-                  </div>
-                  <div className="cell">
-                    <span>Name*</span>
-                    <TextField
-                      type="text"
-                      id="nameVal4"
-                      onChange={handleChange}
-                      name="name4"
-                      label="Name"
-                      sx={{
-                        width: 300,
-                        border: "1px solid black",
-                        color: "black",
-                        borderRadius: "2px",
-                      }}
-                    />
-                  </div>
-                  <div className="cell">
-                    <span>Name*</span>
-                    <TextField
-                      type="text"
-                      id="nameVal5"
-                      onChange={handleChange}
-                      name="name5"
-                      label="Name"
-                      sx={{
-                        width: 300,
-                        border: "1px solid black",
-                        color: "black",
-                        borderRadius: "2px",
-                      }}
-                    />
-                  </div>
-                  <div className="cell">
-                    <span>Name*</span>
-                    <TextField
-                      type="text"
-                      id="nameVal6"
-                      onChange={handleChange}
-                      name="name6"
-                      label="Name"
-                      sx={{
-                        width: 300,
-                        border: "1px solid black",
-                        color: "black",
-                        borderRadius: "2px",
-                      }}
-                    />
-                  </div>
-                </div>
-                <div className="game-details-col2">
-                  <div className="cell">
-                    <span>Email*</span>
-                    <TextField
-                      type="email"
-                      onChange={handleChange}
-                      name="player_email_id"
-                      label="Type your email"
-                      sx={{
-                        width: 300,
-                        border: "1px solid black",
-                        color: "black",
-                      }}
-                    />
-                  </div>
-                  <div className="cell">
-                    <span>Phone*</span>
-                    <TextField
-                      type="text"
-                      variant="outlined"
-                      onChange={handleChange}
-                      name="player_phone"
-                      label="Type your phone number"
-                      sx={{
-                        width: 300,
-                        color: "black",
-                        border: "1px solid black",
-                      }}
-                    />
-                  </div>
-                  <div className="cell">
-                    <span>College*</span>
-                    <Autocomplete
-                      onChange={(event, value) => {
-                        console.log(
-                          value,
-                          "value",
-                          document.getElementById("asynchronous-demo").value
-                        );
-                        setCollegeName(value);
-                        console.log(collegeName, "collegeName");
-                      }}
-                      id="asynchronous-demo"
-                      sx={{ width: 300 }}
-                      open={openField}
-                      onOpen={() => {
-                        setOpenField(true);
-                      }}
-                      onClose={() => {
-                        setOpenField(false);
-                      }}
-                      isOptionEqualToValue={(option, value) =>
-                        option.name === value.name
-                      }
-                      getOptionLabel={(option) => option.name}
-                      options={optionsField}
-                      loading={loading}
-                      renderInput={(params) => (
-                        <TextField
-                          {...params}
-                          label="Type your College"
-                          onChange={async () => {
-                            console.log("on Change");
-                            // setCollegeName(document.getElementById('asynchronous-demo').value);
-                            if (
-                              document.getElementById("asynchronous-demo").value
-                                .length >= 3
-                            ) {
-                              console.log("fetch");
-                              // setCollegeName(document.getElementById('asynchronous-demo').value);
-                              console.log(
-                                "RUN",
-                                document.getElementById("asynchronous-demo")
-                                  .value
-                              );
-                              const dataCollege = {
-                                letters:
-                                  document.getElementById("asynchronous-demo")
-                                    .value,
-                              };
-                              await fetch(
-                                "https://bits-apogee.org/registrations/get_college_by_char/",
-                                {
-                                  headers: {
-                                    "content-type": "application/json",
-                                  },
-                                  method: "POST",
-                                  mode: "cors",
-                                  body: JSON.stringify(dataCollege),
-                                }
-                              )
-                                .then(function (response) {
-                                  return response.json();
-                                })
-                                .then(function (result) {
-                                  // setColleges(result.data);
-                                  collegeList = result.data;
-                                  console.log(collegeList);
-                                });
-                            }
-
-                            setOptionsField([...collegeList]);
-                          }}
-                          InputProps={{
-                            ...params.InputProps,
-                            endAdornment: (
-                              <React.Fragment>
-                                {loading ? (
-                                  <CircularProgress color="inherit" size={20} />
-                                ) : null}
-                                {params.InputProps.endAdornment}
-                              </React.Fragment>
-                            ),
-                          }}
-                        />
-                      )}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>)}
         </Box>
       </Modal>
     </div>

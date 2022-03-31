@@ -45,6 +45,12 @@
   align-content: center;
   align-items: center;
 }
+
+.arma-wrapper{
+  background-image: url(../assets/laptop/bgandgrid.svg);
+  background-size: 100vw;
+  height: 100vh;
+}
 @media screen and (max-width: 768px) {
   .events-container {
     top: 4vh;
