@@ -87,7 +87,7 @@ export const ArmageddonModal = (props) => {
         }));
     };
 
-    const [playersInfo, setPlayersInfo] = useState([{}, {}, {}, {}, {}]);
+    const [playersInfo, setPlayersInfo] = useState([{}, {}, {}, {}, {}, {}]);
 
     const handlePlayerChange = (e) => {
         const { name, value } = e.target;
@@ -97,6 +97,7 @@ export const ArmageddonModal = (props) => {
         console.log(index);
 
         playersInfo[index][name] = value;
+        // if(armaGame.bits_only && name == 'bits_id') playersInfo[index]['bits_id'] = value;
         setPlayersInfo(playersInfo)
 
         console.log("Players DIYA", playersInfo);
@@ -107,7 +108,7 @@ export const ArmageddonModal = (props) => {
         console.log(data)
         setData((prevState) => ({
             ...prevState,
-            playes: playersInfo,
+            players: playersInfo,
             game_id: id
         }));
     };
@@ -117,7 +118,27 @@ export const ArmageddonModal = (props) => {
         console.log("LOCAL ", loc);
         console.log("FINAL DATA", data);
 
-        await fetch("https://bits-apogee.org/arma/register_team/", {
+        for (let i = data.players.length - 1; i >= 0; i--) {
+            if (Object.entries(data.players[i]).length === 0) data.players.pop()
+        }
+        console.log(data.players)
+
+        if (armaGame.bits_only) {
+            await fetch("https://bits-apogee.org/arma/register_team_bitsian/", {
+                headers: { "content-type": "application/json" },
+                method: "POST",
+                body: JSON.stringify(data),
+                mode: "cors",
+            })
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (result) {
+                    console.log(result);
+                    if (result.message) alert(result.message)
+                });
+        }
+        else await fetch("https://bits-apogee.org/arma/register_team/", {
             headers: { "content-type": "application/json" },
             method: "POST",
             body: JSON.stringify(data),
@@ -267,6 +288,7 @@ export const ArmageddonModal = (props) => {
                             <input
                                 required
                                 type="text"
+                                id={"bits_id" + i}
                                 onChange={handlePlayerChange}
                                 name="bits_id"
                                 label="Type your BITS ID"

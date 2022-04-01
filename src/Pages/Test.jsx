@@ -98,6 +98,9 @@ function Test() {
           </div>
 
         </div>
+        <div className="section" id="Speakers">
+          <SpeakerSection />
+        </div>
         <div className="section" id="kernelEvents">
           <EventContainer
             className="kernelEvents"
@@ -105,9 +108,6 @@ function Test() {
             type="kernel"
             api="https://bits-apogee.org/registrations/kernel_events/"
           />
-        </div>
-        <div className="section" id="Speakers">
-          <SpeakerSection />
         </div>
         <div className="section" id="ContactUs">
           <ContactUs />
