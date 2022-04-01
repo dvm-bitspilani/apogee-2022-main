@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.31e305fe.css",
-    "main.js": "/static/js/main.0ff7962a.js",
+    "main.css": "/static/css/main.ff38edd2.css",
+    "main.js": "/static/js/main.075eb601.js",
     "static/media/6degreesindia.png": "/static/media/6degreesindia.a8f20f39531b74133482.png",
     "static/media/pepsico.jpeg": "/static/media/pepsico.b52907682772b1d16a91.jpeg",
     "static/media/finalGrid.svg": "/static/media/finalGrid.762841b7f60ab9b96c746ab40d1fce90.svg",
@@ -47,6 +47,7 @@
     "static/media/shukla.png": "/static/media/shukla.9090e728b3d0ea41fc96.png",
     "static/media/Pirulen.otf": "/static/media/Pirulen.8cd956b0478c0e3dc882.otf",
     "static/media/pirulen rg.otf": "/static/media/pirulen rg.8cd956b0478c0e3dc882.otf",
+    "static/media/arma_guns.svg": "/static/media/arma_guns.dc22b16b3f5f3c34a55f338a38bd1c2e.svg",
     "static/media/balcony_grid_full.svg": "/static/media/balcony_grid_full.b5e15292f51fa01e5ddc8fe54d31c83e.svg",
     "static/media/BARTKEY.ttf": "/static/media/BARTKEY.93ed2ecd9cef7d382b0e.ttf",
     "static/media/Meteor_1.svg": "/static/media/Meteor_1.9eb45eccede76f7e61bcd564661895e9.svg",
@@ -59,6 +60,7 @@
     "static/media/meteor.png": "/static/media/meteor.5f1a220d760de8251e1c.png",
     "static/media/Meteor_2.svg": "/static/media/Meteor_2.29e0094f643be7e162d4350236482f3f.svg",
     "static/media/forest fuse.png": "/static/media/forest fuse.23b7aad3fa33b8806649.png",
+    "static/media/isclogo_color_cmyk_H.png": "/static/media/isclogo_color_cmyk_H.3d3573097235fc1cb211.png",
     "static/media/apogee_loader_logo.svg": "/static/media/apogee_loader_logo.a8f7827d6fc82a436805.svg",
     "static/media/Collegepond logo1.png": "/static/media/Collegepond logo1.1af0c22cfef9c61ddff2.png",
     "static/media/City 6.svg": "/static/media/City 6.830ef6da234ff5c7809e2d648329cd17.svg",
@@ -67,6 +69,7 @@
     "static/media/fis.png": "/static/media/fis.ecfba7a29cf608458c11.png",
     "static/media/AUTODESK logo.png": "/static/media/AUTODESK logo.2e7ab84b299b45caf4d2.png",
     "static/media/Switch Primary Logo (1).png": "/static/media/Switch Primary Logo (1).4f8ea385f63ce655f0d4.png",
+    "static/media/bgandgrid.svg": "/static/media/bgandgrid.5a0e9ebb4b126d604172.svg",
     "static/media/Button.svg": "/static/media/Button.54534bf6806c168cf6e0549792c23525.svg",
     "static/media/events_balcony.svg": "/static/media/events_balcony.13f42bc994d2c597eddcfd5402fa2113.svg",
     "static/media/Balcony.svg": "/static/media/Balcony.e4b18960b1487c3ef0eb94021be7aa4e.svg",
@@ -81,11 +84,11 @@
     "static/media/down-arrow.svg": "/static/media/down-arrow.ee19d975d72483aa8605fe4ebe5450f9.svg",
     "static/media/Sky.svg": "/static/media/Sky.d5d27986d37c474eeda4.svg",
     "static/media/Arrox.svg": "/static/media/Arrox.97b633c6fff07eb6a4665f665abaad15.svg",
-    "main.31e305fe.css.map": "/static/css/main.31e305fe.css.map",
-    "main.0ff7962a.js.map": "/static/js/main.0ff7962a.js.map"
+    "main.ff38edd2.css.map": "/static/css/main.ff38edd2.css.map",
+    "main.075eb601.js.map": "/static/js/main.075eb601.js.map"
   },
   "entrypoints": [
-    "static/css/main.31e305fe.css",
-    "static/js/main.0ff7962a.js"
+    "static/css/main.ff38edd2.css",
+    "static/js/main.075eb601.js"
   ]
 }
