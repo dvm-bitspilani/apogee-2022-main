@@ -549,7 +549,10 @@ export const ArmageddonModal = (props) => {
                     <div className="arma-cta-container">
                         <button
                             className="save-players arma-back"
-                            onClick={() => {setArmaStep(1);}}
+                            onClick={() => {
+                                setArmaStep(1);
+                                setExtraPlayer(false)
+                            }}
                         >
                             Back
                         </button>
