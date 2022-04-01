@@ -154,7 +154,7 @@ h2 {
 }
 
 .arma-container .MuiOutlinedInput-notchedOutline {
-  border-color: black !important;
+  border: none;
   border-radius: 10px !important;
 }
 
@@ -171,6 +171,21 @@ h2 {
 
 .arma-container .MuiInputBase-input-MuiOutlinedInput-input {
   border: 1px solid black;
+}
+
+.arma-container .MuiSvgIcon-root{
+  color: black !important;
+}
+
+.players::-webkit-scrollbar {
+  width: 3px; 
+  background: transparent;
+}
+
+.players::-webkit-scrollbar-thumb {
+  width: 3px;
+  background-color: black;
+  border-radius: 3px;
 }
 
 @media screen and (max-width: 768px) {
