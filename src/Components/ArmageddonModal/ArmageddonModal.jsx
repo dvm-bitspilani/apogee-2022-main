@@ -39,6 +39,7 @@ export const ArmageddonModal = (props) => {
     const [openField, setOpenField] = React.useState(false);
     const [optionsField, setOptionsField] = React.useState([]);
     const [collegeName, setCollegeName] = React.useState([]);
+    const [fieldNum, setFieldNum] = React.useState();
     // const [registerDisabled, setRegisterDisabled] = React.useState(true);
 
     const loading = openField && optionsField.length === 0;
@@ -104,7 +105,7 @@ export const ArmageddonModal = (props) => {
         console.log(data);
     };
 
-    let playersInfo = [{}, {}, {}, {}, {}];
+    const [playersInfo, setPlayersInfo] = React.useState([{}, {}, {}, {}, {}]);
 
     const handlePlayerChange = (e) => {
         const { name, value } = e.target;
@@ -114,10 +115,11 @@ export const ArmageddonModal = (props) => {
         console.log(index);
 
         playersInfo[index][name] = value;
+        setPlayersInfo(playersInfo)
 
         console.log("Players DIYA", playersInfo);
 
-        localStorage.setItem("players", playersInfo);
+        localStorage.setItem("players", JSON.stringify(playersInfo));
 
         // setData((prevState) => ({
         //   ...prevState,
@@ -131,8 +133,6 @@ export const ArmageddonModal = (props) => {
 
         const loc = localStorage.getItem("players");
         console.log("LOCAL ", loc);
-
-
 
         setData((prevState) => ({
             ...prevState,
@@ -293,12 +293,14 @@ export const ArmageddonModal = (props) => {
                                 }}
                                 id="asynchronous-demo"
                                 sx={{ width: 300 }}
-                                open={openField}
+                                open={openField && fieldNum == i} 
                                 onOpen={() => {
                                     setOpenField(true);
+                                    setFieldNum(i)
                                 }}
                                 onClose={() => {
                                     setOpenField(false);
+                                    setFieldNum(i)
                                 }}
                                 isOptionEqualToValue={(option, value) =>
                                     option.name === value.name

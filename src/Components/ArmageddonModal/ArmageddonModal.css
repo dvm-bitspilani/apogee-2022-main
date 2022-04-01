@@ -1,3 +1,8 @@
+body, html{
+  height: 100vh;
+  overflow-y: hidden;
+}
+
 .arma-container {
   width: 80vw;
   height: 80vh;
@@ -154,7 +159,7 @@ h2 {
 }
 
 .arma-container .MuiOutlinedInput-notchedOutline {
-  border-color: black !important;
+  border: none;
   border-radius: 10px !important;
 }
 
@@ -171,6 +176,21 @@ h2 {
 
 .arma-container .MuiInputBase-input-MuiOutlinedInput-input {
   border: 1px solid black;
+}
+
+.arma-container .MuiSvgIcon-root{
+  color: black !important;
+}
+
+.players::-webkit-scrollbar {
+  width: 6px; 
+  background: transparent;
+}
+
+.players::-webkit-scrollbar-thumb {
+  width: 6px;
+  background-color: black;
+  border-radius: 6px;
 }
 
 @media screen and (max-width: 768px) {
