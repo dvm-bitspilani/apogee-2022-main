@@ -76,7 +76,7 @@ function isScrolledIntoView(el) {
     );
    }
 
-       
+       //side nav working
             var isHeroInView = isScrolledIntoView(document.getElementById("heroSection"));
             var isAboutInView = isScrolledIntoView(document.getElementsByClassName("aboutUsDetails")[0]);
             var isVideosInView = isScrolledIntoView(document.getElementsByClassName("video1")[0])||isScrolledIntoView(document.getElementsByClassName("videoHeading")[0]);
@@ -97,7 +97,7 @@ function isScrolledIntoView(el) {
             }
             else {
                 document.getElementsByClassName("dots")[1].classList.remove("active");
-                console.log("no  about");
+          
             }
             if (isVideosInView) {
                 document.getElementsByClassName("dots")[2].classList.add("active");
@@ -124,6 +124,9 @@ $("#clickAndScrollBtn").click(function(){
 })
 
   function allImagesLoaded() {
+    var date1 = new Date();
+
+
    var height = 0;
     if (document.body.clientWidth <= 768) {
       height = document.getElementById("bigFloorMobile").offsetHeight;
@@ -134,7 +137,7 @@ $("#clickAndScrollBtn").click(function(){
    
 
     document.getElementsByClassName("mainWrapper")[0].style.marginTop = height - 200 + "px";
-    document.getElementsByClassName("loaderDiv")[0].style.display = "none";
+    document.getElementsByClassName("loaderDiv")[0].style.display = "none"
     // document.getElementsByTagName("BODY")[0].style.overflowY = "scroll";
     document.getElementById("cityLayer1").style.transform = "translate(5%, 0px)";
     setTimeout(() => {
@@ -159,6 +162,7 @@ $("#clickAndScrollBtn").click(function(){
 
   }
   $(document).ready(function () {
+    
     // Images loaded is zero because we're going to process a new set of images.
     var imagesLoaded = 0;
     // Total images is still the total number of <img> elements on the page.
