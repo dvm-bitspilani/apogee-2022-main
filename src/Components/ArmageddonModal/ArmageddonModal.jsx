@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import TextField from "@mui/material/TextField";
 import "../../stylesheets/Modal.css";
 import Autocomplete from "@mui/material/Autocomplete";
@@ -31,16 +30,16 @@ function getStyles(name, personName, theme) {
 }
 
 export const ArmageddonModal = (props) => {
-    let [data, setData] = React.useState({});
-    const [gameId, setGameId] = React.useState([]);
-    const [openField, setOpenField] = React.useState(false);
-    const [optionsField, setOptionsField] = React.useState([]);
-    const [extraPlayer, setExtraPlayer] = React.useState(false);
+    let [data, setData] = useState({});
+    const [gameId, setGameId] = useState([]);
+    const [openField, setOpenField] = useState(false);
+    const [optionsField, setOptionsField] = useState([]);
+    const [extraPlayer, setExtraPlayer] = useState(false);
     // const [registerDisabled, setRegisterDisabled] = React.useState(true);
 
     const loading = openField && optionsField.length === 0;
 
-    React.useEffect(() => {
+    useEffect(() => {
         let active = true;
 
         if (!loading) {
@@ -51,13 +50,13 @@ export const ArmageddonModal = (props) => {
         };
     }, [loading]);
 
-    React.useEffect(() => {
+    useEffect(() => {
         if (!openField) {
             setOptionsField([]);
         }
     }, [openField]);
 
-    React.useEffect(async () => {
+    useEffect(async () => {
         await fetch("https://bits-apogee.org/2022/arma/get_games/", {
             headers: { "content-type": "application/json" },
             method: "GET",
@@ -88,7 +87,7 @@ export const ArmageddonModal = (props) => {
         }));
     };
 
-    const [playersInfo, setPlayersInfo] = React.useState([{}, {}, {}, {}, {}]);
+    const [playersInfo, setPlayersInfo] = useState([{}, {}, {}, {}, {}]);
 
     const handlePlayerChange = (e) => {
         const { name, value } = e.target;
