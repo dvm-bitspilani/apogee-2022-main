@@ -206,7 +206,6 @@ export const ArmageddonModal = (props) => {
             min_players: 2,
             price: "Rs 100 per team",
             extra_info: [
-                { field_name: "captain_contact", name: "Captains Contact" },
                 { field_name: "team_name", name: "Team Name" },
             ],
         },
