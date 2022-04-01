@@ -193,13 +193,11 @@ export default function RegModalButton(props) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    // console.log(name, value);
 
     setData((prevState) => ({
       ...prevState,
       [name]: value,
     }));
-    // console.log(data);
   };
 
   return (

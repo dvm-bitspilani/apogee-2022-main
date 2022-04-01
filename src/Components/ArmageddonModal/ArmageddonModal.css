@@ -179,13 +179,6 @@ h2 {
     flex-direction: column;
   }
 
-  .css-1dzr2zz {
-    max-width: 86vw;
-    max-height: 80vh;
-    overflow-y: scroll;
-    padding: 1rem !important;
-  }
-
   .extra-menu{
     width: 100%;
     padding: 1rem;
@@ -195,15 +188,22 @@ h2 {
     margin: 1rem 0;
   }
 
-  .extra-menu div:last-child{
-    display: none;
-  }
-
   .extra-menu div:first-child{
     width: 100%;
   }
 
   .game-tabs span{
     padding: 0.5rem 0.5rem 6px;
+  }
+
+  .extra-menu .img{
+    display: none;
+  }
+
+  .all-games, .bits-games{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
   }
 }

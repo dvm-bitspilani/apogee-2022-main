@@ -121,16 +121,6 @@ const handleLargeDescription = (desc) => {
   return desc;
 };
 
-const handleEDClick = () => {
-  setTab({ eventDetail: true, guideline: false, contact: false })
-}
-const handleGuidelineClick = () => {
-  setTab({ eventDetail: false, guideline: true, contact: false })
-}
-const handleContactClick = () => {
-  setTab({ eventDetail: false, guideline: false, contact: true })
-}
-
 const tabSelection = () => {
   if (tab.eventDetail) return eventDesc
   else if (tab.guideline) return eventRules
@@ -189,9 +179,9 @@ return (
         <div className="card-description-text">
           <div>  <div className="card-description-heading">{eventName}</div>
             <div className="card-description-tabs">
-              <span onClick={handleEDClick} className={tab.eventDetail ? "card-tab-active" : ""}>Details</span>
-              <span onClick={handleGuidelineClick} className={tab.guideline ? "card-tab-active" : ""}>Guidelines</span>
-              <span onClick={handleContactClick} className={tab.contact ? "card-tab-active" : ""}>Contact</span>
+              <span onClick={() => setTab({ eventDetail: true, guideline: false, contact: false })} className={tab.eventDetail ? "card-tab-active" : ""}>Details</span>
+              <span onClick={() => setTab({ eventDetail: false, guideline: true, contact: false })} className={tab.guideline ? "card-tab-active" : ""}>Guidelines</span>
+              <span onClick={() => setTab({ eventDetail: false, guideline: false, contact: true })} className={tab.contact ? "card-tab-active" : ""}>Contact</span>
             </div></div>
           <div className="card-description-details" dangerouslySetInnerHTML={{ __html: tabSelection() }} ></div>
         </div>
