@@ -9,7 +9,6 @@ function Pagination() {
   // }
   var isInViewport = function (elem) {
     var bounding = elem.getBoundingClientRect();
-    console.log(bounding.top,bounding.bottom)
     return bounding.top<=0 && (bounding.bottom <= document.documentElement.clientHeight && (bounding.bottom>=0))
         // bounding.top >= 0 &&
         // bounding.left >= 0 &&
@@ -37,9 +36,8 @@ function Pagination() {
         for (let i = 0; i < (document.getElementsByClassName("dots").length); i++) {
           document.getElementsByClassName("dots")[i].classList.remove("active");
         }
-        console.log(this.classList);
         this.classList.add("active");
-        console.log(this.classList);
+
       });
     });
 

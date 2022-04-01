@@ -45,7 +45,7 @@ function MainHero() {
         if (window.screen.width < 768) {
             scrollTo(1800);
         }
-        else scrollTo(3000);
+        else scrollTo(3300);
         document.body.style.overflowY = "scroll";
         document.querySelector("html").style.overflowY = "scroll"
 
@@ -59,7 +59,6 @@ function MainHero() {
         // document.documentElement.style.overflowY = "hidden"
         document.getElementsByClassName("clickAndScroll")[0].addEventListener("click", () => {
             document.querySelector("body").style.overflowY = "scroll !important"
-            console.log("clicked");
             document.querySelector("#hero-link").classList.remove("active")
         })
         
@@ -78,11 +77,10 @@ function MainHero() {
             else {
                 if ((window.pageYOffset > 3300 && window.pageYOffset < 3650) && window.screen.width > 768) {
                 document.getElementsByClassName("dots")[0].classList.add("active");
+                // document.documentElement.overflowY = "hidden"
+                    scroll.scrollToTop({ ignoreCancelEvents: true, smooth: "linear", duration: 1000 });
                     document.body.style.overflowY = "hidden"
                     document.querySelector("html").style.overflowY = "hidden"
-
-                    // document.documentElement.overflowY = "hidden"
-                    scroll.scrollToTop({ ignoreCancelEvents: true, smooth: "linear", duration: 1000 });
                 }
                 if ((window.pageYOffset > 2200 && window.pageYOffset < 2550) && window.screen.width < 768) {
                     document.body.style.overflowY = "hidden"
