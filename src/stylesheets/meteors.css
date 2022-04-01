@@ -102,3 +102,7 @@
         top: 800.52%;    
         transform: scale(0.12) rotate(28deg)
     }
+
+    .meteors *{
+        user-select: none;
+    }
