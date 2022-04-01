@@ -183,14 +183,14 @@ h2 {
 }
 
 .players::-webkit-scrollbar {
-  width: 6px; 
+  width: 3px; 
   background: transparent;
 }
 
 .players::-webkit-scrollbar-thumb {
-  width: 6px;
+  width: 3px;
   background-color: black;
-  border-radius: 6px;
+  border-radius: 3px;
 }
 
 @media screen and (max-width: 768px) {
