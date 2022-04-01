@@ -9,6 +9,8 @@ import Select from "@mui/material/Select";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import { useTheme } from "@mui/material/styles";
+import Backdrop from '@mui/material/Backdrop';
+import Fade from '@mui/material/Fade';
 
 import Chip from "@mui/material/Chip";
 import { styled, Box } from "@mui/system";
@@ -215,7 +217,12 @@ export default function RegModalButton(props) {
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
-      >
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 200,
+        }}
+      >   
         <Box sx={style}>
           <div className="modalHeading">
             REGISTRATION
@@ -531,7 +538,8 @@ export default function RegModalButton(props) {
               </div>
             </form>
           </Typography>
-        </Box>
+          </Box>
+    
       </Modal>
     </div>
   );
