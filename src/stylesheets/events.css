@@ -56,7 +56,9 @@ img {
   height: max-content;
   align-items: center;
 }
+.card-text{
 
+}
 .heading {
   font-family: "Pirulen";
   font-size: 36px;
@@ -133,8 +135,8 @@ img {
 } */
 
 .card-text {
-  font-family: "Lato", sans-serif;
-  font-family: "Montserrat", sans-serif;
+
+
   width: 60%;
   padding: 0 1rem;
   display: -webkit-box;
@@ -151,6 +153,10 @@ img {
   -webkit-box-align: center;
   -ms-flex-align: center;
 
+}
+
+.card-text *{
+  font-family: "Montserrat", sans-serif !important;
 }
 .card-text > p {
   font-size: 12px;

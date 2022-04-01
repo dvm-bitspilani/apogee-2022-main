@@ -1,11 +1,19 @@
 // styles
 import "./videos.css"
-
+import AOS from 'aos';
+import "aos/dist/aos.css";
+import React from 'react';
 
 function Videos() {
+    React.useEffect(() => {
+        AOS.init({
+          duration : 2000
+        });
+        AOS.refresh();
+      }, []);
     return (
         <div className="mainVideoWrapper">
-            <div className="SectionHeading aboutUsHeading videoHeading">
+            <div className="SectionHeading aboutUsHeading videoHeading" data-aos="fade-up" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="600">
                 Videos
             </div>
             <div className="videoWrapper">

@@ -1,5 +1,6 @@
 import React from "react";
-
+import AOS from 'aos';
+import "aos/dist/aos.css";
 import CloseIcon from "@mui/icons-material/Close";
 import "../../stylesheets/events.css";
 import "../../stylesheets/all-events.css";
@@ -8,6 +9,12 @@ function EventContainer(props) {
   const [events, setEvents] = React.useState([]);
   let isMounted = true
   React.useEffect(async () => {
+   
+      AOS.init({
+        duration : 2000
+      });
+      AOS.refresh();
+
     const response = await fetch(props.api, {
       headers: { "content-type": "application/json" },
       method: "GET",
@@ -137,7 +144,7 @@ return (
       }
       id={props.type == "kernel" ? "kernel-events" : "all-events"}
     >
-      <div className="SectionHeading heading kernelHeading">{props.heading}</div>
+      <div className="SectionHeading heading kernelHeading" data-aos="fade-up" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="600">{props.heading}</div>
       <div className="card-container">
         {events.map((el) => (
           <div className="card">

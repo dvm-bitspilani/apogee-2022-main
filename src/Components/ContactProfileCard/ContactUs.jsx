@@ -1,7 +1,8 @@
 import "./ContactUs.css";
-
+import React from 'react';
 import ContactProfileCard from "./ContactProfileCard"
-
+import AOS from 'aos';
+import "aos/dist/aos.css";
 const
     contacts = [
         {
@@ -71,10 +72,15 @@ const
 
 
 function ContactUs() {
-
+    React.useEffect(() => {
+        AOS.init({
+          duration : 2000
+        });
+        AOS.refresh();
+      }, []);
     return (
         <div className="contactUsWrapper">
-            <div className="SectionHeading aboutUsHeading contactHeading ">CONTACT US</div>
+            <div className="SectionHeading aboutUsHeading contactHeading " data-aos="fade-up" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="600">CONTACT US</div>
             <div className="cards">
                 {contacts.map((e) => {
 

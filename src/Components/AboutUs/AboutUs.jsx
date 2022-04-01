@@ -1,12 +1,18 @@
 // styles
 import "./AboutUs.css"
-
-
-
+import AOS from 'aos';
+import "aos/dist/aos.css";
+import {useEffect} from "react"
 function AboutUs() {
+    useEffect(() => {
+        AOS.init({
+          duration : 2000
+        });
+        AOS.refresh();
+      }, []);
     return (
         <div className="AboutUsWrapper" >
-            <div className="SectionHeading aboutUsHeading">
+            <div className="SectionHeading aboutUsHeading" data-aos="fade-up" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="600" >
                 ABOUT US
             </div>
             <div className="aboutUsDetails">

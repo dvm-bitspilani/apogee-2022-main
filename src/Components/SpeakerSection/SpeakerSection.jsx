@@ -3,7 +3,8 @@ import "./SpeakerSection.css"
 import SpeakerCard from "./SpeakerCard.jsx"
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, DotGroup } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
-
+import AOS from 'aos';
+import "aos/dist/aos.css";
 
 const speakers = [{
     id: 1,
@@ -40,11 +41,17 @@ const speakers = [{
 
 
 function SpeakerSection() {
+    React.useEffect(() => {
+        AOS.init({
+          duration : 2000
+        });
+        AOS.refresh();
+      }, []);
     const carouselHeight = (window.screen.width < 768) ? 140 : 40
 
     return (
         <div className="SpeakerWrapper">
-            <div className="SectionHeading speakerHeading">
+            <div className="SectionHeading speakerHeading" data-aos="fade-up" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="600">
                 SPEAKERS
             </div>
             <div className="subHeading">Think Again Conclave</div>
