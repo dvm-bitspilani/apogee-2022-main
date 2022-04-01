@@ -103,11 +103,13 @@ export const ArmageddonModal = (props) => {
 
         localStorage.setItem("players", JSON.stringify(playersInfo));
 
-        // setData((prevState) => ({
-        //   ...prevState,
-        //   players: playersInfo,
-        // }));
-        // console.log(data);
+        const id = armaGame.game_id.id
+        console.log(data)
+        setData((prevState) => ({
+            ...prevState,
+            playes: playersInfo,
+            game_id: id
+        }));
     };
 
     const handleSubmit = async () => {
@@ -266,7 +268,7 @@ export const ArmageddonModal = (props) => {
                                 required
                                 type="text"
                                 onChange={handlePlayerChange}
-                                name={"bits_id" + i}
+                                name="bits_id"
                                 label="Type your BITS ID"
                                 sx={{
                                     width: 300,
@@ -318,7 +320,7 @@ export const ArmageddonModal = (props) => {
                                 required
                                 type="text"
                                 variant="outlined"
-                                onChange={handleChange}
+                                onChange={handlePlayerChange}
                                 name={armaGame.extra_field_name}
                                 label={"Type your " + armaGame.extra_field}
                                 sx={{
@@ -395,7 +397,7 @@ export const ArmageddonModal = (props) => {
                         onClick={() => {
                             setArmaStep(1)
                             setExtraPlayer(false)
-                            }
+                        }
                         } />
                         <h2>{armaGame.game_name}</h2></div>
                     <div className="game-details-header">
@@ -522,7 +524,7 @@ export const ArmageddonModal = (props) => {
                                                 required
                                                 type="text"
                                                 variant="outlined"
-                                                onChange={handleChange}
+                                                onChange={handlePlayerChange}
                                                 name={armaGame.extra_field_name}
                                                 label={"Type your " + armaGame.extra_field}
                                                 sx={{
