@@ -103,7 +103,7 @@ html{
     rgba(112, 36, 36, 0.41) 100%
   );
   mix-blend-mode: color-dodge;
-  opacity: 0.4;
+  opacity: 0.5;
   -webkit-filter: blur(20px);
   filter: blur(20px);
   -webkit-transform: matrix(1, 0, 0, -1, 0, 0);
@@ -112,7 +112,7 @@ html{
   position: absolute;
   top: 0;
   z-index: 1;
-  height: 85%;
+  height: 55%;
 }
 .horizon-glow {
   width: 90%;
