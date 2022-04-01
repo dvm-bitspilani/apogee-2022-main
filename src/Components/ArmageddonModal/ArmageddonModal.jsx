@@ -32,14 +32,9 @@ function getStyles(name, personName, theme) {
 
 export const ArmageddonModal = (props) => {
     let [data, setData] = React.useState({});
-    const [colleges, setColleges] = React.useState([]);
-    const [events, setEvents] = React.useState([]);
-    const [kernelEvents, setKernelEvents] = React.useState([]);
-    const [finalNames, setNames] = React.useState([]);
+    const [gameId, setGameId] = React.useState([]);
     const [openField, setOpenField] = React.useState(false);
     const [optionsField, setOptionsField] = React.useState([]);
-    const [collegeName, setCollegeName] = React.useState([]);
-    const [fieldNum, setFieldNum] = React.useState();
     // const [registerDisabled, setRegisterDisabled] = React.useState(true);
 
     const loading = openField && optionsField.length === 0;
@@ -61,10 +56,8 @@ export const ArmageddonModal = (props) => {
         }
     }, [openField]);
 
-    const names = [];
-
     React.useEffect(async () => {
-        await fetch("https://bits-apogee.org/registrations/events/", {
+        await fetch("https://bits-apogee.org/2022/arma/get_games/", {
             headers: { "content-type": "application/json" },
             method: "GET",
             mode: "cors",
@@ -73,24 +66,9 @@ export const ArmageddonModal = (props) => {
                 return response.json();
             })
             .then(function (result) {
-                setEvents(result.data[0]);
-                result.data[0].events.forEach((item) => {
-                    names.push(item.name);
-                });
-                setNames(names);
-            });
-
-        await fetch("https://bits-apogee.org/registrations/kernel_events/", {
-            headers: { "content-type": "application/json" },
-            method: "GET",
-            mode: "cors",
-        })
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (result) {
-                console.log(result.data[0].events);
-                setKernelEvents(result.data[0].events);
+                console.log(result)
+                console.log(result.games);
+                setGameId(result.games);
             });
     }, []);
 
@@ -98,9 +76,12 @@ export const ArmageddonModal = (props) => {
         const { name, value } = e.target;
         console.log(name, value);
 
+        const players = localStorage.getItem("players")
+
         setData((prevState) => ({
             ...prevState,
             [name]: value,
+            players
         }));
         console.log(data);
     };
@@ -129,17 +110,31 @@ export const ArmageddonModal = (props) => {
     };
 
     const handleSubmit = () => {
-        console.log("boom");
-
         const loc = localStorage.getItem("players");
         console.log("LOCAL ", loc);
 
+        const id = armaGame.game_id.id
+        
         setData((prevState) => ({
             ...prevState,
-            players: loc,
+            game_id: id
         }));
-
+        
         console.log("FINAL DATA", data);
+
+        fetch("https://bits-apogee.org/arma/register_team/", {
+            headers: { "content-type": "application/json" },
+            method: "POST",
+            body: JSON.stringify(data),
+            mode: "cors",
+        })
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (result) {
+                console.log(result);
+                if(result.message) alert(result.message)
+            });
     }
 
     const [armaStep, setArmaStep] = useState(1);
@@ -148,6 +143,7 @@ export const ArmageddonModal = (props) => {
     const armaGames = [
         {
             game_name: "Valorant",
+            game_id: gameId.find(el => el.name == "Test"),
             players_req: "5 + 1 sub ( optional )",
             min_players: 5,
             price: "Rs 250 per team",
@@ -159,6 +155,7 @@ export const ArmageddonModal = (props) => {
         },
         {
             game_name: "CS-GO",
+            game_id: gameId.find(el => el.name == "Test"),
             players_req: "5 + 1 sub ( optional ) ",
             min_players: 5,
             price: "Rs 250 per team",
@@ -170,6 +167,7 @@ export const ArmageddonModal = (props) => {
         },
         {
             game_name: "BGMI",
+            game_id: gameId.find(el => el.name == "Test"),
             players_req: "4 + 1 sub ( optional )",
             min_players: 4,
             price: "Rs 200 per team",
@@ -181,6 +179,7 @@ export const ArmageddonModal = (props) => {
         },
         {
             game_name: "Clash Royale",
+            game_id: gameId.find(el => el.name == "Test"),
             players_req: "Individual",
             min_players: 1,
             extra_field: "Player Tag",
@@ -191,6 +190,7 @@ export const ArmageddonModal = (props) => {
         {
             bits_only: true,
             game_name: "FIFA",
+            game_id: gameId.find(el => el.name == "Test"),
             players_req: "Individual",
             min_players: 1,
             price: "Rs 100 per individual",
@@ -199,6 +199,7 @@ export const ArmageddonModal = (props) => {
         {
             bits_only: true,
             game_name: "Tekken",
+            game_id: gameId.find(el => el.name == "Test"),
             players_req: "Individual",
             min_players: 1,
             price: "Rs 50 per individual",
@@ -207,6 +208,7 @@ export const ArmageddonModal = (props) => {
         {
             bits_only: true,
             game_name: "Rocket League",
+            game_id: gameId.find(el => el.name == "Test"),
             players_req: "2 + 1 sub ( optional )",
             min_players: 2,
             price: "Rs 100 per team",
@@ -235,6 +237,7 @@ export const ArmageddonModal = (props) => {
                     <div className="cell">
                         <span>Name*</span>
                         <input
+                            required
                             type="text"
                             id={"name" + i}
                             onChange={handlePlayerChange}
@@ -251,6 +254,7 @@ export const ArmageddonModal = (props) => {
                     <div className="cell">
                         <span>Email*</span>
                         <input
+                            required
                             type="email"
                             id={"email" + i}
                             onChange={handlePlayerChange}
@@ -267,8 +271,9 @@ export const ArmageddonModal = (props) => {
                         <div className="cell">
                             <span>BITS ID*</span>
                             <input
+                                required
                                 type="text"
-                                onChange={handleChange}
+                                onChange={handlePlayerChange}
                                 name="bits_id"
                                 label="Type your BITS ID"
                                 sx={{
@@ -281,24 +286,26 @@ export const ArmageddonModal = (props) => {
                     ) : (
                         <div className="cell">
                             <span>College*</span>
-                            
-                        <input
-                            type="text"
-                            id={"college" + i}
-                            onChange={handlePlayerChange}
-                            name="college"
-                            label="Type your college"
-                            sx={{
-                                width: 300,
-                                border: "1px solid black",
-                                color: "black",
-                            }}
-                        />
+
+                            <input
+                                required
+                                type="text"
+                                id={"college" + i}
+                                onChange={handlePlayerChange}
+                                name="college"
+                                label="Type your college"
+                                sx={{
+                                    width: 300,
+                                    border: "1px solid black",
+                                    color: "black",
+                                }}
+                            />
                         </div>
                     )}
                     <div className="cell">
                         <span>Phone*</span>
                         <input
+                            required
                             type="text"
                             variant="outlined"
                             onChange={handlePlayerChange}
@@ -316,6 +323,7 @@ export const ArmageddonModal = (props) => {
                         <div className="cell">
                             <span>{armaGame.extra_field}*</span>
                             <input
+                                required
                                 type="text"
                                 variant="outlined"
                                 onChange={handleChange}
