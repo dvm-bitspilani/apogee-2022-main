@@ -35,6 +35,7 @@ export const ArmageddonModal = (props) => {
     const [gameId, setGameId] = React.useState([]);
     const [openField, setOpenField] = React.useState(false);
     const [optionsField, setOptionsField] = React.useState([]);
+    const [extraPlayer, setExtraPlayer] = React.useState(false);
     // const [registerDisabled, setRegisterDisabled] = React.useState(true);
 
     const loading = openField && optionsField.length === 0;
@@ -126,7 +127,7 @@ export const ArmageddonModal = (props) => {
             })
             .then(function (result) {
                 console.log(result);
-                if(result.message) alert(result.message)
+                if (result.message) alert(result.message)
             });
     }
 
@@ -267,7 +268,7 @@ export const ArmageddonModal = (props) => {
                                 required
                                 type="text"
                                 onChange={handlePlayerChange}
-                                name="bits_id"
+                                name={"bits_id" + i}
                                 label="Type your BITS ID"
                                 sx={{
                                     width: 300,
@@ -328,9 +329,7 @@ export const ArmageddonModal = (props) => {
                                     border: "1px solid black",
                                 }}
                             />
-                       
                         </div>
-                      
                     ) : (
                         ""
                     )}
@@ -418,11 +417,130 @@ export const ArmageddonModal = (props) => {
                             </div>
                         ))}
                     </div>
-                    <div className="players">{renderPlayers}</div>
+                    <div className="players">
+                        {renderPlayers}
+                        {extraPlayer ? 
+                        (<div class="game-player-details">
+                        <div className="player-details-title">
+                            <b>Player {armaGame.min_players + 1}</b>
+                        </div>
+                        <div className="game-details-input">
+                            <div className="cell">
+                                <span>Name*</span>
+                                <input
+                                    required
+                                    type="text"
+                                    id={"name" + armaGame.min_players + 1}
+                                    onChange={handlePlayerChange}
+                                    name="name"
+                                    label="Name"
+                                    sx={{
+                                        width: 300,
+                                        border: "1px solid black",
+                                        color: "black",
+                                        borderRadius: "2px",
+                                    }}
+                                />
+                            </div>
+                            <div className="cell">
+                                <span>Email*</span>
+                                <input
+                                    required
+                                    type="email"
+                                    id={"email" + armaGame.min_players + 1}
+                                    onChange={handlePlayerChange}
+                                    name="email"
+                                    label="Type your email"
+                                    sx={{
+                                        width: 300,
+                                        border: "1px solid black",
+                                        color: "black",
+                                    }}
+                                />
+                            </div>
+                            {armaGame.bits_only ? (
+                                <div className="cell">
+                                    <span>BITS ID*</span>
+                                    <input
+                                        required
+                                        type="text"
+                                        onChange={handlePlayerChange}
+                                        name="bits_id"
+                                        label="Type your BITS ID"
+                                        sx={{
+                                            width: 300,
+                                            border: "1px solid black",
+                                            color: "black",
+                                        }}
+                                    />
+                                </div>
+                            ) : (
+                                <div className="cell">
+                                    <span>College*</span>
+        
+                                    <input
+                                        required
+                                        type="text"
+                                        id={"college" + armaGame.min_players + 1}
+                                        onChange={handlePlayerChange}
+                                        name="college"
+                                        label="Type your college"
+                                        sx={{
+                                            width: 300,
+                                            border: "1px solid black",
+                                            color: "black",
+                                        }}
+                                    />
+                                </div>
+                            )}
+                            <div className="cell">
+                                <span>Phone*</span>
+                                <input
+                                    required
+                                    type="text"
+                                    variant="outlined"
+                                    onChange={handlePlayerChange}
+                                    id={"phone" + armaGame.min_players + 1}
+                                    name="phone"
+                                    label="Type your phone number"
+                                    sx={{
+                                        width: 300,
+                                        color: "black",
+                                        border: "1px solid black",
+                                    }}
+                                />
+                            </div>
+                            {armaGame.extra_field ? (
+                                <div className="cell">
+                                    <span>{armaGame.extra_field}*</span>
+                                    <input
+                                        required
+                                        type="text"
+                                        variant="outlined"
+                                        onChange={handleChange}
+                                        name={armaGame.extra_field_name}
+                                        label={"Type your " + armaGame.extra_field}
+                                        sx={{
+                                            width: 300,
+                                            color: "black",
+                                            border: "1px solid black",
+                                        }}
+                                    />
+                                </div>
+                            ) : (
+                                ""
+                            )}
+                        </div>
+                    </div>) : ""}
+                    </div>
                     {armaGame.min_players > 1 ? (
                         <div
                             className="add-player"
-                            onClick={() => (armaGame.min_players = armaGame.min_players + 1)}
+                            onClick={() => {
+                                setExtraPlayer(true)
+                                console.log("extra")
+                            }}
+                            style={{display: extraPlayer ? "none" : ""}}
                         >
                             + Add Player
                         </div>
@@ -432,9 +550,7 @@ export const ArmageddonModal = (props) => {
                     <div className="arma-cta-container">
                         <button
                             className="save-players arma-back"
-                            onClick={() => {
-                                setArmaStep(1);
-                            }}
+                            onClick={() => {setArmaStep(1);}}
                         >
                             Back
                         </button>
