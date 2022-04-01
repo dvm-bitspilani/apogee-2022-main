@@ -132,6 +132,19 @@ img {
   height: 100vh;
 }
 
+.sky:after{
+  content: '';
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: radial-gradient(50% 74.99% at 50% 54.45%, #0055AD 0%, #002766 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+background-blend-mode: overlay;
+mix-blend-mode: overlay;
+opacity: 0.8;
+}
+
 .stars {
   /* width: 100%;
   z-index: 5;
