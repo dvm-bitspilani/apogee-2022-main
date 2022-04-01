@@ -335,7 +335,9 @@ export const ArmageddonModal = (props) => {
                                     border: "1px solid black",
                                 }}
                             />
+                       
                         </div>
+                      
                     ) : (
                         ""
                     )}
