@@ -162,9 +162,9 @@ export default function RegModalButton(props) {
       college_id: collegeName.id,
       workshops: [],
     };
-    console.log(eventName);
-    console.log(data);
-    console.log(JSON.stringify(data));
+    // console.log(eventName);
+    // console.log(data);
+    // console.log(JSON.stringify(data));
     fetch("https://bits-apogee.org/registrations/Register/", {
       headers: { "content-type": "application/json" },
       method: "POST",
@@ -177,7 +177,7 @@ export default function RegModalButton(props) {
         return response.json();
       })
       .then(function (result) {
-        console.log(result);
+        // console.log(result);
         if (result.message) {
           alert(result.message.split(":")[0]);
         }
@@ -185,7 +185,7 @@ export default function RegModalButton(props) {
           result.message ==
           `A confirmation link has been sent to ${data.email_id}. Kindly click on it to verify your email address.`
         ) {
-          console.log("submitted");
+          // console.log("submitted");
           document.getElementById("registerForm").reset();
         }
       });
@@ -199,7 +199,7 @@ export default function RegModalButton(props) {
       ...prevState,
       [name]: value,
     }));
-    console.log(data);
+    // console.log(data);
   };
 
   return (
@@ -278,7 +278,7 @@ export default function RegModalButton(props) {
                         document.getElementById("asynchronous-demo").value
                       );
                       setCollegeName(value);
-                      console.log(collegeName, "collegeName");
+                      // console.log(collegeName, "collegeName");
                     }}
                     id="asynchronous-demo"
                     sx={{ width: 300 }}
@@ -300,7 +300,7 @@ export default function RegModalButton(props) {
                         {...params}
                         label="Type your College"
                         onChange={async () => {
-                          console.log("on Change");
+                          // console.log("on Change");
                           // setCollegeName(document.getElementById('asynchronous-demo').value);
                           if (
                             document.getElementById("asynchronous-demo").value
@@ -335,7 +335,7 @@ export default function RegModalButton(props) {
                               .then(function (result) {
                                 // setColleges(result.data);
                                 collegeList = result.data;
-                                console.log(collegeList);
+                                // console.log(collegeList);
                               });
                           }
 

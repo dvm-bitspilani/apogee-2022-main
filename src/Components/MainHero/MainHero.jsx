@@ -59,7 +59,6 @@ function MainHero() {
         // document.documentElement.style.overflowY = "hidden"
         document.getElementsByClassName("clickAndScroll")[0].addEventListener("click", () => {
             document.querySelector("body").style.overflowY = "scroll !important"
-            console.log("clicked");
             document.querySelector("#hero-link").classList.remove("active")
         })
         

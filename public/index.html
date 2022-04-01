@@ -86,13 +86,13 @@ function isScrolledIntoView(el) {
          
             if (isHeroInView) {
                 document.getElementsByClassName("dots")[0].classList.add("active");
-                console.log("hero");
+         
             }
             else    document.getElementsByClassName("dots")[0].classList.remove("active");
 
             if (isAboutInView) {
                 document.getElementsByClassName("dots")[1].classList.add("active");
-                console.log("about");
+         
 
             }
             else {
@@ -119,26 +119,19 @@ function isScrolledIntoView(el) {
             else    document.getElementsByClassName("dots")[5].classList.remove("active");
           })
 
-window.onscroll=()=>{
-  console.log("scrolllledddddd");
-
- 
-}
 $("#clickAndScrollBtn").click(function(){
   $("body").css("overflowY", "scroll !important");
 })
 
   function allImagesLoaded() {
-
-    console.log("ALL IMAGES LOADED");
-    var height = 0;
+   var height = 0;
     if (document.body.clientWidth <= 768) {
       height = document.getElementById("bigFloorMobile").offsetHeight;
     }
     else {
       height = document.getElementById("bigFloorLaptop").offsetHeight;
     }
-    console.log("height", height)
+   
 
     document.getElementsByClassName("mainWrapper")[0].style.marginTop = height - 200 + "px";
     document.getElementsByClassName("loaderDiv")[0].style.display = "none";

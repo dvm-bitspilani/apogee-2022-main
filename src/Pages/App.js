@@ -165,7 +165,7 @@ function App(props) {
         return response.json();
       })
       .then(function (result) {
-        console.log(result.data[0].events);
+        // console.log(result.data[0].events);
       });
 
     let hamburger = document.querySelector(".hamburger");
@@ -234,9 +234,9 @@ function App(props) {
       college_id: collegeName.id,
       workshops: [],
     };
-    console.log(eventName);
-    console.log(data);
-    console.log(JSON.stringify(data));
+    // console.log(eventName);
+    // console.log(data);
+    // console.log(JSON.stringify(data));
     fetch("https://bits-apogee.org/registrations/Register/", {
       headers: { "content-type": "application/json" },
       method: "POST",
