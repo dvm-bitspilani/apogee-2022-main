@@ -162,7 +162,7 @@ opacity: 0.8;
   top: -50vh;
   bottom: 10vh;
   width: 100%;
-  /* animation: rotateMoon 100s linear reverse infinite; */
+  animation: rotateMoon 110s linear reverse infinite;
 }
 
 .balcony {
