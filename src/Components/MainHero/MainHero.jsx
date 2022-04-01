@@ -166,10 +166,10 @@ function MainHero() {
 
 
                 <div className="floor">
-                    {/* <div className="horizon-glow-buildings"></div>
+                    <div className="horizon-glow-buildings"></div>
                 <div className="horizon-glow"></div>
                 <div className="glow"></div>
-                <img className="floorGlow" src={floor} alt="" /> */}
+                <img className="floorGlow" src={floor} alt="" />
                     <img alt="" id="bigFloorLaptop" src={bigFloor} />
                     <img id="bigFloorMobile" src={bigFloorMobile} />
                     {/* <img className="floorGlow" src={floorGlow} alt="" /> */}

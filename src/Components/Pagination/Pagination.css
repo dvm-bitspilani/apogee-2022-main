@@ -100,23 +100,16 @@ a {
 }
 
 .dots span{
-  display: none;
+ opacity: 0;
+transition: all 0.4s ease-out;
 }
 
-.dots:nth-child(1):hover span{
-  display: initial;
+.dots:nth-child(n):hover span{
+opacity: 1;
+
+
 }
-.dots:nth-child(2):hover span{
-  display: initial;
-}.dots:nth-child(3):hover span{
-  display: initial;
-}.dots:nth-child(4):hover span{
-  display: initial;
-}.dots:nth-child(5):hover span{
-  display: initial;
-}.dots:nth-child(6):hover span{
-  display: initial;
-}
+
 @media screen and (max-width: 768px) {
   #pagination {
     display: none;
