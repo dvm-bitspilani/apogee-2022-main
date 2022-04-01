@@ -147,7 +147,7 @@ export default function RegModalButton(props) {
         return response.json();
       })
       .then(function (result) {
-        console.log(result.data[0].events);
+        // console.log(result.data[0].events);
         setKernelEvents(result.data[0].events);
       });
 
@@ -193,7 +193,7 @@ export default function RegModalButton(props) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    console.log(name, value);
+    // console.log(name, value);
 
     setData((prevState) => ({
       ...prevState,
@@ -272,11 +272,11 @@ export default function RegModalButton(props) {
                   <span>College*</span>
                   <Autocomplete
                     onChange={(event, value) => {
-                      console.log(
-                        value,
-                        "value",
-                        document.getElementById("asynchronous-demo").value
-                      );
+                      // console.log(
+                      //   value,
+                      //   "value",
+                      //   document.getElementById("asynchronous-demo").value
+                      // );
                       setCollegeName(value);
                       // console.log(collegeName, "collegeName");
                     }}
