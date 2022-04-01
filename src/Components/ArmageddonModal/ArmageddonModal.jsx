@@ -76,14 +76,15 @@ export const ArmageddonModal = (props) => {
         const { name, value } = e.target;
         console.log(name, value);
 
+        const id = armaGame.game_id.id
         const players = localStorage.getItem("players")
 
         setData((prevState) => ({
             ...prevState,
             [name]: value,
-            players
+            players,
+            game_id: id
         }));
-        console.log(data);
     };
 
     const [playersInfo, setPlayersInfo] = React.useState([{}, {}, {}, {}, {}]);
@@ -109,20 +110,12 @@ export const ArmageddonModal = (props) => {
         // console.log(data);
     };
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         const loc = localStorage.getItem("players");
         console.log("LOCAL ", loc);
-
-        const id = armaGame.game_id.id
-        
-        setData((prevState) => ({
-            ...prevState,
-            game_id: id
-        }));
-        
         console.log("FINAL DATA", data);
 
-        fetch("https://bits-apogee.org/arma/register_team/", {
+        await fetch("https://bits-apogee.org/arma/register_team/", {
             headers: { "content-type": "application/json" },
             method: "POST",
             body: JSON.stringify(data),
