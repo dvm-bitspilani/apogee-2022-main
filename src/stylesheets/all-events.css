@@ -26,15 +26,10 @@
 }
 .card-description-box {
   background: rgba(7, 9, 73, 0.09);
-  -webkit-box-shadow: inset 0px -106.879px 88.6312px -83.4176px
-      rgba(104, 80, 148, 0.3),
-    inset 0px 5.2136px 23.4612px rgba(107, 100, 154, 0.3),
-    inset 0px 1.3034px 52.136px rgba(179, 171, 226, 0.2);
-  box-shadow: inset 0px -106.879px 88.6312px -83.4176px rgba(104, 80, 148, 0.3),
-    inset 0px 5.2136px 23.4612px rgba(107, 100, 154, 0.3),
-    inset 0px 1.3034px 52.136px rgba(179, 171, 226, 0.2);
-  -webkit-backdrop-filter: blur(130px);
-  backdrop-filter: blur(130px);
+  -webkit-box-shadow: inset 0px 1px 23.4612px rgba(107, 100, 154, 0.3), inset 0px 1px 52.136px rgba(179, 171, 226, 0.2);
+    box-shadow: inset 0px 1px 23.4612px rgba(107, 100, 154, 0.3), inset 0px 1px 52.136px rgba(179, 171, 226, 0.2);
+  -webkit-backdrop-filter: blur(120px);
+  backdrop-filter: blur(120px);
   border-radius: 20px;
   width: auto;
   padding: 2rem;
