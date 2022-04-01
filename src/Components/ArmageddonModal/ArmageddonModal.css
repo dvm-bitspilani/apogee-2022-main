@@ -6,6 +6,10 @@
   border-radius: 10px;
   
 }
+.backButton{
+width: 20px;
+cursor: pointer;
+}
 .player-details-title b{
   padding: 10px;
 }

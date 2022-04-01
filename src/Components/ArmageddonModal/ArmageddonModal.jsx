@@ -5,7 +5,7 @@ import "../../stylesheets/Modal.css";
 import Autocomplete from "@mui/material/Autocomplete";
 import CircularProgress from "@mui/material/CircularProgress";
 import ArmaGuns from "../../assets/laptop/arma_guns.svg";
-
+import backButton from "./backButton.svg"
 import "./ArmageddonModal.css";
 
 const ITEM_HEIGHT = 48;
@@ -342,7 +342,7 @@ export const ArmageddonModal = (props) => {
         <div>
             {armaStep == 1 ? (
                 <div className="arma-container">
-                    <h2>Choose your Game</h2>
+              <div> <img src={backButton} alt="" className="backButton" />  <h2>Choose your Game</h2></div> 
                     <div className="extra-menu">
                         <div className="game-tabs">
                             <span
@@ -392,7 +392,7 @@ export const ArmageddonModal = (props) => {
                 </div>
             ) : (
                 <div className="arma-player-details arma-container">
-                    <h2>{armaGame.game_name}</h2>
+                  <div><img src={backButton} alt="" className="backButton" onClick={()=>setArmaStep(1)}/>  <h2>{armaGame.game_name}</h2></div>
                     <div className="game-details-header">
                         <div>{armaGame.players_req}</div>
                         <div>Price: {armaGame.price}</div>
@@ -548,12 +548,12 @@ export const ArmageddonModal = (props) => {
                         ""
                     )}
                     <div className="arma-cta-container">
-                        <button
+                        {/* <button
                             className="save-players arma-back"
                             onClick={() => {setArmaStep(1);}}
                         >
                             Back
-                        </button>
+                        </button> */}
                         <button className="save-players" onClick={handleSubmit}>Save</button>
                     </div>
                 </div>
