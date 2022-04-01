@@ -40,6 +40,7 @@ function handleCities() {
 }
 
 ReactDOM.render(
+
   <BrowserRouter basename='/' history={history}>
     {/* <HashRouter> */}
     <Routes>

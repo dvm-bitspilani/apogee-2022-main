@@ -16,9 +16,15 @@ import Videos from "../Components/Videos/Videos.jsx";
 import SpeakerSection from "../Components/SpeakerSection/SpeakerSection.jsx";
 import rocks from "../Components/MainHero/MainHeroAssets/meteor.png";
 import "../stylesheets/meteors.css";
-import $ from "jquery"
+import AOS from 'aos';
+import "aos/dist/aos.css";
 function Test() {
-  
+  useEffect(() => {
+    AOS.init({
+      duration : 2000
+    });
+    AOS.refresh();
+  }, []);
   window.onbeforeunload = () => {
     window.scrollTo(0, 0)
   }

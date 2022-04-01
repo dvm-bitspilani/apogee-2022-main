@@ -4,7 +4,7 @@
 <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3X24M2D60K"></script>
-  <link rel="stylesheet" href="bower_components/aos/dist/aos.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -57,6 +57,8 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
 </body>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>
    window.addEventListener("wheel", ()=> {
@@ -65,10 +67,10 @@
     $(document.getElementById("clickAndScrollBtn")).removeClass('arrowAnimation')
 });  
 
+AOS.init();
 
-
-function isScrolledIntoView(el) {
-     var rect = el.getBoundingClientRect();
+function isScrolledIntoView(rect) {
+    //  var rect = el.getBoundingClientRect();
 
      return (
         rect.top >= 0 &&
@@ -79,12 +81,12 @@ function isScrolledIntoView(el) {
    }
 
        //side nav working
-            var isHeroInView = isScrolledIntoView(document.getElementById("heroSection"));
-            var isAboutInView = isScrolledIntoView(document.getElementsByClassName("aboutUsDetails")[0]);
-            var isVideosInView = isScrolledIntoView(document.getElementsByClassName("video1")[0])||isScrolledIntoView(document.getElementsByClassName("videoHeading")[0]);
-            var isKernelInView = isScrolledIntoView(document.getElementsByClassName("kernelHeading")[0]) || isScrolledIntoView(document.getElementsByClassName("card")[3])||isScrolledIntoView(document.getElementsByClassName("card")[7])||isScrolledIntoView(document.getElementsByClassName("card")[2])
-            var isSpeakerInView = isScrolledIntoView(document.getElementsByClassName("speakerCarousel")[0]) || isScrolledIntoView(document.getElementsByClassName("speakerHeading")[0]);
-            var isContactInView = isScrolledIntoView(document.getElementsByClassName("cardWrapper")[0])|| isScrolledIntoView(document.getElementsByClassName("cardWrapper")[6])||isScrolledIntoView(document.getElementsByClassName("FooterWrapper")[0]) || isScrolledIntoView(document.getElementsByClassName("cardWrapper")[8])||isScrolledIntoView(document.getElementsByClassName("contactHeading")[0]);
+            var isHeroInView = isScrolledIntoView(document.getElementById("heroSection").getBoundingClientRect());
+            var isAboutInView = isScrolledIntoView(document.getElementsByClassName("aboutUsDetails")[0].getBoundingClientRect());
+            var isVideosInView = isScrolledIntoView(document.getElementsByClassName("video1")[0].getBoundingClientRect())||isScrolledIntoView(document.getElementsByClassName("videoHeading")[0].getBoundingClientRect());
+            var isKernelInView = isScrolledIntoView(document.getElementsByClassName("kernelHeading")[0].getBoundingClientRect()) || isScrolledIntoView(document.getElementsByClassName("card")[3].getBoundingClientRect())||isScrolledIntoView(document.getElementsByClassName("card")[7].getBoundingClientRect())||isScrolledIntoView(document.getElementsByClassName("card")[2].getBoundingClientRect())
+            var isSpeakerInView = isScrolledIntoView(document.getElementsByClassName("speakerCarousel")[0].getBoundingClientRect()) || isScrolledIntoView(document.getElementsByClassName("speakerHeading")[0].getBoundingClientRect());
+            var isContactInView = isScrolledIntoView(document.getElementsByClassName("cardWrapper")[0].getBoundingClientRect())|| isScrolledIntoView(document.getElementsByClassName("cardWrapper")[6].getBoundingClientRect())||isScrolledIntoView(document.getElementsByClassName("FooterWrapper")[0].getBoundingClientRect()) || isScrolledIntoView(document.getElementsByClassName("cardWrapper")[8].getBoundingClientRect())||isScrolledIntoView(document.getElementsByClassName("contactHeading")[0].getBoundingClientRect());
          
             if (isHeroInView) {
                 document.getElementsByClassName("dots")[0].classList.add("active");

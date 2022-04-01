@@ -13,7 +13,7 @@ function Videos() {
       }, []);
     return (
         <div className="mainVideoWrapper">
-            <div className="SectionHeading aboutUsHeading videoHeading" data-aos="fade-up" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="600">
+            <div className="SectionHeading aboutUsHeading videoHeading" data-aos="fade-up" data-aos-offset="50" data-aos-easing="ease-in-sine" data-aos-duration="400">
                 Videos
             </div>
             <div className="videoWrapper">

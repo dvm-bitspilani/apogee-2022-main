@@ -5,14 +5,15 @@ import "aos/dist/aos.css";
 import {useEffect} from "react"
 function AboutUs() {
     useEffect(() => {
+        AOS.refresh();
         AOS.init({
-          duration : 2000
+          duration : 4000
         });
         AOS.refresh();
       }, []);
     return (
         <div className="AboutUsWrapper" >
-            <div className="SectionHeading aboutUsHeading" data-aos="fade-up" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="600" >
+            <div className="SectionHeading aboutUsHeading" data-aos="fade-up" data-aos-offset="50" data-aos-easing="ease-in-sine" data-aos-duration="400" >
                 ABOUT US
             </div>
             <div className="aboutUsDetails">

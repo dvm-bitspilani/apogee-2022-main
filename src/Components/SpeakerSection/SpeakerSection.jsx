@@ -51,7 +51,7 @@ function SpeakerSection() {
 
     return (
         <div className="SpeakerWrapper">
-            <div className="SectionHeading speakerHeading" data-aos="fade-up" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="600">
+            <div className="SectionHeading speakerHeading" data-aos="fade-up" data-aos-offset="50" data-aos-easing="ease-in-sine" data-aos-duration="400">
                 SPEAKERS
             </div>
             <div className="subHeading">Think Again Conclave</div>

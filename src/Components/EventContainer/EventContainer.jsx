@@ -144,7 +144,7 @@ return (
       }
       id={props.type == "kernel" ? "kernel-events" : "all-events"}
     >
-      <div className="SectionHeading heading kernelHeading" data-aos="fade-up" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="600">{props.heading}</div>
+      <div className="SectionHeading heading kernelHeading" data-aos="fade-up" data-aos-offset="50" data-aos-easing="ease-in-sine" data-aos-duration="400">{props.heading}</div>
       <div className="card-container">
         {events.map((el) => (
           <div className="card">

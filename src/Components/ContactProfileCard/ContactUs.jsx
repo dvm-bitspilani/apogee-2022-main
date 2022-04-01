@@ -73,14 +73,15 @@ const
 
 function ContactUs() {
     React.useEffect(() => {
+        AOS.refresh();
         AOS.init({
-          duration : 2000
+          duration : 4000
         });
         AOS.refresh();
       }, []);
     return (
         <div className="contactUsWrapper">
-            <div className="SectionHeading aboutUsHeading contactHeading " data-aos="fade-up" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="600">CONTACT US</div>
+            <div className="SectionHeading aboutUsHeading contactHeading " data-aos="fade-up" data-aos-offset="50" data-aos-easing="ease-in-sine" data-aos-duration="400">CONTACT US</div>
             <div className="cards">
                 {contacts.map((e) => {
 
