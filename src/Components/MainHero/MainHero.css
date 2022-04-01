@@ -11,6 +11,15 @@ html{
   width: 100vw;
   z-index: 0;
 }
+.wrapperMainHero *{
+  user-select: none;
+}
+.sign{
+  user-select: none;
+}
+.navbarWrapper *{
+  user-select: none;
+}
 .layers {
   position: absolute;
   bottom: 20vh;

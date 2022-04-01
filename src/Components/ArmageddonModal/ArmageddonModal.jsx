@@ -281,92 +281,19 @@ export const ArmageddonModal = (props) => {
                     ) : (
                         <div className="cell">
                             <span>College*</span>
-                            <Autocomplete
-                                onChange={(event, value) => {
-                                    console.log(
-                                        value,
-                                        "value",
-                                        document.getElementById("asynchronous-demo").value
-                                    );
-                                    setCollegeName(value);
-                                    console.log(collegeName, "collegeName");
-                                }}
-                                id="asynchronous-demo"
-                                sx={{ width: 300 }}
-                                open={openField && fieldNum == i} 
-                                onOpen={() => {
-                                    setOpenField(true);
-                                    setFieldNum(i)
-                                }}
-                                onClose={() => {
-                                    setOpenField(false);
-                                    setFieldNum(i)
-                                }}
-                                isOptionEqualToValue={(option, value) =>
-                                    option.name === value.name
-                                }
-                                getOptionLabel={(option) => option.name}
-                                options={optionsField}
-                                loading={loading}
-                                // eslint-disable-next-line no-loop-func
-                                renderInput={(params) => (
-                                    <TextField
-                                        {...params}
-                                        label="Type your College"
-                                        onChange={async () => {
-                                            console.log("on Change");
-                                            // setCollegeName(document.getElementById('asynchronous-demo').value);
-                                            if (
-                                                document.getElementById("asynchronous-demo").value
-                                                    .length >= 3
-                                            ) {
-                                                console.log("fetch");
-                                                // setCollegeName(document.getElementById('asynchronous-demo').value);
-                                                console.log(
-                                                    "RUN",
-                                                    document.getElementById("asynchronous-demo").value
-                                                );
-                                                const dataCollege = {
-                                                    letters:
-                                                        document.getElementById("asynchronous-demo").value,
-                                                };
-                                                await fetch(
-                                                    "https://bits-apogee.org/registrations/get_college_by_char/",
-                                                    {
-                                                        headers: {
-                                                            "content-type": "application/json",
-                                                        },
-                                                        method: "POST",
-                                                        mode: "cors",
-                                                        body: JSON.stringify(dataCollege),
-                                                    }
-                                                )
-                                                    .then(function (response) {
-                                                        return response.json();
-                                                    })
-                                                    .then(function (result) {
-                                                        // setColleges(result.data);
-                                                        collegeList = result.data;
-                                                        console.log(collegeList);
-                                                    });
-                                            }
-
-                                            setOptionsField([...collegeList]);
-                                        }}
-                                        InputProps={{
-                                            ...params.InputProps,
-                                            endAdornment: (
-                                                <React.Fragment>
-                                                    {loading ? (
-                                                        <CircularProgress color="inherit" size={20} />
-                                                    ) : null}
-                                                    {params.InputProps.endAdornment}
-                                                </React.Fragment>
-                                            ),
-                                        }}
-                                    />
-                                )}
-                            />
+                            
+                        <input
+                            type="text"
+                            id={"college" + i}
+                            onChange={handlePlayerChange}
+                            name="college"
+                            label="Type your college"
+                            sx={{
+                                width: 300,
+                                border: "1px solid black",
+                                color: "black",
+                            }}
+                        />
                         </div>
                     )}
                     <div className="cell">

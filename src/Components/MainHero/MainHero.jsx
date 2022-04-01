@@ -45,7 +45,7 @@ function MainHero() {
         if (window.screen.width < 768) {
             scrollTo(1800);
         }
-        else scrollTo(3300);
+        else scrollTo(2800);
         document.body.style.overflowY = "scroll";
         document.querySelector("html").style.overflowY = "scroll"
 
@@ -75,7 +75,7 @@ function MainHero() {
                 // setTimeout(document.getElementsByClassName("clickAndScroll")[0].classList.remove("arrowAnimation"), 2200)
             }
             else {
-                if ((window.pageYOffset > 3300 && window.pageYOffset < 3650) && window.screen.width > 768) {
+                if ((window.pageYOffset > 3300 && window.pageYOffset < 3600) && window.screen.width > 768) {
                 document.getElementsByClassName("dots")[0].classList.add("active");
                 // document.documentElement.overflowY = "hidden"
                     scroll.scrollToTop({ ignoreCancelEvents: true, smooth: "linear", duration: 1000 });
