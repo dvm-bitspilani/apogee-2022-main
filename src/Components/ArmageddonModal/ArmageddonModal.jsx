@@ -154,6 +154,7 @@ export const ArmageddonModal = (props) => {
                 .then(function (result) {
                     console.log(result);
                     if (result.message) alert(result.message);
+                    if (result.detail) alert(result.detail);
                 });
     };
 
