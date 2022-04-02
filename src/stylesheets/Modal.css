@@ -50,6 +50,7 @@ color: white !important
 }
 input[type="checkbox"]{
     margin-left: 10px;
+    margin-top: 12px;
 }
 .css-6od3lo-MuiChip-label{
     color: white;
