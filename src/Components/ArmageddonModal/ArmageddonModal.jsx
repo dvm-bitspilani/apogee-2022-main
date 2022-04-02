@@ -434,7 +434,7 @@ export const ArmageddonModal = (props) => {
                         <div className="cell">
                             <span>College*</span>
 
-                            {/* <input
+                            <input
                                 required
                                 type="text"
                                 id={"college" + i}
@@ -446,11 +446,11 @@ export const ArmageddonModal = (props) => {
                                     border: "1px solid black",
                                     color: "black",
                                 }}
-                            /> */}
+                            />
                                 
 
 
-                                <AsyncSelect
+                                {/* <AsyncSelect
         cacheOptions
         defaultOptions
         value={selectedValue}
@@ -459,7 +459,7 @@ export const ArmageddonModal = (props) => {
         loadOptions={loadOptions}
         onInputChange={handleInputChange}
         onChange={handleChange}
-      />
+      /> */}
                         </div>
                     )}
                     <div className="cell">
