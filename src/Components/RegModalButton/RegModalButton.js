@@ -9,8 +9,8 @@ import Select from "@mui/material/Select";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import { useTheme } from "@mui/material/styles";
-import Backdrop from '@mui/material/Backdrop';
-import Fade from '@mui/material/Fade';
+import Backdrop from "@mui/material/Backdrop";
+import Fade from "@mui/material/Fade";
 
 import Chip from "@mui/material/Chip";
 import { styled, Box } from "@mui/system";
@@ -64,15 +64,15 @@ const style = {
 };
 
 const gameStyle = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
   background: "#ffffff",
   boxShadow: 24,
   borderRadius: "10px",
   p: 4,
-  width: '60vw'
+  width: "60vw",
 };
 
 export default function RegModalButton(props) {
@@ -152,7 +152,6 @@ export default function RegModalButton(props) {
         // console.log(result.data[0].events);
         setKernelEvents(result.data[0].events);
       });
-
   }, []);
 
   const handleSubmit = (e) => {
@@ -174,8 +173,11 @@ export default function RegModalButton(props) {
       mode: "cors",
     })
       .then(function (response) {
-        console.log(response.status)
-        if (response.status === 500 || response.status === 403) alert("Please try again in incognito mode or a different browser, if fails, contact DVM")
+        console.log(response.status);
+        if (response.status === 500 || response.status === 403)
+          alert(
+            "Please try again in incognito mode or a different browser, if fails, contact DVM"
+          );
         return response.json();
       })
       .then(function (result) {
@@ -222,7 +224,7 @@ export default function RegModalButton(props) {
         BackdropProps={{
           timeout: 200,
         }}
-      >   
+      >
         <Box sx={style}>
           <div className="modalHeading">
             REGISTRATION
@@ -315,8 +317,7 @@ export default function RegModalButton(props) {
                             // setCollegeName(document.getElementById('asynchronous-demo').value);
                             console.log(
                               "RUN",
-                              document.getElementById("asynchronous-demo")
-                                .value
+                              document.getElementById("asynchronous-demo").value
                             );
                             const dataCollege = {
                               letters:
@@ -430,12 +431,26 @@ export default function RegModalButton(props) {
                             style={getStyles(name, eventName, theme)}
                           >
                             {/* {name} */}
-                            {name == ("Armageddon" || "ARMAGEDDON") ? <Link style={{textDecoration: "none", color: "unset", fontFamily: "Arial"}} to="/armageddon">{name}</Link> : name}
+                            {name == ("Armageddon" || "ARMAGEDDON") ? (
+                              <Link
+                                style={{
+                                  textDecoration: "none",
+                                  color: "unset",
+                                  fontFamily: "Arial",
+                                }}
+                                to="/armageddon"
+                              >
+                                {name}
+                              </Link>
+                            ) : (
+                              name
+                            )}
                           </MenuItem>
                         ))}
-
                       </Select>
-
+                      <a href="./armageddon" target="_blank" className="arma-special">
+                        Click here to register for Armageddon
+                      </a>
                     </FormControl>
                     {/* <div className="extraMenu">
                       <div>Valorant</div>
@@ -448,7 +463,6 @@ export default function RegModalButton(props) {
                       <div>Rocket League</div>
                     </div> */}
                   </div>
-
                 </div>
 
                 <div className="cell">
@@ -524,6 +538,15 @@ export default function RegModalButton(props) {
                   />
                 </div>
               </div>
+
+              <input
+                type="checkbox"
+                className="chechkbox-newsletter"
+                label="Click here to subscribe to latest updates"
+              />
+              <div className="clickHere">
+                Click here to subscribe to latest updates
+              </div>
               <div id="submitBtn">
                 <div className="registerBtnBorder">
                   <button id="submitButton" type="submit">
@@ -537,13 +560,8 @@ export default function RegModalButton(props) {
                 </div>
               </div>
             </form>
-            <input type="checkbox" label="Click here to subscribe to latest updates" />
-            <div  className="clickHere">
-            Click here to subscribe to latest updates
-            </div>
           </Typography>
-          </Box>
-    
+        </Box>
       </Modal>
     </div>
   );

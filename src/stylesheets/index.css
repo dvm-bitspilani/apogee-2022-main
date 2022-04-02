@@ -152,6 +152,12 @@ input {
   font-size: 20px;
 }
 
+.arma-special{
+  color: white;
+  text-decoration: underline;
+  margin: 10px 0;
+}
+
 .genderContainer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -185,6 +191,7 @@ span {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  align-items: center;
 }
 
 .registerBtn {

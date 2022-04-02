@@ -29,6 +29,7 @@ grid-template-columns:auto auto;
 color:white;
 gap:30px;
 grid-column-gap:110px;
+margin-bottom: 20px;
 }
 .ModalBox{
     margin-right:-60%
@@ -92,6 +93,7 @@ input[type="checkbox"]{
     display: -ms-flexbox;
     display: flex;
     color: white;
+    margin-bottom: 10px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
