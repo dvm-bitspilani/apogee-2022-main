@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.cbb75ba2.css",
-    "main.js": "/static/js/main.39a9e023.js",
+    "main.css": "/static/css/main.83c20f14.css",
+    "main.js": "/static/js/main.81d84afb.js",
     "static/media/6degreesindia.png": "/static/media/6degreesindia.a8f20f39531b74133482.png",
     "static/media/pepsico.jpeg": "/static/media/pepsico.b52907682772b1d16a91.jpeg",
     "static/media/finalGrid.svg": "/static/media/finalGrid.6edba974b03820d496cefa8da7b8a107.svg",
@@ -14,7 +14,7 @@
     "static/media/latestloader.gif": "/static/media/latestloader.a0fbb23667db0b670291.gif",
     "static/media/Vector.svg": "/static/media/Vector.cad74b36b8bf1c48b77a915466f700f6.svg",
     "static/media/LWT academy .png": "/static/media/LWT academy .708d7fde7ab15fd3f52c.png",
-    "static/media/Stars.svg": "/static/media/Stars.caaaceb2ddff713a30a7.svg",
+    "static/media/Stars.svg": "/static/media/Stars.4980e9ccb9272939c418.svg",
     "static/media/zainab.png": "/static/media/zainab.47a91be963c5d2e207aa.png",
     "static/media/Speaker_image.png": "/static/media/Speaker_image.d1ea9c08865170aa1874.png",
     "static/media/soumya.png": "/static/media/soumya.d1ea9c08865170aa1874.png",
@@ -47,7 +47,7 @@
     "static/media/shukla.png": "/static/media/shukla.9090e728b3d0ea41fc96.png",
     "static/media/Pirulen.otf": "/static/media/Pirulen.8cd956b0478c0e3dc882.otf",
     "static/media/pirulen rg.otf": "/static/media/pirulen rg.8cd956b0478c0e3dc882.otf",
-    "static/media/arma_guns.svg": "/static/media/arma_guns.dc22b16b3f5f3c34a55f338a38bd1c2e.svg",
+    "static/media/arma_guns.svg": "/static/media/arma_guns.8e7f5751212b60b74045e30b3d35291a.svg",
     "static/media/balcony_grid_full.svg": "/static/media/balcony_grid_full.da8b7b09679233d8902548ea1df7030f.svg",
     "static/media/BARTKEY.ttf": "/static/media/BARTKEY.93ed2ecd9cef7d382b0e.ttf",
     "static/media/Meteor_1.svg": "/static/media/Meteor_1.65bd432afe673c3a9e719b12fdf0acdd.svg",
@@ -69,7 +69,7 @@
     "static/media/fis.png": "/static/media/fis.ecfba7a29cf608458c11.png",
     "static/media/AUTODESK logo.png": "/static/media/AUTODESK logo.2e7ab84b299b45caf4d2.png",
     "static/media/Switch Primary Logo (1).png": "/static/media/Switch Primary Logo (1).4f8ea385f63ce655f0d4.png",
-    "static/media/bgandgrid.svg": "/static/media/bgandgrid.5a0e9ebb4b126d604172.svg",
+    "static/media/bgandgrid.svg": "/static/media/bgandgrid.98ebba9f0d534a7e8b0d.svg",
     "static/media/Button.svg": "/static/media/Button.cf15a15bd2faaf86223776064d7a4937.svg",
     "static/media/events_balcony.svg": "/static/media/events_balcony.13820e20fe11a89f1c0a9d9aae6ab701.svg",
     "static/media/Balcony.svg": "/static/media/Balcony.0ec6dd9b019a14a0a874219547716322.svg",
@@ -80,16 +80,16 @@
     "static/media/City 2.svg": "/static/media/City 2.cba95a8e5e81ec05a1285ff5284a3043.svg",
     "static/media/City Layer 2.svg": "/static/media/City Layer 2.6b2dca62cf130684b92b0b677d66f926.svg",
     "static/media/favicon1.ico": "/static/media/favicon1.ac1e640f4ca49a3f59fa.ico",
-    "static/media/backButton.svg": "/static/media/backButton.1cb476bdf7bc05ffbc0be5b52cd52e4c.svg",
+    "static/media/backButton.svg": "/static/media/backButton.7c30c134d58ba7a7bc9847bd07eb27a0.svg",
     "static/media/mainFloor.svg": "/static/media/mainFloor.ce6fbd2a07d7b1fa5568.svg",
     "static/media/down-arrow.svg": "/static/media/down-arrow.128a7967045cf7a17057ef0eebe089aa.svg",
     "static/media/Sky.svg": "/static/media/Sky.28104c1183800dbf6251.svg",
     "static/media/Arrox.svg": "/static/media/Arrox.70a44802d149617ada3a003a94a24525.svg",
-    "main.cbb75ba2.css.map": "/static/css/main.cbb75ba2.css.map",
-    "main.39a9e023.js.map": "/static/js/main.39a9e023.js.map"
+    "main.83c20f14.css.map": "/static/css/main.83c20f14.css.map",
+    "main.81d84afb.js.map": "/static/js/main.81d84afb.js.map"
   },
   "entrypoints": [
-    "static/css/main.cbb75ba2.css",
-    "static/js/main.39a9e023.js"
+    "static/css/main.83c20f14.css",
+    "static/js/main.81d84afb.js"
   ]
 }
