@@ -49,52 +49,52 @@ function Test() {
         </div>
         <div className="meteors">
           <div className="rock" id='one' >
-            <img src={rocks} alt="" />
+            <img id="1" src={rocks} alt="" />
           </div>
           <div className="rock" id="two">
-            <img src={rocks} alt="" />
+            <img id="2" src={rocks} alt="" />
           </div>
           <div className="rock" id="three">
-            <img src={rocks} alt="" />
+            <img id="3" src={rocks} alt="" />
           </div>
           <div className="rock" id="four">
-            <img src={rocks} alt="" />
+            <img id="4" src={rocks} alt="" />
           </div>
           <div className="rock" id='five' >
-            <img src={rocks} alt="" />
+            <img id="5" src={rocks} alt="" />
           </div>
           <div className="rock" id="six">
-            <img src={rocks} alt="" />
+            <img id="6" src={rocks} alt="" />
           </div>
           <div className="rock" id="seven">
-            <img src={rocks} alt="" />
+            <img id="7" src={rocks} alt="" />
           </div>
           <div className="rock" id="eight">
-            <img src={rocks} alt="" />
+            <img id="8" src={rocks} alt="" />
           </div>
           <div className="rock" id='nine' >
-            <img src={rocks} alt="" />
+            <img id="9" src={rocks} alt="" />
           </div>
           <div className="rock" id="ten">
-            <img src={rocks} alt="" />
+            <img id="10" src={rocks} alt="" />
           </div>
           <div className="rock" id="eleven">
-            <img src={rocks} alt="" />
+            <img id="11" src={rocks} alt="" />
           </div>
           <div className="rock" id="twelve">
-            <img src={rocks} alt="" />
+            <img id="12" src={rocks} alt="" />
           </div>
           <div className="rock" id='thirteen' >
-            <img src={rocks} alt="" />
+            <img id="13" src={rocks} alt="" />
           </div>
           <div className="rock" id="fourteen">
-            <img src={rocks} alt="" />
+            <img id="14" src={rocks} alt="" />
           </div>
           <div className="rock" id="fifteen">
-            <img src={rocks} alt="" />
+            <img id="15" src={rocks} alt="" />
           </div>
           <div className="rock" id="sixteen">
-            <img src={rocks} alt="" />
+            <img id="16" src={rocks} alt="" />
           </div>
 
         </div>
