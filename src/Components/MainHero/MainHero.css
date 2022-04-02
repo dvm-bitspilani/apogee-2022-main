@@ -187,7 +187,7 @@ html{
 #clickAndScroll {
   z-index: 12;
   position: absolute;
-  bottom: 2vh;
+  bottom: 0.5vh;
   text-align: center;
   left: 50%;
   transform: translateX(-50%);
@@ -203,7 +203,7 @@ html{
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 3rem;
+  width: 43px;
   aspect-ratio: 1;
   border-radius: 50%;
   display: flex;
@@ -211,7 +211,7 @@ html{
   background-color: black;
   border: 1px solid rgba(209, 213, 219, 0.3);
   text-align: center;
-  margin-top: 0.75rem;
+  margin-top: 8px;
   cursor: pointer;
 }
 
@@ -279,4 +279,6 @@ html{
 }
 .dimension {
   text-align: center;
+  font-size: 18px;
+  background: linear-gradient(to bottom, #000075, #000060);;
 }
