@@ -51,7 +51,7 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: "90vw",
-  height: "90vh",
+  minHeight: "90vh",
   bgcolor: "rgba(7, 9, 73, 0.09)",
   border: "1px solid rgba(209, 213, 219, 0.3);",
   backdropFilter: "blur(20px)",

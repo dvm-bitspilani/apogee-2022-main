@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-3X24M2D60K"
+    ></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-<head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3X24M2D60K"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        window.dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { window.dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-3X24M2D60K');
-  </script>
-  <meta charset="utf-8" />
-  <link rel="icon" href="%PUBLIC_URL%/apogee-favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
-  <meta name="description" content="Web site created using create-react-app" />
-  <link rel="apple-touch-icon" href="%PUBLIC_URL%/apogee-favicon.ico" />
-  <!--
+      gtag("config", "G-3X24M2D60K");
+    </script>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/apogee-favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.ico" />
+    <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-  <style>
-    /* .sectionHeading {
+    <style>
+      /* .sectionHeading {
       font-size: 36px;
       text-align: center;
     } */
-  </style>
-  <!--
+    </style>
+    <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
@@ -40,13 +47,13 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-  <title>Apogee 2022</title>
-</head>
+    <title>Apogee 2022</title>
+  </head>
 
-<body>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root"></div>
-  <!--
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
 
@@ -56,166 +63,241 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-</body>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  </body>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script>
-   window.addEventListener("wheel", ()=> {
-  $(document.getElementById("clickAndScrollBtn")).addClass('arrowAnimation');
-  $(document.getElementById("clickAndScrollBtn")).one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(event) {
-    $(document.getElementById("clickAndScrollBtn")).removeClass('arrowAnimation')
-});  
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>
+    window.addEventListener("wheel", () => {
+      $(document.getElementById("clickAndScrollBtn")).addClass(
+        "arrowAnimation"
+      );
+      $(document.getElementById("clickAndScrollBtn")).one(
+        "webkitAnimationEnd oanimationend msAnimationEnd animationend",
+        function (event) {
+          $(document.getElementById("clickAndScrollBtn")).removeClass(
+            "arrowAnimation"
+          );
+        }
+      );
 
-AOS.init();
+      AOS.init();
 
-function isScrolledIntoView(rect) {
-    //  var rect = el.getBoundingClientRect();
+      function isScrolledIntoView(rect) {
+        //  var rect = el.getBoundingClientRect();
 
-     return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && /* or $(window).height() */
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth) /* or $(window).width() */
-    );
-   }
+        return (
+          rect.top >= 0 &&
+          rect.left >= 0 &&
+          rect.bottom <=
+            (window.innerHeight ||
+              document.documentElement
+                .clientHeight) /* or $(window).height() */ &&
+          rect.right <=
+            (window.innerWidth ||
+              document.documentElement.clientWidth) /* or $(window).width() */
+        );
+      }
 
-       //side nav working
-            var isHeroInView = isScrolledIntoView(document.getElementById("heroSection").getBoundingClientRect());
-            var isAboutInView = isScrolledIntoView(document.getElementsByClassName("aboutUsDetails")[0].getBoundingClientRect());
-            var isVideosInView = isScrolledIntoView(document.getElementsByClassName("video1")[0].getBoundingClientRect())||isScrolledIntoView(document.getElementsByClassName("videoHeading")[0].getBoundingClientRect());
-            var isSpeakerInView = isScrolledIntoView(document.getElementsByClassName("kernelHeading")[0].getBoundingClientRect()) || isScrolledIntoView(document.getElementsByClassName("card")[3].getBoundingClientRect())||isScrolledIntoView(document.getElementsByClassName("card")[4].getBoundingClientRect())||isScrolledIntoView(document.getElementsByClassName("card")[7].getBoundingClientRect())||isScrolledIntoView(document.getElementsByClassName("card")[2].getBoundingClientRect())
-            var isKernelInView = isScrolledIntoView(document.getElementsByClassName("speakerCarousel")[0].getBoundingClientRect()) || isScrolledIntoView(document.getElementsByClassName("speakerHeading")[0].getBoundingClientRect());
-            var isContactInView = isScrolledIntoView(document.getElementsByClassName("cardWrapper")[0].getBoundingClientRect())|| isScrolledIntoView(document.getElementsByClassName("cardWrapper")[6].getBoundingClientRect())||isScrolledIntoView(document.getElementsByClassName("FooterWrapper")[0].getBoundingClientRect()) || isScrolledIntoView(document.getElementsByClassName("cardWrapper")[8].getBoundingClientRect())||isScrolledIntoView(document.getElementsByClassName("contactHeading")[0].getBoundingClientRect());
-         
-            if (isHeroInView) {
-                document.getElementsByClassName("dots")[0].classList.add("active");
-         
-            }
-            else    document.getElementsByClassName("dots")[0].classList.remove("active");
+      //side nav working
+      var isHeroInView = isScrolledIntoView(
+        document.getElementById("heroSection").getBoundingClientRect()
+      );
+      var isAboutInView = isScrolledIntoView(
+        document
+          .getElementsByClassName("aboutUsDetails")[0]
+          .getBoundingClientRect()
+      );
+      var isVideosInView =
+        isScrolledIntoView(
+          document.getElementsByClassName("video1")[0].getBoundingClientRect()
+        ) ||
+        isScrolledIntoView(
+          document
+            .getElementsByClassName("videoHeading")[0]
+            .getBoundingClientRect()
+        );
+      var isSpeakerInView =
+        isScrolledIntoView(
+          document
+            .getElementsByClassName("kernelHeading")[0]
+            .getBoundingClientRect()
+        ) ||
+        isScrolledIntoView(
+          document.getElementsByClassName("card")[3].getBoundingClientRect()
+        ) ||
+        isScrolledIntoView(
+          document.getElementsByClassName("card")[4].getBoundingClientRect()
+        ) ||
+        isScrolledIntoView(
+          document.getElementsByClassName("card")[7].getBoundingClientRect()
+        ) ||
+        isScrolledIntoView(
+          document.getElementsByClassName("card")[2].getBoundingClientRect()
+        );
+      var isKernelInView =
+        isScrolledIntoView(
+          document
+            .getElementsByClassName("speakerCarousel")[0]
+            .getBoundingClientRect()
+        ) ||
+        isScrolledIntoView(
+          document
+            .getElementsByClassName("speakerHeading")[0]
+            .getBoundingClientRect()
+        );
+      var isContactInView =
+        isScrolledIntoView(
+          document
+            .getElementsByClassName("cardWrapper")[0]
+            .getBoundingClientRect()
+        ) ||
+        isScrolledIntoView(
+          document
+            .getElementsByClassName("cardWrapper")[6]
+            .getBoundingClientRect()
+        ) ||
+        isScrolledIntoView(
+          document
+            .getElementsByClassName("FooterWrapper")[0]
+            .getBoundingClientRect()
+        ) ||
+        isScrolledIntoView(
+          document
+            .getElementsByClassName("cardWrapper")[8]
+            .getBoundingClientRect()
+        ) ||
+        isScrolledIntoView(
+          document
+            .getElementsByClassName("contactHeading")[0]
+            .getBoundingClientRect()
+        );
 
-            if (isAboutInView) {
-                document.getElementsByClassName("dots")[1].classList.add("active");
-                document.getElementsByClassName("dots")[2].classList.remove("active");
+      if (isHeroInView) {
+        document.getElementsByClassName("dots")[0].classList.add("active");
+      } else
+        document.getElementsByClassName("dots")[0].classList.remove("active");
 
-            }
-            else {
-                document.getElementsByClassName("dots")[1].classList.remove("active");
-          
-            }
-            if (isVideosInView) {
-                document.getElementsByClassName("dots")[2].classList.add("active");
-                document.getElementsByClassName("dots")[1].classList.remove("active");
-            }
-            else    document.getElementsByClassName("dots")[2].classList.remove("active");
-            if (isKernelInView) {
-                document.getElementsByClassName("dots")[3].classList.add("active");
-                document.getElementsByClassName("dots")[4].classList.remove("active");
-
-            } 
-            else    document.getElementsByClassName("dots")[3].classList.remove("active");
-            if (isSpeakerInView) {
-                document.getElementsByClassName("dots")[4].classList.add("active");
-                document.getElementsByClassName("dots")[3].classList.remove("active");
-                document.getElementsByClassName("dots")[5].classList.remove("active");
-            }   else    document.getElementsByClassName("dots")[4].classList.remove("active");
-            if (isContactInView) {
-                document.getElementsByClassName("dots")[5].classList.add("active");
-                document.getElementsByClassName("dots")[4].classList.remove("active");
-            }
-            else    document.getElementsByClassName("dots")[5].classList.remove("active");
-          })
-
-$("#clickAndScrollBtn").click(function(){
-  $("body").css("overflowY", "scroll !important");
-})
-
-  function allImagesLoaded() {
-   var height = 0;
-    if (document.body.clientWidth <= 768) {
-      height = document.getElementById("bigFloorMobile").offsetHeight;
-    }
-    else {
-      height = document.getElementById("bigFloorLaptop").offsetHeight;
-    }
-   
-
-    document.getElementsByClassName("mainWrapper")[0].style.marginTop = height - 200 + "px";
-    document.getElementsByClassName("loaderDiv")[0].style.display = "none"
-    // document.getElementsByTagName("BODY")[0].style.overflowY = "scroll";
-    document.getElementById("cityLayer1").style.transform = "translate(5%, 0px)";
-    setTimeout(() => {
-      document.getElementById("cityLayer1").style.transform = "translate(5%, 0px)"
-    }, 50);
-    setTimeout(() => {
-      document.getElementById("cityLayer2").style.transform = "translate(1%,0px)"
-    }, 600);
-    setTimeout(() => {
-      document.getElementById("cityLayer3").style.transform = "  translate(-2%,000px)"
-    }, 900);
-    setTimeout(() => {
-      document.getElementById("cityLayer4").style.transform = "translate(-6%,000px) "
-    }, 1200);
-    setTimeout(() => {
-      document.getElementById("cityLayer5").style.transform = "translate(-21.5%,000px)"
-    }, 1500);
-    setTimeout(() => {
-      document.getElementById("cityLayer6").style.transform = "translate(30%,000px)"
-    }, 1800);
-
-
-  }
-  $(document).ready(function () {
-    
-    // Images loaded is zero because we're going to process a new set of images.
-    var imagesLoaded = 0;
-    // Total images is still the total number of <img> elements on the page.
-    var totalImages = $("img").length;
-
-    // Step through each image in the DOM, clone it, attach an onload event
-    // listener, then set its source to the source of the original image. When
-    // that new image has loaded, fire the imageLoaded() callback.
-    $("img").each(function (idx, img) {
-      $("<img>").on("load", imageLoaded).attr("src", $(img).attr("src"));
+      if (isAboutInView) {
+        document.getElementsByClassName("dots")[1].classList.add("active");
+        document.getElementsByClassName("dots")[2].classList.remove("active");
+      } else {
+        document.getElementsByClassName("dots")[1].classList.remove("active");
+      }
+      if (isVideosInView) {
+        document.getElementsByClassName("dots")[2].classList.add("active");
+        document.getElementsByClassName("dots")[1].classList.remove("active");
+      } else
+        document.getElementsByClassName("dots")[2].classList.remove("active");
+      if (isKernelInView) {
+        document.getElementsByClassName("dots")[3].classList.add("active");
+        document.getElementsByClassName("dots")[4].classList.remove("active");
+      } else
+        document.getElementsByClassName("dots")[3].classList.remove("active");
+      if (isSpeakerInView) {
+        document.getElementsByClassName("dots")[4].classList.add("active");
+        document.getElementsByClassName("dots")[3].classList.remove("active");
+        document.getElementsByClassName("dots")[5].classList.remove("active");
+      } else
+        document.getElementsByClassName("dots")[4].classList.remove("active");
+      if (isContactInView) {
+        document.getElementsByClassName("dots")[5].classList.add("active");
+        document.getElementsByClassName("dots")[4].classList.remove("active");
+      } else
+        document.getElementsByClassName("dots")[5].classList.remove("active");
     });
 
-    // Do exactly as we had before -- increment the loaded count and if all are
-    // loaded, call the allImagesLoaded() function.
-    function imageLoaded() {
-      imagesLoaded++;
-      if (imagesLoaded == totalImages) {
-        allImagesLoaded();
+    $("#clickAndScrollBtn").click(function () {
+      $("body").css("overflowY", "scroll !important");
+    });
+
+    function allImagesLoaded() {
+      var height = 0;
+      if (document.body.clientWidth <= 768) {
+        height = document.getElementById("bigFloorMobile").offsetHeight;
+      } else {
+        height = document.getElementById("bigFloorLaptop").offsetHeight;
       }
+
+      document.getElementsByClassName("mainWrapper")[0].style.marginTop =
+        height - 200 + "px";
+      document.getElementsByClassName("loaderDiv")[0].style.display = "none";
+      // document.getElementsByTagName("BODY")[0].style.overflowY = "scroll";
+      document.getElementById("cityLayer1").style.transform =
+        "translate(5%, 0px)";
+      setTimeout(() => {
+        document.getElementById("cityLayer1").style.transform =
+          "translate(5%, 0px)";
+      }, 50);
+      setTimeout(() => {
+        document.getElementById("cityLayer2").style.transform =
+          "translate(1%,0px)";
+      }, 600);
+      setTimeout(() => {
+        document.getElementById("cityLayer3").style.transform =
+          "  translate(-2%,000px)";
+      }, 900);
+      setTimeout(() => {
+        document.getElementById("cityLayer4").style.transform =
+          "translate(-6%,000px) ";
+      }, 1200);
+      setTimeout(() => {
+        document.getElementById("cityLayer5").style.transform =
+          "translate(-21.5%,000px)";
+      }, 1500);
+      setTimeout(() => {
+        document.getElementById("cityLayer6").style.transform =
+          "translate(30%,000px)";
+      }, 1800);
     }
-  });
+    $(document).ready(function () {
+      // Images loaded is zero because we're going to process a new set of images.
+      var imagesLoaded = 0;
+      // Total images is still the total number of <img> elements on the page.
+      var totalImages = $("img").length;
 
-// $(window).on('load',function(){
-//   pageLoaded();
-// });
+      // Step through each image in the DOM, clone it, attach an onload event
+      // listener, then set its source to the source of the original image. When
+      // that new image has loaded, fire the imageLoaded() callback.
+      $("img").each(function (idx, img) {
+        $("<img>").on("load", imageLoaded).attr("src", $(img).attr("src"));
+      });
 
+      // Do exactly as we had before -- increment the loaded count and if all are
+      // loaded, call the allImagesLoaded() function.
+      function imageLoaded() {
+        imagesLoaded++;
+        if (imagesLoaded == totalImages) {
+          allImagesLoaded();
+        }
+      }
+    });
 
-const meteorTop = [211.3, 217.5, 228.3, 251.8, 257.4, 270.2, 272.2, 302.7, 306.5, 340.3, 366.1, 391.9, 401.5, 437.2, 444.7, 546.1];
+    // $(window).on('load',function(){
+    //   pageLoaded();
+    // });
 
-window.addEventListener("scroll", () => {
+    const meteorTop = [
+      211.3, 217.5, 228.3, 251.8, 257.4, 270.2, 272.2, 302.7, 306.5, 340.3,
+      366.1, 391.9, 401.5, 437.2, 444.7, 546.1,
+    ];
 
-  Array.from(document.querySelectorAll('.rock img')).forEach((meteor) => {
+    window.addEventListener("scroll", () => {
+      Array.from(document.querySelectorAll(".rock img")).forEach((meteor) => {
+        let index = parseInt(meteor.id);
+        let topValue = meteorTop[--index] + 45 - 0.01 * window.scrollY;
 
-    let index = parseInt(meteor.id);
-    let topValue = meteorTop[--index] + 45 - 0.01 * window.scrollY;
+        if (screen.width < 500) topValue += 10;
+        else if (screen.width < 650) topValue += 40;
+        else if (screen.width < 750) topValue += 80;
+        else if (screen.width < 850) topValue += 60;
+        else if (screen.width < 950) topValue += 10;
+        else if (screen.width < 1050) topValue -= 50;
+        else if (screen.width < 1600) topValue -= 10;
+        else topValue += 20;
 
-    if (screen.width < 500) topValue += 10;
-    else if (screen.width < 650) topValue += 40;
-    else if (screen.width < 750) topValue += 80;
-    else if (screen.width < 850) topValue += 60;
-    else if (screen.width < 950) topValue += 10;
-    else if (screen.width < 1050) topValue -= 50;
-    else if (screen.width < 1600) topValue -= 10;
-    else topValue += 20;
-
-    meteor.style.top = topValue + 'rem';
-  })
-})
-
-</script>
-
+        meteor.style.top = topValue + "rem";
+      });
+    });
+  </script>
 </html>
