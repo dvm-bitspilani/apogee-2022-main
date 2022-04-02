@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
 import TextField from "@mui/material/TextField";
 import "../../stylesheets/Modal.css";
 import Autocomplete from "@mui/material/Autocomplete";
@@ -57,6 +58,7 @@ export const ArmageddonModal = (props) => {
     }, [openField]);
 
     useEffect(async () => {
+        document.documentElement.style.overflowY = "scroll"
         await fetch("https://bits-apogee.org/2022/arma/get_games/", {
             headers: { "content-type": "application/json" },
             method: "GET",
@@ -118,6 +120,11 @@ export const ArmageddonModal = (props) => {
         console.log("LOCAL ", loc);
         console.log("FINAL DATA", data);
 
+        document.querySelector('input').addEventListener('invalid', (e) => {
+            alert('bruh')
+        })
+
+        if (!data.players) alert("Please fill mentioned details")
         for (let i = data.players.length - 1; i >= 0; i--) {
             if (Object.entries(data.players[i]).length === 0) data.players.pop()
         }
@@ -135,6 +142,7 @@ export const ArmageddonModal = (props) => {
                 })
                 .then(function (result) {
                     console.log(result);
+                    if (result.detail) alert(result.detail)
                     if (result.message) alert(result.message)
                 });
         }
@@ -288,6 +296,7 @@ export const ArmageddonModal = (props) => {
                             <input
                                 required
                                 type="text"
+                                pattern="20[1-2][0-9][A-Za-z0-9]{4}[0-9]{4}[pP]"
                                 id={"bits_id" + i}
                                 onChange={handlePlayerChange}
                                 name="bits_id"
@@ -322,7 +331,7 @@ export const ArmageddonModal = (props) => {
                         <span>Phone*</span>
                         <input
                             required
-                            type="text"
+                            type="tel"
                             variant="outlined"
                             onChange={handlePlayerChange}
                             id={"phone" + i}
@@ -364,7 +373,7 @@ export const ArmageddonModal = (props) => {
         <div>
             {armaStep == 1 ? (
                 <div className="arma-container">
-                    <div> <img src={backButton} alt="" className="backButton" />  <h2>Choose your Game</h2></div>
+                    <div> <Link to="/"><img src={backButton} alt="" className="backButton" /></Link>  <h2>Choose your Game</h2></div>
                     <div className="extra-menu">
                         <div className="game-tabs">
                             <span
@@ -493,6 +502,7 @@ export const ArmageddonModal = (props) => {
                                             <input
                                                 required
                                                 type="text"
+                                                pattern="20[1-2][0-9][A-Za-z0-9]{4}[0-9]{4}[pP]||FACULTY"
                                                 onChange={handlePlayerChange}
                                                 name="bits_id"
                                                 label="Type your BITS ID"
@@ -526,7 +536,7 @@ export const ArmageddonModal = (props) => {
                                         <span>Phone*</span>
                                         <input
                                             required
-                                            type="text"
+                                            type="tel"
                                             variant="outlined"
                                             onChange={handlePlayerChange}
                                             id={"phone" + armaGame.min_players + 1}

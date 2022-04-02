@@ -429,8 +429,8 @@ export default function RegModalButton(props) {
                             value={name}
                             style={getStyles(name, eventName, theme)}
                           >
-                            {name}
-                            {/* {name == ("Armageddon" || "ARMAGEDDON") ? <Link to="/armageddon">{name}</Link> : name} */}
+                            {/* {name} */}
+                            {name == ("Armageddon" || "ARMAGEDDON") ? <Link style={{textDecoration: "none", color: "unset", fontFamily: "Arial"}} to="/armageddon">{name}</Link> : name}
                           </MenuItem>
                         ))}
 
