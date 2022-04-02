@@ -45,7 +45,7 @@ function MainHero() {
         if (window.screen.width < 768) {
             scrollTo(1800);
         }
-        else scrollTo(2800);
+        else scrollTo(2900);
         document.body.style.overflowY = "scroll";
         document.querySelector("html").style.overflowY = "scroll"
 

@@ -142,10 +142,10 @@ return (
           ? "kernel-events-container"
           : "all-events-container") + " landing-sec"
       }
-      id={props.type == "kernel" ? "kernel-events" : "all-events"}
+      id={props.type == "kernel" ? "kernel-events" : "all-events"}data-a
     >
-      <div className="SectionHeading heading kernelHeading" data-aos="fade-up" data-aos-offset="50" data-aos-easing="ease-in-sine" data-aos-duration="400">{props.heading}</div>
-      <div className="card-container"    data-aos="fade-up"
+      <div className="SectionHeading heading kernelHeading">{props.heading}</div>
+      <div className="card-container" 
           data-aos-offset="200"
           data-aos-duration="1000">
         {events.map((el) => (

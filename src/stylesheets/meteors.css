@@ -2,6 +2,7 @@
     overflow: hidden;
     opacity: 0.8;
     z-index: 0;
+    transition: all 0.2s linear;
 }
 
 #one img { 
