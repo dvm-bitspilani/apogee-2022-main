@@ -85,8 +85,8 @@ function Pagination() {
         <a className="dots" href="#heroSection" ref={landing} id="hero-link"><span className="PageHeader" id="PageHeader1">HOME</span></a>
         <a className="dots" href="#aboutus" ref={about}><span className="PageHeader" id="PageHeader2">ABOUT US</span></a>
         <a className="dots" href="#Videos" ref={videos}><span className="PageHeader" id="PageHeader3">VIDEO</span></a>
-        <a className="dots" href="#kernelEvents" ref={kernelEvents}><span className="PageHeader" id="PageHeader4">KERNEL EVENTS</span></a>
         <a className="dots" href="#Speakers" ref={speakers}><span className="PageHeader" id="PageHeader5">SPEAKERS</span></a>
+        <a className="dots" href="#kernelEvents" ref={kernelEvents}><span className="PageHeader" id="PageHeader4">KERNEL EVENTS</span></a>
         <a className="dots" href="#ContactUs" ref={contact}><span className="PageHeader" id="PageHeader6">CONTACT US</span></a>
       </div>
     </div>

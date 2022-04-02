@@ -187,7 +187,7 @@ html{
 #clickAndScroll {
   z-index: 12;
   position: absolute;
-  bottom: 3vh;
+  bottom: 2vh;
   text-align: center;
   left: 50%;
   transform: translateX(-50%);

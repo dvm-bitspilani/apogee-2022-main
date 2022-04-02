@@ -226,12 +226,13 @@ export const ArmageddonModal = (props) => {
                 mode: "cors",
             })
                 .then(function (response) {
+                    localStorage.setItem('status', response.status)
                     return response.json();
                 })
                 .then(function (result) {
                     console.log(result);
-                    if (result.message) alert(result.message);
-                    if (result.detail) alert(result.detail);
+                    if (localStorage.getItem('status') == 200) alert(result.message);
+                    if (localStorage.getItem('status') == 412 || localStorage.getItem('status') == 400) alert(result.detail);
                 });
         } else
             await fetch("https://bits-apogee.org/arma/register_team/", {
@@ -241,12 +242,13 @@ export const ArmageddonModal = (props) => {
                 mode: "cors",
             })
                 .then(function (response) {
+                    localStorage.setItem('status', response.status)
                     return response.json();
                 })
                 .then(function (result) {
                     console.log(result);
-                    if (result.message) alert(result.message);
-                    if (result.detail) alert(result.detail);
+                    if (localStorage.getItem('status') == 200) alert(result.message);
+                    if (localStorage.getItem('status') == 412 || localStorage.getItem('status') == 400) alert(result.detail);
                 });
     };
 
