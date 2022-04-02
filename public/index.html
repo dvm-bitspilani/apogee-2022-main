@@ -192,6 +192,30 @@ $("#clickAndScrollBtn").click(function(){
 // $(window).on('load',function(){
 //   pageLoaded();
 // });
+
+
+const meteorTop = [211.3, 217.5, 228.3, 251.8, 257.4, 270.2, 272.2, 302.7, 306.5, 340.3, 366.1, 391.9, 401.5, 437.2, 444.7, 546.1];
+
+window.addEventListener("scroll", () => {
+
+  Array.from(document.querySelectorAll('.rock img')).forEach((meteor) => {
+
+    let index = parseInt(meteor.id);
+    let topValue = meteorTop[--index] + 45 - 0.01 * window.scrollY;
+
+    if (screen.width < 500) topValue += 10;
+    else if (screen.width < 650) topValue += 40;
+    else if (screen.width < 750) topValue += 80;
+    else if (screen.width < 850) topValue += 60;
+    else if (screen.width < 950) topValue += 10;
+    else if (screen.width < 1050) topValue -= 50;
+    else if (screen.width < 1600) topValue -= 10;
+    else topValue += 20;
+
+    meteor.style.top = topValue + 'rem';
+  })
+})
+
 </script>
 
 </html>
