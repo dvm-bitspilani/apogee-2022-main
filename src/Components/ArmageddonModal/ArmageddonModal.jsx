@@ -539,7 +539,7 @@ export const ArmageddonModal = (props) => {
             </div>
             <div className="links-container2">
               <div className="all-links" ref={allLinks}>
-                <a className="links" onClick={handleLinkClick} href="#">
+                <a className="links" onClick={handleLinkClick} href="/">
                   <div>Home</div>
                 </a>
                 <a
