@@ -7,6 +7,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 import ArmaGuns from "../../assets/laptop/arma_guns.svg";
 import backButton from "./backButton.svg";
 import "./ArmageddonModal.css";
+import AsyncSelect from 'react-select/async';
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -36,6 +37,45 @@ export const ArmageddonModal = (props) => {
     const [openField, setOpenField] = useState(false);
     const [optionsField, setOptionsField] = useState([]);
     const [extraPlayer, setExtraPlayer] = useState(false);
+    const [inputValue, setValue] = useState('');
+    const [selectedValue, setSelectedValue] = useState(null);
+
+
+
+    const handleInputChange = value => {
+        setValue(value);
+      };
+     
+      // handle selection
+      const handleChange1 = value => {
+        setSelectedValue(value);
+      }
+     
+      // load options using API call
+      const loadOptions =  async(inputValue) => {
+        return await fetch(
+            "https://bits-apogee.org/registrations/get_college_by_char/",
+            {
+              headers: {
+                "content-type": "application/json",
+              },
+              method: "POST",
+              mode: "cors",
+                body: JSON.stringify({ letters: inputValue }),
+            }
+          )
+            .then(function (response) {
+                // console.log(response.json().then(result=>result.data));
+                response.json().then((res) => {
+                    const newArr = [];
+                    for (let index = 0; index < res["data"].length; index++) {
+                      newArr.push(res["data"][index].name)
+                    }
+                    console.log(newArr);
+                    return newArr
+                })   
+            })
+      };
     // const [registerDisabled, setRegisterDisabled] = React.useState(true);
 
     const loading = openField && optionsField.length === 0;
@@ -306,7 +346,7 @@ export const ArmageddonModal = (props) => {
                         <div className="cell">
                             <span>College*</span>
 
-                            <input
+                            {/* <input
                                 required
                                 type="text"
                                 id={"college" + i}
@@ -318,7 +358,20 @@ export const ArmageddonModal = (props) => {
                                     border: "1px solid black",
                                     color: "black",
                                 }}
-                            />
+                            /> */}
+                                
+
+
+                                <AsyncSelect
+        cacheOptions
+        defaultOptions
+        value={selectedValue}
+        getOptionLabel={e => e.title}
+        getOptionValue={e => e.id}
+        loadOptions={loadOptions}
+        onInputChange={handleInputChange}
+        onChange={handleChange}
+      />
                         </div>
                     )}
                     <div className="cell">
