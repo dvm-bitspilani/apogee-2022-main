@@ -537,6 +537,10 @@ export default function RegModalButton(props) {
                 </div>
               </div>
             </form>
+            <input type="checkbox" label="Click here to subscribe to latest updates" />
+            <div  className="clickHere">
+            Click here to subscribe to latest updates
+            </div>
           </Typography>
           </Box>
     
