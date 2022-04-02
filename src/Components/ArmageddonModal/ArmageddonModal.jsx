@@ -17,7 +17,10 @@ import "../Navbar/Navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
+import Select from 'react-select';
+import collegeJSON from "./college_data.json"
 
+const colleges = collegeJSON.data
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -43,7 +46,7 @@ function getStyles(name, personName, theme) {
 
 export const ArmageddonModal = (props) => {
 
-// --------------------------------------------------------@@@@@@@@@ START  OF NAVBAR @@@@@@------------------------
+// -----------------------------------  ---------------------@@@@@@@@@ START  OF NAVBAR @@@@@@------------------------
 // --------------------------------------------------------@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@------------------------
 // --------------------------------------------------------@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@------------------------
 // --------------------------------------------------------@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@------------------------
@@ -128,44 +131,6 @@ export const ArmageddonModal = (props) => {
     const [inputValue, setValue] = useState('');
     const [selectedValue, setSelectedValue] = useState(null);
 
-
-
-    const handleInputChange = value => {
-        setValue(value);
-      };
-     
-      // handle selection
-      const handleChange1 = value => {
-        setSelectedValue(value);
-      }
-     
-      // load options using API call
-      const loadOptions =  async(inputValue) => {
-        return await fetch(
-            "https://bits-apogee.org/registrations/get_college_by_char/",
-            {
-              headers: {
-                "content-type": "application/json",
-              },
-              method: "POST",
-              mode: "cors",
-                body: JSON.stringify({ letters: inputValue }),
-            }
-          )
-            .then(function (response) {
-                // console.log(response.json().then(result=>result.data));
-                response.json().then((res) => {
-                    const newArr = [];
-                    for (let index = 0; index < res["data"].length; index++) {
-                      newArr.push(res["data"][index].name)
-                    }
-                    console.log(newArr);
-                    return newArr
-                })   
-            })
-      };
-    // const [registerDisabled, setRegisterDisabled] = React.useState(true);
-
     const loading = openField && optionsField.length === 0;
 
     useEffect(() => {
@@ -219,8 +184,21 @@ export const ArmageddonModal = (props) => {
     const [playersInfo, setPlayersInfo] = useState([{}, {}, {}, {}, {}, {}]);
 
     const handlePlayerChange = (e) => {
-        const { name, value } = e.target;
-        console.log(name, value);
+        var name;
+        var value;
+        console.log(e);
+        if (e.id) {
+            setSelectedOption(e.label);
+            name = "college"
+            value = e.label
+            console.log(e.label);
+            const index = parseInt(e.target.id.slice(-1));
+            console.log(index);
+        }
+        else {
+            const { name, value } = e.target;
+            console.log(name, value);
+        }
 
         const index = parseInt(e.target.id.slice(-1));
         console.log(index);
@@ -244,7 +222,6 @@ export const ArmageddonModal = (props) => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log("hahahah");
         const loc = localStorage.getItem("players");
         console.log("LOCAL ", loc);
         console.log("FINAL DATA", data);
@@ -289,10 +266,11 @@ export const ArmageddonModal = (props) => {
     const [armaStep, setArmaStep] = useState(1);
     const [allGames, setAllGames] = useState(true);
     const [armaGame, setArmaGame] = useState({});
+    const [selectedOption, setSelectedOption] = useState(null);
     const armaGames = [
         {
             game_name: "Valorant",
-            game_id: gameId.find((el) => el.name == "Test"),
+            game_id: gameId.find((el) => el.name == "Valorant"),
             players_req: "5 + 1 sub ( optional )",
             min_players: 5,
             price: "Rs 250 per team",
@@ -304,7 +282,7 @@ export const ArmageddonModal = (props) => {
         },
         {
             game_name: "CS-GO",
-            game_id: gameId.find((el) => el.name == "Test"),
+            game_id: gameId.find((el) => el.name == "CS-GO"),
             players_req: "5 + 1 sub ( optional ) ",
             min_players: 5,
             price: "Rs 250 per team",
@@ -316,7 +294,7 @@ export const ArmageddonModal = (props) => {
         },
         {
             game_name: "BGMI",
-            game_id: gameId.find((el) => el.name == "Test"),
+            game_id: gameId.find((el) => el.name == "BGMI"),
             players_req: "4 + 1 sub ( optional )",
             min_players: 4,
             price: "Rs 200 per team",
@@ -328,7 +306,7 @@ export const ArmageddonModal = (props) => {
         },
         {
             game_name: "Clash Royale",
-            game_id: gameId.find((el) => el.name == "Test"),
+            game_id: gameId.find((el) => el.name == "Clash Royale"),
             players_req: "Individual",
             min_players: 1,
             extra_field: "Player Tag",
@@ -339,7 +317,7 @@ export const ArmageddonModal = (props) => {
         {
             bits_only: true,
             game_name: "FIFA",
-            game_id: gameId.find((el) => el.name == "Test"),
+            game_id: gameId.find((el) => el.name == "FIFA"),
             players_req: "Individual",
             min_players: 1,
             price: "Rs 100 per individual",
@@ -348,7 +326,7 @@ export const ArmageddonModal = (props) => {
         {
             bits_only: true,
             game_name: "Tekken",
-            game_id: gameId.find((el) => el.name == "Test"),
+            game_id: gameId.find((el) => el.name == "Tekken"),
             players_req: "Individual",
             min_players: 1,
             price: "Rs 50 per individual",
@@ -357,7 +335,7 @@ export const ArmageddonModal = (props) => {
         {
             bits_only: true,
             game_name: "Rocket League",
-            game_id: gameId.find((el) => el.name == "Test"),
+            game_id: gameId.find((el) => el.name == "Rocket League"),
             players_req: "2 + 1 sub ( optional )",
             min_players: 2,
             price: "Rs 100 per team",
@@ -433,8 +411,13 @@ export const ArmageddonModal = (props) => {
                     ) : (
                         <div className="cell">
                             <span>College*</span>
-
-                            <input
+                                <select name="college" id={"college" + i} className="collegeNames"
+                                onChange={handlePlayerChange}>
+                                    {colleges.map(e => (
+                                        <option>{e.label}</option>
+                                    ))}
+</select>
+                            {/* <input
                                 required
                                 type="text"
                                 id={"college" + i}
@@ -446,20 +429,16 @@ export const ArmageddonModal = (props) => {
                                     border: "1px solid black",
                                     color: "black",
                                 }}
-                            />
+                            /> */}
                                 
-
-
-                                {/* <AsyncSelect
-        cacheOptions
-        defaultOptions
-        value={selectedValue}
-        getOptionLabel={e => e.title}
-        getOptionValue={e => e.id}
-        loadOptions={loadOptions}
-        onInputChange={handleInputChange}
-        onChange={handleChange}
-      /> */}
+                                {/* <Select
+                         onChange={setSelectedOption}
+                         isLoading={false}
+                         isRtl={false}
+                         isSearchable={true}
+                         name="college"
+                         options={colleges}
+        /> */}
                         </div>
                     )}
                     <div className="cell">

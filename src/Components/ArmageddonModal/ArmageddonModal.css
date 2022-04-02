@@ -6,6 +6,16 @@
   border-radius: 10px;
   
 }
+.collegeNames{
+  width: 250px;
+  height: 50px;
+  border-radius: 6px;
+  font-size: 18px;
+}
+.collegeNames
+.css-b62m3t-container{
+  width: 40%;
+}
 .backButton{
 width: 20px;
 cursor: pointer;
