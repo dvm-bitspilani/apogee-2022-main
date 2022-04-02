@@ -232,7 +232,7 @@ export const ArmageddonModal = (props) => {
                 .then(function (result) {
                     console.log(result);
                     if (localStorage.getItem('status') == 200) alert(result.message);
-                    if (localStorage.getItem('status') == 412 || localStorage.getItem('status') == 400) alert(result.detail);
+                    if (localStorage.getItem('status') == 412 || localStorage.getItem('status') == 400) alert(result.message);
                 });
         } else
             await fetch("https://bits-apogee.org/arma/register_team/", {
@@ -246,9 +246,10 @@ export const ArmageddonModal = (props) => {
                     return response.json();
                 })
                 .then(function (result) {
-                    console.log(result);
+                    // console.log(result);
+                    // alert(result.message)
                     if (localStorage.getItem('status') == 200) alert(result.message);
-                    if (localStorage.getItem('status') == 412 || localStorage.getItem('status') == 400) alert(result.detail);
+                    if (localStorage.getItem('status') == 412 || localStorage.getItem('status') == 400) alert(result.message);
                 });
     };
 

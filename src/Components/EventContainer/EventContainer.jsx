@@ -82,7 +82,7 @@ const modalImg = React.useRef()
 const [tab, setTab] = React.useState({ eventDetail: true, guideline: false, contact: false })
 const [isDiabled, setIsDisabled] = React.useState(false);
 const [descriptionDetails, setDescriptionDetails] = React.useState("none");
-
+const [opacityCheck, setOpacity]=React.useState("0");
 const handleOpen = (el) => {
   if (el.description === null) {
     return;
@@ -90,6 +90,8 @@ const handleOpen = (el) => {
   let img = props.type == "kernel" ? el.image_url : el.img_url
   modalImg.current.style.backgroundImage = changeDriveLink(img)
   setDescriptionDetails("flex");
+ setOpacity("1")
+ 
   setEventName(el.name);
   setEventDesc(el.description);
   setEventRules(el.rules)
@@ -179,7 +181,7 @@ return (
         "card-description-container" +
         (props.type == "kernel" ? " kernel-events" : "")
       }
-      style={{ display: descriptionDetails }}
+      style={{ display: descriptionDetails, opacity:opacityCheck }}
     >
       <div className="card-description-box">
         <div

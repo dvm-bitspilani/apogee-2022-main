@@ -48,7 +48,10 @@ function MainHero() {
         else scrollTo(2900);
         document.body.style.overflowY = "scroll";
         document.querySelector("html").style.overflowY = "scroll"
-
+        // setTimeout(() => {
+        //     document.body.style.overflowY = "scroll";
+        //     document.querySelector("html").style.overflowY = "scroll"
+        // }, 1000)
     }
 
     const Layer1 = useRef();
