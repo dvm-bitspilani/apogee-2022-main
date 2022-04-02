@@ -17,7 +17,10 @@ import "../Navbar/Navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
+import Select from 'react-select';
+import collegeJSON from "./college_data.json"
 
+const colleges = collegeJSON.data
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -43,12 +46,12 @@ function getStyles(name, personName, theme) {
 
 export const ArmageddonModal = (props) => {
 
-// --------------------------------------------------------@@@@@@@@@ START  OF NAVBAR @@@@@@------------------------
-// --------------------------------------------------------@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@------------------------
-// --------------------------------------------------------@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@------------------------
-// --------------------------------------------------------@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@------------------------
-// --------------------------------------------------------@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@------------------------
-// --------------------------------------------------------@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@------------------------
+    // -----------------------------------  ---------------------@@@@@@@@@ START  OF NAVBAR @@@@@@------------------------
+    // --------------------------------------------------------@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@------------------------
+    // --------------------------------------------------------@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@------------------------
+    // --------------------------------------------------------@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@------------------------
+    // --------------------------------------------------------@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@------------------------
+    // --------------------------------------------------------@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@------------------------
     let hamburger = useRef();
     let isMenuOpen = false;
     const [isShown, setIsShown] = useState(false);
@@ -58,66 +61,66 @@ export const ArmageddonModal = (props) => {
     let allLinks = useRef();
     let downArrow = useRef();
     let rightArrow = useRef();
-  
+
     let handleClick = () => {
-      if (!isMenuOpen) {
-        hamburger.current.classList.add("open");
-        openNav();
-      } else {
-        hamburger.current.classList.remove("open");
-        closeNav();
-      }
-      isMenuOpen = !isMenuOpen;
+        if (!isMenuOpen) {
+            hamburger.current.classList.add("open");
+            openNav();
+        } else {
+            hamburger.current.classList.remove("open");
+            closeNav();
+        }
+        isMenuOpen = !isMenuOpen;
     };
-  
+
     const openNav = () => {
-      document.body.style.overflow = "hidden";
-      document.getElementById("drawer").style.transform = "translateX(00px)";
+        document.body.style.overflow = "hidden";
+        document.getElementById("drawer").style.transform = "translateX(00px)";
     };
-  
+
     const closeNav = () => {
-      document.body.style.overflowY = "scroll";
-      document.body.style.overflowX = "hidden";
-      document.getElementById("drawer").style.transform = "translateX(100vw)";
+        document.body.style.overflowY = "scroll";
+        document.body.style.overflowX = "hidden";
+        document.getElementById("drawer").style.transform = "translateX(100vw)";
     };
-  
+
     const handleLinkClick = () => {
-      closeNav();
-      hamburger.current.classList.remove("open");
+        closeNav();
+        hamburger.current.classList.remove("open");
     };
-  
+
     const handleAICClick = () => {
-      setIsAicClicked(!isAicClicked);
-      if (!isAicClicked && window.screen.width > 768) rightArrow.current.classList.add("rotate-arrow")
-      else rightArrow.current.classList.remove("rotate-arrow")
-      if (!isAicClicked && window.screen.width > 768) allLinks.current.style.transform = "translateX(0)"
-      else if (isAicClicked && window.screen.width > 768) allLinks.current.style.transform = "translateX(100px)"
+        setIsAicClicked(!isAicClicked);
+        if (!isAicClicked && window.screen.width > 768) rightArrow.current.classList.add("rotate-arrow")
+        else rightArrow.current.classList.remove("rotate-arrow")
+        if (!isAicClicked && window.screen.width > 768) allLinks.current.style.transform = "translateX(0)"
+        else if (isAicClicked && window.screen.width > 768) allLinks.current.style.transform = "translateX(100px)"
     };
-  
+
     const handleAICClickMobile = () => {
-      setIsSubMenuOpen(!isSubMenuOpen);
-      if (!isSubMenuOpen && window.screen.width < 768) downArrow.current.classList.add("rotate-arrow");
-      else downArrow.current.classList.remove("rotate-arrow");
+        setIsSubMenuOpen(!isSubMenuOpen);
+        if (!isSubMenuOpen && window.screen.width < 768) downArrow.current.classList.add("rotate-arrow");
+        else downArrow.current.classList.remove("rotate-arrow");
     };
-  
+
     // if(isAicClicked && window.screen.width > 768) rightArrow.current.classList.add("rotate-arrow")
     //   else rightArrow.current.classList.add("rotate-arrow")
     //   if (isAicClicked && window.screen.width > 768) allLinks.current.style.transform = "translateX(0px)"
     //   else if (!isAicClicked && window.screen.width > 768) allLinks.current.style.transform = "translateX(100px)"
-  
+
     fontawesome.library.add(faAngleDown, faAngleRight);
     const linkStyles = { color: "unset", textDecoration: "none" };
 
-// --------------------------------------------------------@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@------------------------
-// --------------------------------------------------------@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@------------------------
-// --------------------------------------------------------@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@------------------------
-// --------------------------------------------------------@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@------------------------
-// --------------------------------------------------------@@@@@@@@@@@@@@ END OF NAVBAR @@@@@@@@@@@@@@------------------------
-// --------------------------------------------------------@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@------------------------
-// --------------------------------------------------------@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@------------------------
-// --------------------------------------------------------@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@------------------------
-// --------------------------------------------------------@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@------------------------
-// --------------------------------------------------------@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@------------------------
+    // --------------------------------------------------------@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@------------------------
+    // --------------------------------------------------------@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@------------------------
+    // --------------------------------------------------------@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@------------------------
+    // --------------------------------------------------------@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@------------------------
+    // --------------------------------------------------------@@@@@@@@@@@@@@ END OF NAVBAR @@@@@@@@@@@@@@------------------------
+    // --------------------------------------------------------@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@------------------------
+    // --------------------------------------------------------@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@------------------------
+    // --------------------------------------------------------@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@------------------------
+    // --------------------------------------------------------@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@------------------------
+    // --------------------------------------------------------@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@------------------------
 
 
     let [data, setData] = useState({});
@@ -127,44 +130,6 @@ export const ArmageddonModal = (props) => {
     const [extraPlayer, setExtraPlayer] = useState(false);
     const [inputValue, setValue] = useState('');
     const [selectedValue, setSelectedValue] = useState(null);
-
-
-
-    const handleInputChange = value => {
-        setValue(value);
-      };
-     
-      // handle selection
-      const handleChange1 = value => {
-        setSelectedValue(value);
-      }
-     
-      // load options using API call
-      const loadOptions =  async(inputValue) => {
-        return await fetch(
-            "https://bits-apogee.org/registrations/get_college_by_char/",
-            {
-              headers: {
-                "content-type": "application/json",
-              },
-              method: "POST",
-              mode: "cors",
-                body: JSON.stringify({ letters: inputValue }),
-            }
-          )
-            .then(function (response) {
-                // console.log(response.json().then(result=>result.data));
-                response.json().then((res) => {
-                    const newArr = [];
-                    for (let index = 0; index < res["data"].length; index++) {
-                      newArr.push(res["data"][index].name)
-                    }
-                    console.log(newArr);
-                    return newArr
-                })   
-            })
-      };
-    // const [registerDisabled, setRegisterDisabled] = React.useState(true);
 
     const loading = openField && optionsField.length === 0;
 
@@ -244,7 +209,6 @@ export const ArmageddonModal = (props) => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log("hahahah");
         const loc = localStorage.getItem("players");
         console.log("LOCAL ", loc);
         console.log("FINAL DATA", data);
@@ -262,12 +226,13 @@ export const ArmageddonModal = (props) => {
                 mode: "cors",
             })
                 .then(function (response) {
+                    localStorage.setItem('status', response.status)
                     return response.json();
                 })
                 .then(function (result) {
                     console.log(result);
-                    if (result.message) alert(result.message);
-                    if (result.detail) alert(result.detail);
+                    if (localStorage.getItem('status') == 200) alert(result.message);
+                    if (localStorage.getItem('status') == 412 || localStorage.getItem('status') == 400) alert(result.message);
                 });
         } else
             await fetch("https://bits-apogee.org/arma/register_team/", {
@@ -277,22 +242,25 @@ export const ArmageddonModal = (props) => {
                 mode: "cors",
             })
                 .then(function (response) {
+                    localStorage.setItem('status', response.status)
                     return response.json();
                 })
                 .then(function (result) {
-                    console.log(result);
-                    if (result.message) alert(result.message);
-                    if (result.detail) alert(result.detail);
+                    // console.log(result);
+                    // alert(result.message)
+                    if (localStorage.getItem('status') == 200) alert(result.message);
+                    if (localStorage.getItem('status') == 412 || localStorage.getItem('status') == 400) alert(result.message);
                 });
     };
 
     const [armaStep, setArmaStep] = useState(1);
     const [allGames, setAllGames] = useState(true);
     const [armaGame, setArmaGame] = useState({});
+    const [selectedOption, setSelectedOption] = useState(null);
     const armaGames = [
         {
             game_name: "Valorant",
-            game_id: gameId.find((el) => el.name == "Test"),
+            game_id: gameId.find((el) => el.name == "Valorant"),
             players_req: "5 + 1 sub ( optional )",
             min_players: 5,
             price: "Rs 250 per team",
@@ -304,7 +272,7 @@ export const ArmageddonModal = (props) => {
         },
         {
             game_name: "CS-GO",
-            game_id: gameId.find((el) => el.name == "Test"),
+            game_id: gameId.find((el) => el.name == "CS-GO"),
             players_req: "5 + 1 sub ( optional ) ",
             min_players: 5,
             price: "Rs 250 per team",
@@ -316,7 +284,7 @@ export const ArmageddonModal = (props) => {
         },
         {
             game_name: "BGMI",
-            game_id: gameId.find((el) => el.name == "Test"),
+            game_id: gameId.find((el) => el.name == "BGMI"),
             players_req: "4 + 1 sub ( optional )",
             min_players: 4,
             price: "Rs 200 per team",
@@ -328,7 +296,7 @@ export const ArmageddonModal = (props) => {
         },
         {
             game_name: "Clash Royale",
-            game_id: gameId.find((el) => el.name == "Test"),
+            game_id: gameId.find((el) => el.name == "Clash Royale"),
             players_req: "Individual",
             min_players: 1,
             extra_field: "Player Tag",
@@ -339,7 +307,7 @@ export const ArmageddonModal = (props) => {
         {
             bits_only: true,
             game_name: "FIFA",
-            game_id: gameId.find((el) => el.name == "Test"),
+            game_id: gameId.find((el) => el.name == "FIFA"),
             players_req: "Individual",
             min_players: 1,
             price: "Rs 100 per individual",
@@ -348,7 +316,7 @@ export const ArmageddonModal = (props) => {
         {
             bits_only: true,
             game_name: "Tekken",
-            game_id: gameId.find((el) => el.name == "Test"),
+            game_id: gameId.find((el) => el.name == "Tekken"),
             players_req: "Individual",
             min_players: 1,
             price: "Rs 50 per individual",
@@ -357,7 +325,7 @@ export const ArmageddonModal = (props) => {
         {
             bits_only: true,
             game_name: "Rocket League",
-            game_id: gameId.find((el) => el.name == "Test"),
+            game_id: gameId.find((el) => el.name == "Rocket League"),
             players_req: "2 + 1 sub ( optional )",
             min_players: 2,
             price: "Rs 100 per team",
@@ -433,8 +401,13 @@ export const ArmageddonModal = (props) => {
                     ) : (
                         <div className="cell">
                             <span>College*</span>
-
-                            <input
+                            <select name="college" id={"college" + i} className="collegeNames"
+                                onChange={handlePlayerChange}>
+                                {colleges.map(e => (
+                                    <option>{e.label}</option>
+                                ))}
+                            </select>
+                            {/* <input
                                 required
                                 type="text"
                                 id={"college" + i}
@@ -446,20 +419,16 @@ export const ArmageddonModal = (props) => {
                                     border: "1px solid black",
                                     color: "black",
                                 }}
-                            />
-                                
+                            /> */}
 
-
-                                {/* <AsyncSelect
-        cacheOptions
-        defaultOptions
-        value={selectedValue}
-        getOptionLabel={e => e.title}
-        getOptionValue={e => e.id}
-        loadOptions={loadOptions}
-        onInputChange={handleInputChange}
-        onChange={handleChange}
-      /> */}
+                            {/* <Select
+                         onChange={setSelectedOption}
+                         isLoading={false}
+                         isRtl={false}
+                         isSearchable={true}
+                         name="college"
+                         options={colleges}
+        /> */}
                         </div>
                     )}
                     <div className="cell">
@@ -507,403 +476,368 @@ export const ArmageddonModal = (props) => {
     return (
         <>
             <nav>
-        <div className="logo">
-          <img src={require("../../assets/Apogee Logo.png")} alt="" />
-        </div>
-
-        <div className="hamburger" onClick={handleClick} ref={hamburger}>
-          <div class="line-menu half start"></div>
-          <div class="line-menu"></div>
-          <div class="line-menu half end"></div>
-        </div>
-
-        <div id="drawer">
-          <div className="drawer-container">
-            <div className="links-container1">
-              <div className="links">Follow</div>
-              <a
-                className="links"
-                target="_blank"
-                href="https://www.facebook.com/bitsapogee/"
-              >
-                <div>Facebook</div>
-              </a>
-              <a
-                className="links"
-                target="_blank"
-                href="https://www.instagram.com/bitsapogee/?hl=en"
-              >
-                <div>Instagram</div>
-              </a>
-              <a
-                className="links"
-                target="_blank"
-                href="https://twitter.com/bitsapogee?lang=en"
-              >
-                <div>Twitter</div>
-              </a>
-            </div>
-            <div className="links-container2">
-              <div
-                className="all-links"
-                ref={allLinks}
-              >
-                <a className="links" onClick={handleLinkClick} href="#">
-                  <div>Home</div>
-                </a>
-                <a
-                  className="links"
-                  onClick={handleLinkClick}
-                  href="https://bits-apogee.org/registrations/login/"
-                >
-                  <div>Login</div>
-                </a>
-                <a
-                  href="https://bits-apogee.org/campusambassador2022/"
-                  className="links"
-                >
-                  <div>Campus Ambassador</div>
-                </a>
-                <div
-                  id="aic" onClick={window.screen.width < 768 ? handleAICClickMobile : handleAICClick}
-                >
-                  <div onClick={handleAICClick}>
-                    AIC{" "}
-                    {window.screen.width < 768 ? (
-                      <span ref={downArrow}>
-                        <FontAwesomeIcon
-                          icon="angle-down"
-                          className="aic-arrow"
-                        />
-                      </span>
-                    ) : (
-                      <span ref={rightArrow}>
-                        <FontAwesomeIcon
-                          icon="angle-right"
-                          className="aic-arrow right-arrow"
-                        />
-                      </span>
-                    )}
-                  </div>
-                  {isSubMenuOpen && window.screen.width < 768 && (
-                    <div
-                      className="aic-container"
-                    >
-                      <div className="sub-menu">
-                        <div>
-                          <a
-                            style={linkStyles}
-                            className="animate__animated animate__fadeInUp"
-                            target="_blank"
-                            href="https://bit.ly/AIC_Turtlemint"
-                          >
-                            Turtlemint
-                          </a>
-                        </div>
-                        <div>
-                          <a
-                            style={linkStyles}
-                            className="animate__animated animate__fadeInUp"
-                            target="_blank"
-                            href="https://bit.ly/AIC_Ge_Healthcare"
-                          >
-                            GE Healthcare
-                          </a>
-                        </div>
-                        <div>
-                          <a
-                            style={linkStyles}
-                            target="_blank"
-                            href="https://bit.ly/AIC_yamaha"
-                          >
-                            Yamaha
-                          </a>
-                        </div>
-                        <div>
-                          <a
-                            style={linkStyles}
-                            className="animate__animated animate__fadeInUp animate_faster"
-                            target="_blank"
-                            href="https://bit.ly/AIC_Bharat_Serums"
-                          >
-                            Bharat Serums & Vaccines
-                          </a>
-                        </div>
-                        <div>
-                          <a
-                            style={linkStyles}
-                            className="animate__animated animate__fadeInUp"
-                            target="_blank"
-                            href="https://bit.ly/AIC_RR_Kabel"
-                          >
-                            RR Kabel
-                          </a>
-                        </div>
-                        <div>
-                          <a
-                            style={linkStyles}
-                            className="animate__animated animate__fadeInUp"
-                            target="_blank"
-                            href="https://bit.ly/AIC_Kamdhenu"
-                          >
-                            Kamdhenu
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  )}
+                <div className="logo">
+                    <img src={require("../../assets/Apogee Logo.png")} alt="" />
                 </div>
-                {/* <a
+
+                <div className="hamburger" onClick={handleClick} ref={hamburger}>
+                    <div class="line-menu half start"></div>
+                    <div class="line-menu"></div>
+                    <div class="line-menu half end"></div>
+                </div>
+
+                <div id="drawer">
+                    <div className="drawer-container">
+                        <div className="links-container1">
+                            <div className="links">Follow</div>
+                            <a
+                                className="links"
+                                target="_blank"
+                                href="https://www.facebook.com/bitsapogee/"
+                            >
+                                <div>Facebook</div>
+                            </a>
+                            <a
+                                className="links"
+                                target="_blank"
+                                href="https://www.instagram.com/bitsapogee/?hl=en"
+                            >
+                                <div>Instagram</div>
+                            </a>
+                            <a
+                                className="links"
+                                target="_blank"
+                                href="https://twitter.com/bitsapogee?lang=en"
+                            >
+                                <div>Twitter</div>
+                            </a>
+                        </div>
+                        <div className="links-container2">
+                            <div
+                                className="all-links"
+                                ref={allLinks}
+                            >
+                                <a className="links" onClick={handleLinkClick} href="#">
+                                    <div>Home</div>
+                                </a>
+                                <a
+                                    className="links"
+                                    onClick={handleLinkClick}
+                                    href="https://bits-apogee.org/registrations/login/"
+                                >
+                                    <div>Login</div>
+                                </a>
+                                <a
+                                    href="https://bits-apogee.org/campusambassador2022/"
+                                    className="links"
+                                >
+                                    <div>Campus Ambassador</div>
+                                </a>
+                                <div
+                                    id="aic" onClick={window.screen.width < 768 ? handleAICClickMobile : handleAICClick}
+                                >
+                                    <div onClick={handleAICClick}>
+                                        AIC{" "}
+                                        {window.screen.width < 768 ? (
+                                            <span ref={downArrow}>
+                                                <FontAwesomeIcon
+                                                    icon="angle-down"
+                                                    className="aic-arrow"
+                                                />
+                                            </span>
+                                        ) : (
+                                            <span ref={rightArrow}>
+                                                <FontAwesomeIcon
+                                                    icon="angle-right"
+                                                    className="aic-arrow right-arrow"
+                                                />
+                                            </span>
+                                        )}
+                                    </div>
+                                    {isSubMenuOpen && window.screen.width < 768 && (
+                                        <div
+                                            className="aic-container"
+                                        >
+                                            <div className="sub-menu">
+                                                <div>
+                                                    <a
+                                                        style={linkStyles}
+                                                        className="animate__animated animate__fadeInUp"
+                                                        target="_blank"
+                                                        href="https://bit.ly/AIC_Turtlemint"
+                                                    >
+                                                        Turtlemint
+                                                    </a>
+                                                </div>
+                                                <div>
+                                                    <a
+                                                        style={linkStyles}
+                                                        className="animate__animated animate__fadeInUp"
+                                                        target="_blank"
+                                                        href="https://bit.ly/AIC_Ge_Healthcare"
+                                                    >
+                                                        GE Healthcare
+                                                    </a>
+                                                </div>
+                                                <div>
+                                                    <a
+                                                        style={linkStyles}
+                                                        target="_blank"
+                                                        href="https://bit.ly/AIC_yamaha"
+                                                    >
+                                                        Yamaha
+                                                    </a>
+                                                </div>
+                                                <div>
+                                                    <a
+                                                        style={linkStyles}
+                                                        className="animate__animated animate__fadeInUp animate_faster"
+                                                        target="_blank"
+                                                        href="https://bit.ly/AIC_Bharat_Serums"
+                                                    >
+                                                        Bharat Serums & Vaccines
+                                                    </a>
+                                                </div>
+                                                <div>
+                                                    <a
+                                                        style={linkStyles}
+                                                        className="animate__animated animate__fadeInUp"
+                                                        target="_blank"
+                                                        href="https://bit.ly/AIC_RR_Kabel"
+                                                    >
+                                                        RR Kabel
+                                                    </a>
+                                                </div>
+                                                <div>
+                                                    <a
+                                                        style={linkStyles}
+                                                        className="animate__animated animate__fadeInUp"
+                                                        target="_blank"
+                                                        href="https://bit.ly/AIC_Kamdhenu"
+                                                    >
+                                                        Kamdhenu
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
+                                {/* <a
                   className="links"
                   onClick={handleLinkClick}
                   href="#kernel-events"
                 >
                   <div>Kernel Events</div>
                 </a> */}
-                <a className="links" href="/sponsors/">
-                  <div>Sponsors</div>
-                </a>
-                <a className="links" href="/events/">
-                  <div>All Events</div>
-                </a>
-              </div>
-              {isAicClicked && window.screen.width > 768 && (
-                <div
-                  className="aic-container"
-                >
-                  <div className="sub-menu">
-                    <div className="animate__animated animate__fadeInUp">
-                      <a
-                        style={linkStyles}
-                        target="_blank"
-                        href="https://bit.ly/AIC_Turtlemint"
-                      >
-                        Turtlemint
-                      </a>
-                    </div>
-                    <div className="animate__animated animate__fadeInUp">
-                      <a
-                        style={linkStyles}
-                        target="_blank"
-                        href="https://bit.ly/AIC_Ge_Healthcare"
-                      >
-                        GE Healthcare
-                      </a>
-                    </div>
-                    <div className="animate__animated animate__fadeInUp">
-                      <a
-                        style={linkStyles}
-                        target="_blank"
-                        href="https://bit.ly/AIC_yamaha"
-                      >
-                        Yamaha
-                      </a>
-                    </div>
-                    <div className="animate__animated animate__fadeInUp animate_faster">
-                      <a
-                        style={linkStyles}
-                        target="_blank"
-                        href="https://bit.ly/AIC_Bharat_Serums"
-                      >
-                        Bharat Serums & Vaccines
-                      </a>
-                    </div>
-                    <div className="animate__animated animate__fadeInUp">
-                      <a
-                        style={linkStyles}
-                        target="_blank"
-                        href="https://bit.ly/AIC_RR_Kabel"
-                      >
-                        RR Kabel
-                      </a>
-                    </div>
-                    <div className="animate__animated animate__fadeInUp">
-                      <a
-                        style={linkStyles}
-                        target="_blank"
-                        href="https://bit.ly/AIC_Kamdhenu"
-                      >
-                        Kamdhenu
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      </nav>
-       
-        <div className="arma-fluid">
-            {armaStep == 1 ? (
-                <div className="arma-container">
-                    <div>
-                        {" "}
-                        {/* <img src={backButton} alt="" className="backButton" />{" "} */}
-                        <h2>Choose your Game</h2>
-                    </div>
-                    <div className="extra-menu">
-                        <div className="game-tabs">
-                            <span
-                                onClick={() => setAllGames(true)}
-                                className={allGames ? "game-tab-active" : ""}
-                            >
-                                For All
-                            </span>
-                            <span
-                                onClick={() => setAllGames(false)}
-                                className={!allGames ? "game-tab-active" : ""}
-                            >
-                                BITS Exclusive
-                            </span>
+                                <a className="links" href="/sponsors/">
+                                    <div>Sponsors</div>
+                                </a>
+                                <a className="links" href="/events/">
+                                    <div>All Events</div>
+                                </a>
+                            </div>
+                            {isAicClicked && window.screen.width > 768 && (
+                                <div
+                                    className="aic-container"
+                                >
+                                    <div className="sub-menu">
+                                        <div className="animate__animated animate__fadeInUp">
+                                            <a
+                                                style={linkStyles}
+                                                target="_blank"
+                                                href="https://bit.ly/AIC_Turtlemint"
+                                            >
+                                                Turtlemint
+                                            </a>
+                                        </div>
+                                        <div className="animate__animated animate__fadeInUp">
+                                            <a
+                                                style={linkStyles}
+                                                target="_blank"
+                                                href="https://bit.ly/AIC_Ge_Healthcare"
+                                            >
+                                                GE Healthcare
+                                            </a>
+                                        </div>
+                                        <div className="animate__animated animate__fadeInUp">
+                                            <a
+                                                style={linkStyles}
+                                                target="_blank"
+                                                href="https://bit.ly/AIC_yamaha"
+                                            >
+                                                Yamaha
+                                            </a>
+                                        </div>
+                                        <div className="animate__animated animate__fadeInUp animate_faster">
+                                            <a
+                                                style={linkStyles}
+                                                target="_blank"
+                                                href="https://bit.ly/AIC_Bharat_Serums"
+                                            >
+                                                Bharat Serums & Vaccines
+                                            </a>
+                                        </div>
+                                        <div className="animate__animated animate__fadeInUp">
+                                            <a
+                                                style={linkStyles}
+                                                target="_blank"
+                                                href="https://bit.ly/AIC_RR_Kabel"
+                                            >
+                                                RR Kabel
+                                            </a>
+                                        </div>
+                                        <div className="animate__animated animate__fadeInUp">
+                                            <a
+                                                style={linkStyles}
+                                                target="_blank"
+                                                href="https://bit.ly/AIC_Kamdhenu"
+                                            >
+                                                Kamdhenu
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
                         </div>
-                        {allGames ? (
-                            <div className="all-games">
-                                <div className="games">
-                                    <div onClick={() => handleGameClick("Valorant")}>
-                                        Valorant
-                                    </div>
-                                    <div onClick={() => handleGameClick("BGMI")}>BGMI</div>
-                                    <div onClick={() => handleGameClick("CS-GO")}>CS-GO</div>
-                                    <div onClick={() => handleGameClick("Clash Royale")}>
-                                        Clash Royale
-                                    </div>
-                                </div>
-                                <div className="img">
-                                    <img src={ArmaGuns} />
-                                </div>
-                            </div>
-                        ) : (
-                            <div className="bits-games">
-                                <div className="games">
-                                    <div onClick={() => handleGameClick("Tekken")}>Tekken</div>
-                                    <div onClick={() => handleGameClick("FIFA")}>FIFA</div>
-                                    <div onClick={() => handleGameClick("Rocket League")}>
-                                        Rocket League
-                                    </div>
-                                </div>
-                                <div className="img">
-                                    <img src={ArmaGuns} />
-                                </div>
-                            </div>
-                        )}
                     </div>
                 </div>
-            ) : (
-                <div className="arma-player-details arma-container">
-                    <div>
-                        <img
-                            src={backButton}
-                            alt=""
-                            className="backButton"
-                            onClick={() => {
-                                setArmaStep(1);
-                                setExtraPlayer(false);
-                            }}
-                        />
-                        <h2>{armaGame.game_name}</h2>
-                    </div>
-                    <div className="game-details-header">
-                        <div>{armaGame.players_req}</div>
-                        <div>Price: {armaGame.price}</div>
-                    </div>
-                    <form
-                        name="arma-form"
-                        onSubmit={(e) => {
-                            e.preventDefault();
-                            handleSubmit(e);
-                        }}
-                    >
-                        <div className="game-details-input">
-                            {armaGame.extra_info.map((el) => (
-                                <div className="cell">
-                                    <span>{el.name}*</span>
-                                    <input
-                                        type="text"
-                                        id={el.field_name}
-                                        onChange={handleChange}
-                                        name={el.field_name}
-                                        label={el.name}
-                                        sx={{
-                                            width: 300,
-                                            border: "1px solid black",
-                                            color: "black",
-                                            borderRadius: "2px",
-                                        }}
-                                        required
-                                    />
-                                </div>
-                            ))}
-                        </div>
-                        <div className="players">
-                            {renderPlayers}
-                            {extraPlayer ? (
-                                <div class="game-player-details">
-                                    <div className="player-details-title">
-                                        <b>Player {armaGame.min_players + 1}</b>
-                                    </div>
-                                    <div className="game-details-input">
-                                        <div className="cell">
-                                            <span>Name*</span>
-                                            <input
-                                                required
-                                                type="text"
-                                                id={"name" + armaGame.min_players + 1}
-                                                onChange={handlePlayerChange}
-                                                name="name"
-                                                label="Name"
-                                                sx={{
-                                                    width: 300,
-                                                    border: "1px solid black",
-                                                    color: "black",
-                                                    borderRadius: "2px",
-                                                }}
-                                            />
-                                        </div>
-                                        <div className="cell">
-                                            <span>Email*</span>
-                                            <input
-                                                required
-                                                type="email"
-                                                id={"email" + armaGame.min_players + 1}
-                                                onChange={handlePlayerChange}
-                                                name="email"
-                                                label="Type your email"
-                                                sx={{
-                                                    width: 300,
-                                                    border: "1px solid black",
-                                                    color: "black",
-                                                }}
-                                            />
-                                        </div>
-                                        {armaGame.bits_only ? (
-                                            <div className="cell">
-                                                <span>BITS ID*</span>
-                                                <input
-                                                    required
-                                                    type="text"
-                                                    onChange={handlePlayerChange}
-                                                    name="bits_id"
-                                                    pattern="20\d\d[A-Z][A-Z\d][A-Z][A-Z]\d\d\d\dP"
-                                                    label="Type your BITS ID"
-                                                    sx={{
-                                                        width: 300,
-                                                        border: "1px solid black",
-                                                        color: "black",
-                                                    }}
-                                                />
-                                            </div>
-                                        ) : (
-                                            <div className="cell">
-                                                <span>College*</span>
+            </nav>
 
+            <div className="arma-fluid">
+                {armaStep == 1 ? (
+                    <div className="arma-container">
+                        <div>
+                            {" "}
+                            {/* <img src={backButton} alt="" className="backButton" />{" "} */}
+                            <h2>Choose your Game</h2>
+                        </div>
+                        <div className="extra-menu">
+                            <div className="game-tabs">
+                                <span
+                                    onClick={() => setAllGames(true)}
+                                    className={allGames ? "game-tab-active" : ""}
+                                >
+                                    For All
+                                </span>
+                                <span
+                                    onClick={() => setAllGames(false)}
+                                    className={!allGames ? "game-tab-active" : ""}
+                                >
+                                    BITS Exclusive
+                                </span>
+                            </div>
+                            {allGames ? (
+                                <div className="all-games">
+                                    <div className="games">
+                                        <div onClick={() => handleGameClick("Valorant")}>
+                                            Valorant
+                                        </div>
+                                        <div onClick={() => handleGameClick("BGMI")}>BGMI</div>
+                                        <div onClick={() => handleGameClick("CS-GO")}>CS-GO</div>
+                                        <div onClick={() => handleGameClick("Clash Royale")}>
+                                            Clash Royale
+                                        </div>
+                                    </div>
+                                    <div className="img">
+                                        <img src={ArmaGuns} />
+                                    </div>
+                                </div>
+                            ) : (
+                                <div className="bits-games">
+                                    <div className="games">
+                                        <div onClick={() => handleGameClick("Tekken")}>Tekken</div>
+                                        <div onClick={() => handleGameClick("FIFA")}>FIFA</div>
+                                        <div onClick={() => handleGameClick("Rocket League")}>
+                                            Rocket League
+                                        </div>
+                                    </div>
+                                    <div className="img">
+                                        <img src={ArmaGuns} />
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                ) : (
+                    <div className="arma-player-details arma-container">
+                        <div>
+                            <img
+                                src={backButton}
+                                alt=""
+                                className="backButton"
+                                onClick={() => {
+                                    setArmaStep(1);
+                                    setExtraPlayer(false);
+                                }}
+                            />
+                            <h2>{armaGame.game_name}</h2>
+                        </div>
+                        <div className="game-details-header">
+                            <div>{armaGame.players_req}</div>
+                            <div>Price: {armaGame.price}</div>
+                        </div>
+                        <form
+                            name="arma-form"
+                            onSubmit={(e) => {
+                                e.preventDefault();
+                                handleSubmit(e);
+                            }}
+                        >
+                            <div className="game-details-input">
+                                {armaGame.extra_info.map((el) => (
+                                    <div className="cell">
+                                        <span>{el.name}*</span>
+                                        <input
+                                            type="text"
+                                            id={el.field_name}
+                                            onChange={handleChange}
+                                            name={el.field_name}
+                                            label={el.name}
+                                            sx={{
+                                                width: 300,
+                                                border: "1px solid black",
+                                                color: "black",
+                                                borderRadius: "2px",
+                                            }}
+                                            required
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="players">
+                                {renderPlayers}
+                                {extraPlayer ? (
+                                    <div class="game-player-details">
+                                        <div className="player-details-title">
+                                            <b>Player {armaGame.min_players + 1}</b>
+                                        </div>
+                                        <div className="game-details-input">
+                                            <div className="cell">
+                                                <span>Name*</span>
                                                 <input
                                                     required
                                                     type="text"
-                                                    id={"college" + armaGame.min_players + 1}
+                                                    id={"name" + armaGame.min_players + 1}
                                                     onChange={handlePlayerChange}
-                                                    name="college"
-                                                    label="Type your college"
+                                                    name="name"
+                                                    label="Name"
+                                                    sx={{
+                                                        width: 300,
+                                                        border: "1px solid black",
+                                                        color: "black",
+                                                        borderRadius: "2px",
+                                                    }}
+                                                />
+                                            </div>
+                                            <div className="cell">
+                                                <span>Email*</span>
+                                                <input
+                                                    required
+                                                    type="email"
+                                                    id={"email" + armaGame.min_players + 1}
+                                                    onChange={handlePlayerChange}
+                                                    name="email"
+                                                    label="Type your email"
                                                     sx={{
                                                         width: 300,
                                                         border: "1px solid black",
@@ -911,34 +845,52 @@ export const ArmageddonModal = (props) => {
                                                     }}
                                                 />
                                             </div>
-                                        )}
-                                        <div className="cell">
-                                            <span>Phone*</span>
-                                            <input
-                                                required
-                                                type="text"
-                                                variant="outlined"
-                                                onChange={handlePlayerChange}
-                                                id={"phone" + armaGame.min_players + 1}
-                                                name="phone"
-                                                label="Type your phone number"
-                                                sx={{
-                                                    width: 300,
-                                                    color: "black",
-                                                    border: "1px solid black",
-                                                }}
-                                            />
-                                        </div>
-                                        {armaGame.extra_field ? (
+                                            {armaGame.bits_only ? (
+                                                <div className="cell">
+                                                    <span>BITS ID*</span>
+                                                    <input
+                                                        required
+                                                        type="text"
+                                                        onChange={handlePlayerChange}
+                                                        name="bits_id"
+                                                        pattern="20\d\d[A-Z][A-Z\d][A-Z][A-Z]\d\d\d\dP"
+                                                        label="Type your BITS ID"
+                                                        sx={{
+                                                            width: 300,
+                                                            border: "1px solid black",
+                                                            color: "black",
+                                                        }}
+                                                    />
+                                                </div>
+                                            ) : (
+                                                <div className="cell">
+                                                    <span>College*</span>
+
+                                                    <input
+                                                        required
+                                                        type="text"
+                                                        id={"college" + armaGame.min_players + 1}
+                                                        onChange={handlePlayerChange}
+                                                        name="college"
+                                                        label="Type your college"
+                                                        sx={{
+                                                            width: 300,
+                                                            border: "1px solid black",
+                                                            color: "black",
+                                                        }}
+                                                    />
+                                                </div>
+                                            )}
                                             <div className="cell">
-                                                <span>{armaGame.extra_field}*</span>
+                                                <span>Phone*</span>
                                                 <input
                                                     required
                                                     type="text"
                                                     variant="outlined"
                                                     onChange={handlePlayerChange}
-                                                    name={armaGame.extra_field_name}
-                                                    label={"Type your " + armaGame.extra_field}
+                                                    id={"phone" + armaGame.min_players + 1}
+                                                    name="phone"
+                                                    label="Type your phone number"
                                                     sx={{
                                                         width: 300,
                                                         color: "black",
@@ -946,32 +898,49 @@ export const ArmageddonModal = (props) => {
                                                     }}
                                                 />
                                             </div>
-                                        ) : (
-                                            ""
-                                        )}
+                                            {armaGame.extra_field ? (
+                                                <div className="cell">
+                                                    <span>{armaGame.extra_field}*</span>
+                                                    <input
+                                                        required
+                                                        type="text"
+                                                        variant="outlined"
+                                                        onChange={handlePlayerChange}
+                                                        name={armaGame.extra_field_name}
+                                                        label={"Type your " + armaGame.extra_field}
+                                                        sx={{
+                                                            width: 300,
+                                                            color: "black",
+                                                            border: "1px solid black",
+                                                        }}
+                                                    />
+                                                </div>
+                                            ) : (
+                                                ""
+                                            )}
+                                        </div>
                                     </div>
+                                ) : (
+                                    ""
+                                )}
+                            </div>
+                            {armaGame.min_players > 1 ? (
+                                <div
+                                    className="add-player"
+                                    onClick={() => {
+                                        setExtraPlayer(true);
+                                        console.log("extra");
+                                    }}
+                                    style={{ display: extraPlayer ? "none" : "" }}
+                                >
+                                    + Add Player
                                 </div>
                             ) : (
                                 ""
                             )}
-                        </div>
-                        {armaGame.min_players > 1 ? (
-                            <div
-                                className="add-player"
-                                onClick={() => {
-                                    setExtraPlayer(true);
-                                    console.log("extra");
-                                }}
-                                style={{ display: extraPlayer ? "none" : "" }}
-                            >
-                                + Add Player
-                            </div>
-                        ) : (
-                            ""
-                        )}
 
-                        <div className="arma-cta-container">
-                            {/* <button
+                            <div className="arma-cta-container">
+                                {/* <button
                             className="save-players arma-back"
                             onClick={() => {
                                 setArmaStep(1);
@@ -980,14 +949,14 @@ export const ArmageddonModal = (props) => {
                         >
                             Back
                         </button> */}
-                            <button className="save-players" type="submit">
-                                Save
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            )}
-        </div>
+                                <button className="save-players" type="submit">
+                                    Save
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                )}
+            </div>
         </>
     );
 };
