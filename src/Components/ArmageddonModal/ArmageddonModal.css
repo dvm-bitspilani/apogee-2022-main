@@ -4,9 +4,10 @@
   padding: 2rem;
   background-color: #ffffff;
   border-radius: 10px;
-  
+
 }
-.collegeNames{
+
+/* .collegeNames{
   width: 250px;
   height: 50px;
   border-radius: 6px;
@@ -15,14 +16,16 @@
 .collegeNames
 .css-b62m3t-container{
   width: 40%;
+} */
+.backButton {
+  width: 20px;
+  cursor: pointer;
 }
-.backButton{
-width: 20px;
-cursor: pointer;
-}
-.player-details-title b{
+
+.player-details-title b {
   padding: 10px;
 }
+
 h2 {
   text-align: center;
   font-family: "Forgotten Futurist";
@@ -58,9 +61,11 @@ h2 {
   grid-gap: 20px;
   margin-left: 1rem;
 }
+
 .players .game-details-input {
   margin: initial;
 }
+
 .game-player-details {
   margin-top: 2rem;
 }
@@ -73,16 +78,21 @@ h2 {
   letter-spacing: 1px;
 }
 
-.arma-container .cell > span {
+.arma-container .cell>span {
   font-weight: 700;
 }
 
-.arma-container input{
-    border-radius: 10px;
-    border: 1px solid black;
-    padding: 0.75rem;
-    color: black;
-    width: 50%;
+.arma-container input,
+.arma-container select {
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 0.75rem;
+  color: black;
+  width: 50%;
+}
+
+.arma-container select{
+  width: 275px;
 }
 
 .extra-menu {
@@ -108,29 +118,30 @@ h2 {
   letter-spacing: 0.05em;
 }
 
-.game-tabs{
+.game-tabs {
   border-bottom: 1px solid #000000;
   padding-bottom: 0.5rem;
   width: 70%;
 }
 
-.game-tabs span{
+.game-tabs span {
   padding: 0 1rem 6px 1rem;
   cursor: pointer;
   font-family: 'Montserrat';
 }
 
-.game-tab-active{
+.game-tab-active {
   border-bottom: 3px solid #000000;
 }
 
-.all-games, .bits-games{
+.all-games,
+.bits-games {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.players{
+.players {
 
   border-radius: 15px;
   padding: 0 1rem 1rem;
@@ -152,12 +163,12 @@ h2 {
   margin: 1rem 1.5rem;
 }
 
-.arma-back{
+.arma-back {
   background: white;
   color: black;
 }
 
-.arma-cta-container{
+.arma-cta-container {
   display: flex;
   justify-content: center;
 }
@@ -187,12 +198,12 @@ h2 {
   border: 1px solid black;
 }
 
-.arma-container .MuiSvgIcon-root{
+.arma-container .MuiSvgIcon-root {
   color: black !important;
 }
 
 .players::-webkit-scrollbar {
-  width: 3px; 
+  width: 3px;
   background: transparent;
 }
 
@@ -202,11 +213,11 @@ h2 {
   border-radius: 3px;
 }
 
-.arma-fluid{
-  margin-top:2.5%;
+.arma-fluid {
+  margin-top: 2.5%;
 }
 
-.nav-arma{
+.nav-arma {
   position: relative;
   right: 50px;
 }
@@ -215,33 +226,44 @@ h2 {
   .game-details-input {
     display: flex;
     flex-direction: column;
+    margin-left: 0;
   }
 
-  .extra-menu{
+  .players {
+    padding: 0;
+  }
+
+  .extra-menu {
     width: 100%;
     padding: 1rem;
   }
 
-  .extra-menu .games div{
+  .extra-menu .games div {
     margin: 1rem 0;
   }
 
-  .extra-menu div:first-child{
+  .extra-menu div:first-child {
     width: 100%;
   }
 
-  .game-tabs span{
+  .game-tabs span {
     padding: 0.5rem 0.5rem 6px;
   }
 
-  .extra-menu .img{
+  .extra-menu .img {
     display: none;
   }
 
-  .all-games, .bits-games{
+  .all-games,
+  .bits-games {
     display: flex;
     flex-direction: column;
     height: 100%;
     justify-content: center;
+  }
+
+  .arma-container input,
+  .arma-container select {
+    width: 65%;
   }
 }
