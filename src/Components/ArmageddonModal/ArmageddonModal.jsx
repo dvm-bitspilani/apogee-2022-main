@@ -182,7 +182,7 @@ export const ArmageddonModal = (props) => {
             price: "Rs 250 per team",
             extra_info: [
                 { field_name: "captain_discord", name: "Captains Discord ID" },
-                { field_name: "captain_stream", name: "Captains Stream Profile Link" },
+                { field_name: "captain_stream", name: "Captains Steam Profile Link" },
                 { field_name: "team_name", name: "Team Name" },
             ],
         },

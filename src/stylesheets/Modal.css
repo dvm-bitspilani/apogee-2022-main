@@ -43,7 +43,14 @@ grid-column-gap:110px;
 .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
 color: white !important
 }
-
+.clickHere{
+    margin-left: 20px;
+    display: inline-block;
+    color: white;
+}
+input[type="checkbox"]{
+    margin-left: 10px;
+}
 .css-6od3lo-MuiChip-label{
     color: white;
     border:1px white solid;
