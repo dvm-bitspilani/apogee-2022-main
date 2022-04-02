@@ -201,7 +201,7 @@ window.addEventListener("scroll", () => {
   Array.from(document.querySelectorAll('.rock img')).forEach((meteor) => {
 
     let index = parseInt(meteor.id);
-    let topValue = meteorTop[--index] + 45 - 0.01 * window.scrollY;
+    let topValue = meteorTop[--index] + 25 - 0.005 * window.scrollY;
 
     if (screen.width < 500) topValue += 10;
     else if (screen.width < 650) topValue += 40;
@@ -209,8 +209,9 @@ window.addEventListener("scroll", () => {
     else if (screen.width < 850) topValue += 60;
     else if (screen.width < 950) topValue += 10;
     else if (screen.width < 1050) topValue -= 50;
-    else if (screen.width < 1600) topValue -= 10;
-    else topValue += 20;
+    else topValue += 30;
+
+    if (meteor.getBoundingClientRect().bottom > document.getElementById('Footer').getBoundingClientRect().top) meteor.style.display = 'none';
 
     meteor.style.top = topValue + 'rem';
   })
