@@ -43,7 +43,6 @@ export const ArmageddonModal = (props) => {
 
 
     const handleInputChange = value => {
-        console.log(loadOptions);
         setValue(value);
       };
      
@@ -74,8 +73,7 @@ export const ArmageddonModal = (props) => {
                     }
                     console.log(newArr);
                     return newArr
-                })
-                
+                })   
             })
       };
     // const [registerDisabled, setRegisterDisabled] = React.useState(true);
