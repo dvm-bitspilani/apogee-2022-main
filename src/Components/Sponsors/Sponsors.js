@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import "./styles.css";
 import Arrow from "../../assets/Arrox.svg";
 import LoaderPage from "../../Pages/loaderPage";
-import FIS from "./Assets/fis.png"
-import Autodesk from "./Assets/Logos/AUTODESK logo.png"
+import FIS from "./Assets/Logos/FIS.png"
+import Autodesk from "./Assets/Logos/autodesk.png"
 import Bolt from "./Assets/Logos/Bolt-WhiteBG.jpg"
 import Knots from "./Assets/Logos/KnotsbyAMP - PNG for Website.png"
 // import Talentspire from ""
@@ -19,8 +19,17 @@ import SwitchFix from "./Assets/Logos/Switch Primary Logo (1).png"
 import PepsiCo from "./Assets/Logos/pepsico.jpeg"
 import Gustora from "./Assets/Logos/GustoraLOGO.png"
 import iSchool from "./Assets/Logos/isclogo_color_cmyk_H.png"
+import Cisco from "./Assets/Logos/Cisco_Logo_no_TM_Cisco_Blue-CMYK.png"
+import Talent from "./Assets/Logos/LogoHD.jpg"
+import JusPay from "./Assets/Logos/Frame 4.png"
+import Clientell from "./Assets/Logos/Clientell.jpeg"
+import mindU from "./Assets/Logos/Insta-FB-Logo.png"
+import BombayShaving from "./Assets/Logos/BombayShavin.jpg"
+import { style } from "@mui/system";
 
-
+const styles = {
+  background: "white"
+};
 export const Sponsors = (props) => {
   return (
     <>
@@ -60,7 +69,7 @@ export const Sponsors = (props) => {
             }
           >
             <div className="logoSponsors">
-              <img alt="" />
+              <img src = {Cisco} alt="" />
             </div>
             <div className="name">Cisco</div>
           </div>
@@ -90,10 +99,10 @@ export const Sponsors = (props) => {
               )
             }
           >
-            <div className="logoSponsors">
+            <div style = {styles} className="logoSponsors">
               <img src={Autodesk} alt="" />
             </div>
-            <div className="name">AUTODESK</div>
+            <div className="name"  >AUTODESK</div>
           </div>
         </div>
         <div className="sponsorHeading">
@@ -137,7 +146,7 @@ export const Sponsors = (props) => {
             onClick={() => window.open("https://www.talentspire.com", "_blank")}
           >
             <div className="logoSponsors">
-              <img
+              <img src= {Talent}
                 alt=""
               />
             </div>
@@ -177,7 +186,7 @@ export const Sponsors = (props) => {
             }
           >
             <div className="logoSponsors">
-              <img alt="" />
+              <img src = {BombayShaving} alt="" />
             </div>
             <div className="name">BOMBAY SHAVING COMPANY</div>
           </div>
@@ -241,7 +250,7 @@ export const Sponsors = (props) => {
             onClick={() => window.open("https://www.juspay.in", "_blank")}
           >
             <div className="logoSponsors">
-              <img alt="" />
+              <img src = {JusPay} alt="" />
             </div>
             <div className="name">JUSPAY</div>
           </div>
@@ -304,7 +313,7 @@ export const Sponsors = (props) => {
             }
           >
             <div className="logoSponsors">
-              <img alt="" />
+              <img src = {Clientell} alt="" />
             </div>
             <div className="name">Clientell</div>
           </div>
@@ -313,7 +322,7 @@ export const Sponsors = (props) => {
             onClick={() => window.open("https://www.minduhealth.com", "_blank")}
           >
             <div className="logoSponsors">
-              <img alt="" />
+              <img src = {mindU} alt="" />
             </div>
             <div className="name">Mind U Health</div>
           </div>
