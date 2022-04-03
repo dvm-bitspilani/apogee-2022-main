@@ -74,6 +74,10 @@ input[type="checkbox"]{
 }
 
 @media screen and (max-width:768px) {
+
+    .clickHere{
+      font-size: 14px;
+    }
     .cell span {
         /* width: 100px; */
         font-weight: 800;
@@ -109,6 +113,7 @@ input[type="checkbox"]{
         -ms-flex-align: center;
             align-items: center;
     overflow: hidden;
+    padding-top: 10px;
     }
     .css-cquceo-MuiFormControl-root,.css-1sv5jkp-MuiFormControl-root-MuiTextField-root, .genderContainerInput{
         width: 225px !important;
