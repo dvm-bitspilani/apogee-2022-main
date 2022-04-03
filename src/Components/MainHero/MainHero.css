@@ -280,5 +280,5 @@ html{
 .dimension {
   text-align: center;
   font-size: 18px;
-  background: linear-gradient(to bottom, #000075, #000060);;
+  /* background: linear-gradient(to bottom, #000075, #000060);; */
 }

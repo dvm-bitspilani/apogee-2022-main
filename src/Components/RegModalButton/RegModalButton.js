@@ -51,13 +51,14 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: "90vw",
-  minHeight: "90vh",
+  height: "90vh",
+  overflow: "scroll",
   bgcolor: "rgba(7, 9, 73, 0.09)",
   border: "1px solid rgba(209, 213, 219, 0.3);",
   backdropFilter: "blur(20px)",
   borderRadius: "20px",
-  padding: "50px 100px",
-  transition: 'all 2s ease'
+  padding: "50px 2vw",
+  transition: "all 2s ease",
 
   // boxShadow: 24,
   // p: 5,
@@ -319,7 +320,8 @@ export default function RegModalButton(props) {
                               // setCollegeName(document.getElementById('asynchronous-demo').value);
                               console.log(
                                 "RUN",
-                                document.getElementById("asynchronous-demo").value
+                                document.getElementById("asynchronous-demo")
+                                  .value
                               );
                               const dataCollege = {
                                 letters:
@@ -450,7 +452,11 @@ export default function RegModalButton(props) {
                             </MenuItem>
                           ))}
                         </Select>
-                        <a href="./armageddon" target="_blank" className="arma-special">
+                        <a
+                          href="./armageddon"
+                          target="_blank"
+                          className="arma-special"
+                        >
                           Click here to register for Armageddon
                         </a>
                       </FormControl>
