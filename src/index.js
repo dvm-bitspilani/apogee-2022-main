@@ -12,7 +12,9 @@ import AboutUs from "./Components/AboutUs/AboutUs.jsx";
 import { createBrowserHistory } from "history";
 import "./fonts/BARTKEY.ttf";
 import { Sponsors } from "./Components/Sponsors/Sponsors.js";
+import DeveloperContainer from "./Components/Developers/DeveloperContainer.jsx";
 import ArmageddonRegister from './Pages/armageddon-register'
+import { HealthAndSafetyRounded } from "@mui/icons-material";
 const history = createBrowserHistory();
 
 function handleCities() {
@@ -68,6 +70,7 @@ ReactDOM.render(
       <Route path="/loader" element={<Loader />} />
       <Route path="/aboutus" element={<AboutUs />} />
       <Route path="/staging" element={<Staging />} />
+      <Route path="/developers" element={<DeveloperContainer />} />
       <Route path="/armageddon" element={<ArmageddonRegister />} />
       <Route path="/sponsors/" element={<Sponsors />} />
       {/* <Route path="/Test" element={<Test />} /> */}
