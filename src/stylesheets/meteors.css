@@ -1,108 +1,138 @@
-.rock img{
+.rock img {
     overflow: hidden;
     opacity: 0.8;
-    z-index: 1;
-    }
-    #one img{
-        position: absolute;
-    left: 44.14%;
-    top: 600.26%;
-    transform: scale(0.12);
-    }
-    
-    #two img{
-        position: absolute;
-        left: 8.34%;
-    top: 580.62%;
-    transform: scale(0.1) rotate(138.24deg);
-    }
-    #three img{
-        position: absolute;
-        left: 30.17%;
-        top: 650.52%;    
-        transform: scale(0.2) rotate(228deg)
-    }
-    #four img{
-        position: absolute;
-    right: 16.82%;
-    top: 700.26%;
-    transform: scale(0.15) rotate(228deg)
-    }
-    #five img{
-        position: absolute;
-        right: 42.17%;
-        top: 720.52%;    
-        transform: scale(0.05) rotate(22deg)
-    }
-    #six img{
-        position: absolute;
-        left: 35.17%;
-        top: 740.52%;    
-        transform: scale(0.11) rotate(28deg)
-    }
-    #seven img{
-        position: absolute;
-        right: 43.17%;
-        top: 770.52%;    
-        transform: scale(0.13) rotate(128deg)
-    }
-    #eight img{
-        position: absolute;
-        left: -4.17%;
-        top: 800.52%;    
-        transform: scale(0.07) rotate(178deg)
-    }
-    #nine img{
-        position: absolute;
-        left: 35.17%;
-        top: 750.52%;    
-        transform: scale(0.14) rotate(8deg)
-    }
-    #ten img{
-        position: absolute;
-        left: -5.17%;
-        top: 860.52%;    
-        transform: scale(0.1) rotate(80deg)
-    }
-    #eleven img{
-        position: absolute;
-        right: 28.17%;
-        top: 850.52%;    
-        transform: scale(0.08) rotate(278deg)
-    }
-    #twelve img{
-        position: absolute;
-        left: 26.17%;
-        top: 505.52%;    
-        transform: scale(0.06) rotate(28deg)
-    }
-    #thirteen img{
-        position: absolute;
-        /* left: 26.17%; */
-        left: 35.2%;
-        top: 820.52%;    
-        transform: scale(0.1) rotate(108deg)
-    }
-    #fourteen img{
-        position: absolute;
-        right: 36.17%;
-        /* right: 88.2%; */
-        top: 600.52%;    
-        transform: scale(0.12) rotate(0deg)
-    }
-    #fifteen img{
-        position: absolute;
-        left: 8.2%;
-        top: 670.52%;    
-        transform: scale(0.1) rotate(228deg)
-    }
-    #sixteen img{
-        position: absolute;
-        right: 28.07%;
-        top: 800.52%;    
-        transform: scale(0.12) rotate(28deg)
-    }
+    transition: all 0.2s linear;
+    z-index: 0;
+}
 
-    .meteors *{
-        user-select: none;
-    }
+#one img { 
+    position: absolute;
+    right: 30%;
+    /* top: 585.52%; */
+    top: 210.3rem;
+    transform: scale(0.15) rotate(0deg)
+}
+
+#two img {
+    position: absolute;
+    left: 38%;
+    /* top: 600%; */
+    top: 216.5rem;
+    transform: scale(0.12);
+}
+
+#three img {
+    position: absolute;
+    left: 10%;
+    /* top: 630%; */
+    top: 227.3rem;
+    transform: scale(0.09) rotate(138.24deg);
+}
+
+#four img {
+    position: absolute;
+    left: 24.2%;
+    /* top: 700.52%; */
+    top: 250.8rem;
+    transform: scale(0.11) rotate(228deg)
+}
+
+#five img {
+    position: absolute;
+    right: 35.17%;
+    /* top: 710.52%; */
+    top: 256.4rem;
+    transform: scale(0.05) rotate(22deg)
+}
+
+#six img {
+    position: absolute;
+    left: 35.17%;
+    /* top: 740.52%; */
+    top: 269.2rem;
+    transform: scale(0.07) rotate(28deg)
+}
+
+#seven img {
+    position: absolute;
+    right: 43.17%;
+    /* top: 770.52%; */
+    top: 273rem;
+    transform: scale(0.13) rotate(128deg)
+}
+
+#eight img {
+    position: absolute;
+    left: 25.17%;
+    /* top: 830.52%; */
+    top: 301.7rem;
+    transform: scale(0.07) rotate(178deg)
+}
+
+#nine img {
+    position: absolute;
+    right: 10.92%;
+    /* top: 838.26%; */
+    top: 305.5rem;
+    transform: scale(0.15) rotate(228deg)
+}
+
+#ten img {
+    position: absolute;
+    left: 33.17%;
+    /* top: 940.52%; */
+    top: 339.38rem;
+    transform: scale(0.08) rotate(8deg)
+}
+
+#eleven img {
+    position: absolute;
+    left: -5.17%;
+    /* top: 1000.52%; */
+    top: 365rem;
+    transform: scale(0.1) rotate(80deg)
+}
+
+#twelve img {
+    position: absolute;
+    right: 40%;
+    /* top: 1110.52%; */
+    top: 390.9rem;
+    transform: scale(0.1) rotate(228deg)
+}
+
+#thirteen img {
+    position: absolute;
+    left: 40.17%;
+    /* top: 505.52%;  */
+    top: 400.5rem;
+    transform: scale(0.06) rotate(28deg)
+}
+
+#fourteen img {
+    position: absolute;
+    left: 26.2%;
+    /* top: 1200.52%; */
+    top: 436rem;
+    transform: scale(0.1) rotate(108deg)
+}
+
+#fifteen img {
+    position: absolute;
+    right: 21.47%;
+    /* top: 1240.52%; */
+    top: 443.7rem;
+    transform: scale(0.08) rotate(278deg)
+}
+
+#sixteen img {
+    position: absolute;
+    left: 30.07%;
+    /* top: 1430.52%; */
+    top: 516rem;
+    transform: scale(0.08) rotate(28deg)
+}
+
+.meteors *{
+    user-select: none;
+}

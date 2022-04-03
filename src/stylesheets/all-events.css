@@ -39,6 +39,7 @@
   color: #FBF1F1;
   max-height: 80vh; 
   height: 60vh;
+  transition: all 2s ease;
 }
 
 .kernel-events .card-description-box {

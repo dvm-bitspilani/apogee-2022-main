@@ -43,7 +43,7 @@ const speakers = [{
 function SpeakerSection() {
     React.useEffect(() => {
         AOS.init({
-          duration : 2000
+          duration : 1500
         });
         AOS.refresh();
       }, []);

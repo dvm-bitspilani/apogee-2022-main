@@ -24,11 +24,11 @@
     align-items: center;
     margin: 120px 10px 10px 10px;
     padding: 0px 30px 20px;
-  width:20vw;
+    width: 16vw;
     z-index: 2;
 }
 
-.profileImage > img{
+.profileImage>img {
     height: 150px;
     width: 150px;
     aspect-ratio: 1;
@@ -43,7 +43,7 @@
     font-weight: 900 !important;
     font-size: 22px;
     padding: 20px 10px;
-height: 70px;
+    height: 70px;
 }
 
 .profileContent p {
@@ -56,11 +56,12 @@ height: 70px;
 }
 
 @media all and (max-width: 768px) {
-    .cardWrapper{
-        max-width:80vw ;
-        width:initial
+    .cardWrapper {
+        max-width: 80vw;
+        width: initial
     }
-    .profileContent h1{
+
+    .profileContent h1 {
         height: initial;
     }
 }

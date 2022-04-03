@@ -52,11 +52,13 @@ const style = {
   transform: "translate(-50%, -50%)",
   width: "90vw",
   height: "90vh",
+  overflow: "scroll",
   bgcolor: "rgba(7, 9, 73, 0.09)",
   border: "1px solid rgba(209, 213, 219, 0.3);",
   backdropFilter: "blur(20px)",
   borderRadius: "20px",
-  padding: "50px 100px",
+  padding: "50px 2vw",
+  transition: "all 2s ease",
 
   // boxShadow: 24,
   // p: 5,
@@ -222,237 +224,243 @@ export default function RegModalButton(props) {
         closeAfterTransition
         BackdropComponent={Backdrop}
         BackdropProps={{
-          timeout: 200,
+          timeout: 300,
         }}
       >
-        <Box sx={style}>
-          <div className="modalHeading">
-            REGISTRATION
-            <Box>
-              <IconButton onClick={handleClose}>
-                <CloseIcon color="action" fontSize="large" />
-              </IconButton>
-            </Box>
-          </div>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            <form onSubmit={handleSubmit} id="registerForm">
-              <div className="wrapper">
-                <div className="cell">
-                  <span>Name*</span>
-                  <TextField
-                    type="text"
-                    id="nameVal"
-                    onChange={handleChange}
-                    name="name"
-                    label="Name"
-                    sx={{
-                      width: 300,
-                      border: "1px solid white",
-                      color: "white",
-                      borderRadius: "2px",
-                    }}
-                  />
-                </div>
-                <div className="cell">
-                  <span>Year of Study*</span>
-                  <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    label=" "
-                    name="year"
-                    placeholder="Year of Study"
-                    onChange={handleChange}
-                    sx={{
-                      width: 300,
-                      border: "1px solid white",
-                      color: "white",
-                      borderRadius: "2px",
-                    }}
-                  >
-                    <MenuItem value={1}>1st</MenuItem>
-                    <MenuItem value={2}>2nd</MenuItem>
-                    <MenuItem value={3}>3rd</MenuItem>
-                    <MenuItem value={4}>4th</MenuItem>
-                  </Select>
-                </div>
-                <div className="cell">
-                  <span>College*</span>
-                  <Autocomplete
-                    onChange={(event, value) => {
-                      // console.log(
-                      //   value,
-                      //   "value",
-                      //   document.getElementById("asynchronous-demo").value
-                      // );
-                      setCollegeName(value);
-                      // console.log(collegeName, "collegeName");
-                    }}
-                    id="asynchronous-demo"
-                    sx={{ width: 300 }}
-                    open={openField}
-                    onOpen={() => {
-                      setOpenField(true);
-                    }}
-                    onClose={() => {
-                      setOpenField(false);
-                    }}
-                    isOptionEqualToValue={(option, value) =>
-                      option.name === value.name
-                    }
-                    getOptionLabel={(option) => option.name}
-                    options={optionsField}
-                    loading={loading}
-                    renderInput={(params) => (
-                      <TextField
-                        {...params}
-                        label="Type your College"
-                        onChange={async () => {
-                          // console.log("on Change");
-                          // setCollegeName(document.getElementById('asynchronous-demo').value);
-                          if (
-                            document.getElementById("asynchronous-demo").value
-                              .length >= 3
-                          ) {
-                            console.log("fetch");
+        <Fade in={open}>
+          <Box sx={style}>
+            <div className="modalHeading">
+              REGISTRATION
+              <Box>
+                <IconButton onClick={handleClose}>
+                  <CloseIcon color="action" fontSize="large" />
+                </IconButton>
+              </Box>
+            </div>
+            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+              <form onSubmit={handleSubmit} id="registerForm">
+                <div className="wrapper">
+                  <div className="cell">
+                    <span>Name*</span>
+                    <TextField
+                      type="text"
+                      id="nameVal"
+                      onChange={handleChange}
+                      name="name"
+                      label="Name"
+                      sx={{
+                        width: 300,
+                        border: "1px solid white",
+                        color: "white",
+                        borderRadius: "2px",
+                      }}
+                    />
+                  </div>
+                  <div className="cell">
+                    <span>Year of Study*</span>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      label=" "
+                      name="year"
+                      placeholder="Year of Study"
+                      onChange={handleChange}
+                      sx={{
+                        width: 300,
+                        border: "1px solid white",
+                        color: "white",
+                        borderRadius: "2px",
+                      }}
+                    >
+                      <MenuItem value={1}>1st</MenuItem>
+                      <MenuItem value={2}>2nd</MenuItem>
+                      <MenuItem value={3}>3rd</MenuItem>
+                      <MenuItem value={4}>4th</MenuItem>
+                    </Select>
+                  </div>
+                  <div className="cell">
+                    <span>College*</span>
+                    <Autocomplete
+                      onChange={(event, value) => {
+                        // console.log(
+                        //   value,
+                        //   "value",
+                        //   document.getElementById("asynchronous-demo").value
+                        // );
+                        setCollegeName(value);
+                        // console.log(collegeName, "collegeName");
+                      }}
+                      id="asynchronous-demo"
+                      sx={{ width: 300 }}
+                      open={openField}
+                      onOpen={() => {
+                        setOpenField(true);
+                      }}
+                      onClose={() => {
+                        setOpenField(false);
+                      }}
+                      isOptionEqualToValue={(option, value) =>
+                        option.name === value.name
+                      }
+                      getOptionLabel={(option) => option.name}
+                      options={optionsField}
+                      loading={loading}
+                      renderInput={(params) => (
+                        <TextField
+                          {...params}
+                          label="Type your College"
+                          onChange={async () => {
+                            // console.log("on Change");
                             // setCollegeName(document.getElementById('asynchronous-demo').value);
-                            console.log(
-                              "RUN",
+                            if (
                               document.getElementById("asynchronous-demo").value
-                            );
-                            const dataCollege = {
-                              letters:
+                                .length >= 3
+                            ) {
+                              console.log("fetch");
+                              // setCollegeName(document.getElementById('asynchronous-demo').value);
+                              console.log(
+                                "RUN",
                                 document.getElementById("asynchronous-demo")
-                                  .value,
-                            };
-                            await fetch(
-                              "https://bits-apogee.org/registrations/get_college_by_char/",
-                              {
-                                headers: {
-                                  "content-type": "application/json",
-                                },
-                                method: "POST",
-                                mode: "cors",
-                                body: JSON.stringify(dataCollege),
-                              }
-                            )
-                              .then(function (response) {
-                                return response.json();
-                              })
-                              .then(function (result) {
-                                // setColleges(result.data);
-                                collegeList = result.data;
-                                // console.log(collegeList);
-                              });
-                          }
+                                  .value
+                              );
+                              const dataCollege = {
+                                letters:
+                                  document.getElementById("asynchronous-demo")
+                                    .value,
+                              };
+                              await fetch(
+                                "https://bits-apogee.org/registrations/get_college_by_char/",
+                                {
+                                  headers: {
+                                    "content-type": "application/json",
+                                  },
+                                  method: "POST",
+                                  mode: "cors",
+                                  body: JSON.stringify(dataCollege),
+                                }
+                              )
+                                .then(function (response) {
+                                  return response.json();
+                                })
+                                .then(function (result) {
+                                  // setColleges(result.data);
+                                  collegeList = result.data;
+                                  // console.log(collegeList);
+                                });
+                            }
 
-                          setOptionsField([...collegeList]);
-                        }}
-                        InputProps={{
-                          ...params.InputProps,
-                          endAdornment: (
-                            <React.Fragment>
-                              {loading ? (
-                                <CircularProgress color="inherit" size={20} />
-                              ) : null}
-                              {params.InputProps.endAdornment}
-                            </React.Fragment>
-                          ),
-                        }}
-                      />
-                    )}
-                  />
-                </div>
-                <div className="cell">
-                  <span>City*</span>
-                  <TextField
-                    type="text"
-                    onChange={handleChange}
-                    name="city"
-                    label="Type your City"
-                    sx={{
-                      width: 300,
-                      border: "1px solid white",
-                      color: "white",
-                    }}
-                  />
-                </div>
-                <div className="cell">
-                  <span>Email*</span>
-                  <TextField
-                    type="email"
-                    onChange={handleChange}
-                    name="email_id"
-                    label="Type your email"
-                    sx={{
-                      width: 300,
-                      border: "1px solid white",
-                      color: "white",
-                    }}
-                  />
-                </div>
-                <div className="cell">
-                  <span>Events*</span>
-                  <div>
-                    <FormControl sx={{ m: 0, width: 300 }}>
-                      <InputLabel id="demo-multiple-chip-label">
-                        You can select more than one events
-                      </InputLabel>
-                      <Select
-                        labelId="demo-multiple-chip-label"
-                        id="eventsArr"
-                        multiple
-                        value={eventName}
-                        onChange={handleChangeEvents}
-                        input={
-                          <OutlinedInput
-                            id="select-multiple-events"
-                            label="You can select more than one events"
-                          />
-                        }
-                        renderValue={(selected) => (
-                          <Box
-                            sx={{
-                              display: "flex",
-                              flexWrap: "wrap",
-                              gap: 0.5,
-                            }}
-                          >
-                            {selected.map((value) => (
-                              <Chip key={value} label={value} />
-                            ))}
-                          </Box>
-                        )}
-                        MenuProps={MenuProps}
-                      >
-                        {finalNames.map((name) => (
-                          <MenuItem
-                            key={name}
-                            value={name}
-                            style={getStyles(name, eventName, theme)}
-                          >
-                            {/* {name} */}
-                            {name == ("Armageddon" || "ARMAGEDDON") ? (
-                              <Link
-                                style={{
-                                  textDecoration: "none",
-                                  color: "unset",
-                                  fontFamily: "Arial",
-                                }}
-                                to="/armageddon"
-                              >
-                                {name}
-                              </Link>
-                            ) : (
-                              name
-                            )}
-                          </MenuItem>
-                        ))}
-                      </Select>
-                      <a href="./armageddon" target="_blank" className="arma-special">
-                        Click here to register for Armageddon
-                      </a>
-                    </FormControl>
-                    {/* <div className="extraMenu">
+                            setOptionsField([...collegeList]);
+                          }}
+                          InputProps={{
+                            ...params.InputProps,
+                            endAdornment: (
+                              <React.Fragment>
+                                {loading ? (
+                                  <CircularProgress color="inherit" size={20} />
+                                ) : null}
+                                {params.InputProps.endAdornment}
+                              </React.Fragment>
+                            ),
+                          }}
+                        />
+                      )}
+                    />
+                  </div>
+                  <div className="cell">
+                    <span>City*</span>
+                    <TextField
+                      type="text"
+                      onChange={handleChange}
+                      name="city"
+                      label="Type your City"
+                      sx={{
+                        width: 300,
+                        border: "1px solid white",
+                        color: "white",
+                      }}
+                    />
+                  </div>
+                  <div className="cell">
+                    <span>Email*</span>
+                    <TextField
+                      type="email"
+                      onChange={handleChange}
+                      name="email_id"
+                      label="Type your email"
+                      sx={{
+                        width: 300,
+                        border: "1px solid white",
+                        color: "white",
+                      }}
+                    />
+                  </div>
+                  <div className="cell">
+                    <span>Events*</span>
+                    <div>
+                      <FormControl sx={{ m: 0, width: 300 }}>
+                        <InputLabel id="demo-multiple-chip-label">
+                          You can select more than one events
+                        </InputLabel>
+                        <Select
+                          labelId="demo-multiple-chip-label"
+                          id="eventsArr"
+                          multiple
+                          value={eventName}
+                          onChange={handleChangeEvents}
+                          input={
+                            <OutlinedInput
+                              id="select-multiple-events"
+                              label="You can select more than one events"
+                            />
+                          }
+                          renderValue={(selected) => (
+                            <Box
+                              sx={{
+                                display: "flex",
+                                flexWrap: "wrap",
+                                gap: 0.5,
+                              }}
+                            >
+                              {selected.map((value) => (
+                                <Chip key={value} label={value} />
+                              ))}
+                            </Box>
+                          )}
+                          MenuProps={MenuProps}
+                        >
+                          {finalNames.map((name) => (
+                            <MenuItem
+                              key={name}
+                              value={name}
+                              style={getStyles(name, eventName, theme)}
+                            >
+                              {/* {name} */}
+                              {name == ("Armageddon" || "ARMAGEDDON") ? (
+                                <Link
+                                  style={{
+                                    textDecoration: "none",
+                                    color: "unset",
+                                    fontFamily: "Arial",
+                                  }}
+                                  to="/armageddon"
+                                >
+                                  {name}
+                                </Link>
+                              ) : (
+                                name
+                              )}
+                            </MenuItem>
+                          ))}
+                        </Select>
+                        <a
+                          href="./armageddon"
+                          target="_blank"
+                          className="arma-special"
+                        >
+                          Click here to register for Armageddon
+                        </a>
+                      </FormControl>
+                      {/* <div className="extraMenu">
                       <div>Valorant</div>
                       <div>BGMI</div>
                       <div>CS-GO</div>
@@ -462,106 +470,107 @@ export default function RegModalButton(props) {
                       <div>FIFA</div>
                       <div>Rocket League</div>
                     </div> */}
+                    </div>
+                  </div>
+
+                  <div className="cell">
+                    <span>Phone*</span>
+                    <TextField
+                      type="text"
+                      variant="outlined"
+                      onChange={handleChange}
+                      name="phone"
+                      label="Type your phone number"
+                      sx={{
+                        width: 300,
+                        color: "white",
+                        border: "1px solid white",
+                      }}
+                    />
+                  </div>
+
+                  <div className="genderContainer">
+                    <span>Gender*</span>
+                    <div className="genderContainerInput">
+                      <input
+                        type="radio"
+                        onChange={handleChange}
+                        name="gender"
+                        value="Male"
+                      />
+                      <label>Male</label>
+                      <input
+                        type="radio"
+                        onChange={handleChange}
+                        name="gender"
+                        value="Female"
+                      />
+                      <label>Female</label>
+                      <input
+                        type="radio"
+                        onChange={handleChange}
+                        name="gender"
+                        value="Other"
+                      />
+                      <label>Other</label>
+                    </div>
+                  </div>
+                  <div className="cell">
+                    <span>Referral Code</span>
+                    <TextField
+                      type="text"
+                      onChange={handleChange}
+                      name="referral"
+                      label="Type your Referral Code"
+                      sx={{
+                        width: 300,
+                        border: "1px solid white",
+                        color: "white",
+                        borderRadius: "2px",
+                      }}
+                    />
+                  </div>
+                  <div className="cell">
+                    <span>Commitments</span>
+                    <TextField
+                      type="text"
+                      variant="outlined"
+                      onChange={handleChange}
+                      name="commitments"
+                      label="Type your Tech-teams/Clubs"
+                      sx={{
+                        width: 300,
+                        color: "white",
+                        border: "1px solid white",
+                      }}
+                    />
                   </div>
                 </div>
 
-                <div className="cell">
-                  <span>Phone*</span>
-                  <TextField
-                    type="text"
-                    variant="outlined"
-                    onChange={handleChange}
-                    name="phone"
-                    label="Type your phone number"
-                    sx={{
-                      width: 300,
-                      color: "white",
-                      border: "1px solid white",
-                    }}
-                  />
+                <input
+                  type="checkbox"
+                  className="chechkbox-newsletter"
+                  label="Click here to subscribe to latest updates"
+                />
+                <div className="clickHere">
+                  Click here to subscribe to latest updates
                 </div>
-
-                <div className="genderContainer">
-                  <span>Gender*</span>
-                  <div className="genderContainerInput">
-                    <input
-                      type="radio"
-                      onChange={handleChange}
-                      name="gender"
-                      value="Male"
-                    />
-                    <label>Male</label>
-                    <input
-                      type="radio"
-                      onChange={handleChange}
-                      name="gender"
-                      value="Female"
-                    />
-                    <label>Female</label>
-                    <input
-                      type="radio"
-                      onChange={handleChange}
-                      name="gender"
-                      value="Other"
-                    />
-                    <label>Other</label>
+                <div id="submitBtn">
+                  <div className="registerBtnBorder">
+                    <button id="submitButton" type="submit">
+                      <input
+                        type="submit"
+                        value="REGISTER"
+                        id="submit-form"
+                        data-bs-dismiss="modal"
+                      />
+                    </button>
                   </div>
                 </div>
-                <div className="cell">
-                  <span>Referral Code</span>
-                  <TextField
-                    type="text"
-                    onChange={handleChange}
-                    name="referral"
-                    label="Type your Referral Code"
-                    sx={{
-                      width: 300,
-                      border: "1px solid white",
-                      color: "white",
-                      borderRadius: "2px",
-                    }}
-                  />
-                </div>
-                <div className="cell">
-                  <span>Commitments</span>
-                  <TextField
-                    type="text"
-                    variant="outlined"
-                    onChange={handleChange}
-                    name="commitments"
-                    label="Type your Tech-teams/Clubs"
-                    sx={{
-                      width: 300,
-                      color: "white",
-                      border: "1px solid white",
-                    }}
-                  />
-                </div>
-              </div>
-
-              <input
-                type="checkbox"
-                className="chechkbox-newsletter"
-                label="Click here to subscribe to latest updates"
-              />
-              <div className="clickHere">
-                Click here to subscribe to latest updates
-              </div>
-              <div id="submitBtn">
-                <div className="registerBtnBorder">
-                  <button id="submitButton" type="submit">
-                    <input
-                      type="submit"
-                      value="REGISTER"
-                      id="submit-form"
-                      data-bs-dismiss="modal"
-                    />
-                  </button>
-                </div>
-              </div>
-            </form>
-          </Typography>
-        </Box>
+              </form>
+            </Typography>
+          </Box>
+        </Fade>
       </Modal>
     </div>
   );
