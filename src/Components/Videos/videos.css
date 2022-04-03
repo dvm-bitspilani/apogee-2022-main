@@ -77,6 +77,10 @@
   margin-bottom: 60px;
 }
 
+.videoWrapper span{
+  opacity: 0.99;
+}
+
 @media screen and (max-width: 768px) {
   .mainVideoWrapper {
     margin-bottom: 0px;
