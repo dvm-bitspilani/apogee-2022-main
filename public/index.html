@@ -297,6 +297,9 @@
         else topValue += 20;
 
         meteor.style.top = topValue + "rem";
+                
+        if (meteor.offsetTop < document.querySelector(".AboutUsWrapper").offsetTop) meteor.style.zIndex = 100000001;
+        else meteor.style.zIndex = 0;
       });
     });
   </script>
