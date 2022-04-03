@@ -231,8 +231,13 @@ function NavBar() {
                 <a className="links" href="/sponsors/">
                   <div>Sponsors</div>
                 </a>
+              
                 <a className="links" href="/events/">
                   <div>All Events</div>
+                </a>
+                
+                <a className="links" href="/developers/">
+                  <div>Developers</div>
                 </a>
               </div>
               {isAicClicked && window.screen.width > 768 && (
