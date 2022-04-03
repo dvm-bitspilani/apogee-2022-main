@@ -74,6 +74,10 @@ input[type="checkbox"]{
 }
 
 @media screen and (max-width:768px) {
+
+    .clickHere{
+      font-size: 14px;
+    }
     .cell span {
         /* width: 100px; */
         font-weight: 800;
