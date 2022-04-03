@@ -5,23 +5,23 @@ import "./DeveloperContainer.css";
 export default function DeveloperContainer(props) {
   const devs = {
     frontend: [
-      { name: "Alvin", img: "alvin.jpeg" },
-      { name: "Rutva", img: "rutva.jpeg" },
-      { name: "Saksham", img: "saksham.jpeg" },
-      { name: "Sarthak", img: "sarthak.jpeg" },
+      { name: "Alvin Adarsh", img: "alvin.jpeg" },
+      { name: "Rutva L", img: "rutva.jpeg" },
+      { name: "Saksham Aggarwal", img: "saksham.jpeg" },
+      { name: "Sarthak Arora", img: "sarthak.jpeg" },
     ],
     design: [
-      { name: "Akshun", img: "akshun.jpeg" },
-      { name: "Madhav", img: "madhav.jpeg" },
-      { name: "Rohit", img: "rohit.jpeg" },
-      { name: "Satvik", img: "satvik.jpeg" },
+      { name: "Akshun Jain", img: "akshun.jpeg" },
+      { name: "Madhav Garg", img: "madhav.jpeg" },
+      { name: "Rohit Raj", img: "rohit.jpeg" },
+      { name: "Satvik Jain", img: "satvik.jpeg" },
     ],
     backend: [
-      { name: "Aditya", img: "aditya.jpeg" },
-      { name: "Akshat", img: "akshat.jpeg" },
-      { name: "Dhruv", img: "dhruv.jpeg" },
-      { name: "Mohit", img: "mohit.jpeg" },
-      { name: "Harsh", img: "harsh.jpeg" },
+      { name: "Aditya Thakur", img: "aditya.jpeg" },
+      { name: "Akshat Kumar", img: "akshat.jpeg" },
+      { name: "Dhruv Popuri", img: "dhruv.jpeg" },
+      { name: "Mohit Makwana", img: "mohit.jpeg" },
+      { name: "Harsh Rathi", img: "harsh.jpeg" },
     ],
   };
 

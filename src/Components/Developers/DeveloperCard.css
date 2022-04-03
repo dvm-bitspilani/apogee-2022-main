@@ -8,6 +8,7 @@
   grid-auto-rows: 1fr;
   --height: 200px;
   --width: 200px;
+  margin-bottom: 16px;
 }
 
 .dev-backend {
@@ -47,6 +48,7 @@
   display: flex;
   align-items: center;
   justify-items: center;
+  margin-bottom: 4px;
 }
 
 .dev-img {
@@ -82,8 +84,10 @@
 
 .dev-name {
   font-family: "Gilroy", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 900;
   color: white;
+  opacity: 0.8;
 }
 
 @media (max-width: 700px) {
@@ -95,4 +99,5 @@
 .dev-team-circ {
   height: calc(1.05 * var(--height));
   width: calc(1.05 * var(--width));
+  opacity: 0.7;
 }
