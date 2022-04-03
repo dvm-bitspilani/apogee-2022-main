@@ -55,6 +55,7 @@
   box-sizing: border-box;
   height: calc(0.73 * var(--height));
   width: calc(0.73 * var(--width));
+  object-fit: cover;
   padding: 0;
   border-radius: 50%;
   position: absolute;

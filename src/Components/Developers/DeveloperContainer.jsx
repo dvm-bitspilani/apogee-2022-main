@@ -7,7 +7,7 @@ export default function DeveloperContainer(props) {
     frontend: [
       { name: "Alvin Adarsh", img: "alvin.jpeg" },
       { name: "Rutva L", img: "rutva.jpeg" },
-      { name: "Saksham Aggarwal", img: "saksham.jpeg" },
+      { name: "Saksham Aggarwal", img: "saksham.png" },
       { name: "Sarthak Arora", img: "sarthak.jpeg" },
     ],
     design: [
