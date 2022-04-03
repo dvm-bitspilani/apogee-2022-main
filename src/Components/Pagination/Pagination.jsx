@@ -9,23 +9,33 @@ function Pagination() {
   // }
   var isInViewport = function (elem) {
     var bounding = elem.getBoundingClientRect();
-    return bounding.top<=0 && (bounding.bottom <= document.documentElement.clientHeight && (bounding.bottom>=0))
-        // bounding.top >= 0 &&
-        // bounding.left >= 0 &&
-        // bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        // bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
-    ;
-};
+    return (
+      bounding.top <= 0 &&
+      bounding.bottom <= document.documentElement.clientHeight &&
+      bounding.bottom >= 0
+      // bounding.top >= 0 &&
+      // bounding.left >= 0 &&
+      // bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      // bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  };
 
-  const landing = useRef()
-  const about = useRef()
-  const videos = useRef()
-  const kernelEvents = useRef()
-  const speakers = useRef()
-  const contact = useRef()
+  const landing = useRef();
+  const about = useRef();
+  const videos = useRef();
+  const kernelEvents = useRef();
+  const speakers = useRef();
+  const contact = useRef();
 
   useEffect(() => {
-    const Sections = ['heroSection','aboutUs','Videos','kernelEvents','Speakers','ContactUs'];
+    const Sections = [
+      "heroSection",
+      "aboutUs",
+      "Videos",
+      "kernelEvents",
+      "Speakers",
+      "ContactUs",
+    ];
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       anchor.addEventListener("click", function (e) {
         e.preventDefault();
@@ -33,25 +43,29 @@ function Pagination() {
         document.querySelector(this.getAttribute("href")).scrollIntoView({
           behavior: "smooth",
         });
-        for (let i = 0; i < (document.getElementsByClassName("dots").length); i++) {
+        for (
+          let i = 0;
+          i < document.getElementsByClassName("dots").length;
+          i++
+        ) {
           document.getElementsByClassName("dots")[i].classList.remove("active");
         }
         this.classList.add("active");
-
       });
     });
 
-
     document.getElementById("hero-link").addEventListener("click", () => {
-      document.querySelector("body").style.overflowY = "hidden"
-      document.documentElement.style.overflowY = "scroll"
-    })
+      document.querySelector("body").style.overflowY = "hidden";
+      document.documentElement.style.overflowY = "scroll";
+    });
 
     for (let i = 0; i < 6; i++) {
-      document.getElementsByClassName("dots")[i].addEventListener("click", () => {
-        document.querySelector("body").style.overflowY = "scroll"
-        document.documentElement.style.overflowY = "scroll"
-      })
+      document
+        .getElementsByClassName("dots")
+        [i].addEventListener("click", () => {
+          document.querySelector("body").style.overflowY = "scroll";
+          document.documentElement.style.overflowY = "scroll";
+        });
     }
     // window.onscroll = () => {
     //   // console.log(isInViewport(document.querySelector("#aboutus")));
@@ -82,12 +96,36 @@ function Pagination() {
   return (
     <div id="pagination">
       <div id="line">
-        <a className="dots" href="#heroSection" ref={landing} id="hero-link"><span className="PageHeader" id="PageHeader1">HOME</span></a>
-        <a className="dots" href="#aboutus" ref={about}><span className="PageHeader" id="PageHeader2">ABOUT US</span></a>
-        <a className="dots" href="#Videos" ref={videos}><span className="PageHeader" id="PageHeader3">VIDEO</span></a>
-        <a className="dots" href="#kernelEvents" ref={kernelEvents}><span className="PageHeader" id="PageHeader4">KERNEL EVENTS</span></a>
-        <a className="dots" href="#Speakers" ref={speakers}><span className="PageHeader" id="PageHeader5">SPEAKERS</span></a>
-        <a className="dots" href="#ContactUs" ref={contact}><span className="PageHeader" id="PageHeader6">CONTACT US</span></a>
+        <a className="dots" href="#heroSection" ref={landing} id="hero-link">
+          <span className="PageHeader" id="PageHeader1">
+            HOME
+          </span>
+        </a>
+        <a className="dots" href="#aboutus" ref={about}>
+          <span className="PageHeader" id="PageHeader2">
+            ABOUT US
+          </span>
+        </a>
+        <a className="dots" href="#Videos" ref={videos}>
+          <span className="PageHeader" id="PageHeader3">
+            VIDEO
+          </span>
+        </a>
+        <a className="dots" href="#Speakers" ref={speakers}>
+          <span className="PageHeader" id="PageHeader5">
+            SPEAKERS
+          </span>
+        </a>
+        <a className="dots" href="#kernelEvents" ref={kernelEvents}>
+          <span className="PageHeader" id="PageHeader4">
+            KERNEL EVENTS
+          </span>
+        </a>
+        <a className="dots" href="#ContactUs" ref={contact}>
+          <span className="PageHeader" id="PageHeader6">
+            CONTACT US
+          </span>
+        </a>
       </div>
     </div>
   );
