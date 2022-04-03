@@ -1,0 +1,98 @@
+.dev-container {
+  width: max-content;
+  padding: 10px;
+  background-color: none;
+  display: grid;
+  grid-template-rows: 1fr min-content;
+  justify-items: center;
+  grid-auto-rows: 1fr;
+  --height: 200px;
+  --width: 200px;
+}
+
+.dev-backend {
+  flex-basis: 33%;
+}
+
+@media (max-width: 1000px) {
+  .dev-container {
+    --height: 175px;
+    --width: 175px;
+    flex-basis: 50%;
+  }
+
+  .dev-backend {
+    flex-basis: 50%;
+  }
+}
+
+@media (max-width: 700px) {
+  .dev-container {
+    --height: 125px;
+    --width: 125px;
+    flex-basis: 50%;
+  }
+
+  .dev-backend {
+    flex-basis: 50%;
+  }
+}
+
+.dev-img-cont {
+  box-sizing: border-box;
+  height: var(--height);
+  position: relative;
+  width: auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+.dev-img {
+  box-sizing: border-box;
+  height: calc(0.73 * var(--height));
+  width: calc(0.73 * var(--width));
+  padding: 0;
+  border-radius: 50%;
+  position: absolute;
+  margin: auto;
+}
+
+.dev-backend .dev-img{
+  top: -1px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.dev-frontend .dev-img{
+  top: 8px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.dev-design .dev-img{
+  top: 10px;
+  bottom: 0;
+  left: -6px;
+  right: 0;
+}
+
+.dev-name {
+  font-family: "Gilroy", sans-serif;
+  font-size: 1.5rem;
+  color: white;
+}
+
+@media (max-width: 700px) {
+  .dev-name {
+    font-size: 0.85rem;
+  }
+}
+
+.dev-team-circ {
+  height: calc(1.05 * var(--height));
+  width: calc(1.05 * var(--width));
+}

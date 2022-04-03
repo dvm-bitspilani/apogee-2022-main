@@ -1,0 +1,76 @@
+.devs-wrapper {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-image: url("../../assets/laptop/Stars_Red_Meteors.png");
+  background-size: 110%;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 700px) {
+  .devs-wrapper {
+    background-image: url("../../assets/laptop/Stars_Red_Meteors_90deg.png");
+  }
+}
+
+.devs-cont {
+  width: 90vw;
+  height: 90vh;
+  background-color: rgba(7, 9, 73, 0.09);
+  border: 1px solid rgba(209, 213, 219, 0.3);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  padding: 50px 100px;
+}
+
+@media (max-width: 700px) {
+  .devs-cont {
+    padding: 25px 15px;
+  }
+}
+
+.devs-teams-cont {
+  height: 95%;
+  overflow-y: scroll;
+}
+
+.devs-head {
+  display: grid;
+  z-index: 3;
+  font-family: "BARTKEY";
+  font-size: 3rem;
+  color: white;
+  grid-template-columns: min-content 1fr;
+  align-items: center;
+  justify-items: center;
+  padding: 0 10px;
+  margin-bottom: 15px;
+}
+
+.devs-back {
+  height: 35px;
+  fill: white;
+  stroke: white;
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .devs-head {
+    font-size: 2rem;
+  }
+
+  .devs-back {
+    height: 25px;
+  }
+}
+
+.devs-team {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
