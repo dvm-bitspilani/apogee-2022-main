@@ -43,7 +43,7 @@
     color: white;
     width: 320px;
     /* height: 250px; */
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     border-radius: 20px;
     padding: 20px;
     background: rgba(7, 9, 73, 0.09);

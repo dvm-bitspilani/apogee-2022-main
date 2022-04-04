@@ -201,18 +201,18 @@ img {
   cursor: pointer;
 }
 
-/* ::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 0; 
   background: transparent;
-} */
+}
 
-::-webkit-scrollbar {
+.all-events-wrapper::-webkit-scrollbar {
   width: 9px;
   background: black;
 }
 
-::-webkit-scrollbar-thumb {
-  /* width: 5px; */
+.all-events-wrapper::-webkit-scrollbar-thumb {
+  width: 5px;
   background-color: #5a5a5a;
   border-radius: 18px;
 }
