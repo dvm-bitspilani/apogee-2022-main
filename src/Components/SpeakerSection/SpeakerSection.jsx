@@ -36,6 +36,13 @@ const speakers = [{
     details: "He is an American Astronomer and a Consultant to NASA. He was a Member of the first Pluto Mission Team, New Horizons. He is the Discoverer of Pluto's smallest moon, Styx, in 2012.Asteroid 193736 named Henrythroop in his honour.",
     profileImage: "henry"
 
+},  {
+    id: 5,
+    name: "Deepa Malik",
+    bio: "Indian Athlete",
+    details: "She is an Indian Athlete and the First Indian Woman to Win a Medal in Paralympic Games. She received Padma Shri and Arjuna Awards. She is the  President of the Paralympic Committee of India.",
+    profileImage: "henry"
+
 }]
 
 
@@ -47,7 +54,7 @@ function SpeakerSection() {
         });
         AOS.refresh();
       }, []);
-    const carouselHeight = (window.screen.width < 768) ? 140 : 40
+    const carouselHeight = (window.screen.width < 700) ? ((window.screen.width < 380)? 170 :140) : 40
 
     return (
         <div className="SpeakerWrapper">
@@ -59,7 +66,7 @@ function SpeakerSection() {
                 <CarouselProvider
                     naturalSlideWidth={100}
                     naturalSlideHeight={carouselHeight}
-                    totalSlides={4}
+                    totalSlides={5}
                     isPlaying={true}
                 >
                     <Slider>
