@@ -201,9 +201,20 @@ img {
   cursor: pointer;
 }
 
+/* ::-webkit-scrollbar {
+  width: 0; 
+  background: transparent;
+} */
+
 ::-webkit-scrollbar {
-  width: 0; /* Remove scrollbar space */
-  background: transparent; /* Optional: just make scrollbar invisible */
+  width: 9px;
+  background: black;
+}
+
+::-webkit-scrollbar-thumb {
+  /* width: 5px; */
+  background-color: #5a5a5a;
+  border-radius: 18px;
 }
 
 @media screen and (max-width: 768px) {
