@@ -290,13 +290,15 @@
     Array.from(document.querySelectorAll(".rock img")).forEach((meteor) => {
       let index = parseInt(meteor.id);
       let topValue;
-      if (screen.width < 768) {
-        topValue = meteorTop[--index] - 20 - 0.01 * window.scrollY;
+
+      if (screen.width < 768) topValue = meteorTop[--index] - 20 - 0.01 * window.scrollY;
+      else topValue = meteorTop[--index] + 55 - 0.01 * window.scrollY;
+      
+      if (meteor.offsetTop < document.querySelector(".AboutUsWrapper").offsetTop) {
+        meteor.style.zIndex = "-1";
+        meteor.style.transition = "all 2s linear";
       }
-      else {
-        topValue = meteorTop[--index] + 55 - 0.01 * window.scrollY;
-      }
-      console.log(topValue);
+
       if (screen.width < 500) topValue += 10;
       else if (screen.width < 650) topValue += 40;
       else if (screen.width < 750) topValue += 80;
@@ -307,9 +309,6 @@
       else topValue += 20;
 
       meteor.style.top = topValue + "rem";
-
-      // if (meteor.offsetTop < document.querySelector(".AboutUsWrapper").offsetTop) meteor.style.zIndex = 100000001;
-      // else meteor.style.zIndex = 0;
     });
   });
 </script>
