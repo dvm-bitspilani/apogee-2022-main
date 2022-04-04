@@ -9,8 +9,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 import "animate.css";
+import { PinDropSharp } from "@mui/icons-material";
 
-function NavBar() {
+function NavBar(props) {
   let hamburger = useRef();
   let isMenuOpen = false;
   const [isShown, setIsShown] = useState(false);
@@ -73,11 +74,11 @@ function NavBar() {
   return (
     <div className="navbarWrapper">
       <nav>
-        <div className="logo">
+        {props.type == "arma" && window.screen.width < 768 ? "" : <div className="logo">
           <img src={require("../../assets/Apogee Logo.png")} alt="" />
-        </div>
+        </div>}
 
-        <RegModalButton />
+        <RegModalButton type={props.type} />
 
         <div className="hamburger" onClick={handleClick} ref={hamburger}>
           <div class="line-menu half start"></div>
@@ -116,7 +117,7 @@ function NavBar() {
                 className="all-links"
                 ref={allLinks}
               >
-                <a className="links" onClick={handleLinkClick} href="#">
+                <a className="links" onClick={handleLinkClick} href="/">
                   <div>Home</div>
                 </a>
                 <a
@@ -231,8 +232,13 @@ function NavBar() {
                 <a className="links" href="/sponsors/">
                   <div>Sponsors</div>
                 </a>
+
                 <a className="links" href="/events/">
                   <div>All Events</div>
+                </a>
+
+                <a className="links" href="/developers/">
+                  <div>Developers</div>
                 </a>
               </div>
               {isAicClicked && window.screen.width > 768 && (
