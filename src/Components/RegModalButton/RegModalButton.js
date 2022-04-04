@@ -209,11 +209,11 @@ export default function RegModalButton(props) {
   return (
     <div className="ModalBox">
       <div className="registerBtnWrapper">
-        <div className="registerBtnBorder register-lp" id="registerTop">
+        {props.type == "arma" ? "" : <div className="registerBtnBorder register-lp" id="registerTop">
           <button className="registerBtn" onClick={handleOpen}>
             REGISTER
           </button>
-        </div>
+        </div>}
       </div>
 
       <Modal
