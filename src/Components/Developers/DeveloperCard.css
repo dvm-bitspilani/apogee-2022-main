@@ -55,6 +55,7 @@
   box-sizing: border-box;
   height: calc(0.73 * var(--height));
   width: calc(0.73 * var(--width));
+  object-fit: cover;
   padding: 0;
   border-radius: 50%;
   position: absolute;
@@ -62,7 +63,7 @@
 }
 
 .dev-backend .dev-img{
-  top: -1px;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
@@ -76,10 +77,11 @@
 }
 
 .dev-design .dev-img{
-  top: 10px;
+  top: 10.5px;
   bottom: 0;
-  left: -6px;
+  left: -4px;
   right: 0;
+  z-index: 1;
 }
 
 .dev-name {
@@ -100,4 +102,5 @@
   height: calc(1.05 * var(--height));
   width: calc(1.05 * var(--width));
   opacity: 0.7;
+  z-index: 2;
 }
