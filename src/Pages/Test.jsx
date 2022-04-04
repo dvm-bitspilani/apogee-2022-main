@@ -29,9 +29,6 @@ function Test() {
     window.scrollTo(0, 0)
   }
 
-  const styleMeteor = {
-    zIndex:"1001"
-  }
 
   return (
     <div className="testWrapper">
@@ -52,19 +49,19 @@ function Test() {
         </div>
         <div className="meteors">
           <div className="rock" id='one' >
-            <img id="1" src={rocks} alt="" style={styleMeteor}/>
+            <img id="1" src={rocks} alt="" />
           </div>
           <div className="rock" id="two">
-            <img id="2" src={rocks} alt="" style={styleMeteor}/>
+            <img id="2" src={rocks} alt="" />
           </div>
           <div className="rock" id="three">
-            <img id="3" src={rocks} alt="" style={styleMeteor}/>
+            <img id="3" src={rocks} alt="" />
           </div>
           <div className="rock" id="four">
-            <img id="4" src={rocks} alt="" style={styleMeteor}/>
+            <img id="4" src={rocks} alt="" />
           </div>
           <div className="rock" id='five' >
-            <img id="5" src={rocks} alt="" style={styleMeteor} />
+            <img id="5" src={rocks} alt=""  />
           </div>
           <div className="rock" id="six">
             <img id="6" src={rocks} alt="" />
