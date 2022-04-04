@@ -1,7 +1,6 @@
 .dev-container {
   width: max-content;
   padding: 10px;
-  background-color: none;
   display: grid;
   grid-template-rows: 1fr min-content;
   justify-items: center;
@@ -62,21 +61,21 @@
   margin: auto;
 }
 
-.dev-backend .dev-img{
+.dev-backend .dev-img {
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
 }
 
-.dev-frontend .dev-img{
+.dev-frontend .dev-img {
   top: 8px;
   bottom: 0;
   left: 0;
   right: 0;
 }
 
-.dev-design .dev-img{
+.dev-design .dev-img {
   top: 10.5px;
   bottom: 0;
   left: -4px;

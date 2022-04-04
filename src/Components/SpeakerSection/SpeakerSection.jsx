@@ -41,8 +41,7 @@ const speakers = [{
     name: "Deepa Malik",
     bio: "Indian Athlete",
     details: "She is an Indian Athlete and the First Indian Woman to Win a Medal in Paralympic Games. She received Padma Shri and Arjuna Awards. She is the  President of the Paralympic Committee of India.",
-    profileImage: "henry"
-
+    profileImage: "deepa"
 }]
 
 
