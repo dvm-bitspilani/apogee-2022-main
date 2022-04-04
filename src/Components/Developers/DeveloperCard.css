@@ -63,7 +63,7 @@
 }
 
 .dev-backend .dev-img{
-  top: -1px;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
@@ -77,9 +77,9 @@
 }
 
 .dev-design .dev-img{
-  top: 7px;
+  top: 10.5px;
   bottom: 0;
-  left: -3px;
+  left: -4px;
   right: 0;
   z-index: 1;
 }
