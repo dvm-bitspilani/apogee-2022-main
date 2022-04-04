@@ -1,5 +1,6 @@
 import React from "react";
 // import Loader from '../Loader/loader'
+import Loader from "../Loader/loader.jsx"
 import DeveloperCard from "./DeveloperCard";
 import "./DeveloperContainer.css";
 
@@ -28,9 +29,9 @@ export default function DeveloperContainer(props) {
 
   return (
     <div className="devs-wrapper">
-      {/* <div className="loaderDivEvents">
+      <div className="loaderDiv">
         <Loader />
-      </div> */}
+      </div>
       <div className="devs-cont">
         <div className="devs-head">
           <a href="/" className="devs-back">
