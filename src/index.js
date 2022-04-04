@@ -70,7 +70,7 @@ ReactDOM.render(
       <Route path="/loader" element={<Loader />} />
       <Route path="/aboutus" element={<AboutUs />} />
       <Route path="/staging" element={<Staging />} />
-      <Route path="/developers" element={<DeveloperContainer />} />
+      <Route path="/developers/" element={<DeveloperContainer />} />
       <Route path="/armageddon" element={<ArmageddonRegister />} />
       <Route path="/sponsors/" element={<Sponsors />} />
       {/* <Route path="/Test" element={<Test />} /> */}

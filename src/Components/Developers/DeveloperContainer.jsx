@@ -1,4 +1,5 @@
 import React from "react";
+import Loader from '../Loader/loader'
 import DeveloperCard from "./DeveloperCard";
 import "./DeveloperContainer.css";
 
@@ -27,9 +28,12 @@ export default function DeveloperContainer(props) {
 
   return (
     <div className="devs-wrapper">
+      <div className="loaderDivEvents">
+        <Loader />
+      </div>
       <div className="devs-cont">
         <div className="devs-head">
-        <a href="/"> <svg
+          <a href="/"> <svg
             version="1.1"
             id="Capa_1"
             x="0px"
@@ -45,7 +49,7 @@ export default function DeveloperContainer(props) {
               />
             </g>
           </svg>
-          </a> 
+          </a>
           DEVELOPERS
         </div>
         <div className="devs-teams-cont">
