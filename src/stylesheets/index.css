@@ -40,8 +40,8 @@ code {
 }
 
 .modalHeading {
-  font-family: "BARTKEY";
-  font-size: 50px;
+  font-family: "Pirulen";
+  font-size: 2.5rem;
   color: white;
   margin-bottom: 40px;
   display: -webkit-box;
@@ -416,7 +416,7 @@ span {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    font-size: 36px;
+    font-size: 1.5rem;
     margin-left: 20px;
   }
 
