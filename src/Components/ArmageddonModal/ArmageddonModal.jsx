@@ -111,7 +111,7 @@ export const ArmageddonModal = (props) => {
 
     const index = parseInt(e.target.id.slice(-1));
     console.log(index);
-
+   if(!playersInfo[index]["college"]) playersInfo[index]["college"]="A&A Business Consulting"
     playersInfo[index][name] = value;
     // if(armaGame.bits_only && name == 'bits_id') playersInfo[index]['bits_id'] = value;
     setPlayersInfo(playersInfo);
@@ -554,7 +554,7 @@ export const ArmageddonModal = (props) => {
                           type="email"
                           id={"email" + armaGame.min_players + 1}
                           onChange={handlePlayerChange}
-                          name="email"
+                          name="email_id"
                           label="Type your email"
                           sx={{
                             width: 300,
@@ -583,8 +583,17 @@ export const ArmageddonModal = (props) => {
                       ) : (
                         <div className="cell">
                           <span>College*</span>
-
-                          <input
+                          <select
+                name="college"
+                id={"college" + armaGame.min_players + 1 }
+                className="collegeNames"
+                onChange={handlePlayerChange}
+              >
+                {colleges.map((e) => (
+                  <option>{e.label}</option>
+                ))}
+              </select>
+                          {/* <input
                             required
                             type="text"
                             id={"college" + armaGame.min_players + 1}
@@ -596,7 +605,7 @@ export const ArmageddonModal = (props) => {
                               border: "1px solid black",
                               color: "black",
                             }}
-                          />
+                          /> */}
                         </div>
                       )}
                       <div className="cell">
