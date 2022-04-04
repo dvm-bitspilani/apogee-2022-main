@@ -41,8 +41,8 @@
 .devs-head {
   display: grid;
   z-index: 3;
-  font-family: "BARTKEY";
-  font-size: 3rem;
+  font-family: "Pirulen";
+  font-size: 2rem;
   color: white;
   grid-template-columns: min-content 1fr;
   align-items: center;
@@ -52,7 +52,11 @@
 }
 
 .devs-back {
-  height: 35px;
+  align-self: center;
+}
+
+.devs-back svg {
+  height: 25px;
   fill: white;
   stroke: white;
   cursor: pointer;
@@ -60,10 +64,14 @@
 
 @media (max-width: 700px) {
   .devs-head {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .devs-back {
+    height: 25px;
+  }
+
+  .devs-back svg {
     height: 25px;
   }
 }
