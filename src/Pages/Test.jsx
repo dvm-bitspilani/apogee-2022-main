@@ -61,7 +61,7 @@ function Test() {
             <img id="4" src={rocks} alt="" />
           </div>
           <div className="rock" id='five' >
-            <img id="5" src={rocks} alt="" />
+            <img id="5" src={rocks} alt=""  />
           </div>
           <div className="rock" id="six">
             <img id="6" src={rocks} alt="" />
