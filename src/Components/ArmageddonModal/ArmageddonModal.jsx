@@ -382,7 +382,7 @@ export const ArmageddonModal = (props) => {
             </div>
           )}
           <div className="cell">
-            <span>Phone*</span>
+            <span>10-digit Phone*</span>
             <input
               required
               type="tel"
@@ -614,7 +614,7 @@ export const ArmageddonModal = (props) => {
                         </div>
                       )}
                       <div className="cell">
-                        <span>Phone*</span>
+                        <span>10-digit Phone*</span>
                         <input
                           required
                           type="text"
