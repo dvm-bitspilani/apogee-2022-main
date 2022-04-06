@@ -41,11 +41,13 @@ function MainHero() {
 
     }
 
+    const yes = (window.screen.width * 3995) / 2086
+
     const handleScrollClick = () => {
         if (window.screen.width < 768) {
             scrollTo(1800);
         }
-        else scrollTo(2900);
+        else scrollTo(yes);
         document.body.style.overflowY = "scroll";
         document.querySelector("html").style.overflowY = "scroll"
         // setTimeout(() => {
