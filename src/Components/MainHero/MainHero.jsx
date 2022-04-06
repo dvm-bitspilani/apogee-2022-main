@@ -41,7 +41,7 @@ function MainHero() {
 
     }
 
-    const yes = (window.screen.width * 4095) / 2086
+    const yes = (window.screen.width * 4100) / 2086
 
     const handleScrollClick = () => {
         if (window.screen.width < 768) {
