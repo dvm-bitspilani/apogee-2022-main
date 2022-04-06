@@ -2,7 +2,7 @@
 import React from "react"
 import { useEffect, useRef } from "react"
 // import * as Scroll from 'react-scroll';
-import {animateScroll as scroll, scroller } from 'react-scroll'
+import { animateScroll as scroll, scroller } from 'react-scroll'
 import Arrow from "./MainHeroAssets/down-arrow.svg"
 // Assets
 import CityLayer1Laptop from "./MainHeroAssets/city/City Layer 1.svg";
@@ -57,15 +57,15 @@ function MainHero() {
     const Layer1 = useRef();
 
     useEffect(() => {
-       if(window.pageYOffset===0) document.querySelector("html").style.overflowY = "hidden"
+        if (window.pageYOffset === 0) document.querySelector("html").style.overflowY = "hidden"
         document.querySelector("#hero-link").classList.add("active")
         // document.documentElement.style.overflowY = "hidden"
         document.getElementsByClassName("clickAndScroll")[0].addEventListener("click", () => {
             document.querySelector("body").style.overflowY = "scroll !important"
             document.querySelector("#hero-link").classList.remove("active")
         })
-        
-        
+
+
         window.onscroll = function (e) {
             document.getElementById('pagination').style.visibility = 'visible';
             // console.log(window.scrollY)
@@ -79,8 +79,8 @@ function MainHero() {
             }
             else {
                 if ((window.pageYOffset > 3300 && window.pageYOffset < 3600) && window.screen.width > 768) {
-                document.getElementsByClassName("dots")[0].classList.add("active");
-                // document.documentElement.overflowY = "hidden"
+                    document.getElementsByClassName("dots")[0].classList.add("active");
+                    // document.documentElement.overflowY = "hidden"
                     scroll.scrollToTop({ ignoreCancelEvents: true, smooth: "linear", duration: 1000 });
                     document.body.style.overflowY = "hidden"
                     document.querySelector("html").style.overflowY = "hidden"
@@ -105,13 +105,13 @@ function MainHero() {
             // {
             //     var docViewTop = $(window).scrollTop();
             //     var docViewBottom = docViewTop + $(window).height();
-            
+
             //     var elemTop = $(elem).offset().top;
             //     var elemBottom = elemTop + $(elem).height();
-            
+
             //     return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
             // }
-           
+
         }
 
         Layer1.current.style.transform = "bottom: 0";
@@ -170,9 +170,11 @@ function MainHero() {
 
                 <div className="floor">
                     <div className="horizon-glow-buildings"></div>
-                <div className="horizon-glow"></div>
-                <div className="glow"></div>
-                {/* <img className="floorGlow" src={floor} alt="" /> */}
+                    <div className="horizon-glow"></div>
+                    <div className="glow"></div>
+                    <div className="red-glow-buildings"></div>
+                    <div className="red-glow"></div>
+                    {/* <img className="floorGlow" src={floor} alt="" /> */}
                     <img alt="" id="bigFloorLaptop" src={bigFloor} />
                     <img id="bigFloorMobile" src={bigFloorMobile} />
                     {/* <img className="floorGlow" src={floorGlow} alt="" /> */}
