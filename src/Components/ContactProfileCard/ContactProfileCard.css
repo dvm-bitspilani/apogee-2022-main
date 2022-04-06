@@ -30,6 +30,7 @@
 }
 
 .profileImage>img {
+    opacity: 0.99;
     height: 150px;
     width: 150px;
     aspect-ratio: 1;
@@ -41,6 +42,7 @@
 }
 
 .profileContent h1 {
+    opacity: 0.99;
     font-weight: 900 !important;
     font-size: 22px;
     padding: 20px 10px;
@@ -48,6 +50,7 @@
 }
 
 .profileContent p {
+    opacity: 0.99;
     color: #FFFFFF;
     font-size: 14px;
     opacity: 0.8;
