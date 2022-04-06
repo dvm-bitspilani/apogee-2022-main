@@ -9,7 +9,7 @@ h1, h2, h3 {
 }
 
 /* BACKGROUND CSS (GRID + NOISE) */
-#root {
+.root-wallmag {
     background-color: rgb(19, 18, 18);
     color: white;
     font-family: "Pirulen";
@@ -140,7 +140,7 @@ h1, h2, h3 {
 
 
 @media only screen and (max-width: 800px) {
-    #root {
+    .root-wallmag {
         background-image: url("../../assets/laptop/Stars_Red_Meteors_90deg.png");
         background-size: 110%;
     }

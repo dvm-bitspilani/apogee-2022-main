@@ -497,7 +497,8 @@ export const ArmageddonModal = (props) => {
             </div>
             <div className="game-details-header">
               <div>{armaGame.players_req}</div>
-              <div>Price: {armaGame.price}</div>
+                <div>Price: {armaGame.price}</div>
+                <div>*If Captain (Player 1) is a BITSian: whole amount will be deducted from their SWD account</div>
             </div>
             <form
               name="arma-form"

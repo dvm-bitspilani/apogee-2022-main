@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.7ce0981a.css",
-    "main.js": "/static/js/main.187c61b5.js",
+    "main.css": "/static/css/main.0e0e16b1.css",
+    "main.js": "/static/js/main.7a605322.js",
     "static/media/6degreesindia.png": "/static/media/6degreesindia.a8f20f39531b74133482.png",
     "static/media/pepsico.jpeg": "/static/media/pepsico.b52907682772b1d16a91.jpeg",
     "static/media/finalGrid.svg": "/static/media/finalGrid.6edba974b03820d496cefa8da7b8a107.svg",
@@ -103,14 +103,15 @@
     "static/media/favicon1.ico": "/static/media/favicon1.ac1e640f4ca49a3f59fa.ico",
     "static/media/backButton.svg": "/static/media/backButton.7c30c134d58ba7a7bc9847bd07eb27a0.svg",
     "static/media/mainFloor.svg": "/static/media/mainFloor.ce6fbd2a07d7b1fa5568.svg",
+    "static/media/quote.svg": "/static/media/quote.269a7c493312005f15bb491ad9f8d4ff.svg",
     "static/media/down-arrow.svg": "/static/media/down-arrow.128a7967045cf7a17057ef0eebe089aa.svg",
     "static/media/Sky.svg": "/static/media/Sky.28104c1183800dbf6251.svg",
     "static/media/Arrox.svg": "/static/media/Arrox.70a44802d149617ada3a003a94a24525.svg",
-    "main.7ce0981a.css.map": "/static/css/main.7ce0981a.css.map",
-    "main.187c61b5.js.map": "/static/js/main.187c61b5.js.map"
+    "main.0e0e16b1.css.map": "/static/css/main.0e0e16b1.css.map",
+    "main.7a605322.js.map": "/static/js/main.7a605322.js.map"
   },
   "entrypoints": [
-    "static/css/main.7ce0981a.css",
-    "static/js/main.187c61b5.js"
+    "static/css/main.0e0e16b1.css",
+    "static/js/main.7a605322.js"
   ]
 }

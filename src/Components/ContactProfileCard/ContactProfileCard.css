@@ -67,8 +67,8 @@
 
 @media all and (max-width: 768px) {
     .cardWrapper {
-        max-width: 80vw;
-        width: initial
+        width: 70vw;
+        height: initial;
     }
 
     .profileContent h1 {

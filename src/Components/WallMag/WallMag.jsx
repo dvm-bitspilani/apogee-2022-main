@@ -6,7 +6,7 @@ export default function MyComponent() {
   const articles = require("./articles.json");
 
   return (
-    <div>
+    <div className="root-wallmag">
       <div className="hpc-heading">
         <h1>WallMag Apogee 2022</h1>
       </div>
