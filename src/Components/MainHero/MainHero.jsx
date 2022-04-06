@@ -41,13 +41,15 @@ function MainHero() {
 
     }
 
-    const yes = (window.screen.width * 4100) / 2086
+    const laptop_scroll = (window.screen.width * 4100) / 2086
+    const mobile_scroll = (window.screen.width * 1720) / 428
+
 
     const handleScrollClick = () => {
         if (window.screen.width < 768) {
-            scrollTo(1800);
+            scrollTo(mobile_scroll);
         }
-        else scrollTo(yes);
+        else scrollTo(laptop_scroll);
         document.body.style.overflowY = "scroll";
         document.querySelector("html").style.overflowY = "scroll"
         // setTimeout(() => {
