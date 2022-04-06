@@ -111,8 +111,11 @@ export const ArmageddonModal = (props) => {
 
     const index = parseInt(e.target.id.slice(-1));
     console.log(index);
-   if(!playersInfo[index]["college"]) playersInfo[index]["college"]="A&A Business Consulting"
+    if (!playersInfo[index]["college"]) playersInfo[index]["college"] = "A&A Business Consulting"
     playersInfo[index][name] = value;
+    if (playersInfo[index]["whatsapp_no"]) playersInfo[index]["whatsapp_no"] = playersInfo[index]["whatsapp_no"].substring(0, 10)
+    if (playersInfo[index]["bits_id"]) playersInfo[index]["bits_id"] = playersInfo[index]["bits_id"].substring(0,13)
+    
     // if(armaGame.bits_only && name == 'bits_id') playersInfo[index]['bits_id'] = value;
     setPlayersInfo(playersInfo);
 
@@ -155,7 +158,8 @@ export const ArmageddonModal = (props) => {
         .then(function (result) {
           console.log(result);
           if (localStorage.getItem("status") == 200) alert(result.message);
-          if (
+          // if (localStorage.getItem("status") == 200) alert(result.message+ " The email verification and payment gateway has been sent to captain's email id");    
+         else if (
             localStorage.getItem("status") == 412 ||
             localStorage.getItem("status") == 400
           ) {
@@ -165,6 +169,7 @@ export const ArmageddonModal = (props) => {
               alert(result.detail);
             }
           }
+          else alert("There was an error")
         });
     } else
       await fetch("https://bits-apogee.org/arma/register_team/", {
@@ -178,10 +183,8 @@ export const ArmageddonModal = (props) => {
           return response.json();
         })
         .then(function (result) {
-          console.log(result);
-          // alert(result.message)
           if (localStorage.getItem("status") == 200) alert(result.message);
-          if (
+           else if (
             localStorage.getItem("status") == 412 ||
             localStorage.getItem("status") == 400
           ) {
@@ -190,6 +193,9 @@ export const ArmageddonModal = (props) => {
             } else if (result.detail) {
               alert(result.detail);
             }
+          }
+          else {
+            alert("There was an error, try in some time")
           }
         });
   };
@@ -377,7 +383,7 @@ export const ArmageddonModal = (props) => {
             </div>
           )}
           <div className="cell">
-            <span>Phone*</span>
+            <span>10-digit Phone*</span>
             <input
               required
               type="tel"
@@ -440,7 +446,7 @@ export const ArmageddonModal = (props) => {
                   onClick={() => setAllGames(false)}
                   className={!allGames ? "game-tab-active" : ""}
                 >
-                  BITS Exclusive
+                  BITS Pilani Campus Exclusive
                 </span>
               </div>
               {allGames ? (
@@ -609,7 +615,7 @@ export const ArmageddonModal = (props) => {
                         </div>
                       )}
                       <div className="cell">
-                        <span>Phone*</span>
+                        <span>10-digit Phone*</span>
                         <input
                           required
                           type="text"

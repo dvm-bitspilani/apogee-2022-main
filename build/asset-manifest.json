@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.ac8f8c40.css",
-    "main.js": "/static/js/main.9085ecc3.js",
+    "main.css": "/static/css/main.fcee3d05.css",
+    "main.js": "/static/js/main.d0b7e3cc.js",
     "static/media/6degreesindia.png": "/static/media/6degreesindia.a8f20f39531b74133482.png",
     "static/media/pepsico.jpeg": "/static/media/pepsico.b52907682772b1d16a91.jpeg",
     "static/media/finalGrid.svg": "/static/media/finalGrid.6edba974b03820d496cefa8da7b8a107.svg",
@@ -11,7 +11,9 @@
     "static/media/loader.mp4": "/static/media/loader.18b3485c8c769895efe1.mp4",
     "static/media/loader.gif": "/static/media/loader.a3608d1e5e2ad9cdc670.gif",
     "static/media/madhav.jpeg": "/static/media/madhav.2f3a686b07c445e96754.jpeg",
+    "static/media/saksham.png": "/static/media/saksham.7170895adb901fde860d.png",
     "static/media/Sign.svg": "/static/media/Sign.6a757790e5ef41df27e719c863b5ecbb.svg",
+    "static/media/deepa.png": "/static/media/deepa.bc90040a6f970fb479d7.png",
     "static/media/latestloader.gif": "/static/media/latestloader.a0fbb23667db0b670291.gif",
     "static/media/LogoHD.jpg": "/static/media/LogoHD.9907afd6b21f0df9c661.jpg",
     "static/media/Vector.svg": "/static/media/Vector.cad74b36b8bf1c48b77a915466f700f6.svg",
@@ -28,7 +30,6 @@
     "static/media/City 5.svg": "/static/media/City 5.e90652453c20328a710daebc7ad0809c.svg",
     "static/media/City Layer 5.svg": "/static/media/City Layer 5.8537ac532c9227efb6f290a2f95b4109.svg",
     "static/media/Stars_Red_Meteors.png": "/static/media/Stars_Red_Meteors.273904c97ffda88cb4c3.png",
-    "static/media/saksham.jpeg": "/static/media/saksham.d30745a9fb21ed0a5d31.jpeg",
     "static/media/jeffrey.png": "/static/media/jeffrey.c7fc7e02f394fd005121.png",
     "static/media/Forgotten Futurist.ttf": "/static/media/Forgotten Futurist.29621b5561979ea59afa.ttf",
     "static/media/forgotten futurist rg.ttf": "/static/media/forgotten futurist rg.29621b5561979ea59afa.ttf",
@@ -105,11 +106,11 @@
     "static/media/down-arrow.svg": "/static/media/down-arrow.128a7967045cf7a17057ef0eebe089aa.svg",
     "static/media/Sky.svg": "/static/media/Sky.28104c1183800dbf6251.svg",
     "static/media/Arrox.svg": "/static/media/Arrox.70a44802d149617ada3a003a94a24525.svg",
-    "main.ac8f8c40.css.map": "/static/css/main.ac8f8c40.css.map",
-    "main.9085ecc3.js.map": "/static/js/main.9085ecc3.js.map"
+    "main.fcee3d05.css.map": "/static/css/main.fcee3d05.css.map",
+    "main.d0b7e3cc.js.map": "/static/js/main.d0b7e3cc.js.map"
   },
   "entrypoints": [
-    "static/css/main.ac8f8c40.css",
-    "static/js/main.9085ecc3.js"
+    "static/css/main.fcee3d05.css",
+    "static/js/main.d0b7e3cc.js"
   ]
 }

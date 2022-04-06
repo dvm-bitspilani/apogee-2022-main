@@ -385,6 +385,12 @@ span {
 }
 
 @media screen and (max-width: 768px) {
+
+  .links div,
+#aic div {
+  color: white;
+}
+
   .registerBtnWrapper {
     position: absolute;
     left: 1.5rem;
