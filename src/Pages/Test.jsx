@@ -35,6 +35,7 @@ function Test() {
       <div className="loaderDiv">
         <Loader />
       </div>
+      <div className="screen-fade"></div>
       <NavBar />
       <Pagination />
       <MainHero className="landing-section" />

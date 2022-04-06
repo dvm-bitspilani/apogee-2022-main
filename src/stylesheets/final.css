@@ -54,6 +54,19 @@
   align-items: center;
   min-height: 100vh;
 }
+
+.screen-fade{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 15;
+  background: #000000;
+  opacity: 0.7;
+  transition: all 2s ease;
+}
+
 @media screen and (max-width: 768px) {
   .events-container {
     top: 4vh;
