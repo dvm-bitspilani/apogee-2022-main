@@ -188,4 +188,9 @@ h1, h2, h3 {
         padding: 10px;
         margin: 0;
     }
+
+    .c-button{
+        border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    }
 }
