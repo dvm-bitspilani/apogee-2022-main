@@ -39,7 +39,7 @@ function Test() {
       <Pagination />
       <MainHero className="landing-section" />
       <SocialsHero />
-      <CountdownSlate />
+      {/* <CountdownSlate /> */}
       <div className="mainWrapper">
         <div className="section" id="aboutus">
           <AboutUs/>

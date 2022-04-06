@@ -442,12 +442,12 @@ export const ArmageddonModal = (props) => {
                 >
                   For All
                 </span>
-                <span
+                {/* <span
                   onClick={() => setAllGames(false)}
                   className={!allGames ? "game-tab-active" : ""}
                 >
                   BITS Pilani Campus Exclusive
-                </span>
+                </span> */}
               </div>
               {allGames ? (
                 <div className="all-games">
