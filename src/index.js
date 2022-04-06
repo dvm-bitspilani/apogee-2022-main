@@ -12,8 +12,9 @@ import AboutUs from "./Components/AboutUs/AboutUs.jsx";
 import { createBrowserHistory } from "history";
 import "./fonts/BARTKEY.ttf";
 import { Sponsors } from "./Components/Sponsors/Sponsors.js";
+import WallMag from "./Components/WallMag/WallMag";
 import DeveloperContainer from "./Components/Developers/DeveloperContainer.jsx";
-import ArmageddonRegister from './Pages/armageddon-register'
+import ArmageddonRegister from "./Pages/armageddon-register";
 import { HealthAndSafetyRounded } from "@mui/icons-material";
 const history = createBrowserHistory();
 
@@ -42,8 +43,7 @@ function handleCities() {
 }
 
 ReactDOM.render(
-
-  <BrowserRouter basename='/' history={history}>
+  <BrowserRouter basename="/" history={history}>
     {/* <HashRouter> */}
     <Routes>
       <Route path="/" element={<Test />} />
@@ -70,7 +70,8 @@ ReactDOM.render(
       <Route path="/loader" element={<Loader />} />
       <Route path="/aboutus" element={<AboutUs />} />
       <Route path="/staging" element={<Staging />} />
-      <Route path="/developers/" element={<DeveloperContainer />} />
+      <Route path="/developers" element={<DeveloperContainer />} />
+      <Route path="/wallmag" element={<WallMag />} />
       <Route path="/armageddon" element={<ArmageddonRegister />} />
       <Route path="/sponsors/" element={<Sponsors />} />
       {/* <Route path="/Test" element={<Test />} /> */}
