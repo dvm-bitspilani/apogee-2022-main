@@ -158,6 +158,7 @@ export const ArmageddonModal = (props) => {
         .then(function (result) {
           console.log(result);
           if (localStorage.getItem("status") == 200) alert(result.message);
+          // if (localStorage.getItem("status") == 200) alert(result.message+ " The email verification and payment gateway has been sent to captain's email id");    
          else if (
             localStorage.getItem("status") == 412 ||
             localStorage.getItem("status") == 400
@@ -445,7 +446,7 @@ export const ArmageddonModal = (props) => {
                   onClick={() => setAllGames(false)}
                   className={!allGames ? "game-tab-active" : ""}
                 >
-                  BITS Exclusive
+                  BITS Pilani Campus Exclusive
                 </span>
               </div>
               {allGames ? (
