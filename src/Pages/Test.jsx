@@ -35,11 +35,12 @@ function Test() {
       <div className="loaderDiv">
         <Loader />
       </div>
+      <div className="screen-fade"></div>
       <NavBar />
       <Pagination />
       <MainHero className="landing-section" />
       <SocialsHero />
-      <CountdownSlate />
+      {/* <CountdownSlate /> */}
       <div className="mainWrapper">
         <div className="section" id="aboutus">
           <AboutUs/>

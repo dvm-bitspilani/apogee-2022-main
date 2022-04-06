@@ -51,7 +51,7 @@ export const ArmageddonModal = (props) => {
   const [optionsField, setOptionsField] = useState([]);
   const [extraPlayer, setExtraPlayer] = useState(false);
   const [inputValue, setValue] = useState("");
-    const [selectedValue, setSelectedValue] = useState(null);
+  const [selectedValue, setSelectedValue] = useState(null);
 
   const loading = openField && optionsField.length === 0;
 
@@ -109,13 +109,12 @@ export const ArmageddonModal = (props) => {
     const { name, value } = e.target;
     console.log(name, value);
 
-    const index = parseInt(e.target.id.slice(-1));
-    console.log(index);
+    let index = parseInt(e.target.id.slice(-1));
     if (!playersInfo[index]["college"]) playersInfo[index]["college"] = "A&A Business Consulting"
     playersInfo[index][name] = value;
     if (playersInfo[index]["whatsapp_no"]) playersInfo[index]["whatsapp_no"] = playersInfo[index]["whatsapp_no"].substring(0, 10)
-    if (playersInfo[index]["bits_id"]) playersInfo[index]["bits_id"] = playersInfo[index]["bits_id"].substring(0,13)
-    
+    if (playersInfo[index]["bits_id"]) playersInfo[index]["bits_id"] = playersInfo[index]["bits_id"].substring(0, 13)
+
     // if(armaGame.bits_only && name == 'bits_id') playersInfo[index]['bits_id'] = value;
     setPlayersInfo(playersInfo);
 
@@ -159,7 +158,7 @@ export const ArmageddonModal = (props) => {
           console.log(result);
           if (localStorage.getItem("status") == 200) alert(result.message);
           // if (localStorage.getItem("status") == 200) alert(result.message+ " The email verification and payment gateway has been sent to captain's email id");    
-         else if (
+          else if (
             localStorage.getItem("status") == 412 ||
             localStorage.getItem("status") == 400
           ) {
@@ -184,7 +183,7 @@ export const ArmageddonModal = (props) => {
         })
         .then(function (result) {
           if (localStorage.getItem("status") == 200) alert(result.message);
-           else if (
+          else if (
             localStorage.getItem("status") == 412 ||
             localStorage.getItem("status") == 400
           ) {
@@ -442,23 +441,23 @@ export const ArmageddonModal = (props) => {
                 >
                   For All
                 </span>
-                <span
+                {/* <span
                   onClick={() => setAllGames(false)}
                   className={!allGames ? "game-tab-active" : ""}
                 >
                   BITS Pilani Campus Exclusive
-                </span>
+                </span> */}
               </div>
               {allGames ? (
                 <div className="all-games">
                   <div className="games">
                     <div onClick={() => handleGameClick("Valorant")}>
-                      Valorant
+                      <span>Valorant</span>
                     </div>
-                    <div onClick={() => handleGameClick("BGMI")}>BGMI</div>
-                    <div onClick={() => handleGameClick("CS-GO")}>CS-GO</div>
+                    <div onClick={() => handleGameClick("BGMI")}><span>BGMI</span></div>
+                    <div onClick={() => handleGameClick("CS-GO")}><span>CS-GO</span></div>
                     <div onClick={() => handleGameClick("Clash Royale")}>
-                      Clash Royale
+                      <span>Clash Royale</span>
                     </div>
                   </div>
                   <div className="img">
@@ -541,7 +540,7 @@ export const ArmageddonModal = (props) => {
                         <input
                           required
                           type="text"
-                          id={"name" + armaGame.min_players + 1}
+                          id={"name" + armaGame.min_players}
                           onChange={handlePlayerChange}
                           name="name"
                           label="Name"
@@ -558,7 +557,7 @@ export const ArmageddonModal = (props) => {
                         <input
                           required
                           type="email"
-                          id={"email" + armaGame.min_players + 1}
+                          id={"email" + armaGame.min_players}
                           onChange={handlePlayerChange}
                           name="email_id"
                           label="Type your email"
@@ -590,15 +589,15 @@ export const ArmageddonModal = (props) => {
                         <div className="cell">
                           <span>College*</span>
                           <select
-                name="college"
-                id={"college" + armaGame.min_players + 1 }
-                className="collegeNames"
-                onChange={handlePlayerChange}
-              >
-                {colleges.map((e) => (
-                  <option>{e.label}</option>
-                ))}
-              </select>
+                            name="college"
+                            id={"college" + armaGame.min_players}
+                            className="collegeNames"
+                            onChange={handlePlayerChange}
+                          >
+                            {colleges.map((e) => (
+                              <option>{e.label}</option>
+                            ))}
+                          </select>
                           {/* <input
                             required
                             type="text"
@@ -621,8 +620,8 @@ export const ArmageddonModal = (props) => {
                           type="text"
                           variant="outlined"
                           onChange={handlePlayerChange}
-                          id={"phone" + armaGame.min_players + 1}
-                          name="phone"
+                          id={"phone" + armaGame.min_players}
+                          name="whatsapp_no"
                           label="Type your phone number"
                           sx={{
                             width: 300,
