@@ -6,10 +6,12 @@
   border-radius: 10px;
 
 }
-.mainWrapperArma{
+
+.mainWrapperArma {
   display: flex;
   flex-direction: column;
 }
+
 /* .collegeNames{
   width: 250px;
   height: 50px;
@@ -51,12 +53,26 @@ h2 {
   font-size: 1.25rem;
   font-weight: 700;
 }
- .games div:hover{
-   transform: translateY(-2px) scale(1.02);
-   font-weight: 800 !important;
-   transition: all 0.2s linear;
-   
- }
+
+.games div:hover {
+  /* transform: translateY(-2px) scale(1.02); */
+  font-weight: 800 !important;
+  transition: all 0.2s linear;
+}
+
+.games span{
+  background-image: linear-gradient(transparent calc(93%),black 1px);
+  background-size: 0;
+  background-repeat: no-repeat;
+  display: inline;
+  transition: 0.5s ease;
+  padding: 0;
+}
+
+.games div:hover span{
+  background-size: 100%;
+}
+
 .add-player {
   font-size: 1rem;
   font-weight: 400;
@@ -99,7 +115,7 @@ h2 {
   width: 275px;
 }
 
-.arma-container select{
+.arma-container select {
   width: 275px;
 }
 
@@ -231,17 +247,20 @@ h2 {
 }
 
 @media screen and (max-width: 768px) {
-  .game-tabs span{
+  .game-tabs span {
     font-size: 2.4vw;
   }
+
   .game-details-input {
     display: flex;
     flex-direction: column;
     margin-left: 0;
   }
-.games div{
-  font-size: 0.9rem !important;
-}
+
+  .games div {
+    font-size: 0.9rem !important;
+  }
+
   .players {
     padding: 0;
   }
@@ -257,26 +276,32 @@ h2 {
   }
 
   .extra-menu div:first-child {
-  
+
     width: 100%;
   }
-.game-tabs{
-  display: flex;
-  justify-content: space-between;
-}
+
+  .game-tabs {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0;
+  }
+
   .game-tabs span {
-    padding: 0.5rem 0.5rem 6px;
+    padding: 0.5rem 0.5rem 7px;
   }
 
   .extra-menu .img {
     display: none;
   }
-.arma-container .cell{
-  width: initial;
-}
-.game-details-header{
-  text-align: center;
-}
+
+  .arma-container .cell {
+    width: initial;
+  }
+
+  .game-details-header {
+    text-align: center;
+  }
+
   .all-games,
   .bits-games {
     display: flex;
@@ -284,12 +309,17 @@ h2 {
     height: 100%;
     /* justify-content: center; */
   }
-  .arma-container h2{
+
+  .arma-container h2 {
     font-size: 22px;
-  }.arma-container{
+  }
+
+  .arma-container {
     margin: 18% 0;
   }
-  .game-details-header div, .add-player{
+
+  .game-details-header div,
+  .add-player {
     font-size: 1rem;
   }
 
@@ -298,7 +328,12 @@ h2 {
   .arma-container select {
     width: 40vw;
   }
-  .arma-wrapper .logo{
+
+  .arma-wrapper .logo {
     display: none;
+  }
+
+  .games div:hover span{
+    background-size: 0;
   }
 }
