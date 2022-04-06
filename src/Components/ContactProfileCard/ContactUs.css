@@ -24,6 +24,10 @@
     font-family: "Pirulen";
     color: white
 }
+
+.contactHeading{
+    margin-bottom: 0 !important;
+}
 @media screen and (max-width: 768px){
     .contactUsWrapper {
         justify-content: center;

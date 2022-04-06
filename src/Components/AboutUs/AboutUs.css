@@ -11,11 +11,12 @@
 
 
 .AboutUsWrapper {
-    height: 100vh;
+    /* height: 100vh; */
     width: 100vw;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
+    margin-bottom: 20px;
     /* background: black; */
 
 }
@@ -27,7 +28,12 @@
     font-size: 3rem;
     line-height: 77px;
     margin: 100px 10vw;
+    margin-bottom: 30px ;
     color: white;
+}
+
+.AboutUsWrapper .aboutUsHeading{
+    margin-bottom: 30px;
 }
 .aboutUsDetails {
     font-family: 'Forgotten Futurist';
