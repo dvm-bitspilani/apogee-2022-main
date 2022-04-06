@@ -110,8 +110,6 @@ export const ArmageddonModal = (props) => {
     console.log(name, value);
 
     let index = parseInt(e.target.id.slice(-1));
-    if(extraPlayer) index = armaGame.min_players
-    console.log(index);
     if (!playersInfo[index]["college"]) playersInfo[index]["college"] = "A&A Business Consulting"
     playersInfo[index][name] = value;
     if (playersInfo[index]["whatsapp_no"]) playersInfo[index]["whatsapp_no"] = playersInfo[index]["whatsapp_no"].substring(0, 10)
@@ -542,7 +540,7 @@ export const ArmageddonModal = (props) => {
                         <input
                           required
                           type="text"
-                          id={"name" + armaGame.min_players + 1}
+                          id={"name" + armaGame.min_players}
                           onChange={handlePlayerChange}
                           name="name"
                           label="Name"
@@ -559,7 +557,7 @@ export const ArmageddonModal = (props) => {
                         <input
                           required
                           type="email"
-                          id={"email" + armaGame.min_players + 1}
+                          id={"email" + armaGame.min_players}
                           onChange={handlePlayerChange}
                           name="email_id"
                           label="Type your email"
@@ -592,7 +590,7 @@ export const ArmageddonModal = (props) => {
                           <span>College*</span>
                           <select
                             name="college"
-                            id={"college" + armaGame.min_players + 1}
+                            id={"college" + armaGame.min_players}
                             className="collegeNames"
                             onChange={handlePlayerChange}
                           >
@@ -622,8 +620,8 @@ export const ArmageddonModal = (props) => {
                           type="text"
                           variant="outlined"
                           onChange={handlePlayerChange}
-                          id={"phone" + armaGame.min_players + 1}
-                          name="phone"
+                          id={"phone" + armaGame.min_players}
+                          name="whatsapp_no"
                           label="Type your phone number"
                           sx={{
                             width: 300,
