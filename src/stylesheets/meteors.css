@@ -11,7 +11,6 @@
     /* top: 585.52%; */
     top: 210.3rem;
     transform: scale(0.15) rotate(0deg);
-    z-index: 1001;
 }
 
 #two img {
@@ -20,8 +19,6 @@
     /* top: 600%; */
     top: 216.5rem;
     transform: scale(0.12);
-    z-index: 1001;
-
 }
 
 #three img {
@@ -30,8 +27,6 @@
     /* top: 630%; */
     top: 227.3rem;
     transform: scale(0.09) rotate(138.24deg);
-    z-index: 1001;
-
 }
 
 #four img {
@@ -40,8 +35,6 @@
     /* top: 700.52%; */
     top: 250.8rem;
     transform: scale(0.11) rotate(228deg);
-    z-index: 1001;
-
 }
 
 #five img {
@@ -50,8 +43,6 @@
     /* top: 710.52%; */
     top: 256.4rem;
     transform: scale(0.05) rotate(22deg);
-    z-index: 1001;
-
 }
 
 #six img {
@@ -142,13 +133,78 @@
     transform: scale(0.08) rotate(28deg)
 }
 
-.meteors *{
-    user-select: none;
+#seventeen img {
+    position: absolute;
+    right: 30%;
+    /* top: 585.52%; */
+    top: 710.3rem;
+    transform: scale(0.15) rotate(0deg);
 }
 
-@media (max-width:768px) {
-    
-    #four img, #five img{
-        z-index: initial;
-    }
+#eighteen img {
+    position: absolute;
+    left: 38%;
+    /* top: 600%; */
+    top: 716.5rem;
+    transform: scale(0.12);
+}
+
+#nineteen img {
+    position: absolute;
+    left: 10%;
+    /* top: 630%; */
+    top: 727.3rem;
+    transform: scale(0.09) rotate(138.24deg);
+}
+
+#twenty img {
+    position: absolute;
+    left: 24.2%;
+    /* top: 700.52%; */
+    top: 750.8rem;
+    transform: scale(0.11) rotate(228deg);
+}
+
+#twentyOne img {
+    position: absolute;
+    right: 35.17%;
+    /* top: 710.52%; */
+    top: 756.4rem;
+    transform: scale(0.05) rotate(22deg);
+}
+
+#twentyTwo img {
+    position: absolute;
+    left: 35.17%;
+    /* top: 740.52%; */
+    top: 769.2rem;
+    transform: scale(0.07) rotate(28deg)
+}
+
+#twentyThree img {
+    position: absolute;
+    right: 43.17%;
+    /* top: 770.52%; */
+    top: 773rem;
+    transform: scale(0.13) rotate(128deg)
+}
+
+#twentyFour img {
+    position: absolute;
+    left: 25.17%;
+    /* top: 830.52%; */
+    top: 801.7rem;
+    transform: scale(0.07) rotate(178deg)
+}
+
+#twentyFive img {
+    position: absolute;
+    right: 10.92%;
+    /* top: 838.26%; */
+    top: 805.5rem;
+    transform: scale(0.15) rotate(228deg)
+}
+
+.meteors *{
+    user-select: none;
 }

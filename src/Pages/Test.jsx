@@ -97,7 +97,33 @@ function Test() {
           <div className="rock" id="sixteen">
             <img id="16" src={rocks} alt="" />
           </div>
-
+          <div className="rock" id='seventeen' >
+            <img id="17" src={rocks} alt="" />
+          </div>
+          <div className="rock" id="eighteen">
+            <img id="18" src={rocks} alt="" />
+          </div>
+          <div className="rock" id="three">
+            <img id="19" src={rocks} alt="" />
+          </div>
+          <div className="rock" id="twenty">
+            <img id="20" src={rocks} alt="" />
+          </div>
+          <div className="rock" id='twentyOne' >
+            <img id="21" src={rocks} alt=""  />
+          </div>
+          <div className="rock" id="twentyTwo">
+            <img id="22" src={rocks} alt="" />
+          </div>
+          <div className="rock" id="twentyThree">
+            <img id="23" src={rocks} alt="" />
+          </div>
+          <div className="rock" id="twentyFour">
+            <img id="24" src={rocks} alt="" />
+          </div>
+          <div className="rock" id='twentyFive' >
+            <img id="25" src={rocks} alt="" />
+          </div>
         </div>
         <div className="section" id="Speakers">
           <SpeakerSection />

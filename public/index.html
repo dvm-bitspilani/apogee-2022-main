@@ -283,35 +283,21 @@
   //   pageLoaded();
   // });
 
-  const meteorTop = [
-    211.3, 217.5, 228.3, 251.8, 257.4, 270.2, 272.2, 302.7, 306.5, 340.3,
-    366.1, 391.9, 401.5, 437.2, 444.7, 546.1,
-  ];
+  const meteorTop = [211.3, 217.5, 228.3, 251.8, 257.4, 270.2, 272.2, 302.7, 306.5, 340.3, 366.1, 391.9, 401.5, 437.2, 444.7, 546.1, 711.3, 717.5, 728.3, 751.8, 757.4, 770.2, 772.2, 802.7, 806.5 ];
 
   window.addEventListener("scroll", () => {
     Array.from(document.querySelectorAll(".rock img")).forEach((meteor) => {
       let index = parseInt(meteor.id);
-      let topValue;
-      if (screen.width < 768) {
-        topValue = meteorTop[--index] - 20 - 0.01 * window.scrollY;
-      }
-      else {
-        topValue = meteorTop[--index] + 55 - 0.01 * window.scrollY;
-      }
-      console.log(topValue);
-      if (screen.width < 500) topValue += 10;
-      else if (screen.width < 650) topValue += 40;
-      else if (screen.width < 750) topValue += 80;
-      else if (screen.width < 850) topValue += 60;
-      else if (screen.width < 950) topValue += 10;
-      else if (screen.width < 1050) topValue -= 50;
-      else if (screen.width < 1600) topValue -= 10;
-      else topValue += 20;
+      let topValue = meteorTop[--index] + 55 - 0.01 * window.scrollY;
 
+      let upperLimit = document.querySelector(".AboutUsWrapper").offsetTop - 1000;
+      let lowerLimit = document.querySelector('#footer-wrapper').offsetTop;
+
+      console.log(upperLimit, lowerLimit)
       meteor.style.top = topValue + "rem";
 
-      // if (meteor.offsetTop < document.querySelector(".AboutUsWrapper").offsetTop) meteor.style.zIndex = 100000001;
-      // else meteor.style.zIndex = 0;
+      if (meteor.offsetTop > upperLimit && meteor.offsetTop < lowerLimit) meteor.style.display = 'block';
+      else  meteor.style.display = 'none';
     });
   });
 </script>
