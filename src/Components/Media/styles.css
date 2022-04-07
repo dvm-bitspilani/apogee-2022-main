@@ -1,0 +1,102 @@
+/* @import "https://fonts.googleapis.com/css2?family=Inter:wght@100&family=Nanum+Gothic&family=Rubik:wght@300&family=Source+Serif+Pro:wght@200&display=swap" */
+
+@font-face {
+  font-family: "Pirulen";
+  src: url("Assets/pirulen\ rg.otf");
+}
+@font-face {
+  font-family: "Forgotten Futurist";
+  src: url("Assets/forgotten\ futurist\ rg.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.arrowSponsors {
+  width: 40px;
+  position: absolute;
+  top: 5vh;
+  left: 5vw;
+  cursor: pointer;
+}
+.wrapperSponsors {
+  background: url("Assets/meteor\ background.png") black;
+  background-size: 100vw;
+  background-repeat: repeat;
+  font-family: "Pirulen";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sponsorHeading {
+  width: 100%;
+  font-size: 1.5em;
+  text-align: center;
+  color: white;
+  margin-top: 6.5vh;
+  font-family: "Pirulen";
+}
+.details {
+  display: flex;
+  justify-content: space-evenly;
+  margin-inline: 2.5em;
+  /* overflow: hidden; */
+  flex-wrap: wrap;
+}
+.intro {
+  font-size: 3em;
+    color: white;
+    padding-top: 5vh;
+    text-align: center;
+    background: black;
+    font-family: "Pirulen";
+}
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: 0.3s;
+  cursor: pointer;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 2em;
+}
+.flex:hover {
+  transform: scale(1.1);
+}
+.name {
+  text-align: center;
+  color: white;
+  font-size: 1.5em;
+  margin-top: 2.5vw;
+  font-family: "Forgotten Futurist";
+  letter-spacing: 3px;
+}
+.logoSponsors {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  justify-content: center;
+  margin-top: 4vw;
+}
+.logoSponsors img {
+  width: 15em;
+}
+@media (max-width: 768px) {
+  .details {
+    flex-direction: column;
+  }
+  .arrowSponsors {
+    width: 30px;
+  }
+  .sponsorHeading {
+    font-size: 1.2em;
+    width: 90%;
+  }
+  .intro {
+    font-size: 2em;
+  }
+}

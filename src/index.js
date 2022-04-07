@@ -12,6 +12,8 @@ import AboutUs from "./Components/AboutUs/AboutUs.jsx";
 import { createBrowserHistory } from "history";
 import "./fonts/BARTKEY.ttf";
 import { Sponsors } from "./Components/Sponsors/Sponsors.js";
+import { Media } from "./Components/Sponsors/Sponsors.js";
+
 import WallMag from "./Components/WallMag/WallMag";
 import DeveloperContainer from "./Components/Developers/DeveloperContainer.jsx";
 import ArmageddonRegister from "./Pages/armageddon-register";
@@ -74,6 +76,8 @@ ReactDOM.render(
       <Route path="/wallmag" element={<WallMag />} />
       <Route path="/armageddon" element={<ArmageddonRegister />} />
       <Route path="/sponsors/" element={<Sponsors />} />
+      {/* <Route path="/media-partners/" element={<Media />} /> */}
+
       {/* <Route path="/Test" element={<Test />} /> */}
 
       {/* <Route path="invoices" element={<Invoices />} /> */}

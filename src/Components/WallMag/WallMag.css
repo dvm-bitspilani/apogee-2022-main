@@ -7,7 +7,9 @@ h1, h2, h3 {
     font-weight: inherit;
     font-size: inherit;
 }
-
+.hpc-heading h3{
+    font-size: 1.5rem;
+}
 /* BACKGROUND CSS (GRID + NOISE) */
 .root-wallmag {
     background-color: rgb(19, 18, 18);
@@ -146,12 +148,14 @@ h1, h2, h3 {
     }
 
     .hpc-heading {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         margin-top: 20px;
         text-align: center;
         color: rgb(224, 224, 224);
     }
-
+    .hpc-heading h3{
+        font-size: 1.1rem;
+    }
     .c-section {
         width: 80%;
         margin: auto;

@@ -121,6 +121,6 @@ z-index: 2;
     border-image: url("./background1.png") 5% round;
   }
   .videoHeading {
-    margin: 50px 0 0;
+    margin: 50px 0 45px;
   }
 }

@@ -8,7 +8,8 @@ export default function MyComponent() {
   return (
     <div className="root-wallmag">
       <div className="hpc-heading">
-        <h1>WallMag Apogee 2022</h1>
+        <h1>WallMag </h1>
+        <h3>Apogee 2022</h3>
       </div>
       <div className="c-section">
         {articles.map((article, idx) => {
