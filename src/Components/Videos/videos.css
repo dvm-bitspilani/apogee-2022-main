@@ -17,7 +17,7 @@
   flex-direction: column;
   flex-wrap: nowrap;
   /* background: black; */
-  margin-bottom: 100px;
+  margin-bottom: 20px;
   /* position: relative;
     top: 500vh; */
 }
@@ -83,7 +83,8 @@ z-index: 2;
 
 @media screen and (max-width: 768px) {
   .mainVideoWrapper {
-    margin-bottom: 0px;
+    margin-bottom: 10px;
+    height: initial;
   }
 
   .aboutUsHeading {
@@ -111,7 +112,9 @@ z-index: 2;
     margin-left: 0;
     text-align: center;
   }
-
+.video1{
+  margin-bottom: 40px;
+}
   .video1 div,
   .video2 div {
     border: 12px solid transparent;

@@ -156,8 +156,8 @@ export const ArmageddonModal = (props) => {
         })
         .then(function (result) {
           console.log(result);
-          if (localStorage.getItem("status") == 200) alert(result.message);
-          // if (localStorage.getItem("status") == 200) alert(result.message+ " The email verification and payment gateway has been sent to captain's email id");    
+          // if (localStorage.getItem("status") == 200) alert(result.message);
+          if (localStorage.getItem("status") == 200) alert(result.message+ " The email verification and payment gateway has been sent to captain's email id");    
           else if (
             localStorage.getItem("status") == 412 ||
             localStorage.getItem("status") == 400
@@ -182,7 +182,7 @@ export const ArmageddonModal = (props) => {
           return response.json();
         })
         .then(function (result) {
-          if (localStorage.getItem("status") == 200) alert(result.message);
+          if (localStorage.getItem("status") == 200) alert(result.message+ " The email verification and payment gateway has been sent to captain's email id");    
           else if (
             localStorage.getItem("status") == 412 ||
             localStorage.getItem("status") == 400
@@ -497,7 +497,8 @@ export const ArmageddonModal = (props) => {
             </div>
             <div className="game-details-header">
               <div>{armaGame.players_req}</div>
-              <div>Price: {armaGame.price}</div>
+                <div>Price: {armaGame.price}</div>
+                <div>*If Captain (Player 1) is a BITSian: whole amount will be deducted from their SWD account</div>
             </div>
             <form
               name="arma-form"

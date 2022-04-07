@@ -14,7 +14,7 @@
     font-weight: 400;
     font-size: 2.5rem;
     line-height: 77px;
-    margin: 50px 50px 0px 50px;
+    margin:  0px 50px 0px 50px;
     z-index: 2;
     opacity: 0.99;
     color: white;
@@ -54,6 +54,10 @@ padding: 5px;
     .speakerCarousel{
         width: initial;
         margin: initial;
+    }
+
+    .speakerHeading{
+        margin: 0;
     }
 
 
