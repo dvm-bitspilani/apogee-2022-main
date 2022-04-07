@@ -11,7 +11,6 @@
     /* top: 585.52%; */
     top: 210.3rem;
     transform: scale(0.15) rotate(0deg);
-    z-index: 1001;
 }
 
 #two img {
@@ -20,8 +19,6 @@
     /* top: 600%; */
     top: 216.5rem;
     transform: scale(0.12);
-    z-index: 1001;
-
 }
 
 #three img {
@@ -30,8 +27,6 @@
     /* top: 630%; */
     top: 227.3rem;
     transform: scale(0.09) rotate(138.24deg);
-    z-index: 1001;
-
 }
 
 #four img {
@@ -40,8 +35,6 @@
     /* top: 700.52%; */
     top: 250.8rem;
     transform: scale(0.11) rotate(228deg);
-    z-index: 1001;
-
 }
 
 #five img {
@@ -50,8 +43,6 @@
     /* top: 710.52%; */
     top: 256.4rem;
     transform: scale(0.05) rotate(22deg);
-    z-index: 1001;
-
 }
 
 #six img {
@@ -216,11 +207,4 @@
 
 .meteors *{
     user-select: none;
-}
-
-@media (max-width:768px) {
-    
-    #four img, #five img{
-        z-index: initial;
-    }
 }

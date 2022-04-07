@@ -290,9 +290,10 @@
       let index = parseInt(meteor.id);
       let topValue = meteorTop[--index] + 55 - 0.01 * window.scrollY;
 
-      let upperLimit = document.querySelector(".AboutUsWrapper").offsetTop - 500;
+      let upperLimit = document.querySelector(".AboutUsWrapper").offsetTop - 1000;
       let lowerLimit = document.querySelector('#footer-wrapper').offsetTop;
 
+      console.log(upperLimit, lowerLimit)
       meteor.style.top = topValue + "rem";
 
       if (meteor.offsetTop > upperLimit && meteor.offsetTop < lowerLimit) meteor.style.display = 'block';
