@@ -152,7 +152,7 @@ input {
   font-size: 20px;
 }
 
-.arma-special{
+.arma-special {
   color: white;
   text-decoration: underline;
   margin: 10px 0;
@@ -196,10 +196,11 @@ span {
 
 .registerBtn {
   color: black;
-  font-size: 18px;
+  font-size: 13px;
   /* background: white; */
   font-family: "Montserrat";
-  padding: 5px 30px;
+  padding: 5px 10px;
+  opacity: 0.6;
   font-weight: bold;
   -webkit-transition: all 0.7s;
   -o-transition: all 0.7s;
@@ -376,7 +377,7 @@ span {
   transition: 0.3s ease all;
 }
 
-.aic-arrow.right-arrow{
+.aic-arrow.right-arrow {
   transition: 0.5s ease all;
 }
 
@@ -385,11 +386,10 @@ span {
 }
 
 @media screen and (max-width: 768px) {
-
   .links div,
-#aic div {
-  color: white;
-}
+  #aic div {
+    color: white;
+  }
 
   .registerBtnWrapper {
     position: absolute;

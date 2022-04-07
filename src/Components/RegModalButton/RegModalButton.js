@@ -209,11 +209,13 @@ export default function RegModalButton(props) {
   return (
     <div className="ModalBox">
       <div className="registerBtnWrapper">
-        {props.type == "arma" ? "" : <div className="registerBtnBorder register-lp" id="registerTop">
-          <button className="registerBtn" onClick={handleOpen}>
-            REGISTER
-          </button>
-        </div>}
+        {props.type == "arma" ? (
+          ""
+        ) : (
+          <div className="registerBtnBorder register-lp" id="registerTop">
+            <button className="registerBtn">REGISTRATION CLOSED</button>
+          </div>
+        )}
       </div>
 
       <Modal
