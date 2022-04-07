@@ -137,14 +137,32 @@ h1, h2, h3 {
     width: min-content;
 }
 
+.wallmag-back {
+    position: fixed;
+    top: 50px;
+    left: 20px;
+    width: 30px;
+    height: 30px;
+}
+
+.wallmag-back svg {
+    stroke: white;
+    fill: white;
+}
+
 /* SETS DEFAULT VISIBILITY TO NONE */
-
-
 
 @media only screen and (max-width: 800px) {
     .root-wallmag {
         background-image: url("../../assets/laptop/Stars_Red_Meteors_90deg.png");
         background-size: 110%;
+    }
+
+    .wallmag-back {
+        top: 20px;
+        left: 10px;
+        width: 20px;
+        height: 20px;
     }
 
     .hpc-heading {
