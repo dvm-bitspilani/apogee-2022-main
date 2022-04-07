@@ -237,6 +237,10 @@ function NavBar(props) {
                   <div>All Events</div>
                 </a>
 
+                <a className="links" href="/media-partners/">
+                  <div>Media Partners</div>
+                </a>
+
                 <a href="/wallmag/" className="links">
                   <div>WallMag</div>
                 </a>
