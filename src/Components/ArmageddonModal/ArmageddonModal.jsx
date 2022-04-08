@@ -456,9 +456,9 @@ export const ArmageddonModal = (props) => {
                     </div>
                     <div onClick={() => handleGameClick("BGMI")}><span>BGMI</span></div>
                     <div onClick={() => handleGameClick("CS-GO")}><span>CS-GO</span></div>
-                    <div onClick={() => handleGameClick("Clash Royale")}>
+                    {/* <div onClick={() => handleGameClick("Clash Royale")}>
                       <span>Clash Royale</span>
-                    </div>
+                    </div> */}
                   </div>
                   <div className="img">
                     <img src={ArmaGuns} />
