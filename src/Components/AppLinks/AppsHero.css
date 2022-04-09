@@ -1,0 +1,23 @@
+.apps {
+  position: absolute;
+  /* left: 100vw; */
+  right: 1.5rem;
+  transform: scale(1.2);
+  bottom: 0;
+  /* transform: scale(1.5); */
+  z-index: 12;
+}
+
+.apps div {
+  width: 100px;
+  height: 35px;
+  /* border-radius: 50%; */
+  margin-bottom: 1.25rem;
+  cursor: pointer;
+}
+@media all and (max-width: 600px) {
+  .apps {
+    transform: scale(0.8);
+    right: 0;
+  }
+}

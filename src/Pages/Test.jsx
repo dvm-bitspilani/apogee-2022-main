@@ -2,33 +2,34 @@ import { useState, useEffect, useRef } from "react";
 import CountdownSlate from "../Components/CountdownSlate/CountdownSlate.js";
 import MainHero from "../Components/MainHero/MainHero.jsx";
 import NavBar from "../Components/Navbar/Navbar.jsx";
-import Pagination from './../Components/Pagination/Pagination';
+import Pagination from "./../Components/Pagination/Pagination";
 import SocialsHero from "../Components/SocialsHero/SocialsHero.js";
-import { useInView } from 'react-intersection-observer'
+import AppsHero from "../Components/AppLinks/AppsHero.js";
+
+import { useInView } from "react-intersection-observer";
 import ScrollScreen from "../Components/ScrollScreen/ScrollScreen.jsx";
-import Loader from "../Components/Loader/loader.jsx"
-import AboutUs from "../Components/AboutUs/AboutUs.jsx"
-import ContactUs from "../Components/ContactProfileCard/ContactUs.jsx"
-import Footer from "../Components/ContactProfileCard/Footer/Footer.jsx"
+import Loader from "../Components/Loader/loader.jsx";
+import AboutUs from "../Components/AboutUs/AboutUs.jsx";
+import ContactUs from "../Components/ContactProfileCard/ContactUs.jsx";
+import Footer from "../Components/ContactProfileCard/Footer/Footer.jsx";
 import EventContainer from "../Components/EventContainer/EventContainer.jsx";
 import "../stylesheets/final.css";
 import Videos from "../Components/Videos/Videos.jsx";
 import SpeakerSection from "../Components/SpeakerSection/SpeakerSection.jsx";
 import rocks from "../Components/MainHero/MainHeroAssets/meteor.png";
 import "../stylesheets/meteors.css";
-import AOS from 'aos';
+import AOS from "aos";
 import "aos/dist/aos.css";
 function Test() {
   useEffect(() => {
     AOS.init({
-      duration : 2000
+      duration: 2000,
     });
     AOS.refresh();
   }, []);
   window.onbeforeunload = () => {
-    window.scrollTo(0, 0)
-  }
-
+    window.scrollTo(0, 0);
+  };
 
   return (
     <div className="testWrapper">
@@ -40,16 +41,17 @@ function Test() {
       <Pagination />
       <MainHero className="landing-section" />
       <SocialsHero />
+      <AppsHero />
       {/* <CountdownSlate /> */}
       <div className="mainWrapper">
         <div className="section" id="aboutus">
-          <AboutUs/>
+          <AboutUs />
         </div>
         <div className="section" id="Videos">
           <Videos />
         </div>
         <div className="meteors">
-          <div className="rock" id='one' >
+          <div className="rock" id="one">
             <img id="1" src={rocks} alt="" />
           </div>
           <div className="rock" id="two">
@@ -61,8 +63,8 @@ function Test() {
           <div className="rock" id="four">
             <img id="4" src={rocks} alt="" />
           </div>
-          <div className="rock" id='five' >
-            <img id="5" src={rocks} alt=""  />
+          <div className="rock" id="five">
+            <img id="5" src={rocks} alt="" />
           </div>
           <div className="rock" id="six">
             <img id="6" src={rocks} alt="" />
@@ -73,7 +75,7 @@ function Test() {
           <div className="rock" id="eight">
             <img id="8" src={rocks} alt="" />
           </div>
-          <div className="rock" id='nine' >
+          <div className="rock" id="nine">
             <img id="9" src={rocks} alt="" />
           </div>
           <div className="rock" id="ten">
@@ -85,7 +87,7 @@ function Test() {
           <div className="rock" id="twelve">
             <img id="12" src={rocks} alt="" />
           </div>
-          <div className="rock" id='thirteen' >
+          <div className="rock" id="thirteen">
             <img id="13" src={rocks} alt="" />
           </div>
           <div className="rock" id="fourteen">
@@ -97,7 +99,7 @@ function Test() {
           <div className="rock" id="sixteen">
             <img id="16" src={rocks} alt="" />
           </div>
-          <div className="rock" id='seventeen' >
+          <div className="rock" id="seventeen">
             <img id="17" src={rocks} alt="" />
           </div>
           <div className="rock" id="eighteen">
@@ -109,8 +111,8 @@ function Test() {
           <div className="rock" id="twenty">
             <img id="20" src={rocks} alt="" />
           </div>
-          <div className="rock" id='twentyOne' >
-            <img id="21" src={rocks} alt=""  />
+          <div className="rock" id="twentyOne">
+            <img id="21" src={rocks} alt="" />
           </div>
           <div className="rock" id="twentyTwo">
             <img id="22" src={rocks} alt="" />
@@ -121,7 +123,7 @@ function Test() {
           <div className="rock" id="twentyFour">
             <img id="24" src={rocks} alt="" />
           </div>
-          <div className="rock" id='twentyFive' >
+          <div className="rock" id="twentyFive">
             <img id="25" src={rocks} alt="" />
           </div>
         </div>

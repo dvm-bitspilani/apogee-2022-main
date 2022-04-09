@@ -24,6 +24,7 @@ import floor from "./MainHeroAssets/floorGrid.png";
 import bigFloor from "./MainHeroAssets/finalGrid.svg";
 import bigFloorMobile from "./MainHeroAssets/bigFloorMobile.svg";
 import floorGlow from "./MainHeroAssets/GroupFloorGlow.svg";
+// import playstore from ./assents
 // Styles
 import "./MainHero.css"
 import AboutUs from "../AboutUs/AboutUs";
@@ -144,6 +145,10 @@ function MainHero() {
     return (
         <Div100vh>
             <div className="wrapperMainHero landing-section" id="heroSection">
+                {/* <div class="applinks">
+                    
+                </div> */}
+                
                 <div className="upperHero">
                     <div className="skyWrapper">
                         <div class="sky"></div>
