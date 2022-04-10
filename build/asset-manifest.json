@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.625e961b.css",
+    "main.css": "/static/css/main.3a1b1c8f.css",
     "main.js": "/static/js/main.ed119f23.js",
     "static/media/6degreesindia.png": "/static/media/6degreesindia.a8f20f39531b74133482.png",
     "static/media/pepsico.jpeg": "/static/media/pepsico.b52907682772b1d16a91.jpeg",
@@ -123,11 +123,11 @@
     "static/media/down-arrow.svg": "/static/media/down-arrow.ee19d975d72483aa8605fe4ebe5450f9.svg",
     "static/media/Sky.svg": "/static/media/Sky.d5d27986d37c474eeda4.svg",
     "static/media/Arrox.svg": "/static/media/Arrox.97b633c6fff07eb6a4665f665abaad15.svg",
-    "main.625e961b.css.map": "/static/css/main.625e961b.css.map",
+    "main.3a1b1c8f.css.map": "/static/css/main.3a1b1c8f.css.map",
     "main.ed119f23.js.map": "/static/js/main.ed119f23.js.map"
   },
   "entrypoints": [
-    "static/css/main.625e961b.css",
+    "static/css/main.3a1b1c8f.css",
     "static/js/main.ed119f23.js"
   ]
 }

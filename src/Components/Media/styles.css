@@ -50,11 +50,11 @@
 }
 .intro {
   font-size: 3em;
-    color: white;
-    padding-top: 5vh;
-    text-align: center;
-    background: black;
-    font-family: "Pirulen";
+  color: white;
+  padding-top: 5vh;
+  text-align: center;
+  background: black;
+  font-family: "Pirulen";
 }
 .flex {
   display: flex;
@@ -92,13 +92,14 @@
     flex-direction: column;
   }
   .arrowSponsors {
-    width: 30px;
+    width: 20px;
   }
   .sponsorHeading {
     font-size: 1.2em;
     width: 90%;
   }
   .intro {
-    font-size: 2em;
+    font-size: 1.3em;
+    padding-top: 8vh;
   }
 }
