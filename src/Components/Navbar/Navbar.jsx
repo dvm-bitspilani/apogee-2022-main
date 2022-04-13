@@ -236,6 +236,9 @@ function NavBar(props) {
                 <a className="links" href="/events/">
                   <div>All Events</div>
                 </a>
+                <a className="links" href="/EventWinnersPage/">
+                  <div>Winners</div>
+                </a>
 
                 <a className="links" href="/media-partners/">
                   <div>Media Partners</div>

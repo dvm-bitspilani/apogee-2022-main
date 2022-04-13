@@ -60,7 +60,7 @@ ReactDOM.render(
         }
       />
       <Route
-        path="/EventWinners/"
+        path="/EventWinnersPage"
         element={
           <Events
             heading="Event Winners"
