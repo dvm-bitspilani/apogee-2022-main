@@ -60,6 +60,16 @@ ReactDOM.render(
         }
       />
       <Route
+        path="/EventWinners/"
+        element={
+          <Events
+            heading="Event Winners"
+            link="https://bits-apogee.org/registrations/events_winner_details/"
+            type="   "
+          />
+        }
+      />
+      <Route
         path="/kernel-events"
         element={
           <Events
