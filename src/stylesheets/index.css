@@ -283,7 +283,7 @@ span {
   text-decoration: none;
   color: unset;
   font-family: "Montserrat";
-  padding: 1rem;
+  padding: 0.8rem;
   cursor: pointer;
 }
 
@@ -321,7 +321,7 @@ span {
 
 .all-links {
   font-weight: 700;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: #9d9d9d !important;
   padding: 0 1rem;
   transition: all 0.8s ease;
