@@ -18,6 +18,10 @@ import tet from "./Assets/Logos/tet.png"
 import unitimes from "./Assets/Logos/unitimes.jpeg"
 import webdunia from "./Assets/Logos/webdunia.png"
 import webisdom from "./Assets/Logos/webisdom.png"
+import delhi from "./Assets/Logos/delhi.png"
+import sachi from "./Assets/Logos/sachi.png"
+import sachkahoon from "./Assets/Logos/sachkahoon.png"
+
 import { style } from "@mui/system";
 
 const styles = {
@@ -176,7 +180,7 @@ export const Media = (props) => {
             onClick={() => window.open("https://www.sachishiksha.in/", "_blank")}
           >
             <div className="logoSponsors">
-              <img src="" />
+              <img src={sachi} />
             </div>
             <div className="name">Sachi Siksha</div>
           </div>
@@ -185,7 +189,7 @@ export const Media = (props) => {
             onClick={() => window.open("http://epaper.sachkahoon.com/", "_blank")}
           >
             <div className="logoSponsors">
-              <img src="" />
+              <img src={ sachkahoon}/>
             </div>
             <div className="name">Sach Kahoon</div>
           </div>
@@ -198,21 +202,13 @@ export const Media = (props) => {
             </div>
             <div className="name">Bizz Buzz</div>
           </div>
-          <div
-            className="flex"
-            onClick={() => window.open("https://automotivedesignplanet.com/", "_blank")}
-          >
-            <div className="logoSponsors">
-              <img src="" />
-            </div>
-            <div className="name">Automotive Design Planet</div>
-          </div>
+      
           <div
             className="flex"
             onClick={() => window.open("https://www.delhi99.tv/", "_blank")}
           >
             <div className="logoSponsors">
-              <img src="" />
+              <img src={delhi} />
             </div>
             <div className="name">Delhi 99 TV</div>
           </div>
