@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.3a1b1c8f.css",
-    "main.js": "/static/js/main.060ef7aa.js",
+    "main.css": "/static/css/main.e79076dc.css",
+    "main.js": "/static/js/main.3884c15d.js",
     "static/media/6degreesindia.png": "/static/media/6degreesindia.a8f20f39531b74133482.png",
     "static/media/pepsico.jpeg": "/static/media/pepsico.b52907682772b1d16a91.jpeg",
     "static/media/finalGrid.svg": "/static/media/finalGrid.762841b7f60ab9b96c746ab40d1fce90.svg",
@@ -17,6 +17,7 @@
     "static/media/deepa.png": "/static/media/deepa.bc90040a6f970fb479d7.png",
     "static/media/latestloader.gif": "/static/media/latestloader.a0fbb23667db0b670291.gif",
     "static/media/LogoHD.jpg": "/static/media/LogoHD.9907afd6b21f0df9c661.jpg",
+    "static/media/sachi.png": "/static/media/sachi.4655fe78c83bdc295fe2.png",
     "static/media/Vector.svg": "/static/media/Vector.095e205ed9af2158d698deed3eaef086.svg",
     "static/media/LWT academy .png": "/static/media/LWT academy .708d7fde7ab15fd3f52c.png",
     "static/media/pagalguy.png": "/static/media/pagalguy.548511fd04677b84bf15.png",
@@ -40,6 +41,7 @@
     "static/media/Forgotten Futurist.ttf": "/static/media/Forgotten Futurist.29621b5561979ea59afa.ttf",
     "static/media/forgotten futurist rg.ttf": "/static/media/forgotten futurist rg.29621b5561979ea59afa.ttf",
     "static/media/techstory.png": "/static/media/techstory.efe1c1836e5e85414dd1.png",
+    "static/media/delhi.png": "/static/media/delhi.780fc08208997776d3b3.png",
     "static/media/Axplorar.png": "/static/media/Axplorar.0c7680a9785f8eb4f860.png",
     "static/media/blogadda.png": "/static/media/blogadda.b4c09c5769297e4befac.png",
     "static/media/Stars_Red_Meteors_90deg.png": "/static/media/Stars_Red_Meteors_90deg.2a1bff29abf46aff63ca.png",
@@ -123,11 +125,11 @@
     "static/media/down-arrow.svg": "/static/media/down-arrow.ee19d975d72483aa8605fe4ebe5450f9.svg",
     "static/media/Sky.svg": "/static/media/Sky.d5d27986d37c474eeda4.svg",
     "static/media/Arrox.svg": "/static/media/Arrox.97b633c6fff07eb6a4665f665abaad15.svg",
-    "main.3a1b1c8f.css.map": "/static/css/main.3a1b1c8f.css.map",
-    "main.060ef7aa.js.map": "/static/js/main.060ef7aa.js.map"
+    "main.e79076dc.css.map": "/static/css/main.e79076dc.css.map",
+    "main.3884c15d.js.map": "/static/js/main.3884c15d.js.map"
   },
   "entrypoints": [
-    "static/css/main.3a1b1c8f.css",
-    "static/js/main.060ef7aa.js"
+    "static/css/main.e79076dc.css",
+    "static/js/main.3884c15d.js"
   ]
 }
