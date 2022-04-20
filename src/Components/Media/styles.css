@@ -100,6 +100,10 @@
   }
   .intro {
     font-size: 1.3em;
-    padding-top: 8vh;
+    padding-top: 5vh;
+  }
+
+  .logoSponsors img {
+    width: 12em;
   }
 }
