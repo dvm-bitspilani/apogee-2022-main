@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.e79076dc.css",
-    "main.js": "/static/js/main.3884c15d.js",
+    "main.js": "/static/js/main.db7e5ea0.js",
     "static/media/6degreesindia.png": "/static/media/6degreesindia.a8f20f39531b74133482.png",
     "static/media/pepsico.jpeg": "/static/media/pepsico.b52907682772b1d16a91.jpeg",
     "static/media/finalGrid.svg": "/static/media/finalGrid.762841b7f60ab9b96c746ab40d1fce90.svg",
@@ -15,9 +15,10 @@
     "static/media/saksham.png": "/static/media/saksham.7170895adb901fde860d.png",
     "static/media/Sign.svg": "/static/media/Sign.47d81a0bf1455dd28b7e074cb7d6deea.svg",
     "static/media/deepa.png": "/static/media/deepa.bc90040a6f970fb479d7.png",
+    "static/media/sachi.png": "/static/media/sachi.3cf519939de0d4620af8.png",
     "static/media/latestloader.gif": "/static/media/latestloader.a0fbb23667db0b670291.gif",
     "static/media/LogoHD.jpg": "/static/media/LogoHD.9907afd6b21f0df9c661.jpg",
-    "static/media/sachi.png": "/static/media/sachi.4655fe78c83bdc295fe2.png",
+    "static/media/sachkahoon.png": "/static/media/sachkahoon.432255a8f4e540f01b41.png",
     "static/media/Vector.svg": "/static/media/Vector.095e205ed9af2158d698deed3eaef086.svg",
     "static/media/LWT academy .png": "/static/media/LWT academy .708d7fde7ab15fd3f52c.png",
     "static/media/pagalguy.png": "/static/media/pagalguy.548511fd04677b84bf15.png",
@@ -126,10 +127,10 @@
     "static/media/Sky.svg": "/static/media/Sky.d5d27986d37c474eeda4.svg",
     "static/media/Arrox.svg": "/static/media/Arrox.97b633c6fff07eb6a4665f665abaad15.svg",
     "main.e79076dc.css.map": "/static/css/main.e79076dc.css.map",
-    "main.3884c15d.js.map": "/static/js/main.3884c15d.js.map"
+    "main.db7e5ea0.js.map": "/static/js/main.db7e5ea0.js.map"
   },
   "entrypoints": [
     "static/css/main.e79076dc.css",
-    "static/js/main.3884c15d.js"
+    "static/js/main.db7e5ea0.js"
   ]
 }
